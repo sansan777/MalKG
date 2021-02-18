@@ -28,11 +28,11 @@ All notebook files were ran using Google Colab
 
 ### Training
 #### Data Set
-We trained the DocRED model with a set of 64 hand annotated threat reports. These reports were annotated using BRAT, and can be found under [Code/Training Data Parser/input/](Code/Training Data Parser/input/).
+We trained the DocRED model with a set of 64 hand annotated threat reports. These reports were annotated using BRAT, and can be found under [Code/Training Data Parser/input/](Code/Training%20Data%20Parser/input/).
 
 #### Preprocessing
 ##### Converting BRAT annotations into JSON files for DocRED
-To convert the text files and BRAT annotation files into the appropriate format for DocRED go to [Code/Training Data Parser/](Code/Training Data Parser/) and run:
+To convert the text files and BRAT annotation files into the appropriate format for DocRED go to [Code/Training Data Parser/](Code/Training%20Data%20Parser/) and run:
 
     $python3 SpaCy_parser.py
 
@@ -43,7 +43,7 @@ Due to memory constraints, we were only able to run documents that contained 80 
 
     $python3 docred_preprocessing.py
 
-The output will be under [Code/DocRED Input/train_data.json](Code/DocRED Input/) and [Code/DocRED Input/validate_data.json](Code/DocRED Input/)
+The output will be under [Code/DocRED Input/train_data.json](Code/DocRED%20Input/) and [Code/DocRED Input/validate_data.json](Code/DocRED%20Input/)
 
 #### DocRED
 We ran DocRED using Google Colab with the notebook [Code/DocRED/DOCRED.ipynb](Code/DocRED/). [Code/DocRED/data/](Code/DocRED/data/) should contain train_data.json, validate_data.json, and test_data.json. This will be processed by running:
@@ -69,7 +69,7 @@ Similarly to the training data, we needed to break the testing data apart due to
 
     $python3 docred_preprocessing.py
 
-All of the testing documents will be output under [Code/DocRED Input/threatreport_flair12_test_data_all.json](Code/DocRED Input/) and [Code/DocRED Input/threatreport_setexpan_test_data_all.json](Code/DocRED Input/). However, we were only able to test 256 documents at one time. Thus, [Code/DocRED Input/Threat Report Flair12 Data/](Code/DocRED Input/Threat Report Flair12 Data/) and [Code/DocRED Input/Threat Report SetExpan Data/](Code/DocRED Input/Threat Report SetExpan Data/) contains the testing data split by 256 documents.
+All of the testing documents will be output under [Code/DocRED Input/threatreport_flair12_test_data_all.json](Code/DocRED%20Input/) and [Code/DocRED Input/threatreport_setexpan_test_data_all.json](Code/DocRED%20Input/). However, we were only able to test 256 documents at one time. Thus, [Code/DocRED Input/Threat Report Flair12 Data/](Code/DocRED Input/Threat Report Flair12 Data/) and [Code/DocRED Input/Threat Report SetExpan Data/](Code/DocRED%20Input/Threat%20Report SetExpan%20Data/) contains the testing data split by 256 documents.
 
 #### DocRED
 In order to test with DocRED, the JSON file you want to test must be renamed to test_data.json and placed under [Code/DocRED/data/](Code/DocRED/data/). This can be processed by running:
