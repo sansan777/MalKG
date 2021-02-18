@@ -58,7 +58,7 @@ CUDA_VISIBLE_DEVICES=0 python3 train.py --save_name checkpoint_BiLSTM --train_pr
 Threat Report PDFs were ran through Adobe Acrobat using the Action Wizard with Export PDFs to TXTs.sequ to convert them into TXTs.
 
 #### Named Entity Recognition
-We used Flair12 and SetExpan to extract named entities from our test data. Entities can be extracted form Threat Reports by navigating to (Code/NER/)[Code/NER/], and using the notebook file or by running:
+We used Flair12 and SetExpan to extract named entities from our test data. Entities can be extracted form Threat Reports by navigating to [Code/NER/](Code/NER/), and using the notebook file or by running:
 
     $python3 automated_flair12.py
 
@@ -69,7 +69,7 @@ Similarly to the training data, we needed to break the testing data apart due to
 
     $python3 docred_preprocessing.py
 
-All of the testing documents will be output under [Code/DocRED Input/threatreport_flair12_test_data_all.json](Code/DocRED%20Input/) and [Code/DocRED Input/threatreport_setexpan_test_data_all.json](Code/DocRED%20Input/). However, we were only able to test 256 documents at one time. Thus, [Code/DocRED Input/Threat Report Flair12 Data/](Code/DocRED Input/Threat Report Flair12 Data/) and [Code/DocRED Input/Threat Report SetExpan Data/](Code/DocRED%20Input/Threat%20Report SetExpan%20Data/) contains the testing data split by 256 documents.
+All of the testing documents will be output under [Code/DocRED Input/threatreport_flair12_test_data_all.json](Code/DocRED%20Input/) and [Code/DocRED Input/threatreport_setexpan_test_data_all.json](Code/DocRED%20Input/). However, we were only able to test 256 documents at one time. Thus, [Code/DocRED Input/Threat Report Flair12 Data/](Code/DocRED%20Input/Threat%20Report%20Flair12%20Data/) and [Code/DocRED Input/Threat Report SetExpan Data/](Code/DocRED%20Input/Threat%20Report%20SetExpan%20Data/) contains the testing data split by 256 documents.
 
 #### DocRED
 In order to test with DocRED, the JSON file you want to test must be renamed to test_data.json and placed under [Code/DocRED/data/](Code/DocRED/data/). This can be processed by running:
@@ -91,11 +91,6 @@ This outputs to the corresponding csvs directories, as well as Results.
 
 
 ### Citations
-@inproceedings{yao2019DocRED,
-  title={{DocRED}: A Large-Scale Document-Level Relation Extraction Dataset},
-  author={Yao, Yuan and Ye, Deming and Li, Peng and Han, Xu and Lin, Yankai and   
-                Liu, Zhenghao and Liu, Zhiyuan and Huang, Lixin and Zhou, Jie and Sun, 	 
-                Maosong},
-  booktitle={Proceedings of ACL 2019},
-  year={2019}
-}
+```
+Yao, Y., Ye, D., Li, P., Han, X., Lin, Y., Liu, Z., Huang, L., Zhou, J., Sun, M. (2019). DocRED: A Large-Scale Document-Level Relation Extraction Dataset. Proceedings of ACL 2019.
+```
