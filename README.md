@@ -18,9 +18,7 @@ All notebook files were ran using Google Colab.
 
 #### DocRED
 
-- 16GB of Video Memory Compatible with CUDA
-- 32GB of RAM
-
+16GB of Video Memory Compatible with CUDA, and 32GB of RAM
     $pip3 install -r /Code/DocRED/code/requirements.txt
 
 #### Flair12
