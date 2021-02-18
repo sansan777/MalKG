@@ -8,8 +8,8 @@
 
 ### Installation and Requirements
 
-All python files were ran using Python 3.8
-All notebook files were ran using Google Colab
+All python files were ran using Python 3.8.
+All notebook files were ran using Google Colab.
 #### SpaCy
 
     $pip3 install -U pip setuptools wheel
@@ -18,8 +18,8 @@ All notebook files were ran using Google Colab
 
 #### DocRED
 
-16GB of Video Memory Compatible with CUDA
-32GB of RAM
+- 16GB of Video Memory Compatible with CUDA
+- 32GB of RAM
 
     $pip3 install -r /Code/DocRED/code/requirements.txt
 
@@ -52,13 +52,14 @@ We ran DocRED using Google Colab with the notebook [Code/DocRED/DOCRED.ipynb](Co
 
 The number of epochs used for training can be set in [Code/DocRED/code/train.py](Code/DocRED/code/), and we have it set to 10,000. Every 5 epochs DocRED compares the current epoch to the previous best epoch, and saves the model to [Code/DocRED/code/checkpoint/checkpoint_BiLSTM.zip](Code/DocRED/code/checkpoint/) if it is better. Training can be done by running:
 
-CUDA_VISIBLE_DEVICES=0 python3 train.py --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_validate
+    $CUDA_VISIBLE_DEVICES=0 python3 train.py --save_name checkpoint_BiLSTM --train_prefix dev_train --test_prefix dev_validate
+
 ### Testing
 #### Converting PDFs to TXT
 Threat Report PDFs were ran through Adobe Acrobat using the Action Wizard with Export PDFs to TXTs.sequ to convert them into TXTs.
 
 #### Named Entity Recognition
-We used Flair12 and SetExpan to extract named entities from our test data. Entities can be extracted form Threat Reports by navigating to [Code/NER/](Code/NER/), and using the notebook file or by running:
+We used Flair12 and SetExpan to extract named entities from our test data. Entities can be extracted from Threat Reports by navigating to [Code/NER/](Code/NER/), and using the notebook file or by running:
 
     $python3 automated_flair12.py
 
@@ -87,7 +88,7 @@ To convert DocRED output into CSVs, go to [Code/Postprocessing/](Code/Postproces
 
     $python3 format.py
 
-This outputs to the corresponding csvs directories, as well as Results.
+This outputs to the corresponding csvs directories, as well as [Results/](Results/).
 
 
 ### Citations
