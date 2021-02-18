@@ -1,0 +1,69 @@
+T1	Malware 1330 1340	W32.Flamer
+T2	Region 1399 1410	Middle East
+R1	hasAttackLocation Arg1:T1 Arg2:T2
+T3	Organization 1602 1610	Symantec
+T4	Organization 2117 2130	CERT-Bund/BSI
+T5	Organization 2132 2138	IMPACT
+T6	Organization 2144 2153	Kaspersky
+T7	Time 2375 2387	May 18, 2012
+T8	Attacker 2314 2320	Flamer
+R2	hasAttackTime Arg1:T8 Arg2:T7
+T9	Time 2633 2647	March 25, 2012
+T10	MalwareCharacteristics 2754 2792	record a minimal amount of information
+T11	Indicator 3751 3761	Newsforyou
+T12	Malware 3780 3790	W32.Flamer
+R3	indicates Arg1:T11 Arg2:T12
+T13	Time 6928 6940	May 18, 2012
+T14	Time 7107 7112	13:53
+T15	Time 6945 6956	11:26 (UTC)
+T16	Malware 7152 7162	W32.Flamer
+T17	Time 7189 7194	16:15
+T18	Time 7298 7312	March 25, 2012
+R4	hasAttackTime Arg1:T16 Arg2:T18
+R5	hasAttackTime Arg1:T16 Arg2:T13
+R6	hasAttackTime Arg1:T16 Arg2:T15
+R7	hasAttackTime Arg1:T16 Arg2:T14
+R8	hasAttackTime Arg1:T16 Arg2:T17
+T19	Exploit 7671 7681	Newsforyou
+T20	Malware 7716 7726	W32.Flamer
+T21	Event 9987 10019	Logging activities were disabled
+T22	Event 10024 10064	existing log files were securely deleted
+T23	Malware 11192 11209	UnloadChecker.php
+T24	File 11389 11398	Eraser.py
+T25	Indicator 11678 11688	pycleanscr
+T26	File 13564 13577	Connection.py
+T27	MalwareCharacteristics 13478 13494	dnslocation.info
+T28	Time 13934 13940	May 18
+T29	File 14506 14524	LogWiper_fixed.txt
+T30	File 14319 14329	Delete.php
+T31	File 14104 14114	pycleanscr
+T32	Exploit 15087 15092	Shred
+T33	Attacker 15257 15267	W32.Flamer
+R9	usesMalware Arg1:T33 Arg2:T32
+T34	Indicator 17003 17100	This function was added by D***, returns a true/false value depending on if this is a Windows box
+T35	Attacker 17292 17296	D***
+T36	Attacker 17324 17330	H*****
+T37	Attacker 17348 17355	O******
+T38	Attacker 17371 17375	R***
+T39	File 18389 18398	index.php
+T40	Indicator 19033 19046	PROTOCOL_OLD*
+T41	Indicator 19099 19114	PROTOCOL_SIGNUP
+T42	Indicator 19153 19169	PROTOCOL_OLD_E**
+T43	Indicator 19212 19224	PROTOCOL_RED
+T44	Malware 19245 19255	W32.Flamer
+R10	indicates Arg1:T43 Arg2:T44
+R11	indicates Arg1:T42 Arg2:T44
+R12	indicates Arg1:T41 Arg2:T44
+R13	indicates Arg1:T40 Arg2:T44
+T45	TrojanHorse 19841 19855	CLIENT_TYPE_SP
+T46	TrojanHorse 19883 19898	CLIENT_TYPE_SPE
+T47	TrojanHorse 19928 19942	CLIENT_TYPE_FL
+T48	TrojanHorse 19973 19987	CLIENT_TYPE_IP
+T49	MD5 23597 23631	0xfccd97e2513089e74ba707bbf4c1b0e5
+T50	Payload 23633 23665	59c5452fb2ba21091513ccdc1e0ec7fd
+T51	UserName 24194 24202	username
+T52	Hash 24218 24250	27934e96d90d06818674b98bec7230fa
+T53	UserName 26717 26726	news_user
+T54	Password 26728 26737	news_pass
+T55	Hash 27303 27335	27934e96d90d06818674b98bec7230fa
+T56	Country 30001 30007	Israel

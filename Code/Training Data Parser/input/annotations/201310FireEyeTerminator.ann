@@ -1,0 +1,83 @@
+T1	Organization 226 233	FireEye
+T2	MalwareFamily 460 467	Taidoor
+T3	ExploitTargetObject 575 581	Taiwan
+T4	Malware 628 642	Terminator RAT
+T5	ExploitTargetObject 713 719	Taiwan
+T6	ExploitTargetObject 816 822	Taiwan
+T8	MD5 909 941	a130b2e578d82409021b3c9ceda657b7
+T9	Vulnerability 958 971	CVE-2012-0158
+R3	exploits Arg1:T4 Arg2:T9
+T7	Dropper 894 901	103.doc
+R1	indicates Arg1:T8 Arg2:T7
+R2	usesDropper Arg1:T4 Arg2:T7
+R4	exploits Arg1:T7 Arg2:T9
+T10	File 1025 1033	DW20.exe
+R5	indicates Arg1:T10 Arg2:T7
+T11	File 1155 1163	DW20.exe
+T12	Malware 1336 1348	svchost_.exe
+T13	Malware 1383 1390	sss.exe
+T14	Malware 1671 1685	Terminator RAT
+T15	Malware 1710 1719	FakeM RAT
+T16	ExploitTargetObject 1924 1952	Tibetan and Uyghur activists
+T17	Campaign 1869 1878	campaigns
+R6	involvesMalware Arg1:T17 Arg2:T14
+R7	involvesMalware Arg1:T17 Arg2:T15
+R8	targets Arg1:T17 Arg2:T16
+T18	ExploitTargetObject 2014 2020	Taiwan
+R9	targets Arg1:T17 Arg2:T18
+T19	Malware 2112 2126	Terminator RAT
+T20	File 2753 2761	DW20.exe
+R10	indicates Arg1:T20 Arg2:T19
+T21	Malware 2981 2993	svchost_.exe
+T22	Malware 2998 3005	sss.exe
+T23	Indicator 3168 3258	HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders\Startup
+R11	indicates Arg1:T23 Arg2:T21
+R12	indicates Arg1:T23 Arg2:T22
+R13	indicates Arg1:T23 Arg2:T19
+T24	Malware 3409 3416	sss.exe
+T25	Indicator 3490 3501	ACCELORATOR
+R14	indicates Arg1:T25 Arg2:T24
+T26	Malware 3788 3796	DW20.exe
+T27	Payload 3988 3995	sss.exe
+R15	hasCharacteristics Arg1:T26 Arg2:T27
+T28	Indicator 5752 5773	liumingzhen.zapto.org
+T29	Indicator 5780 5801	liumingzhen.myftp.org
+T30	Malware 5971 5981	Terminator
+R16	indicates Arg1:T28 Arg2:T30
+R17	indicates Arg1:T29 Arg2:T30
+T31	File 6003 6010	103.doc
+R18	indicates Arg1:T31 Arg2:T30
+T32	MD5 6018 6050	a130b2e578d82409021b3c9ceda657b7
+R19	indicates Arg1:T32 Arg2:T30
+T33	Campaign 6468 6475	zjz1020
+R20	involvesMalware Arg1:T33 Arg2:T30
+T34	Address 6666 6679	123.51.208.69
+T35	Address 6704 6717	123.51.208.69
+T36	Indicator 6642 6663	liumingzhen.zapto.org
+T37	Indicator 6680 6701	liumingzhen.myftp.org
+R21	indicates Arg1:T36 Arg2:T30
+R22	indicates Arg1:T37 Arg2:T30
+R23	usesAddress Arg1:T30 Arg2:T34
+R24	usesAddress Arg1:T30 Arg2:T35
+T38	Malware 6834 6844	Terminator
+T39	MD5 6961 6993	50d5e73ff8a0693ed2ee2d320af3b304
+T40	Vulnerability 7004 7017	CVE-2012-0158
+T41	Indicator 7068 7085	catlovers.25u.com
+T42	Vulnerability 7550 7563	CVE-2012-0158
+T43	Time 7212 7221	June 2013
+T44	ExploitTargetObject 7269 7275	Taiwan
+T45	File 7451 7459	標案資料.doc
+T46	MD5 7467 7499	bfc96694731f3cf39bcad6e0716c5746
+R25	indicates Arg1:T39 Arg2:T38
+R26	indicates Arg1:T41 Arg2:T38
+R27	indicates Arg1:T45 Arg2:T38
+R28	indicates Arg1:T46 Arg2:T38
+R29	exploits Arg1:T38 Arg2:T40
+R30	exploits Arg1:T38 Arg2:T42
+T47	MalwareFamily 7640 7647	WinData
+T48	File 8104 8110	幹!.doc
+T49	Malware 8039 8045	Protux
+R31	indicates Arg1:T48 Arg2:T49
+T50	MD5 8118 8150	01da7213940a74c292d09ebe17f1bd01
+R32	indicates Arg1:T50 Arg2:T49
+T51	Time 8073 8084	August 2012

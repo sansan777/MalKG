@@ -1,0 +1,241 @@
+標的型攻撃の新たな ..判明。診断ツール「 PoshC2」を悪 .する攻撃の流れを解説
+
+lac.co.jp/lacwatch/people/20200424_002177.html 
+
+
+サイバー救急センターの.川です。 2019年2.にLAC WATCHで、ペネトレーションテストツール「 PoshC2」を悪.した標的型攻撃の..を紹介しました。 
+LAC WATCH：オープンソースのツール「 
+PoshC2」を悪.した新たな標的型攻撃を確認 
+
+2020年に.ってからも、私の所属する脅威分析チームでは同種の攻撃を引き続き観測しており、今まで確認できなかった詳細な攻撃の流れが .えてきました。攻撃者グループが .いる攻撃の. .やC2インフラに変化が現れていることも確認しています。
+今回は、新たに .えてきた詳細な攻撃の..と、背後に潜む攻撃者グループについて紹介します。 
+PoshC2を悪.した標的型攻撃の詳細な.. 
+図1は、 PoshC2を悪.する攻撃の流れを示したもので、 .きく 3つの ..に分類されます。このうち、攻撃..2については前述の2019年2.に公開した 
+LAC 
+WATCH記事で取り上げているため、ここでは攻撃..1と攻撃..3の詳細と、攻撃の中で使われた C2インフラの変化について説明します。
+
+図1 PoshC2を悪.する 3つの攻撃..の概要
+攻撃..1（CVE-2019-9489およびDLLハイジャックの悪.）
+これは、ウイルスバスターCorp.の脆弱性（CVE-2019-9489）および DLLハイジャック（DLL Search Order Hijacking）を悪.した攻撃..です。 2019年のLAC WATCH記事では、 DLLハイジャックの悪.から PoshC2スクリプトの実.までを解説しましたが、今回は、被害者PCへの不正なDLLファイルの配信.法とDLLハイジャックの悪.についてです。攻撃の多くは、今年1.に開催された Japan Security Analyst Conference 2020での JPCERTコーディネーションセンターの発表でも紹介された ※1、CVE-2019-9489の脆弱性の悪.から始まります。図2は、 CVE-2019-9489および DLLハイジャックを悪.した ..の概要です。 
+※1 
+Japan 
+Security 
+Analyst 
+Conference 
+2020 
+(オープニングトーク) 
+2019年のインシデントを振り返る
+
+図2 CVE-2019-9489および DLLハイジャックを悪.した ..の概要
+攻撃の流れは次の通りです。 
+1.
+攻撃者は、スピアフィッシングメールや脆弱性の悪.等によって侵害した PCを踏み台として、 CVE-2019-9489の脆弱性を悪.し、ウイルスバスターCorp.サーバの特定のディレクトリに管理者権限を持つ認証トークンファイルを作成 
+
+2.
+攻撃者は、このトークンを利.してウイルスバスターCorp.サーバの管理画 .の認証を回避し、管理者権限でアクセス。その後、パターンファイルの配信元を、攻撃者が管理する偽のアップデートサーバへ設定変更 
+
+3.
+偽のアップデートサーバから、不正な「 dbghelp.dll」ファイルを含む偽のパターンファイルが被害者PCに配信される。この際、ウイルスバスターCorp.クラインアントがパターンファイルの内容を適切に検証しない ※2ため、 DLLファイルが被害者PCの特定のディレクトリに展開される 
+
+4.
+ウイルスバスターCorp.クラインアントのプログラムが実.される際に、「%SystemRoot%￥System32」にある正規の「 dbghelp.dll※3」ではなく、同じディレクトリに展開された不正な「 dbghelp.dll」を意図せず読み込んでしまい、 DLLファイルに含まれたいくつかの攻撃コード※4がBATファイルを通じて実.される
+
+
+攻撃の中で特徴ある項.についてピックアップしてみていきます。
+※2この問題については、ウイルスバスターCorp. XG SP1の場合、CVE-2019-9489の脆弱性を解消するパッチ（Critical Patch 5338）の1つ前にリリースされた Critical Patch 5294で解消されていることを確認しています。 
+※3 Microsoftのデバックエンジンを提供する DLLファイルの 1つです。 
+※4 PoshC2スクリプト、リモートデスクトップのネットークレベル認証（NLA）の無効化、ログイン画.の拡.鏡（magify.exe）を「 cmd.exe」に置き換えたバックドアの作成や管理者権限を有するユーザを作成するコマンドなどの攻撃コード。 
+CVE-2019-9489の脆弱性
+CVE-2019-9489はディレクトリトラバーサルが可能な脆弱性です。ウイルスバスターCorp.クライアントから隔離ファイルを受信するプログラム「 cgiRecvFile.exe」が、特定の関数において . .されたファイルパスを適切にチェックしないことに起因しています。攻撃者はこの脆弱性を悪 .することによって、ウイルスバスターCorp.サーバまたはウイルスバスタービジネスセキュリティサーバで任意のファイルを作成.変更することができます。
+図3は、この脆弱性が修正されたウイルスバスタービジネスセキュリティ 9.5 Critical Patch（ビルド 1487）のReadme※5の内容の.部抜粋です。 .枠で示すように、「 cgiRecvFile.exe」で脆弱性が修正されていることが確認できます。その他のウイルスバスターCorp.の修正プログラムについては、トレンドマイクロ社のサポート情報※6をご参照ください。
+
+図3ウイルスバスタービジネスセキュリティ 9.5 Critical Patch（ビルド 1487）.部抜粋 
+※5 http://.les.trendmicro.com/jp/ucmodule/vbbiz/95/patch/cp1487/readme_biz95_win_CriticalPatch_ 
+B1487.txt 
+
+※6サポート情報 
+:トレンドマイクロ【注意喚起】弊社製品の脆弱性 
+(CVE-2019-9489)を悪.した攻撃を複数確認したことによる最新修正プログラム適.のお願い
+拡.鏡を悪.したバックドアと、リモートデスクトップのネットークレベル認証の無効化
+「dbghelp.dll」に含まれる BATファイルには、図4のようなレジストリを変更するコマンドが含まれています。これらのコマンドは、拡.鏡（magnify.exe）を悪.した「 cmd.exe」によるバックドアを設定するものと、リモートデスクトップのネットークレベル認証（NLA）を無効化するものです。また、図5は、ログイン画.から拡.鏡を悪.したバックドアを実.したものです。 .枠で示すように SYSTEM権限で「 cmd.exe」が起動していることが確認できます。
+
+図4拡.鏡を変更するコマンド（上）／リモートデスクトップのネットークレベル認証の無効化するコマンド（下）
+
+図5ログイン画.から拡.鏡の実. 
+DLLハイジャック
+DLLハイジャックは、 DLLファイルを読み込む際の検索パスの処理に起因して、同.ディレクトリに存在する特定のDLLファイルを読み込んでしまう問題です。攻撃の流れで説明したように、攻撃者は、ウイルスバスターCorp.サーバのアップデート配信機能を悪.し、被害者PCのウイルスバスターCorp.クライアントの特定のディレクトリに攻撃コードを含む「 dbghelp.dll」を展開させます。ウイルスバスターCorp.クライアントのプログラムが動作した際に、「%SystemRoot%￥System32」にある正規の「 dbghelp.dll」ではなく、特定のディレクトリに展開された不正なDLLファイルが読み込まれて攻撃コードが実.されます。表1は、このアップデート配信機能を悪.した攻撃で悪.可能なウイルスバスターCorp.クライアントのプログラムの .例で、いずれも PC起動時に.動実.されます
+表1 DLLハイジャック可能なプログラム
+プログラ確認バージム名ョン※7説明 
+PccNT‐13.0.0.1361ウイルスバスターCorp.クライアントモニターのプロセ Mon.exeス
+NTRt‐13.0.0.1361リアルタイムスキャンのプロセス Scan.exe 
+TmLis‐13.0.0.1361ウイルスバスターCorp.クライアントがウイルスバスタ 
+ten.exeーCorp.サーバと通信するためのプロセス 
+※7ウイルスバスターCorp. XG SP1の場合、Critical Patch 5294以降のパッチを適.したバージョンを利.することで、この攻撃による影響を緩和することが可能です。
+図6は、「 PccNTMon.exe」によって読み込まれたファイルを Process Monitorで確認したものです。「 dbghelp.dll」がシステムディレクトリ（%SystemRoot%￥system32）ではなく、トレンドマイクロ社製品のディレクトリ（C:￥Program Files￥Trend Micro￥Of.ceScan Client）から読み込まれてしまっていることが確認できます。
+
+図6「PccNTMon.exe」による読み込まれたファイル抜粋（Process Monitor）
+図7は、「 PccNTMon.exe」によって読み込まれた DLLファイルを Process Explorerで確認したものです。こちらでも、「 dbghelp.dll」が「 C:￥Program Files￥Trend Micro￥Of.ceScan Client」から読み込まれていることが確認できます。また、 .枠で示すように、「 dbghelp.dll」に含まれた「.refox.exe」（PowerShell）がPoshC2スクリプトを実.していることも確認できます。
+
+図7「PccNTMon.exe」による読み込まれた DLLファイル抜粋（Process Explore）
+カスタム PoshC2 
+攻撃者は、公開されている PoshC2の「 Core Dropper」のコード※8にセキュリティ制限を回避するコードをいくつか加え、攻撃に利.しています。ここでは、加えられた 3つのコードについて紹介します。 
+※8 
+Core 
+Dropper 
+--PoshC2 
+Framework 
+documentation 
+
+1つ.は、 Antimalware Scan Interface（AMSI）※9を回避するコードです（図8）。これは実.する環境がWindows 10の場合に動作します。 AMSIは、 Windows 10から標準で搭載されているマルウェア対策.のインターフェースで、悪意のあるスクリプトを検出する仕組みを提供します。しかし、 Windows 10バージョン1903では、 Windows Defenderによってブロックされていることが確認できます（図9）。 
+※9 
+Antimalware 
+Scan 
+Interface 
+(AMSI) 
+-Win32 
+apps 
+| 
+Microsoft 
+Docs 
+
+
+図8 AMSIを回避するコード
+
+図9 Windows Defenderによる AMSI回避コードを実.時のブロック状況（Windows 10バージョン1903） 
+2つ.は、 PowerShellスクリプトブロックのログ記録を無効にするコードです（図10）。こちらも実.する環境がWindows 10の場合に動作します。 Windows 10など PowerShell v5.0がインストールされた環境では、実.された PowerShellスクリプトがデフォルトでイベントログに記録されますが、攻撃者はこの制限を回避し、攻撃の痕跡を記録させない ..を.いています。
+
+図10 PowerShellスクリプトブロックのログ記録を無効にするコード
+最後の3つ.のコードは、 PoshC2の実.時間を指定するコード（図11）で、 OSのバージョンに関わらず実.されます。実.時間はスクリプトによっても異なりますが、平均的な勤め.の勤務時間を.安とした 8:00から 21:00ごろまで動くように設定されています。
+
+図11実.時間を制限するコード
+攻撃..3（MSBuildの悪.）
+これは Microsoft Build Engine（MSBuild）※10を悪.した攻撃..です。 .NET Frameworkラインタイムに標準で含まれる MSBuildは、 Visual Studioや.NET Frameworkのビルドエンジンであり、独.のXMLフォーマットファイル（プロジェクトファイル）を利.して .NETアプリケーションを作成できます。 PoshC2は、 EXE、DLL、BAT、JSなど様々なフォーマット ※11でペイロードを作成でき、そのうちの 1つにこの MSBuildで利.可能なXMLファイルがあります。 
+※10 
+MSBuild 
+-Visual 
+Studio 
+| 
+Microsoft 
+Docs 
+
+※11 
+PoshC2/resources/payload-templates 
+at 
+master 
+· 
+nettitude/PoshC2 
+· 
+GitHub
+図12は、 PoshC2によって作成された XMLファイルの .部コードです。 .枠で囲んだ部分が攻撃コードであり、 sc32が32bit環境.で、 sc64が64bit環境.です。この攻撃コードには、シェルコード、 PoshC2スクリプトを含むDLLファイル（PowershellDLL.dll）と.NETアプリケーション（Microsoft.dll）の3つが含まれています。図13は、攻撃コードを Base64デコードしたものであり、先頭から 0x364バイトまでがシェルコード（.枠）に該当し、その後に「 MZ」ヘッダが消された DLLファイルが含まれていることが確認できます。
+
+図12 PoshC2で作成した攻撃コードを含むMSBuild.のプロジェクトファイル（.部抜粋）
+
+図13 Base64デコード後の32ビット .の攻撃コード（.部抜粋）
+「MZ」ヘッダが消された DLLファイルには、 Base64とgzipでエンコードおよび圧縮された PoshC2スクリプトが含まれています（図14）。この PoshC2スクリプトは、攻撃コードの 3つ.に含まれる .NETアプリケーションによってメモリ上で実.され、「 MSBuild.exe」プロセスにインジェクションして動作します。 .NETアプリケーションは「 PowerShellRunner」※12をカスタマイズしたものであり、 PowerShellの機能を提供する「 System.Management.Automation.dll」を利 .することで、「 powershell.exe」を呼び出さず、 PowerShellスクリプトを実.します（図 15）。 
+※12 
+UnmanagedPowerShell/PowerShellRunner 
+at 
+master 
+· 
+leechristensen/UnmanagedPowerShell 
+· 
+GitHub 
+
+
+図14 DLLファイルに含まれた Base64でエンコードされた PoshC2コード（.部抜粋）
+
+図15 PowerShellRunnerのPowerShellスクリプト実.コード（.部抜粋） 
+C2インフラを定期的に変更
+攻撃者は、 2019年前半までは、 GCP（Google Cloud Platform）やMicrosoft Azureといったクラウドサービスを主要なC2サーバとして悪.していました。 2019年後半からは、 .港でVPSサービスを提供する Shenzhen Katherine Heng Technology Information（AS135357）やCloudie Limited（AS55933）が悪.されています。攻撃者は、 C2インフラを再利 .せず、定期的に変更して攻撃活動を.なっています。
+
+
+背後に潜む攻撃者グループ
+私たちは PoshC2を悪.した .連の攻撃について調べる中で、 .本や台湾を主な標的とする攻撃者グループTaidoor※13やBlackTechが、この .連の攻撃に関与している可能性があることを示す痕跡を確認しています。 
+※13攻撃キャンペーン名として使われている場合もあります。 
+Taidoor 
+トレンドマイクロ社のブログ ※14、NTT Security社のレポート※15やTaidoorが利.するマルウェア（SERKDES）の解析レポート※16で報告されている攻撃の..と以下の点が類似します。 
+
+2018年.2019年における .本への標的型攻撃での「 PoshC2」の悪. 
+
+Remote Access Auto Connection Manager（RasAuto）サービスを悪.した .動起動設定（図16）
+
+
+オンラインストレージサービスである「 Dropbox」の利. 
+
+※14
+この 
+.型連休前後に法.で注意すべき標的型攻撃の特徴を解説 
+|トレンドマイクロセキュリティブログ標的型攻撃キャンペーン「Taidoor」の活動が.本で活発化 
+|トレンドマイクロセキュリティブログ 
+
+※15 
+taidoorを.いた標的型攻撃解析レポート_v1 
+
+
+※16 
+BKDR_SERKDES.A 
+-脅威データベース
+
+
+
+図16 RasAutoサービスを悪.した PoweShellの.動実.登録例 
+BlackTech 
+PoshC2を悪.する .連の攻撃の中で、 BlackTechが利.する TSCookieやTSCookie Loader※17を確認しています。図17に示すように、 TSCookie Loaderが読み込むファイルは、「 *%c???.*」にマッチするファイル名です。今回のケースでは、 "%c"には、「 A」が .るため、ファイル名が「*A??.*」となっています。また、メモリ上にロードされる DLLファイル名は、正規のDLLファイル名と同じ「 gdiplus.dll」となっています（図18）。 
+※17攻撃グループBlackTechが侵.後に使.するマルウエア 
+-JPCERT/CC 
+Eyes 
+| 
+JPCERTコーディネーションセンター公式ブログ
+
+図17 TSCookie Loaderが読み込むファイル名
+これらの 2つの攻撃者グループの痕跡は同.組織の侵害事例の中で.つかっています。被害者PCに残されたマルウェア、イベントログや通信ログなどの痕跡を確認すると、同.期間に作成されたものではなく、いずれかの攻撃が.われた後、数ヶ.から半年ほど経ってから、新たに作成されたものでした。このことから、 2つの攻撃者グループは、「標的組織の情報」を共有し、連携しながら攻撃活動を.っている、または 1つの .きな攻撃者グループとして攻撃活動を.なっている可能性が考えられます。今回は、 2020年においても PoshC2を悪.した攻撃を引き続き確認しているため、この .連の攻撃について改めて紹介しました。昨今、Taidoorや BlackTechは、絶えず攻撃を仕掛けてきており、今後も新しい攻撃の..や攻撃ツールを変化させ、継続的に攻撃を仕掛けてくることが考えられます。
+今回の攻撃では、 .本の多くの企業が導.しているセキュリティ対策製品の脆弱性が悪.されており、 .本の組織を標的としていることがわかります。標的型攻撃の起点は、添付ファイルや本 .にリンクを含むスピアフィッシングメールが多いですが、 SSL VPN製品やルータ.ゲートウェイ製品の脆弱性を悪.するケースも多く、これらの製品の脆弱性を悪.されないためにも、 .々の脆弱性情報の管理と修正パッチの適.や緩和策の適.などの早急な対応が求められます。
+オープンソースのポート転送／トンネリングツールを悪.する標的型攻撃に注意また、これらの攻撃グループは、「 frp」や「 plink」といったポート転送／トンネリングツールを悪.してリモートデスクトップ（RDP）接続を.う攻撃を.うことも確認しています。ポート転送／トンネリングツールを悪.した RDPを利.した攻撃の詳細については「オープンソースのポート転送／トンネリングツールを悪.する標的型攻撃に注意」の LAC WATCHをご参照ください。
+ラックの脅威分析チームでは、今後もこの攻撃者グループについて継続的に調査し、広く情報を提供していきますので、ご活.いただければ幸いです。 
+MITRE ATT&CK Techniques 
+
+図18メモリ上にロードされる DLLファイル名
+以下に、 PoshC2を悪.した標的型攻撃で.いられる攻撃の..をまとめます。これらの ..は、 MITRE ATT＆CKフレームークに基づいて作成しています。 Tacticの「 Lateral Movement」、「 Collection」、「 Command and Control」、「 Ex.ltration」の項.については、多くが Mitre社のPoshC2で紹介※18されるテクニックが利.されています。 
+※18 
+PoshC2, 
+Software 
+S0378 
+| 
+MITRE 
+ATT&CK. 
+
+表2 MITRE ATT&CK Techniques 
+Tactic ID Name概要 
+Initial T1195 Supply Chainセキュリティ対策製品の脆弱性を悪.偽の Access Compromiseアップデートファイル配信
+Execu‐T1059 Command-Line regコマンドを利.したRDP設定変更やバ tion Interfaceッチファイルの実. 
+T1086 PowerShell PoshC2スクリプトの実. 
+T1035 Service RasAutoサービスを利.したPoshC2スク Executionリプトの実. 
+T1047 Scheduled Taskスケジュールタスクを利.したPoshC2スクリプトの実. 
+T1127 Trusted Develop‐MSBuild悪. er Utilities 
+Persis‐T1031 Modify Existing RasAutoサービスの変更 tence Service 
+T1050 New Serviceサービスの登録
+T1060 Registry Run .動起動のレジストリ追加 Keys / StartupFolder 
+T1015 Accessibility拡.鏡機能を悪.したcmd.exeによるバッ Featuresクドア
+De‐T1038 DLL Search Or‐正規の実.ファイルが使うDLLファイルと fense der Hijacking
+Eva‐同じ名前の悪性ファイルを同.ディレクト sionリに設置
+T1089 Disabling Securi‐PowerShellスクリプトブロックのログ記録 ty Toolsを無効、AMSIの回避
+T1140 Deobfuscate/De‐マルウェア内またはペイロードに含まれる code Files or 
+Information .字列を難読化
+T1107 File Deletion使.したファイルの削除
+T1055 Process Injection正規プログラム（msbuild.exe, notepad.exeなど）にインジェクション
+Tactic ID Name概要
+Cre-dential Access  T1003  Credential Dumping  Poweshellを利.したMimikatzの実.  
+Discov-ery  T1135  Network Share Discovery  netコマンドを利.したネットワ索  ークの探 
+T1082  System Informa-tion Discovery  dirコマンドによるファイル検索  
+T1049  System NetworkConnection Discovery  netstatコマンドによる通信しているIPアドレス.ポート番号や解放ポートを表示  
+T1057  Process Discovery  tasklistコマンドによるプロセス.覧情報を取得  
+Lateral Move-ment  T1076 T1021  Remote DesktopProtocol Remote Services  frpや攻撃者独.のトンネリングツールを利 .した外部からのRDP接続 Plinkを利.した外部からのRDP接続  
+
+T1021 Remote File PoshC2を利.したファイルのアップロー Copyドまたはダウンロード 
+IOC（Indicator Of Compromised）
+ハッシュ値
+7658d4c74b519187b2829359a921e374 f0fdb786ca994342a8a91adb5ba6987f
+通信先
+account[.]azure-microsoft[.]top 13[.]78[.]10[.]244 
+
+

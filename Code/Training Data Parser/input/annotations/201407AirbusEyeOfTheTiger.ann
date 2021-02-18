@@ -1,0 +1,96 @@
+T1	AttackerGroup 622 633	Pitty Tiger
+T2	AttackerGroup 870 881	Pitty Tiger
+T3	MalwareFamily 1324 1334	PittyTiger
+T4	Time 1432 1441	June 2014
+T5	AttackerGroup 1572 1583	Pitty Tiger
+T6	Time 1613 1617	2011
+T7	Time 1688 1692	2010
+T8	Malware 1782 1796	PittyTiger RAT
+T9	Malware 1837 1842	PlugX
+T10	Malware 1892 1902	PittyTiger
+T11	TrojanHorse 1913 1925	Troj/ReRol.A
+T12	Malware 1932 1938	CT RAT
+T13	TrojanHorse 1939 1945	MM RAT
+T14	TrojanHorse 1951 1965	Troj/Goldsun-B
+T15	Malware 1991 2002	Paladin RAT
+T16	Malware 2017 2026	Gh0st RAT
+R1	hasMember Arg1:T3 Arg2:T8
+T17	Exploit 2081 2095	spear phishing
+T18	AttackerGroup 2347 2358	Pitty Tiger
+T19	Vulnerability 2490 2500	HeartBleed
+T20	Vulnerability 2741 2754	CVE-2012-0158
+T21	Vulnerability 2782 2795	CVE-2014-1761
+T22	Attacker 2623 2634	Pitty Tiger
+T23	TrojanHorse 2873 2885	Troj/ReRol.A
+T24	Campaign 2949 2960	Pitty Tiger
+R2	involvesMalware Arg1:T24 Arg2:T23
+T25	Malware 2669 2699	Microsoft Office Word document
+R3	authored Arg1:T22 Arg2:T25
+R4	exploits Arg1:T25 Arg2:T20
+R5	exploits Arg1:T25 Arg2:T21
+T26	Malware 2990 3000	PittyTiger
+T27	Indicator 3124 3135	Pitty Tiger
+R6	indicates Arg1:T27 Arg2:T26
+T28	Malware 3233 3239	CT RAT
+T29	Malware 3268 3278	PittyTiger
+T30	Malware 3577 3583	MM RAT
+T31	Malware 3682 3696	Troj/Goldsun-B
+T32	Organization 3711 3717	Sophos
+T33	Attacker 3780 3791	Pitty Tiger
+R7	authored Arg1:T33 Arg2:T31
+R8	authored Arg1:T33 Arg2:T30
+T34	Exploit 3798 3809	Paladin RAT
+T35	Attacker 3860 3871	Pitty Tiger
+R9	authored Arg1:T35 Arg2:T34
+T36	Malware 3921 3930	Gh0st RAT
+T37	Exploit 4157 4168	Paladin RAT
+T38	Malware 4220 4229	Gh0st RAT
+T39	Attacker 4405 4416	Pitty Tiger
+R10	authored Arg1:T39 Arg2:T37
+T40	Exploit 4374 4381	Paladin
+R11	authored Arg1:T39 Arg2:T40
+T41	Attacker 4751 4762	Pitty Tiger
+T42	Indicator 4898 4912	avstore.com.tw
+T43	Indicator 4914 4935	sophos.skypetm.com.tw
+T44	Indicator 4937 4953	symantecs.com.tw
+T45	Indicator 4955 4972	trendmicro.org.tw
+T46	Attacker 5044 5055	Pitty Tiger
+T47	Attacker 5168 5179	Pitty Tiger
+T48	ExploitTargetObject 5227 5268	private company from the defense industry
+T49	ExploitTargetObject 5277 5309	academic network of a government
+T50	AttackerGroup 5850 5861	Pitty Tiger
+T52	Attacker 6296 6300	TooT
+T53	Attacker 6350 6354	TooT
+T54	Attacker 6519 6530	Automn Snow
+T55	Attacker 6540 6553	Cold Air Kiss
+T56	Attacker 6973 6977	Chen
+T51	Campaign 6008 6013	China
+R12	belongsTo Arg1:T53 Arg2:T50
+R13	belongsTo Arg1:T52 Arg2:T50
+R14	belongsTo Arg1:T54 Arg2:T50
+R15	belongsTo Arg1:T55 Arg2:T50
+R16	belongsTo Arg1:T56 Arg2:T50
+T57	Attacker 7241 7246	Lilly
+R17	belongsTo Arg1:T57 Arg2:T50
+T58	Malware 7477 7489	Troj/ReRol.A
+T59	Exploit 7520 7526	MM RAT
+T60	Exploit 7528 7534	CT RAT
+T61	Exploit 7536 7547	Pitty Tiger
+T62	Exploit 7549 7556	Paladin
+T63	Exploit 7582 7588	cp.exe
+T64	Exploit 7590 7600	mailpv.exe
+T65	Exploit 7621 7629	gsecdump
+T66	Exploit 7631 7638	NirSoft
+T67	Exploit 7646 7654	Mimikatz
+T68	Exploit 7679 7685	pr.exe
+T69	Exploit 7711 7717	po.exe
+T70	Exploit 7743 7751	ssql.exe
+T71	Exploit 7753 7759	Fluxay
+T72	Exploit 7883 7894	Pitty Tiger
+T73	Exploit 7899 7905	CT RAT
+T74	Exploit 7960 7966	CT RAT
+T75	Exploit 7987 7998	Pitty Tiger
+T76	Exploit 8020 8026	CT RAT
+T77	Malware 8051 8062	Pitty Tiger
+T78	Malware 8088 8099	Pitty Tiger
+T79	Exploit 8163 8171	calc.exe

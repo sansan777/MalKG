@@ -1,0 +1,589 @@
+Healthcare Ransomware Alert |.What to do.>
+
+
+
+
+
+1Alerts
+Download
+Buy
+Region
+Log In
+Folio (0)
+Contact Us
+
+Business.For Home.
+
+
+APT & Targeted Attacks
+SideWinder Uses South Asian Issues for Spear Phishing, MobileAttacks
+While tracking the activities of the SideWinder group, we identied a server used to deliver a malicious LNK le and host multiple credential phishing pages.In addition, we also found multiple Android APK les on their phishing server.
+By: Joseph C Chen, Jaromir Horejsi, Ecular XuDecember 09, 2020
+
+
+While tracking the activities of the SideWinder group, which has becomeinfamous for targeting the South Asia region and its surrounding countries, weidentied a server used to deliver a malicious LNK le and host multiplecredential phishing pages. We learned that these pages were copied from theirvictims¡¯ webmail login pages and subsequently modied for phishing. Webelieve further activities are propagated via spear-phishing attacks.
+The group¡¯s targets include multiple government and military units, mainly inNepal and Afghanistan. .After the gathered credentials are sent, some of thephishing pages will redirect victims to dierent documents or news pages. Thethemes and topics of these pages and documents are related to either Covid-19 or recent territory disputes between Nepal, Pakistan, India, and China.Furthermore, it seems that these lures are distributed via phishing links.
+We also found multiple Android APK les on their phishing server. While someof them are benign, we also discovered malicious les created with Metasploit.One of the normal applications, called ¡°OpinionPoll,¡± is a survey app forgathering opinions regarding the Nepal-India political map dispute, whichseems to be another political lure similar to the one they used in the spear-phishing portion. We believe these applications are still under developmentand will likely be used to compromise mobile devices in the future.
+SideWinder has been very active in 2020. Earlier this year, we published areport on how the SideWinder APT group used the Binder exploit to attackmobile devices. The group also launched attacks against Pakistan, Bangladesh,and China using lure les related to Covid-19.
+Analysis of the malicious document
+The use of malicious documents is one of SideWinder¡¯s most commoninfection vectors. We collected several dierent samples from the campaign,including:
+1...... An LNK le that downloads an RTF le and drops a JavaScript le
+2...... A ZIP le containing an LNK le, which downloads an HTA le (withJavaScript)
+3...... An RTF le that drops a JavaScript le
+4...... A PDF le with an embedded JavaScript stream
+5...... A DOCX le with an external link to an OLE object (RTF le), whichcontains and drops a JavaScript le
+Figure 1. An example of a downloaded ZIP file containing an LNK file that is used to download a malicious HTA file
+All of these cases end up with either the downloading or dropping of les andthen the execution of JavaScript code, which is a dropper used to install themain backdoor + stealer.
+The downloaded RTF les exploit the CVE-2017-11882 vulnerability. It drops ale named 1.a (a JavaScript code), which drops the backdoor + stealer into afolder in ProgramData and directly executes it or creates a scheduled task toexecute the dropped les at a later time.
+Figure 2. A scheduled task with a command to execute the dropped backdoor + stealer
+The content of the newly created folder contains a few les, includingRekeywiz (EFS REKEY wizard,FA86B5BC5343CA92C235304B8DCBCF4188C6BE7D4621C625564BEBD5326ED850), which is a legitimate Windows application..
+Figure 3. List of dropped files
+This application loads various system DLL libraries, including shell32.dll, whichsideloads DUser.dll, one of shell32¡¯s DelayImports..
+Figure 4. DUser library as DelayImport of shell32 library
+However, a fake DUser.dll gets loaded into the process. This fake DLL librarydecrypts the main backdoor + stealer from the .tmp le in the same directory.
+Figure 5. Algorithm for decrypting both main backdoor + stealer and configuration
+The decryption process is a simple XOR, where the key is the rst 32 bytesfrom the encrypted le and the payload are the remaining bytes. Thedecrypted payload is the main backdoor .NET executable binary.
+Figure 6. Decrypted main SystemApp with listing its classes and resources
+In Resources, the Default resource contains the encrypted conguration.After decryption (using the same principle as with the main backdoor +stealer), the conguration reveals which le formats the attackers aretargeting.
+Figure 7. The decrypted configuration
+The main functions of the backdoor + stealer are: 1) Downloading the .NET executable and running it 2) Collecting system information and uploading it to the command-and-control(C&C) server 3) Uploading selected les to the C&C server
+The collected information is in JSON format (hence why the Newtonsoft_Jsonlibrary stored in Resources is loaded) and includes information such asprivileges, user accounts, computer system information, antivirus programs,running processes, processor information, operating system information,timezone, installed Windows updates, network information, list of directories inUsers\%USERNAME%\Desktop, Users\%USERNAME%\Downloads,Users\%USERNAME%\Documents, Users\%USERNAME%\Contacts, as well asinformation on all drives and installed apps.
+The spear-phishing attack
+We found several interesting dynamic DNS domains resolving to a server thatwas used to deliver SideWinder¡¯s malicious documents. The subdomains ofthese dynamic DNS domains are designed to be similar to the domains of theirvictims¡¯ mail servers. For example, ¡°mail-nepalgovnp[.]duckdns[.]org¡± wascreated to pretend to be the original Nepal government¡¯s domain¡°mail[.]nepal[.]gov[.]np¡±. .Digging deeper, we found that it hosted severalphishing pages.
+These pages were copied from the webmail servers of various targets and thenmodied for spear-phishing attacks designed to steal login credentials.Although it¡¯s not clear to us how these phishing pages are delivered to thevictims, nding the original webmail servers that they copied to make thesephishing pages allows us to identify who they were targeting.
+Analysis of the phishing pages revealed that most of them would redirect tothe original webmail servers, which they copied after the victims sent out theirlogin credentials. However, we also found some of them will either redirect todocuments or news pages. These documents and news are probablyinteresting in some way to their targets and are used to make them click andlog in to the phishing pages. While several of the documents are related toCovid-19, we also found some documents or news related to territorial issuesin South Asia, including:
+¡°India Should Realise China Has Nothing to Do With Nepal¡¯s Stand on Lipulekh¡± ¨C a news articlethat discusses India-China con.in May.
+¡°India reaction after new pak map.pdf¡± ¨C a document talking about India¡¯s response to thenew political map revealed by Pakistan in August.
+¡°Ambassador Yanchi Conversation with Nepali_Media.pdf¡± ¨C a document describing an interviewwith China's ambassador to Nepal regarding Covid-19, the Belt and Road Initiative, andterritorial issues.in the Humla district.
+
+The following table shows their targets, related phishing domains, and luredocuments used in each of the phishing attacks.
+Date
+ Phishing Domain
+ TargetedOrganization
+ Targeted Mailserver
+ Redirection afterlogin
+ 
+2019Nov
+ .
+ Government ofNepal
+ mail.nepal.gov.np
+ Redirect to le¡°IMG_0002.pdf¡±
+ 
+2019Nov
+ .
+ Ministry ofDefence, Nepal
+ mail.mod.gov.np
+ Redirect tooriginal mailserver
+ 
+2019Dec
+ mail-mofagovnp.zapto[.]org
+ Ministry of ForeignAairs, Nepal
+ mail.mofa.gov.np
+ Redirect to webnews ¡°China,Nepal sign trade,infrastructure andsecurity deals¡±
+ 
+2019Dec
+ .
+ Government ofNepal
+ mail.nepal.gov.np
+ Redirect to le¡° consultation_1523857630.pdf¡±
+ 
+2020Jan
+ imail.aop.gov-af[.]org
+ AdministrativeOce of thePresident,Afghanistan
+ imail.aop.gov.af
+ Redirect to webpage¡° Observation OfTechnology Use inAfghanistanGovernmentSector¡±
+ 
+2020Jan
+ mail-nscaf.myftp[.]org
+ AfghanistanNational SecurityCouncil
+ mail.nsc.gov.af
+ Redirect tohttps://wikipedia.org/USB_Killer
+ 
+2020Jan
+ mail-nepalarmymilnp.duckdns[.]org
+ Nepali Army
+ mail.nepalarmy.mil.np
+ Redirect to PDF¡° EN Digital NepalFramework V8.415 July 2019.pdf¡±
+ 
+2020Jan
+ mail-mofagovnp.hopto[.]org
+ Ministry of ForeignAairs, Nepal
+ mail.mofa.gov.np
+ Redirect to PDF¡° national-security-vol-3-issue-1-essay-SSimkhada.pdf¡±
+ 
+2020Jan
+ webmail.mohe.gov-af[.]org
+ Ministry of HigherEducation,Afghanistan
+ webmail.mohe.gov.af
+ Redirect tooriginal mailserver
+ 
+2020Feb
+ .
+ Ministry ofDefense, Sri Lanka
+ mail.defence.lk
+ Login Error
+ 
+2020Feb
+ mail.moha.gov-np[.]org
+ Ministry of HomeAairs, Nepal
+ mail.moha.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Feb
+ mail.nsc.gov-af[.]org
+ AfghanistanNational SecurityCouncil
+ mail.nsc.gov.af
+ Redirect tooriginal mailserver
+ 
+2020Feb
+ mail.arg.gov-af[.]org
+ Presidential Palace,Afghanistan
+ mail.arg.gov.af
+ Redirect tooriginal mailserver
+ 
+2020Feb
+ mail.arg.gov-af[.]org
+ Presidential Palace,Afghanistan
+ mail.arg.gov.af
+ Redirect tooriginal mailserver
+ 
+2020Feb
+ .
+ Center forEducation andHuman ResourceDevelopment,Nepal
+ mail.doe.gov.np
+ Redirect to le¡°Para BasicCourse JoiningInstruction.docx¡±
+ 
+2020Mar
+ mail-nepalgovnp.duckdns[.]org
+ Government ofNepal
+ mail.nepal.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Mar
+ .
+ Nepal ElectricityAuthority
+ mail.nea.org.np
+ Redirect tooriginal mailserver
+ 
+2020Mar
+ mail-nepalgovnp.duckdns[.]org
+ Government ofNepal
+ mail.nepal.gov.np
+ Redirect to le¡°central dataform.pdf¡±
+ 
+2020Mar
+ mail-nepalarmymilnp.duckdns[.]org
+ Nepali Army
+ mail.nepalarmy.mil.np
+ Redirect to le¡°Corona VirusPreparednessandResponse.pdf¡±
+ 
+2020Mar
+ mail-nepalpolicegov.hopto[.]org
+ Nepal Police
+ mail.nepalpolice.gov.np
+ Redirect to le¡°1987 Conductingtraining onCOVID-19 andkeeping it inreadiness.pdf¡±
+ 
+2020Apr
+ mail-nrborg.hopto[.]org
+ Nepal Rastra Bank
+ mail.nrb.gov.np
+ Redirect to le¡±u.pdf¡±
+ 
+2020May
+ mail-nepalarmymilnp.duckdns[.]org
+ Nepali Army
+ mail.nepalarmy.mil.np
+ Redirect to webnews ¡°IndiaShould RealiseChina HasNothing to DoWith Nepal¡¯sStand onLipulekh¡±
+ 
+2020Jun
+ mail-nepalarmymilnp.duckdns[.]org
+ Nepali Army
+ mail.nepalarmy.mil.np
+ Showing loginfailed message
+ 
+2020Jul
+ .
+ Qatar Charity
+ mail.qcharity.org
+ Redirect tooriginal mailserver
+ 
+2020Jul
+ .
+ Myanma Posts andTelecommunications
+ webmail.mpt.net.mm
+ Redirect tooriginal mailserver
+ 
+2020Aug
+ mail-ncporgnp.hopto[.]org
+ Nepal CommunistParty
+ mail.ncp.org.np
+ Redirect to le¡°India reactionafter new pakmap.pdf¡±
+ 
+2020Aug
+ mail-nscaf.myftp[.]org
+ AfghanistanNational SecurityCouncil
+ mail.nsc.gov.af
+ Redirect to10[.]77[.]17[.]10/Software/03-Applications
+ 
+2020Sep
+ mail-mofgovnp.hopto[.]org
+ ............................Ministry of Finance,Nepal
+ mail.mof.gov.np
+ Redirect to le¡°1987 Covid.pdf¡±
+ 
+2020Sep
+ mail-ncporgnp.hopto[.]org
+ Nepal CommunistParty
+ mail.ncp.org.np
+ Redirect todocument ¡° Thespectre of a newMaoist conict inNepal¡±
+ 
+2020Sep
+ imail.aop.gov-af[.]org
+ AdministrativeOce of thePresident,Afghanistan
+ imail.aop.gov.af
+ Redirect to le¡°SOP of MilitaryUniform .pdf¡±
+ 
+2020Oct
+ mail-nepalpolicegovnp.duckdns[.]org
+ Nepal Police
+ mail.nepalpolice.gov.np
+ Redirect to le¡°2077-07-03 1239Regardinginvestigation andaction.pdf¡±
+ 
+2020Oct
+ .
+ Civil AviationAuthority of Nepal
+ mail.caanepal.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Oct
+ mail-apfgovnp.ddns[.]net mail-apfgavnp.hopto[.]org
+ Armed PoliceForce, Nepal
+ mail.apf.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Oct
+ mail-nscaf.myftp[.]org
+ AfghanistanNational SecurityCouncil
+ mail.nsc.gov.af
+ Redirect to le ¡°ITServices RequestForm.pdf¡±
+ 
+2020Nov
+ mail-ntcnetnp.serveftp[.]com
+ Nepal Telecom
+ webmail.ntc.net.np
+ Redirect tooriginal mailserver
+ 
+2020Nov
+ mail-kmgcom.ddns[.]net
+ Kantipur MediaGroup
+ mail.kmg.com.np
+ Redirect tooriginal mailserver
+ 
+2020Nov
+ .
+ Federal Parliamentof Nepal
+ mail.parliament.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Nov
+ .
+ PublicProcurementMonitoring Oce,Nepal
+ mail.ppmo.gov.np
+ Redirect tooriginal mailserver
+ 
+2020Nov
+ mail-mfagovcn.hopto[.]org
+ Ministry of ForeignAairs, China
+ mail.mfa.gov.cn
+ Redirect to le¡° AmbassadorYanchiConversation withNepali_Media.pdf¡±
+ 
+
+
+
+Figure 8. SideWindera..s phishing page disguised as a Nepalese Army OWA (Outlook Web Access) Page
+Figure 9. The lure document redirected from the phishing page that discusses Indian and Pakistani political map issues
+Figure 10. The lure document covering the interview of Chinaa..s ambassador to Nepal
+Android applications
+We also identied multiple Android APK les on their server. Interestingly,these Android applications still seem to be under the initial developmentphase as they are basic, still use the default Android icons, and have nopractical function for users.
+Figure 11. The default Android icons used by the APKs
+We noticed two applications among them, named ¡°My First APP¡± and ¡°OpinionPoll,¡± that seemingly have no malicious behavior. My First APP demonstrateslogin & register processes, while Opinion Poll acts as an opinion pollingapplication for the Indian-Nepalese political map dispute. The rst applicationis likely an Android demo application for beginners, while the second onestarts with an explanation.of ¡°Opinion Writing,¡± followed by a survey.
+Figure 12. Non-malicious applications a..My First APPa.. and a..Opinion Polla..
+Another two applications were built from JavaPayload for Metasploit that willload extra code from the remote server congured in the sample. While wewere unable to retrieve the payload, according to the Manifest that requestsnumerous privacy-related permissions like location, contacts, call logs, etc., wecan infer that it goes after the user¡¯s private data. These two samples appearto be debug versions as they have no activities or any other component exceptMetasploit.
+Figure 13. Build from Metasploit and Request Permissions
+We also identied a malicious version of the My First APP application thatadded Metasploit whose class names have been obfuscated.
+Figure 14. Malicious version of My First APP, which adds Metasploit
+SideWinder has used malicious apps as part of its operation before. In thecampaign referenced earlier, the group used malicious APKs disguised asphotography and le manager tools to lure users into downloading them.Once downloaded into the user¡¯s mobile device, the malicious APKs launch aseries of fairly sophisticated procedures that includes rooting the device tostealthily deploy the payload, as well as exploiting CVE-2019-2215 andMediaTek-SU vulnerabilities for root privileges. The payload¡¯s ultimate goal is togather information from the compromised device and then send it back to itsC&C server.
+In the case of these newer APKs, it seems that the goal is to gather userinformation as well. Unlike the earlier apps, which were already on the GooglePlay Store, all the APK les found on their server are not mature enough for adeliberate attack. In our opinion, these are still in the initial stage, and thepayloads (directed at mobile users) are still being rened further.
+Conclusion
+As seen with their phishing attacks and their mobile device tools¡¯ continuousdevelopment, SideWinder is very proactive in using trending topics like Covid-19 or various political issues as a social engineering technique to compromisetheir targets. Therefore, we recommend that users and organizations bevigilant and follow social engineering best practices to protect themselves fromthese kinds of campaigns.
+Indicator of Compromise
+Android Part IoCs
+Indicator
+ Packagename
+ Label
+ C2 server
+ Detection
+ 
+0c182b511daa384651e478155632c6e65820322774e416be20e6d49bb8f9
+ com.example.rstandoidapp
+ MyFirstApp
+ -
+ .
+ 
+061b0379a12b88488db8540226e400e3f65fef9a4c1aa7744da9f17e1d93d78d
+ com.example.opinionpoll
+ OpinionPoll
+ -
+ .
+ 
+fb6ac9d93fd47db3d32f6da6320344a125e96754a94babb9d9d12b6604a42536
+ com.metasploit.stage
+ MainActivity
+ https://185.225.19[.]46:4589
+ AndroidOS_Metasploit.HRX
+ 
+468b74883536938ef3962655dfcc3ca4097ca9b5b687dfc1fef58d50e96dc248
+ com.metasploit.stage
+ MainActivity
+ tcp://185.225.19.46[:]4875
+ .AndroidOS_Metasploit.HRX
+ 
+a377e5f4bf461b86f938959256b7ab8b1b40bb9fd3cd45951c736a22366a8dd1
+ com.example.rstandoidapp
+ MyFirstApp
+ tcp://185.225.19.46[:]4875
+ AndroidOS_Metasploit.HRX
+ 
+
+Malicious documents and related payloads IoCs
+Indicator
+ Description
+ Detection
+ TrendX
+ 
+1CBEC920AFE2F978B8F84E0A4E6B757D400AEB96E8C0A221130060B196ECE010
+ docx
+ Trojan.W97M.CVE20170199.FAIL
+ .
+ 
+7238F4E5EDBE0E5A2242D8780FB58C47E7D32BF2C4F860C88C511C30675D0857
+ RTF le
+ Trojan.W97M.SIDEWINDER.A
+ .
+ 
+75C158CEA14E338C8D9D32ED988C7032DA9AE6D54F5B1126ED6A83F71B9E03BF
+ 1.a JS le
+ Trojan.JS.SIDEWINDER.A
+ Downloader.JS.TRX.XXJSE9EFF018
+ 
+AB6E8563214EEB747ABF77F9CC50796CC6A0C0562C6BEC720D7F2C978D34C412
+ Fake DUser.dll
+ Trojan.MSIL.SIDEWINDER.A
+ .
+ 
+CBD5C68F5C4345B68F018D9E5810574E8036A2BC4D826BE5C8779E8019449957
+ Final payload
+ Trojan.Win32.SIDEWINDER.B
+ .
+ 
+34446F7F60F730FCCA145155D10D1AFF0A1153B085836DF38313772CD03C8D70
+ RTF le
+ Trojan.W97M.CVE201711882.YQUOOWV
+ .
+ 
+7238F4E5EDBE0E5A2242D8780FB58C47E7D32BF2C4F860C88C511C30675D0857
+ RTF le
+ Trojan.W97M.SIDEWINDER.A
+ .
+ 
+AB7C1967BF1FEFDFFDE93626B78EB30994655AB02F59E0ADB0935E3E599A953F
+ RTF le
+ Trojan.W97M.SIDEWINDER.A
+ .
+ 
+2548A819E4C597BA5958D2D18BAA544452948E5B00271570192CCD79ABE88E8D
+ 1.a JS le
+ Trojan.JS.SIDEWINDER.A
+ Downloader.JS.TRX.XXJSE9EFF018
+ 
+ED5E1D6E914DE64A203F2F32AB95176FC7EFFF3A520915971D5FE748E79D611C
+ 1.a JS le
+ Trojan.JS.SIDEWINDER.A
+ Downloader.JS.TRX.XXJSE9EFF018
+ 
+96BF8F579ACB8D9D0FF116D05FDADEF85953F11E5B2E703041FDAE0ABF5B75DC
+ 1.a JS le
+ Trojan.JS.SIDEWINDER.A
+ Downloader.JS.TRX.XXJSE9EFF018
+ 
+940265867D5668956D64ADF9FC4B9C6CF9E7FCFCF5C21BA7BF0BEA77B5EDD047
+ Fake DUser.dll
+ Trojan.MSIL.SIDEWINDER.A
+ .
+ 
+B22946CFEFE8646CB034F358C68CAAE5F30C1CF316CFFEAF77021C099E362C64
+ Fake DUser.dll
+ Trojan.MSIL.SIDEWINDER.A
+ .
+ 
+89E392FA49C6A6AEB9056E3D2F38B07D0DD7AF230CD22E3B01C71F05A3AECA0B
+ Fake DUser.dll
+ Trojan.MSIL.SIDEWINDER.A
+ .
+ 
+EB2D82DD0799196FCF631E15305676D737DC6E40FF588DCF123EDACD023F1C46
+ Final payload
+ Trojan.Win32.SIDEWINDER.B
+ .
+ 
+7ECAEFCB46CDDEF1AE201B1042A62DD093594C179A6913A2DE47AB98148545DD
+ Final payload
+ Trojan.Win32.SIDEWINDER.B
+ .
+ 
+799260B992C77E2E14F2D586665C570142D8425864455CAB5F2575015CD0B87A
+ Final payload
+ Trojan.Win32.SIDEWINDER.B.
+ .
+ 
+brep.cdn-edu[.]net
+ RTF delivery server
+ .
+ 
+www.mfa.lesrvr[.]net
+ RTF delivery server
+ .
+ 
+www.google.gov-pok[.]net
+ RTF delivery server
+ .
+ 
+ap-ms[.]net
+ C&C
+ .
+ 
+cdn-sop[.]net
+ C&C
+ .
+ 
+fqn-cloud[.]net
+ C&C
+ .
+ 
+ms-trace[.]net
+ C&C
+ .
+ 
+imail.aop.gov-af[.]org
+ Phishing Domain
+ .
+ 
+mail-apfgavnp.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-apfgovnp.ddns[.]net
+ Phishing Domain
+ .
+ 
+mail-kmgcom.ddns[.]net
+ Phishing Domain
+ .
+ 
+mail-mfagovcn.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-mofagovnp.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-ncporgnp.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-nepalarmymilnp.duckdns[.]org
+ Phishing Domain
+ .
+ 
+mail-nepalgovnp.duckdns[.]org
+ Phishing Domain
+ .
+ 
+mail-nepalpolicegov.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-nepalpolicegovnp.duckdns[.]org
+ Phishing Domain
+ .
+ 
+mail-nrborg.hopto[.]org
+ Phishing Domain
+ .
+ 
+mail-nscaf.myftp[.]org
+ Phishing Domain
+ .
+ 
+mail-ntcnetnp.serveftp[.]com
+ Phishing Domain
+ .
+ 
+mail.arg.gov-af[.]org
+ Phishing Domain
+ .
+ 
+mail.moha.gov-np[.]org
+ Phishing Domain
+ .
+ 
+mail.nsc.gov-af[.]org
+ Phishing Domain
+ .
+ 
+webmail.mohe.gov-af[.]org
+ Phishing Domain
+ .
+ 
+
+
+Tags
+ResearchArticles, News, ReportsAPT & Targeted AttacksAuthors
+Joseph C Chen
+Threat Researcher
+
+Jaromir Horejsi
+Threat Researcher
+
+Ecular Xu
+Mobile ThreatsAnalyst
+
+
+Contact Us
+Related Articles
+Who is the Threat ActorBehind Operation EarthKitsune?
+Overview of RecentSunburst TargetedAttacks
+Egregor RansomwareLaunches String ofHigh-Prole Attacks toEnd 2020
+
+Archives
+
+
+Contact Sales
+Locations
+Careers
+Newsroom
+Privacy
+Accessibility
+Support
+Site map
+
+.
+.
+.
+.
+.
+
+Copyright . 2020 Trend Micro Incorporated. All rights reserved.
+
+

@@ -1,0 +1,715 @@
+
+2/12/2019 
+2018: A Year of Cyber Attacks – HACKMAGEDDONABOUT 
+SUBMIT AN ATTACK 
+CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS.HACKMAGEDDON 
+Information Security Timelines and Statistics 
+Cyber Attacks Statistics 
+Cyber Attacks Timeline 
+Security 
+
+2018: A Year of Cyber Attacks 
+. 
+January 15, 2019 
+. 
+Paolo Passeri . 1 Comment 
+. 
+2017, 2018, Cyber Attacks, Cyber 
+Crime, Cyber Espionage, Cyber Warfare, Hacktivism, Statistics, Timeline 
+
+. Views: 12,048 
+Finally I can summarize all the events and statistics collected in 2018, quite a complicated year from an infosec perspective. For those of you that keep asking, every two weeks (more or less) I publish a timeline 
+with 
+the 
+main 
+cyber attacks occurred in that period. Every timeline contains the link with the details of the events, and nally, every month (more or less), the timelines are aggregated to provide a statistical overview 
+of the period. Moreover, the taxonomy of the categories is inherited from the International Standard Industrial Classication 
+
+So during 2018, I have collected a total of 1337 events that you can nd in the following table (and after the table you will nd the statistics): 
+
+Show 10 entries 
+Search: 
+Date  Author  Target  Description  Attack  Target Class  Atta ck Clas s  Coun try  Link  
+
+https:/Date  /www.hackAut…  mageddon.coTarget  m/2019/01/15/2018-a-year-of-cyber-Description  attacks/Att…  Targ…  …  …  L…  
+
+
+Date  Aut…  Target  Description  Att…  Targ…  …  …  L…  
+
+Date 
+2/12/2A. 
+Author 
+019BOUT 
+Target 
+SUBMDescription 
+IT AN ATTACK 
+2CYBERAttack 
+ATTAC018: A YearTarget 
+ClassKS TIMELINE 
+.of Cyber AttAtta 
+ckacks – HClas 
+s 
+Coun 
+tryACKMLink 
+AGEDDON 
+01/10/ 
+Attacke 
+Canadian 
+A report from The Citizen Lab 
+Malware 
+X 
+Cybe 
+CA 
+Link 
+2018 
+rs 
+linked 
+to Saudi 
+Arabia? 
+permane 
+nt 
+resident 
+and 
+Saudi 
+dissident 
+Omar 
+Abdulaziz 
+reveals that the Canadian 
+permanent resident and 
+Saudi dissident Omar 
+Abdulaziz was targeted by an 
+attack infecting his phone 
+with NSO’s Pegasus spyware. 
+/PoS 
+Malware 
+Individual 
+r 
+Espio 
+nage 
+(http 
+s://ci 
+tizenl 
+ab.ca 
+/201 
+8/10/ 
+the­kingd 
+om­came 
+­to­cana 
+da­how­saudi 
+­linke 
+d­digita 
+l­espio 
+nage 
+­reach 
+ed­cana 
+dian­soil/) 
+01/10/ 
+? 
+Apollo 
+Apollo, a sales engagement 
+Unknow 
+S Other 
+Cybe 
+US 
+Link 
+2018 
+startup boasting a database 
+n 
+service 
+r 
+(http 
+of more than 200 million 
+activities 
+Crim 
+s://te 
+contact records, is hacked 
+e 
+chcru 
+and sends an email to its 
+nch.c 
+affected customers. 
+om/2 
+018/ 
+10/0 
+1/ap 
+ollo­conta 
+cts­data­breac 
+h/) 
+01/10/ 
+Roamin 
+iOS Users 
+Kaspersky discover that the 
+Maliciou 
+X 
+Cybe 
+>1 
+Link 
+2018 
+g 
+Roaming Mantis group is 
+s Script 
+Individual 
+r 
+(http 
+Mantis 
+testing a new monetization 
+Injectio 
+Crim 
+s://s 
+scheme by redirecting iOS 
+n 
+e 
+ecure 
+users to pages that contain 
+list.c 
+the Coinhive in­browser 
+om/r 
+mining script rather than the 
+oami 
+normal Apple phishing page. 
+ng­manti 
+s­part­3/88 
+071/) 
+02/10/ 
+Hidden 
+US Banks 
+A joint technical alert from 
+Malware 
+K 
+Cybe 
+US 
+Link 
+2018 
+Cobra 
+AKA 
+Lazarus 
+Group 
+the DHS, the FBI, and the 
+Treasury warns about a new 
+ATM cash­out scheme, 
+dubbed “FASTCash,” used by 
+the Hidden Cobra APT. 
+/PoS 
+Malware 
+Financial 
+and 
+insurance 
+activities 
+r 
+Crim 
+e 
+(http 
+s://s 
+ecurit 
+yaffai 
+rs.co/ 
+word 
+press 
+/767 
+98/h 
+ackin 
+g/fas 
+tcash 
+­hidde 
+n­cobra 
+­attac 
+ks.ht 
+ml) 
+CYBER ATTACKS STATISTICS 
+Date 
+A. 
+ Author 
+BOUT 
+ Target SUBM Description 
+IT AN ATTACK 
+CYBER Attack ATTAC Target 
+ClassKS TIMELINE 
+. 
+ Atta ck Clas s  Coun try  Link 
+ 
+02/10/  ?  SBM  Mauritius banking group SBM  Fraudul  K  Cybe  IN  Link  
+2018  Holdings (State Bank of Mauritius India)  Holdings unveils that its Indian operations suffered a cyber fraud earlier in the week, and that the bank has potentially lost up to $14 million worth. The bank is able to recover $10 million.  ent SWIFT Transac tions  Financial and insurance activities  r Crim e  (http 
+s://w 
+ww.bl 
+oomb 
+ergqu 
+int.co 
+m/bu 
+sines 
+s/cyb 
+eratt 
+ack­on­india 
+n­opera 
+tions­of­state 
+­ban… 
+of­maur 
+itius 
+#gs. 
+x1XB 
+woM) 
+ 
+02/10/  ?  Individual  Researchers from ProofPoint  Malware  X  Cybe  US  Link  
+2018  s in the US  discover a new DanaBot campaign spread through Malspam campaign installing the Hancitor malware.  /PoS Malware  Individual  r Crim e  (http 
+s://w 
+ww.p 
+roofp 
+oint.c 
+om/u 
+s/thr 
+eat­insig 
+ht/po 
+st/da 
+nabot 
+­gains 
+­popul 
+arity­and­targe 
+ts­us­organ 
+izatio 
+ns­large 
+­camp 
+aigns 
+) 
+ 
+
+.Date  Aut…  Target  Description  Att…  Targ…  …  …  L…  
+Date  Aut…  Target  Description  Att…  Targ…  …  …  L…  
+
+Date 
+A. 
+Author 
+BOUT 
+Target 
+SUBMDescription 
+IT AN ATTACK 
+CYBERAttack 
+ATTACTarget 
+ClassKS TIMELINE 
+. 
+Atta 
+ck 
+Clas 
+s 
+Coun 
+try 
+Link 
+02/10/ 
+? 
+Android 
+Researchers from Fortinet 
+Malware 
+X 
+Cybe 
+>1 
+Link 
+2018 
+Users in 
+unveil a new round of attack 
+/PoS 
+Individual 
+r 
+(http 
+Japan 
+carried on via the FakeSpy 
+Malware 
+Crim 
+s://n 
+and 
+Android malware. 
+e 
+ews.s 
+Korea 
+oftpe 
+dia.c 
+om/n 
+ews/f 
+akes 
+py­is­back­as­part­of­new­smis 
+hing­camp 
+aign­adds­new­featu 
+res­5230 
+40.sh 
+tml) 
+02/10/ 
+? 
+City of 
+A city of Regina email is 
+Account 
+O Public 
+Cybe 
+CA 
+Link 
+2018 
+Regina 
+hacked, and used as a 
+phishing tool to try and get 
+passwords and emails from 
+other city of Regina staff as 
+well as external groups. 
+Hijackin 
+g 
+administr 
+ation, 
+defence, 
+compulso 
+ry social 
+security 
+r 
+Crim 
+e 
+(http 
+s://gl 
+obaln 
+ews.c 
+a/ne 
+ws/4 
+5213 
+46/ci 
+ty­of­regin 
+a­email 
+­hack 
+ed­exper 
+ts­warn 
+­citys­websi 
+te­unsaf 
+e­as­well/) 
+02/10/ 
+? 
+WhatsAp 
+A wave of reports about 
+Account 
+X 
+Cybe 
+IL 
+Link 
+2018 
+p Users 
+hijacked WhatsApp accounts 
+Hijackin 
+Individual 
+r 
+(http 
+in Israel 
+in Israel has forced the 
+g 
+Crim 
+s://w 
+government's cyber­security 
+e 
+ww.z 
+agency to send out a nation­dnet. 
+wide security alert. 
+com/ 
+articl 
+e/rec 
+ent­wave 
+­of­hijac 
+ked­what 
+sapp­accou 
+nts­trace 
+d­back­to­voice 
+mail­hacki 
+ng/) 
+CYBER ATTACKS STATISTICS 
+Date 
+A. 
+Author 
+BOUT 
+Target 
+SUBMDescription 
+IT AN ATTACK 
+CYBERAttack 
+ATTACTarget 
+ClassKS TIMELINE 
+. 
+Atta 
+ck 
+Clas 
+s 
+Coun 
+try 
+Link 
+03/10/ 
+APT10 
+Managed 
+The US Department of 
+Targete 
+J 
+Cybe 
+US 
+Link 
+2018 
+AKA 
+Red 
+Apollo, 
+Stone 
+Panda, 
+POTASS 
+IUM, 
+MenuPa 
+ss, 
+Cloud 
+Hopper, 
+Red 
+Leaves 
+Service 
+Providers 
+Homeland Security issues an 
+alert about "ongoing" cyber­attacks against managed 
+service providers, indirectly 
+attributed to APT10. 
+d Attack 
+Informati 
+on and 
+communi 
+cation 
+r 
+Espio 
+nage 
+(http 
+s://w 
+ww.z 
+dnet. 
+com/ 
+articl 
+e/dhs 
+­awar 
+e­of­ongoi 
+ng­apt­attac 
+ks­on­cloud 
+­servi 
+ce­provi 
+ders/ 
+) 
+Date 
+Aut… 
+Target 
+Description 
+Att… 
+Targ… 
+… 
+… 
+L… 
+CYBER ATTACKS STATISTICS 
+Showing 1 to 10 of 1,337 entries 
+….. 
+1 
+2345 
+134 
+.. 
+Now, let’s have a closer look at the statistics derived from the mega 
+timeline of 2018. The chart 
+compares the total events in 2017 
+and 
+2018 on a monthly basis. Clearly, with the sole exception of August, the 
+level of activity has been constantly higher in 2018. 
+Monthly Attacks (2017 vs 2018) 
+hackmageddon.com 
+
+JanMarMayJulSepNov020406080100120140160EventsDatThe daily detail is provided in the following charts, which also shows the breakdown for each category. The chart is interactive so you can see the 
+single value scrolling over it. You can also select the single categories forABOUT 
+SUBMIT AN ATTACK 
+CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS2/12/2019 
+2018: A Year of Cyber Attacks – HACKMAGEDDON.each year.Events 
+Daily Events Per Category (2017 vs 2018) 
+hackmageddon.com 
+12 
+10 
+8 
+6 
+4 
+2 
+0 01­Jan 08­Feb 18­Mar 25­Apr 02­Jun 10­Jul 17­Aug 24­Sep 01­Nov 9­Dec 
+Cyber Crime (2017) Cyber Crime (2018) 
+Cyber Espionage (2017) Cyber Espionage (2018) 
+Cyber Warfare (2017) Cyber Warfare (2018) 
+Hacktivism (2017) Hacktivism (2018) 
+The following charts compare the distribution of motivations between 2017 and 2018: as expected also in 2018 cyber crime leads the chart with an increase of nearly 5 points in comparison to 2017. All the other motivations (cyber espionage, hacktivism and cyber warfare) has experienced a decrease in 2018. 
+Motivations (2017): 951 Motivations (2018): 1337 Events Events 
+hackmageddon.com hackmageddon.com 
+2.47% 
+3.36% 
+2.84%
+4.73% 12.86%
+14.51% 
+77.39% 
+81.82% 
+Cyber Crime Cyber Espionage Cyber Crime Cyber Espionage 
+Hacktivism Cyber Warfare Hacktivism Cyber Warfare
+https://www.hackmageddon.com/2019/01/15/2018-a-year-of-cyber-attacks/ 
+.
+.2/12/2019ABOUT 
+SUBMIT AN ATTACK 
+CYBER ATTACKS TIMELINE2018: A Year of Cyber Attacks – HACKMAGEDDON. 
+CYBER ATTACKS STATISTICSThe following charts compare the monthly distributions 
+broken down 
+across the dierent categories for 2018 and 2017: 
+Monthly Monthly Distribution Distribution Motivations Motivations of (2018) of (2017) 
+hackmageddon.com hackmageddon.com 
+150 
+Events
+100 
+Events
+100 
+50 
+00 Jan Jul Jan Jul 
+Cyber Crime Cyber Crime Cyber Espionage Cyber Espionage Cyber Warfare Cyber Warfare Hacktivism Hacktivism 
+Malware (and I would add unsurprisingly) leads the chart of the Top 10 Attack Techniques: 
+https://www.hackmageddon.com/2019/01/15/2018-a-year-of-cyber-attacks/ 
+Attack Distribution (Top 10 2018).ABOUTSUBMIT AN ATTACKCYBER ATTACKS TIMELINE.CYBER ATTACKS STATISTICS
+Account Hijacking: 18.2% 
+Unknown: 16.0% 
+
+Targeted Attack: 13.0% 
+Malware/PoS Malware: 34.4% 
+Vulnerability: 6.4% Malicious Script Injection: 3.2% DDoS: 3.2% Defacement: 2.3% 
+Brute­Force/Credential Stuffing: 1.3% SQLi: 0.8% Social Network Bots: 0.8% 
+51% attack: 0.4% 
+Social Network Bots 10 51% attack 5 
+Brute­Force/Credential Stuffing 17 SQLi 10 
+DDoS 41 Defacement 29 
+Vulnerability 82 Malicious Script Injection 41 
+Unknown 205 Targeted Attack 167 
+
+Malware/PoS Malware 441 
+
+While individuals are still the preferred targets for cyber criminals: 
+JS chart by amChartsHuman health, social work: 9.3%ABOUT 
+SUBMIT AN ATTACKTarget Distribution (2018)CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS. 
+.Public administration, defence, 
+Financial and insurance: 6.2% 
+social security: 12.5% 
+Education: 5.5% 
+Multiple Industries: 15.6% 
+Information, communication: 5.5%Arts entertainment, recreation: 3.9% 
+Individuals: 22.5% 
+Fintech: 3.3% 
+Wholesale, retail trade: 2.5% 
+Accommodation, food services: 2.3% 
+Other services: 2.3% 
+Transportation, Storage: 1.9% 
+Manufacturing: 1.8% 
+Electricity, gas steam, air 
+conditioning supply: 1.3% 
+Professional scientific, technical: 1.2% 
+Extraterritorial organizations and 
+bodies: 0.9% 
+Administrative 
+and 
+support 
+services: 
+Individuals 
+301 
+Multiple Industries 
+208 
+Public administration, defence, social security 
+167 
+Human health, social work 
+124 
+Financial and insurance 
+83 
+Education 
+74 
+Information, communication 
+73 
+Arts entertainment, recreation 
+52 
+Fintech 
+44 
+Wholesale, retail trade 
+34 
+Accommodation, food services 
+31 
+Other services 
+31 
+Transportation, Storage 
+26 
+Manufacturing 
+24 
+Electricity, gas steam, air conditioning supply 
+17 
+Professional scientific, technical 
+16 
+Extraterritorial organizations and bodies 
+12 
+Administrative and support services 
+12 
+Water supply, sewerage waste management 
+4 
+Unknown 
+3 
+Real estate 
+1 
+The following chart shows the breakdown of motivations 
+for each 
+target 
+sector. Please notice the inuence of cyber crime for the healthcare sector. 
+
+Motivations by SectorABOUT 
+SUBMIT AN ATTACK 
+CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS. 
+
+(2018) 
+hackmageddon.com 
+Individuals Multiple Industries Public administration, defence, social security Human health, social work Financial, insurance Education Information, communication Arts entertainment, recreation Fintech Wholesale, retail trade Accommodation, food service Other services Transportation, storage Manufacturing Electricity, gas steam, air conditioning Professional scientific, technical Administrative and support service Extraterritorial organizations and bodies Water supply, sewerage waste management Unknown Real estate 
+0 100 200 300 4 
+Cyber Warfare 
+Hacktivism 
+Cyber Espionage 
+
+
+And I think that for 2018 is pretty much everything. Feel free to share the links and use the data (for personal purposes) as needed. Also remember that this is only the tip of the iceberg, and obviously my stats can’t be comprehensive. My humble mission is just to rise the awareness and keep the level of attention on the cyber threats constantly high. 
+
+Related Posts.
+ABOUT SUBMIT AN ATTACK CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS 
+
+2017 Cyber 
+ May 2018 Cyber 
+ October 2018  June 2017 Cyber 
+ 
+Attacks Statistics  Attacks Statistics  Cyber Attacks 
+ Attacks Statistics  
+Statistics  
+
+December 2018 
+April 2018 Cyber 
+Cyber Attacks Attacks Timeline Statistics 
+Share this: 
+............ 
+
+10 
+Like this: 
+. December 2018 Cyber Attacks Statistics 
+
+1-15 January 2019 Cyber Attacks Timeline . 
+
+
+
+One thought on “2018: A Year of Cyber Attacks” 
+
+. Matt Fagala 
+. January 15, 2019 at 4:34 pm . Permalink 
+
+
+
+Leave a Reply
+ABOUT SUBMIT AN ATTACK 
+CYBER ATTACKS TIMELINE 
+. 
+CYBER ATTACKS STATISTICS
+. 
+
+This site uses Akismet to reduce spam. Learn how your comment data is 
+processed. 
+
+Copyright © 2019 HACKMAGEDDON. All rights reserved. Theme: ColorMag by ThemeGrill. Powered by WordPress. 
+

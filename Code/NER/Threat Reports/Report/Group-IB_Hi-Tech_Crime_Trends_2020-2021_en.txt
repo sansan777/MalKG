@@ -1,0 +1,2770 @@
+
+. New Botnets . Affiliate Programs . Network Compromise 
+
+NOVEMBER 2020 
+2020 / 2021 
+. disClAiMER 
+
+1. 
+The report was written by Group-iB experts without any third-party funding. 
+
+2. 
+The report provides information on the tactics, tools, and infrastructure of the various groups. The report’s goal is to minimize the risk of the groups committing further illegal acts, suppress any such activity in a timely manner, and raise awareness among readers. The report also contains recommendations on how to protect against future attacks. The details about threats are provided solely for information security specialists so that they can familiarize themselves with them, prevent similar incidents from occurring in the future, and minimize potential damage. Any information outlined in the report is not intended to advocate fraud or other illegal activities in the field of high technologies or any other fields. 
+
+3. 
+The report is for information purposes only and is limited in distribution. Readers are not authorized to use it for commercial purposes and any other purposes not related to education or personal non-commercial use. Group-iB grants readers the right to use the report worldwide by downloading, reviewing, and quoting it to the extent justified by legitimate citation, provided that the report itself (including a link to the copyright holder’s website on which it is published) is given as the source of the quote. 
+
+4. 
+The entire report is subject to copyright and protected by applicable intellectual property law. it is prohibited to copy, distribute (including by placing on websites), or use the information or other content without the right owner’s prior written consent. 
+
+5. 
+if Group-iB’s copyright is violated, Group-iB will have the right to approach a court or other state institution to protect its rights and interests and seek punishment for the perpetrator as provided by law, including recovery of damages. 
+
+
+© GROUP-IB, 2020 
+. TABLE OF CONTENTS 
+
+TABLE OF CONTENTS 
+INTRODUCTION  6 
+KEY FINDINGS AND FORECASTS  7 
+Ransomware attacks  8 Military operations  9 Threats to the telecommunications sector  10 Threats to the energy sector  11 Threats to the banking sector  12 Threats to retail  13 Banking Trojans  14 Web phishing and social engineering  15 
+KEY TRENDS  16 
+Gaining access to corporate networks for ransomware purposes  17 
+The emergence of ransomware affiliate programs  17 Initial compromise vectors  18 Post-compromise  19 Stealing and publishing data  19 Attack statistics  19 Estimated damage  23 
+Increasingly larger market for selling access to corporate networks  24 Nation-state actors sell access to networks and use ransomware  29 Large companies under increasing threat from massive hacks  30 Growing activity of post-exploitation frameworks  31 
+MILITARY OPERATIONS  32 
+A changing threat landscape  33 New APT groups  34 Well-known groups remaining undetected for a long time  35 Significant operations  36 
+Attacks on nuclear facilities  36 Attacks on Israel's water supply facilities  37 Attacks on Iran’s critical facilities  37 
+. TABlE OF CONTENTs 
+
+THREATS TO THE TELECOMMUNICATIONS SECTOR ................... 39 
+Nation-state actors attacking the telecom sector .................... 40 Attacks on mobile operators ............................................................... 41 BGP Hijacking ............................................................................................ 42 Growing power of ddos attacks ........................................................ 43 
+THREATS TO THE ENERGY SECTOR ...................................................... 45 
+Nation-state actors attacking the energy sector ....................... 46 Attackers most often use the following methods to bypass air gaps ................................................................. 48 Organized crime targeting the energy sector .............................. 49 sale of access ............................................................................................ 49 Ransomware attacks on energy companies ................................. 50 
+THREATS TO THE BANKING SECTOR ................................................... 51 
+Recent thefts ............................................................................................. 52
+ sWiFT ...................................................................................................................................... 52 Card processing .................................................................................................................. 52 ATM switch ........................................................................................................................... 53 ATM .......................................................................................................................................... 53 
+shift in priorities ....................................................................................... 54 
+THREATS TO THE RETAIL SECTOR ......................................................... 55 General carding trends .......................................................................... 56 Js sniffers ................................................................................................... 57 Attacks on POs terminals .................................................................... 58 Credential stuffing ................................................................................... 60 
+Types of monetization ..................................................................................................... 60 Attack techniques ............................................................................................................. 61 
+BANKING TROJANS ....................................................................................... 62 
+Trojans for PC ............................................................................................ 63 Trojans for Android .................................................................................. 63 
+WEB PHISHING AND SOCIAL ENGINEERING .................................... 65 
+. TABlE OF CONTENTs 
+
+RECOMMENDATIONS FOR TOP MANAGEMENT .............................. 68 
+Three pillars of information security ................................................ 69 General recommendations .................................................................. 69 Recommendations for how to set up your technical 
+infrastructure and train your information security team ......... 70 incident Response team capabilities ............................................... 70 
+TECHNICAL RECOMMENDATIONS FOR COUNTERACTING CYBERATTACKS ............................................ 71 
+Banking botnets, Trojans (TrickBot, Qbot, 
+silent Night and others) ......................................................................... 72 Primitive errors: vulnerable software versions in publicly accessible services or weak passwords; vulnerabilities with public exploits ..................................................... 72 
+distributed brute-force attacks on remote access interfaces (RdP, ssH, VPN) and other services (using new botnets) ............................................................... 72 
+Ransomware ............................................................................................... 72 Post-exploitation frameworks: a free tool called 
+Metasploit and a cracked version of Cobalt strike. less often, the frameworks PoshC2 and Koadic. ....................... 73 supply-chain attacks .............................................................................. 73 Privilege escalation using various software 
+(e.g., Mimikatz, laZagne) or brute-force attacks ......................... 73 
+Tools for attacks on physically isolated networks that use UsB devices for jumping the air gap ............................. 73 New records in ddos attack power: 2.3 Tb per 
+second and 809 million packets per second ................................ 73 BGP hijacking and route leaks ............................................................ 74 Attacks on card processing and interbank 
+transfer systems ...................................................................................... 74 Js-sniffers ................................................................................................... 74 Attacks on POs terminals .................................................................... 74 Credential stuffing ................................................................................... 74 Web phishing and social engineering .............................................. 75 Growing demand for linux malware designed to achieve 
+persistence in the network and escalate privileges .................. 75 
+ioT botnet owners may start selling access to devices installed on corporate networks .................................. 75 Gaining access to sCAdA systems at industrial 
+enterprises to manipulate production processes ...................... 76 Mobile RATs ................................................................................................ 76 initial compromise through VPN servers ....................................... 76 
+ABOUT GROUP-IB ............................................................................................ 77 
+
+INTRODUCTION 
+As the world continues to be rocked by an unpredictable pandemic, with bor­ders still closed, businesses struggling to stay afloat, and political confronta­tions becoming increasingly hostile, one thing has remained constant:  The steady growth of cybercrime. 
+For 17 years, Group-iB has dedicated its efforts to investigating cybercrime, monitoring the evolution of attackers’ tactics and instruments, and developing innovative technologies to hunt for and eliminate cyber threats. The company actively shares its insights and investi­gations with the expert community and general public, and this expertise cul­minates in the annual Group-iB Hi-Tech Crime Trends report. 
+in their new report, Hi-Tech Crime Trends 2020-2021, Group-iB experts name the key changes that have occurred in the field of high-tech crime, revealing the inner workings of the cybercrime underground, communica­tion between different threat groups, and affiliate programs that sell mal­ware and other malicious services. Traditionally, Group-iB investigates not only attacks on the commercial sector but also those on critical infrastructure. The latter are typically the result of cov­ert activities conducted by the special services of various countries around the world.  
+Hi-Tech Crime Trends gives you access to the most complete trove of strategic data and detailed information on active cyber threats. By reading the report, you will get the answer to these burning questions: 
+— 
+Who are your enemies in cyberspace? 
+
+— 
+How do they operate today? 
+
+— 
+How will their toolkits adapt for future attacks? 
+
+— 
+How can you protect yourself against them? 
+
+
+Armed with this knowledge, companies worldwide, regardless of industry, will be able to build more effective cyberse­curity strategies. 
+The paralysis of entire economic sectors, mass transition to remote work, and widespread layoffs have led to a surge in cybercriminal activity. Threat actors have taken advantage of the unique global situation and become more creative, develop­ing increasingly elaborate schemes to achieve their illicit goals. in the spring of 2020, Group-iB experts predicted that there would be a growth in the number of financial crimes, and cyber­attacks on the computers, computer equipment (routers, web cameras), and unprotected networks of at-home work­ers. Those employees working in finan­cial institutions, telecom operators, and iT companies would be the primary targets. Unfortunately, the predictions were right. 
+during the pandemic, Group-iB analysts noticed a spike in the number of cyber­attacks originating from state-spon­sored threat actors and criminals using spyware, ransomware, and backdoors to exploit people’s fears and anxiety over the coronavirus. The analysts also noted that attackers actively looked for ways get into enterprise networks, a goal they achieved by infecting the computers of remote workers with malware. 
+While the overall number of success­ful targeted attacks on banks went down, Group-iB analysts discovered a shocking increase in the use of social engineering to commit fraud. The main attack vectors are vishing and phishing, whose victims are mainly bank custom­ers. The fraudsters’ main goal is still to steal money and information that can be sold, but they go about it in a new way. 
+The past year saw the majority of cyber­criminal groups switch to working with ransomware. With ransomware in their arsenal, attackers are able to earn no less than they would in a successful bank attack and with a much easier technical execution. Big Game Hunting, or attacking large companies with the aim of collecting the largest possible ransom, is gaining momentum. New groups are joining the game and creat­ing dangerous affiliations and partner­ships in the cybercrime underworld. 
+The market for Cybercrime-as-a-service is actively developing. The phenome­non directly correlates with the renting out of computer networks that are infected with malware (botnets) and used for organizing ddos attacks, sending phishing emails, and providing proxy servers. There have emerged new sellers of network access who form partnerships with ransomware opera­tors and APT groups that have shifted their focus from bank theft to working with private affiliate programs. state-sponsored threat actors have likewise jumped on bandwagon, opening the doors of corporate infrastructure to ran­somware. This threat has become larger than life and can no longer be ignored by any company, no matter its industry or geographic location. 
+We are confident that with the con­stant exchange of information, joint efforts to maintain stability in the global cyberspace, and the creation and development of partnerships between private companies and international law enforcement agencies, we can effec­tively combat cybercrime.  By raising the global community’s awareness of cybercrime, we can help preserve and protect the opportunities cyber­space give us. 
+
+
+KEY FINDINGS AND FORECASTS 
+
+Ransomware attacks 
+Current threats 
+The main goal: 
+create access to corporate networks for ransomware purposes 
+
+Ransomware affiliate 
+programs shape the market of corporate network access for sale 
+— 
+Over the past year, seven new ransomware affiliate programs have emerged (bringing the total to 15), which has shaped the market of cor­porate network access for sale. 
+
+— 
+Between H2 2019 and H1 2020, the number of access for sale offers has increased 2.6-fold (from 138 to 362) compared to the previous period. 
+
+— 
+There are more and more users who actively sell access to corporate net­works. in 2019, there were 50 active sellers; in the first half of 2020, Group-iB identified 63. 
+
+— 
+Owners of the banking botnets TrickBot, Qbot, silent Night, and RTM have started using their botnets to deploy ransomware. 
+
+— 
+The cybercriminal groups Cobalt and silence, which had previ­ously focused on targeted attacks on banks, have presumably joined ransomware affiliate programs. 
+
+
+
+
+Forecasts 
+— 
+Group-iB expects that specialized trading platforms will emerge for exhibiting lots with access to cor­porate networks, which may lead to even more related incidents. 
+
+— 
+We expect that there will be more demand for linux malware designed to achieve persistence in the network and escalate privileges. 
+
+— 
+ioT botnet owners may start selling access to devices installed on corpo­rate networks. 
+
+— 
+New botnets and related criminal services for distributed brute-force attacks on remote control interfaces will emerge. 
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+— 
+Primitive errors (such as vulnerable software versions in public services or weak passwords) pose one of the most serious risks to companies. if a vulnerable system is compro­mised, adversaries will usually attempt to inflict as much damage to the business as possible, followed by extortion. 
+
+— 
+Ten ransomware affiliate programs involve brute-force attacks on serv­ers accessible externally through Remote desktop services. Three pro­grams exploit vulnerabilities in VPN services. 
+
+— 
+New botnets that perform distrib­uted brute-force attacks on remote access interfaces (RdP, ssH, VPN) and other services have been identified. 
+
+— 
+One of the most common ways that victims are tricked into paying ransoms is stealing data from the network and threatening to leak the information online. 
+
+— 
+in an effort to increase their prof­its, some groups have conducted auctions to sell stolen data instead of publishing it online. 
+
+— 
+Ransomware proved so popular that criminals began to publish ready-made ransomware-as-a-service (Raas) projects for linux, MacOs, and Windows (e.g., the RAAsNet project) on websites such as GitHub. 
+
+— 
+The number of ransomware affiliate programs will grow for a brief time only. Group-iB expects that the market will stabilize and that num­bers will stop increasing by the end of 2020. 
+
+— 
+There may be cases of ransomware attacks targeting company mail sys­tems. Hackers are likely to steal data from local mail servers and disable the mail system — bearing in mind that stable email communications are critical to businesses. This may lead to cloud mail services becoming more popular and the on-prem mail storage model being abandoned. 
+
+— 
+Groups that focus on attacks 
+
+
+
+— 
+Cybercriminals have mainly used two post-exploitation frameworks to move laterally and gain control over targeted corporate networks: a free tool called Metasploit and a cracked version of Cobalt strike. less often, adversaries used the frameworks PoshC2 and Koadic. during the reporting period, Group-iB experts identified more than 10,000 hosts with these frame­works installed. Between H2 2018 and H1 2019, Group-iB researchers identified around 6,000 such hosts. 
+
+— 
+The countries attacked the most often were the UsA, the UK, Canada, France, and Germany. They suffered 381 attacks out of 505, i.e. 75%. 
+
+— 
+The most attacked sector was manu­facturing. Half of all attacks targeted entities in the manufacturing, trade, government, healthcare, construc­tion, and academic sectors. 
+
+— 
+Group-iB identified cases of threat actors using new ransomware designed to disrupt processes associated with industrial net­work applications. such tools help cybercriminals encrypt valuable data at manufacturing plants more effectively. 
+
+
+on sCAdA systems at industrial enterprises in order to manipulate production processes may emerge. 
+— 
+intelligence services may be inter­ested in owners of affiliate programs and use them to access networks of interest. 
+
+— 
+To inflict maximum damage on enti­ties and divert attention away from their attacks, special services may start mimicking criminals by spread­ing documents that undermine the attacked organization’s business operations or by selling access to the affected corporate networks. 
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+Military operations 
+Current threats 
+More and more often espionage is replaced by active attempts 
+to destroy infrastructure facilities 
+
+High-profile attack targets include 
+nuclear facilities in iran and india and israel's water supply system 
+
+
+
+Forecasts 
+— 
+Against the backdrop of rising tension in the Middle East, attacks on the control systems of transport ships in the Persian Gulf may be car­ried out. 
+
+— 
+Group-iB expects more sabotage operations against iran's critical infrastructure facilities, especially 
+
+
+— 
+intelligence agencies are attacking more aggressively. Their goal is now not only to spy on targets covertly but also destroy critical infrastruc­ture facilities. 
+
+— 
+during the reporting period, seven new APT groups were identified. Group-iB also identified six known threat groups that had remained unnoticed for many years. 
+
+— 
+As part of an APT operation, adver­saries shut down power units at nuclear power plants and phys­ically destroyed the surrounding infrastructure. 
+
+— 
+A major cyberattack on a water management facility was thwarted. 
+
+those related to nuclear energy. 
+
+— 
+security vendors have begun devel­oping features for detecting back-doors at the UEFi level more actively. such tools will help detect new UEFi malware leveraged during military operations. 
+
+
+
+during the incident, threat actors attempted to poison water by alter­ing water chlorine levels. Had it been successful, the civilian population in the country would have been seri­ously affected. 
+— 
+some country leaders began openly announcing successful attacks on other countries. 
+
+— 
+Hacker arsenals were actively replenished with tools designed for attacks on air-gapped networks. Over the past year, four tools using UsB for bridging the air gap have been identified. 
+
+— 
+New achievements made by Elon Musk's companies in the space industry may attract the attention of special services, both for espio­nage purposes and in order to gain control over the control systems of his satellite internet constellation. 
+
+
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+
+Threats to the telecommunications sector 
+Current threats 
+State-sponsored groups 
+show an interest in the telecom sector and conduct sophisticated attacks against it 
+
+2.3 Tb per second and 809 million packets per second 
+new records in ddos attack power 
+
+
+
+Forecasts 
+— As interstate conflicts continue to escalate, it is expected that threat actors will attack telecom operators for the first time in order to cause logical network congestion, which would lead to a cascading effect and affect multiple industries. 
+— 
+during the reporting period, six groups linked to special services actively attacked the telecommuni­cations sector. 
+
+— 
+China is expanding its capacities in spying on mobile operators. To this end, it has developed a special Trojan for linux servers that intercepts sMs messages based on specific criteria. 
+
+— 
+Threat actors have set new records in ddos attack power: 2.3 Tb per second and 809 million packets per second. 
+
+— 
+The COVid-19 pandemic has forced a significant number of people to work from home, and many of them will become permanent work-from-home employees after the pandemic ends. As such, the number of attacks on home routers 
+
+
+— 
+5G networks have not been widely deployed yet, which explains why the predictions relating to associated threats that we made in our previous report have not come true. They are relevant for the next period, however. 
+
+— 
+BGP hijacking and route leaks remain a serious problem. Over the past year, nine significant cases have been publicized. 
+
+
+and storage systems will con­tinue to increase given that they help advanced crime groups and state-sponsored actors access corporate data without infiltrating an organization's perimeter. 
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+
+Threats to the energy sector 
+Current threats 
+Both state-sponsored groups and organized crime actors 
+disrupt facilities and encrypt data in order to demand ransoms 
+
+Air gap bypassed: 
+new tools for attacks on isolated networks discovered 
+— 
+Adversary arsenals were actively replenished with tools designed for attacks on air-gapped networks. Over the past year, four tools using UsB flash drives to bridge the air gap have been identified. 
+
+— 
+Nuclear power has become an obvi­ous target for attackers. No such attacks were reported in the past 
+
+
+
+
+
+Forecasts 
+— 
+Espionage will remain the primary goal of state-sponsored threat actors. 
+
+— 
+sabotage attacks on the energy sec­tor will be carried out in the Middle East or in countries with emerging military conflicts. 
+
+— 
+To conduct attacks more effectively, threat actors will target not only large energy companies but also 
+
+
+year. in the reporting period, how­ever, iran's nuclear energy facilities were sabotaged, while facilities in india were subject to espionage attacks. Threat actors are particularly interested in india because the coun­try is developing nuclear technology and thorium-based reactors. 
+— 
+No new frameworks able to influence technological processes were iden­tified in the reporting period, which suggests that threat actors have become more careful about conceal­ing their use of such tools. 
+
+— 
+Organized crime groups have begun showing an active interest in energy companies. Targeted attacks are car­ried out to seize control over entire networks and infect infrastructure with ransomware. 
+
+last-mile energy distributors and small suppliers that offer additional services to energy corporations. 
+
+— 
+5G networks will connect a large number of devices to global net­works, including those belonging to energy and industrial enterprises. As a result, the attack surface will increase dramatically. 
+
+
+— 
+during the reported period, nine groups linked to intelligence services attacked the energy sector. seven hackers reportedly sold access to energy networks. in addition, eleven successful attacks involving ransomware were conducted on the sector in question. 
+
+— 
+Many types of ransomware have been equipped with new capabilities to detect processes associated with industrial control systems, which has led to substantial losses of critical data and increased ransom amounts for recovering access to such data. This is especially true for data stored on Historian servers. 
+
+— 
+Cybercriminals (mainly sophisticated hackers) will use the vector of initial infection through vulnerable network equipment more often. less skilled criminals will use common phishing techniques. 
+
+
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+Threats to the banking sector 
+Current threats 
+Targeted thefts are becoming rare cases 
+relevant only for poorly protected banks 
+
+Hackers gaining access and encrypting data to obtain hefty ransoms 
+is a trend in the banking sector 
+— 
+in 2020, there have so far been no public reports on thefts through sWiFT, ATM switch, payment gateways or ATMs when they were accessed through a bank’s network. 
+
+— 
+Nevertheless, the hacker group lazarus reportedly continued to carry out theft attempts through sWiFT. To gain initial access, the 
+
+
+
+
+
+Forecasts 
+— 
+Next year, there will probably be no traditional attacks on banks for theft purposes. There may be rare incidents, but this type of activity will no longer be as widespread as it used to be. 
+
+— 
+As with other sectors, ransomware operators will pose the biggest threat to the financial vertical. This hypothesis is confirmed by the increasing number of offers sell­ing access to corporate networks belonging to financial institutions. 
+
+
+hackers used a banking botnet called Trickbot controlled by Russian-speaking cybercriminals. Moreover, Group-iB researchers detected activity by another threat group that used publicly available Trojans, keyloggers, and unmodified exploits. such toolsets are effective only against banks with a minimum level of security. Alternatively, during inci­dent response, security teams may have made mistakes that prevented them from identifying more sophisti­cated tools. 
+— 
+in the second half of 2019, only the group silence carried out successful thefts without using sWiFT. They stopped attacking the financial sec­tor in 2020, however. 
+
+— 
+The Philippine government-con­trolled United Coconut Planters Bank (UCPB) was robbed in september 
+
+— 
+However, stealing information about financial transactions of ViP clients and publishing it online may become a more serious threat than data encryption. such attacks may cause significant financial damage and make banks pay ransoms to threat actors more readily. 
+
+— 
+disclosing financial transaction data could launch a series of investi­gative journalism cases similar to the Panama Papers case in 2015 (a massive exposure of confidential 
+
+
+
+2020. The threat actors gained access to the card processing sys­tem and changed withdrawal limits. They also gained access to instaPay, an interbank transfer system. As a result, they siphoned 167 million pesos (Usd 3.44 million) from the bank. 
+— 
+Tools used for attacks on ATMs have evolved slightly. during the reporting period, the following utilities were identified: ATMdtrack developed by lazarus and a new version of the ATM Trojan developed by silence. it has not been confirmed whether either utility has been successfully used in thefts. 
+
+— 
+Cobalt and silence have presumably joined ransomware affiliate pro­grams, but they have shifted their focus from banks. 
+
+financial files belonging to Mossack Fonseca, a Panamanian law firm), in which some intelligence agencies are likely to be interested. 
+
+— 
+Another trend may be threat actors threatening to send (fake) alerts to financial regulators notifying that a bank has security issues. Threatening to send such notifi­cations may act as an incentive for banks to pay higher amounts to extortionists. 
+
+
+
+
+
+
+Threats to retail 
+Current threats 
+96 JS sniffer families 
+are currently being tracked by Group-iB experts 
+
+156% more bank card dumps 
+stolen using POs Trojans were offered for sale compared to the previous period 
+— 
+it is possible to single out four main threats targeting retailers that may damage businesses: Js sniffers, attacks on POs terminals, credential stuffing, and ransomware. 
+
+— 
+The number of known Js sniffer fam­ilies has grown from 38 to 96 com­pared to the previous year. 
+
+— 
+The state-sponsored threat group lazarus has started using 
+
+
+
+
+
+Forecasts 
+— 
+Many online resources are hacked every day. Currently, the main mon­etization methods used by hackers are selling databases and hosting phishing pages. However, damage to businesses may increase dras­tically, and along with it the profits made by cybercriminals if the latter begin actively cooperating with ran­somware developers. 
+
+— 
+Hacker groups using Js sniffers will pose a major threat to online retail­ers, especially in the Us. At the same time, the main business risks will be associated with fines for security violations rather than with compen­sation for damage to customers or reputational losses. 
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+Js sniffers. The threat actor uses a Js sniffer variant that automat­ically steals funds from Bitcoin wallets.      
+— 
+Techniques that prevent Js sniff­ers from being detected on web resources have improved greatly. 
+
+— 
+The carding market has doubled from $880 million to $1.9 billion com­pared to the previous year. 
+
+— 
+during the reporting period, 14 POs Trojans were found to be active. They were used to compromise and sell 
+
+63.7 million bank card dumps, which is 156% more than in the previous year. 
+
+— 
+The amount of bank card textual details offered for sale has increased from 12.5 million to 28.3 million. The largest bank card data leaks are due to Us retailers being compromised. 
+
+— 
+Attacks on computers with con­nected POs terminals aimed at col­lecting bank card dumps will remain a major threat in the United states. 
+
+— 
+scammers often use a fraudu­lent scheme as part of which they perform financial transactions in a given location, then use access to POs terminals to cancel the operations in other countries. The actions restore the card balance, and the cybercriminals can con­tinue to perform fraudulent financial transactions. We may see similar new schemes involving access to online resources that accept card payments. 
+
+
+
+— 
+during the reporting period, 19 com­promised retailer networks were identified, compared to 17 in the previous year. 
+
+— 
+scammers primarily targeted bank cards issued in the United states, which accounts for more than 92% of all card dumps, followed by india and south Korea.      
+
+— 
+Although many vendors offer solu­tions for protecting against bots and attacks such as credential stuffing, threat actors continue to actively use bots without browsers, which offers opportunities to create more advanced tools for bypassing defenses as well as possibilities to develop the cybercrime market in this direction. 
+
+— 
+The carding market keeps growing. However, arrests of main players may stop this growth and redis­tribute carding activity between criminals. 
+
+— 
+The main schemes for obtaining bank cards and the list of popu­lar target countries are unlikely to change. 
+
+— 
+Carders may become more active in latin America, where there is a large community of hackers with experience in using financial Trojans. 
+
+
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+Banking Trojans 
+Current threats 
+19 PC Trojans and 10 Android Trojans 
+have been active this year 
+
+Owners of banking botnets 
+are switching to ransomware 
+
+
+
+Forecasts 
+— 
+Russian-speaking owners of banking botnets for both PCs and Android devices will reduce their activity even further. Eventually, such botnets will cease to exist. 
+
+— 
+As banking Trojans become more active in latin America, some of their 
+
+
+— 
+latin America, particularly Brazil, has become the main source of new banking Trojans. 
+
+— 
+Russian-speaking owners of the largest banking botnets (Trickbot, dridex, Qbot, and silent Night) have been following the main trend and switching to ransomware. 
+
+owners are likely to be arrested, which will also reduce this threat significantly. 
+
+— 
+Every year, three to five banking botnets for PCs disappear from the market. At this rate, the market for PC banking Trojans may become 
+
+
+
+— 
+A total of 19 PC banking Trojans were active this year, 12 of which were written by Russian-speaking devel­opers. six Trojans were developed by latin American authors. One tool could not be attributed. 
+
+— 
+in total, 10 Android banking Trojans were active this year. Five of them are brand new. 
+
+
+nonexistent in three to five years. A similar situation may occur with the market for Android Trojans, which are becoming less and less effective year after year. 
+
+
+. KEy FiNdiNGs ANd FORECAsTs 
+
+
+
+
+Web phishing and social engineering 
+Current threats 
+A 118% growth 
+in phishing compared to the previous year 
+
+New trend: 
+using one-time links to phishing websites 
+— 
+Over the period investigated, 118% more phishing resources were identified and taken down compared to the previous reporting period. 
+
+— 
+The COVid-19 pandemic has encouraged more cybercriminals 
+
+
+
+
+
+Forecasts 
+— Phishing affiliate programs that have become more popular in Russia will be more actively used in other regions.      
+to become involved in phishing attacks, which is one of the key rea­sons for the above-mentioned rise. 
+— 
+Phishing attacks targeting bookmak­ers increased in Q2 2020, amounting to 6% versus 2% in the previous quarter. 
+
+— 
+Another attack type that increased by 9% was phishing used to collect accounts for various online services such as Microsoft, Netflix, Amazon, eBay, and Valve steam. 
+
+— 
+Phishing resources targeting crypto­currency projects have disappeared almost completely. 
+
+— 
+Phishing attacks have become automated and longer-lasting thanks to the emergence of scams prop­agated through the Phishing-as-a­service model. We expect that such projects will be actively developed and distributed. 
+
+
+— 
+so far, the main trend in 2020 is the use of one-time unique links that become inactive after the user opens them. This approach helps cybercriminals keep web phishing resources from being detected. 
+
+— 
+in Russia, the main reason for the significantly higher numbers of phishing attacks is the emer­gence of various affiliate programs for hackers wanting to make money off phishing related to fake bank rewards programs, lottery draws, paid surveys, etc. 
+
+— 
+Phishing-as-a-service projects have become widespread in Russia. 
+
+— 
+One of the greatest challenges for the cybersecurity industry will be hackers using one-time web phishing links. 
+
+
+
+
+
+
+
+KEY TRENDS 
+
+. KEy TRENds 
+
+Gaining access to corporate networks for ransomware purposes 
+The emergence of ransomware affiliate programs 
+Going into 2019, many ransomware operators shifted their focus from ordi nary users to companies, government agencies, and other victims that would help them pocket more money. yet ransomware developers often lacked the tools and capabilities to infiltrate corporate networks. As a way to get around this problem, they began setting up affiliate programs. The scheme works as follows: threat actors who specialize in penetrating corporate networks monetize their actions by distributing ransomware. After the victim pays the ransom, the ransomware authors send a cut to their affiliates. 
+There are two types of affiliate pro grams: public and private. Public pro grams first emerged in mid-2019. Their distinctive feature is that the develop ers look for affiliates on underground forums. Private affiliate programs, on the other hand, are not advertised and are intended to bring together other types of threat actors (e.g. APT groups) and trusted users. 
+The table below contains information on affiliate programs related to the most popular ransomware. 
+
+
+
+. KEy TRENds 
+
+Many affiliates prefer to keep their incident response procedures has made forums were involved in either selling activities under the radar. However, ana-it possible to identify some of them. access or working with various malware lyzing their activity in the hacker com-some users who showed an interest (including stealers). Examples of access munity and information obtained during in affiliate programs on underground are presented below. 
+Figure 1-2. Access for sale offers on underground forums 
+
+
+Initial compromise vectors  
+Most often, the initial intrusion vec­ in addition, other methods of distribut- The table below contains information  
+tor was a malicious email campaign,  ing ransomware included exploit kits,  about ransomware affiliate programs  
+a brute-force attack against Remote  VPNs, botnets, and other malware (e.g.,  and the initial compromise methods   
+desktop Protocol (RdP), or the exploita­ downloaders). supply-chain attacks  used by their operators.  
+tion of public-facing applications  are extremely rare (the case of REvil).  
+(including VPN-related).  in general, the above delivery methods  
+are also relevant for ransomware dis­ 
+tributed without affiliate programs.  
+
+Exploit Public-Facing External Remote Supply Chain 
+Ransomware 
+
+Phishing 
+Application Service Compromise 
+REvil 
+
+
+MegaCortex 
+Maze 
+
+
+dharma 
+
+JsWORM . Nemty 
+
+
+Buran . Zeppelin 
+
+
+NetWalker 
+
+
+Ako 
+
+
+lannister 8 domain RDP accesses Megabyte 
+
+Posted March 14 i'm selling 8 RdP accesses to various domain networks in France. All have user access. i haven't scanned them for 
+Scammer 
+
+hosts. i just know that they are domain networks and have user rights. 
+73 posts 
+
+i want to sell them all together for just $800 
+Joined 11/13/19 
+Reason for ban: [link] Respectfully, Exploit.in administration 
+
+cias9204 Access to a local network of an Indian financial institution byte 
+Posted October 21, 2019 i'm selling access to the local network of an indian financial deactivated 
+institution. This is a mutual investment fund that belongs to a large group of companies. i will sell this access to a single 
+20 posts customer and agree to work through an escrow service.  i will Joined provide all the proof required. All details will be provided in 
+
+07/14/19 
+
+jabber (+OTP). Please share your contact details via PM. 
+Activity Please ban my account as i want Other to leave the forum. 
+
+lockbit 
+Avaddon 
+
+
+Thanos 
+
+
+. KEy TRENds 
+
+
+
+
+Post-compromise 
+Once inside, many ransomware opera­tors first attempt to escalate privileges by using exploits or post-exploitation frameworks. They then gain access to other accounts using various soft­ware (e.g., Mimikatz, laZagne) or brute-force attacks. 
+Threat actors then perform network reconnaissance using legitimate network scanners or frameworks such as Cobalt strike and Metasploit. They collect information about the system, groups, network resources, password policy, domain trust relationships, and more. The table below shows what frameworks were used by ransomware operators. 
+PowerShell 
+
+Ransomware 
+
+Cobalt Strike Metasploit CrackMapExec PoshC2 Koadic 
+Empire 
+Ryuk 
+
+
+REvil 
+MegaCortex 
+
+
+Maze 
+doppelPaymer 
+
+
+Clop 
+
+
+lockbit 
+
+
+
+
+Stealing and publishing data 
+
+in the early days, cybercriminals only use the HTTP, HTTPs, and FTPprotocols being stolen, the ransomware operators encrypted data and demanded ransoms and legitimate cloud storage services. will publish them online. To do so they from victims. since the end of 2019, On rare occasions, they use email and create special websites, usually in the however, many have started using a new instant messengers. Tor network. An example of such a web-technique: before encrypting all the site is shown below. 
+in such cases, if the victim fails to pay 
+information, they copy it to their servers 
+the ransom, then in addition to the data 
+for further blackmailing. They usually 
+
+Figure 3. stolen data goes online Figure 4. REvil auction 
+
+Attack statistics  
+Ransomware victims include both small local companies and interna­tional giants. Over the last year, there have been reports of more than 500 successful attacks using well-known ransomware on companies in more than 45 countries. The total number  of successful attacks is much higher, but either the companies affected decided not to publicize the incident and pay the ransomware or the attack did not involve publishing data stolen from the victim's network.  The most popular targets (about 60%) were Us companies. European coun­tries accounted for only about 20% of all attacks. About 10% were countries in North and south America (excluding the UsA) and Asia (7%).  
+
+
+
+NORTH AND  SOUTH AMERICA 
+statistics by country Country
+ UsA UK
+Canada France Germany
+AustraliaspainBrazilitalyswitzerlandUAE 
+statistics by sector 
+sector Manufacturing Trade Government Health Care Construction Educational services
+
+ iT legal services Transportation and Warehousing  Administrative and support and Waste 
+Management and Remediation services 
+. KEy TRENds 
+Number of victims 313 25 24 20 17 13 11 9 9 7 6 
+Number of victims 94 51 39 38 30 29 28 20 18 14 
+
+
+EUROPE 
+6
+india 
+5
+
+south Africa 
+4
+Mexico 
+4
+China 
+4
+Colombia 
+
+Belgium 3
+3
+
+saudi Arabia 
+3
+
+Costa Rica 
+2
+Thailand 
+2
+Austria 
+
+Hong Kong 2
+2
+
+south Korea 
+Japan 2
+ Telecommunications 12 Accounting 11 Conglomerate 3 Consulting 9 Engineering 9
+ data Processing, Hosting, and Related 9 
+services design 8 Real Estate and Rental and leasing 8 R&d 7 insurance 7 investments 6 lending 6 
+
+MIDDLE EAST  AND AFRICA 
+Argentina 2
+2
+Oman 
+1
+Kosovo 
+singapore 1
+1
+Qatar 
+Philippines 1
+Portugal 1
+1
+Chile 
+dominican Republic 1
+1
+Jamaica 
+1
+Unknown 
+1
+sweden 
+1
+slovenia 
+ Mining, Quarrying, and Oil and Gas 6 Extraction Other 6 Agriculture, Forestry, Fishing and Hunting 5 Energy 5 Bank 4 Marketing 4 Non-Profit 4 Newspaper publisher 3 Travel Agency 3 
+? Unknown 3 Hospitality 3 Arts, Entertainment, and Recreation 2 
+
+SOUTHEAST ASIA  AND AUSTRALIA 
+Cayman islands 1
+sri lanka 
+1
+1
+New Zealand 
+Cyprus 1Algeria 1Nigeria 1Puerto Rico 
+1
+luxembourg 1
+Macedonia 
+1
+1
+Croatia 
+1
+Netherlands 
+1 Total 523Vietnam 
+ Broadcasting 2 Gambling 2 Aviation 2 Auction 
+1 Automobile 
+1 Food 
+1 Management of Companies and 
+1 
+Enterprises Transport 
+1 Professional Organization 
+1 
+page 20 of 78 
+. KEy TRENds 
+
+
+155 
+TARGETEd ATTACKs 
+were conducted by Maze ransomware operators 
+. KEy TRENds 
+
+Maze and REvil have been the  Ransomware Victims  Ransomware Victims  Ransomware Victims  Ransomware Victims  Ransomware Victims  
+most active ransomware since late 2019, accounting for over  Maze 155  REvil 103  Ryuk 62  NetWalker 49  Pysa 25  
+50% of successful attacks.  Top 5 attacked countries Top 5 attacked countries Top 5 attacked countries Top 5 attacked countries Top 5 attacked countries 
+Ryuk, NetWalker, doppelPaymer are in the second tier.   UsA 93 Canada 8  UsA 63 UK 7   UsA 53 spain 5   UsA 28 France 6   UsA 5 UK 3  
+The most often attacked sector was manufacturing.   France 6  Australia 5  Australia 1 Canada 4 Canada 2 
+Half of all attacks targeted  italy 6 switzerland 4  UK 1  UK 2   France 2  
+entities in the manufacturing,  UK 6  Canada 3   Germany 1  Austria 1  Mexico 2  
+trade, government, healthcare,  
+construction, and academic  Top 5 attacked sectors Top 5 attacked sectors Top 5 attacked sectors Top 5 attacked sectors Top 5 attacked sectors 
+sectors. Although they currently   Manufacturing 30  Manufacturing 20  Government 16  Manufacturing 14  Health Care 5 
+focus on the above industries, affiliates usually seek easier   Trade 19  Trade 17   Educational services 14  Health Care 6  Government 3 
+targets, which explains the wide   Construction 15  iT 10   Health Care 14  Educational services 5  Manufacturing 3 
+distribution of attacks across  Administrative and 8 legal services 6  Newspaper publisher 3   Trade 4   Construction 2 
+different verticals.  support and Waste Management and Remediation services  Health Care 7   Government 4  iT 3  Transportation 3 and Warehousing   Educational services 2  
+Ransomware Victims DoppelPaymer 53 Top 5 attacked countries UsA 35 France 5 Canada 3 saudi Arabia 1 Qatar 1 Top 5 attacked sectors Trade 8 Government 7 Manufacturing 6 Transportation 4and Warehousing  Construction 3  Ransomware Victims Nefilim 13 Top 5 attacked countries Brazil 3 india 3 Germany 1 France 1 switzerland 1 Top 5 attacked sectors Manufacturing 4 Construction 2 Mining, Quarrying, and 2 Oil and Gas Extraction Transportation 1 and Warehousing Administrative and support 1 and Waste Management and Remediation services  Ransomware Victims Ragnar 10 Top 5 attacked countries UsA 7 Portugal 1 Germany 1 singapore 1 — — Top 5 attacked sectors Marketing 2 legal services 2 iT 1 Manufacturing 1 Construction 1  Ransomware Victims Clop 15 Top 5 attacked countries Germany 7 UsA 2 spain 1 Austria 1 UK 1 Top 5 attacked sectors Manufacturing 6 iT 2 Transportation 2and Warehousing Gambling 1 Government 1  Ransomware Victims Ako 9 Top 5 attacked countries UsA 6 UK 2 Canada 1 — — — — Top 5 attacked sectors Construction 2 legal services 1 design 1 Engineering 1 Manufacturing 1  Ransomware Victims Avaddon 1 Top 5 attacked countries UsA 1 — — — — — — — — Top 5 attacked sectors Construction 1 — — — — — — — —  
+Ransomware Victims Sekhmet 6 Top 5 attacked countries UsA 3 Brazil 1 UK 1 spain 1 — — Top 5 attacked sectors Manufacturing 2 legal services 1 iT 1 insurance 1 Transportation 1 and Warehousing  Ransomware Victims Snake 3 Top 5 attacked countries Germany 1 Argentina 1 Japan 1 — — — — Top 5 attacked sectors Health Care 1 Energy 1 Conglomerate 1 — — — —  Ransomware Victims MegaCortex 1 Top 5 attacked countries UsA 1 — — — — — — — — Top 5 attacked sectors data Processing, Hosting, 1 and Related services — — — — — — — —  Ransomware Victims Conti 16 Top 5 attacked countries UsA 13 Canada 2 spain 1 — — — — Top 5 attacked sectors Manufacturing 3 Hospitality 2 iT 1 insurance 1 Health Care 1  Ransomware Victims SunCrypt 2 Top 5 attacked countries UsA 1 Canada 1 — — — — — — Top 5 attacked sectors Manufacturing 1 design 1 — — — — — —  Ransomware Victims WastedLocker 1 Top 5 attacked countries UsA 1 — — — — — — — — Top 5 attacked sectors Manufacturing 1 — — — — — — — —  
+
+Estimated damage 
+Unfortunately, it is difficult to establish the exact damage caused by ran­somware groups. This is because the amount should include the ransoms paid by victims, losses caused by sys­tem downtime, and expenses of recov­ering internal systems. in addition, it is difficult to obtain information about all attacks because many companies pay ransoms without making this fact public. 
+The table below details past ransom amounts 
+. KEy TRENds 
+What’s more, the amount often varies from company to company: 
+— For example, the ransoms demanded by the group REvil depend on the size of the company and the number of infected hosts. if only one com­puter on the network is infected, the ransom amount is about $48,000; but if several machines within the company's network are infected, then the average ransom amount is $470,000. There were several cases when the amount exceeded $1,000,000. The average ransom amounts to $260,000. 
+— 
+A group called Maze usually demands extremely high ransoms, 
+
+i.e. beyond one million dollars. The average ransom is $2,420,000. 
+
+— 
+some groups such as Wastedlocker carried out very few attacks, but the ransom amount exceeded $10 million. 
+
+— 
+The same applies to MegaCortex ransomware. The exact number of attacks it has been involved in is unknown, but the ransoms reportedly vary from 20,000 to $5,800,000. 
+
+
+
+Group Average ransom ($) Number of victims Potential damage ($) 
+Ako 300,000 9 1,800,000 
+Avaddon 7,500 1 7,500 
+Clop 400,000 15 6,000,000 
+Conti 200,000 16 3,200,000 
+doppelPaymer 1,143,500 53 60,605,500 
+Maze 2,420,000 155 375,100,000 
+Nefilim 100,000 13 1,300,000 
+NetWalker 720,000 49 35,280,000 
+Pysa None 25 None 
+Ragnar 7,750,000 10 77,500,000 
+REvil 300,000 103 30,900,000 
+Ryuk 1,451,500 62 89,993,000 
+snake None 3 None 
+sunCrypt 400,000 
+This means that if combined publicly known attacks and experts estimations of possible ransomware incidents, the total potential damage could exceed one billion dollars ($1,005,186,000). 
+The data above only covers known inci­dents and shows the lower end of the damage. it is just the tip of the iceberg. For example, only 62 incidents involv­ing Ryuk and spread using the banking Trojan Trickbot have been reported. 
+2 
+According to Group-iB's statistics, how­ever, the owners of the Trickbot botnet have successfully encrypted more than 2,500 different networks over the past year using ransomware such as Ryuk (later Conti), Kraken, and Thanos. This means that the 62 known incidents rep­resent only 2.5 percent of all incidents. The actual damage is likely to be much greater. 
+800,000 
+As regards dharma ransomware, its source code was put up for sale last year and could have been used by many groups. Given the circumstances, it is difficult to establish the damage caused. 
+
+
+
+
+
+
+
+$1 BlN 
+estimated total potential damage 
+. KEy TRENds 
+
+Increasingly larger market for selling access to corporate networks 
+sales of credentials are widespread could belong to large companies and of new ransomware affiliate programs. on underground forums and have taken that access to them could be capital-Between H2 2019 and H1 2020, the num­place since the early days of such com-ized on. ber of access for sale offers increased munities. For a long time, cybercriminals 2.6-fold (from 138 to 362) compared 
+sales of corporate network access are did not perform additional reconnais-to the previous period. 
+increasing from year to year. The peak sance after finding servers and gaining 
+of sales occurred in 2020, which is asso­access to them, nor did they under­
+ciated with an increase in the number stand that the compromised servers 
+2018 2019 2020 
+Q1  Q2  Q3  Q4  
+37  11  68  25  
+H1  H2  
+48  93  
+
+
+Q1  Q2  Q3  Q4  
+25  20  33  52  
+H1  H2  
+45  85  
+
+Q1  Q2  Q3  Q4  
+104  173  —  —  
+H1  H2  
+277  —  
+
+
+TOTAL TOTAL TOTAL 
+141 130 277 
+173 
+
+
+Q1 (2018) Q2 (2018) Q3 (2018) Q4 (2018) Q1 (2019) Q2 (2019) Q3 (2019) Q4 (2019) Q1 (2020) Q2 (2020) 
+. KEy TRENds 
+
+
+
+The table below shows active sellers of access to corporate networks on underground forums in 2018-2020 (only those who posted several offers). 
+
+. KEy TRENds 
+
+
+Number of access sellers 
+
+37 
+in 2018 
+50
+in 2019 
+
+63
+in 2020 
+in 2018, only 37 access sellers were active. in 2019, Group-iB researchers identified 50 active access sellers, who offered access 
+to 130 companies. Moreover, 44 of them were newcomers. in H1 2020, 277 offers of access to corpo­
+rate networks were put up for sale on under­ground forums. The number of sellers has also grown. during the above period, 63 sellers were active, and 52 of them began selling access in 2020. For com­parison, during all of 2018, only 37 access sellers were active. 
+The market remains as fragmented as it was in 2019, and new sellers are replacing well-known  ones. The diagrams to the left illustrate this trend. 
+. KEy TRENds 
+
+
+main victims of attacks —  production 
+2019 
+
+main victims of attacks —  state-owned companies 
+2020 
+in 2019, cybercriminals stopped mentioning full company names when selling access, revealing only the country or industry. The full company name was indicated in only 27% of ads. 
+As regards the targeted sectors, in 2019 production companies remained the main victims. However, many healthcare organizations (usually hospitals and clinics) 
+were also targeted. in 2020, the list of attacked industries changed drastically. Various state-owned companies and educational institutions came to the fore. Manufacturing companies accounted for only 7.2%. 
+page 27 of 78 
+. KEy TRENds 
+
+
+
+
+the most attacked region 
+USA 
+it is difficult to assess the size of the mar­ket for selling access, however, as offers published on underground forums often do not include the price. 
+
+
+
+$1,609,930 
+the total market size for access sold from H2 2018 to H1 2019 (the sum of the prices of all access information published on the forums) 
+$6,189,388 
+the market size in the current period, H2 2019 to H1 2020 (it has almost quadrupled) 
+The United states remains the most often attacked region. it is worth highlighting, however, that it has become increasingly difficult to establish the name and location of the companies to which access is being sold without communicating with the cyber­criminals involved. 
+. KEy TRENds 
+
+
+Nation-state actors sell access to networks and use ransomware 
+in an effort to increase their profits, some state-sponsored groups began selling access to corporate networks or even using ransomware like regular cybercriminals. 
+Although the message looks suspi­cious, further investigation revealed that its author had access to at least two companies from the list above. Group-iB experts obtained screenshots and a video demonstration of ldAP access as evidence. 
+in the ad, the seller specifies that the price of access to each company is 11 BTC (Usd 125,000). Access is sold directly with partial prepayment: after the customer has transferred 5 BTC, the seller provides additional evidence and the second transaction occurs. 
+in the message, the author did not mention all the companies they have access to, but the cost of accesses to companies listed explicitly is close to $5 million. 
+Another way for state-sponsored groups to make money is to use ransomware: A perfect example is an ad published by a user with the nickname nanash in June 2020. The seller offered access to many networks, including some belonging to Us government depart­ments, defense contractors (Airbus, 
+
+
+— Taiwanese authorities suspect that Chinese hackers from APT41 were behind a ransomware attack on Taiwan's energy and technology companies in May 2020. The notice included CPC Corp., a Taiwanese company that delivers petroleum products throughout the island, among the victims. While the attack did not affect CPC's manufacturing processes, it prevented customers from using CPC Corp.'s payment cards to buy gas. during the wave of attacks on Taiwanese targets, threat actors used a new ransom-ware called Coldlock. Malware analysis revealed similarities between the program and two known ransomware families: Freezing and EdA2, an open-source ransomware originally created for educational purposes. 
+Boeing, etc.), iT giants, and media com­panies. The figure below contains the full text of the ad. 
+Figure 5. A user nicknamed nanash offering access to various companies 
+— 
+The hacker group lazarus has resumed developing ransomware. The fact was brought to light during attacks on European companies involving ransomware called VHd Ransomware. The hackers gained access through a vulnerable VPN gateway, obtained administrator privileges, and installed the dacls backdoor. They moved across the victim's network and encrypted files with a combination of AEs-256 in ECB mode and RsA-2048. 
+
+— 
+Another group of Chinese hackers, ironTiger, was behind the attack involving HybirdRansom ransomware against companies in the Asia-Pacific region in the fall of 2019 and the spring of 2020. The ransomware has three components that conse­quently launch each other to lock the machine and encrypt file: locker, loader, and Cryptor. 
+
+
+. KEy TRENds 
+
+Compromised hosts by time (2019-2020) 
+
+
+
+
+
+
+
+
+Large companies under increasing threat from massive hacks 
+in the past, massive attacks did not cause serious damage to large com­panies. This was because brute-force attacks or exploiting vulnerabilities in widespread software led to their infrastructure being used to distribute or manage malicious code, mine cryp­tocurrencies, conduct ddos attacks, or proxy traffic. 
+However, the market for the sale of access to corporate networks, the number of ransomware attacks, and APT group activity have all increased, so the cost of an error on a company’s external perimeter has surged as well. 
+Ten out of 15 ransomware affiliate programs focus on brute-force attacks on RdP. Three programs actively exploit 
+vulnerabilities in VPN services. APT groups performed similar actions. For example, APT29 (aka Cozy Bear) 
+actively exploited the following vulnera­bilities with public exploits: — CVE-2019-19781 (Citrix) 
+— CVE-2019-11510 (Pulse secure) — CVE-2018-13379 (FortiGate) — CVE-2019-9670 (Zimbra) 
+The APT group BlackEnergy (aka sandworm) exploited CVE-2019-10149 (a vulnerability in the Exim mail server) to install an ssH backdoor. 
+Ordinary criminal groups carried out similar actions. For example, the group Clownz responsible for leaks from Godaddy and 247.ai also used CVE-2019-10149 (Exim) to install an ssH backdoor. For several months of activity, the group infected 80,000 servers. 
+As mentioned above, one of the main ways to gain access to corporate net­works is to conduct brute-force attacks on remote access interfaces (RdP, ssH, VPN). How effective such an attack is will determine how many companies will be compromised as a result and how much money the fraudsters will make. Another key change is the emergence of new types of botnets. Their main purpose is to help perform distributed brute-force attacks from a large number of infected devices, including servers. 
+
+
+ivanushk23 Brute-force botnet kilobyte 
+
+After 1+ year of work, I want to announce a new distributed bruteforce/scanner. 
+Paid registration Hey friends, 37 posts Joined 
+
+After one year of work, i'm happy to present a distributed 10/17/18 
+brute-force scanner. The distributed scanner/ bruteforcer is a software that distributes tasks to several computers to scan/brute-force simultaneously. This speeds up the process significantly. 
+Can the solutions be used on computers found? 
+yes, when using a module rootkit. 
+
+Figure 6. Example of the sale of a service based on a bruteforcer, a distributed scanner for establishing passwords 
+
+. KEy TRENds 
+
+
+Growing activity of post-exploitation frameworks 
+Conducting a successful attack  by ransomware affiliates and oper­ more than 10,000 hosts used by such  
+on a corporate network requires tools  ators, organized crime groups, and  frameworks were discovered. in con- 
+for lateral movement and privilege  state-sponsored actors.  trast, 6,000 such hosts were discovered  
+escalation. The growth of the access sales market has led to post-exploita­tion frameworks being used more  Group-iB regularly detects new infra­structure for various post-exploitation frameworks. From H2 2019 to H1 2020,  in the same period last year.  
+often. such frameworks are used  
+
+Threat actor Cobalt Strike Metasploit Covenant CrackMapExec PoshC2 Koadic 
+Ryuk 
+
+
+REvil 
+
+
+APT 
+Cybercrime 
+Ransomware 
+MegaCortex 
+Maze 
+doppelPaymer 
+Clop 
+lockbit 
+
+
+Cobalt 
+silence 
+
+
+Fxmsp 
+FiN6 
+lazarus 
+
+
+OilRig 
+
+
+APT41 
+
+
+APT32 
+Gamaredon 
+
+
+Chimera 
+
+
+Mustang Panda 
+Chafer 
+APT10 
+
+APT33 
+
+
+
+
+
+
+
+10,000 
+HOsTs 
+
+used by post-explotation frameworks 
+
+
+
+
+MILITARY OPERATIONS 
+Seven new APT 
+groups were
+
+discovered during
+the reporting
+period 
+
+six known groups that remained unnoticed in recent years resumed their attacks 
+New tools and 
+destructive 
+
+
+
+consequences 
+Power units shut down, infrastructure destroyed, and air-gapped networks attacked 
+Asia-Pacific 
+
+countries are 
+becoming one
+
+
+of the key "arenas" 
+and are attracting the attention of cybercriminals from China, North Korea, iran, and Pakistan 
+. MiliTARy OPERATiONs 
+
+
+A changing threat landscape 
+Multiple attacks were carried out in the Asia-Pacific, a region in which the main active groups from China, North Korea, iran and Pakistan showed interest. 
+
+APAC 
+APT10 
+
+darkHotel North Korea Oceanlotus Vietnam TA428 China Kimsuky North Korea APT37 North Korea FruityArmor UAE BiTTER india Patchwork india 
+
+EUROPE 
+
+APT 10 China APT15 China Gorgon Group Pakistan Kimsuky North Korea FruityArmor UAE 
+Tonto Team China Twosail Junk China Naikon China Tropic Trooper China Chimera Unknown APT30 China Orangeworm Unknown 
+
+MIDDLE EAST & AFRICA 
+
+APT10 China APT5 China Oilrig iran Orangeworm Unknown MuddyWater iran Transparent Tribe Pakistan 
+
+
+
+
+Gorgon Group FruityArmor 
+Tortoiseshell APT41 Mustang Panda APT33 APT-C-37 domestic Kitten APT35 APT-C-23 Gaza Cybergang Chafer 
+
+during the reporting period, seven remained unnoticed for the past few new APT groups were discovered. years. Group-iB researchers also unveiled the activity of six known groups that 
+America 
+
+China Gorgon Group Pakistan 
+Pakistan 
+
+
+
+UAE POST-SOVIET COUNTRIES
+ iran 
+
+APT28 Russia 
+China 
+
+MuddyWater 
+iran 
+China 
+
+Gamaredon Group Russia 
+iran 
+
+ironTiger China 
+Unknown 
+
+Turla Russia 
+iran 
+
+Golden Falcon Kazakhstan 
+iran 
+
+APT37 North Korea 
+Gaza 
+
+Kimsuky North Korea 
+Gaza 
+
+Tonto Team China 
+iran 
+
+strongPity Turkey WildPressure Unknown Orangeworm Unknown 
+. MiliTARy OPERATiONs 
+
+
+
+New APT groups 
+
+Tortoiseshell 
+
+Geography Initial infection Tools 
+America Phishing Backdoor.syskit Middle East drive-by compromise infostealer 
+The group Tortoiseshell has remained under the radar since July 2018. since then, it has attacked at least eleven iT companies, most of which are located in saudi Arabia. 
+in at least two organizations, evidence was found that attackers gained access at the domain administrator level, which resulted in several hundred computers 
+
+
+
+Poison Carp 
+on the network being compromised. it was probably a forced measure to find the device of greatest interest to them given that infecting an iT provider opens up opportunities to access client systems. 
+To achieve their goal, the group created a unique malware called Backdoor. syskit, developed in versions in the delphi and .NET languages. With this backdoor in hand, the criminals were able to download and execute additional tools and commands. The malware was later identified in an attack involving a phishing website targeting Us military veterans. 
+
+Geography Initial infection Tools 
+Tibet  drive-by compromise  MOONsHiNE  
+Uyghur  Exploit public-facing application  iNsOMNiA  
+spearphishing  iRONsQUiRREl  
+
+The group Poison Carp has remained unnoticed since 2018. The threat actor is believed to have links to China due to the chosen attack targets: senior figures in Tibetan and Uyghur groups. Poison Carp uses eight Android browser exploits, one iOs exploit chain, and a spyware suite for Android and iOs. 
+
+
+
+Higaisa 
+Posing as journalists or officials, the hackers attacked high-profile officials by first contacting them via the mes­saging service WhatsApp. After gaining their trust, the hackers sent the victims a link that installed spyware on the target devices. 
+Malicious software called MOONsHiNE helped the hackers obtain access to calls, messages (including mes­sengers installed on the gadget), and geolocation data. it also allowed them to control the smartphone’s microphone and camera and install programs on the phone. 
+
+Geography Initial infection Tools 
+APAC  spearphishing  GHOsT RAT  
+Europe  Keylogger  
+Russia  infostealer  
+
+since 2016, the group Higaisa has remained unnoticed. The adversary carries out phishing campaigns, deliver­ing executable files most often dis­guised as legitimate installers, images or documents. Congratulatory texts 
+
+
+
+AVIVORE 
+
+or important news are used as decoys. — Android Trojans (capable of taking The attackers use the following tools: screenshots, capturing GPs location and sMs messages, recording calls, 
+— 
+A modified version of GHOsT RAT 
+
+
+stealing phone book data, and down­
+— 
+A keylogger 
+
+loading files). 
+— 
+A malicious program designed to steal passwords from Outlook 
+
+
+Geography Initial infection Tools 
+Europe  supply Chain  Mimikatz  
+UK  PlugX  
+living-off-the-land  
+
+in the past, it was believed that hacker groups such as China-based APT10 organized attacks on European multi­nationals in the aerospace and defense industries. in fact, the threats came from previously unknown hackers such as AViVORE. The group has been active since 2015, but their activities peaked in 2019. AViVORE is reported to be behind recent attacks on Airbus, a European aerospace giant. Airbus was attacked four times in 2019, most recently in september. 
+The adversary infiltrated Airbus' global network of suppliers through the British engine manufacturer Rolls-Royce, which supplies aircraft engines, and the French technology consultancy Expleo. in addition, two unidentified contractors working for the aerospace company were compromised. The main malicious tool used by the group is PlugX. 
+. MiliTARy OPERATiONs 
+
+
+Nuo Chong Lions 
+
+Geography Initial infection Tools 
+Middle East  spearphishing  AndroRat  
+Watering hole  sandroRat  
+droidjack  
+spyNote  
+MobiHok  
+
+Although the group Nuo Chong lions was not active in 2019 and 2020, now that its leader has changed it is likely to become more active again. The group is also known as silencerlion, and its attacks from 2013 to 2018 were used to spy on and control critics of the saudi government at home and abroad. The group reportedly recruited two Twitter employees to gather confiden­tial personal data about dissidents and 
+
+
+Chimera 
+radicals, including phone numbers and iP addresses. On November 11, 2015, Twitter issued a security notice to doz­ens of account holders viewed by one of the former Twitter employees. 
+saud al-Qahtani, a former top aide to Crown Prince Mohammed bin salman, is suspected of being involved in the above. He also allegedly hired the israeli company NsO Group to spy on activists and journalists critical 
+of Riyadh. during their attacks, the hackers used watering hole and spear phishing meth­ods. Nuo Chong lions employed four mobile RATs, including an open source tool called AndroRat and three com­mercial RATs (sandroRat, spyNote, and MobiHok). 
+
+Geography Initial infection Tools 
+Taiwan External remote services skeletonKeyinjector Cobalt strike ChimeRAR 
+This hacker group attacked several Taiwanese semiconductor companies in 2018 and 2019. Experts named the threat actor Chimera. Their attacks were aimed at stealing as much intellectual property as possible, including doc­uments on integrated circuits (iCs), software development kits, iC designs, and source code. 
+
+
+
+WildPressure 
+The motive behind the attacks is likely competitors (or possibly even nation-states, given the advanced nature of the attacks) seeking to gain a competitive advantage. The networks were initially compromised through VPN servers and valid accounts were used. The hackers most likely obtained credentials for the VPN access from compromised accounts. The group is known for deploying a skeleton key malware that makes it possible to log in without valid credentials. 
+
+Geography Initial infection Tools 
+Middle East Unknown Milum 
+The group WildPressure does not overlap with other APT groups and uses new malware. The hackers attacked Middle Eastern organizations, with at least a few operating in the indus­trial sector. The hackers distribute a fully-fledged C++ Trojan called Milum. inside the encrypted communica­tions within the HTTP POsT requests, Group-iB researchers found the malware version 1.0.1. such a ver­sion number indicates an early stage of development. Other fields suggest the existence of plans for non-C++ versions at the very least. This means that the group is likely to continue their attacks in the future. 
+
+
+
+
+
+Well-known groups remaining undetected for a long time 
+The year was also marked by long­term and covert attacks carried out by well-known groups that once seemed to have left the stage. On the one hand, this reaffirms that APT groups and their sophistication should never be underestimated. On the other hand, continuously training systems to detect malicious infrastructure and software at an early stage makes preventive measures much more effective, and means that more and more attacks can be tracked. Most such groups have their own unique style or use self-developed tools. 
+Golden Falcon 
+An unexpected discovery in 2019 was the activity of the group Golden Falcon (aka APT-C-34), which became known after one of the group's C&C servers was detected. 
+The group hacked private compa­nies and government organizations in Kazakhstan. They mainly used two tools. The first was a version of RCs (Remote Control system), a surveil­lance kit sold by an italian vendor called HackingTeam. The second was a back-door named Harpoon that appears to have been developed by the group itself. documentation about the latter in Russian was found on a C&C server, which suggests that the group hired third-party developers to write the malware according to the group's own technical specifications. 
+The group's activities resemble those of the group dustsquad, which has been active since 2017. They also orchestrate espionage campaigns in Kazakhstan, for which they used the Octopus Trojan. The group may be backed by Kazakhstan's special services or individuals interested in monitoring the situation in the country. 
+
+Naikon 
+The prize for the most stealthy and long-term campaign goes to the Chinese group Naikon for its five-year campaign against top government agencies in target countries in the APAC region. Naikon used a new back-door called Aria-body that creates and deletes files and directories, takes screenshots, searches for files, and collects data (file metadata, system information, and location data). Even though the threat actor uses common initial intrusion vectors (emails with malicious attachments), their attacks are highly effective. 
+
+APT20    
+For two years, the group APT20 remained undetected while attacking companies and government agencies. The threat actor stole passwords and bypassed two-factor authentication to collect target data. Their large-scale campaign called Operation Wocao affected multiple industries including aviation, construction, finance, health­care, insurance, gambling, and energy. 
+. MiliTARy OPERATiONs 
+
+The criminals effectively covered their tracks by regularly removing data-steal­ing tools from infected computers. 
+
+APT5    
+Another surprise comeback came from the group APT5 (aka Manganese). The group has been active since 2007 and consists of several subgroups with specific tactics and infrastructure. The criminals infiltrate organizations across various verticals. Their primary interest appears to be telecommunications and technology organizations, with a par­ticular affinity for satellite communica­tion firms. 
+during the reporting period, APT5 cre­ated an infrastructure designed to scan 
+
+
+
+Significant operations 
+Attacks on nuclear facilities    
+India, 2019 
+in september 2019, Group-iB experts discovered an archive containing dtrack, a remote administration tool attributed to the North Korean group lazarus. Analysis revealed that the logs contained data from a compromised machine running Windows that belonged to an employee of the Nuclear Power Corporation of india limited (NPCil). 
+All the files in the archive were compiled at different times, but the main file with the compromised data is dated January 30, 2019, i.e. more than six months before they were detected. This suggests that the hackers remained unnoticed in the victim’s network for a long time. 
+Analysis revealed that the attack against NPCil was taken even further and led to Kudankulam Nuclear Power Plant (sit­uated in the south of the state of Tamil Nadu) being compromised. On October 19, 2019, the power plant’s second power unit was shut down. Group-iB believes that these events may be linked. 
+According to the company officials, the reason for the power unit being shut down was a low sG level: 
+“The most important sG parameter subjected to regulation is the sG level. if the level is too low, the insufficient heat removal by the secondary side may cause evaporation of the reactor coolant, 
+thus overheating of the reactor core.” in other words, the pressure in the steam generator, which is responsible for transferring heat from the core to the generator's turbine, was low. This could have led to the core overheating. 
+After cybersecurity expert Puhraj singh tweeted about the attack, the nuclear power plant's administration released a statement in which singh's words were called “false information” and denied that an attack had occurred, stating that “any cyber-attack on the Nuclear Power Plant Control system is not possible.” 
+The Nuclear Power Corporation of india limited, however, later confirmed that the plant had been attacked. NPCil’s offi­cial statement said that the malware infected one computer connected to the nuclear power plant’s administrative net­work, but did not reach its critical internal network used to control the power plant's nuclear reactors. 
+
+South Korea, 2020 
+in April 2020, lazarus sent malicious emails to a company in the energy sector in south Korea. The hackers disguised themselves using a document with a description of a vacancy at KHNP (Korea Hydro & Nuclear Power Co., ltd.). 
+the web for Fortinet and Pulse secure enterprise VPN servers. The criminals then exploited the CVE-2018-13379 vulnerability in Fortinet and the CVE­2019-11510 vulnerability in Pulse secure. These arbitrary file reading vulnerabil­ities make it possible for an unauthen­ticated remote attacker to read the con­tent of files on vulnerable devices. 
+APT30    
+it was uncovered that the group APT30 has been upkeeping its 10-year-old tools (BACKsPACE and NETEAGlE) and has used them in attacks on southeast Asia. in addition, the hackers continued with their old approaches to organizing network resources and tested new soft­ware: RHttpCtrl and RCtrl. 
+Cycldek 
+The hacker group Cycldek also made an appearance. The threat actor uses the UsBCulprit Trojan, which is designed to steal data from corpo­rate networks and helps gain access to disconnected and physically isolated devices. The malware had gone unde­tected since 2014, with new samples appearing in 2019. The group focused on government organizations in several countries in southeast Asia. 
+KHNP is a subsidiary of Korea Electric Power Corporation. it operates large nuclear and hydroelectric plants in south Korea, which supply about 30% of the country's electric power. 
+in addition, since October 2019, the North Korean groups lazarus and Kimsuky have been actively attacking south Korea's defense enterprises. The attacks have intensified since April 2020. 
+Iran, 2020 
+On July 3, 2020, it transpired that the israeli authorities were suspected of car­rying out a cyberattack on iran's nuclear facilities. The incident occurred on July 2 at iran's largest uranium-enrichment facility in Natanz and caused a fire and explosion. Before the incident was made public, a group calling itself the Homeland Cheetahs sent a statement to BBC Persian journalists and claimed to be behind the attack. The group alleg­edly consists of "former members of the iranian security forces who have decided to fight against the authorities." 
+iran's officials said the incident had caused significant damage that could slow the development of advanced uranium enrichment centrifuges, but that there had been no casualties. 
+. MiliTARy OPERATiONs 
+
+
+
+Attacks on Israel's water supply facilities 
+in April 2020, the israeli National Cyber­directorate (iNCd) issued a security alert urging staff at companies in the energy and water sectors to change passwords for all internet-connected systems. According to the alert, the agency had received reports of intru­sion attempts at wastewater treatment plants, water pumping stations, and sewers, which was confirmed by the israeli authorities. details of the attacks were not disclosed, but iNCd Head yigal Unn said they could have led to some damage to the civilian population and even temporary water shortages. israeli officials said that the attacks had 
+
+
+Attacks on Iran’s critical facilities 
+On May 9, 2020, hackers carried out a cyberattack on the sys­tems of iran’s shahid Rajaee port in the city of Bandar Abbas. According to iran's Ministry of Roads and Urban development officials, the attack affected a limited number of private operating resources in the port and did not cause significant damage. 
+targeted sCAdA systems of wastewater treatment facilities, but that they had been successfully thwarted. 
+initial reports played down the April attack, but a Financial Times report a few month later cited its sources as claiming that the hackers had gained access to some of israel's water treat­ment systems and tried altering water chlorine levels before being detected and stopped. if the sabotage attack had been successful, attackers could have poisoned the local population served by the treatment facility affected. 
+in addition, the israeli Water Authority warned that in June 2020 water 
+it was later revealed, however, that com­puters regulating the flow of vessels, trucks, and goods all crashed at the same time, creating massive backups on waterways and roads leading to the facility. 
+The attack was presumably in response to an alleged iranian attempt to hack into israel’s water infrastructure systems. 
+supply and water treatment systems were attacked again. The incidents reportedly did not cause any damage to israel’s water system. 
+The first attack affected agricultural water pumps in upper Galilee, while the second one targeted water pumps in the central province of Mateh yehuda, local media reported. 
+"These were specific, small drainage installations in the agriculture sec­tor that were immediately and inde­pendently repaired by the locals, caus­ing no harm or any real-world effects," the Water Authority said in a statement. 
+The attack was followed by a series of accidents and explosions at some of iran’s critical facilities, including pet­rochemical plants, uranium enrichment facilities, power plants, and ports. 
+Figure 7. Map of shutdowns and explosions in iran 
+
+
+. MiliTARy OPERATiONs 
+On June 26, a large explosion occurred near Tehran region. The iranian govern­ment was quick to dismiss the epi­sode as a gas explosion at the Parchin military base. satellite photographs, however, revealed that the explosion happened at the Khodjir missile produc­tion facility (part of the shahid Hemmat industrial Group). The base is laced with underground tunnels and has long been suspected of being a major site for iran’s growing arsenal. 
+iran linked the attack to a power outage in the city of shiraz, nearly 600 miles to the south. shiraz also has major mili­tary facilities, and the explosion and the outage happened almost at the same time. American and israeli intelligence officials insist they were not involved. 
+Figure 8. satellite image of the explosion site in the mountains in the east of Tehran 
+
+
+
+
+
+
+THREATS TO THE TELECOMMUNICATIONS SECTOR 
+6 State-sponsored 
+groups 
+
+show an interest in the telecom sector and conduct sophisticated attacks against it 
+
+
+2.3 Tb per second
+and 809 million 
+
+packets per
+second 
+
+new records in ddos attack power  
+
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+special services pose the greatest threat The traditional problems faced by operators to telecom companies. during the reporting are BGP route leaks and ddos attacks. such period, six groups linked to special services attacks are becoming increasingly effective actively attacked the telecommunications and are setting new records. sector, targeting both fixed and mobile operators. 
+Nation-state actors attacking the telecom sector 
+
+95 
+
+
+
+MONTHs 
+
+of attacks on the telecom sector conducted by an active hacker group 
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+APT41 
+The hacker group APT41 carried out a number of attacks recently. in February 2020, the hackers success­fully exploited a Cisco RV320 router at a telecommunications organization. it is unknown what specific exploit was used, but there is a Metasploit module that combines CVE-2019-1653 and CVE-2019-1652 to enable remote code execution on such routers. it also uses wget to download specified payloads. 
+APT41 also exploited the CVE­2020-10189 vulnerability in Zoho ManageEngine, which allows unauthen­ticated remote attackers to execute arbitrary code with sysTEM/root priv­ileges. The day after CVE-2020-10189 was fixed, the threat actors attacked over a dozen systems and compromised at least five. They then deployed a trial version of the Cobalt strike BEACON loader and used another backdoor to download VMProtected Meterpreter. 
+OilRig 
+The iranian group OilRig has been directly involved in two campaigns affecting the telecommunications sector. 
+One of the campaigns lasted three years and was dubbed Fox Kitten by security researchers. during the campaign, the threat actors gained access to and ensured persistence in the networks belonging to numer­ous companies and organizations from various sectors, including telecommunications. 
+in most cases, target organizations were initially infected through one-day vulnerabilities in various VPN services such as Pulse secure VPN, Fortinet VPN, and Palo Alto Networks’ Global Protect. Once inside the company, the attackers would try to maintain access to networks by opening a variety of communication tools, including open­ing RdP links over ssH tunneling. At the final stage, after successfully infiltrating the organization, the attackers per­formed the routine process of identify­ing, examining and filtering sensitive val­uable information from every targeted organization. 
+The second campaign affected telecom providers in south Asia and was discov­ered in April 2020. during the campaign, the threat actors used post-exploitation frameworks and tools such as Covenant, Cobalt strike, Metasploit, and Mimikatz. in addition, the group used legiti­mate tools such as Plink, Bitvise, and Bitsadmin. The threat actors used phishing emails to gain initial access. The campaign’s main aim was to steal user credentials and gain access to database servers using the obtained credentials. 
+The attacks were long-term: the threat actors may have infiltrated the network of one organization as early as in October 2019. The first activity was detected on October 11, 2019, when a malicious Powershell command was executed to install a Cobalt strike Beacon module. The threat actors then executed a Powershell command that launched Metasploit for achieving per­sistence in the system. 
+The group’s activities resumed on February 6, 2020, when a Powershell command was executed to search for files similar to web.config. For each file found, the threat actors extracted username and password details where possible. They may use the credentials to access organizational resources such as sQl servers. 
+On March 11, the threat actor attempted to connect to a database server via Powershell, presumably using stolen credentials. The hackers also used an sQl command to obtain informa­tion about the database server ver­sion, possibly to verify credentials and connectivity. 
+
+Molerats 
+Between October 2019 and early december 2019, security researchers identified multiple instances of phishing 
+
+
+Attacks on mobile operators 
+APT41, a Chinese state-sponsored threat group, was highly active during the investigated period. The group actively deployed malware called MEssAGETAP. 
+The malware is designed for linux devices and meant to be installed on short Message service Center (sMsC) servers located inside mobile operator networks that handle sMs communications. After compromising a cluster of linux servers belonging to an unidentified telecom provider, the group would intercept messages sent by individuals of interest to the Chinese government. The criminals then searched for messages based on the keyword list containing items of geopo­litical interest for Chinese intelligence services. sanitized examples include the names of political leaders, military and intelligence organizations, and political movements at odds with the Chinese government. 
+MEssAGETAP also sets aside sMs messages if they are sent from or to particular phone numbers, or from or to a device with a particular attacks likely related to a threat group called Molerats (also known as Gaza Hackers Team and Gaza Cybergang). The group targeted organizations in the telecommunications, insurance, and retail industries and government agen­cies, eight in total, all in six countries. 
+All the attacks involved spear-phish­ing emails with malicious documents that required the recipient to carry out certain actions. The social engineering techniques involved misleading images that tricked users into enabling content to run macros. The hackers also threat­ened to release compromising pictures to the media as a way of coercing users into clicking a link and downloading malicious payloads. during most such attacks, the payload was a backdoor called spark, which allows threat actors to open applications and run command line commands on the compromised system. 
+Mikroceen 
+security experts analyzed a Trojan used by an unknown Chinese APT that spied on undisclosed companies in the telecommunications and gas indus­tries as well as a government entity in Central Asia. The analysts called this campaign Mikroceen. 
+As part of their operations, the threat group used backdoors to gain per­manent access to corporate net­works. Based on the data obtained, Group-iB researchers believe that the same group was involved in other attacks, including Microcin against Russian military personnel, ByEBy against the Belarussian govern­ment, and Vicious Panda against the Mongolian public sector. The group has been active since at least 2017. 
+The experts justify this theory by the fact that the hackers used Gh0st RAT, which has been used by Chinese APTs often and for a long time. in addition, the analysts discovered clear similari­ties in the malware codes. 
+international Mobile subscriber identity (iMsi) unique identifier. When it was discovered, the malware was tracking thousands of device phone numbers and iMsi codes at a time. 
+during attacks, the threat actor also interacted with call detail record (CdR) databases to query, save, and steal records about individuals of interest. Targeting CdR information provides a high-level overview of phone calls between individuals, including time, duration, and phone numbers. 
+
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+
+MEssAGETAP is a 64-bit ElF data miner initially loaded by an installation script. Once installed, the malware checks for two files: keyword_parm.txt and parm.txt, which contain instructions for MEssAGETAP to target and save sMs message content. Both files are deleted from the disk once the config­uration files are read and loaded into the memory. After loading the keyword 
+
+
+BGP Hijacking 
+and phone data files, MEssAGETAP begins monitoring all network connec­tions to and from the server. it uses the libpcap library to listen to all traffic and extracts sMs message metadata, including sMs message content, iMsi numbers, and source and destination phone numbers. 
+Based on the above information, users and organizations must consider the risk of unencrypted data being intercepted several layers upstream in their cellular communication chain. This is especially critical for frequently targeted individuals such as dissidents, journalists, and officials who handle highly sensitive information. 
+
+BGP hijacking remains a serious problem. Attacks and delib­erate interruptions often occur because companies fail to cor­rectly set configurations or prefix filters. 
+Date Name Brief description 
+07/21/2020 As 264462 Comercial Conecte 13,046 prefixes leaked. The affected isPs belong to india, sem Fio ltda me, Brazil Russia, south Korea, Vietnam 
+06/09/2020 iBM Cloud iBM Cloud (cloud data center) malfunctioning because an external provider sent incorrect routes 
+04/23/2020 As205310 Beiersdorf shared services 90,000 prefixes compromised: Routes were redirected GmbH, Germany to As15943 instead of As8220 
+04/22/2020 As263444 Open X Tecnologia ltda, Brazil 9,328 prefixes leaked from 1250 As, including Akamai, Cloudflare, Vodafone, NTT, Amazon, NVidiA 
+04/05/2020 As7552 Viettel, Vietnam 4,825 prefixes of 326 operators leake 
+04/01/2020  As12389 Rostelecom, Russia  8,870 prefixes leaked from nearly 200 As including Akamai, Cloudflare, Hetzner, digital Ocean, Amazon AWs  
+03/31/2020  As50048 NEWREAl-As, Russia  leak of 2,658 prefixes in Tier-2 isP Transtelecom. The  
+prefixes belonged to Orange, Akamai, and Rostelecom  
+02/16/2020  As139070 Google Asia Pacific Pte. ltd., singapore  —  
+
+02/07/2020 As8359 "MTs", Russia 225 prefixes leaked from 36 As 
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+
+
+Growing power of DDoS attacks 
+An increase in the number of internet of Things (ioT) devices has led to more and more hosts being added to infa­mous botnets such as Mirai. in addition, new botnets have emerged. 
+As regards ddos attack techniques, syN floods still remain the most common type of attack. iCMP flood attacks rose from last to second place in popularity, and HTTP floods finished in last place — they have become less widespread since January 2019. 
+in 2020, denial-of-service attacks became more effective. in the first half of 2020, threat actors set new records for ddos attack power. 
+Largest Gbps DDoS attack ever recorded 
+According to Amazon's Q1 2020 threat report, its AWs shield service miti­gated the largest ddos attack ever recorded, stopping a 2.3 Tbps attack in mid-February this year. The company did not disclose the attack’s target or origin. The attack was carried out using hijacked CldAP web servers and lasted three days. CldAP (Connection­less lightweight directory Access Protocol) is an alternative to the older ldAP protocol that has been abused for ddos attacks since 2016. CldAP serv­ers are known to amplify ddos traffic by 56 to 70 times its initial size, making it a highly sought-after protocol and a common option provided by ddos­for-hire services. 
+The previous record for the larg­est ddos attack ever recorded was 
+1.7 Tbps. it was mitigated by NETsCOUT Arbor in March 2018. The attack abused Memcached servers exposed to the internet and reached massive bandwidths. 
+
+
+
+
+Largest Mpps DDoS attack 
+A bank in Europe was hit by a massive, distributed denial-of-service (ddos) attack that generated a record 809 million packets per second (PPs). The record ddos attack was mitigated by Akamai on June 21, 2020. The com­pany did not disclose the bank’s name. 
+it was unusual that 96.2% of the iP addresses involved in the attacks were not being tracked as recent attacks, which suggests that a new botnet emerged. The June 21 attack was remarkable not only for its size, but also because of how quickly it reached its peak. The attack grew from normal traf­fic levels to 418 Gbps in seconds before reaching its peak size of 809 Mpps in approximately two minutes. in total, the attack lasted just under 10 minutes. 
+Nation-level accessibility issues 
+in early February 2020, iran's infrastruc­ture came under a large-scale ddos attack, which left 25% of users in iran without internet. The NetBlocks internet observatory, which maps internet secu­rity and freedom in real-time, confirmed that there was extensive disruption to the iranian telecommunications network that began on the morning of February 8 at 11:45 local time. 
+The consequences of the massive ddos attack left the country’s major network operators unable to operate for one to seven hours. 
+
+
+
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+during the reported period, 9 groups time, some of these groups (e.g. China-linked to intelligence services actively based APT41) actively used ransomware attacked the energy sector. At the same to disable networks. 
+Nation-state actors attacking the energy sector 
+
+9 
+GROUPs 
+
+linked to intelligence services actively attacked the energy sector during H2 2019 — H1 2020 
+group-ib.com 
+
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+APT20 
+The Chinese-backed hacker group APT20 attacked companies in ten countries as part of a campaign called Operation Wocao. The group’s attacks affected various industries, including the energy sector. 
+The hackers compromised target networks via vulnerable web servers managed by a company or government entity. The threat actor then propagated across the network looking for system administrator credentials with privileged access to the infrastructure's most critical parts. 
+APT20 installed keyloggers on com­puters used by administrators in order to capture keystrokes and steal pass­words. The campaign involved tools such as web shells for file upload and command execution, a script for scan­ning the system for information, the custom Xserver backdoor, CheckAdmin to identify if administrators are logged in, and others. 
+APT28 
+The group APT28 is believed to have been behind a phishing attack against the Ukrainian oil and gas group com­pany Burisma in early November 2019.  
+The threat actors registered lookalike domains that mimicked legitimate web­sites belonging to Burisma’s subsidiar­ies and partners. in particular, domains targeting the following subsidiaries were discovered: KUB-Gas llC, Esko-Pivnich, and CUB Energy inc. 
+To carry out the attack, the threat actors sent employees emails with links to login pages. The links looked legitimate. in addition, the attackers set up sender authentication records using sPF and dKiM. After victims followed the link and entered their cre­dentials, the attackers gained access to them and could use them to further the attack. some employees entered their credentials on the fake web-pages, which allowed the threat actors to stealthily operate within the organi­zation and obtain the information they needed. 
+APT41 
+The group APT41 used a new ransom-ware family called Coldlock to conduct a series of attacks against several organizations in Taiwan. Analysis of the malware revealed similarities between Coldlock and the previously known Freezing ransomware family as well as the EdA2 “educational” ransomware kit. For example, Freezing and Coldlock have a similar method of propagat­ing within networks (compromised Ad servers), similar reflective injection methods, and a similar internal module architecture. 
+Coldlock terminates the following ser­vices on the system before encrypting their files: 
+— 
+mariadb 
+
+— 
+msexchangeis      
+
+— 
+mssql      
+
+— 
+mysql      — oracleservice 
+
+
+it also terminates the Outlook pro­cess and checks the Windows version running on the system. if the system is running Windows 10, the ransomware carries out several Windows 10-specific routines. Windows defender is disa­bled, as is the ability to send feedback/ malware samples to Microsoft. Push notifications are disabled as well. 
+According to media reports, the campaign struck the computer sys­tems of Taiwan’s state-owned energy company, CPC Corp., which delivers oil products throughout Taiwan. Although the attack did not affect the compa­ny’s energy production, it did reportedly prevent some customers from using CPC Corp.’s payment cards to purchase gas. 
+PoetRAT 
+A new remote access Trojan named PoetRAT was discovered in February 2020. The attacks affected Azerbaijan’s government agencies and industrial companies, mainly in the energy sector. The investigation revealed that cybercriminals are par­ticularly interested in sCAdA systems used in the electricity sector, specifi­cally in wind turbine systems. 
+RAT is written in Python and has all the features specific to this type of mal­ware. it gives the operators complete control over the compromised system. 
+The attackers sent malicious Microsoft Word documents, some of which were made to look like messages from Azerbaijani government agencies or from the defense Research and development Organization of india. some of the file names mentioned COVid-19. 
+The threat actors monitored specific directories, which meant that they wanted to exfiltrate specific informa­tion about the victims. The attackers likely wanted to get a full picture of the victims by using keyloggers, browser credential stealers, and Mimikatz and pypykatz for further credential harvesting. 
+OilRig 
+iranian hackers were once again found to be using wipers, but this time the attacks are attributed to the OilRig group (aka APT34). A new Trojan called ZeroCleare was used in a recently discovered targeted attack on an oil and gas company. 
+The attack most likely started in the fall of 2018 with reconnaissance scanning from various low-cost/free VPN provid­ers and gaining access to one of the accounts that was later involved in the attack. during the summer of 2019, the attackers used a password spray from a system on the local network to gain access to additional accounts, install AsPX web shells, and gain domain administration privileges. 
+After the device was compromised through a vulnerable driver, the wiper spread to other devices in the network for further destructive attacks. The malware then overwrote the master boot record (MBR) and disk partitions on Windows-based machines using a legitimate driver, Eldos Rawdisk. While Group-iB researchers could not deter­mine the exact number of organizations that were impacted, at least 1,400 hosts were affected by ZeroCleare. 
+later, a new strain of ZeroCleare data-wiping malware called dustman was detected on the network belonging to Bapco, Bahrain's national oil com­pany. A common component of the malware is Eldos Rawdisk. dustman differs from other wipers by the fact that the necessary drivers and loaders are supplied in one executable file and not two, as is the case with ZeroCleare. dustman also overwrites the volume, while ZeroCleare erases it by overwrit­ing it with junk data (0x55). 
+in this case, however, OilRig was most likely trying to cover its tracks as the hackers had previously made mistakes that revealed their presence on the network. 
+Orangeworm 
+since January 2020, a wave of attacks involving the Kwampirs Trojan has been identified. The malware has been linked to the Orangeworm group, which used the Trojan to attack companies in the healthcare sector, in particular software supply chain companies. 
+After penetrating the system, Kwampirs collects basic data about the device and sends it to a remote server. Attackers then gain access to sensitive data using the backdoor on the infected machine. if the compromised system is identi­fied as potentially interesting, the data is stolen and the malware is copied to all available machines and network resources. 
+This year, the threat actor has been conducting supply-chain attacks against software vendors, but the group's ultimate interest has changed. They now attempt to gain access to organizations that support industrial control systems (iCs) for the global pro­duction, transmission, and distribution of energy. 
+Orangeworm is not officially associ­ated with any country. The FBi has said, however, that the Kwampirs source code shows that the Trojan is simi­lar to the infamous shamoon wiper developed by the iranian hacker APT33, though the latter does not have a wiper component. 
+
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+Attackers most often use the following methods to bypass air gaps: 
+Many industrial networks are “air Attackers most often use the following during the reporting period, new tools gapped” and to some extent isolated methods to bypass air gaps: for jumping the air gap emerged: from other internal networks. But even 
+— Trusted UsB devices      protected networks can be breached. 
+— 
+Connected Raspberry Pi devices    
+
+— 
+supply-chain attacks  
+
+
+
+Group Trojan Modus operandi 
+Cycldek (China) UsBCulprit UsBCulprit is delivered using another Trojan (NewCore RAT), which initially reaches users via spear phishing emails, usually politically themed. 
+Once it is in the system, UsBCulprit scans paths to executable files, collects documents with certain extensions, and exports them to UsB drives connected to the system. 
+When a UsB drive infected with UsBCulprit is connected to a computer, the Trojan will copy stolen files either to or from the removable drive. 
+Tropic Trooper (China)  UsB worm  The threat actors ferry a malware installer via UsB into an air-gapped  
+UsBferry  host.  
+The malware checks for network connectivity. if it determines that the  
+network is unavailable, it tries to collect information from the target  
+machine and copy the collected data to UsB storage.  
+After that, the Trojan exfiltrates information and uploads it to the  
+C&C server.  
+
+DarkHotel (South Korea) Ramsay 1 
+
+september 2019) Ramsay 2.a (early March 2020) 
+Ramsay 2.b (end of March 2020) All versions of the malware differ from each other and infect victims in different ways. Versions 1 and 2.b exploit a vulnerability in .doc (CVE-2017-0199), .rtf (CVE-2017-11882), and Visual Basic mechanisms integrated into Word. Version 2.a is disguised as a 7zip installer. 
+The persistence mechanism is selected based on the Ramsay version used. some have a special spreader component that copies Ramsay to all PE files located on disks, including removable drives, in order to eventually reach isolated systems. 
+The threat actor exfiltrates the collected data using an external component that has not yet been detected. 
+Turla COMpfun The hackers have updated the classic COMpfun remote access Trojan by adding the ability to check whether a UsB drive is connected to the infected host. security experts believe that this mechanism is used by Turla to infect physically isolated systems and spread the Trojan automatically. 
+Transparent Tribe UsBWorm component of the Crimson Trojan UsBWorm is a component developed for stealing files from removable drives and spreading malware across systems by infecting removable media. To steal data, the malware enumerates all the files stored on the device and copies those with an extension matching a predefined list. 
+As part of the infection process, the malware lists all directories. Then, for each directory, it creates a copy of itself in the drive root 
+directory using the same directory name and changing the directory attribute to “hidden”. This results in all the actual directories being hidden and replaced 
+with a copy of the malware using the same directory name. Moreover, UsBWorm uses an icon that mimics a Windows directory, tricking the user into executing the malware when trying to access a directory. 
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+Analysis of these attacks reveals that threat actors usually apply the following techniques to attack the energy sector: 
+Attack vector Modus operandi 
+Reconnaissance via OPC Attackers use the OPC protocol to gather information about the equipment being used and to identify its topology. 
+Access to sCAdA HMi since HMi workstations have a small attack surface, in addition to standard methods of gaining access to computers running Windows, hackers actively investigate vulnerabilities in the HMi. Exploiting such vulnerabilities means that malicious code can be executed. 
+Controller management Attack frameworks (e.g., idustroyer) are being supplemented with modules that allow threat actors to manage controllers using standard protocols such as iEC 60870-5-101, iEC 60870-5-104, and iEC 61850. 
+Control over emergency Control over emergency shutdown systems allows hackers to stop production, so attackers have shutdown systems developed specialized modules for this purpose (e.g., the Triton framework). 
+infiltration through home in order to detect industrial networks, the threat actors load modules for traffic analysis and Modbus routers and NAs protocol detection (e.g., the VPNFilter framework) on network devices. 
+Organized crime targeting the energy sector 
+Crime groups conduct two main types of attack on the energy sector: 
+— Active sale of access, including to networks belonging to energy companies 
+Sale of access 
+in 2019, cybercriminals stopped publish full company names very often, making it more difficult to categorize a compro­mised company. Based on the descrip­tions presented, six companies in the energy sector were identified. Five 
+2019 
+— Ransomware attacks     
+Many types of ransomware have been equipped with new capabilities to detect processes associated with industrial control systems. This has caused 
+of them are associated with the extrac­
+tion of energy resources. in 2020, Group-iB did not observe an increase in the sale of access to net­works belonging to energy companies. This year, access to seven companies 
+substantial losses of critical data and higher ransom amounts for recover­ing access to such data. This is espe­cially true for data stored on Historian servers. 
+was offered for sale. Two companies are involved with energy directly and five are associated with production. The only company whose name has been published is Entrust Energy. 
+
+Date Seller Industry Name Domain Region Price ($) 
+03/04/2019 Achilles Mining, quarrying, and None None None None oil and gas extraction 
+04/28/2019 lampeduza Mining, quarrying, and stevin Rock llC stevinrock.com United Arab 900 oil and gas extraction Emirates 
+08/10/2019 bc.monster Energy None None None 4,600 
+09/15/2019 B.Wanted Mining, quarrying, and None None UsA 4,600 oil and gas extraction 
+09/21/2019 Gabrie1 Mining, quarrying, and None None UsA 24,000 oil and gas extraction 
+11/11/2019 nikolaruss Mining, quarrying, and None None Turkey 3,500 oil and gas extraction 
+. THREATs TO THE TElECOMMUNiCATiONs sECTOR 
+2020 
+
+Date Seller Industry Name Domain Region Price ($) 
+02/08/2020 ellis.J.douglas Energy Entrust Energy entrustenergy.com UsA 1,600 
+03/16/2020 rexus Mining, quarrying, and None None China 10,000 oil and gas extraction 
+04/18/2020 cryzaa Mining, quarrying, and None None None 3,000 oil and gas extraction 
+04/27/2020 Network Mining, quarrying, and None None None None oil and gas extraction 
+05/14/2020 zeoman Mining, quarrying, and None None Netherlands 2,000 oil and gas extraction 
+06/11/2020 fatfish Energy None None Canada 500 
+06/30/2020 drumrlu Mining, quarrying, and None None United Arab 2,000 oil and gas extraction Emirates 
+Ransomware attacks on energy companies 
+Over the past year, eleven attacks companies are linked to energy directly of ransomware used in this industry: the against energy companies have and six are related to production. At the attacks involved eight different ransom-been detected. Five of the targeted same time, there is no specific type ware families. 
+Date Ransomware Industry Name Domain Region 
+11/11/2019 doppelPaymer Mining, quarrying, and Pemex pemex.com Mexico oil and gas extraction 
+01/14/2020 Maze Energy Electricaribe electricaribe.co Colombia 
+02/20/.2020 Clop Mining, quarrying, and iNA Group ina.hr Croatia oil and gas extraction 
+04/02/2020 Nefilim Mining, quarrying, and Aban Offshore abanoffshore.com india oil and gas extraction 
+04/06/2020 Maze Mining, quarrying, and Groupement Berkine ... Algeria oil and gas extraction 
+04/28/2020 Nefilim Mining, quarrying, and W&T Offshore, inc. wtoffshore.com UsA oil and gas extraction 
+05/26/2020 NetWalker Energy solarReserve solarreserve.com UsA 
+06/09/2020 snake Energy Enel Argentina enel.com.ar Argentina 
+07/03/2020 REvil Energy light s.A. light.com.br Brazil 
+07/06/2020 Ragnar Energy Energias de Portugal edp.com Portugal 
+07/24/2020 NetWalker Mining, quarrying, and Axens axens.net France oil and gas extraction 
+THREATS TO THE BANKING SECTOR 
+Focus shifted 
+to ransomware 
+.riminals use more convenient and profitable methods 
+Small and poorly
+protected banks 
+are still being successfully attacked for targeted theft of funds 
+Leaks including
+transaction history 
+are likely to pose risks to the sector, together with ransomware 
+The era of targeted attacks on banks to steal funds is over. last year's report covered five active groups: Cobalt, MoneyTaker, silence, silentCards, and lazarus, all of which successfully committed thefts through sWiFT, ATM switch, card processing, and ATMs. in 2020, such thefts have almost stopped. 
+
+
+. THREATs TO THE BANKiNG sECTOR 
+Recent thefts 
+SWIFT 
+Only lazarus and Cobalt stole via sWiFT. The most recent public incident occurred in February 2019 at the Bank of Valletta in Malta. 
+The most interesting events always remain behind the scenes, however, and attempts to commit theft have not stopped entirely. Over the past year, Group-iB researchers detected inci­dents in several countries (Argentina, india, Kenya, Ghana, and Jordan) per quarter, but not all attempts were suc­cessful. Two groups were active during this period: Nanoswift and lazarus. 
+NanoSwift 
+At least one known incident involving this group took place. Compromise was initially achieved using a legitimate remote access tool called RMs, which was installed using a VBs script: 
+
+install.vbs c719a030434d3fa96d62868f27e904a6 f2f750a752dd1fda8915a47b082af7cf2d3e3655 2696ee4302a85c6b4101fc6d1ce8e38b94fd9c2bbd1acc73b553576b3aacb92f 
+This script has been “in the wild” for  For further propagation, the attack- The following tools were used to esca­ 
+a long time and was first uploaded  ers used the well-known NanoCore  late privileges:  
+to VirusTotal on October 8, 2018.  Trojan, which was saved on the system  
+as lanss.exe in the \lAN subsystem\  
+lanss.exe directory, which is a typical  
+NanoCore indicator known since 2018.  
+
+Tool Description 
+invoke-Ms16135.ps1 A privilege escalation exploit that is a part of Powershell Empire invoke-Ms16032.ps1 
+RoguePotato.zip Tools for running programs with sysTEM privileges sysExec.exe 
+cve-2020-0796-local.zip CoronaBlue exploit 
+Hooker_3.4.zip Hooker keylogger by den4b 
+rkfree_setup_2.26_password_123.exe 
+Evidence suggests that the threat actor uses quite an old toolset. it is effective only if the hackers attack a bank with a minimum level of security and set “traps” for the incident response teams. 
+What is notable, however, is the use of CVE-2020-0796, which was made public in March 2020, and the first exploit was made available in the same month. A file named cve-2020-0796-lo­cal.zip was published on GitHub on April 
+3. This indicates that the incident took place between April and July 2020. 
+Card processing 
+in the past, the groups Cobalt, MoneyTaker, and silence were reported to attack card processing systems. However, recent attacks of this type were carried out by silence only, in the first half of 2019. 
+Revealer keylogger 
+Lazarus 
+lazarus mainly attacks small banks 
+because they are an easy target. in 2020, it transpired that the group purchases pay-per-install services from operators of the TrickBot botnet. This explains why, in the case of several incidents, it was noted that the TrickBot Trojan loaded into  the memory mali­cious code developed by lazarus, which was downloaded from external servers. The incidents involved two domains used by lazarus from which malicious code was downloaded: 
+— 
+util98[.]com, registered on April 24, 2019 
+
+— 
+startmary[.]com, registered on January 13, 2020 
+
+
+The Philippine government-controlled United Coconut Planters Bank (UCPB) was robbed in september 2020. The reports mentioned that the attackers increased the ATM withdrawal limit from 20,000 pesos to 10 million pesos per day. 
+Based on the dates when the domains were registered, the organizations were compromised in April 2019 and January 2020, but the thefts were attempted one to two months later. 
+They also gained access to instaPay, an interbank transfer system. As a result, they siphoned 167 million pesos (Usd 3.44 million) from the bank. 
+Following the investigation, four Nigerian citizens were arrested. 
+. THREATs TO THE BANKiNG sECTOR 
+ATM Switch 
+The only group that leveraged ATM switch access during the reporting period is lazarus. in August 2020, Us-CERT issued a security alert that 
+ATM 
+Many groups (Cobalt, MoneyTaker, silence, lazarus) possess ATM Trojans, but they don't actively use these tools. 
+in september 2019, Group-iB research­ers described a Trojan called dtrack used by lazarus, which was discovered back in 2018. since then, it has not been used for theft purposes. 
+in the second half of 2019, silence was the only group to carry out attacks on banks. They successfully infiltrated several banks in Chile, Costa Rica, and Bulgaria, but their attacks were thwarted at early stages. 
+in November 2019, two files were uploaded to VirusTotal from the Republic of senegal: xfs.dll and dns.dll. 
+The xfs.dll file was compiled on October 19, 2019. it is likely that the ATM attack was carried out on this day, and this is evidence of the last such successful attack conducted by silence. At the time, the main Trojan used by silence was XdA.RAT. 
+The XdA.RAT source code is based on an open-source project: https:// github.com/iagox86/dnscat2. The application supports the following commands: 
+— 
+0: ping command 
+
+— 
+1: create a cmd.exe process 
+
+— 
+2: execute a shell command 
+
+— 
+3: download a file 
+
+— 
+4: upload a file from the infected device to the C&C server 
+
+— 
+5: close all connections 
+
+— 
+6: change the interval of making requests to the server 
+
+— 
+7: save the %lOCAlAPPdATA%\ updatea.bin file 
+
+— 
+8: overwrite the <%XdA_path%>\ updatea2.bin file 
+
+— 
+9: get information about the con­nected dispenser 
+
+— 
+10: carry out an ATM jackpotting attack 
+
+
+
+this group had resumed its activity and Windows. in the past, this code was that they had malicious code in their used only to attack AiX operating arsenal that could be used to steal system versions. despite the alert, the funds through an ATM switch running most recent theft was detected in 2018. 
+it is important to note that the functionality for working with ATMs has been bor­rowed from xfs-disp.exe, which we described in our report on silence. The XdA.RAT source code is therefore based on two projects: dnscat2 and xfs-disp.exe. 
+When the Trojan receives the 9 command, it collects information in the same way as xfs-disp.exe: 
+1. it attempts to connect to the following dispenser service providers: 
+— 
+Cashdispenser (Nautilus) 
+
+— 
+NXCdm (Nautilus) 
+
+— 
+dBd_AdvFuncdisp (diabold) — Currencydispenser1 (NCR) — CdM30 (WiNCOR) 
+
+— 
+GEN (WiNCOR GEN) 
+
+— 
+ATM (GENERiC) 
+
+
+
+2. 
+it logs the maximum number of banknotes that can be dispensed in a single operation (using WFs_iNF_CdM_CAPABiliTiEs). 
+
+3. 
+it logs the current status of the dispenser (whether it is connected and busy), the state of the safe door, the state of the dispenser’s logical cash units, the state of the shutter, etc. The format is as follows: 
+
+
+state=%d, safedoor=%d, dispenser=%d, stacker=%d pos=%d, OutputPosition=%d, shutter=%d, transport=%d ... pos=%d, OutputPosition=%d, shutter=%d, transport=%d 
+4. it logs information about the status and contents of ATM cassettes. The output is displayed as a format string: 
+id:%s(nr=%d)(l=%d,h=%d), %d|%d|%d of %d [%s][%d][%d],[%d][%d] ... id:%s(nr=%d)(l=%d,h=%d), %d|%d|%d of %d [%s][%d][%d],[%d][%d] 
+The application receives the following parameters with the 10 command: 
+— 
+Flag. 
+
+
+— 
+if this value is 0, the application withdraws cash from a specific cash unit. 
+
+— 
+if this value is 1, the application withdraws cash from all cash units. 
+
+
+
+— 
+integer value: Cash unit index 
+
+— 
+integer value: Cash count 
+
+
+
+The application performs ATM jackpotting attacks in the same way as xfs-disp.exe. The only difference is that the application can extract a specific amount of money from a given cash unit. 
+. ThREATS TO ThE BANkING SECTOR 
+Shift in priorities 
+The main challenge that threat actors face when attacking banks is not how to gain access to the target system, but how to eventually withdraw and launder the stolen funds If attackers find an opportunity to make the same amount of money while attracting less attention from law enforcement agencies with a higher chance of suc­cess, they shift their focus This is what 
+happened with Cobalt and Silence We still come across the unique malicious codes used by Cobalt and 
+Silence, but no related thefts have been detected Presumably Cobalt or some of its mem­
+bers have joined the private Thanos ransomware affiliate program This fact is confirmed by the use of a unique packer for Thanos ransomware The same packer was used by Cobalt for their unique CobInt Trojan 
+
+
+Silence did not end their activity in 2020, either Group-IB discovered new C&C servers used in attacks against atypical targets: medical and industrial companies in Western Europe 
+Figure 9 Sale of a ransomware builder 
+
+THREATS TO THE 
+RETAIL SECTOR 
+2.5-fold increase 
+in the number of Js sniffers 
+
+63.7 million bank 
+card dumps 
+obtained using POs Trojans were put up for sale 
+92% of all 
+card dumps 
+
+were related to the United states  
+There are four main threats that could critically damage retail businesses: 
+— 
+Js sniffers 
+
+— 
+Attacks on POs terminals 
+
+— 
+Credential stuffing 
+
+— 
+Ransomware 
+
+
+Ransomware attacks are easy to under­stand and, as a rule, companies are aware of them. As such, we will discuss only the first three threats underlying the carding and mass fraud market. 
+
+
+. THREATs TO THE RETAil sECTOR 
+
+General carding trends 
+The carding market can be divided into such data also by hacking e-commerce The carding market has grown from two main segments: sale of textual websites and using Js sniffers. The $880 million last year to $1.9 billion. card data (number, expiration date, latter were this year’s main novelty and The doubling applies to both text data holder's name, address, CVV) and sale are becoming increasingly widespread and dumps. The amount of text data of dumps (contents of magnetic stripe among cybercriminals. offered for sale has increased from cards). 12.5 to 28.3 million cards, while dumps 
+dumps are obtained using skimming 
+have surged from 41 to 63.7 million. 
+
+Textual data is collected using phishing devices and Trojans for computers with websites, PC/Android banking Trojans, connected POs terminals. and ATMs. Threat actors intercept 
+Textual Total amount 
+28,296,585 
+(cards) 
+details 
+12,540,190 
+Market size 
+$361,684,617 
+
+$179,159,552 
+Minimum price $0.1 
+$0.7 
+
+Maximum price $150 $150 
+Average price 
+$12.78 
+$14.29 
+Median price 
+$12 
+$13 
+
+Dumps Total amount 63,788,590 (cards) 
+41,044,584 
+Market size 
+$1,540,043,892 
+
+$700,520,520 
+Minimum price 
+$0.25 
+$0.5 
+
+Maximum price $500 $500 
+Average price $21.88 $22,44 
+Median price $17 $12 
+Total  Total amount  92,085,175  
+53,584,774  
+H2 2019 —  
+H1 2020 H2 2018 — H1 2019  Market size  $879,680,072  $1,901,728,509  
+
+. THREATs TO THE RETAil sECTOR 
+JS sniffers 
+Over the past year, the number of attacks on online stores has increased. This is because the use of Javascript sniffers to steal bank cards has become one of the main techniques of obtaining large volumes of payment information. The increase in attacks was also caused by the trend of reselling access to various websites and organizations on underground forums. 
+The most popular JS sniffer families 
+
+Sniffer family Price Number of stolen cards 
+Inter 
+
+developed by an underground forum user with $990 — 
+the nickname sochi, who is also the developer of the Red Alert Android Trojan. 
+CoffeMokko 
+
+This sniffer family was developed independently by the criminal group that uses it. To monetize N/A 180,000 stolen data, the criminals created their own card shop. 
+The number of known Js sniffer families has grown from 38 to 96 compared to the previous year. Each of the new families deserves to be analyzed separately. 
+According to Group-iB's findings, over the past year nearly 460,000 bank cards compromised using Js sniffers. Additionally, 645,000 bank cards were put up for sale at card shops for a total of $3.6 million. 
+The top nine banks that issued the stolen cards are located in the Us, with 170,000 cards in total. Cybercriminals are also interested in cards issued in Brazil, Australia, Canada, spain, the United Kingdom, india, singapore, and France. 
+Lazarus, JS sniffers, and Bitcoin theft 
+in July 2020, security researchers reported that the state-sponsored APT group lazarus used Js sniffers to steal credit card data from 25 online stores worldwide. 
+Group-iB researchers identified two campaigns that involved infrastructure previously seen in attacks attributed to the North Korean group. 
+The first campaign began in May 2019. The attackers used the ClientToken sniffer family to infect 20 online stores. 
+The second campaign began in February or March 2020 and targeted large online stores. in total, three websites were infected with the Preloader sniffer. Group-iB found two websites that the attackers used to collect cards stolen during the Preloader campaign, which may indicate a greater number of victims. 
+Group-iB researchers also discovered the BTC Changer campaign, during which a modified version of ClientToken was used to spoof the address of a Bitcoin wallet at the time of payment on online stores that accept Bitcoin. specialists found two websites infected during this campaign, which brought the attackers 0.66983720 BTC (approximately $7,800). 
+Sale of access to online stores 
+Access to hacked online stores — for the purpose of subsequently deploying a sniffer — can be purchased on under­ground forums. The price heavily depends on the country in which the store operates, the number of buyers per day, and the type of payment system 
+ImageId 
+
+This family was developed by an underground forum user with the nickname poter, who has been selling the solution since 2017. At the moment, the sniffer is not offered for sale anymore. One criminal group still uses a variant of it, however. 
+used on the website. if payment is made in a separate window opened in an iframe or after being redirected to the payment system website, then it is more difficult to deploy a sniffer. such lots will there­fore be cheaper than websites on which card data is entered on the website itself. 
+To gain access to a store or install a Js sniffer, cybercriminals continue to use known vulnerabilities in popular e-commerce CMs. They also employ malicious software to steal passwords and conduct brute-force attacks on administrative control panels of stores or dBMs. For example, threat actors continue to conduct attacks using the GoBrut malware written in Golang. The program is used to conduct distributed brute-force attacks on online stores and administrative panels of popular CMs such as Magento, OpenCart, phpMyAd­min, and cPanel. subsequently, the threat actors leverage access to administrative panels and administration tools to install Js sniffers on the target websites. 
+Evasion techniques 
+To prevent malicious code from being detected and removed from the victim website, cybercriminals use several techniques. 
+— 
+Most techniques are based on using Javascript to load the main Js sniffer code when the user is on the check­out page. in the past, Js sniffers were often loaded from a link using the script tag. 
+
+— 
+Another increasingly popular tech­nique involves concealing the Js sniffer code within an image. The injector code downloads the image from the attackers' server, extracts the Js sniffer code, and executes it on the online store page. 
+
+— 
+Criminals still use the code for detecting whether a browser's con­sole is open to avoid being detected 
+
+
+$5,000 22,000 
+by researchers and security tools. The malicious code will not be run and will not execute the main load if it detects that the browser's developer console is open on the visitor's website. 
+— 
+To avoid detection, Js sniffer families also use several different checks under the responsibility of the serv­er-side sniffer: the main Js sniffer code will be obtained only if (i) the user's iP address does not belong to the network of a large cloud pro­vider, (ii) the user's country (deter­mined by iP address) corresponds to the country of the store, and (iii) the Referer field contains the address of the infected store's payment page. if at least one of these checks fails, a benign Js script of a legiti­mate library is returned in response to a sniffer code request. 
+
+— 
+loading the main sniffer code using Javascript helps attackers conceal the address from which the code is loaded. The simplest code samples use Base64 to hide links to malicious Js files. However, we often find samples of malicious code in which the link to the Js sniffer is stored in encrypted form and as a concat­enation of parts of a URl address or a string with a reverse character order. 
+
+— 
+Group-iB Researchers also found samples of malicious code that used the domain Generation Algorithm (dGA) to obtain the website address from which the main sniffer code will be downloaded. The actual address depended on the exact date that the attackers created one domain for each month. if one of the domains was blocked, all they had to do was wait and the flow of bank card data from the infected store would resume. 
+
+
+. THREATs TO THE RETAil sECTOR 
+
+Attacks on POS terminals 
+The main product sold by carders is bank card dumps. in total, 63.7 million dumps were found for sale during the reporting period, which is 156% more than last year. 
+The main method of compromising magnetic stripe data is infecting com­puters with connected POs terminals with special Trojans that collect data from RAM. in total, 14 Trojans were found to be active during the reporting period: 
+— 
+RtPOs 
+
+— 
+TinyPOs 
+
+— 
+UdPOs 
+
+— 
+FighterPOs 
+
+— 
+diamondFox 
+
+— 
+GratefulPOs 
+
+— 
+FrameworkPOs 
+
+
+— 
+MajikPOs 
+
+— 
+dMsniff 
+
+— 
+PinkKite 
+
+— 
+BAdHATCH 
+
+— 
+Pillowmint 
+
+— 
+GlitchPOs 
+
+— 
+Alina POs 
+
+
+during the reporting period, Group-iB researchers established that 19 retail chains were compromised, as a result of which millions of bank cards were put up for sale. 
+
+Country Number of dumps Percent Number of dumps Difference H2 2019 — H1 2020 H2 2018 — H1 2019 (2020 vs 2019) 
+UNiTEd sTATEs 58,921,367 92.37% 39,895,064 1.48 
+iNdiA 1,723,722 2.70% 17,246 99.95 
+sOUTH KOREA 644,672 1.01% 77,573 8.31 
+UNiTEd KiNGdOM 584,519 0.92% 466,296 1.25 
+CANAdA 565,535 0.89% 198,741 2.85 
+BRAZil 447,412 0.70% 168,294 2.66 
+MEXiCO 276,935 0.43% 43,832 6.32 
+FRANCE 234,076 0.37% 53,804 4.35 
+UNiTEd ARAB EMiRATEs 208,089 0.33% 82,446 2.52 
+AUsTRAliA 182,263 0.29% 41,288 4.41 
+during the reporting period, Group-iB researchers established that 19 retail chains were compromised, as a result of which millions of bank cards were put up for sale. 
+Date Compromised company Database name Number of cards on card shops 
+July 2019 deer Valley Resort — — 
+August 2019 Hy-Vee (Hy-Vee Market Grilles, Market sOlAR ENERGy 3,188,056 Grille Expresses and Wahlburgers) 
+August 2019 Russell stover’s retail stores — — 
+september 2019 Krystal, Moe’s, McAlister’s deli and schlotzsky’s NEW WORld ORdER 3,419,867 
+November 2019 North american fuel dispenser — — merchants (visa report) 
+November 2019 Church’s Chicken — — 
+November 2019 Catch — — 
+November 2019 on the Border — — 
+december 2019 Noth american fuel dispenser — — merchants (visa report) 
+december 2019 WAWA BiGBAdABOOM-iii 15,065,318 
+december 2019 islands Restaurants — — 
+december 2019 Champagne French Bakery Cafe — — 
+January 2020 landry’s — — 
+January 2020 The crack shack — — 
+February 2020 — NiRVANA BREACH 1,049,577 
+February 2020 Rutter’s — — 
+February 2020 Quaker steak & lube — — 
+March 2020 Key Food — — 
+April 2020 Main Event — — 
+. THREATs TO THE RETAil sECTOR 
+
+despite how many services sell bank card dumps (card shops), most major databases were exposed on two well-known resources: Joker's stash and Trump's dumps. The surges clearly show that the number of compromised retail chains is much higher: 
+Date  Number  Database name  Card shop  Number of dumps  Distribution by country  The cost of the  
+of dumps  in the specified  in the database  whole database  
+database  
+
+08/02/2019 471,540 GOOd-KARMA-Joker’s stash 320,518 UsA (99.7%) $961,554,00 disCOUNT-sAlE 
+08/20/2019 689,382 sUNRisE-01-Us (sOlAR Joker’s stash 481,071 UsA (99.7%) $12,099,755,00 ENERGy BREACH) 
+08/20/2019  689,382  sUNRisE-01-EU (sOlAR  Joker’s stash  203,875  lebanon (26.8%),  $40,114,790,00  
+ENERGy BREACH)  France(9.08%), Brazil (8.72%)  
+and other EU countries  
+
+10/28/2019 1,727,559 iNdiA-MiX-NEW-01 Joker’s stash 1,333,266 india (98%) $133,326,600,00 
+11/22/2019 921,549 NEW-WORld-ORdER-Joker’s stash 225,242 UsA (100%) $4,541,410,00 01-Us (NWO BREACH) 
+11/22/2019 921,549 NEW-WORld-ORdER-Joker’s stash 485,113 UsA (100%) $9,517,595,00 02-Us (NWO BREACH) 
+01/27/2020 3,845,727 BiGBAdABOOM-iii-Us-part1 Joker’s stash 974,877 UsA (99.9%) $20,415,497,00 (BBB3 BREACH) 
+01/27/2020 3,845,727 BiGBAdABOOM-iii-Us-part2 Joker’s stash 974,829 UsA (99.9%) $20,408,637,00 (BBB3 BREACH) 
+01/27/2020 3,845,727 BiGBAdABOOM-iii-Us-part3 Joker’s stash 1,237,912 UsA (99.9%) $25,922,342,00 (BBB3 BREACH) 
+01/27/2020  3,845,727  BiGBAdABOOM-iii-EU-part1  Joker’s stash  381,940  UK (21.8%), Australia  $74,813,895,00  
+(BBB3 BREACH)  (16.8%), Puerto Rico (16.3%)  
+and other EU countries  
+
+03/06/2020 598,510 BiGBAdABOOM-iii-Us-part19 Joker’s stash 186,074 UsA (99.9%) $3,895,216,00 (BBB3 BREACH) 
+03/06/2020 598,510 dWEll-disCOUNT-sAlE Joker’s stash 136,270 UsA (94.2%), Korea (4.29%) $681,350,00 
+03/06/2020 598,510 06.03_UsA_AsiA_PiN_ Trump’s dumps 66,929 Hong Kong (39.3%), China $996,435,00 disCOUNT (26.3%), Taiwan (13.4%) 
+03/23/2020 564,950 AURiFEROUs-disCOUNT-sAlE-Joker’s stash 292,121 UsA (98.5%) $1,460,605,00 5Usd 
+03/23/2020 564,950 BiGBAdABOOM-iii-Us-part25 Joker’s stash 189,945 UsA (100%) $3,973,479,00 (BBB3 BREACH) 
+04/09/2020 531,978 sCARFACE-disCOUNT-sAlE-Joker’s stash 397,465 Korea (49.9%), UsA (49.3%) $1,987,325,00 5Usd 
+04/12/2020 461,865 12.04_UsA Trump’s dumps 431,542 UsA (74.5%), Korea (22%) $3,590,317,00 
+04/25/2020 455,377 CONsERVATiVE-disCOUNT-Joker’s stash 382,643 UsA (77.4%), Korea (21%) $1,913,215,00 sAlE-5Usd 
+04/29/2020 1,061,346 sTOCK-disCOUNT-sAlE-5Usd Joker’s stash 281,652 UsA (98.8%) $1,408,260,00 
+04/29/2020 1,061,346 29.04_UsA Trump’s dumps 223,864 UsA (98.9%) $1,953,469,50 
+04/29/2020 1,061,346 BiGBAdABOOM-iii-Us-part35 Joker’s stash 186,883 UsA (99.9%) $3,915,851,00 (BBB3 BREACH) 
+04/30/2020 526,638 30.04_UsA Trump’s dumps 389,592 UsA (78.4%), Korea (18.2%) $3,264,337,00 
+05/01/2020 610,381 iRONy-disCOUNT-sAlE-5Usd Joker’s stash 365,602 UsA (88.9%), UAE (9%) $1,828,010,00 
+05/11/2020 1,007,295 ZONdER-disCOUNT-sAlE-3Usd Joker’s stash 613,333 UsA (98.6%) $1,839,999,00 
+05/12/2020 691,320 12.05_Us_AE Trump’s dumps 370,549 UsA (88.8%), UAE (8.33%) $2,953,153,25 
+06/11/2020 672,373 12.06_Us_AE Trump’s dumps 344,273 UsA (91.5%), UAE (5.8%) $3,258,824,00 
+06/22/2020 504,060 19.06_UsA_ZiP_PiN_disCOUNT Trump’s dumps 257,547 UsA (56.6%), UAE (10.1%) $3,863,205,00 
+06/22/2020 504,060 BiGBAdABOOM-iii-Us-part53 Joker’s stash 181,718 UsA (99.9%) $3,792,718,00 (BBB3 BREACH) 
+06/29/2020 566,534 XXXBBB-disCOUNT-sAlE-1Usd Joker’s stash 229,644 UsA (99.9%) $229,644,00 
+06/29/2020 566,534 BiGBAdABOOM-iii-Us-part56 Joker’s stash 181,549 UsA (99.9%) $3,789,953,00 (BBB3 BREACH) 
+TOTAL $352,602,650 
+. THREATs TO THE RETAil sECTOR 
+Credential stuffing 
+One of the most common security issues is the credential stuffing tech­nique, i.e. extracting login-password pairs from various leaks (email, phone number, and other identification data can be the login) for subsequent brute-force attacks. 
+Types of monetization 
+Gaining access to bank accounts and e-wallets 
+Bank accounts and e-wallets are among the most obvious targets for cybercrim­inals. Hackers prefer attacking online resources that give direct access to the victim's money. some banks provide access to online banking using the pair email:password or phone:password, which makes them attractive targets. 
+it is difficult for cybercriminals to directly withdraw funds from banks because such operations usually require confirmation (two-factor authentication) from the account holder. This explains why this monetization method is not the most popular one. 
+That being said, e-wallets do not usually involve such sophisticated security measures as those deployed to protect bank accounts. After gaining access to the electronic wallet, attackers attempt to either make purchases at the victim’s expense or transfer the funds to another wallet, registered to a money mule, through various exchange services. 
+Monetizing reward points 
+Online and offline retailers often offer members of their loyalty programs cashback for purchases in the form of reward points or money. Reward The problem is that many users choose the same passwords for different resources, and if one resource becomes compromised, the same login creden­tials could be used on others. it is also worth noting that currently almost all major leaks are initially put up for 
+points can usually be used to pay for only a part of a purchase, but in some cases they can be used to pay for an entire order. 
+— 
+A common method of monetizing reward points is by purchasing goods that can later be resold. Criminals purchase gift cards for stores that sell digital content (e.g., Playstation store, Xbox store), then resell the cards or use them to pay in-store. 
+
+— 
+if attackers gain access to many user accounts, they can group reward points together and pay for a large number of purchases and/or buy more expensive goods. 
+
+— 
+in some retail chains, bonus points can be used to pay at checkout in-store. in such cases, cyber­criminals use virtual loyalty cards, barcodes, and discount coupons from the user's personal account to cash in bonus points and pay for purchases. 
+
+
+Monetizing funds for paid services 
+some retailers offer services that can be paid for by topping up a personal account on the website. 
+if criminals gain access to a user account with a positive balance on their personal account, the threat actors can use these funds to obtain paid services sale, then become publicly available on underground forums, which makes it easy for attackers to collect data­bases for credential stuffing attacks. This applies to all retailers with personal accounts on online resources, but also to some bank accounts and e-wallets. 
+from the retailer. in some cases, cyber­criminals sell access to such accounts. 
+Receiving gift points or goods 
+Retailers offer users rewards and gifts for upgrading to a higher level of service or a more expensive tariff. 
+Attackers can take advantage of access to a user's account and independently transfer it to another level of service in order to receive a reward. The threat actor will then sell the reward. 
+Access to personal data 
+in the user's personal account on the retailer's website, attackers can gain access to the following personal data: 
+— 
+full name 
+
+— 
+contact information (phone number, email, delivery addresses) 
+
+— 
+data about payment methods (bank card and/or account numbers, accounts in payment systems) 
+
+
+if personal user data in the retail­er's accounts is poorly protected, attackers can exfiltrate it for sub­sequent social engineering attacks or to be sold to other interested parties. 
+. THREATs TO THE RETAil sECTOR 
+Attack techniques 
+To carry out such actions, threat actors need: 
+— 
+login-password lists from various leaks 
+
+— 
+lists of proxy servers to bypass blocking due to a limited num­ber of requests allowed from one iP address 
+
+— 
+a program that will receive as input the lists of logins, proxies, and the address of the resource to check the existence of a user with such login and password details 
+
+Tools used to carry out the above attacks are of the greatest interest to threat hunters. They can be divided into three main categories: 
+
+— 
+bots without browsers 
+
+— 
+browser bots   
+
+— 
+hybrid solutions 
+
+
+Bots without browsers 
+This is the most primitive way to imple­ment such tools. Bots without browsers are extremely simple, they work reliably and quickly, but they cannot bypass anti-bot solutions. 
+There are many different offers of ready-made tools on the mar­ket, but one of the most widespread is OpenBullet, an open source tool. its main advantage is extensibility. Threat actors must usually adapt the code for each online resource, which needs to be checked for certain user accounts. in OpenBullet, as in many other tools, the code is adapted in configuration files. This means that many users write configuration files for different resources, and the largest of them have long been on the list. 
+A distinctive feature of paid resources is a more comprehensive offer. developers of paid tools constantly update proxy lists and write log parsers to extract contact and payment infor­mation from personal accounts. 
+since it is easy to conduct attacks using bots without browsers, some scammers prefer to write their own scripts to per­form attacks against specific resources. 
+Hybrid solutions 
+since bots without browsers cannot pass CAPTCHAs and receive cookies, scammers have developed a hybrid solution. 
+Criminals launch the browser either automatically or manually and receive cookies. The cookies are then added to the bot configuration file, after which the bots check login and password details (without the need to launch a browser). This scheme is easy to implement and, most importantly, it works quickly and does not require many computing resources. 
+To bypass various types of CAPTCHAs, hackers can use either separate tools that solve the simple types or saas services for their solution. in the latter case, scammers automatically send the link to the service via the APi and receive a cookie or a solution in response. 
+Hybrid methods can bypass almost all anti-bot solutions. 
+Browser bots 
+it is rare to find resources with reliable protection. More often than not, these are large social media or iT giants that use their own solutions to protect against bots. in such cases, scammers write unique browser bots for each resource. 
+Browser bots are full-fledged browsers that automatically start, open pages, run scripts, and emulate user behavior on a website. 
+This variant is much more expensive than the previous ones. it requires a great deal of customization, while running many browsers requires more server power and, most importantly, is much slower. 
+
+BANKING TROJANS 
+Every year, several banking botnets dis­appear from the market and new ones rarely take their place. This year was 
+
+Latin America 
+no exception. At this rate, the market for PC banking Trojans may become nonex­
+
+remains the main source of this type of threat 
+istent in three to five years. 
+12 out of 19 
+
+banking Trojans 
+were written by Russian-speaking developers 
+Switch to 
+ransomware 
+
+Owners of banking botnets are following the popular trend 
+
+. BANKiNG TROJANs 
+Trojans for PC 
+A total of 19 PC banking Trojans were active this year, 12 of which were writ­ten by Russian-speaking developers. six Trojans were developed by latin American authors. 
+Russian-speaking owners of the largest banking botnets have also followed the main trend of switching to using ran­somware. For example: 
+— 
+Trickbot uses the following ransom-ware: Ryuk  (later Conti), Kraken, Thanos  
+
+— 
+dridex uses Wastedlocker, doppelPaymer; it previously used BitPaymer, locky, Bart, and Jaff 
+
+— 
+Qbot (Quakbot) started using Prolock 
+
+— 
+zloader/silent Night also switched to using an unidentified ransomware 
+
+— 
+RTM, which is the only banking bot­net active in Russia, uses Cerber 
+
+
+A shift in focus does not mean that threat actors stop committing thefts. if they see an opportunity to transfer a large amount of money, they will take it. But as a general rule, their main income now comes from ransomware. 
+This change in behavior has led to less damage from theft and changed the money laundering market. 
+Given that the most widespread banking Trojans used to be developed by Russian-speaking cybercriminals, the decrease in thefts has led to this segment degrading more significantly. 
+Trojans for Android 
+The Android Trojan market is similar to the PC Trojan market. The main devel­opers are Russian-speaking hackers. However, developers from latin America are actively expanding to the market 
+and use their tools to attack bank cus­
+tomers locally. in total, ten Android banking Trojans were active this year, five of which are brand new. 
+An author of the Red Alert banking Trojan with the nickname sochi stopped developing Trojans and switched to working with Js sniffers. 
+Authors of Android Trojans are not picky about names. For instance, Alien Bot appeared in 2020, but Trojans with the same name but from other developers had existed before. 
+Android Trojans mainly use web fakes, 
+i.e. dialog boxes that request the information required (passwords, bank card numbers, etc.) from the victim. services offering to develop such web fakes appeared in the Russian-speaking underground segment. As a result, banking Trojan authors no longer need during the analyzed period, only one new banking Trojan developed by Russian-speaking authors appeared: silent Night. it is an improved version of the old Axebot Trojan and was used in attacks on German internet users. during the same period, another three Trojans created earlier by Russian-speaking authors stopped being used completely: TinyNuke, Panda Banker, and Osiris. 
+
+Old and active  Guildma (Astaroth), Grandoreiro, Javali, Melcoz, CamuBot, Metamorfo, Qbot, Gootkit, Trickbot, Gozi (isFB, Ursnif, dreambot), icedid (Bokbot), Ramnit. Backswap, dridex, lokiPWs, Retefe, RTM, danabot  
+New  zloader/silent Night  
+Disappeared  TinyNuke (aka NukeBot), Panda Banker, Osiris, MnuBot  
+
+Russia 
+The only banking Trojan for PCs in Russia is RTM, which does not seem to be used much and will likely soon cease to exist. This banking botnet uses Cerber ransomware. 
+Latin America 
+latin America has become the main source of banking Trojans. in 2020, five new Trojans emerged: Guildma (Astaroth), Grandoreiro, Javali, Melcoz, and Metamorfo. All have been active for several years, but attracted the atten­tion of researchers only recently. 
+The developers of these Trojans live in latin America and their Trojans are used locally, although some of them are starting to attack Europe and the United states. 
+USA and Canada 
+Traditionally, the Us and Canada have been the primary targets for banking Trojans. Even latin American developers have added American banks to their config files. 
+Currently, eleven Trojans for PCs pose a threat to clients of Us and Canadian banks, ten of which were devel­oped by Russian-speaking hackers: Metamorfo, zloader/silent Night, Gootkit, Trickbot, Gozi, icedid, danabot, Ramnit, dridex, lokiPWs, and Qbot. 
+APAC 
+in the APAC region, banking Trojans have barely undergone any significant changes. The key targets are Japan and Australia, which are attacked using well-known Trojans: Trickbot, Gozi, danabot, Ramnit. 
+
+Old and active Anubis, Flexnet, Gustuff, BasBanke (Coybot), Cerberus 
+New Ginp, Alien Bot, BlackRock, Hydra, EventBot 
+Disappeared Red Alert, Asacub 
+to spend time supporting certain applications for collecting financial data. it is enough to buy a set of web fakes and the Trojan can be used in almost any region, which is what usually hap­pens with Trojans created by Russian-speaking cybercriminals. 
+Russia 
+Only two Android Trojans were active in Russia: Flexnet and Anubis. They did not cause significant damage. For example, Flexnet spread more mas­sively and was able to infect 50,000 devices and intercept data from just over 5,000 bank cards. 
+Anubis spread more selectively, using landing pages disguised a Russian bank brand, and infected about 400 clients in a targeted way. 
+Latin America 
+The locally developed BasBanke Trojan was most active in latin America. BasBanke works as part of an affiliate scheme, i.e. several people can distrib­ute it at once. 
+USA and Canada 
+Russian-speaking authors adhere to the unspoken rule that Android Trojans should not be used to attack Us clients, although the authors of web fakes are actively creating windows to collect data from Us financial institutions. 
+Only two Trojans pose a threat: the new Alien Bot and BlackRock. 
+APAC 
+Threats for the APAC region are posed by all Trojans developed by Russian-speaking hackers: Anubis, Gustuff, Cerberus, and the new Alien Bot. 
+Guildma (Astaroth) Grandoreiro Javali Melcoz CamuBot Metamorfo 
+Unidentified origin 
+Backswap 
+. BANKiNG TROJANs 
+Trojans for PC 
+Latin American developments 
+PT
+Cl 
+
+CABRECdE PEFRiT Es Pl ATNl AUJPNZGBCHUs NOlilU sE MX 
+
+Russian-language developments 
+
+
+
+zloader/silent Night Gootkit Trickbot Gozi (isFB, Ursnif, dreambot) icedid (Bokbot) RTM* danabot Ramnit dridex** lokiPWs** Retefe Qbot 
+Trojans for Android 
+PT
+Cl 
+
+CABRTRdE PEFRiT Es Pl ATNl AUJPilGBCHUs iN My lU THMXCZHRHUBEBG 
+Latin American developments 
+BasBanke (Coybot) 
+Russian-language developments 
+Anubis** Gustuff** Cerberus** 
+Unidentified origin 
+Alien Bot Ginp BlackRock Hydra EventBot 
+* Attacked Cis ** Global attacks 
+
+
+
+
+WEB PHISHING AND SOCIAL ENGINEERING 
+118% more 
+
+phishing websites 
+were identified and taken down compared to the previous reporting period 
+Phishers are 
+
+targeting sports
+betting and online
+services 
+increasingly often 
+and tools 
+to evade detection 
+
+
+. WEB PHisHiNG ANd sOCiAl ENGiNEERiNG 
+Between H2 2019 and H2 2020, 118% more phishing resources were identified and taken down compared to the previ­ous reporting period. 
+This significant growth can be explained by two main factors: 
+— 
+The pandemic. during lockdowns, many attackers had more time to devote to malicious activity. in addition, phishing, as one of the simplest earning schemes, attracted the attention of a larger audience as many people lost their income due to the pandemic. 
+
+— 
+On the other hand, lockdowns increased the demand for online shopping. More and more people began to order goods and services 
+
+
+from home. scammers quickly adapted to this trend and began carrying out phishing attacks on ser­vices and individual brands, which previously did not have much finan­cial appeal to them. 
+— Change of tactics. in previous years, attackers ended their campaigns after fraudulent websites were taken down and quickly switched to other brands. Today, they are automating their attacks instead and replacing the blocked pages with new ones. 
+Phishing attacks targeting bookmak­ers increased in Q2 2020, amounting to 6% versus 2% in the previous quarter. Compared to H2 2018-H1 2019, phishing targeting bookmakers grew by more than 20% during the reporting period. 
+Postal services and financial institutions also remained a key target for attackers. Another attack type that increased sig­
+nificantly was phishing used to collect accounts for various online services such as Microsoft, Netflix, Amazon, eBay, and Valve steam. 
+Phishing resources targeting cryptocur­rency projects have disappeared almost completely. The main reason lies in the waning interest in iCO projects, which were a key target for phishers in 2017 and 2018. 
+
+H2 2018 — H1 2019 H2 2019 — H1 2020 
+Government resources 0.3% 0.1% 
+Financial institutions 18.3% 15.0% 
+Payment services 12.9% 6.6% 
+Postal services 11.6% 15.6% 
+internet service providers 1.6% 0.7% 
+Online services 30.5% 39.6% 
+Cloud storage systems 15.8% 14.5% 
+social media 6.0% 4.5% 
+dating sites 1.4% 1.2% 
+Cryptocurrency 1.5% 0.0% 
+Healthcare organizations 0.1% 0.0% 
+Bookmaker offices 0.1% 2.2% 
+
+
+
+. WEB PHisHiNG ANd sOCiAl ENGiNEERiNG 
+Phishing evasion techniques 
+so far, the main 2020 trend is the use of one-time unique links that become inactive after the user opens them. This means that if someone clicks on the link at least once, it will not be possible to obtain the same content again in order to collect evidence. This significantly complicates the process of taking down phishing resources. 
+Common evasion techniques used by phishers are listed below: 
+— 
+One-time links. A unique one-time link is generated for each user. 
+
+— 
+Blocking by subnets. The subnets of many companies that provide phishing page detection services are blacklisted, and if a request for a page comes from their subnets, phishing content will not be shown. 
+
+— 
+Blocking by user agent. Attackers understand who their target audi­ence is, and if it is clear from the user agent that this is not a real user, phishing content will not be shown. For example, if a criminal carries out an attack on mobile device users, all visitors with a PC browser will not receive the phishing page. Phishing kit scripts usually contain a list of keywords that are checked in the user agent field. 
+
+— 
+Blocking by region. GeoiP data­bases are actively used by various criminals and phishing is no excep­tion. if the target audience is located in singapore, there is no point in showing the phishing page to users in the United states. 
+
+— 
+Redirects to official websites. if some checks are failed, instead of phishing content visitors will be redirected to the attacked brand’s official website or to websites belonging to other legal services. 
+
+
+Affiliate programs 
+Phishing scammers cannot do much damage on their own. As such, there are affiliate programs that bring together people who want to make money by phishing. 
+in Russia, the main reason for the sig­nificantly higher numbers of phishing attacks is the emergence of various affiliate programs for hackers wanting to make money off phishing involving fake bank rewards programs, lottery draws, paid surveys, and more. At the final stage of the scam, the victim is prompted to enter their payment details or make a transfer. 
+The affiliates distribute links to as many people as possible. Affiliate program organizers create landing pages, accept payments, and help launder money. For example, in a short period of time, one of the affiliate programs created more than 12,000 accounts of money mules to transfer stolen money. 
+so far, this trend has been observed only in Russia. Russia is often used as a testing ground, so similar schemes are likely to appear in other countries. 
+Automated management of phishing projects 
+since the start of the year, there has been a rise in advanced social engineer­ing, namely when multi-stage scenarios are used in a phishing attack. As part of such increasingly popular phish­ing schemes, threat actors first stake out the victim: they establish contact with the target individual (e.g., through a messenger), create an atmosphere of trust, and only then do they direct the victim to a phishing page. 
+Communications between members of such new criminal gangs are espe­cially interesting. Hackers coordinate attacks, communicate, and distribute stolen funds through dedicated Telegram channels and bots. A typical infrastructure for such a project built around Telegram might include the following features: 
+— 
+a bot for recruiting, where informa­tion about a new potential cyber­group member is entered  (scam­ming experience, age, link to a profile on the forum, etc.) 
+
+— 
+a bot for displaying information about successful thefts (nickname in Telegram, how much money was made and how) 
+
+— 
+private channels for interaction/com­munication/support for members of the scam group 
+
+— 
+bots for generating phishing links based on certain settings, which are introduced by group members during attacks 
+
+
+in addition to the traditional phish­ing kits, underground hacker forums nowadays offer ready-made manage­ment platforms designed to automate phishing projects. Thanks to such plat­forms distributed as saas, the number of groups that can be easily scaled is growing. The number of members in a group built around such plat­forms can reach several dozen people. Automating management of a criminal group in turn leads to the emergence and spread of more complex social engineering. The latter is slowly starting to be used in large-scale attacks and not only in targeted attacks as before. 
+
+RECOMMENDATIONS FOR TOP MANAGEMENT 
+
+. RECOMMENdATiONs FOR TOP MANAGEMENT 
+Three pillars of information security 
+Technologies 
+
+Nowadays, threat actors are continuously innovating. Criminals implement new tools with more enthusiasm and much faster than many companies. This is what affects the balance of power on the information security battlefield. Take advantage of the latest developments and solution classes available on the market to prevent your opponent from gain ing the upper hand. 
+Team 
+
+
+
+
+Even the latest generation of automated security systems are managed by a team. it is this team of specialists that determines how much of the product s capabilities you use and therefore the effectiveness of the solution. learning and innovation must become a continuous process. 
+The number of people in your response team and existence of playbooks is just as important as the coherence and interchangeability of each unit within that team. Consultants always advise you to assign roles in the team, but do you conduct "rehearsals" on a regular basis? do all team members know how they should act in any given situation? involve your team in creating a playbook and establish effective interac tion between teams and employees. *information security 
+General recommendations 
+
+Threat hunting Monitoring and proactive threat detection are not new for the cyber industry, but not everyone 
+
+
+
+
+
+and proactive defense is managing to implement these processes. you need to constantly collect and match indicators of compromise and TTPs of attackers. Train your team in new techniques, improve their skills, and provide them with the latest tools. 
+
+
+Hygiene  Phishing and social engineering have remained the most popular vectors of initial compro­ 
+and hygiene  mise. Ordinary employees hold their defenses behind their monitors and inboxes every day.  
+Establishing a password policy and conducting training and social engineering testing will help  
+protect against phishing and prevent corporate data leaks.  
+
+
+
+Trust MSS providers  Product innovations aren’t slowing down their momentum, and technical skills are always  
+and partners  needed to ensure information security. Therefore, more companies are delegating part or most  
+of their information security tasks to Mss providers. doing so not gets best-in-class technical  
+specialists at your side without hiring but also is beneficial for budget allocation.  
+
+
+
+Keep in touch with  To raise awareness of new threats, you need to go beyond professional trainings and start a dia­ 
+your competitors  logue with colleagues from your industry. Competitors could become your partners in the fight  
+against common enemies: APTs, pro-state groups, ransomware attacks, and others.  
+
+
+Checkups and cyber risk insurance 
+
+Just as people need regular checkups, so do companies need to regularly assess their security infrastructures. Nowadays, this applies not only to infrastructure but also to teams and pro­cesses. The standard set of checkups should be supplemented with a third-party audit as well as an assessment of potential retrospective compromise. it is important to note that the above does not negate the importance of cyber risk insurance, especially when you are responsible for the information of your customers and employees. 
+
+
+Measuring  information security is becoming more expensive for companies, which is why many are  
+performance  requesting that the effectiveness of solutions be measured and compared. The saturated  
+market dictates the new rules: solutions should not just be modern and efficient but also  
+advantageous for businesses. Comparing costs to the effectiveness of a tool in its pilot stage  
+also requires defining business metrics that differ in one way or another from the size of the  
+company and its infrastructure. Analysts from Gartner, Forrester, and other analytical agencies  
+handle the market's requests to collect performance measurements and their metrics.  
+
+. RECOMMENdATiONs FOR TOP MANAGEMENT 
+Recommendations for how to set up your technical infrastructure and train your information security team 
+— 
+Hunt for traces of covert activity by threat actors in the company network. This helps stop an ongoing attack for which the initial stages were overlooked by the organization's secu­rity controls. 
+
+— 
+implement a Malware detonation Platform that allows for suspicious files and links to be run in an isolated environment, be analyzed in detail, and subsequently blocked if found to be malicious. 
+
+— 
+Use a Threat intelligence solution to identify threats, leaks, breaches, and other hacker activity before they can harm you. 
+
+— 
+Back up regularly. Any backups must be separated from the main network so that they cannot be accessed by threat actors if administrator accounts become compromised. 
+
+— 
+Conduct round-the-clock monitoring of information security events and be prepared to promptly respond. 
+
+
+Unfortunately, it is not always possi­ble to detect attacks at early stages: threat actors continuously improve their skills and implement new techniques to gain access to networks of various size. detecting traces of compromise at different stages of the cyber kill chain requires an ia ntegrated approach. This approach involves creating a centralized data source about what is happening in the network infrastructure and isolat­ing compromised hosts. XdR solutions can be used for these purposes, as they are able to detect malicious activity 
+— 
+Each incident should be matched with its level of complexity. incidents that require analysis should be inves­tigated, the causes and conse­quences should be identified, and the problems that caused the incident should be fixed. For the second level of response, it is important to have a third-party incident response team with pre-negotiated agreement that can assist in stopping a complex targeted attack. 
+
+— 
+Make sure that your team has the necessary skills to perform threat hunting and collect threat intelligence. 
+
+— 
+Conduct regular digital hygiene train­ing for employees. 
+
+— 
+Perform security assessments in a format that simulates real-life actions taken by cybercriminals. This approach will help identify weak­nesses in the company's iT infra­structure and determine whether the company is ready to combat real cyberattacks. 
+
+
+at various layers, regardless of the tac­tics, techniques, and procedures used by threat actors. 
+Reducing cyber attacker dwell time also requires not only high-quality response but also proactive analysis, which can be carried out both by the organiza­tion's employees with relevant com­petencies and by outsourced experts. The latter speeds up the investigation and improves the quality of analysis significantly. 
+— 
+Conduct periodic fraud risk assess­ments to see if your solutions and pro­cedures can defend against existing attacks and fraudulent schemes that use different attack channels. identify the main risk factors, and start from existing and possible problems when choosing a fraud protection solution. 
+
+— 
+Create a layered protection for your web portal using not only transaction analysis, but also solutions for session analysis of behavior and devices, and unveil fraudulent operations that occur on your web channel. leave only legitimate users on your portal and take actions regarding blocking suspicious users or bots. 
+
+
+Both reactive and proactive approaches require not only relevant competencies but also a significant amount of cyber threat intelligence data. strategic, operational and tactical threat data help organizations identify attackers during the ongoing analysis and detect signs of compromise at the earliest stages. 
+
+Incident Response team capabilities 
+Log analysis  Malware  Endpoint digital  Cyber Threat  Infrastructure  Incident  
+Firewall, Proxy,  analysis  forensics  Intelligence  Manipulation and  management  
+NetFlow,  Maintenance  Risk management,  
+AV, EdR,  Windows (Active  Crisis management  
+Eventlog, etc  directory), Unix/  
+linux, hypervisor,  
+cloud  
+
+Cyber professions of the future are jobs built on skills that are in demand today. such professions are not taught as part of traditional curricula. 
+
+
+
+1. Digital Forensics Analyst 2. Incident Responder 
+Windows Forensics, Network 3. Threat Hunter Forensics, Memory Forensics, 
+
+4. Malware Analyst 
+Forensics data Recovery 
+
+5. Threat Intelligence Analyst 
+Mobile Forensics 
+
+
+TECHNICAL RECOMMENDATIONS FOR COUNTERACTING CYBERATTACKS 
+
+. TECHNiCAl RECOMMENdATiONs FOR COUNTERACTiNG CyBERATTACKs 
+— Update software regularly. 
+Primitive errors: vulnerable 
+— Automatically inventory software to identify outdated 
+programs. 
+
+software versions in publicly 
+— Regularly conduct security assessments and penetration 
+accessible services or weak testing to identify weaknesses in the network and establish 
+possible attack vectors. 
+passwords; vulnerabilities 
+— 
+Enhance your password policy. 
+
+— 
+implement multi-factor authentication. 
+
+
+with public exploits 
+
+— implement VPNs to protect services on the external network perimeter. if this is not an option, set up an ssO. 
+Distributed brute-force attacks on remote access interfaces (RDP, SSH, VPN) and other services (using new botnets) 
+IoT botnet owners selling access to devices installed on corporate networks 
+— 
+Make an inventory of the external network perimeter, firewall rules, and network address translation (NAT) rules to prevent services from being externally accessible by mistake. 
+
+— 
+do not, under any circumstances or even temporarily, make devices that can easily be compromised accessible from the internet. These include devices used for video surveillance, smart homes, office equipment (printers, scanners, and mul­tifunctional devices), and storage such as NAs servers in the sOHO segment. 
+
+— 
+Ensure that remote access services for operating systems are not accessible externally (e.g., RdP, ssH, VNC, sMB/RPC). 
+
+— 
+if this cannot be avoided, change the ssH/RdP port to a non-default one and implement a white list of iP addresses that can access these services. 
+
+— 
+Ensure that remote access meets the following requirements: 
+
+— 
+Multi-factor authentication. 
+
+— 
+Enhanced password policy. 
+
+— 
+The ability to restrict network access for the tasks of a specific account (e.g., contractors are granted access only to servers they need, not the entire segment or network). 
+
+
+
+— 
+set fields such as "expires at" for accounts and access rules in case manual revocation of remote access fails. 
+
+— 
+Make an inventory of the external network perimeter, firewall rules, and network address translation (NAT) rules to prevent services from being externally accessible by mistake. 
+
+— 
+do not, under any circumstances and even temporarily, make devices that can be easily compromised accessi­ble from the internet: video surveillance devices, smart home devices, office equipment (printers, scanners, and multifunctional devices), and storage devices such as NAs servers in the sOHO segment. 
+
+— 
+Ensure that remote access services for operating systems are not accessible externally (e.g., RdP, ssH, VNC, sMB/ RPC, etc.). 
+
+— if this cannot be avoided, change the ssH/RdP port to a non-default one and implement a white list of iP addresses that can access these services. 
+
+— 
+Ensure that remote access meets the following requirements: 
+
+— 
+Multi-factor authentication. 
+
+— 
+Enhanced password policy. 
+
+— 
+The ability to restrict network access for the tasks of a specific account (e.g., contractors are granted access only to servers they need, not the entire seg­ment or network). 
+
+— 
+set fields such as "expires at" for accounts and access rules in case manual revocation of remote access fails. 
+
+
+
+
+. TECHNiCAl RECOMMENdATiONs FOR COUNTERACTiNG CyBERATTACKs 
+— Be prepared to identify signs of initial compromise, 
+Ransomware 
+
+methods used to achieve persistence in the system, and lateral movement. Although attack techniques are usually primitive and can be detected with the naked eye, more advanced attacks can be identified only by hunting for threats. 
+— 
+Regularly check your infrastructure for known bad indicators of compromise. 
+
+— 
+The success of ransomware affiliate programs depends on an organization's overall level of security. We recommend using security systems such as Group-iB Threat Hunting Framework and Group-iB Threat intelligence & Attribution. 
+
+— 
+Ensure that your security tools are able to detect tracks 
+
+
+Post-exploitation frame-
+of popular post-exploitation frameworks. works: a free tool called — Ensure that a sufficient number of different and unique data sources are used when assessing the security level 
+of your infrastructure and preparing for attacks. 
+Metasploit and a cracked 
+version of Cobalt Strike. Less often, the frameworks PoshC2 and Koadic. 
+— Ensure that your current security tools are able to detect 
+Supply-chain attacks 
+anomalous activity when legitimate software is being used. such activity may include launches of atypical processes, creation of files, and file system or registry modifications that are usually used to achieve persistence in the system. 
+— Common security tools are usually unable to han­dle such tasks, therefore we recommend considering Group-iB Threat Hunting Framework. 
+Privilege escalation using various software (e.g., Mimikatz, LaZagne) or brute-force attacks 
+To counteract Mimikatz, we recommend: 
+— 
+Update your systems to Windows 10/2016 with the Credentials Guard feature. 
+
+— 
+Use the Protected Users group for administrator accounts. 
+
+— 
+Build a privileged access management system in accord­ance with Microsoft recommendations. 
+
+— 
+if you believe that attackers may bypass the methods listed above, or if it is impossible to implement the above recom­mendations, ensure that the existing security controls are able to detect the use of Mimikatz (most often launched using post-exploitation frameworks). 
+
+— 
+log access to lsass.exe process memory and identify suspi­cious processes that may perform such activity. 
+
+
+do not use untrusted UsB devices or UsB devices of unknown/ 
+Tools for attacks on physi­
+questionable origin. 
+
+cally isolated networks that use USB devices for jumping the air gap 
+. TECHNiCAl RECOMMENdATiONs FOR COUNTERACTiNG CyBERATTACKs 
+BGP hijacking and route leaks 
+
+How successfully you repel such attacks largely depends on other internet users. 
+— implement Group-iB Threat Hunting Framework and Threat intelligence systems to check whether your organization has been compromised 
+The success of such attacks is highly dependent on your 
+Attacks on card process­
+organization's level of security. 
+— implement Group-iB Threat Hunting Framework and 
+Group-iB Threat intelligence & Attribution systems to checksystems whether your organization has been compromised 
+ing and interbank transfer 
+— Regularly update CMs and plugins, and control versions 
+JS sniffers 
+of website files. 
+
+— 
+Enhance the password policy for administrative accounts on websites. 
+
+— 
+Use Group-iB Fraud Hunting Platform to detect web injections. 
+
+
+There are no specific recommendations, as the success 
+Attacks on POS terminals 
+of such attacks is highly dependent on your organiza­tion's level of security. 
+— 
+implement Group-iB Threat Hunting Framework and Group-iB Threat intelligence & Attribution to check your organization for compromise. 
+
+— 
+Prevent users from registering on any third-party ser-
+
+
+Credential stuffing 
+
+vices using corporate emails. Users tend to use the same password on multiple services or modify their passwords. if passwords are leaked from one service, a hacker can attack a given company directly. 
+— 
+A threat actor can use a breached password to conduct a social engineering attack against a specific user. 
+
+— 
+Check databases of leaked credentials for your accounts (e.g., using Group-iB Threat intelligence & Attribution). 
+
+— 
+switch to using an external balancer or proxy service; 
+
+
+New records in DDoS attack 
+increase architecture complexity; and move iP addresses to external services to protect your entire infrastructure. 
+volume: 2.3 Tb per second 
+— increase bandwidth. 
+and 809 million packets 
+— 
+Purchase filtering hardware. 
+
+— 
+switch to operators with relevant anti-ddos capacities.
+
+
+per second 
+
+Banking botnets, Trojans (TrickBot, Qbot, Silent Night and others) 
+1. Attack on vulnerable software: browsers, operating systems 
+— 
+Perform timely software updates 
+
+— 
+do not click on suspicious links 
+
+— 
+do not install software from untrusted sources 
+
+
+2. Phishing campaigns: 
+— 
+do not open suspicious emails and attachments. 
+
+— 
+Use Group-iB Threat Hunting Framework and similar solutions. 
+
+
+such Trojans are well known and leave specific traces in the target system. Make sure to install security tools that will detect and repel Trojans in your infrastructure. 
+. TECHNiCAl RECOMMENdATiONs FOR COUNTERACTiNG CyBERATTACKs 
+Web phishing and social engineering 
+
+Recommendations for marketplace customers: 
+— 
+Pay attention to domain names, especially those shown in search engine ads and conversations with sellers. 
+
+— 
+do not switch to communicating outside market­places, since chat histories will not be saved, and the resource's anti-fraud rules will not work. 
+
+— 
+Pay attention to the seller rating. 
+
+
+Recommendations for marketplaces: 
+— 
+Create a fraud prevention system. 
+
+— 
+Use Group-iB Fraud Hunting Platform. 
+
+
+Recommendations for other websites, online stores, and their visitors: 
+— 
+Check the date when the domain name was registered and whether the domain is spelled correctly. 
+
+— 
+Check the website content, including product descriptions and user reviews. 
+
+— 
+Be attentive to websites that appear on the top of adver­tising in search engines. Cybercriminals often buy such ads to promote their websites. 
+
+— 
+Be attentive to websites where the price of products is set too low. 
+
+— 
+implement Group-iB Fraud Hunting Platform and Group-iB digital Risk Protection. 
+
+— 
+install packages only using official repositories 
+
+
+Growing demand for Linux 
+— Carefully check information about developers of packages that are not available in official repositories. 
+malware designed to achieve 
+— Follow general cybersecurity recommendations of the 
+persistence in the network 
+linux communities (e.g., remove sUid bits off unnecessary binaries). 
+and escalate privileges 
+— 
+Use minimum privileges when using untrusted software. 
+
+— 
+do not install untrusted software 
+
+
+Mobile RATs 
+
+— 
+do not listen to intruders trying to persuade you to install TeamViewer and any other software to connect a tech support employee. 
+
+— 
+Update software and operating systems in a timely manner. 
+
+
+For our clients: use Group-iB Fraud Hunting Platform, which is able to detect active RATs on mobile devices. 
+. TECHNiCAl RECOMMENdATiONs FOR COUNTERACTiNG CyBERATTACKs 
+— The success of such attacks is highly dependent on your 
+Gaining access to SCADA 
+organization's level of security. 
+— implement Group-iB's Threat Hunting Framework and Group-iB Threat intelligence & Attribution systems to check
+systems at industrial enter-
+whether your organization has been compromised 
+prises to manipulate produc­
+tion processes 
+
+— do not visit untrusted/suspicious websites. 
+Exploits and spyware suits 
+— do not install software from unverified sources. for Android and iOS — Perform timely updates of operating systems and software 
+— 
+separate personal and work devices. 
+
+— 
+Use one device for work, the other for personal life, do not mix them. 
+
+— 
+Use Group-iB Fraud Hunting Platform and Group-iB Threat intelligence & Attribution (with notifications on new attacks, new software, and exploits). 
+
+— 
+Ensure that remote access meets the following 
+
+
+Initial compromise 
+requirements: 
+
+— Multi-factor authentication 
+through VPN servers 
+— 
+Enhanced password policy 
+
+— 
+The ability to restrict network access for the tasks of a specific account (e.g., contractors are granted access only to servers they need, not the entire seg­ment or network) 
+
+— 
+set fields such as "expires at" for accounts and access rules in case manual revocation of remote access fails. 
+
+
+ABOUT GROUP-IB 
+
+17 years  65,000+  
+of hands-on  hours of incident  
+experience  response  
+
+Group–IB is ranked among the best threat intelligence vendors in the world by Gartner, IDC, Forrester, Cyber Defense Magazine and SC Media. 
+We have provided professional development training to Europol, INTERPOL, law enforcement agencies and corporate security teams on four continents. 
+1,200+ 500+ 
+cybercrime world-class investigations cybersecurity worldwide experts 
+
+Official partners 
+
+Experiencing a breach? Group-IB experts will conduct incident response, investigate incidents,
+Call us at +65 3159-4398 
+
+and collect evidence for subsequent 
+Email us at response@cert-gib.com Fill out our incident response form submission to law enforcement agencies. 
+
+
+PREVENTING AND INVESTIGATING CYBERCRIME SINCE 2003 
+www.group-ib.com info@group-ib.com facebook.com/groupibHQ group-ib.com/blog/ twitter.com/groupib_gib linkedin.com/company/group-ib 
+
+
+
+
+
+
+

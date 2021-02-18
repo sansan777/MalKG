@@ -1,0 +1,28 @@
+T1	Time 126 142	November 1, 2012
+T2	Time 181 191	2012-11-01
+T3	Malware 215 222	Shamoon
+T4	Malware 1461 1468	Shamoon
+T5	Time 1548 1563	August 15, 2012
+R1	hasAttackTime Arg1:T4 Arg2:T5
+T6	Organization 1826 1836	Securelist
+T7	Person 1814 1825	Kaspersky’s
+T8	Malware 1898 1905	Shamoon
+T9	Organization 1909 1957	General Dynamics Fidelis Cybersecurity Solutions
+T10	Software 6493 6503	Windows XP
+T11	Software 6505 6517	Windows 2003
+T12	Software 6523 6532	Windows 7
+T13	Software 6580 6589	Windows 7
+T14	Malware 5966 5973	Shamoon
+T15	Malware 6403 6410	Shamoon
+T16	Software 13130 13136	EnCase
+T17	Software 13192 13198	EnCase
+T18	Software 13696 13702	EnCase
+T19	Software 13894 13900	EnCase
+T20	Software 14007 14013	WinHex
+T21	Software 14576 14583	XP/2003
+T22	Software 14615 14624	Windows 7
+T23	Software 15444 15456	Windows 2003
+T24	Software 16544 16550	EnCase
+T25	Software 17266 17272	EnCase
+T26	Malware 18024 18031	Shamoon
+T27	Software 18374 18401	Fidelis XPS Internal Sensor

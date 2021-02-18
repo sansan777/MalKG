@@ -1,0 +1,2225 @@
+
+
+
+
+
+ 
+
+
+
+Sphinx 
+(APT
+-
+C
+-
+15) 
+
+
+T
+argeted cyber
+-
+attack 
+in the Middle East 
+
+
+Table of Contents 
+1. 
+Overview 
+................................
+................................
+................................
+................................
+... 
+3 
+2. 
+Payload Delivery 
+................................
+................................
+................................
+........................ 
+4 
+1) 
+Watering Holes on Social Websites 
+................................
+................................
+................... 
+4 
+2) 
+Lure Documents 
+................................
+................................
+................................
+................ 
+6 
+3) 
+Self
+-
+camouflage 
+................................
+................................
+................................
+................. 
+8 
+3. 
+Malware Analysis 
+- 
+ROCK 
+................................
+................................
+................................
+.......... 
+9 
+1) 
+Functionality Brief 
+................................
+................................
+................................
+............. 
+9 
+2) 
+Infrastructure 
+................................
+................................
+................................
+.................... 
+9 
+3) 
+C2 Communication 
+................................
+................................
+................................
+.......... 
+11 
+4) 
+Attack Techniques 
+................................
+................................
+................................
+........... 
+13 
+4. 
+Correlation Analy
+sis 
+................................
+................................
+................................
+................ 
+14 
+1) 
+Attackers’ Facebook Account
+s 
+................................
+................................
+......................... 
+14 
+2) 
+PDB Path
+s 
+................................
+................................
+................................
+........................ 
+15 
+3) 
+Lure D
+ocuments 
+................................
+................................
+................................
+.............. 
+15 
+4) 
+njRAT 
+................................
+................................
+................................
+............................... 
+15 
+5) 
+Geo
+-
+location of C2
+................................
+................................
+................................
+........... 
+16 
+Appendix A: Sample 
+Sources in Hebrew 
+................................
+................................
+......................... 
+17 
+Appendix B: Updated Detection Results of the Samples 
+................................
+................................
+. 
+18 
+
+
+
+Timeline of the report 
+updates 
+
+
+April 29, 2016, 
+brief report and sample analysis 
+report 
+were drafted. 
+
+
+May 12, 2016, 
+comprehensive analysis report was completed
+. 
+
+
+June 20, 
+2016, 
+the public version of 
+the report 
+was updated
+. 
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+1. Overview 
+
+
+Operation Sphinx is a cyber
+-
+espionage activity in the Middle East. 
+The 
+main victims are political 
+an
+d military organizations in Egypt
+, 
+Israel 
+and possibly other countries
+. Sensitive data theft is 
+what 
+the attackers plotted for 
+during the period from 
+J
+une, 2014 to November, 2015 when 
+the 
+activity 
+was in its prime
+. We 
+encountered 
+some 
+timestamps of the sam
+ples to be as early as 
+December, 20
+11 which suggests the attack might 
+be started much 
+earlie
+r, though further sound 
+proof is needed. 
+T
+he main 
+approach 
+of 
+Sphinx 
+is watering hole 
+attack 
+on social 
+web
+sites. 
+U
+ntil 
+now, we have 
+obtained 
+314 pieces 
+of sample ma
+licious codes and 7 C2 
+domains. 
+
+
+ 
+
+
+A 
+common 
+method 
+attackers use to hide their trace is 
+to 
+cloak 
+malicious 
+exe files with 
+Word 
+or 
+PDF 
+icons 
+so that users will not tell the 
+difference 
+without 
+look
+ing 
+into 
+the 
+f
+ile 
+attribution 
+or 
+property. 
+T
+he Sphinx attacker
+s adopt it as well, but they also 
+attempt 
+to 
+conceal 
+the attacks by 
+making the master program 
+“
+invisible
+”
+. 
+I
+n our analysis, Sphinx
+’ 
+master program was found to be 
+disguised 
+with 
+Word icon 
+in order to trap 
+users to click. Upon clicking, the master program 
+r
+eleased several DLL files. 
+T
+he file
+s 
+can be 
+categorized 
+into 9 
+types of 
+plugin modules by 
+functionality. 
+T
+he core DLL fill 
+could be self
+-
+start
+ed 
+after registering as a plugin of 
+the 
+resource 
+management panel. 
+T
+hen, based on different 
+configurations
+, remote 
+injection was 
+triggered 
+to 
+inject other 
+functional 
+DLL to corresponding running process. 
+T
+his way, 
+when the malware 
+was 
+running, the master program 
+had already been split 
+into 
+several 
+imperceptible 
+pieces
+. 
+T
+hat 
+decreases the risk for the 
+target
+s to realiz
+e the 
+existence 
+of the malware. 
+Multiple 
+encryption 
+algorithms 
+were adopted 
+simultaneous
+ly 
+to hamper the detection. 
+
+
+ 
+
+
+S
+eeing from the PDB paths, we suspect 
+that the attackers were using 
+continuous 
+integration 
+tool
+s
+, 
+which 
+indicts 
+that 
+the 
+scale of 
+operatio
+n 
+may 
+massive and the developers of the malware are 
+professionals in relevant fields. 
+F
+urthermore, we speculate that 
+some 
+third party organizations 
+were involved 
+in helping 
+develop the malware to support the Middle East
+’
+s attackers. 
+
+
+
+
+
+2. P
+ayload Delivery 
+
+
+1) W
+atering H
+ole
+s on Social W
+ebsites 
+
+
+O
+ne of the lure 
+documents 
+was found in the comments area on Israeli Army
+’
+s Facebook. 
+I
+t shows 
+the 
+attackers 
+took advantage of this 
+social websites 
+to deliver the payload 
+because 
+the
+ir target
+s 
+often visit 
+it
+. This is 
+the 
+wa
+tering hole 
+that has been seen as compromise 
+vector 
+in many 
+cyber
+-
+attacks. 
+Traditionally
+, watering holes attacks can be 
+categorized 
+into two 
+types 
+by 
+appro
+a
+ch
+: 
+
+
+ 
+
+
+a. Attack
+er
+s 
+will 
+usually 
+study and capture 
+the website that 
+the
+ir 
+target
+s often visit
+. 
+T
+hen 
+m
+a
+lware code (usually the scripts 
+exploit some 
+vulnerabilit
+y
+) is directly embedded on the 
+site. 
+N
+ow, the site is 
+infected with Trojan and the trap is ready for victims. 
+W
+hen the 
+targets visit the site and click infected pages, the malware will be implanted i
+n their 
+computer if the network environment matches attackers preset conditions. 
+
+
+ 
+
+
+b. A
+ttackers will capture 
+a website 
+and replace certain application or link on it with 
+malic
+ious download 
+link. 
+O
+nce target visits the site and download 
+the file in the link, 
+m
+alware will be 
+implanted 
+in the 
+victim’s 
+computer. Typical cases are the Havex 
+Trojan
+1 
+(also known as Dragonfly or Energetic Bear) 
+unrevealed 
+in 2014 and OceanLotus in late 
+May, 2015
+2. 
+
+
+1 
+Havex Hunts For ICS/SCADA Systems
+, 
+https://www.f
+-
+secure.com/weblog/archives/00002718.html 
+
+
+2 
+APT Group 
+OceanLotus
+, 
+https://ti.360.com/upload/report/file/OceanLotusReport.p
+df 
+
+
+ 
+
+
+T
+he 
+commonness 
+the two 
+approaches 
+share is attackers need to obtain 
+the 
+authorization 
+to 
+modify the website they aim to capture. 
+H
+owever, 
+in Sphinx attacks, 
+it is much easier to get 
+authorized 
+to deploy the watering holes because 
+they 
+just need to simply register a 
+Facebook 
+account
+. 
+T
+hat 
+is all they need to be free to scat
+ter 
+malicious links in the comments
+’ 
+area. 
+I
+t is 
+a 
+new approach in 
+setting up watering holes in 
+APT attacks. 
+
+
+ 
+
+
+
+
+
+Picture 1 Location of the samples on Facebook 
+
+
+ 
+
+
+T
+he table below shows 
+detailed 
+download 
+link and MD5 of 
+the 
+RAR file from the link: 
+
+
+ 
+
+
+Malicious 
+D
+ownload 
+Link 
+
+
+hxxp://israelleaks.is
+-
+a
+-
+chef.com/leaks/isleaks.rar 
+
+
+Status of the D
+omain 
+
+
+I
+nvalid, already 
+been 
+marked as 
+“
+sinkhole
+” 
+by security vendors 
+
+
+MD5 
+of the D
+ownload
+ed RAR F
+ile 
+
+
+1e4ed1704e31917f8652aa0078a85459 
+
+
+
+
+ 
+
+
+L
+ure documents in the RAR file are about 
+the amendment on individual income tax 
+regulations
+. 
+The 
+original exe icon has been 
+replaced 
+with 
+a PDF or Word icon 
+to induce targets to click. 
+
+
+ 
+
+
+ 
+Picture 2 Lure documents in RAR file folder 
+
+
+ 
+
+
+W
+ith in
+-
+depth analysis, we found that 
+10 social website accounts in total were compromised in 
+the attacks, including Israeli Ar
+my, Israeli Navy and other accounts related with Israeli military 
+and 
+government
+. 
+Malicious comments 
+are intense from late January to early February in 2015. 
+T
+he cont
+ent containing a 
+malicious 
+link are mostly about the 
+aforementioned 
+adjustments of 
+individual 
+income tax
+. 
+
+
+*
+Please review Appendix A for a whole list of the sites. 
+
+
+ 
+
+
+
+
+
+Picture 3 C2 domain took over by Kaspersky using sinkhole technique 
+
+
+2) Lure Documents 
+
+
+T
+her
+e 
+are 
+two 
+types 
+lure 
+documents 
+and the contents can tell 
+APT 
+researchers 
+what 
+fields 
+and 
+geos 
+the 
+attackers 
+were 
+target
+ing
+. 
+
+
+ 
+
+
+(A) Egypt 
+- 
+Arabic 
+
+
+ 
+
+
+Picture 4 Lure 
+d
+ocuments 
+– 
+1 
+
+
+ 
+
+
+I
+n the 
+original 
+lure document
+3, the YouTube video link
+s 
+showing 
+the 
+arrests 
+of stude
+nts from 
+Al
+-
+Azhar University 
+that against the coup 
+are included at the end of the file. 
+
+
+3 
+hxxps://docs.google.com/file/d/0ByavzARTLomhc3hFeFhGN1JOOE0/edit?pli=1 
+
+
+ 
+
+
+
+
+
+Picture 5 Lure Document 
+– 
+2 
+
+
+ 
+
+
+T
+he name 
+“
+annonymous rabaa
+” 
+on the picture is an Egyptian hacker group that compromise 
+government official sites to 
+protest 
+the slaughte
+r in August, 2013. 
+
+
+ 
+
+
+(B) Israel 
+- 
+Hebrew 
+
+
+ 
+
+
+Picture 6 Lure d
+ocument 
+– 
+3 
+
+
+ 
+
+
+T
+his document quotes 
+the 
+adjustments of Israeli individual income tax. 
+
+
+
+3) Self
+-
+camouflage 
+
+
+T
+he malware either cloak itself with docum
+entation and image icon
+, or with 
+application icon
+. 
+T
+he 
+pi
+cture below sho
+ws a fake Adobe Flash installer file
+. 
+
+
+ 
+
+
+ 
+
+
+Picture 7 Impersonation of 
+a 
+document 
+
+
+ 
+
+
+ 
+
+
+Picture 
+8 
+Impersonation of 
+an 
+Adobe 
+Flash application 
+
+
+ 
+
+
+With the former approach, no 
+document 
+or image will pop
+-
+up 
+upon clicking; 
+while with the latter 
+approa
+ch
+, 
+the legitimate installer file 
+will be released after the malware finishes its installation. 
+
+
+ 
+
+
+T
+he 
+9 
+plugin modules are disguised as Office components. 
+I
+n earlier version of the malware, the 
+installation directory is %UserProfile%
+\
+AppData
+\
+Roaming
+\
+offi
+ceplugin. 
+B
+ut later versions 
+changed 
+the 
+path 
+to be 
+under C:
+\
+Program Files
+\
+{GUID}, for instance, C:
+\
+Program 
+Files
+\
+{59f0641e
+-
+45ac
+-
+11e5
+-
+af9e
+-
+b8ca3af5855f} is a piece of malware that pretends to be a 
+system component. 
+
+
+ 
+
+
+ 
+
+
+Picture 9 File Property of the Malwar
+e 
+
+
+ 
+
+
+ 
+
+
+
+3. Malware Analysis 
+- 
+ROCK 
+
+
+1) Functionality 
+B
+rief 
+
+
+ROCK 
+Trojan 
+plays a main role in 
+the 
+Sphinx a
+ttacks. 
+T
+his 
+malware family was 
+developed 
+by the 
+attacker
+s 
+themselves or 
+was 
+customer
+-
+made by 
+a third party group. 
+W
+e also 
+found 
+a variant of 
+the 
+njRAT family in 
+another sample which 
+we will introduce in another 
+chapter
+. 
+
+
+ 
+
+
+T
+he mal
+ware impersonated Word documents, images 
+or installation program
+s 
+in the attempt 
+to 
+disguise itself as PDF files, pictures or Flash installers 
+to 
+i
+nduce 
+the 
+users to click. 
+
+
+ 
+
+
+T
+he main pu
+rpose is 
+to steal sensitive information from the victims, such as system information, 
+account 
+& 
+password 
+and search 
+history 
+saved in 
+the 
+browse
+r
+. 
+I
+t also 
+monitors 
+victims through 
+Skype chatting history, cameras, microphones and 
+keyboard 
+& mouse logging
+. 
+T
+h
+e information 
+collected will then be 
+encrypted 
+and passed back to specific C2 servers. 
+
+
+2) Infrastructure 
+
+
+ 
+
+
+Picture 10 Infrastructure of the 
+malware 
+
+
+ 
+
+
+C
+onfiguration 
+data of all the modules is saved in 
+JSON 
+configuration 
+file. 
+T
+he file decides, to name 
+a few, w
+hether to run the module or not, 
+what 
+encryption 
+key to use on 
+the data files, what 
+pixels and intervals of the screenshots and a
+u
+dio recordings 
+are required
+, as well we what 
+running process the master program should be injected in. 
+I
+t also provides the us
+er ID (rkuid), 
+due da
+te, C2 address, etc. 
+
+
+ 
+
+
+
+
+
+Picture 11 Module
+s and Functionalities 
+
+
+ 
+
+
+T
+he dropper releases 20 
+DLL 
+files in total 
+with 
+ten 
+32
+-
+bit and ten 
+64
+-
+bit
+. Each module is 
+composed of two versions to be compliant with 32
+-
+bit 
+and 64
+-
+bit 
+system. 
+
+
+ 
+
+
+Modul
+e name 
+
+
+Functionality 
+
+
+zcore 
+
+
+Master program 
+
+
+zulib 
+
+
+API 
+function 
+encapsulation 
+
+
+plgcmd 
+
+
+O
+btain s
+ystem i
+nfo, screenshots, startup/end 
+progress 
+
+
+plgcomm 
+
+
+Communication 
+
+
+plginput 
+
+
+Mouse and keyboard logging 
+
+
+plgurl 
+
+
+M
+onitor 
+the content in 
+web 
+browser
+’
+s (IE, FireFox
+, Chrome) address bar 
+
+
+plgskype 
+
+
+Save and 
+pass back 
+Skype 
+chatting 
+history
+, screenshots and audio records 
+
+
+plgavbug 
+
+
+Monitor through camera and microphone, 
+send 
+back 
+the 
+records 
+
+
+plgusrstl 
+
+
+S
+teal user information, including acc
+ount name & password, search 
+h
+istory, 
+cookies, Pidgin (IM software) account 
+
+
+plgfsflt 
+
+
+M
+onitor 
+and pass back data of 
+specific file types 
+like doc, docx, ppt, pptx, xls, xlsx, 
+odf, txt
+, pdf, rtf, jpg, jpeg, gif, png 
+
+
+
+
+ 
+
+
+W
+hen the master program Zcore is started, it 
+decrypts 
+the configurati
+on file under installation 
+directory and 
+decides 
+whether to inject 
+in
+to certain process according to the 
+module 
+status 
+(
+true/false) in 
+the 
+configuration file. 
+
+
+ 
+
+
+F
+unction modules
+: 
+
+
+ Zcore.dll core module: mainly responsible 
+for loading other function 
+modules 
+and 
+injecting them to certain process; 
+register, update and uninstall modules, 
+distribute 
+logs 
+and messages 
+ Plgcmd.dll command module: 
+obtain 
+system information, delete file and 
+directory, 
+take 
+screens
+hots, upload saved documents, start and end process. 
+ P
+lgcomm.dll communication module: transfer data generated 
+and 
+encrypted by other 
+modules to specific C2 server. 
+T
+he module sends a request to the server 
+per 
+minute to 
+
+
+
+acquire 
+remote command
+s
+. 
+
+
+ 
+
+
+T
+he cross
+-
+process communication between each module is comple
+ted via WM_COPYDATA 
+messages. 
+E
+very message begins with 0x34AB541 which is the unique 
+identification
+. 
+T
+he body of 
+the message is 
+transferred 
+in 
+JSON 
+codes
+. 
+
+
+3) C2 
+Communication 
+
+
+T
+he 
+message 
+is t
+ransfe
+r
+r
+ed in 
+data 
+package 
+to server port 
+80 
+throug
+h HTTP POST. 
+S
+ensitive strings 
+in the package are replaced after 
+querying 
+the mapping table of 
+JSON 
+configuration file. 
+
+
+ 
+
+
+ 
+
+
+Picture 
+1 
+C2 Communication 
+
+
+
+
+
+Picture 13 Restored Strings of C2 Communication 
+
+
+ 
+
+
+C2 communication modules is injected into the 
+browser 
+process and the port used to send data 
+to C2 server is port 80, these two methods perfectly cloak the attack among the normal traffic. 
+
+
+ 
+
+
+
+4) Att
+a
+ck 
+Techniques 
+
+
+Random file names 
+
+
+T
+he module files 
+are 
+re
+-
+name
+d 
+randomly 
+after being released by the Droppe
+r and the names are 
+stored 
+in the JSON file (
+usually nouns in English, for instance, gendarme.dll, jerques.dl
+l
+)
+. 
+
+
+ 
+
+
+Picture 14 File name of the modules 
+
+
+ 
+
+
+String Encryption 
+
+
+A
+ll the strings are encrypted by several encryption 
+algorithms
+. 
+
+
+ 
+
+
+ 
+
+
+Picture 15 String 
+Encryption 
+
+
+ 
+
+
+API 
+function 
+encapsulation 
+
+
+A 
+great amount of API 
+functions 
+(over 300) are encapsulated 
+in 
+zulib 
+(a dynamic dll library) 
+to 
+hamper static analysis 
+from security software
+. 
+
+
+
+
+
+ 
+
+
+R
+untime without master program 
+
+
+T
+he core module is started up as an 
+extension of explorer.exe. 
+O
+ther modules are injected into 
+certain processes according to the configuration file. 
+Therefore
+, there is no master program 
+running during the malware runtime 
+which makes the 
+malicious activities 
+hard to be noticed. 
+E
+ven though 
+sometimes 
+users 
+may 
+sense 
+the 
+abnormity, they would still relax 
+their 
+vigilance 
+at 
+last with checking attempt ending up in vain
+. 
+
+
+ 
+
+
+Process injection 
+
+
+T
+he master module runs in a 
+legitimate 
+explorer which security software will 
+not 
+intercept. 
+C
+ommunication 
+mo
+dule 
+is 
+usually 
+injected in
+to 
+the 
+browser process. 
+But i
+f 
+there is no browser 
+process, 
+the 
+malware will give up communicating 
+with C2 server. 
+T
+he data theft module is 
+injected into security software so as to make 
+the malware
+’
+s trace 
+inconspicuous 
+when it 
+t
+raverses 
+files. 
+
+
+ 
+
+
+PE and config file encryption 
+
+
+PE files in the dropper are 
+compressed by zlib 
+and 
+encrypted by 
+AES algorithm
+s
+, as well 
+as 
+the 
+configuration files released by 
+the dropper. 
+
+
+N
+o matter on dynamic or static combat, the 
+attack 
+tactics indicts th
+at 
+these malware developers 
+must have 
+spent time and efforts studying 
+security software to 
+compile 
+customer
+-
+made malware 
+so as 
+to avoid detection and cover its trace. 
+
+
+ 
+
+
+4. Correlation Analysis 
+
+
+1) Attackers’ 
+Facebook 
+A
+ccount
+s 
+
+
+A
+ttackers
+’ 
+Facebook 
+account 
+
+
+https:/
+/www.facebook.com/ofir.hadad.963 
+
+
+https://www.facebook.com/rafi.partook 
+
+
+https://www.facebook.com/people/%D7%90%D7%95%D7%94%D7%93
+-
+%D7%A4%D7%93%D7%
+99%D7%93%D7%94/100007696628947 
+
+
+https://www.facebook.com/tuti.rotam.5 
+
+
+
+
+
+
+
+T
+hese 
+Facebook accounts 
+played important 
+roles in the 
+watering hole 
+attacks. 
+
+
+2) PDB 
+Path
+s 
+
+
+PDB 
+paths 
+
+
+C:
+\
+Users
+\
+user
+\
+bamboo
+-
+agent
+-
+home
+\
+xml
+-
+data
+\
+build
+-
+dir
+\
+ROCK
+-
+RW2
+-
+BRW6R
+\
+x64
+\
+Release
+-
+RkLibDll 
+
+
+Z:
+\
+rootkits
+\
+windows
+\
+zico
+\
+x64 
+
+
+Z:
+\
+build
+\
+rootkits
+\
+windows
+\
+zico
+\
+Release 
+
+
+
+
+ 
+
+
+W
+e 
+have 
+the below discoverie
+s 
+based on 
+the PDB paths: 
+
+
+ T
+he ID of the 
+developer 
+is zico 
+ T
+he name of the program is 
+ROCK
+-
+RW2
+-
+BRW6R 
+ T
+he internal name used is rootkits 
+
+
+3) Lure Documents 
+
+
+File Name 
+
+
+English 
+
+
+لف
+م 
+ملقعتا
+ا 
+معجةا
+ب 
+هلزرا
+ا 
+ك
+ف 
+هل
+ا 
+هنسر
+أ 
+(1).pdf 
+
+
+Detention of Al
+-
+Azhar University 
+students 
+the 
+file may Allah free 
+them(1).pdf 
+
+
+يسرجتةا
+ا 
+لكرحا
+ا 
+يولرث
+ا 
+وملقةا
+ل 
+يلعشةب
+ا
+\
+File1.pdf 
+
+
+R
+evolutionary movement 
+of p
+eople
+’
+s 
+resistance strategy
+/File1.pdf 
+
+
+ס
+מ 
+סנכה
+ה 
+תלכוד
+מ
+\
+ס
+מ 
+סנכה
+ה
+- 
+נםכיוד
+ע
+.pdf 
+
+
+A
+djustment on individual income tax.pdf 
+
+
+ينمظ
+ت 
+وملعجتا
+ا 
+يولرثة
+ا
+\
+F
+ile1.pdf 
+
+
+Organizing revolutionary groups
+/File1.pdf 
+
+
+يلةا
+و 
+يناء
+س
+-
+طخ
+م 
+يلطسرة
+ا 
+نملكا
+ا
+\
+نم
+ا 
+ملطردا
+ا
+.pdf 
+
+
+The state 
+of the Sinai
+-
+scheme
+/
+underlying 
+security control Chaser
+.pdf 
+
+
+يلةا
+و 
+يناء
+س
+-
+طخ
+م 
+يلطسرة
+ا 
+نملكا
+ا
+\
+يوهج
+ت 
+يلسرتا
+ا 
+ملفخة
+ا 
+د
+ض 
+ينملبا
+ا
+.pdf 
+
+
+The state o
+f the 
+Sinai
+-
+scheme
+/
+underlying 
+car 
+bombs directed against buildings control
+.pdf 
+
+
+يلةا
+و 
+يناء
+س
+-
+طخ
+م 
+يلطسرة
+ا 
+نملكا
+ا
+\
+نسدة
+ه 
+ملفرجتا
+ا 
+ن
+م 
+ينلطس
+ف
+.pdf 
+
+
+The state 
+of the Sinai
+-
+scheme
+/
+underlying 
+explosives engineering control of 
+Palestine.
+p
+df 
+
+
+
+
+ 
+
+
+T
+he file names give us the h
+int 
+that 
+the attacks are related with Egypt and Israel. 
+
+
+4) njRAT 
+
+
+5
+2f461a133e95328ccd9ba7f70e2f3e6 
+is a remote control 
+released by the samples and 
+disguised 
+in 
+an Adobe.pdf icon. 
+T
+he remote control is a variant of njRAT 
+malware family 
+which is 
+prevalent 
+in the 
+Middle East
+. 
+
+
+
+5) Geo
+-
+location of 
+C2 
+
+
+ 
+
+
+ 
+
+
+Picture 
+1
+6 Associations between samples and CC 
+
+
+ 
+
+
+C2 IP 196.205.194.60 is one of the samples that loca
+te in Egypt. Incoherence
+, 
+the 
+C2 IP 
+196.205.194.61 of njRAT released 
+by it 
+is also in Egypt. 
+
+
+ 
+
+
+MD5 
+
+
+Malware Family 
+
+
+C&
+C IP 
+
+
+Geo location 
+
+
+52f461a133e95328ccd9ba7f70e2f3e6 
+
+
+ROCK 
+
+
+196.205.194.60 
+
+
+Egypt 
+
+
+c80b3fb9293a932b4e814a32e7ca76d3 
+
+
+njRAT 
+
+
+196.205.194.61 
+
+
+Egypt 
+
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+Appendix 
+A
+: Sample S
+ources in Hebrew 
+
+
+Links to Social Websites 
+
+
+Site Owners 
+
+
+Dates 
+
+
+hxxps://www.facebook.co
+m/320924244852/photos/pb.320924244852.
+-
+22075
+20000.1449772632./10150705915184853/?type=3&theater 
+
+
+Shayetet 13 
+- 
+Israeli 
+special forces unit 
+
+
+9:01
+pm, Jan. 31, 2015 
+
+
+hxxps://www.facebook.com/527045137305930/videos/918743024802804/ 
+
+
+Israel Defense Forces 
+(IDF) 
+
+
+8:
+33
+pm, Jan. 31
+, 2015 
+
+
+hxxp://statuscope.co.il/%D7%9E%D7%99
+-
+%D7%94%D7%99%D7%90
+-
+%D7%94
+%D7%99%D7%97%D7%99%D7%93%D7%94
+-
+%D7%94%D7%98%D7%9B%D7%
+A0%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%AA
+-
+%D7%A9%D7%9C
+-
+%D
+7%96%D7%A8%D7%95%D7%A2
+-
+%D7%94%D7%99%D7%9D
+-
+%D7%90%D7%A9
+%D7%A8
+-
+%D7%9
+6%D7%9B%D7%AA%D7%94
+-
+%D7%91%D7%AA%D7%97%D7
+%A8%D7%95%D7%AA?id=c917c8e2 
+
+
+Israeli Navy 
+
+
+11:15:25
+, Feb. 4, 2015 
+
+
+hxxps://www.facebook.com/555898814436639/photos/a.556290817730772.
+145251.555898814436639/1019290754764107/?type=3&p=10 
+
+
+Israeli 
+political 
+commentaries 
+
+
+3:36
+pm, Feb. 2, 2015 
+
+
+hxxps://www.facebook.com/miri.regev.il/photos/a.538483556248464.10737
+41833.118410851589072/751248248305326/?type=1&theater 
+
+
+Israeli Culture and Sports 
+Minister 
+- 
+Miri Regev 
+
+
+6:09
+pm, Feb. 3, 2015 
+
+
+hxxps://www.facebook.com/maarivonline/v
+ideos/641901115916051/ 
+
+
+Israeli media 
+-
+Maariv 
+Online 
+
+
+6:22
+pm, Feb. 1, 2015 
+
+
+hxxps://webcache.googleusercontent.com/search?q=cache:nBi1mbSVr4MJ:ht
+tps
+://www.facebook.com/%25D7%2592%25D7%2593%25D7%2595%25D7%2
+593
+-
+%25D7%25A7%25D7%25A8%25D7%25A7%25D7%259C
+-
+60398431629646
+6/+&cd=6&hl=en&ct=clnk&gl=us 
+
+
+C
+aracal 
+Batallion 
+- 
+infantry 
+combat battalion 
+of the 
+IDF 
+
+
+5:33
+, Jan. 31, 2015 
+
+
+hxxps://webcache.googleuserconten
+t.com/search?q=cache:rtCajoBx_3QJ:htt
+ps://www.facebook.com/Israe.Army/+&cd=8&hl=en&ct=clnk&gl=us 
+
+
+Israeli Army 
+
+
+2:14
+, Feb. 1, 2015 
+
+
+hxxps://www.facebook.com/%D7%97%D7%99%D7%9C
+-
+%D7%94%D7%99%D
+7%9D
+-
+553700681378193/ 
+
+
+Israeli Navy 
+
+
+9:00
+pm, Jan. 31, 2015 
+
+
+hxxps://ww
+w.facebook.com/IAFGiyus/photos/a.364384073628468.82320.32
+1086041291605/846002125466658/?type=1&theater 
+
+
+Israeli Air Force 
+
+
+Feb. 3, 2015 
+
+
+
+
+ 
+
+
+ 
+
+
+
+Appendix B: Updated Detection Results of 
+the S
+amples 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+

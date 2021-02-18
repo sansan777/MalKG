@@ -1,0 +1,32 @@
+T1	Organization 207 249	Kaspersky Lab's Global Research & Analysis
+T2	Region 339 350	Middle East
+T3	Country 388 393	Syria
+T4	Organization 605 636	Global Research & Analysis Team
+T5	Organization 648 661	Kaspersky Lab
+T6	Country 700 705	Syria
+T7	Exploit 784 802	social engineering
+R1	hasAttackLocation Arg1:T7 Arg2:T6
+T8	Malware 1992 2015	ﺑﺭﻧﺎﻣﺞ ﺍﻷﻣﻥ ﺍﻟﻭﻁﻧﻲ‬.exe
+T9	Malware 2496 2505	ﺿﺎﺋﺢ‬.exe
+T10	Malware 2508 2520	Scandals.exe
+T11	Obfuscation 2583 2592	MaxToCode
+R2	hasCharacteristics Arg1:T9 Arg2:T11
+R3	hasCharacteristics Arg1:T10 Arg2:T11
+T12	Malware 2863 2888	Ammazon Internet Security
+T13	Malware 3995 4005	Kimawi.exe
+T14	File 4079 4089	Kimawi.jpg
+R4	indicates Arg1:T14 Arg2:T13
+T15	ExploitTargetObject 5053 5059	Turkey
+T16	ExploitTargetObject 5063 5075	Saudi Arabia
+T17	ExploitTargetObject 5079 5086	Lebanon
+T18	ExploitTargetObject 5090 5099	Palestine
+T19	ExploitTargetObject 5103 5123	United Arab Emirates
+T20	ExploitTargetObject 5127 5133	Israel
+T21	ExploitTargetObject 5137 5144	Morocco
+T22	ExploitTargetObject 5291 5297	France
+T23	ExploitTargetObject 5301 5314	United States
+T24	TrojanHorse 6059 6079	Trojan.MSIL.Zapchast
+T25	Malware 6080 6102	Backdoor.Win32.Bifrose
+T26	Malware 6103 6126	Backdoor.Win32.Fynloski
+T27	Malware 6127 6148	Backdoor.Win32.Xtreme
+T28	Attacker 4708 4717	attackers

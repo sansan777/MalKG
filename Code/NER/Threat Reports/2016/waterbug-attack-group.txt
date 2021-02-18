@@ -1,0 +1,178 @@
+The Waterbug attack group 
+
+Security Response 
+
+Version 1.02 – January 14, 2016 
+
+
+OVERVIEW..................................................................... 3 
+Introduction .................................................................. 5 
+Vectors .......................................................................... 5 
+Spear phishing ........................................................ 5 
+Venom distribution network .................................. 6 
+Malware....................................................................... 10 
+Trojan.Wipbot ........................................................ 10 
+Trojan.Turla............................................................ 11 
+Conclusion................................................................... 13 
+Appendix ..................................................................... 15 
+Injection attack analysis ....................................... 15 
+PluginDetect library .............................................. 15 
+Exploits.................................................................. 17 
+Trojanized applications ......................................... 17 
+Trojan.Turla variants.............................................. 18 
+Detection guidance ............................................... 20 
+Waterbug tools ...................................................... 29 
+Additional exploits used........................................ 30 
+Samples................................................................. 31 
+Trojan.Turla C&C servers ....................................... 42 
+
+
+OVERVIEW OVERVIEW 
+Waterbug is a cyberespionage group that uses sophisticated malware to systematically 
+target government-related entities in a range of countries. 
+
+The group uses highly-targeted spear-phishing and watering-hole attack campaigns to 
+target victims. The group has also been noted for its use of zero-day exploits and signing its 
+malware with stolen certificates. 
+
+Once the group gains a foothold, it shifts focus to long-term persistent monitoring tools 
+which can be used to exfiltrate data and provide powerful spying capabilities. Symantec 
+has tracked the development of one such tool, Trojan.Turla, and has identified four unique 
+variants being used in the wild. 
+
+
+INTRODUCTION 
+Waterbug has 
+successfully 
+targeted and 
+compromised over 
+4,500 computers 
+across more than 
+100 countries.
+
+The Waterbug attack group 
+
+Introduction 
+
+Waterbug is the name given to the actors who use the malware tools Trojan.Wipbot (also known as Tavdig and 
+Epic Turla) and Trojan.Turla (also known as Carbon, Uroburos, and Snake). Believed to have been active since 
+at least 2005, it is likely that the group was responsible for the 2008 compromise of US Central Command that 
+reportedly resulted in a clean-up operation that lasted almost 14 months. 
+
+More recently, Waterbug used a zero-day exploit against the Microsoft Windows Kernel ‘NDProxy.sys’ Local 
+Privilege Escalation Vulnerability (CVE-2013-5065), targeted emails, stolen certificates, and a sophisticated 
+watering-hole distribution network known as Venom to compromise its victims. Waterbug has successfully 
+targeted and compromised over 4,500 computers across more than 100 countries. Targets include government 
+institutions, embassies, and education and research facilities. 
+
+The malware used on victims’ computers, variants of Trojan.Turla and Trojan.Wipbot, are likely developed by or 
+for the Waterbug group. Trojan.Turla has four different sub-versions, something that may indicate professional 
+development with code shared among multiple teams. 
+
+Because of the targets chosen, the use of at least one zero-day exploit, a large network of compromised 
+websites, and the advanced nature of the malware used, Symantec believes that Waterbug is a state-sponsored 
+group. 
+
+Vectors 
+
+Symantec have observed two techniques used by the Waterbug group to compromise victims: the use of highly 
+targeted emails containing malicious attachments and a set of compromised websites which ultimately deliver a 
+malicious payload. 
+
+Spear-phishing 
+
+In December 2013, Symantec identified several spear-phishing attacks against specific individuals. The 
+emails used in the 
+attacks contained 
+a malicious Adobe 
+Reader attachment. 
+The attachment used 
+one zero-day exploit 
+against the Adobe 
+Acrobat and Reader 
+ToolButton Object UseAfter-
+Free Remote Code 
+Execution Vulnerability 
+
+(CVE-2013-3346) to 
+elevate privileges and a 
+second patched exploit 
+(CVE-2013-5065) to 
+drop Trojan.Wipbot on 
+the target’s computer. 
+This was the first time 
+Symantec had observed 
+this group use a zero-day 
+exploit in the wild. 
+
+The majority of the 
+emails observed in this 
+spear-phishing attack 
+
+Figure 1. Example targeted email containing malicious PDF that drops Trojan.Wipbot 
+
+
+
+The Waterbug attack group 
+
+followed a common theme using subjects such as Defence Attaché Q1 meetings or Sochi 2014 Winter Olympics. 
+Attachments were distributed as Adobe Reader attachments or executable files using an Adobe Reader icon. 
+
+Venom distribution network 
+
+Since at least September 2012, Symantec has identified 84 websites compromised by the Waterbug group. The 
+chosen websites receive visitors of potential interest to the attackers—this is an example of a watering-hole 
+attack. However, unlike traditional watering-hole attacks, where all visitors to a particular website are targeted 
+indiscriminately, in the case of the Venom network used by the Waterbug group, the attackers use a more 
+deliberate approach. This is done in a multi-staged fashion by firstly redirecting visitors to another malicious 
+server. On the malicious server, a fingerprinting script is executed and this extracts configuration information 
+from the user’s computer related to installed bowser plugins (Adobe Reader, Silverlight, Java, Flash etc.). The 
+attackers also collect basic system and network information, such operating system version, type, browser 
+version, and internet protocol (IP) address. 
+
+At this point, the attackers have enough information to determine if the visitor is of further interest. When an IP 
+address of interest is identified, such as one associated with a government institution, they proceed to create 
+a rule specific to that IP address. This rule ensures that the next time the visitor arrives on the compromised 
+website their computer may be sent a malicious payload instead of just being fingerprinted. 
+
+One of the techniques that the attackers used to install the malicious payload is to attempt the installation 
+of a Trojanized version of Adobe Shockwave. This malicious installer contains Trojan.Wipbot. Similarly, 
+Symantec has also observed packages which have been used to drop both Trojan.Turla and Trojan.Wipbot. 
+It is believed that Trojan.Turla is also dropped in tandem with Trojan.Wipbot in order to provide multiple 
+communication channels as a 
+
+failsafe when interacting with 
+the compromised computer. 
+Symantec has also observed the 
+attackers using Trojan.Wipbot 
+to download updated versions 
+of Trojan.Turla after initial 
+infection. 
+
+Once the attackers have gained 
+a foothold in the network, they 
+use Trojan.Turla to collect and 
+exfiltrate data to a first-tier 
+proxy. This tier is comprised of 
+legitimate, but compromised, 
+websites. In a similar fashion, 
+data is relocated from the 
+first-tier proxy to a second-tier 
+proxy server under the control 
+of the attackers. This is done 
+to increase the complexity of 
+the attacker’s infrastructure 
+and to make it more difficult to 
+identify. 
+
+
+Figure 2.Trojanized Shockwave installer package 
+
+
+The Waterbug attack group 
+
+Compromised websites (watering holes) 
+
+Symantec telemetry suggests the Venom network consists of 84 compromised domains (websites). These 
+compromised websites are located in many different countries and were used in a watering-hole style operation 
+in which the attackers monitored and filtered visitor

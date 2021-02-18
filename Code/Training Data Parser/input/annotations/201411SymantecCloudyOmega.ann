@@ -1,0 +1,110 @@
+T1	Campaign 0 21	Operation CloudyOmega
+T2	ExploitTargetObject 87 92	Japan
+R1	targets Arg1:T1 Arg2:T2
+T3	Organization 451 459	Symantec
+T4	Malware 479 501	Bloodhound.Exploit.557
+T5	Payload 541 556	Backdoor.Emdivi
+T6	Payload 558 574	Backdoor.Korplug
+T7	Payload 580 596	Backdoor.ZXshell
+R2	hasCharacteristics Arg1:T4 Arg2:T5
+R3	hasCharacteristics Arg1:T4 Arg2:T6
+R4	hasCharacteristics Arg1:T4 Arg2:T7
+T8	Software 133 141	Ichitaro
+T9	Organization 93 104	JustSystems
+R5	hasProduct Arg1:T9 Arg2:T8
+T10	Campaign 1700 1711	CloudyOmega
+T11	Payload 1743 1758	Backdoor.Emdivi
+T12	Software 2050 2058	Ichitaro
+T13	Time 2399 2403	2011
+R6	hasAttackTime Arg1:T10 Arg2:T13
+T14	Time 2600 2604	2014
+R7	hasAttackTime Arg1:T10 Arg2:T14
+T15	Campaign 2686 2697	CloudyOmega
+T16	Email 2961 2966	email
+T17	File 3091 3101	.zip files
+R8	hasAttachment Arg1:T16 Arg2:T17
+R9	indicates Arg1:T16 Arg2:T4
+T18	Payload 3797 3812	Backdoor.Emdivi
+T19	Campaign 3914 3925	CloudyOmega
+T20	Time 3964 3968	2011
+R10	hasAttackTime Arg1:T19 Arg2:T20
+T21	ExploitTargetObject 4009 4034	Japanese chemical company
+R11	targets Arg1:T19 Arg2:T21
+T22	Malware 4036 4042	Emdivi
+R12	involvesMalware Arg1:T19 Arg2:T22
+T23	Malware 4177 4183	Emdivi
+T24	MalwareCharacteristics 4253 4259	Type S
+R13	hasCharacteristics Arg1:T23 Arg2:T24
+T25	MalwareCharacteristics 4264 4270	Type T
+R14	hasCharacteristics Arg1:T23 Arg2:T25
+T26	Malware 4328 4334	Emdivi
+T27	Malware 4536 4542	Emdivi
+T28	MalwareCharacteristics 4543 4549	Type S
+T29	MalwareCharacteristics 4554 4560	Type T
+R15	hasCharacteristics Arg1:T27 Arg2:T28
+R16	hasCharacteristics Arg1:T27 Arg2:T29
+T30	Campaign 4733 4744	CloudyOmega
+R17	involvesMalware Arg1:T30 Arg2:T27
+T31	Time 4820 4824	2011
+R18	hasAttackTime Arg1:T30 Arg2:T31
+T32	SourceCodeInformation 4848 4871	C++ programing language
+T33	Malware 4873 4879	Type T
+T34	Malware 4985 4991	Type T
+R19	involvesMalware Arg1:T30 Arg2:T33
+R20	involvesMalware Arg1:T30 Arg2:T34
+T35	Malware 5216 5222	Type S
+T36	Malware 5287 5293	Type S
+T37	Malware 5379 5385	Type T
+T38	Malware 5493 5499	Type S
+T39	Malware 5526 5532	Type S
+R21	involvesMalware Arg1:T30 Arg2:T35
+T40	Malware 5790 5803	Emdivi Type S
+T41	Malware 5819 5825	Emdivi
+T42	Malware 5853 5859	Emdivi
+T43	Malware 6770 6785	Backdoor.Emdivi
+T44	Malware 7039 7054	Backdoor.Emdivi
+T45	Malware 7081 7096	Backdoor.Emdivi
+T46	Campaign 7307 7320	CloudyOmega's
+T47	Campaign 7377 7388	CloudyOmega
+T48	Vulnerability 7499 7512	CVE-2012-5054
+R22	exploits Arg1:T45 Arg2:T48
+T49	Malware 7738 7753	Backdoor.Emdivi
+T50	Vulnerability 7758 7770	CVE2012-5054
+R23	exploits Arg1:T49 Arg2:T50
+T51	Malware 7926 7932	Emdivi
+T52	Time 7943 7947	2012
+R24	hasAttackTime Arg1:T51 Arg2:T52
+T53	Campaign 7972 7981	LadyBoyle
+T54	Time 7992 7996	2013
+R25	hasAttackTime Arg1:T53 Arg2:T54
+T55	Vulnerability 8129 8142	CVE-2013-0634
+T56	Malware 8035 8053	malformed SWF file
+R26	exploits Arg1:T56 Arg2:T55
+T57	Vulnerability 8183 8196	CVE-2013-0634
+R27	exploits Arg1:T56 Arg2:T57
+T58	Campaign 8278 8289	CloudyOmega
+T59	Campaign 8370 8379	LadyBoyle
+T60	Time 8392 8405	February 2013
+R28	hasAttackTime Arg1:T59 Arg2:T60
+T61	Software 8449 8460	Adobe Flash
+T62	Organization 8609 8617	Symantec
+T63	Software 8823 8831	Ichitaro
+T64	Payload 9170 9185	Backdoor.Emdivi
+T65	Payload 9187 9203	Backdoor.Korplug
+T66	Payload 9209 9225	Backdoor.ZXshell
+T67	Campaign 9343 9354	CloudyOmega
+T68	AttackerGroup 9374 9386	attack group
+T69	AttackerGroup 9464 9475	Hidden Lynx
+T70	Campaign 9506 9515	LadyBoyle
+T71	Campaign 9517 9528	CloudyOmega
+T72	Time 9557 9561	2011
+R29	hasAttackTime Arg1:T71 Arg2:T72
+T73	Organization 9755 9763	Symantec
+T74	Campaign 9817 9828	CloudyOmega
+T75	Software 9901 9909	Ichitaro
+T76	Campaign 10041 10052	CloudyOmega
+T77	Malware 10115 10137	Bloodhound.Exploit.557
+T78	Malware 10094 10114	Backdoor.Emdivi!gen2
+T79	Malware 10073 10093	Backdoor.Emdivi!gen1
+T80	Malware 10057 10072	Backdoor.Emdivi
+T81	TrojanHorse 10138 10153	Trojan.Mdropper

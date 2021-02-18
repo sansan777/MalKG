@@ -1,0 +1,71 @@
+T1	Email 541 562	jeno_1980@hotmail.com
+T2	Time 485 506	Between 2004 and 2011
+T3	Person 607 620	Tawnya Grilth
+T4	Person 627 639	Eric Charles
+T5	Campaign 1319 1345	Advanced Persistent Threat
+T6	MalwareFamily 1474 1479	Enfal
+T7	MalwareFamily 1502 1512	EtenFalcon
+T8	MalwareFamily 2284 2294	RegSubsDat
+T9	MalwareFamily 2298 2307	RegSubDat
+T10	MalwareFamily 2313 2320	Kirpich
+T11	Country 3329 3336	Vietnam
+T12	Country 3338 3344	Brunei
+T13	Country 3350 3357	Myanmar
+T14	Malware 3374 3384	RegSubsDat
+R1	hasAttackLocation Arg1:T14 Arg2:T13
+R2	hasAttackLocation Arg1:T14 Arg2:T12
+R3	hasAttackLocation Arg1:T14 Arg2:T11
+T15	Malware 3653 3663	RegSubsDat
+T16	Malware 3665 3670	Enfal
+T17	Region 3610 3616	Europe
+T18	Region 3625 3636	Middle East
+R4	hasAttackLocation Arg1:T15 Arg2:T18
+R5	hasAttackLocation Arg1:T15 Arg2:T17
+R6	hasAttackLocation Arg1:T16 Arg2:T18
+R7	hasAttackLocation Arg1:T16 Arg2:T17
+T19	Country 3904 3909	China
+R8	hasAttackLocation Arg1:T15 Arg2:T19
+R9	hasAttackLocation Arg1:T16 Arg2:T19
+T20	Malware 4306 4314	GhostNet
+T21	Campaign 4383 4392	Sin Digoo
+T22	Malware 4743 4748	Murcy
+R10	involvesMalware Arg1:T21 Arg2:T22
+T23	Time 4439 4443	2011
+R11	hasAttackTime Arg1:T21 Arg2:T23
+T25	Address 5443 5455	114.248.80.0
+T26	Address 5463 5475	114.248.96.0
+T24	Address 5426 5438	123.120.96.0
+T27	Indicator 5670 5684	asia-online.us
+T28	Malware 5659 5669	RegSubsDat
+R12	indicates Arg1:T27 Arg2:T28
+T29	Email 5751 5774	king_public@hotmail.com
+R13	indicates Arg1:T29 Arg2:T28
+T30	Indicator 5800 5811	Cyb3rsleuth
+T31	Person 5910 5925	Wang Liang Chen
+R14	indicates Arg1:T30 Arg2:T28
+T32	Account 6245 6266	jeno_1980@hotmail.com
+T33	Host 6271 6283	socialup.net
+R15	connectsTo Arg1:T32 Arg2:T33
+T34	Attacker 6700 6708	blackhat
+T35	Indicator 7603 7606	jzd
+T36	Host 7715 7726	i-tobuy.com
+T37	Account 7774 7795	jeno_1980@hotmail.com
+R16	connectsTo Arg1:T37 Arg2:T36
+T38	Indicator 7854 7863	xxgchappy
+T39	Host 8035 8046	1stsale.net
+T40	Account 8099 8121	xxgchappy@vip.sina.com
+R17	connectsTo Arg1:T40 Arg2:T39
+T41	Indicator 8066 8074	john twk
+T42	Exploit 8858 8887	hooking Windows API functions
+T43	Indicator 9517 9521	Jeno
+T44	Address 9781 9792	123.6.89.98
+T45	Email 9908 9931	king_public@hotmail.com
+T46	Address 9985 9996	61.51.59.63
+T47	Indicator 10198 10207	king-rose
+T48	Indicator 10214 10222	Club-tom
+T49	Hash 10273 10305	e211f11c0b28434bf7f1c8fb510fa9ae
+T50	Email 10797 10816	wzy_100@hotmail.com
+T51	Address 10861 10876	123.120.127.153
+T52	Exploit 11966 11975	lankiller
+T53	Campaign 12567 12576	Sin Digoo
+R18	involvesMalware Arg1:T53 Arg2:T52

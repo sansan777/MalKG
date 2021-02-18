@@ -1,0 +1,32 @@
+
+
+Figure 1. Inception Framework attacks 2015-2017 
+In the intervening years, the Inception Framework has evolved, adding additional layers of obfuscation in a bid to avoid detection. The group is using new types of lure documents in its spear-phishing campaigns and its malware has expanded to use new types of plugins. Inception has also increased its use of the cloud, and diversied the range of cloud providers it uses for C&C purposes. 
+
+Figure 2. Locations of organizations targeted by Inception, 2015-2017 
+The locations of Inception¡¯s targets have shifted since 2014, but the group continues to have a global reach. Russia accounted for the largest number of attacks between 2015 and 2017, followed by Ukraine, Moldova, Belgium, Iran, and France. 
+An evolved attack framework 
+Since 2014, the Inception Framework has steadily changed its tools and techniques. In its early attacks, the group¡¯s malware payload (with the exception of plugins) was fully contained within an exploit document emailed to the victim. In more recent activity, these spear-phishing attacks are now a two-stage process. The group will rst email the target a malicious ¡°Reconnaissance document¡± which, if opened, will ngerprint the target computer 
+Every connection builds different chains of infected routers and once the connection is complete, it cleans up after itself. In several cases, Symantec has been able to follow the entire chain of compromised routers and found it led to a virtual private server (VPS), meaning the attackers have employed an additional layer of security by routing communications through rented hosting servers. 
+
+
+
+
+Mobile devices targeted 
+Inception has an ongoing interest in mobile devices and has previously developed malware to infect Android (Android.Lastacloud 
+(https://www.symantec.com/security_response/writeup.jsp?docid=2014-121216-4334-99)), iOS (IOS.Lastaccoud 
+(https://www.symantec.com/security_response/writeup.jsp?docid=2014-121216-5858-99)) and BlackBerry devices (BBOS.Lastacloud 
+(https://www.symantec.com/security_response/writeup.jsp?docid=2014-121913-0103-99)). 
+
+Mobile malware continues to be deployed and the group has made some modications to its Android malware. The malware is spread via SMS messages and emails containing malicious links. Once installed, it uses user prole pages on online forums as dead drops for its C&C. 
+
+
+
+Security Response Attack Investigation Team 
+The Attack Investigation Team is a group of security experts within Symantec Security Response whose mission is to investigate targeted attacks, drive enhanced protection in Symantec products, and offer analysis which helps customers respond to attacks. 
+
+
+About the Author 
+Network Protection Security Labs 
+Network Protection Security Labs is a group of security experts within Network Protection Products doing advanced security research to continuously improve Symantec Network Products. 
+

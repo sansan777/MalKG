@@ -1,0 +1,16 @@
+T1	Malware 432 442	Dark Comet
+T2	Attacker 150 169	Jean-Pierre Lesueur
+R1	authored Arg1:T2 Arg2:T1
+T3	Attacker 476 493	Syrian government
+R2	usesMalware Arg1:T3 Arg2:T1
+T4	MalwareCharacteristics 1438 1447	keylogger
+T5	Malware 1515 1525	Dark Comet
+R3	hasCharacteristics Arg1:T5 Arg2:T4
+T6	MalwareCharacteristics 1563 1588	recording video and audio
+R4	hasCharacteristics Arg1:T5 Arg2:T6
+T7	ExploitTargetObject 2226 2280	critics of the regime of Syrian President Bashar Assad
+T8	Person 2918 2923	Osama
+T9	ExploitTargetObject 2929 2949	activist in Damascus
+R5	hasType Arg1:T9 Arg2:T8
+T10	Malware 5576 5587	Blackshades
+T11	ExploitTargetObject 5971 5987	Syrian activists

@@ -1,0 +1,71 @@
+T1	Vulnerability 48 61	CVE-2014-0322
+T2	ExploitTargetObject 286 310	Veterans of Foreign Wars
+T3	ExploitTargetObject 312 315	VFW
+T4	Vulnerability 401 414	CVE-2014-0322
+T5	Malware 452 459	ZxShell
+R1	exploits Arg1:T5 Arg2:T4
+T6	Organization 469 493	CrowdStrike Intelligence
+T7	Attacker 524 536	AURORA PANDA
+R2	authored Arg1:T7 Arg2:T5
+T8	Campaign 841 844	SWC
+T9	Time 836 840	2012
+R3	hasAttackTime Arg1:T8 Arg2:T9
+T10	ExploitTargetObject 912 928	Capstone Turbine
+R4	targets Arg1:T8 Arg2:T10
+T11	Organization 956 980	CrowdStrike Intelligence
+T12	Indicator 1070 1083	savmpet[.]com
+T13	Indicator 1119 1138	gifas[.]assso[.]net
+T14	File 1184 1196	include.html
+T15	File 1201 1209	Tope.swf
+T16	Payload 1243 1252	Erido.jpg
+T17	Malware 1042 1058	malicious iframe
+R5	indicates Arg1:T12 Arg2:T17
+R6	indicates Arg1:T13 Arg2:T17
+R7	hasCharacteristics Arg1:T17 Arg2:T16
+R8	indicates Arg1:T14 Arg2:T17
+R9	indicates Arg1:T15 Arg2:T17
+T18	Indicator 1285 1298	savmpet[.]com
+T19	ExploitTargetObject 1501 1564	Groupement des industries françaises aéronautiques et spatiales
+T20	ExploitTargetObject 1566 1571	GIFAS
+T21	Time 1578 1593	17 January 2014
+T22	Malware 1826 1833	ZxShell
+T23	Malware 1927 1933	Sakula
+T24	Indicator 1991 2011	oa[.]ameteksen[.]com
+R10	indicates Arg1:T24 Arg2:T23
+T25	Address 2320 2335	173.252.252.204
+T26	ExploitTargetObject 2126 2131	GIFAS
+T27	Indicator 2210 2229	gifas[.]assso[.]net
+T28	Indicator 2355 2368	savmpet[.]com
+T29	Indicator 2373 2392	gifas[.]assso[.]net
+R11	usesAddress Arg1:T23 Arg2:T25
+R12	indicates Arg1:T27 Arg2:T23
+R13	indicates Arg1:T28 Arg2:T23
+R14	indicates Arg1:T29 Arg2:T23
+T30	Indicator 2543 2556	savmpet[.]com
+T31	Indicator 2591 2604	icbcqsz[.]com
+T32	Indicator 2558 2585	secure[.]safran-group[.]com
+T33	Indicator 2634 2661	secure[.]safran-group[.]com
+T34	Organization 2663 2669	Safran
+T35	Malware 2980 2986	Sakula
+R15	indicates Arg1:T33 Arg2:T35
+T36	Indicator 3222 3233	snecma[.]fr
+T37	Organization 3275 3281	Snecma
+T38	Address 3594 3607	217.108.170.0
+T39	Indicator 4274 4301	secure[.]safran-group[.]com
+T40	ExploitTargetObject 4350 4356	Safran
+T41	ExploitTargetObject 4725 4741	Capstone Turbine
+T42	Time 4641 4653	January 2013
+T43	Vulnerability 4829 4842	CVE-2012-4792
+T44	Malware 5016 5022	Sakula
+R16	exploits Arg1:T44 Arg2:T43
+T45	Malware 5051 5057	Sakula
+T46	ExploitTargetObject 5121 5137	Capstone Turbine
+T47	Malware 5143 5149	Sakula
+T48	MD5 5173 5205	61fe6f4cb2c54511f0804b1417ab3bd2
+T49	Indicator 5220 5241	web[.]vipreclod[.]com
+R17	indicates Arg1:T49 Arg2:T47
+T50	MD5 5291 5323	c869c75ed1998294af3c676bdbd56851
+T51	Indicator 5338 5358	oa[.]ameteksen[.]com
+R18	indicates Arg1:T50 Arg2:T47
+R19	indicates Arg1:T51 Arg2:T47
+T52	Indicator 5670 5689	gifas[.]assso[.]net

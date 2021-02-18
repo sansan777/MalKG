@@ -1,0 +1,218 @@
+FidelisThreatAdvisory#1011 
+“NewCDTO:A	  SneakernetTrojan	  Solution” 
+January15,2014 
+DocumentStatus:FINAL LastRevised:2014-­-01-­-15 
+Executive Summary: 
+TheGeneralDynamicsFidelisCybersecurityforensicsteamanalyzedseveral	  relatedmalware samples	  thattogether	  provideasophisticatedmechanismtogather	  datafromindividualcomputer	  systems. Themalwareappears	  tobepartofasystemthatmaybeoptimizedfor	  usebyaninsider	  agentand/orforcollecting	  data	  fromdisparatenetworksorair-­-gappedsystems. Themalware includesfeaturestocleanupafteritself	  bydeletingkeyindicatorsthatitwaspresent. 
+Themalwaresystemapparentlyincludesadditionalcomponentsthathavenotbeen	  identified. Thesecomponentswouldpotentiallyperformadditionalcommandandcontrolfunctionsand potentiallyexfiltration	  fromthecentralhost. Thesophistication	  ofthemalwareandtheeffort involvedinitsdevelopmentwouldindicatethatitwasdevelopedforahighvaluetarget. However, thespecifictargetingofthismalwareisnot	  clearat	  thistime. Weareconcernedthat	  whilethe malwaresystem	  wasprobablydevelopedforaspecifictargetorfamilyoftargets,itcouldbe employedwithlittle	  adaptation	  againstvirtuallyanytarget. 
+Thisthreatadvisorydescribesthefunctionalityofthethreemalwarefilestoincludecommandinputsandtheresultingbehaviorof	  themalware. 
+TheFidelisXPS™ advancedthreatdefensesystemhas	  beenupdatedwithrulestodetectvarious componentsofthismalwaresystem. However,thefacttherearestill	  unansweredquestionsabout thecomponentsofthemalwaresystemanditsintendedtargeting,emphasizestheimportanceof employingthatbestpracticessuchasdenyinguseofremovablemediaon	  sensitivesystemsand	  disablingautorun! Thisisparticularlytrueforsystemsthatarenotprotected	  byFidelisXPS. 
+Additionalreverseengineeringandanalysisison-­-going	  atthistime. 
+
+Forensic Analysis Findings: 
+On8Jan2014,TheFidelisNetworkDefense	  andForensicsteamreceivedthreefiles:netsat.exe, netui3.dlland	  winmgt.dll.Allthreefileswere32	  bitexecutablefiles.Preliminaryanalysisdisclosed	  netsat.exewould	  terminatewhen	  run	  ifthesystemdatewason	  orafter21	  Jun	  2013.Thesubmitted	  filesappearedtorepresenttwopartsofasuspecteddatacollectionscheme.Essentially,netsat.exe	  appearedto	  operateasa	  masterprogramthatinfectedremovablemedia	  connectedto	  thesystem whereonitwasrunningandcollecteddatafrominfecteddriveswhenthedrivesreturned. netsat.exereceived	  commandsfroman	  encrypted	  filestored	  on	  thelocalsystem.Theinfection	  was intheformof	  arenamednetui3.dllorwinmgt.dllfilealongwithanAutorun.inf	  filesettorunthe renamednetui3.dll/winmgt.dllwhentheinfecteddrivewasconnected	  to	  atargethost.Therecould	  
+bemanyiterationsofnetsat.exerunningon	  enterpriseortargetedentitysystems.Basedon	  availableanalysisresults,netsat.execouldcollectsurreptitiously	  gathereddata	  fromany	  infected driveconnectedtothe	  systemwhereonnetsat.exe	  wasrunning,e.g.,the	  infecteddrive	  wouldnot haveto	  beprocessed	  bythesamesystemwhereon	  itbecameinfected.Data,in	  theformoffiles, destined	  forexfiltration	  maybeobfuscated	  viaacustomXORoperation.Thegathereddata	  would ostensibly	  beexfiltrated	  via	  othermeans. 
+Somecomponentsofthemalware’sbehaviorarepossibly	  remarkable.Quickly	  considering	  these results	  incursoryquestions	  reflectedas	  follows: 
+• 
+Command	  and	  Control(C2)appearsto	  beaccomplishedviaprovidingcommands	  inan encryptedfile	  storedonthe	  local‘master’system(re:netsat.exe).ThisC2scheme	  would seemtodictate: 
+
+o 
+Intruderremoteaccesstothe‘master’system 
+
+o 
+Intruderlocalaccesstothe‘master’system 
+
+o 
+aC2delivery/retrievalcomponent,suchasanotherpieceofcodethatdownloadsa C2file 
+
+
+
+• 
+Availableinformationprecludesdeterminationofthemeansofexfiltration.netsat.exe’s datacollection	  functionalitysuggested	  datadestined	  forexfiltration	  mightbecollected	  by the‘master’system.Thispossibilitysuggests: 
+
+o 
+Intruderremoteaccesstothe‘master’system 
+
+o 
+Intruderlocalaccesstothe‘master’system 
+
+o 
+Anexfiltrationmechanismintheformofanotherpieceofcode 
+
+
+
+
+
+Detection 
+Scanning	  withseveralselectthirdparty	  malwaredetectionapplicationsresultedinzero	  detections. 
+Cursoryonlineresearch	  disclosed	  afilenamed	  netui3.dllwaspossiblysubmitted	  to	  VirSCAN.orgon	  orbefore2Dec2013.Thenamenetui3.dllappearstohavebeenusedfor malwareinthepastandwaslikelyassociatedwithabackdoor.Thenamemaybeaplayon thenamenetui2.dll,alegitimateWindowsfilename. 
+
+File System Artifacts 
+FileName: netsat.exe FileSize: 43520	  bytes MD5: eb8399483b55f416e48a320d68597d72 SHA1: 8a7183b7ceb30517460b6ab614551ca38e915309 PETime: 0x5154F7F2	  [FriMar29	  02:09:54	  2013UTC] Sections(4): 
+Name Entropy MD5 .text 	  	  	  	  	  6.37 	  	  	  	  	  df1790813aca1265bc475f3891957512 .rdata 5.19	  a598dca4a8fe8ee17941fa60be746d31 
+.data 	  	  	  	  	  0.29 	  	  	  	  	  b3d1c1a0b1054a082c841ebd1354755f .rsrc 	  	  	  	  	  3.34 	  	  	  	  	  d4b9539426ff130b80e11efec7465acd 
+FileName: netui3.dll FileSize: 39424	  bytes MD5: 68aed7b1f171b928913780d5b21f7617 SHA1: 44e711e95311b81d597a7800d96482b873cb8235 PETime: 0x5152AE99	  [Wed	  Mar27	  08:32:25	  2013UTC] Sections(3): 
+Name Entropy MD5 .text 	  	  	  	  	  6.37 	  	  	  	  	  b2a939d2ad678201560285287e7dca1d .rdata 	  	  	  	  5.32 	  	  	  	  	  2cd54a2d2ada8650c9bd9eae69aef3ca .data 0.58	  70a79ca0958afad5b7742641b2cff9ea 
+FileName: winmgt.dll FileSize: 37888	  bytes MD5: 54e4a15a68cfbb2314d0aaad455fbfce SHA1: 49531b098049ae52264ae9b398c2cf59ff5379bc PETime: 0x50CAEAE4	  [FriDec14	  09:01:24	  2012UTC] Sections(3): 
+Name Entropy MD5 .text 	  	  	  	  	  6.31 	  	  	  	  	  6a0f9499f4ca8e0b2e4f09b9126806e6 .rdata 	  	  	  	  5.23 	  	  	  	  	  e49920b9ebad63f0d95bad505ea8fdf7 .data 	  	  	  	  	  0.59 	  	  	  	  	  a583b2c8490a7f0fcaee2f4776e445d8 
+
+Date Checking 
+Allthreesubmittedfilescomparedthesystemdateandtimetohardcodeddatesupon execution.Ifthe	  systemdate	  wasafterthe	  hardcodeddates,the	  malware	  woulddelete	  itself andterminate.Thefollowing	  tableillustratesthehardcodeddatesinrelationto	  theaffected	  files’PEdates: 
+File Name  PE Timestamp	  Date  Date Checked Within Executable Image  
+netsat.exe  29Mar2013  21Jun	  2013(Deletesitselfand	  associated	  filesafterthisdate)  
+netui3.dll  27Mar2013  31May2013	  (Deletesitselfand	  associatedfilesafterthis date)  
+winmgt.dll  14Dec 2012  30Dec2012	  (Deletesitselfand	  associated	  filesafterthis date)  
+
+
+Versioning, etc. 
+Thefollowingversion	  information	  wasrecordedin	  thenetsat.exeexecutable: 
+Child	  Type: StringFileInfo Language/CodePage:1033/1200 CompanyName: MicrosoftCorporation FileDescription: Cdto	  Netware2.12	  Provider FileVersion: 5.1.2600.0	  (xpclient.010817-­-1148) InternalName: NEWCDTO LegalCopyright: MicrosoftCorporation.Allrights	  reserved. OriginalFilename: cdto.dll ProductName: MicrosoftCorporation.Allrightsreserved. ProductVersion: 5,1,2600,0 
+Child	  Type: VarFileInfo Translation: 1033/1200 
+TheLanguage/CodePagecode1033denotesU.S.English.Thisversioninginformation	  appearscontrived.However,itlooksconvincing	  enoughto	  passcursory	  inspection,i.e., theformat	  appearslegitimateandtheappearancedoesnot	  engendersuspicion.Cursory onlinesearchesfailed	  to	  disclosewhat,ifanythingCdtomightbeassociated	  with. 
+Scanning	  disclosedthefilecontaineda	  functionpossibly	  associatedwithTEAN encryption.Thisappearedtoindicate	  TEA(Tiny	  EncryptionAlgorithm)involvement. (Note:Theencryptionisusedtoencrypt	  commandsstoredinafileonthelocalsystem.) 
+Thesubmittedfilesnamednetui3.dllandwinmgt.dlldidnothaveembeddedversioning Information	  likenetsat.exedid. 
+
+Files and paths 
+Thepresenceofthefollowingfilesmayindicatenetsat.exe,etal,involvement: 
+CSIDL_WINDOWS\msagent\netui3.dllNetui3.dllinanypath CSIDL_WINDOWS\msagent\netwn.drv Netwn.drvinanypath CSIDL_MYPICTURES\winsSetup35.exeinanypath Setup23.exeinany	  pathCSIDL_NETHOOD\Microsoft\Windows\Help\set.fl CSIDL_LOCAL_APPDATA\Microsoft\Windows\Help\intr CSIDL_NETHOOD\Microsoft\Windows\Chars\ferf.st CSIDL_NETHOOD\Microsoft\Windows\Chars\fert.st CSIDL_LOCAL_APPDATA\Microsoft\Windows\Chars\intr CSIDL_NETHOOD\Microsoft\Windows\message\ CSIDL_NETHOOD\Microsoft\Windows\Intel\ Act.teinanypath 
+u.tin	  anypath netwi.drvin	  anypath ~FF325I.tmpor~FF323D.tmpinthepathspecifiedbytheTMP.TEMP.orUSERPROFILE environmentvariablesorthe	  Windowsdirectory 
+Thepresenceofthefollowing,specificallyon	  removablemedia,mayindicatenetsat.exe,et al,involvement: 
+Autorun.inffilecontainingthefilenamesetup35.exeorpossiblysetup23.exe RECYCLER\RECYCLED\SYS RECYCLED\RECYCLED\SYS RECYCLED\RECYCLED\SYS\desktop.ini(Won'tbevisibleviaGUI) RECYCLER\RECYCLED\SYS\desktop.ini(Won'tbevisibleviaGUI) ~disk.ini 
+
+Registry 
+Cursoryanalysisdid	  notdiscloseentrenchmentdata,such	  asaRegistryentryto	  ensure persistence. 
+
+Network Artifacts: 
+Thiscursoryanalysisdisclosednonetworkartifactsspecifictothemalware’soperation.However, evidence	  ofany	  ofthe	  filesinvolved(MD5,strings,file	  names)traversingthe	  network,e.g.,onthe	  move,maybeindicativeofnetsat.exe,etalpresence.Givenwhatwasrevealedduringthiscursory analysis,finding	  string	  andorhashartifactsinSMBtrafficseemedthemostlikelypossibilitywithregardtonetworkdetection. 
+Strings: 
+netsat.exe 
+Thefollowinginterestingstringswerenotedin	  therawnetsat.exefile: 
+VMProtectbegin VMProtectend !Path-­--­->%sto	  Added	  !Pathlen=%u AddInit-­->	  ci.DestFile:%s !addri,nD=%d netui3.dll netwi.drv Global\Mtx_Sp_On_PC_1_2_8 
+Cdto	  Netware2.12	  Provider !CrDes !CrDe.i.err=%d setup35.exe setup23.exe act.te ferf.st fert.st netwn.drv Dcp Dcu SystemPriClass !Crnej 
+Netui3.dll 
+Thefollowinginterestingstrings	  werenotedintherawnetui3.dllfile: 
+set.fl setup35.exe setup32.exe act.te ferf.st fert.st u.t setup23.exe %s-­-wu%s %s-­-ws%s Nojn Mtx_Sp_On_PC_1_2_8 SystemPriClass 
+Winmgt.dll 
+Thefollowinginterestingstringswerenotedin	  therawwinmgt.dllfile: 
+set.fl setup35.exe setup32.exe act.te ferf.st fert.st u.t 
+%s-­-wu%s Nojn Mtx_Sp_On_PC_1_2_8\wins.log SystemPriClass 
+
+Functionality: 
+Basedonnetsat.exemanipulatingafilenamednetui3.dll,thesubmittednetsat.exeand netui3.dllappearedassociated.Versioning	  ispossible.Forexample,thesubmittednetui3.dll samplemaynotmatchthesubmittednetsat.exesampleinterms	  ofversioning.However, analysisassumed,forthesakeofefficiency,thatthesubmittednetui3.dllandsubmittednetsat.exefilewereassociated.Thesubmitted	  winmgt.dllfileappeared	  verysimilarto netui3.dll.However,somedifferencessuggested	  thetwofilesrepresented	  disparateversions. 
+Analysisdiscloseddatesensitivitybuiltintothesubmittedfiles.Ifthesamplewasrunaftera particulardate,itwouldeffectivelyterminateanddeleteitself: 
+File Name  PE Timestamp	  Date  Date Checked Within Executable Image  
+netsat.exe  29Mar2013  21Jun	  2013(Deletesitselfand	  associated	  filesafterthisdate)  
+netui3.dll  27Mar2013  31May2013	  (Deletesitselfand	  associated	  filesafterthis date)  
+winmgt.dll  14Dec 2012  30Dec2012	  (Deletesitselfand	  associated	  filesafterthis date)  
+
+Analysisdisclosednetsat.exeprobablyservesastheheadquartersofmaliciousactivityby: 
+• 
+Runningonapossiblycompromisedsystem 
+
+• 
+Logging	  someactivity	  and	  errorsto	  afile • Receivingcommandsviaanencryptedfileonthelocalsystem(possibleC2) 
+
+• 
+Listening	  fordriveconnections 
+
+• 
+Infectingconnecteddriveswithnetui3.dll/winmgt.dll(setup32.exe+	  Autorun.inf) 
+
+• 
+Collectingdatagathered	  byanyinfected	  drives,ostensiblyupontheirreturnfrombeing connectedtoothersystems 
+
+
+Analysisdisclosednetui3.dll/winmgt.dllprobablyserveasthefieldunitsofmaliciousactivity by: 
+• 
+Collectinginformationaboutsystemsitcomesinto	  contactwith	  through	  connectionto	  thetargetedsystemswiththedrivewhereonthemalwareresides 
+
+o 
+IP 
+
+o 
+Platform 
+
+o 
+Name 
+
+o 
+Version 
+
+o 
+Type 
+
+o 
+Primary or Backup Domain	  Controller (PDC or BDC) 
+
+o 
+Determines network join status (none, workgroup, domain) via NetGetJoinInformation API 
+
+o 
+Detailed OS version 
+
+o 
+Running Time 
+
+o 
+Computer Name 
+
+o 
+User Name 
+
+o 
+System Directory 
+
+o 
+Current Date and	  Time 
+
+o 
+Locale Information (Country and	  Language) 
+
+o 
+Drive info (total/free size, type, etc.) 
+
+o 
+Network Adapter description 
+
+o 
+IP Address 
+
+o 
+IP Mask 
+
+o 
+Gateway IP 
+
+o 
+Recursive directory listings 
+
+o 
+Enumerates normal user account names 
+
+
+
+• 
+Collectingfilelistingsfromlocaland	  shareconnected	  drives 
+
+• 
+Discoveringandconnectingtoshareddrivesvisibletothelocaltargetedsystem 
+
+• 
+Copyingand	  writingfilesto/fromdrivesvisibleto	  thelocaltargeted	  system 
+
+
+
+Commands 
+Thefollowingcommandsandtheirdescriptions,listedbyexecutablefile,illustratethe submittedmalware’sfunctionality: 
+
+netsat.exe 
+
+netui3.dll(setup35.exe) 
+
+
+Conclusions: 
+Thisadvisoryisbasedon	  preliminaryinformation. Itisimportanttonotethatreverseengineeringandanalysisofthemalwaresystemisstillunderway. Weexpectto	  provideadditionaldata,and someofthis	  informationmaychangeas	  aresultofcontinuedresearch. 
+However,duetotheuniquefunctionalityofmalwaresystemanditspotentialforemployment againsttargetsbeyondtheinitially	  intendedvictim,thenetworksecurity	  community	  shouldbe concernedandtrackthismalwareclosely. 
+Whilewehave	  updatedthe	  FidelisXPSsystemtodetectknowncomponentsofthe	  malware	  family, thispackagereemphasizestheimportanceofemployinggoodbasicnetworksecuritypracticessuch asdenyinguseofremovablemediaon	  sensitivesystemsand	  disablingautorun!	  
+
+

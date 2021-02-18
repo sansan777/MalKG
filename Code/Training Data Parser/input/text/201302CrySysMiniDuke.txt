@@ -1,0 +1,1281 @@
+Miniduke: Indicators
+v1.00 (Feb 27, 2013)
+
+Technical Report
+by
+
+Laboratory of Cryptography and System Security (CrySyS Lab)
+http://www.crysys.hu/
+
+Budapest University of Technology and Economics
+Department of Networked Systems and Services
+http://www.bme.hu/
+
+Authors:
+CrySyS Malware Intelligence Team. Based on joint work with Kaspersky Labs GREAT
+Team
+
+Document history
+27/02/2013 Initial release
+
+Table of contents
+1.
+
+Introduction .............................................................................................................................................4
+
+2.
+
+Known malware samples.....................................................................................................................5
+
+3.
+
+Detection of the running malware ................................................................................................ 11
+
+4.
+
+C&C communication ........................................................................................................................... 13
+4.1.
+Detection of C&C communications..............................................................................................................15
+4.2.
+Initial C&C communication ............................................................................................................................15
+4.3.
+Other indicators of C&C communication: Google and Twitter queries......................................18
+
+1. Introduction
+Our malware analysis team in the CrySyS Lab, Budapest worked together with Kaspersky
+Labs on the analysis of the Miniduke malware. Our participation in this research was justified
+by a detected Hungarian incident. A detailed report on the results of our joint efforts has
+been published by Kaspersky Labs Securelist blog site (see link below). The Kaspersky Labs
+report describes what we currently know about the operation of Miniduke including its
+stages, and also information on the C&C infrastructure and communications. In this report,
+we summarize the indicators of a Miniduke infection, and give specific hints on its detection.
+The Kaspersky Labs report is available at
+https://www.securelist.com/en/blog/208194129/The_MiniDuke_Mystery_PDF_0_day
+_Government_Spy_Assembler_Micro_Backdoor
+
+2. Known malware samples
+The available malware samples are highly obfuscated, and compiled by a polymorphic
+compiler. The attackers were able to produce new variants with only a few minutes
+difference between compile times. Therefore the number of distinct samples could be very
+large.
+bg_<sthg>.gif and bg_<sthg>.gif_dec refers to pieces of stage 2 of the malware, which are
+downloaded from the C&C server by the stage 1 code. bg_<sthg>.gif is a gif file that contains
+encrypted code, bg_<sthg>.gif is the corresponding decrypted file. bg_<sthg>.gif is generally
+24484 bytes long, while bg_<sthg>.gif_dec is 22784 bytes long.
+3e71a9f492101bde28cf9f024d87b496
+a4ad6b55b1bc9e16123de1388f6ef9bf
+92a2c993b7a1849f11e8a95defacd2f7
+297ef5bf99b5e4fd413f3755ba6aad79
+06def6c642dcbd58d0291ac110a57274
+2679e112f908fbf4ac96d87f7fdc46ca
+afe0190820b3edc296daefe6d1611051
+e196fa056d1a728d9ba9654fbc482777
+7049aa581874752093bb98850ff45dac
+441ee6a307e672c24d334d66cd7b2e1a
+e975e87bec844c882bf6d60604fc996b
+a58e8e935341b6f5cc1369c616de3765
+0a2da3c2c6b94c925459bc5e32bbb03c
+d2f39019bfa05c7e71748d0624be9a94
+0a5c9055c2b35bee78c911dfc29fe1a4
+ecd349138a6ef7d7ca40b9ce70dbb575
+21f16767e53da7fef8a1b5d4159256a9
+935892bb70d954efdc5ee1b0c5f97184
+bba6b0d31553cd8df0c45b85c0495816
+48bbce47e4d2d51811ea99d5a771cd1a
+b47b36484cfb0ab38ef481e23275fafb
+b68677e04fcc9103560bb0a5e5c7303f
+5e757aa35087ca7c479c82d0d5502f51
+27212d5e5d40a5e5c1742aac58dc59a8
+4193796cffa19e2e5cace58e9f10c599
+aab06d4ab78336b7315201637d9f1b0e
+474fa3c28d867f7113c060020b3e268b
+05d10323111f02233163a6742556c974
+f0b327565c25128ad15f9c378bc4ea60
+d9b68522053396644bcb72448d6cf327
+af906032917674f1f39a260b2b9fe0fb
+6507f6b1e2ce05dccf329b8cab078071
+633b59e7b97ef4574804ca35669fbf95
+b100d530d67cfbe76394bb0160567382
+203a6ff36ee2cd58daf5680b5a6890ec
+2d552b20e8164f3d4250fd8871b11b0f
+877a34931b087d04d387633824d9c813
+e990e0d1ee90cd10c4be7bfde6cc3e5a
+c8373db89be0a155673e0cd414442fc1
+8233c532bfcc4ccf2831765eae084409
+
+bg_aefk.gif
+bg_aefk.gif.dec
+bg_afvd.gif
+bg_afvd.gif.dec
+bg_dafd.gif
+bg_dafd.gif.dec
+bg_dasfs.gif
+bg_dasfs.gif.dec
+bg_dfdsh.gif
+bg_dfdsh.gif.dec
+bg_dfell.gif
+bg_dfell.gif.dec
+bg_dfesik.gif
+bg_dfesik.gif.dec
+bg_dfeu.gif
+bg_dfeu.gif.dec
+bg_dfew.gif
+bg_dfew.gif.dec
+bg_dfews.gif
+bg_dfews.gif.dec
+bg_dflj.gif
+bg_dflj.gif.dec
+bg_dfoiu.gif
+bg_dfoiu.gif.dec
+bg_dfrio.gif
+bg_dfrio.gif.dec
+bg_dfwe.gif
+bg_dfwe.gif.dec
+bg_dsaf.gif
+bg_dsaf.gif.dec
+bg_dsaffe.gif
+bg_dsaffe.gif.dec
+bg_dsef.gif
+bg_dsef.gif.dec
+bg_dsert.gif
+bg_dsert.gif.dec
+bg_dwed.gif
+bg_dwed.gif.dec
+bg_edf.gif
+bg_edf.gif.dec
+
+d39f2202b421561cfc36a8802184685c
+2d87ab160291664d62445548a2164c60
+e37d7cc17070df4917f194968073e14b
+fdc96d77af6fdae487002e32d61df123
+f80af1246744f8eedae152dc44ebfc51
+2dcd049c591644e35102921a48799975
+7aef3a8776c7a58ef01542ff7d4c83e8
+b540a9f81f538f4f324db422e7bb4559
+ed67c4aca1d25d1083bb8ba65573a4a9
+1528567b1a2f1da31d602ce1ddfd8918
+bedb8231a7b0d8b13a53e7e1fdff04dd
+7056df132f448d45b4781c2ddc27b113
+d469a7d7750c964419c0aaa0347c7a9c
+d27c2cce5ceb8a62c766a2ae4d50730e
+5add9bb805c8956931739308369b2c45
+1e0c1f4271c5cadcad7b66bef5863b83
+4c3664dce0b336f4262b5ec1374f9690
+ab2d8a0d5b03d40f148f2f907b55f9f1
+113e5ab47e1efae97fd7641276055984
+2f3fd599020fa857d28fe3e2bb26c6ca
+55b25ccb549df610c34072556abf88fa
+fd85ca2a0da6b7b7c93e1ad0efa25c4c
+b248d1b0ee26cb4393efe4ffab0c8c91
+1667a3a01b906b1e47328ad601d68d1e
+f7ed059147802b503f1792694a167e74
+c92252487615d5379317febc22dba7d4
+34f62a12bc36fd119734a322ef666f14
+efb1246ee89798a2d9182ad9bbcbb41a
+85388d2adf7b8608f1d3468b4e07920d
+7829cb4ca55fcda8928e0f63ee86c6c2
+882957f0845d54d83cd0389264d9ba8f
+c519eef57001ad3ae60cdcb0009bf778
+5935bc0845e6b192c163fc77ee3c00bf
+381691b297f7f5694709e21ad61ec645
+cfb4e25bd9dbf5afef6a56d468de91a1
+c8d75ed7835fdb543200298216d1d0f4
+cde0900f94c4c360540735028d6be71c
+aa48cb8e26ecdf16f22b0585a5fd96bf
+e498ef07eba70804e90aa303cbd4c20b
+798bea2f1e2e6fc8edcedea548877aa2
+78cca6a7d4aed656c9683aeb18732e95
+241363e7641cfa7d9063013ed44bf87b
+7f77c4839d09cdf930b021cbdd89410e
+b8e89f9908262b5385623c0e39d6b940
+e2019b16e587ef1d3e05df164a01101c
+3649fc6e3222721826485131142846b4
+4fbe44c36d6c1a2b74733c1cd0d34cbf
+1051aeace46a4bd33d0167cacd42b12b
+0e02b78673a9cf2db7a0cc5b00e306e9
+3c188004c98934beaafa7a52ee397f90
+2bd1572913eed832451b768c6c4c610c
+089b3f42a96f4f74b05e858cdf8db3fc
+58cf3b1adb7981938848c018d2e52ecb
+014030329695cabdb9966a3006eae07a
+7ae8ac5de85b0777868281f64237197c
+b8088f6594dd8cba31b4f52a2d91f40e
+b24f414809671328ced9cec73ff5ca3a
+6dca5669aad4933b0629571ce6c99998
+cf1e3f0b0d3a9e009bea821b4bffa387
+
+bg_edf_v2.gif
+bg_edf_v2.gif.dec
+bg_edfsa.gif
+bg_edfsa.gif.dec
+bg_edse.gif
+bg_edse.gif.dec
+bg_eefds.gif
+bg_eefds.gif.dec
+bg_efd.gif
+bg_efd.gif.dec
+bg_efdse.gif
+bg_efdse.gif.dec
+bg_efed.gif
+bg_efed.gif.dec
+bg_efwe.gif
+bg_efwe.gif.dec
+bg_ekjf.gif
+bg_ekjf.gif.dec
+bg_ekks.gif
+bg_ekks.gif.dec
+bg_elfj.gif
+bg_elfj.gif.dec
+bg_elj.gif
+bg_elj.gif.dec
+bg_esd.gif
+bg_esd.gif.dec
+bg_ewfed.gif
+bg_ewfed.gif.dec
+bg_ewwe.gif
+bg_ewwe.gif.dec
+bg_fdfe.gif
+bg_fdfe.gif.dec
+bg_fed.gif
+bg_fed.gif.dec
+bg_fefsf.gif
+bg_fefsf.gif.dec
+bg_fked.gif
+bg_fked.gif.dec
+bg_fwds.gif
+bg_fwds.gif.dec
+bg_kefs.gif
+bg_kefs.gif.dec
+bg_kei.gif
+bg_kei.gif.dec
+bg_keio.gif
+bg_keio.gif.dec
+bg_kje.gif
+bg_kje.gif.dec
+bg_kkf.gif
+bg_kkf.gif.dec
+bg_koe.gif
+bg_koe.gif.dec
+bg_ldfe.gif
+bg_ldfe.gif.dec
+bg_leo.gif
+bg_leo.gif.dec
+bg_lfe.gif
+bg_lfe.gif.dec
+bg_lkje.gif
+
+22036375458057994e5fa81474393465
+cffd063dacff1830de63c833e89facc1
+168f3d5a88f695c157446549e4770dd9
+ffd8ab9d37519ffa15a86157422a6517
+8282eb6d6f20c5de6e7f4ae3a42438d2
+fed5e99509537e0f46a6e7ab4f9f3587
+aaa1633a0b8108763334bbcd590848d1
+5b0f68e23817494f52c84e8e38c6a30d
+ffefe16d581340c1e49f585a576a1fd8
+492134baaf2059bdb799c9c7483d1926
+a67ad3e2a020f690d892b727102a759b
+b664ce0888cdf5180813be0cfcfcf8ee
+687a596db9031b38f23064d45c0a4ddb
+8e4505e28766ab08db27ca91e5ecc839
+04d5e76049db2c1e799e70231107339a
+00457691525bf21484827bcd8a01828b
+e1a659473ae1e828508309b77da13783
+1a1afc3d26c82c4b0facf5ca8a5dcb36
+f648bd9d68bd016739988bb71bf5486b
+42ccad0b47cb1836e7e09869b41ebdb2
+8ee3cf5e37480ee1324146feef30de02
+796f0698644f61fdcd7da04bf590544e
+2ab25d33d61cf4cfbac92c26c7c0598e
+0b02262772b8c2c5e54dae99bdb07029
+728f9c1d9dd0635a4b205f2d4d68a887
+95694878bba2e099ea9ca1b5deeedb7a
+f19345e0e5aecc0da45b4c110591bdd9
+
+bg_lkje.gif.dec
+bg_lkjkef.gif
+bg_lkjkef.gif.dec
+bg_oef.gif
+bg_oef.gif.dec
+bg_ojlro.gif
+bg_ojlro.gif.dec
+bg_qdf.gif
+bg_qdf.gif.dec
+bg_qrg.gif
+bg_qrg.gif.dec
+bg_rie.gif
+bg_rie.gif.dec
+bg_ruie.gif
+bg_ruie.gif.dec
+bg_sasd.gif
+bg_sasd.gif.dec
+bg_sdef.gif
+bg_sdef.gif.dec
+bg_sdefk.gif
+bg_sdefk.gif.dec
+bg_sfef.gif
+bg_sfef.gif.dec
+bg_ureio.gif
+bg_ureio.gif.dec
+bg_wdf.gif
+bg_wdf.gif.dec
+
+Figure 1 – MD5 checksum list of pieces of stage 2 of the known versions
+
+8d7e8b7871b634ad67b13e55aebb7fb7a954ff90
+1e6b9414fce4277207aab2aa12e4f0842a23f9c1
+ed64fba3195f52192c65cad491a28bf18f6f67a3
+28a43eac3be1b96c68a1e7463ae91367434a2ac4
+cc492d4b188f4cf5003f8b6954f6dd071a8066c2
+97a374bac7572d44ca8c73c49d3d6ddeade90e34
+81612fc09cfae280cc35b1331c832a5a87c2edff
+b32b675699a59b4272a956dbd81738d02d4ca8a4
+352a2cf4bb2c9e300ce9a51740f238c9282ca6e4
+2ceae0f5f3efe366ebded0a413e5ea264fbf2a33
+05c539ca5dfbfab8e61ffab4b7b13ba2a5e7154c
+ad9734b05973a0a0f1d34a32cd1936e66898c034
+f3c6c0c73dcccbf44521763985bbf1ad6e3317eb
+a9e529c7b04a99019dd31c3c0d7f576e1bbd0970
+5e33dd2fcf0c32d3fc458b2d99a0033461c3a6ea
+69d95479d520e016ce733541ec815aafe16ead04
+b995e16fc3a981d693778e370e5ba19861412db6
+efcb9be7bf162980187237bcb50f4da2d55430c2
+39952ab95453de127a6a61f4e67c3109ca8ff93e
+1ba5bcd62abcbff517a4adb2609f721dd7f609df
+a9e9cd4b2b1ec4efcdbce79b582f874cebe3ebd1
+a6c18fcbe6b25c370e1305d523b5de662172875b
+5cb2d1005caccbe451f2bd2c6314283ba04a7401
+d99ddb6c4fc13f97c6a77f84ba31533ca2e1d9e0
+d4c10e9248392936cf94a168a792d4b9942398a8
+832d80c16886a7529aa22c962a00a7bb3fe1ff77
+78e20444a96f4405aae2a26e1a013634c81d7328
+
+bg_aefk.gif
+bg_aefk.gif.dec
+bg_afvd.gif
+bg_afvd.gif.dec
+bg_dafd.gif
+bg_dafd.gif.dec
+bg_dasfs.gif
+bg_dasfs.gif.dec
+bg_dfdsh.gif
+bg_dfdsh.gif.dec
+bg_dfell.gif
+bg_dfell.gif.dec
+bg_dfesik.gif
+bg_dfesik.gif.dec
+bg_dfeu.gif
+bg_dfeu.gif.dec
+bg_dfew.gif
+bg_dfew.gif.dec
+bg_dfews.gif
+bg_dfews.gif.dec
+bg_dflj.gif
+bg_dflj.gif.dec
+bg_dfoiu.gif
+bg_dfoiu.gif.dec
+bg_dfrio.gif
+bg_dfrio.gif.dec
+bg_dfwe.gif
+
+4ec769c15a9e318d41fd4a1997ec13c029976fc2
+1f07d80b16a539cc6d7fccd2bb37ddaaf734352e
+f762ff3801d1e4ad1360d50e54f2894211cd8958
+be9aa1776fbd5b05fea230ff77654e8a9d29a802
+8da1aca62c3a19ac0f9b85fb48b711e6b946bc77
+b524a190d74a1b8824a049936e17aee714f5bd23
+43fa0d5a30b4cd72bb7e156c00c1611bb4f4bd0a
+4213387b4e4cf0bb2499b06b4fecd90af7d7257a
+92465134302755552eb82bb39bb3327a08112e02
+0e924796517cbb62f3a30740eb60ac1a9829b24d
+53140342b8fe2dd7661fce0d0e88d909f55099db
+f8c6f1cc3b937e0d7501c098776945bdc7c83856
+582dbde44753e0af4996ddb63ab088221b2e49a2
+109e1e387f8b2bb8d92f45e79881809384e9ae54
+c39d0b12bb1c25cf46a5ae6b197a59f8ea90caa0
+6b1dd4fa0f9570760c02bbcf44acf74d752aa8f8
+5551408323086f31d9bc3358ab5b2ed4dde86c5d
+d3a1b7d35b314139ab87bf4cd3e7ce752b37e56a
+30b377e7dc2418607d8cf5d01ae1f925eab2f037
+280aadae40cb340894f17ce1ca00f7dda3eb4425
+6b56ff806ee0b094b4846f494257e84b62bee35f
+00da3d559f36e842d2411b8c47ee377650722da0
+a32817e9ff07bc69974221d9b7a9b980fa80b677
+0e5a4768d7020b336f58ea4d521756401c24efd4
+939ac22e8425654a57753bd4083e8cd16d337ee0
+f7932b0a5b710d4e7e698d3c990a875771698fce
+c9cedca208049c7bf08cba544ef32bb7a3ebe37a
+25a7c6b0f48e68f4ca135ecec46d3ad190d518d9
+9689ebbeeb544b9d1c00b71f3b886aeebcb92138
+95ad87fd28d7367fd5323d5281c044238dd4c303
+36b969c1b3c46953077e4aabb75be8cc6aa6a327
+b9d576a47cfebb2c3ff0ecc8cd7c352e6ce32b23
+366b41bcac6259c77ed5792becae75670a74c4c1
+8e3e6ea2c79c9994ded4922358898814efd2cbe0
+367030d5cf3ce7e9ef7770367f04c7dd88332374
+95d8b5e4bff4c35a7ef32f1cbb7e385a331c6138
+b42ab1b2b257f65ad18823ecb2f284c8fc118c26
+b72df8e1f24c4e05699fc892cfd536053d762065
+73366c1eb26b92886531586728be4975d56f7ca5
+554cd374591ee8bf0f062567c17beae54f9055ff
+6956a776f3395d1aee8a3c27e9db5eb2d38db32b
+40f8ee78fb9969c8ec9a795cb827dfb427c19036
+1ddcd6b1475f016d04d8a43ccb03abeb83371eda
+0cd54a0c3f7fdaf7a83e6a1ff818daf514e81e7a
+5acaea49540635670036dc626503431b5a783b56
+fef95bdb9f984bcbb89f3a29928263dfc01aef72
+f62600984c5086f2da3d70bc1f5042cf464f928d
+1747a7a74a6fac25bc4315b8d3a8311ce8a082e2
+501452d2c21bb8248e068932920554db6204a7f2
+4bba1d30c971fdd23131e8ec1d768066b400f0a1
+49889f3db0d70b716aa3cb2ab571f0b4a56a6f99
+551bf2d2268dba5d22e91fdd7ca9832bc8874bcc
+824d383bb5093e3a6c232afca3293779a297c0ad
+95760332c76b32919d4c053b3360ecad4811256a
+f484d874097ca95e5a86f43a15ef184bec1e972a
+b1dec7f17381cf41699184ec4bc591ff20b451b3
+296fd4c5b4bf8ea288f45b4801512d7dec7c497b
+e6429ea40864e36dd6a25cab00b416ff207825a7
+df64ac1bb4ca177539e3fa669dcc471d3093ff2f
+
+bg_dfwe.gif.dec
+bg_dsaf.gif
+bg_dsaf.gif.dec
+bg_dsaffe.gif
+bg_dsaffe.gif.dec
+bg_dsef.gif
+bg_dsef.gif.dec
+bg_dsert.gif
+bg_dsert.gif.dec
+bg_dwed.gif
+bg_dwed.gif.dec
+bg_edf.gif
+bg_edf.gif.dec
+bg_edf_v2.gif
+bg_edf_v2.gif.dec
+bg_edfsa.gif
+bg_edfsa.gif.dec
+bg_edse.gif
+bg_edse.gif.dec
+bg_eefds.gif
+bg_eefds.gif.dec
+bg_efd.gif
+bg_efd.gif.dec
+bg_efdse.gif
+bg_efdse.gif.dec
+bg_efed.gif
+bg_efed.gif.dec
+bg_efwe.gif
+bg_efwe.gif.dec
+bg_ekjf.gif
+bg_ekjf.gif.dec
+bg_ekks.gif
+bg_ekks.gif.dec
+bg_elfj.gif
+bg_elfj.gif.dec
+bg_elj.gif
+bg_elj.gif.dec
+bg_esd.gif
+bg_esd.gif.dec
+bg_ewfed.gif
+bg_ewfed.gif.dec
+bg_ewwe.gif
+bg_ewwe.gif.dec
+bg_fdfe.gif
+bg_fdfe.gif.dec
+bg_fed.gif
+bg_fed.gif.dec
+bg_fefsf.gif
+bg_fefsf.gif.dec
+bg_fked.gif
+bg_fked.gif.dec
+bg_fwds.gif
+bg_fwds.gif.dec
+bg_kefs.gif
+bg_kefs.gif.dec
+bg_kei.gif
+bg_kei.gif.dec
+bg_keio.gif
+bg_keio.gif.dec
+
+c20ba675d5df997623c7da4c79ca9be5c995eb3c
+4a88e007bbd9a729fde016de1c9709cd06818ef7
+ff2319abaeded930feb0ddbcb47fdfc2d57e182c
+a4445f1ae3e2d5196eb4292121e6cf0d1cc5dad2
+7419bfc9d393b2a9fbd09c18ea4a31ce98d60342
+7e57c80574fdebf5f3fedce5a2ebb62d49de1345
+5316a02c1e120885a2382e95a3eb0c1f8fd69551
+60efd28c07d07d10d50b5ad00c243e17e7f1707e
+862305dedb93100aee6ef07c858c3a0b6878620e
+634a1649995309b9c7d163af627f7e39f42d5968
+997d5765e4cc7475fa2cf64233af9b51ddf219f2
+81c99d19ea8065cfff6dc76a950b9d1b25a5f7a9
+c6fd105437e9ddd914721f3ba7fcbc6bef39067a
+6f530edc584a18df98ee7fade2dd03b610955e23
+8802cbff6f2b39932e9b699d89a6f3a407cd39a7
+c0c26060b4f003322f3cda9dee294fd6221b85da
+1160010b1df2601fe176353be76ba1a922425dc6
+edf74413a6e2763147184b5e1b8732537a854365
+49989446d542b1face2c031a205a702178dc2496
+ebe78cc14bb8e13374da4264c41df24dc0ceeaa7
+071b67b2645e574f6fc5ba889c041bb2ee85f6d8
+31ab6830f4e39c2c520ae55d4c4bffe0b347c947
+53d1c812510c51d0b6eec767d15f740ea54135b5
+223c7eb7b9dde08ee028bba6552409ee144db54a
+be1a53afaab89f47a91a21b0d65415af1b5d1bff
+3171957cfeb7b415f21b04f9a587b0c339b5c0e3
+898a3e5e34eeb3349aa6f291c31195dc02bb9530
+f0f7d755add2305bceaacfe6840d61ccd5f03b0f
+0b1e28ecd5b4eb14519470775dce965c63579640
+683104d28bd5c52c53d2e6c710a7bd19676c28b8
+ba884173e98a4f2b6af6acc7f702ead14b146960
+f30ba7eeebd97843f0bcf9c3930741fa29c132cd
+6c889228219012b25387bf3e063136b994d2dcac
+e804f3bf72bfda867fd3725a82da6212e29dbfc4
+07e26464e17a750bb60665c377b41efd23c440b6
+827de388e0feabd92fe7bd433138aa35142bd01a
+28ec7eb49f7af3ca7787e4566b144d8ea544a78d
+08a4baa154dc41d7dee9bd424c2679253c743ee3
+84fa36acb51a0569ed931f1db5d44ec907dcb624
+d81b0705d26390eb82188c03644786dd6f1a2a9e
+
+bg_kje.gif
+bg_kje.gif.dec
+bg_kkf.gif
+bg_kkf.gif.dec
+bg_koe.gif
+bg_koe.gif.dec
+bg_ldfe.gif
+bg_ldfe.gif.dec
+bg_leo.gif
+bg_leo.gif.dec
+bg_lfe.gif
+bg_lfe.gif.dec
+bg_lkje.gif
+bg_lkje.gif.dec
+bg_lkjkef.gif
+bg_lkjkef.gif.dec
+bg_oef.gif
+bg_oef.gif.dec
+bg_ojlro.gif
+bg_ojlro.gif.dec
+bg_qdf.gif
+bg_qdf.gif.dec
+bg_qrg.gif
+bg_qrg.gif.dec
+bg_rie.gif
+bg_rie.gif.dec
+bg_ruie.gif
+bg_ruie.gif.dec
+bg_sasd.gif
+bg_sasd.gif.dec
+bg_sdef.gif
+bg_sdef.gif.dec
+bg_sdefk.gif
+bg_sdefk.gif.dec
+bg_sfef.gif
+bg_sfef.gif.dec
+bg_ureio.gif
+bg_ureio.gif.dec
+bg_wdf.gif
+bg_wdf.gif.dec
+
+Figure 2 – SHA1 checksum list of pieces of stage 2 of the known samples
+
+<id>.gif files are pieces of stage 3 codes prepared for specific victims with <id> used as an ID.
+These are typically 334093 byte long files with a 13-byte long gif header. Below, we list the
+hashes of these files; in case of the decrypted files with .gif_dec extension, we list the hashes
+for the internal decrypted PE file.
+07a9975d7d96ff3b56de024ab2017582
+43cd449e3b0c1ecde8136eeb710de233
+85a645c42e2fcf718c211ebc6cbc71b8
+a9315dc0ff95809839af3b95e7de329d
+92ff4df1d079a003ae2a8ac47dd5e81b
+bf0253ee830b498bd442c3b97aec1270
+c48d0822eedd75c9c56f688fb8a05259
+44ee71de720fc1a50c919bc5a01c592d
+626489f8cafacb1b24fe6ecf0db52f23
+
+*1109821546.gif
+*174239657.gif
+*2334309658.gif
+*2618653991.gif
+*2627081433.gif
+*3100425864.gif
+*3198217296.gif
+*3946889701.gif
+*3979106736.gif
+
+03f8485cacb0458194d2bbef9f33cc06
+738c60fff066934b6f33e368cfe9a88c
+cf59ed2b5473281cc2e083eba3f4b662
+b8d1d74a0ad4985adaf9afe4c868ae0b
+c79a35313238e71a17d19de979a0d63a
+18e64b8e5ce5bdd33ce8bd9e00af672c
+86ef8f5f62ae8590d6edf45e04806515
+4c6608203e751cf27f627220269d6835
+78e51be60eab2c6e952c9538a46ab521
+b798c968cbfd53f878e13c7698610d9c
+f5f84c0c7ae871c2aa3cfe25199da628
+738c60fff066934b6f33e368cfe9a88c
+07a9975d7d96ff3b56de024ab2017582
+f78454d4ac3e4fe9ef5cac69b1ec43d7
+811f66d6dd2c713073c0b0aebbe74ce8
+
+*626088424.gif
+*1109821546.gif_dec
+*174239657.gif_dec
+*2334309658.gif_dec
+*2618653991.gif_dec
+*2627081433.gif_dec
+*3100425864.gif_dec
+*3198217296.gif_dec
+*3946889701.gif_dec
+*3979106736.gif_dec
+*626088424.gif_dec
+*1109821546.gif_dec
+*1109821546.gif
+*4137794344.gif
+*4137794344.gif_dec
+
+Figure 3 – MD5 checksums of pieces of stage 3 code
+
+31a31f6be9c31cb2d02c04176eb500f1aba14dd0
+804701959a1dbfbbfc6d8142de850db9fce9a611
+ac4642885ca779e7b66b8bb6aa21d3c0396f7a1d
+d8c6d3e6988516595399003d1db0abd7df334d87
+6cf8ca847ee317255a9084bb44ae3f38ef61e5c3
+0fc29adc3aca39f32763096e090a6a69e50a716f
+1df9b4dc693ce7250f51cbc7ced53ad0a6e1c587
+9d716d2f8f1c2841a2707eba2ebadd01ed830030
+497f9c688ed142ae91e354b3d9c9e13243a268b0
+b464fc5cab7a93e5607b2abb49f343e81f4fa2f1
+15c75472f160f082f6905d57a98de94c026e2c56
+00852745cb40730dc333124549a768b471dff4bc
+8cce571ca74e4b0074c09acb814541a0192ea9a8
+781d0b12bbe0a862d4a5527cd85489551cfe5d31
+e4add0b118113b2627143c7ef1d5b1327de395f1
+493d0660c9cf738be08209bfd56351d4cf075877
+118114446847ead7a2fe87ecb4943fdbdd2bbd1e
+0e263d80c46d5a538115f71e077a6175168abc5c
+d22d80da6f042c4da3392a69c713ee4d64be8bc8
+71d059edb81acb6b65213386bda3e2bdc724fa0f
+15c75472f160f082f6905d57a98de94c026e2c56
+804701959a1dbfbbfc6d8142de850db9fce9a611
+e17d004cd57f5f5eaa3652c926793d57ef88f1ec
+416d1035168b99cc8ba7227d4c7c3c6bc1ce169a
+
+*174239657.gif
+*1109821546.gif
+*2334309658.gif
+*2618653991.gif
+*2627081433.gif
+*3100425864.gif
+*3198217296.gif
+*3946889701.gif
+*3979106736.gif
+*626088424.gif
+*1109821546.gif_dec
+*174239657.gif_dec
+*2334309658.gif_dec
+*2618653991.gif_dec
+*2627081433.gif_dec
+*3100425864.gif_dec
+*3198217296.gif_dec
+*3946889701.gif_dec
+*3979106736.gif_dec
+*626088424.gif_dec
+*1109821546.gif_dec
+*1109821546.gif
+*4137794344.gif
+*4137794344.gif_dec
+
+Figure 4 – SHA1 checksums of pieces of stage 3 code
+
+3668b018b4bb080d1875aee346e3650a
+88292d7181514fda5390292d73da28d4
+3f301758aa3d5d123a9ddbad1890853b
+0cdf55626e56ffbf1b198beb4f6ed559
+cf5a5239ada9b43592757c0d7bf66169
+c03bcb0cde62b3f45b4d772ab635e2b0
+(Country: Belgium)
+
+action_plan.pdf (Country: Belgium)
+ASEM_seminar.pdf (Country: Hungary)
+EUAG_report.pdf (Country: Luxembourg)
+report.pdf (Country: Spain)
+EUAG_report.pdf (Country: Belgium)
+The 2013 Armenian Economic Association.pdf
+
+Figure 5 – MD5 checksums for known malicious documents (droppers)
+
+3. Detection of the running malware
+Due to a large number of compiled samples, there is a high chance that the current version is
+difficult to detect by signatures. Yet, there are common features in the samples that can be
+used to identify the malware components.
+In every sample we checked, the “Program Files/Startup” contains a file with “.lnk”
+extension after installation. This is used to start up the malware after the computer is
+rebooted.
+An example of the lnk file created by the malware:
+
+The contents of the .lnk files are similar to the below described path and file, but random
+names are used. The extension of the dll called is generally “.tmp” or “.cat” or “.db” (not
+sure about full list) and the export function called has a random name.
+"C:\WINDOWS\system32\rundll32.exe"
+C:\DOCUME~1\ALLUSE~1\APPLIC~1\base.cat,JorNgoq
+The running process of the malware can be pinpointed, e.g., by using ProcessExplorer. The
+running copies of stage 1 and 2 appear as separated rundll.exe processes. It is very useful to
+create a memory dump from these running processes, e.g., by using SysInternals
+ProcessExplorer.
+On the picture below, the export function name they use is GqOlls. The names seem to
+follow a pattern: 6 chars long with two upper case letters.
+
+A not fully cross-checked information is that during installation the malware will be copied in
+two copies to the system and the two executables differ. This might mean that the
+executable modifies itself.
+For example, we recovered the following two files:
+md5sum base.cat :113e6fc85317fdd135e3f5f19e6c7a58 *base.cat
+md5sum ~6rld.tmp : c786a4cdfe08dbe7c64972a14669c4d1 *~6rld.tmp
+where base.cat is the startup file, which is created based on ~6lrd.tmp. base.cat is stored in
+the “All users” directory, whereas ~6lrd.tmp is stored in a user’s directory, e.g., in the guest
+user
+directory as “C:\Documents and Settings\guest\Local Settings\Application
+Data\~6rld.tmp”
+This user directory contains at least one more file, update.cmd with a specific content that
+could be used for detection. E.g., a search for any *.cmd files with content “TASKKILL /f /IM
+acro*” might be a a detection tool of this stage.
+
+As for stage 3 of the attack, it is important to note that it is not yet analyized deeply. So once
+a victim downloads the ~300k long piece of code, we don’t know what happens with the
+previous stages, and we have no information about detections once this stage is reached,
+except the usage of the C&C server news.grouptumbler.com.
+
+4. C&C communication
+There are multiple layers of C&C communications in the malware. First the malware uses
+Google search to receive information from its master. Then, it uses the Twitter messaging
+service looking for the twits of a specific Twitter user. Commands received via this channel
+trigger the download of stage 2 and stage 3 code from the C&C server.
+We identified the following C&C servers delivering stage 2 and stage 3 codes:
+Attack location
+
+C&C server
+
+C&C IP / location
+
+path on C&C
+
+Hungary
+
+arabooks.ch
+
+194.38.160.153 /
+Switzerland
+
+/lib/index.php
+/srch/index.php
+/forumengine/index.php
+/events/index.php
+/groups/[different]
+
+Luxembourg
+
+artas.org
+
+95.128.72.24 /
+France
+
+/engine/index.php
+/web/index.php
+
+Belgium
+
+tsoftonline.com
+
+72.34.47.186 /
+United States
+
+/views/index.php
+
+(Multiple)
+
+www.eamtm.com
+
+188.40.99.143 /
+Germany
+
+/piwik/web/index.php
+
+The C&C server used by stage 3 of the malware is news.grouptumbler.com and it is located
+in Panama. At the time of this writing, port 80 seems to be closed on this server. Address
+and open port information is below:
+news.grouptumbler.com/news/feed.php
+IP: 200.63.46.23
+Interesting ports on 200.63.46.23:
+Not shown: 65524 closed ports
+PORT
+STATE
+SERVICE
+22/tcp
+open
+ssh
+111/tcp
+open
+rpcbind
+920/tcp
+open
+unknown
+1437/tcp open
+tabula
+46436/tcp open
+unknown
+
+Figure 6 – Stage 3 C&C server information
+
+4.1. Detection of C&C communications
+Basic detection can be based on 3 queries that are initiated by the victim computers within
+seconds.
+www.google.com – port TCP/80 - HTTP
+twitter.com –port TCP/443 - SSL
+www.geoiptool.com –port TCP/80 - HTTP
+
+Figure 7 – Initial web page – and possibly DNS queries issued by the malware
+
+Known search strings in Google search (see below) can also be used to detect the malware.
+Unfortunately, these strings are most likely unique to each C&C server or victim, thus
+unknown samples might use other strings, but possibly with the same length.
+lUFEfiHKljfLKWPR
+HkyeiIDKiroLaKYr
+lUFEfiHKDroLaKYr
+
+Figure 8 – Google search strings used by the malware
+
+The malware also sends a query to the geoiptool. An example is shown below:
+GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.0; en-US; Trident/5.0)
+Host: www.geoiptool.com
+
+Figure 9 – Geoip lookup query sample – Agent string might be different for each query!
+
+4.2. Initial C&C communication
+Initial communications with the stage 2/3 delivery C&C servers (such as arabooks.ch) can be
+used to develop detection signatures as follows:
+The malware retrieves the URL using a Twitter query as described earlier. Then, we can
+observe the first query from the victim towards the stage 2/3 delivery C&C server. This query
+contains pure HTTP traffic on port 80 to the server following the template below.
+GET /original/path/shortname/index.php?e=aaaaaaaaa
+
+where:
+•
+
+shortname can be a number of strings, generally human readable (e.g. lib, engine,
+forum, forumengine etc.)
+
+•
+
+"e=" is not constant, can be anything, but generally 1-2 letters long
+
+•
+
+aaaaaaaaa stands for some Base64-like text (see details below)
+
+•
+
+the servers used are assumed to be legitimate sites, just hacked by the attackers.
+
+Based on this format, we can detect a valid query as follows:
+•
+
+The name of the 1st GET parameter should be discarded
+
+•
+
+this means "e=" is not important
+
+•
+
+we saw only one GET parameter, queries with multiple parameters are likely not
+used
+
+For detection, the Base64-like string "aaa…" should be first modified as follows:
+•
+
+"-" should be replaced by "+"
+
+•
+
+"_" should be replaced by "/"
+
+This results in correct Base64 encoding, which can be decoded with library functions such as
+base64_decode. After decoding, a string of data, partially binary will be available. Parts are
+separated by the delimiter character "|". The format and a numerical example are below:
+<binary data ( ~100 bytes)>|<numerical ID ( ~10 digits)>|<version number>
+e.g.,
+<binary data>|5551115551|1.13
+
+As the binary data itself may contain the ”|” character, parsing should start from the end
+(i.e., the numerical ID starts from the second “|” character from the end). In additional, the
+ID length may vary (not fully confirmed), but it seems to be around 10 digits. Finally, the
+version number always follows the pattern <1digit><dot><two digits>, e.g., 1.1X 3.1X.
+
+The correct decoding of the HTTP query information should be enough to quickly develop
+possible IDS-based detections. As we have seen, detection is complicated, but not
+impossible. The following is the summary of potential detection steps:
+•
+
+Check if there is only one GET parameter
+
+•
+
+(check if path is not empty and contains index.php)(possible, but not confirmed)
+
+•
+
+convert the Base64-like GET parameter string into real Base64 encoding, and check if
+it decodes correctly
+
+•
+
+check if the decoded string has at least two delimieter character "|" in it
+
+•
+
+check if after the last but first “|” character, there are digits only
+
+•
+
+check if the version part of the string follows the format “1.11” or similar
+
+The header sent is fairly standard, but we include one example nonetheless:
+0x00d0:
+0x00e0:
+0x00f0:
+0x0100:
+0x0110:
+0x0120:
+0x0130:
+0x0140:
+0x0150:
+0x0160:
+0x0170:
+0x0180:
+
+2e31
+0a41
+3a20
+0a55
+696c
+6962
+5769
+5472
+6f50
+XXXX
+6e65
+6976
+
+0d0a
+6363
+677a
+7365
+6c61
+6c65
+6e64
+6964
+6174
+XXXX
+6374
+650d
+
+4163
+6570
+6970
+722d
+2f34
+3b20
+6f77
+656e
+682e
+XXXX
+696f
+0a0d
+
+6365
+742d
+2c20
+4167
+2e30
+4d53
+7320
+742f
+3129
+XXXX
+6e3a
+0a
+
+7074
+456e
+6465
+656e
+2028
+4945
+4e54
+342e
+0d0a
+XXXX
+204b
+
+3a20
+636f
+666c
+743a
+636f
+2037
+2035
+303b
+486f
+XX0d
+6565
+
+2a2f
+6469
+6174
+204d
+6d70
+2e30
+2e31
+2049
+7374
+0a43
+702d
+
+2a0d
+6e67
+650d
+6f7a
+6174
+3b20
+3b20
+6e66
+3a20
+6f6e
+416c
+
+.1..Accept:.*/*.
+.Accept-Encoding
+:.gzip,.deflate.
+.User-Agent:.Moz
+illa/4.0.(compat
+ible;.MSIE.7.0;.
+Windows.NT.5.1;.
+Trident/4.0;.Inf
+oPath.1)..Host:.
+XXXXXXXXXXX..Con
+nection:.Keep-Al
+ive....
+
+Figure 10 – Other HTTP header values in a C&C query
+
+The used Agent strings vary significantly across queries, therefore they cannot be really used
+for detection:
+Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1)
+Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1;+SV1)
+Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1;+SV1;+InfoPath.2)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.1;+Trident/4.0;+.NET+CLR+1.1.4322;+
+.NET+CLR+2.0.50727;+.NET+CLR+3.0.4506.2152;+.NET+CLR+3.5.30729;+InfoPath.2)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.1;+Trident/4.0;+.NET+CLR+2.0.50727;
++.NET+CLR+3.0.4506.2152;+.NET+CLR+3.5.30729;+InfoPath.2)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.1;+Trident/4.0;+.NET4.0C;+.NET+CLR+
+1.1.4322;+.NET+CLR+2.0.50727;+.NET+CLR+3.0.4506.2152;+.NET+CLR+3.5.30729;+.NET4.0E;
++InfoPath.3)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.1;+Trident/4.0;+GTB7.4;+InfoPath.1;
++.NET+CLR+3.0.4506.2152;+.NET+CLR+3.5.30729;+.NET+CLR+1.0.3705;+.NET+CLR+1.1.4322;+
+.NET4.0E;+.NET4.0C;+.NET+CLR+2.0.50727)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+5.1;+Trident/4.0;+InfoPath.2)
+
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/4.0;+GTB7.4;+SLCC2;+.NET
++CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+InfoPa
+th.3;+.NET4.0C;+.NET4.0E)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+InfoPath.3;+Media+Center+PC+6.0;+.N
+ET4.0C;+.NET4.0E)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET
+4.0E)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+Info
+Path.2;+.NET4.0E)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+CMDTDF;+.NET4.
+0C;+InfoPath.3)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+Trident/5.0;+SLCC2;+.NET+CLR+2.0
+.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+InfoPath.2)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+WOW64;+Trident/5.0;+SLCC2;+.NET+
+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0
+C;+.NET4.0E)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+WOW64;+Trident/5.0;+SLCC2;+.NET+
+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0
+C;+.NET4.0E;+BRI/2;+InfoPath.3)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+WOW64;+Trident/5.0;+SLCC2;+.NET+
+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0
+C;+.NET4.0E;+InfoPath.2)
+Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.1;+WOW64;+Trident/5.0;+SLCC2;+.NET+
+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0
+C;+.NET4.0E;+InfoPath.3)
+Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+5.1;+Trident/4.0;+.NET+CLR+2.0.50727;
++.NET+CLR+3.0.04506.648;+.NET+CLR+3.5.21022;+.NET+CLR+3.0.4506.2152;+.NET+CLR+3.5.3
+0729;+InfoPath.2)
+Mozilla/5.0+(Windows+NT+5.1;+rv:19.0)+Gecko/20100101+Firefox/19.0
+Mozilla/5.0+(Windows+NT+6.1;+rv:10.0)+Gecko/20100101+Firefox/10.
+
+Figure 11 – Agent strings used in C&C comms – might be partial or wrong – not useful for detection
+
+4.3. Other indicators of C&C communication: Google and
+Twitter queries
+The Google search step also uses different agent strings:
+„GET /search/?q=lUFEfiHKDroLaKYr HTTP/1.1" 304 211 "-" "Opera/7.0 (compatible; MSIE
+7.0; Windows NT 6.0; en-US; WOW64)"
+„GET /search?q=lUFEfiHKDroLaKYr HTTP/1.1" 301 588 "-" "Opera/5.0 (Windows; U;
+Windows NT 5.2; en-US; Trident/4.0)"
+„GET /search?q=lUFEfiHKDroLaKYr HTTP/1.1" 301 588 "-" "Opera/4.0 (Windows NT 5.1;
+en-GB; Trident/4.0)"
+
+Figure 12 – Some Google search agent strings
+
+"GET /EdithAlbert11 HTTP/1.1" 404 1229 "-" "Mozilla/6.0 (X11; Linux x86_64; en-GB;
+Trident/5.0)"
+"GET /ifsWcj9a HTTP/1.1" 404 529 "-" "Mozilla/5.0 (compatible; MSIE 6.0; Windows
+NT 5.0; en-GB; WOW64; Trident/5.0)"
+"GET /EdithAlbert11 HTTP/1.1" 404 644 "-" "Mozilla/5.0 (Windows NT 5.1; en-GB;
+Trident/4.0)"
+"GET /ifsWcj9a HTTP/1.1" 404 529 "-" "Mozilla/5.0 (compatible; MSIE 6.0; Windows
+NT 5.0; en; WOW64; Trident/5.0)"
+"GET /EdithAlbert11 HTTP/1.1" 404 1229 "-" "Mozilla/7.0 (compatible; MSIE 7.0;
+Windows NT 6.0; en-GB; WOW64)"
+] "GET /ifsWcj9a HTTP/1.1" 404 510 "-" "Opera/5.0 (compatible; MSIE 9.0; Windows NT
+6.1; en-GB; SV1)"
+
+Figure 13 – Twitter search samples – 443/SSL
+
+The C&C server’s response – if it sends encrypted files – is a GIF file containing a small icon,
+and after that, the malware:
+0x0020:
+0x0030:
+0x0040:
+0x0050:
+0x0060:
+0x0070:
+0x0080:
+0x0090:
+0x00a0:
+
+XXXX
+2000
+50ee
+973f
+e5d4
+ecef
+eccb
+871b
+31f9
+
+XXXX
+f700
+934d
+06e9
+181d
+caa6
+b4f4
+fb9f
+9837
+
+XXXX
+00bc
+bd4e
+7522
+2df5
+e37d
+dac3
+3bfb
+0d0f
+
+XXXX
+5514
+05eb
+fdf9
+9f4a
+46dc
+fa91
+972e
+17e9
+
+4749
+faa9
+8422
+f5d8
+402c
+5d22
+21f8
+f1cb
+8446
+
+4638
+52eb
+1a20
+6c40
+29ec
+c152
+8e22
+b3e9
+7333
+
+3961
+851c
+32ea
+a148
+8a46
+09dc
+c15a
+ab6c
+0bfb
+
+2000
+f39b
+b279
+10f9
+fdf5
+8d49
+19f4
+f289
+e8d3
+
+XXXXXXXXGIF89a..
+......U...R.....
+P..M.N..."..2..y
+.?..u"....l@.H..
+....-..J@,)..F..
+.....}F.]".R...I
+........!..".Z..
+....;........l..
+1..7.....Fs3....
+
+Figure 14 – GIF File header sent back by the C&C server
+
+For stage 3 (i.e., <id>.gif files), the file downloaded has a larger size (~300KB). It also begins
+with a GIF header, but that header is only 13 bytes long, and then starts the encrypted
+executable, as shown below:
+
+Examples for twits containing the URL of the C&C server are shown below:
+The weather is good today. Sunny! uri!wp07VkkxYt3Mne5uiDkz4Il/Iw48Ge/EWg==
+Albert, my cousin. He is working hard. uri!wp07VkkxYmfNkwN2nBmx4ch/Iu2c+GJow39HbphL
+My native town was ruined by tornado. uri!wp07VkkxYt3Md/JOnLhzRL2FJjY8l2It
+
+Figure 15 – Known twitter answers for C&C discovery
+
+The twitter information is currently not very useful for content based detection, as it is
+downloaded through SSL connection, and therefore, IDS rules can only be applied if some
+SSL proxy is used.
+
+An interesting observation is that this user follows 4 partners, most likely for deception.
+
+

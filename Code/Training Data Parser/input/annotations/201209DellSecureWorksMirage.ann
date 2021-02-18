@@ -1,0 +1,73 @@
+T1	Campaign 4 10	Mirage
+T2	Organization 42 78	Dell SecureWorks Counter Threat Unit
+T3	TrojanHorse 381 387	Mirage
+T4	TrojanHorse 403 412	MirageFox
+T5	ExploitTargetObject 450 474	high-profile oil company
+T6	Country 482 493	Phillipines
+T7	ExploitTargetObject 497 518	military organization
+T8	Country 522 528	Taiwan
+T9	ExploitTargetObject 533 547	energy company
+T10	Country 551 557	Canada
+T11	Country 603 609	Brazil
+T12	Country 611 617	Israel
+T13	Country 619 624	Egypt
+T14	Country 629 636	Nigeria
+T15	Exploit 762 781	spearphishing email
+T16	ExploitTargetObject 808 831	senior-level executives
+T17	Malware 926 932	Mirage
+T18	MD5 1297 1329	ce1cdc9c95a6808945f54164b2e4d9d2
+R1	indicates Arg1:T18 Arg2:T17
+T19	File 1424 1500	Yemeni Women can participate in politics just like men, says President Saleh
+T20	TrojanHorse 1212 1218	Mirage
+R2	indicates Arg1:T19 Arg2:T20
+T21	File 2230 2241	svchost.exe
+T22	File 2242 2253	ernel32.dll
+T23	File 2254 2262	thumb.db
+T24	File 2263 2272	csrss.exe
+T25	File 2273 2286	Reader_SL.exe
+T26	File 2287 2294	MSN.exe
+T27	TrojanHorse 1982 1988	Mirage
+R3	indicates Arg1:T21 Arg2:T27
+R4	indicates Arg1:T22 Arg2:T27
+R5	indicates Arg1:T23 Arg2:T27
+R6	indicates Arg1:T24 Arg2:T27
+R7	indicates Arg1:T25 Arg2:T27
+R8	indicates Arg1:T26 Arg2:T27
+T28	MalwareFamily 2399 2405	JKDDOS
+T29	TrojanHorse 2341 2347	Mirage
+R9	hasFamily Arg1:T29 Arg2:T28
+T30	SystemInformation 2559 2568	CPU speed
+T31	SystemInformation 2570 2581	memory size
+T32	SystemInformation 2583 2594	system name
+T33	SystemInformation 2599 2607	username
+T34	MalwareCharacteristics 2773 2785	HTTP request
+R10	hasCharacteristics Arg1:T29 Arg2:T34
+T35	Indicator 3860 3866	Mjtdkj
+T36	Malware 3820 3826	Mirage
+R11	indicates Arg1:T35 Arg2:T36
+T37	SystemInformation 3910 3921	MAC address
+T38	SystemInformation 3923 3938	CPU information
+T39	MalwareCharacteristics 4751 4759	HTTP GET
+T40	Malware 4739 4745	Mirage
+R12	hasCharacteristics Arg1:T40 Arg2:T39
+T41	MalwareFamily 5574 5580	Lingbo
+T42	MD5 6903 6934	fa26f410d0133f4152ea78df3978c22
+T43	Country 8874 8880	Taiwan
+T44	Country 8888 8899	Philippines
+T45	Country 8932 8939	Nigeria
+T46	Country 8941 8947	Brazil
+T47	Country 8949 8955	Israel
+T48	Country 8957 8963	Canada
+T49	Country 8968 8973	Egypt
+T50	Exploit 9556 9582	dynamic domain name system
+T51	Software 9990 9995	HTran
+T52	AttackerGroup 10277 10280	HUC
+T53	Indicator 11833 11847	asia-online.us
+T54	Indicator 11849 11866	india-videoer.com
+T55	Indicator 11871 11882	Echosky.biz
+T56	Campaign 12023 12032	Sin Digoo
+T57	Indicator 12055 12076	jeno_1980@hotmail.com
+T58	Indicator 12081 12097	king@hotmail.com
+T59	CourseOfAction 12961 12965	Yara
+T60	Malware 12409 12415	Mirage
+R13	mitigates Arg1:T59 Arg2:T60

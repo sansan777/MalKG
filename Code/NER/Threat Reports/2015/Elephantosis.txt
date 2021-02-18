@@ -1,0 +1,762 @@
+SHOOTING 
+ELEPHANTS 
+
+
+page | 1 
+
+
+SHOOTING ELEPHANTS 
+
+DROPPER 
+MD5 9fff114f15b86896d8d4978c0ad2813d 
+SHA-1 27a0a98053f3eed82a51cdefbdfec7bb948e1f36 
+File Size 693.4 KB (710075 bytes) 
+Compile Time 2011-08-29 11:48:42 
+IMPLANT 
+MD5 4525141d9e6e7b5a7f4e8c3db3f0c24c 
+SHA-1 efbe18eb8a66e4b6289a5c53f22254f76e3a29bd 
+File Size 585.4 KB (599438 bytes) 
+Compile Time 2011-08-29 13:02:29 
+
+Special thanks for their contribution in the makingof this report go to Morgan Marquis-Boire, Joan Calvet, 
+Paul Rascagnéres,Alex Dulaunoy, Raphael Vinot and the remaining team of CIRCL Luxembourg. 
+You guys rock \m/ 
+
+Comments or inquiries please direct toMarion Marschalek (0xF372F2CA). 
+
+Babar and the related crowd of animalesque malware will be presented at SyScan'15 conference 
+
+(https://www.syscan.org/) in March 2015. No elephants were harmed in the making of this report. 
+
+
+This work is licensed under a 
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+
+page | 2 
+
+
+CONTENT 
+1. SHOOTING ELEPHANTS....................................................................................4 
+2. MISCREANT'S DROPPER..................................................................................5 
+3. MISCREANT'S IMPLANT...................................................................................6 
+3.1 ANTI-ANALYSIS MEASURES........................................................................6 
+
+3.2 BABAR CAMETO STAY................................................................................7 
+3.3 CONFIGURATION DATA..............................................................................7 
+3.4 MODUS OPERANDI ELEPHANTI.................................................................9 
+3.5 FUNCTIONALITY.......................................................................................10 
+3.5.1 THE KEYLOGGER MODULE................................................................10 
+3.5.2 INVADINGDESKTOP PROCESSES.......................................................11 
+3.5.3 I AM ROOT(kit)..................................................................................11 
+3.6 STOLEN GOODS........................................................................................13 
+3.7 CALLING HOME........................................................................................14 
+4. BEYOND BABAR.............................................................................................16 
+5. RESOURCES....................................................................................................18 
+6. APPENDICES..................................................................................................19 
+
+page | 3 
+
+
+1. SHOOTING ELEPHANTS 
+Subject of this analysis is a fascinating pieceof malware, which invades Windows desktop 
+machines and aims at.. well, all the things. The analyzed malware consists of adropper and an 
+implant, which invades Windows processes to stealdata from instantmessengers, softphones, 
+browsers and office applications. A fully blown espionage kit, soto say, sophisticated almost. The 
+implant is able tohook APIs of interestin dedicated remote processes, to stealdata on the fly. 
+
+Moreinteresting than the malware itself though is the path to the associated symbol file, which 
+appears embedded in the dropper. Theanalyzed malware samples come with the internal project 
+name 'Babar64'. 
+
+
+Illustration1|The .pdbpathembeddedinBabar'sdropper 
+
+The myth of Babarhas been around fora while in the intelligence community. Questions have 
+been raised since Le Mondepublished an articleon Babar in 2014[1] and wererecently fuelled by 
+aleaked government presentation found among astash of documents published in January by 
+Spiegel[2]. Theleaked document was authored by the Communications Security Establishment 
+Canada (CSEC) and reports abouta potential nation stateattackinvolvingmalware named Babar. 
+The actor behind the attacks is assumed tobe French inteligence. Assumptions are based on 
+certain binaryattributes, language and location of infrastructure as well as targets. 
+
+The binaries athand fit wellwith the description CSEC provides, although itis quite clear theyare a 
+newerversion from what CSEC had uncovered around 2009. It is not clear whether thecompilation 
+timestamps are falsified, but an earliercompilation time than the actual stamp seems unlikely. 
+
+Doubtlessly though, theBabar binaries match with a malware strain representing itselfas Bunny, 
+as wellas a familydubbed NBOT or TFC. 
+
+page | 4 
+
+
+2. MISCREANT'S DROPPER 
+The dropperoperates straight forward; itfetches the encrypted DLL from its own binaryfrom 
+outside its resource section, decrypts it and hides it in thefile system. Then itgoes on toload the 
+DLL using Windows regsvr32.exe. To achieve this it spawns a dedicated process with the command 
+line '"regsvr32.exe" /s /n /i "%APPDATA%\%DLLNAME%"'. 
+
+The DLL name is random but legitimately looking and hardcoded for a specific dropper. It is also 
+stored as encrypted string in thebinary, and has been seen to decrypt to either 'perf585.dll' or 
+'dump21cb.dll' dependingon the dropper. 
+
+The encryption algorithm used is AES (Advanced Encryption Standard) with 128-bit keys. Thekeys 
+used for decryption are '20 33 AF 73A9 AC 72D3BE E6A5 73 92 BA37 6C' for theimplant 
+filenameand 'A0 0E3E B33A 1C D3 AA A0 BE 3F B3 F9 0A9615' for decrypting thebinary. AES is 
+the encryption algorithm of choice throughout the dropper and its implant's operations. 
+
+Interestingly, the Babar dropperas wellas the implant show a similar method of APIname 
+obfuscation as theBunny malwareand samples from the NBOT family. Dedicated APIs are loaded 
+through a resolution function, which searches for library exports by comparinghashes ofthe 
+export names with a given hash. For the Babar project though the attackers used an adapted 
+version ofSHA-1, as opposed to the simple XOR/ROLhash algorithmwhich was used in the Bunny 
+project. 
+
+After infection the dropper executes a separate command linethrough spawningacmd.exe 
+process, which is instructed to waitfor 1second before deletingthedropper binary on disk. This 
+way the malware reduces forensic artefacts, staying behind afterinfection. Curiouslythough, the 
+regsvr32.exe process used to load thedropped implantremains running. This wayBabar leaves a 
+visibleprocess on the process listduringexecution. 
+
+As the projectname 'Babar64' suggests, dropper and implant are designed towork on 32-bit and 
+on 64-bit Windows versions. However, process hookingand injection can onlyaffect 32-bit 
+processes duetothe bitness of the implant itself. 
+
+page | 5 
+
+
+3. MISCREANT'S IMPLANT 
+Babar's implant is a 32-bitDLL written in C++, which upon startinjects itself torunning processes 
+and invades desktop applications by applying aglobal Windows hooks.The implant is capable of 
+logging keystrokes, capturescreen shots, spy on installed softphones and instant messengers next 
+toa listof simpler espionage tricks. Babaris afully blown espionage tool, built toexcessively spy 
+on the user's activity on an infected machine. 
+
+The DLL dropped byBabar is placed into the application data folder, along with adirectory named 
+'MSI' where the runtimedata will be stored.Babar operates through multiple instances, by 
+injecting its DLL to amaximumof three desktop processes.This is achieved by loadingthe Babar 
+DLL toremote processes through amapped memory object. 
+
+Apart from that, Babar comes with a userland rootkit component which applies global Windows 
+hooks toinvade all processes on its desktop. This way Babar can install API hooks for various APIs 
+viaWindows Detours technique toactively steal datafrom arbitrary processes. 
+
+3.1ANTI-ANALYSISMEASURES 
+Babar's anti-analysis measures are sparse. Itis not protected by a runtime packer or crypter, it 
+does not havesandbox detection or anti-debugging measures, most characterstrings are shown in 
+clear-text. 
+
+Babardoes show the same obscure treatmentfor installed anti-virus products as the Bunny 
+malware though. Babar alsoenumerates the Windows ManagementInstrumentation for installed 
+AV solutions, while theexact use of this information is notyet known. Wedo suspect large 
+portions of theproduct enumeration tobe based on theexactsame source code as themodule 
+Bunny used. 
+
+
+Illustration2|Queryinganti-virusproductsinstalledonthemachine 
+
+The enumeration function issues thecommands „SELECT * FROM AntiVirusProduct“ and retrieves 
+attributes such as 'productState', 'DisplayName', 'VersionNumber' and 'productUptoDate'. 
+
+The anti-virus solutions searched forareagain identified by256-bit SHA hashes. Onlysomeof the 
+
+page | 6 
+
+
+hashes could bemapped to known names ofanti-virus solutions. 
+
+4db3801a45802041baa44334303e0498c2640cd5dfd6892545487bf7c8c9219f ThreatFire 
+522e5549af01c747329d923110c058b7bb7e112816de64bd7919d7b9194fba5b Rising2fd5c42d49f9e0fe2daae5b0f78cf9cfde9bfc7b0ed59fc68e0a79a3b16fe05b 
+06e387bb79584cdff3672feadea0bf6f783ce1ddc1fa91962d1b5bcd94e1a308 
+f1761a5e3856dceb3e14d4555af92d3d1ac47604841f69fc72328b53ab45ca56 Kaspersky588730213eb6ace35caadcb651217bfbde3f615d94a9cca41a31ee9fa09b186c ZoneAlarm 
+c8e8248940830e9f1dc600c189640e91c40f95caae4f3187fb04427980cdc479 
+b3fe0e3a3e3befa152c4237b0f3a96ffaa44a2d7e1aa6d379d3a1ab4659e1676 AntiVir 
+
+Babaralsoimplements an obfuscation technique tohide certain API names.Selected APIs are 
+identified by hashes, which areused toload theAPIs dynamically atruntime. The hashes are 
+hardcoded within the binary, and will be compared to hashed library exports by the API resolution 
+routine. 
+
+The hashing algorithm is different from the simple XOR/ROL technique Bunny uses. It seems to be 
+based on SHA-1, but generates 32-bit hashes instead ofthe standard 160-bit length. 
+
+WhatBunny, Babar and NBOTallhavein common though is that theobfuscation technique is easy 
+tobreak and only applied to asubset of APIs. As an anti-analysis trick this is considerably useless, it 
+does make sensethough to trick malware detection solutions which apply heuristics based on 
+staticanalysis of APIcalls. This becomes evident when lookingat the list of Babar's obfuscated API 
+names, which includes RegisterRawInputDevices, GetRawInputData, GetClipboardData or 
+DirectSoundCaptureCreate. 
+
+3.2BABARCAMETO STAY 
+The startup routineof the Babar implant will create aregistry key under 
+'[HKU]\..\CurrentVersion\Run' to assure persistence. The key is named 'MSSecurity' and executes 
+the exactsame command line as the infector, every time the systemboots -'"regsvr32.exe" /s /n /i 
+"%APPDATA%\%DLLNAME%"'. At system boot time the regsvr32.exe process will start, load the 
+BabarDLL and thus 'deploy' themalware tovarious legitimate processes.As opposed to 
+persistence, Babar also implements functionality to uninstall itself fromthe affected system. 
+
+Interesting again, same as duringinfection, the regsvr32.exe process remains runningeven after 
+Babaris readily setup. 
+
+3.3CONFIGURATION DATA 
+During initialization Babar loads and decrypts aset of configuration parameters which are 
+appended to the DLL's relocation section. ASCII strings within theconfiguration data reveal alot 
+about Babar's intentions: 
+
+• 
+Officeexecutable names and associated document abbreviations 
+excel.exe, winword.exe, powerpnt.exe, visio.exe, acrord32.exe, notepad.exe, 
+
+page | 7 
+
+
+wordpad.exe.txt, rtf, xls, xlsx, ppt, pptx, doc, docx, pdf, vsd 
+
+• 
+Softphone executablenames 
+skype.exe,msnmsgr.exe,oovoo.exe, nimbuzz.exe, googletalk.exe, yahoomessenger.exe, xlite.
+exe 
+
+• 
+Aversion number 
+12075-01 
+
+• 
+Path and filename of the dump file 
+%COMMON_APPDATA%\MSI\update.msi 
+
+• 
+Path to the runtime data directory 
+%COMMON_APPDATA%\MSI 
+
+• 
+TwoC&C server domains and request parameters 
+http://www.horizons-tourisme.com/_vti_bin/_vti_msc/bb/index.php 
+http://www.gezelimmi.com/wp-includes/misc/bb/index.php 
+
+• 
+Web browser executable names, including MSN messenger 
+iexplore.exe,firefox.exe,opera.exe,chrome.exe,Safari.exe,msnmsgr.exe 
+
+• 
+The name of the dropped implant 
+perf_585.dll 
+
+As could beseen already in binaries of related families, next to the hardcoded configuration data 
+Babarmaintains asystemspecificruntimeconfiguration.Theadditionalconfigurationconsists of a 
+setof local attributes and aset of values derived from the Windows environment. The attributes 
+are dynamicallygenerated or requested at runtime and not stored in memory. 
+
+%USERHASH% -Hash of thelogin name 
+%USER% -Login name 
+%SEQ% -Assumed to be the sequence number of dump files created by Babar 
+%KID% -Assumed tobe the ID of a subsequentlyinfected process 
+%ID% -Valueretrieved from hardcoded configuration 
+%SELFDIR% -Executable directory 
+%SELF% -Executable name 
+
+Values retrieved from Windows environment: 
+
+%APPDATA% 
+%USERPROFILE% 
+%WINDIR% 
+%COMMON_APPDATA% 
+%ALLUSERPROFILE% 
+%CommonProgramFiles% 
+
+page | 8 
+
+
+3.4MODUSOPERANDI ELEPHANTI 
+The DLL when loaded in the context ofan application seeks toinvade amaximum oftwomore 
+victim processes. This foronce is a resiliencemeasure, soifthe initiallyinfected process stops 
+running the malwareremains in memorythrough additional instances.On the other hand it is 
+practically a load balancing measure. The C&C communication moduleis located in an export of 
+the DLL, which willbeexecuted through aremote thread, injected like the child processes, via a 
+memory-mapped file. 
+
+The process infection is achieved bymapping a shared objectintothe victim's process space and 
+invoking afunction stub as remotethread. Thesteps being taken are: 
+
+• 
+MapViewOfFile – mapped memoryshared with the child instance 
+• 
+OpenProcess – obtaining a handle to the chosen victim process 
+• 
+VirtualAllocEx – allocate space in remotememory 
+• 
+WriteProcessMemory – write function stub to remote memory 
+• 
+CreateRemoteThread – execute function stub as remote process 
+The function stub will then go on to load the Babar DLLthrough LoadLibraryA and executeone of 
+its exports, as indicated in the shared memory. The mapped object contains name and path to the 
+malicious DLL, the name of the pipe beingused for communication between the instances, the 
+name ofthe export from the DLL to becalled as well as information about instances already 
+running. 
+
+For picking aprocess toinfect themalware randomly picks one from alist ofprospects. These have 
+tobe 32-bit processes, notalready infected and not among a list ofprocesses toavoid such as 
+winlogon.exe, explorer.exe, cmd.exe or regsvr32.exe. 
+
+This wayBabar always keeps three instances in memory. The firstone tostartup will bethe 'main 
+instance'. If anyof the instances dies, anew third instance willbecreated.If themain instancedies 
+the oldestchild will take over. 
+
+For inter process communication Babaruses named pipes. The main instance generates a random 
+GUID which isused as nameand passed tochild instances.At the same time, themain instance 
+creates six named pipes using the very same GUID. Thesepipes represent the server sideforchild 
+instances, and also the pointto connectto forhooks Babar installs tospyon several system APIs. 
+
+page | 9 
+
+
+Illustration3|Namedpipesopenedbythemaininstance 
+
+3.5FUNCTIONALITY 
+The spyingactivities are performed eitherthrough the Babarinstance locally or via aglobal 
+Windows hookinvading all processes running in the same desktop. Instance-local capabilities are 
+basic spying on window names or snooping on the clipboard data, while the global hooks manage 
+tosteal information directly fromWindows API calls. 
+
+Asummaryof the capabilities would be as follows: 
+-Logging keystrokes 
+-Takingscreenshots 
+-Captureof audio streams from softphone applications 
+-Stealing of clipboard data 
+-System and user default language, keyboard layout 
+-Names ofdesktop windows 
+
+3.5.1THEKEYLOGGERMODULE 
+The keyloggeris based on the raw inputmodel. The malware creates an invisible window, with no 
+other purposethan toreceivewindow messages. Byprocessing thewindow message queueit 
+filters outinput events and dispatches them to a raw input device object. Said objectis configured 
+tograb keyboard events through GetRawInputData. 
+
+page | 10 
+
+
+Illustration4|ThekeyloggermoduleusesWindowsRAWINPUTtoachieveitsgoal 
+
+The snooped keystroke data is passed toa thread, which performs encryption and dumps the data 
+toa logfile. Thefileis located in Babar's workingdirectory and named update.msi. 
+
+The design of the keyloggingcomponent is simplebuteffective. Babaris able tosniff all keystrokes 
+happening on the same desktop as its invisible window. Interestingthough, the code seen in 
+Babar's implant is remarkablysimilar toan exampleposted at [4]. 
+
+3.5.2INVADINGDESKTOP PROCESSES 
+The Babar implantapplies global Windows hooks to load its DLL into theprocess space of other 
+processes.A global hook is installed by calling SetWindowsHookEx by passing the thread ID zero. It 
+applies to all processes runningin the same desktop, having thesame 'bitness'as the DLL tobe 
+injected. In thegiven case this applies to all 32-bit processes. 
+
+Aglobal Windows hook is installed into the Windows event chain.This effectively means code 
+provided bythe hookingDLL gets executed whenever an arbitrarydesktop process receives an 
+eventof a type specified by thehook. 
+
+Babarinstalls hooks for type 2 and 3, which are WH_KEYBOARD and WH_GETMESSAGE. This way 
+Babarhas control overall keyboard and messageevents received by any application on the same 
+Windows desktop. 
+
+3.5.3I AM ROOT(kit) 
+Through the hookmechanismBabar can be maximum invasive in the Windows userland. Oncein 
+the contextof a desired target process, themalware goes on to hook specificAPIs of interest. This 
+is achieved byapplying the detours technique, which implements trampolinefunctions tobe 
+invoked everytimea hooked API is called [6]. To achieve this, Babar rewrites the in-memory code 
+for targetAPIs. A call to ahooked API then results in the calling application invokinga trampoline 
+function, which performs malicious activity and then passes control on to the legitimate API. 
+
+page | 11 
+
+
+Babarsupports trampolinefunctions for alimited list of APIs and limited to aset ofprocesses of 
+interest, defined by its configuration. The list ofAPIs tohook is parted in three groups: 
+
+• 
+Internet communication 
+WSARecv 
+send 
+closesocket 
+
+• 
+File creation 
+CreateFileW 
+
+• 
+Media 
+DirectSoundCreate 
+DirectSoundCaptureCreate 
+DirectSoundCreate8 
+DirectSoundCaptureCreate8 
+CoCreateInstance 
+waveOutOpen 
+waveOutClose 
+waveOutWrite 
+waveInOpen 
+waveInClose 
+waveInAddBuffer 
+
+Any set of hooks will only be applied to adefined set of processes. The predefined groups of 
+application names retrieved fromthe hardcoded configuration datasetthe scopeof Babar's 
+hookingadvances: 
+
+• 
+Internet communication 
+iexplore.exe,firefox.exe,opera.exe,chrome.exe,Safari.exe,msnmsgr.exe 
+
+• 
+File creation 
+excel.exe, winword.exe, powerpnt.exe, visio.exe, acrord32.exe, notepad.exe, 
+wordpad.exe.txt, rtf, xls, xlsx, ppt, pptx, doc, docx, pdf, vsd 
+
+• 
+Media 
+skype.exe,msnmsgr.exe,oovoo.exe, nimbuzz.exe, googletalk.exe, yahoomessenger.exe, xlite.
+exe 
+
+The respective trampolines steal datagoingin orout of the hooked APIs on the fly. The parsing 
+function for intercepted internetcommunication searches for chattraffic, more specificallyfor 
+messages conforming with the MSNP21 standard. Babar is searching fortags such as 'Message-
+Type', 'Reliability', 'To', 'From' or 'Text' to pick out of the stream. Amore detailed explanation 
+concerningthe MSNP21 can be found at [7]. MSNP21 is the MSN messenger chat protocol that 
+was introduced with Windows Live 2010 beta. It is unclear though as ofwhy onlyparsing for the 
+MSN messengeris supported. 
+
+page | 12 
+
+
+The data, like all stolen information, is handled by 
+aseparatethread which compresses and encrypts 
+it before dumping it toa file on disk. 
+
+For grabbingaudio streams Babarincludes code 
+from the OpenCORE AMR library[8]. AMR 
+enables the malware to encode and decode raw 
+audioframes as they are passed toor grabbed 
+from the audiodevices. The very samemalware 
+module performs screen captures whiledumping 
+the snooped data. This is assumed to happen to 
+recognizetheparties involved in the conversation 
+by capturingthe GUIof thesoftphone 
+application. 
+
+
+Illustration6|MSNP21tags 
+
+3.6STOLEN GOODS 
+Babarcomes with theDeflate algorithm, as used by Zlib, to be able to compress data before 
+encrypting it and dumping it todisk. The data is encrypted with 128-bitAESusing thekey 24FE C5 
+AD 34 56 F7 F8 12 01 00AE B6 7C DE AB for reading and writing files. Thefollowing files have been 
+seen to be dumped toBabar's working directory under %APPDATA%\MSI: 
+
+• 
+update.msi 
+• 
+48fe7f28.msi 
+• 
+0c6b5d2d.msi 
+• 
+31e50daa.msi 
+• 
+mpavdlta.vdm 
+Stolen information willbe handled by theBabarmain instance, which receives data through six 
+named pipes from other instances or hooked processes.Theupdate.msi-file stores datacollected 
+by thekeyloggingmodule. Itposesses a file headerwhich among other attributes keeps system 
+specific data. This isassumed toserve formapping of logfiles to infected hosts. 
+
+Loglines written for stolen data from browsers and the MSNmessengerare built by the format 
+string "%s%c%s|%s\n", where the first stringis likely participant1 of aconversation, the second 
+string participant2. Both are parted by the characters '<' or '>' depending on the direction of the 
+conversation. 
+
+Similar loglines accompany dumped sound dataand saved documents. Sound data logs follow the 
+format "A|%u|%S", documentlogs theformat "%I64i|%I64i|%I64i|%s%s|%s\n". For documents 
+
+page | 13 
+
+
+three timestamps are included as well as whether read or write access was requested, indicated by 
+'R'or 'W' or '-'. Thelastplaceholderis reserved forthefilename. Atthetimeofwritingthecontent 
+of thesound datalog line remains unclear. 
+
+3.7CALLINGHOME 
+The internet communication module of Babaris located in a sparate exportcalled 
+'FindCtxSectionStringW', which will be invoked through remote thread injection atruntime. 
+Injection is achieved thesamewayas the infection of child instances described in section 3.4. 
+
+The analyzed sampleof Babar has two hard coded C&C serveraddresses which areincluded in its 
+configuration data: 
+
+• 
+http://www.horizons-tourisme.com/_vti_bin/_vti_msc/bb/index.php 
+• 
+http://www.gezelimmi.com/wp-includes/misc/bb/index.php 
+Both servers were used to push spied information ontothe remote site. Itremains unclear though 
+whether the C&Cs also served to instructthe infected machines percommands, as Babar does not 
+posess obvious command parsing functionality. Dataexfiltration is assumed to betimetriggered. 
+
+
+Illustration7|Thewebsiteofhorizons-tourisme.comtoday 
+
+The domain horizons-tourisme.com is alegitimate website, operated by an Algerian travelagency, 
+located in Algiers, Algeria. The website is in French and still onlinetoday. Gezelimmi.comisa 
+Turkish domain, currently responding with an HTTP error message 403, access not permitted. Both 
+domains appear to be oflegitimateuse, butcompromised and abused tohost Babar's server side 
+infrastructure. 
+
+Atthe time of writingthe server pointed to by horizons-tourisme.com is still hosting leftovers 
+from the C&C infrastructure used by Babar. With directory traversal activated researchers from 
+ESET could pull aminimalistic directory structure, showing directories named as follows: 
+
+• 
+bb28 
+
+• 
+d13 
+
+• 
+tfc422 
+
+page | 14 
+
+
+Obviously, thedirectorybelonging toBabar is 'bb28'. 'tfc422' matches with strings found in theTFC 
+bots (previouslynamed NBOT). The purpose of the 'd13' directory remains unknown, although itis 
+assumed toserve forrequests of athird currentlyunknown family. Mostof the directories pulled 
+from horizons-tourisme.comare empty, or contain empty files. The only script inside the bb28 
+directorythough appears to be interesting. Its a .php-scriptnamed config.inc, containingvariables 
+which look familiarfromBabar's config such as 'user', 'id' or 'seq', but also a handful of comments 
+from the authors. 
+
+<?php
+
+$uninstall = false; //true to uninstall
+
+$buninstall_id = false; //true to uninstall from ID
+
+$uninstall_id = "0C124D55"; //ID to uninstall in hex
+
+//$uninstall = true;
+
+$debug = false; //true to see errors messages FOR TEST ONLY!!
+
+$writelogs = false; //true to create logs file in logs directory
+
+$version = 3;
+
+$get_varname_user = "user";
+
+$get_varname_id = "id";
+
+$get_varname_seq = "seq";
+
+$storefile = "storage/file";
+
+$ext = ".kv";
+
+$maxsize = 1024*1024*2; //0 = unlimited size if we choose predifined files
+
+$UOK_V3 = 0x7345d346;
+
+ function disableCache() {
+
+$expires = 0;
+
+$gm_expires = gmdate('D, d M Y H:i:s', time() + $expires);
+
+header("Cache-control: private, max-age=$expires, pre-check=$expires");
+
+header("Expires: $gm_expires GMT");
+
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+
+}
+
+function listingFile($fn) {
+
+if (!file_exists($fn)) return false;
+
+echo "<A HREF= \"$fn\">$fn</A><BR>" ;
+
+return true;
+
+}
+
+ function resetStorageFile($fn) {
+if (!file_exists($fn)) return false;
+$fp = fopen($fn, "wb");
+if ($fp) fclose($fp);
+else return false; 
+return true;
+} 
+
+?> 
+
+page | 15 
+
+
+4. BEYOND BABAR 
+Atthe time of writingtwo Babar64 droppers are known, droppingone implant each. They both 
+show traits of the malwaredescribed by CSEC, being attributed to French intelligence with 
+„moderate certainty“ [2]. 
+
+The CSEC document mentions uncovering the attack in 2009. The compilation timestamps ofthe 
+binaries date back to August 2011. While thesecan befaked it is still unlikelythatthe authors 
+would changethe 2009-timestamp to a future date. This, and thementioning of 'Babar' instead of 
+'Babar64' by CSEC indicates thatthesamples at hand stem from amore recent campaign. 
+
+Besides the project name, Babar64alsoshares the malformed user agentstring described in the 
+document, wherea letter fromtheMSIE 6.0name is missing. 
+
+
+Illustration8|Themalformeduseragentstringshowing'MSI' insteadof 'MSIE' 
+
+The second Babar64binarycomes with its own set ofC&C servers: 
+
+• 
+http://www.alexpetro.com/images/training/courses/bb212/index.php 
+
+• 
+http://www.etehadyie.ir/images/public/bb212/index.php 
+
+The firstone is the legitimate website of AlexPetro Technical Services, a company operating in the 
+oil and gas industryin Kairo, Egypt. The second domain is Iranian, allegedly owned by aweb design 
+company named Radcom. 
+
+Whatlinks Babar64toother families analyzed beforehand, such as Bunny or TFC (also called NBOT) 
+are shared portions ofsourcecode and re-used coding techniques. The enumeration ofanti-virus 
+software and the code toquery the system's proxy settings are almost identical. Furthermore, the 
+samples at hand show thesame partial API nameobfuscation as Bunny and TFC. Whathas 
+changed is the hashing algorithm. Alsocommon among allof thefamilies seems to betohold 
+systemspecific configuration data in memory at runtime, although this holds true fora lot of 
+malware. 
+
+Putting Babar, Bunnyand TFC in context anumber of conclusion can bedrawn. Looking at the 
+compilation timestamps and assuming they are not faked (which isbacked by VirusTotal 
+submission dates), the oldestfamilyis TFC beingactive throughout 2010. These areDDoS bots, 
+used tobuild abotnet which can be utilized to attackadversaries on the internet. 
+
+page | 16 
+
+
+Next on thetimeline is Babar64, allegedlycompiled middle of2011 and firstseen on VirusTotal 
+middle of 2012. It is believed thatthis strain has been active from2011 until2013, spying on 
+dedicated targets ratherthan being spread widely. 
+
+Last comes Bunny, compiled second halfof 2011 and makingits firstpublic appearance during the 
+analysis of the Adobe Reader exploit for CVE-2011-4369 [9]. Atthetimewhen Bunny was spread 
+through CVE-2011-4369, before December 2011, the vulnerability was unknown to thepublic. 
+Bunny itself is aLuascriptexecution platform, not including any spying capabilities. 
+
+All threefamilies leavetheimpression of being developed by ateamof skilled software 
+developers, rather than being the productof a malware author operating in thecriminal 
+underground. Also none ofthe binaries makes attempts ofhiding its intentions, which is a 
+common trait among targeted malware. Heavy obfuscation or the use of crypters easily raises 
+suspicion of heuristics based malware scanners. 
+
+However, besides the CSEC document there was noobvious pointer found leading to the 
+conclusion that Babarand its companions were set out by French inteligence services. As it is with 
+digital crime, chances are high noproofwillever evolve and research will be limited toeducated 
+conclusions.The drawing of personal educated conclusions is left as an exercise for the interested 
+reader. 
+
+page | 17 
+
+
+5. RESOURCES 
+[1] 
+
+Quand les Canadiens partent en chasse de « Babar », Le Monde 
+
+http://www.lemonde.fr/international/article/2014/03/21/quand-les-canadiens-partent-en-chasse
+
+
+de-babar_4387233_3210.html 
+
+[2] 
+
+SNOWGLOBE: FromDiscovery toAttribution, CSEC, published by Der Spiegel 
+
+http://www.spiegel.de/media/media-35683.pdf 
+
+[3] 
+
+SlidedeckTS/NOFORN, Keynote Hack.lu 2014on Bunny/ TFC 
+
+http://2014.hack.lu/archive/2014/TSNOFORN.pdf 
+
+[4] 
+
+AMinimal KeyloggerusingRAWINPUT, CodeProject 
+
+http://www.codeproject.com/Articles/297312/Minimal-Key-Logger-using-RAWINPUT 
+
+[5] 
+
+Implementing Keyloggers in Windows, Securelist 
+
+https://securelist.com/analysis/36358/keyloggers-implementing-keyloggers-in-windows-part-two/ 
+
+[6] 
+
+Detours: BinaryInterception of Win32 Functions, Proceedings of Usenix conference '99 
+
+http://research.microsoft.com/pubs/68568/huntusenixnt99.pdf 
+
+[7] 
+
+Documentation for changes in MSN Protocol Version 21 
+
+https://code.google.com/p/msnp-sharp/wiki/KB_MSNP21 
+
+[8] 
+AMR Audio Encoding, Potluri Suresh 
+
+http://www.codeproject.com/Articles/332109/AMR-Audio-Encoding 
+
+[9] 
+AnalyzingCVE-2011-4369, 9bplus 
+
+http://blog.9bplus.com/analyzing-cve-2011-4369-part-one/ 
+
+page | 18 
+
+
+6. APPENDICES 
+Lists of passiveDNS entries forhorizons-tourisme.com and gezelimmi.com can be found below. For 
+gezelimmi.com: 
+
+Resolve Location Network First Last 
+104.153.45.38 N/A 104.153.45.0/24 31.12.2013 00:00 09.11.2014 00:00 
+199.231.93.221 US 199.231.93.0/24 03.07.2011 00:00 31.12.2013 00:00 
+199.119.202.195 US 199.119.200.0/21 10.04.2011 00:00 03.07.2011 00:00 
+208.87.242.66 US 208.87.240.0/22 16.03.2008 00:00 10.04.2011 00:00 
+209.62.21.228 US 209.62.0.0/17 26.08.2007 00:00 16.03.2008 00:00 
+83.149.75.58 NL 83.149.64.0/18 24.06.2007 00:00 26.08.2007 00:00 
+69.25.212.153 US 69.25.208.0/20 24.03.2007 00:00 24.06.2007 00:00 
+64.20.43.107 US 64.20.32.0/19 18.11.2006 00:00 24.03.2007 00:00 
+207.189.104.87 US 207.189.96.0/19 12.08.2006 00:00 18.11.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 05.08.2006 00:00 12.08.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 08.07.2006 00:00 05.08.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 01.07.2006 00:00 08.07.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 17.06.2006 00:00 01.07.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 10.06.2006 00:00 17.06.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 06.05.2006 00:00 10.06.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 29.04.2006 00:00 06.05.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 18.03.2006 00:00 29.04.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 05.03.2006 00:00 18.03.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 25.02.2006 00:00 05.03.2006 00:00 
+207.189.104.86 US 207.189.96.0/19 12.02.2006 00:00 25.02.2006 00:00 
+207.189.104.87 US 207.189.96.0/19 27.11.2005 00:00 12.02.2006 00:00 
+216.152.252.55 US 216.152.240.0/20 21.11.2004 00:00 27.11.2005 00:00 
+
+For horizons-tourisme.com: 
+
+Resolve Location Network First Last 
+192.185.113.148 US 192.185.64.0/18 28.04.1100:00 10.02.1500:00 
+184.172.143.188 US 184.172.128.0/18 23.12.0600:00 28.04.1100:00 
+212.27.35.109 FR 212.27.32.0/19 02.08.0500:00 23.12.0600:00 
+206.41.94.190 CA 206.41.94.0/24 24.06.0500:00 02.08.0500:00 
+
+page | 19 
+
+

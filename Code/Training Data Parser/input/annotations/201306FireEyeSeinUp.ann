@@ -1,0 +1,96 @@
+T1	Organization 57 64	FireEye
+T2	ExploitTargetObject 151 155	Asia
+T3	ExploitTargetObject 160 165	ASEAN
+T4	ExploitTargetObject 449 455	Brunei
+T5	ExploitTargetObject 457 465	Cambodia
+T6	ExploitTargetObject 467 476	Indonesia
+T7	ExploitTargetObject 478 482	Laos
+T8	ExploitTargetObject 484 492	Malaysia
+T9	ExploitTargetObject 494 501	Myanmar
+T10	ExploitTargetObject 503 514	Philippines
+T11	ExploitTargetObject 516 525	Singapore
+T12	ExploitTargetObject 527 535	Thailand
+T13	ExploitTargetObject 541 548	Vietnam
+T14	TrojanHorse 0 17	Trojan.APT.Seinup
+T15	Malware 969 986	Backdoor.Makadocs
+T16	Payload 1000 1015	Takashi Katsuki
+T17	Vulnerability 1304 1317	CVE-2012-0158
+T18	Dropper 1372 1383	exp1ore.exe
+T19	Payload 1413 1420	wab.exe
+T20	Payload 1452 1464	wab32res.dll
+T21	Payload 1516 1523	wab.exe
+T22	Payload 1549 1561	wab32res.dll
+T23	Payload 1680 1692	wab32res.dll
+T24	TrojanHorse 1935 1952	Trojan.APT.Seinup
+R1	hasCharacteristics Arg1:T24 Arg2:T22
+R2	hasCharacteristics Arg1:T24 Arg2:T19
+R3	hasCharacteristics Arg1:T24 Arg2:T23
+R4	hasCharacteristics Arg1:T24 Arg2:T20
+R5	hasCharacteristics Arg1:T24 Arg2:T21
+R6	hasCharacteristics Arg1:T18 Arg2:T19
+R7	hasCharacteristics Arg1:T18 Arg2:T20
+T25	Indicator 2381 2397	elizabearden.com
+R8	indicates Arg1:T25 Arg2:T24
+T26	Email 2467 2488	liangcheng04@sina.com
+R9	indicates Arg1:T26 Arg2:T24
+T27	Address 2511 2526	124.172.243.211
+T28	Address 2527 2540	50.117.115.83
+T29	Address 2541 2554	50.117.115.84
+T30	Address 2555 2569	50.117.120.235
+T31	Address 2570 2581	69.46.84.51
+T32	Address 2582 2597	175.100.206.183
+T33	Indicator 2599 2611	winshell.net
+T34	Address 2613 2625	58.64.190.34
+T35	Indicator 2631 2649	philnewsonline.com
+T36	Indicator 2650 2667	www.info-week.com
+T37	Indicator 2668 2682	go-twitter.com
+T38	Address 2684 2697	50.93.198.128
+T39	Address 2698 2713	173.254.197.213
+T40	Address 2714 2727	50.93.198.113
+T41	Indicator 2739 2759	dnsserviceonline.com
+T42	Email 2813 2834	liangcheng04@sina.com
+T43	Email 2888 2911	Smartwise9851@yahoo.com
+T44	Email 2992 3015	richardmatind@yahoo.com
+T45	Email 3050 3071	woooyeahh11@yahoo.com
+T46	Email 3106 3127	woooyeahh11@yahoo.com
+T47	Email 3162 3183	woooyeahh11@yahoo.com
+T48	Dropper 3255 3267	iexp1ore.exe
+T49	Malware 3268 3275	wab.exe
+T50	Malware 3276 3288	wab32res.dll
+T51	MD5 3345 3377	137F3D11559E9D986D510AF34CB61FBC
+T52	MD5 3386 3418	CE67AAA163A4915BA408B2C1D5CCC7CC
+T53	MD5 3451 3483	FB2FA42F052D0A86CBDCE03F5C46DD4D
+T54	MD5 3574 3606	FB2FA42F052D0A86CBDCE03F5C46DD4D
+T55	MD5 3647 3679	baf227a9f0b21e710c65d01f2ab01244
+T56	MD5 3713 3745	0845f03d669e24144df785ee54f6ad74
+T57	MD5 3783 3815	d64a22ea3accc712aebaa047ab818b07
+T58	MD5 3849 3881	56e6c27f9952e79d57d0b32d16c26811
+T59	MD5 3915 3947	cdd969121a2e755ef3dc1a7bf7f18b24
+T60	MD5 3981 4013	709c71c128a876b73d034cde5e3ec1d3
+T61	Malware 3289 3302	msnetrsvw.exe
+R10	indicates Arg1:T51 Arg2:T48
+R11	indicates Arg1:T52 Arg2:T49
+R12	indicates Arg1:T53 Arg2:T50
+R13	indicates Arg1:T54 Arg2:T61
+T62	CourseOfAction 4348 4370	hardware SSL decrypter
+T63	Malware 5236 5247	exp1ore.exe
+T64	File 5261 5268	Wor.doc
+R14	indicates Arg1:T64 Arg2:T63
+T65	Obfuscation 5392 5396	0xFC
+T66	File 5308 5315	Wor.doc
+T67	Malware 5292 5303	exp1ore.exe
+R15	indicates Arg1:T66 Arg2:T67
+R16	hasCharacteristics Arg1:T67 Arg2:T65
+R17	usesAddress Arg1:T24 Arg2:T27
+R18	usesAddress Arg1:T24 Arg2:T28
+R19	usesAddress Arg1:T24 Arg2:T29
+R20	usesAddress Arg1:T24 Arg2:T30
+R21	usesAddress Arg1:T24 Arg2:T31
+R22	usesAddress Arg1:T24 Arg2:T32
+R23	indicates Arg1:T55 Arg2:T24
+R24	indicates Arg1:T56 Arg2:T24
+R25	indicates Arg1:T57 Arg2:T24
+R26	indicates Arg1:T58 Arg2:T24
+R27	indicates Arg1:T59 Arg2:T24
+R28	indicates Arg1:T60 Arg2:T24
+R29	mitigates Arg1:T62 Arg2:T24

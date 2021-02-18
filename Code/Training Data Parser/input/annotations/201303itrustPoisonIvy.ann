@@ -1,0 +1,218 @@
+T1	Malware 2537 2547	Poison Ivy
+T2	Malware 6588 6598	Poison Ivy
+T3	Malware 6707 6717	Poison Ivy
+T4	Time 8921 8934	February 2013
+T5	Organization 8899 8907	Mandiant
+T6	Organization 9183 9191	Mandiant
+T7	Malware 9284 9294	Poison Ivy
+T8	Country 9325 9330	China
+R1	hasAttackLocation Arg1:T7 Arg2:T8
+T9	Organization 9782 9797	Malware.lu CERT
+T10	Country 9877 9887	Luxembourg
+T11	Malware 11314 11324	Poison Ivy
+T12	Malware 11515 11525	Poison Ivy
+T13	Malware 12233 12243	Poison Ivy
+T14	Indicator 12183 12193	0x000015D0
+R2	indicates Arg1:T14 Arg2:T13
+T15	Location 12437 12446	Hong Kong
+T16	Address 12753 12782	113.10.246.0 - 113.10.246.255
+T17	Address 12817 12846	202.65.220.0 - 202.65.220.255
+T18	Address 12873 12902	202.67.215.0 - 202.67.215.255
+T19	Address 12929 12954	210.3.0.0 - 210.3.127.255
+T20	Address 12999 13030	219.76.239.216 - 219.76.239.223
+T21	Address 13065 13091	70.39.64.0 – 70.39.127.255
+T22	Malware 12699 12709	Poison Ivy
+R3	usesAddress Arg1:T22 Arg2:T16
+R4	usesAddress Arg1:T22 Arg2:T17
+R5	usesAddress Arg1:T22 Arg2:T18
+R6	usesAddress Arg1:T22 Arg2:T19
+R7	usesAddress Arg1:T22 Arg2:T20
+R8	usesAddress Arg1:T22 Arg2:T21
+T23	Malware 13220 13230	Poison Ivy
+T24	Time 13597 13633	2AM and 10AM from Monday to Saturday
+R9	hasAttackTime Arg1:T23 Arg2:T24
+T25	Time 13846 13856	Poison Ivy
+T26	MalwareCharacteristics 14062 14077	File management
+T27	MalwareCharacteristics 14079 14090	File search
+T28	MalwareCharacteristics 14092 14105	File transfer
+T29	MalwareCharacteristics 14107 14126	Registry management
+T30	MalwareCharacteristics 14128 14146	Process management
+T31	MalwareCharacteristics 14148 14167	Services management
+T32	MalwareCharacteristics 14169 14181	Remote shell
+T33	MalwareCharacteristics 14183 14202	Screenshot creation
+T34	MalwareCharacteristics 14204 14217	Hash stealing
+T35	MalwareCharacteristics 14219 14232	Audio capture
+T36	Person 14329 14348	Andrzej Dereszowski
+T37	Organization 14354 14363	SIGNAL 11
+T38	Exploit 14679 14796	http://dev.metasploit.com/redmine/projects/framework/repository/entry/ modules/exploits/windows/misc/poisonivy_bof.rb
+T39	Vulnerability 14388 14401	vulnerability
+T40	Malware 15611 15621	Poison Ivy
+T41	Obfuscation 15627 15635	Camellia
+R10	hasCharacteristics Arg1:T40 Arg2:T41
+T42	Software 16351 16366	John the Ripper
+T43	Software 16380 16395	John the Ripper
+T44	SourceCodeInformation 16473 16502	http://www.openwall.com/john/
+T45	SourceCodeInformation 16504 16511	OpenSSL
+T46	Indicator 17168 17174	pswpsw
+R11	indicates Arg1:T46 Arg2:T40
+T47	Malware 18169 18185	Poison Ivy 2.3.2
+T48	Payload 17751 17759	EXITFUNC
+T49	Payload 17760 17765	LHOST
+T50	Payload 17766 17771	LPORT
+R12	hasCharacteristics Arg1:T47 Arg2:T50
+R13	hasCharacteristics Arg1:T47 Arg2:T49
+R14	hasCharacteristics Arg1:T47 Arg2:T48
+T51	Address 18572 18581	127.0.0.1
+T53	Address 18672 18689	00:0c:29:c9:86:57
+T54	Address 18716 18731	192.168.164.128
+T52	Malware 19028 19038	Poison Ivy
+T55	MalwareCharacteristics 19066 19078	proxy server
+R15	hasCharacteristics Arg1:T52 Arg2:T55
+T56	Malware 21662 21672	Poison Ivy
+T57	Malware 21782 21792	Poison Ivy
+T58	Malware 21942 21952	Poison Ivy
+T59	Malware 22421 22431	Poison Ivy
+T60	Malware 22593 22603	Poison Ivy
+T61	Malware 23322 23332	Poison Ivy
+T62	Indicator 23391 23400	xport.exe
+R16	indicates Arg1:T62 Arg2:T61
+T63	Malware 23556 23566	Poison Ivy
+T64	Malware 24071 24081	Poison Ivy
+T65	Malware 24409 24419	Poison Ivy
+T66	Malware 24327 24337	Poison Ivy
+T67	Malware 24836 24846	Poison Ivy
+T68	MD5 26072 26104	b31b9dd9d29330917627f9f916987f3c
+T69	Exploit 26059 26071	TmUpdate.exe
+T70	Exploit 26131 26138	ggg.exe
+T71	MD5 26154 26186	1295f4a3659cb481b6ae051b61567d7d
+T72	Exploit 26295 26304	ggg64.exe
+T73	Exploit 26146 26153	ggg.exe
+T74	Exploit 26252 26261	ggg64.exe
+T75	MD5 26262 26294	3fd2c4507b23e26d427f89129b2476ac
+T76	Exploit 26379 26390	iochttp.exe
+T77	MD5 26391 26423	a476dd10d34064514af906fc37fc12a3
+T78	Exploit 26507 26519	iochttp3.exe
+T79	MD5 26520 26552	d91a6d50702822330acac8b36b15bb6c
+T80	Exploit 26597 26607	ippmin.exe
+T81	MD5 26608 26640	ffea249e19495e02d61aa52e981cebd8
+R17	indicates Arg1:T81 Arg2:T80
+R18	indicates Arg1:T79 Arg2:T78
+R19	indicates Arg1:T77 Arg2:T76
+R20	indicates Arg1:T75 Arg2:T74
+R21	indicates Arg1:T71 Arg2:T73
+R22	indicates Arg1:T68 Arg2:T69
+T82	MD5 26768 26800	5b4d4d6d77954107d927eb1987dd43fb
+T83	Exploit 26762 26767	m.exe
+R23	indicates Arg1:T82 Arg2:T83
+T84	Exploit 27036 27043	map.exe
+T85	MD5 27044 27076	266fbfd5cacfcac975e11a3dacd91923
+R24	indicates Arg1:T85 Arg2:T84
+T86	Exploit 27174 27180	nc.exe
+T87	MD5 27181 27213	ab41b1e2db77cebd9e2779110ee3915d
+T88	Exploit 27237 27245	KeyX.exe
+R25	indicates Arg1:T87 Arg2:T86
+T89	MD5 27247 27279	3d0760bbc1b8c0bc14e8510a66bf6d99
+R26	indicates Arg1:T89 Arg2:T88
+T90	Exploit 27281 27288	nc1.exe
+T91	MD5 27290 27322	8be39ba7ced43bef5b523193d94320eb
+R27	indicates Arg1:T91 Arg2:T90
+T92	Exploit 27350 27357	nc2.exe
+T93	MD5 27359 27391	2937e2b37d8bb3d9fe96ded7e6f763aa
+R28	indicates Arg1:T93 Arg2:T92
+T94	Exploit 27419 27428	putty.exe
+T95	MD5 27430 27462	9bb6826905965c13be1c84cc0ff83f42
+R29	indicates Arg1:T95 Arg2:T94
+T96	Exploit 27487 27496	xPort.exe
+T97	MD5 27498 27530	2aabd170dae5982e5d93dc6fd9f2723a
+R30	indicates Arg1:T97 Arg2:T96
+T98	Exploit 27551 27561	pwdump.dll
+T99	MD5 27563 27595	7a115108739c7d400b4e036fe995519f
+R31	indicates Arg1:T99 Arg2:T98
+T100	MD5 27642 27674	f140e0e9aab19fefb7e47d1ea2e7c560
+T101	Exploit 27630 27640	pwdump.exe
+T102	MD5 27756 27788	a78cbc7d652955be49498ee9834e6a2d
+R32	indicates Arg1:T100 Arg2:T101
+T103	MD5 27870 27902	40a3e68eafd50c02b076acf71d1569db
+T104	MD5 27984 28016	5682aa66f0d1566cf3b7e27946943b4f
+T105	MD5 28098 28130	c16269c4a32062863b63a123951166d2
+T106	Exploit 27748 27755	Private
+T107	Exploit 27862 27869	Private
+T108	Exploit 27976 27983	Private
+T109	Exploit 28090 28097	Private
+R33	indicates Arg1:T102 Arg2:T106
+R34	indicates Arg1:T103 Arg2:T107
+R35	indicates Arg1:T104 Arg2:T108
+R36	indicates Arg1:T105 Arg2:T109
+T110	MD5 28216 28248	669cef1b64aa530292cc823981c506f6
+T111	Exploit 28163 28176	Terminator3.6
+R37	indicates Arg1:T110 Arg2:T111
+T112	MD5 28318 28350	380fe92c23f2028459f54cb289c3553f
+T113	Exploit 28306 28317	Shtrace.exe
+R38	indicates Arg1:T112 Arg2:T113
+T114	MD5 28375 28407	e258cf52ef4659ed816f3d084b3ec6c7
+T115	Exploit 28367 28374	EXP.EXE
+R39	indicates Arg1:T114 Arg2:T115
+T116	Exploit 28620 28626	pr.exe
+T117	MD5 28690 28722	a4ad1d1a512a7e00d2d4c843ef559a7a
+T118	MD5 28858 28890	98a65022855013588603b8bed1256d5e
+T119	Exploit 29071 29079	dump.exe
+R40	indicates Arg1:T117 Arg2:T119
+R41	indicates Arg1:T118 Arg2:T116
+T120	Exploit 28921 28929	wget.exe
+T121	MD5 28931 28963	57a9d084b7d016f776bfc78a2e76d03d
+R42	indicates Arg1:T121 Arg2:T120
+T122	MD5 29001 29033	9fbea622b9a1361637e0b97d7dd34560
+T123	Exploit 28987 28999	xForceDel.ex
+R43	indicates Arg1:T122 Arg2:T123
+T124	Exploit 29061 29070	getos.exe
+T125	MD5 29092 29124	71d3f12a947b4da2b7da3bee4193a110
+R44	indicates Arg1:T125 Arg2:T124
+T126	MD5 28787 28819	53b77ada5498ef207d48a76243051a01
+T127	Exploit 29080 29090	nltest.exe
+R45	indicates Arg1:T126 Arg2:T127
+T128	Malware 29141 29151	Terminator
+T129	Malware 30565 30575	Poison Ivy
+T130	ExploitTargetObject 30802 30830	private and public companies
+T131	ExploitTargetObject 30832 30854	political institutions
+T132	ExploitTargetObject 30856 30865	activists
+T133	ExploitTargetObject 30883 30892	reporters
+T134	ExploitTargetObject 30867 30879	associations
+T135	Malware 30901 30911	Poison Ivy
+T136	Attacker 30521 30530	attackers
+R46	usesMalware Arg1:T136 Arg2:T129
+T137	Malware 32141 32150	Fakem RAT
+T138	Malware 32121 32135	Terminator RAT
+T139	Exploit 32226 32243	Terminator3.6.exe
+T140	Malware 32425 32434	Fakem RAT
+T141	Time 32463 32475	January 2013
+T142	Organization 32449 32459	Trendmicro
+T143	MalwareCharacteristics 35628 35643	File management
+T144	MalwareCharacteristics 35645 35663	Process management
+T145	MalwareCharacteristics 35665 35677	Shell access
+T146	MalwareCharacteristics 35679 35689	Screenshot
+T147	MalwareCharacteristics 35691 35710	Registry management
+T148	MalwareCharacteristics 35712 35731	Services management
+T149	MalwareCharacteristics 35733 35772	Get information of the infected machine
+T150	MalwareCharacteristics 35951 35960	Keylogger
+T151	MalwareCharacteristics 35962 35992	Dump password hashes in memory
+T152	MalwareCharacteristics 35994 36011	View user’s files
+R47	hasCharacteristics Arg1:T23 Arg2:T26
+R48	hasCharacteristics Arg1:T23 Arg2:T27
+R49	hasCharacteristics Arg1:T23 Arg2:T28
+R50	hasCharacteristics Arg1:T23 Arg2:T29
+R51	hasCharacteristics Arg1:T23 Arg2:T30
+R52	hasCharacteristics Arg1:T23 Arg2:T31
+R53	hasCharacteristics Arg1:T23 Arg2:T32
+R54	hasCharacteristics Arg1:T23 Arg2:T33
+R55	hasCharacteristics Arg1:T23 Arg2:T34
+R56	hasCharacteristics Arg1:T23 Arg2:T35
+R57	hasCharacteristics Arg1:T140 Arg2:T143
+R58	hasCharacteristics Arg1:T140 Arg2:T144
+R59	hasCharacteristics Arg1:T140 Arg2:T145
+R60	hasCharacteristics Arg1:T140 Arg2:T146
+R61	hasCharacteristics Arg1:T140 Arg2:T147
+R62	hasCharacteristics Arg1:T140 Arg2:T148
+R63	hasCharacteristics Arg1:T140 Arg2:T149
+R64	hasCharacteristics Arg1:T140 Arg2:T150
+R65	hasCharacteristics Arg1:T140 Arg2:T151
+R66	hasCharacteristics Arg1:T140 Arg2:T152

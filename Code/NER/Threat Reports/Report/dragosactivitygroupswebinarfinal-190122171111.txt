@@ -1,0 +1,109 @@
+
+
+
+
+
+Activity Group 
+
+
+Two purposes of an activity group: 
+Framework to answer analytic questions requiring a breadth of activity knowledge 
+
+The development of mitigation strategies with an intended effect broader than activity threads 
+
+
+
+
+
+
+
+needs and operations 
+
+
+
+Why Activity Groups?  To Solve Analytic Problems 
+
+What is the Analytic Problem 
+• 
+Activity grouping is used to solve a number of problems. 
+
+• 
+These problems generally require deduction and inference based on a common set of features (i.e., feature vector). 
+
+• 
+These problems are generally distinct enough to require a different feature vector for each problem. 
+
+• 
+For instance, the feature vector which would group events and threads by likely adversary (e.g., attribution) would not always suffice to group events to discover common malware authors/developers. 
+
+• 
+The analytic problem must first be defined. 
+
+
+• 
+Trending: How has an adversary’s activity changed over time and what is the current vector to infer future change? 
+
+• 
+Intent Deduction: What is the intent of the adversary? 
+
+• 
+Attribution Deduction: Which events and threads are likely conducted by the same adversary? 
+
+• 
+Adversary Capabilities and Infrastructure: What is the complete set of observed capabilities and infrastructure of the adversary? 
+
+• 
+Cross-Capability Identification: Which capabilities have been used by multiple adversaries? 
+
+• 
+Adversary Campaign Knowledge Gap Identification: What are the organization’s knowledge gaps across an adversary’s campaign? 
+
+
+
+
+
+
+
+
+
+
+
+Why can’ 
+The simple answer: it correlate activity consistently within a 10 person team let alone across a variety of organizations. 
+The complex answer: correlation and classification is a complex analytic problem which requires us to share the same grouping function and feature vector. 
+
+
+
+
+
+
+Active Target Geography 
+Infection Vector 
+Persistence Mechanism ICS Impact 
+Europe 
+Phishing w/PDF, Watering Hole, Trojanized Softare 
+KARAGANY Malware 
+OPC-focused Malware Family 
+North America 
+Phishing w/Doc 
+Various Malware and Backdoors 
+Survey and Screenshots via Malware 
+Mid 2017 -? 
+USA UK Germany 
+Phishing w/Doc, Watering Hole 
+Create User Accounts, Credential Harvesting 
+Survey and Screenshots vis System Tools 
+
+
+
+
+
+
+
+
+Final Points 
+
+strategic action 
+
+
+

@@ -1,0 +1,48 @@
+T1	Organization 0 6	McAfee
+T2	Time 50 66	January 18, 2013
+T3	Campaign 38 49	Red October
+T4	Campaign 77 88	Red October
+T5	Time 297 301	2009
+T6	MD5 1606 1638	51EDEA56C1E83BCBC9F873168E2370AF
+T7	Vulnerability 1775 1788	CVE-2012-0158
+T8	Vulnerability 1803 1816	CVE-2010-3333
+T9	Vulnerability 1831 1844	CVE-2009-3129
+T10	Vulnerability 1860 1873	CVE-2011-3544
+T11	Campaign 1992 2003	Red October
+T12	Vulnerability 2048 2061	CVE-2012-0158
+T13	Vulnerability 2063 2076	CVE-2010-3333
+T14	Vulnerability 2078 2091	CVE-2009-3129
+T15	Payload 2276 2286	msmx21.exe
+T16	Payload 2393 2403	msmx21.exe
+T17	File 2491 2505	%Temp%\msc.bat
+T18	File 2506 2543	%ProgramFiles%\Windows NT\svchost.exe
+T19	Payload 2544 2580	%ProgramFiles%\Windows NT\wsdktr.ltp
+T20	Country 2847 2853	Russia
+T21	Payload 2995 3005	wsdktr.ltp
+T22	Indicator 3493 3514	nt-windows-online.com
+T23	Indicator 3515 3536	nt-windows-update.com
+T24	Indicator 3537 3557	nt-windows-check.com
+T25	Indicator 3558 3577	csrss-check-new.com
+T26	Vulnerability 3604 3617	CVE-2011-3544
+T27	File 3977 4000	%Temp%\ tmp42e76b5f.bat
+T28	File 4016 4051	%Application Data%\Keucot\ qagi.exe
+T29	File 4067 4104	%Application Data%\ Okurp \ dezaa.ufy
+T30	Indicator 5029 5049	29f2aad01fee3663.com
+T31	Organization 5050 5056	McAfee
+T32	Vulnerability 5087 5100	CVE-2011-3544
+T33	Vulnerability 5326 5339	CVE‐2009‐3129
+T34	Vulnerability 5340 5353	CVE‐2010‐3333
+T35	Vulnerability 5354 5367	CVE‐2012‐0158
+T36	Vulnerability 5373 5386	CVE‐2011‐3544
+T37	Time 5460 5468	Aug 2012
+T38	Time 5471 5479	Dec 2012
+T39	CourseOfAction 6071 6130	update Windows and third-party application security patches
+T40	CourseOfAction 6181 6203	proper filtering rules
+T41	CourseOfAction 6436 6452	Disable AutoPlay
+T43	Email 2098 2112	phishing email
+T44	File 2145 2170	malicious office document
+R1	hasAttachment Arg1:T43 Arg2:T44
+T45	Campaign 1691 1702	Red October
+R2	mitigates Arg1:T39 Arg2:T45
+R3	mitigates Arg1:T40 Arg2:T45
+R4	mitigates Arg1:T41 Arg2:T45

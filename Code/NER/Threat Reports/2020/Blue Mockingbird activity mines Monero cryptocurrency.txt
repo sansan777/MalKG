@@ -1,0 +1,202 @@
+OnJune17,learndetectionstrategiesforProcessInjection¡ªthe#1mostprevalentATT&CK.techniquewe'veseentodate.LEARNMORECONTACT 
+US 
+IntroducingBlueMockingbird 
+Red CanaryIntelismonitoringapotentiallynovelthreatthatisdeploying Monerocryptocurrency-miningpayloads onWindowsmachinesatmultiple organizations. 
+MAY 7, 2020 . DETECTION 
+AND 
+RESPONSE 
+TONY 
+LAMBERT 
+
+BlueMockingbirdisthenamewe¡¯vegiventoaclusterofsimilaractivitywe¡¯veobservedinvolvingMonerocryptocurrency-miningpayloadsindynamic-linklibrary(DLL)formonWindowssystems.Theyachieveinitialaccessbyexploitingpublic-facingwebapplications,specificallythosethatuseTelerikUIforASP.NET,followedbyexecutionandpersistenceusing multipletechniques(checkoutmycolleagueJesseBrown¡¯snewblogfordetailsonBlueMockingbird¡¯sCOR_PROFILER persistencemechanism).Duringatleastoneincident,theadversaryusedproxyingsowareandexperimentedwith dierentkindsofreverseshellpayloadstoconnecttoexternalsystems.TheearliestBlueMockingbirdtoolswe¡¯veobserved werecreatedinDecember2019. 
+
+Gainingentry 
+Inatleasttwoincidentresponse(IR)engagements,BlueMockingbirdhasexploitedpublic-facingwebapplications(T1190: 
+ExploitPublic-FacingApplication)thatimplementedTelerikUIforASP.NETAJAX.Thissuiteofuserinterfacecomponents 
+acceleratesthewebdevelopmentprocess,butsomeversionsaresusceptibletoadeserializationvulnerability,CVE-2019-
+5/26/2020 Blue Mockingbird activity mines Monero cryptocurrency 
+Inexploitingthisvulnerability,twoDLLsareuploadedtoawebapplicationrunningonaWindowsIISwebserver.In telemetry,investigatorswillnoticew3wp.exe writingtheDLLstodiskandthenimmediatelyloadingthemintomemory aerward.Insomecases,thiswillcausew3wp.exe totemporarilyfreezeandfailtosuccessfullyserveHTTPresponses. 
+ForadiagnostictodeterminewhetheryouarepotentiallyaectedbytheTelerikCVE,youcansearchtheIISaccesslogsfor thestringPOST Telerik.Web.UI.WebResource.axd.Invictimenvironments,ourIRpartnersfoundentriessimilarto these: 
+2020-04-29 02:01:24 10.0.0.1 POST /Telerik.Web.UI.WebResource.axd type=rau 80 -Mozilla/5.0+ (Windows+NT+10.0;+Win64;+x64;+rv:54.0)+Gecko/20100101+Firefo
+ - 200 0 0 625 
+2020-04-29 02:01:27 10.0.0.1 POST /Telerik.Web.UI.WebResource.axd type=rau 80 -Mozilla/5.0+ (Windows+NT+10.0;+Win64;+x64;+rv:54.0)+Gecko/20100101+Firefo
+ - 500 0 0 46 
+Intheentries,thestring200 referstoHTTPresponsecode200wherethePOSTrequestwassuccessful,andthestring500 referstoHTTPcode500wherethePOSTrequestwasnotprocessedsuccessfullybythewebserver.Thesecode500entries happenedwhenthew3wp.exe processloadedtheuploadedDLLsintomemoryandtemporarilyfroze. 
+SearchingtheIISaccesslogsforentriesliketheseisagoodideaevenifyoudon¡¯texplicitlyknowwhetheryouuseTelerik UI,assomewebapplicationsrequirethesuiteasadependencybehindthescenes. 
+Ifyouhaveendpointdetectionandresponse(EDR)orsimilartools,you¡¯llnoticecmd.exe orothersuspiciousprocesses spawningfromw3wp.exe. 
+
+Executionandevasion 
+TheprimarypayloaddistributedbyBlueMockingbirdisaversionofXMRIGpackagedasaDLL.XMRIG isapopular,open-sourceMonero-miningtoolthatadversariescaneasilycompileintocustomtooling.Duringtheincidents,wenotedthree distinctuses. 
+Thefirstusewasexecutionwithrundll32.exe explicitlycallingtheDLLexportfackaaxv (T1218.011:Rundll32).This exportseemsuniquetothisactor¡¯spayloadsanddoesn¡¯tseemtohappenotherplacesinthewild: 
+rundll32.exe dialogex.dll,fackaaxv 
+Thenextusewasexecutionusingregsvr32.exe usingthe/s command-lineoption(T1218.010:Regsvr32).Supplyingthe /s switchexecutestheDllRegisterServer exportexposedbytheDLLpayload.Thisexportultimatelypassedcontrolof executionintothefunctionthatfackaax exported: 
+
+regsvr32.exe /s dialogex.dll 
+ThefinalexecutionpathwaswiththepayloadconfiguredasaWindowsServiceDLL(T1569.002:ServiceExecution).Once configured,executionoftheserviceinvokedtheexportServiceMain,whichagainpassedcontroltofackaaxv. 
+
+Comefortheexploit,stayforthemining 
+BlueMockingbirdleveragedmultipletechniquesforpersistenceduringincidents.Themostnoveltechniquewastheuseof aCOR_PROFILER COM 
+hijacktoexecuteamaliciousDLLandrestoreitemsremovedbydefenders(T1559.001:Component 
+ObjectModel).TouseCOR_PROFILER,theyusedwmic.exe 
+andWindowsRegistrymodificationstosetenvironment 
+variablesandspecifyaDLLpayload. 
+wmic ENVIRONMENT where "name='COR_PROFILER'" delete 
+wmic ENVIRONMENT create name="COR_ENABLE_PROFILING",username="",VariableValue="1" 
+wmic ENVIRONMENT create name="COR_PROFILER",username="",VariableValue="" 
+REG.EXE ADD HKEY_LOCAL_MACHINE\Software\Classes\CLSID\\InProcServer32 /V ThreadingModel /T REG_SZ /D Apartment /F 
+REG.EXE ADD HKEY_LOCAL_MACHINE\Software\Classes\CLSID\\InProcServer32 /VE /T REG_SZ /D "c:\windows\System32\e0b3489da74f.dll" /F 
+ThepayloadDLLspecifiedasaCOR_PROFILER wassimpleandgatheredfewantivirusdetections.Itexecutedthefollowing command: 
+cmd.exe /c sc config wercplsupport start= auto && sc start wercplsupport && copy c:\windows\System32\dialogex.dll c:\windows\System32\wercplsupporte.dll /y && schtasks /create /tn "Windows Problems Collection" /tr "regsvr32.exe /s c:\windows\System32\wercplsupporte.dll" /sc DAILY /st 20:02 /F /RU System && start "" regsvr32.exe 
+
+SinceCOR_PROFILER wasconfigured,everyprocessthatloadedtheMicroso.NETCommonLanguageRuntimewould executethecommandabove,re-establishingpersistence.ThecommandconfiguredtheWindowsProblemReportsand SolutionsControlPanelSupportservicetoexecuteautomaticallyatboot(T1543.003:WindowsService).Inaseparate command,theactormodifiedtheexistingwercplsupport servicetousetheminerDLLinsteadofthelegitimateone: 
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wercpl /f /v ServiceDll /t REG_EXPAND_SZ /d "c:\windows\System32\wercplsupporte.dll" 
+NotethattheactorusedtheDLLnamewercplsupporte.dll asanattempttomasqueradeasthelegitimateDLLname, whichiswercplsupport.dll (T1036.005:MatchLegitimateNameorLocation).Inaddition,moremasqueradingwas usedtomakemaliciousScheduledTasksblendinwithlegitimateones(T1053.005:ScheduledTask). 
+
+Insomecases,theactorevencreatedanewservicetoperformthesameactionsastheCOR_PROFILERpayload: 
+sc create 8995 binPath= "cmd /c sc config wercplsupport start= auto & sc start wercplsupport & copy c:\windows\System32\8995.dll c:\windows\System32\wercplsupporte.dll /y & regsvr32.exe /s c:\windows\System32\8995.dll" type= share start= auto error= ignore DisplayName= 8995 
+
+Escalatingprivilegesandaccessingcredentials 
+It¡¯sworthnotingthatBlueMockingbird¡¯sinitialaccessdoesnotprovidetheprivilegesneededtoestablishthemany persistencemechanismsused.Inoneengagementweobserved,theadversaryusingaJuicyPotatoexploittoescalate privilegesfromanIISApplicationPoolIdentityvirtualaccounttotheNT Authority\SYSTEM account.JuicyPotatoallows 
+5/26/2020 Blue Mockingbird activity mines Monero cryptocurrency 
+anattackertoabusetheSeImpersonate tokenprivilegeandWindowsDCOMtomovefromanunprivilegedaccounttothe highestlevelofprivilegeonasystem(T1068:ExploitationforPrivilegeEscalation).Duringthisengagement,theattacker abusedaDCOMclassandleveragedtheIISApplicationPoolIdentity¡¯sSeImpersonate privilegetoperformtheescalation: 
+c:\programdata\let.exe -t t -p c:\programdata\rn.bat -l 1234 -c {8BC3F05E-D86B-11D0-A075-00C04FB68820} 
+Inanotherengagement,weobservedtheadversaryusingMimikatz(theosignedversion)toaccesscredentialsfor logon(T1003.001:LSASSMemory). 
+
+Freetomovearoundthenetwork 
+Aswithotheradversariesthatminecryptocurrencyopportunistically,BlueMockingbirdlikestomovelaterallyand distributeminingpayloadsacrossanenterprise.WeobservedBlueMockingbirdmovelaterallyusingacombinationofthe RemoteDesktopProtocoltoaccessprivilegedsystemsandWindowsExplorertothendistributepayloadstoremote systems(T1021.001RemoteDesktopProtocol,T1021.002SMB/WindowsAdminShares).Insomecases,ScheduledTasks werecreatedremotelywithschtasks.exe /S toensureexecution. 
+schtasks /create /tn "setup service Management" /tr "c:\windows\temp\rn.bat" /sc ONCE /st 00:00 /F /RU System /S remote_host 
+
+Alookatcommandandcontrol 
+Anovelaspectofthisadversaryisthattheirtoolkitdoesnotappeartobefullydefined.Inatleastoneengagement,we observedBlueMockingbirdseeminglyexperimentingwithdierenttoolstocreateSOCKSproxies(T1090:Proxy)for pivoting.Thesetoolsincludedafastreverseproxy(frp),SecureSocketFunneling(SSF),andVenom.Inoneinstance,the adversaryalsotinkeredwithPowerShellreverseTCPshellsandareverseshellinDLLform(T1059.001:PowerShell). 
+
+
+Takeaction 
+We¡¯vescratchedthesurfaceontheXMRIGDLLpayload,butwecandivedeepertounderstandmoredetails(T1496: 
+ResourceHijacking).First,theexportfackaaxv 
+hasbeenconsistentlypresentintheDLLs.Next,eachDLLalsocontainsa PEbinarysection_RANDOMX.Thissectionappearsuniquetocryptocurrency-miningpayloadsbecauseithousesthe RandomXproofofworkalgorithmthatXMRIGmayuse.Thenetworkconnectionsmadeforminingusuallyinvolvea nanopool[.]org domain. 
+WemadetheassessmentthatthepayloadwasactuallyXMRIGbasedonseveralpiecesofevidence.First,therewere multiplereferencesto¡°xmrig¡±,includingversionnumbers,inthebinarystrings.Thesewereaccompaniedbycleartext referencestocommand-lineoptionscommontoXMRIG: 
+coin 
+donate-level 
+max-cpu-usage 
+cpu-priority 
+log-file 
+
+ThefinalpieceofevidencecamefromatextlogwrittentodiskbysomeversionsoftheminerDLL.Inthetextlogs, identifyinginformationforXMRIG wasoutputalongsidehardwaredetailsforthevictimsystem. 
+* ABOUT XMRig/5.3.0 MSVC/2015 
+* LIBS libuv/1.31.0 OpenSSL/1.1.1c hwloc/2.1.0 
+*
+ HUGE PAGES unavailable 
+
+*
+ CPU Intel(R) Core(TM) i7-4770 CPU @ 
+
+
+
+3.40GHz (1) x64 AES L2:0.3 MB L3:8.0 MB 1C/1T NUMA:1 
+* MEMORY 1.3/4.0 GB (33%) 
+* DONATE 0% 
+* POOL #1 xmr-au1.nanopool.org:14433 coin monero 
+*
+ COMMANDS 'h' hashrate, 'p' pause, 'r' resume 
+
+*
+ OPENCL disabled 
+
+*
+ CUDA disabled 
+
+
+[2020-04-16 08:30:26.753] [xmr-au1.nanopool.org:14433] DNS error: "unknown node or service" 
+EachpayloadcomescompiledwithastandardlistofcommonlyusedMonero-miningdomainsalongsideaMonerowallet address.Sofar,we¡¯veidentifiedtwowalletaddressesusedbyBlueMockingbirdthatareinactivecirculation.Duetothe privatenatureofMonero,wecannotseethebalanceofthesewalletstoestimatetheirsuccess.We¡¯veseenminingpayloads compiledasearlyasDecember2019andasrecentlyaslateApril2020.Ineachcompilation,oneofthetwowalletshas beenembeddedintothebinary.Thewalletaddressescouldbeextractedfromthebinarieseasilyinearlierversionsusinga simplestrings command.Innewerversions,thestringisobfuscated. 
+Evenwithstringobfuscationinthebinary,youcanobservethewalletaddressesinnetworktraDuringexecutionofthe minerDLLs,uniqueinformationispassedincleartextacrossTCPstreams: 
+
+Werecommendthefollowinganalytics: 
+Processiscmd.exe withcommandlineincludingsc ANDconfig ANDwercplsupporte.dll 
+Anyprocesswherecommandlineincludes-t AND-c AND-l withnetworkconnectionsfrom127.0.0.1 andto 127.0.0.1 onporttcp135(JuicyPotato) Processisschtasks.exe withcommandlineincluding/create ANDsc start wercplsupport Processisrundll32.exe withcommandlineincludingfackaaxv Processisregsvr32.exe withcommandlineincluding/s andhavinganexternalnetworkconnection Processiswmic.exe withcommandlineincludingcreate ANDCOR_PROFILER 
+Formitigations,focusonpatchingwebservers,webapplications,anddependenciesoftheapplications.Mostofthe techniquesusedbyBlueMockingbirdwillbypasswhitelistingtechnologies,sothebestroutewillbetoinhibitinitialaccess. ConsiderestablishingabaselineofWindowsScheduledTasksinyourenvironmenttoknowwhatisnormalacrossyour enterprise. 
+
+
+Let¡¯scollaborate! 
+Ifyou¡¯vebeentrackingsimilaractivity,we¡¯dlovetohearfromyouandcollaborate.Contactblog@redcanary.comwithany observationsorquestions. 
+INDICATORS OF COMPROMISE FOR XMRIG MINER DLLS 
+compile sha256 time imphash 
+d388c309a540d4619169a07a4b64707f4c44953511875b57ad7cfa3e097115af12/19/201917:49:20a9d40d5a22948019ae9c5f1b46414e3c16ca940244bea9b6080fa02384ebb4818572cef7092f90d72ae210b330d1/4/202012:00:23aed97d3d2b87ab0b55dab3a3ee5377c69c05817a0e18f7b0ebbeed420f9ab8d1e81b439f439b42917fbe772dfb2/6/202010:24:291614f0ce7b6c11bf8bd8a76885cc957d007824ee8173c67122a1843c979c818614eeed7db03dea3ba7fede43eba2/6/202010:24:291614f0ce7b6c11bf8bd8a76885c5d7116f04e10e968de64c4201fc7374fa84b364e90f8e4eba0fbc41afeaf468c2/19/202013:52:10aed97d3d2b87ab0b55dab3a3ee909495884627e2e74d07d729b5e046f3ae01cabd9f0a5a99c74d46046a677f7c2/22/202014:38:33aed97d3d2b87ab0b55dab3a3eeab698a35dc5263f0ca460f09dcbc9f8a4aeb7643365a1e7fa122581ef72c34b63/8/202016:57:321614f0ce7b6c11bf8bd8a76885c60504228b3fc524287bf2a260db933a408639b2f1a29af7538c61b00c4a44c863/24/202016:15:16aed97d3d2b87ab0b55dab3a3eecompile sha256 time imphash 
+1d30d3cafdcc43b2f9a593983ad096c2c3941025fb4e91257e2dcf0919ed24ba  3/24/2020 16:15:44  9ccdf92e630d907101a249f15245  
+968b324be2b89f1a8ee4743d946723c1dca16ccfbbbbb68e5b9f60e0b9  4/9/2020 16:05:45  aed97d3d2b87ab0b55dab3a3ee  
+018a02fd0dbc63e54656b8915d71cd8a2ce4409608ae4da8743ba1  4/14/2020 19:00:06  aed97d3d2b87ab0b55dab3a3ee  
+b31f7152a547fa41c31f9c96177b2cd7131a93f7c328bf6da360dc1586ba18dc  2020-04-26 14:58:24  aed97d3d2b87ab0b55dab3a3ee  
+
+
+INDICATORS OF COMPROMISE FOR COR_PROFILER DLLS 
+compile sha256 time imphash 
+9a432ea16e74b36c55ec5faa790937fe752ef83e44856fd1e72398309  2020-02-16 9:24:30  8432f0b0e6fbfe4ac5d53400aa09d6  
+de6c061aafc5d86e692bec45f69b2ea18639abd540b59c2c281717a054a48dd5  2020-02-22 14:57:17  8432f0b0e6fbfe4ac5d53400aa09d6  
+
+RELATED 
+ARTICLES 
+MAY 
+7, 
+2020 
+DETECTION 
+AND 
+RESPONSE 
+DetectingCOR_PROFILERmanipulationfor 
+persistence 
+APRIL 28, 2020 
+DETECTION 
+AND 
+RESPONSE 
+
+LateralMovementwithSecureShell(SSH) 
+
+MARCH 26, 2020 
+DETECTION 
+AND 
+RESPONSE 
+
+2020ThreatDetectionReport:the 
+conversationcontinues 
+
+MARCH 18, 2020 
+DETECTION 
+AND 
+RESPONSE 
+
+WormsshapethenarrativeinRedCanary¡¯s 
+2020ThreatDetectionReport 
+
+EmailAddress 
+
+
+Subscribetoourblog 
+SUBSCRIBE 
+Demo 
+Seewhatit'slike 
+tohaveapartnerinthefight. 
+Experiencethedierence betweenasenseof security andactualsecurity. 
+DEMO 
+
+PRODUCTS 
+SOLUTIONS 
+RESOURCES 
+BLOG 
+ATOMIC 
+RED 
+TEAM 
+COMPANY 
+CONTACT 
+US 
+
+SUBSCRIBE 
+TO 
+OUR 
+NEWSLETTER 
+
+
+.2014-2020RedCanary.Allrightsreserved. info@redcanary.com 
++1855-977-0686 
+PrivacyPolicy 
+
+
+
+

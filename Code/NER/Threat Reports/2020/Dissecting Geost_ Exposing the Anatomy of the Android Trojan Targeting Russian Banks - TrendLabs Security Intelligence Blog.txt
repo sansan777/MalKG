@@ -1,0 +1,288 @@
+
+Trend
+ Micro 
+
+
+
+About
+ TrendLabs Security Intelligence Blog 
+
+
+
+Search:Goto…HomeCategoriesHome...Malware... Dissecting Geost: Exposing the Anatomy of the Android Trojan Targeting Russian Banks 
+Dissecting Geost: Exposing the Anatomy of the Android Trojan TargetingRussian Banks 
+
+Posted on:March 5, 2020 
+at 3:58 am 
+
+Posted in:Malware, Mobile 
+Author: 
+
+Vit Sembera (Threats Analyst) 
+
+
+The Android banking trojan Geost was .rst revealed in a research by Sebastian García, Maria Jose Erquiaga and Anna Shirokova from the Stratosphere Laboratory. 
+They detected the trojan by monitoring HtBot malicious proxy network. The botnet targets Russian banks, with the victim count at over 800,000 users at the time the study was published in Virus Bulletin last year. 
+The research disclosed the types of information that Geost (detected by Trend Micro as AndroidOS_Fobus.AXM) steals from victims, as well as the activities of thegroup behind the botnet, including operational tactics and internal communication between masters and botnet coders. 
+Building upon this interesting .nding, we decided to dig deeper into the behavior of Geost by reverse engineering a sample of the malware. The trojan employedseveral layers of obfuscation, encryption, re.ection, and injection of non-functional code segments that made it more dif.cult to reverse engineer. To study the codeand analyze the algorithms, we had to create Python scripts to decrypt strings .rst. 
+Initial Analysis 
+Geost hides in malicious apps that are distributed via unof.cial web pages with randomly generated server hostnames. The victims usually encounter these as theylook for apps that are not available on Google Play, or when they don’t have access to the app store. They then .nd a link to that application on some obscure webserver, download the app, then launch it on their phones. The app will then request for permissions that, when the victims allow, enables malware infection. 
+The Geost sample we analyzed resided in the malicious app named “установка” in Russian, which means “setting” in English. The app showed a version of theGoogle Play logo as its own icon, which did not appear on the phone screen after launch. 
+Figure 1. Application icon of the malicious app установка 
+When the app was launched, it requested device administrator privileges. This was unusual since legitimate apps don’t often ask for this, as it basically gives an appcomplete rights over a device. 
+Important permissions that the user might unknowingly allow include those for accessing SMS messages, including con.rmation messages from banking apps. Thesemessages allow the malware to harvest the victims’ names, balances, and other bank account details. With just a few clicks, attackers can then transfer money fromthe bank accounts of unaware victims. 
+Figure 2: Screen that requests device admin permission 
+Figure 3: Application permissions requested 
+After con.rming necessary permissions, the visible part of the app will close and the app icon disappears, making victims think that the app was deleted. The sampledevice did not show any alarming signs of malicious activity at .rst, but the malware is working in the background and the attackers just gained access to the device,allowing them to monitor sent and received messages, including SMS con.rmation messages from banking apps. 
+To maintain persistence across reboots, it registers for BOOT_COMPLETED and QUICKBOOT_POWERON broadcasts. 
+Figure 4: Registering services to boot broadcasts (some codes were obfuscated) 
+
+Stage One 
+Like many malware types, Geost’s run-time life is split into stages. The .rst stage is small and simple, which will then download and/or decrypt and run the nextstage, which is more complex. 
+The Geost sample’s APK housed compiled Java code in classes.dex .le. It also contained AndroidManifest.xml and resource .les, which are usual contents of APK.les. It also had a “.cache” .le with a size of 125k. 
+To decompile the extracted classes.dex .le, several Java decompilers, namely dex2jar, jadx, jd-core/jd-gui and Ghidra, were all used, as no single decompiler wasable to decompile all the Smali code. 
+Figure 5: Decompiled Java source code 
+At .rst glance, the decompiled code seemed to be partially encoded in a series of strings; however, character frequency analysis showed random character usage. 
+Further analysis revealed that the malware contained additional pieces of code that have no impact on the app’s behavior except to slow down its execution. It madereverse engineering more dif.cult because the malware split useful code into parts and frequently changed execution paths. Which branch was taken was usuallydependent on some variable with an unknown value. The same is applied with “switch”, “if”, and “try/catch” command blocks. Functions without meaningful codewere inserted to make overall understanding of the malware actions harder. 
+Figure 6: Example of code with case switch 
+The non-functional code segments were gradually removed and the .rst decryption algorithm used was identi.ed. All strings in stage one were encrypted throughRC4, using an algorithm that was split into several functions to avoid indication that it used RC4. After this, the next step was to .nd the key for RC4 decryption. 
+Figure 7: Decompiled Java source, which is part of the RC4 algorithm 
+Figure 8: Part of cleaned up RC4 code 
+Figure 9: RC4 key 
+RC4 is a stream cipher, with an internal state that changes with every decrypted symbol. To decrypt several encrypted strings, usually the decryption must beperformed in the very same order the encryption used. Fortunately, this was not the case with the sample. The code authors simpli.ed RC4 without keeping internalstate between decryptions, as the RC4 encryption code always copied state array S[]. 
+Figure 10: RC4 encryption always copied state array S[] 
+Afterwards, the search for common code libraries began. Android.support.v4 libraries and Re.ectASM Java Re.ection libraries were found. 
+Figure 11: Code with encrypted strings 
+Figure 12: Code with strings after decryption and symbol deobfuscation 
+At this point, the stage one code became understandable: It uses re.ection code to hide interesting classes and methods from curious eyes. Basically, the .rst stagedecrypted the second stage .le with the same RC4 algorithm and key. 
+The aforementioned “.cache” .le is renamed to .localsinfotimestamp1494987116 and saved after decryption as ydxwlab.jar, from which the .dex .le is loaded andlaunched. 
+Figure 13: Example of re.ection method invocation 
+Figure 14: Decrypting and saving second stage 
+Code authors inserted a false .ag, HttpURLConnection and its URL, which seemed to connect to the Command and Control (C&C) server. But this http openconnection is never executed. 
+Figure 15: False .ag 
+Stage one loads a class from the second stage, which the researcher named “MaliciousClass”. 
+Figure 16: Launching the second stage 
+
+Stage Two 
+Looking at the classes.dex, it’s clear that obfuscation and encryption were used again in stage two. But this time, the symbol names were partially replaced by strings1-2 characters long instead of the previous 6-12 character strings. Also, the string encryption algorithm is modi.ed, making it different from the algorithm used in theprevious stage. Different tools were used. Additionally, parameters of the decryption algorithm were modi.ed separately for each class. 
+All Java decompilers had problems decompiling the decryption algorithm due to goto command jumping into the if block. Only Jeb decompiler handled thisconstruction well. 
+Figure 17: Smali code of decryption algorithm 
+Figure 18: Java code of decryption algorithm 
+Each class decryption method contained different parameter orders and different constants; writing the Python decryption script was made more dif.cult. It meanteither the decryption script must detect the algorithm setup from the Smali code and adapt itself, or the parameters must be manually set up within the script beforedecryption for each class. 
+Figure 19: Example of an encrypted string 
+After string decryption, libraries used could be detected. These include: 
+AES encryption engineBase64 encodingEmulator detector File download service IExtendedNetworkService USSD api libraryZip4jUtil 
+
+Initialization phase 
+The aforementioned MaliciousClass invoked from the .rst stage serves as an envelope for the instantiated class the researcher named “Context.” 
+Figure 20: Context Class 
+The Context class launches the EmulatorDetector service .rst. It then starts two other services: AdminService and LPService, followed by the main applicationIntent. 
+Figure 21: Main initialization routine 
+Emulator Detector 
+The emulator detector checks for signs that it’s running in an emulated environment. The sample detected the existence of Nox, Andy, Geny, Bluestacks and QemuAndroid emulators. 
+Figure 22: Emulated enviroment traces 
+AdminService 
+This service is responsible for granting admin permission to the application. This is a critical part since it enables access to sensitive data and can launch privilegedactions. 
+Figure 23: Critical part of AdminService 
+LPService 
+This service was responsible for keeping the application running and connected to the C&C server. It used WakeLock and Wi.Lock acquire() calls to reach this state.A side effect to this is high battery drain, which most victims usually ignore. 
+Figure 24: Locking to CPU and WiFi resources 
+LPService then creates LPServiceRunnable Thread, which wakes up every .ve seconds and is responsible for monitoring and relaunching these services: 
+
+MainService AdminService SmsKitkatService 
+
+
+This service also collects information about running processes and tasks. It also periodically starts WebViewActivity, which can open browser window to arbitraryURLs or launch malicious code. WebViewActivity code was not implemented in this sample. 
+MainService 
+The MainService .rst hooks to AlarmManager for time scheduling tasks, then registers two broadcast receivers, MainServiceReceiver1 and MainServiceReceiver2.At the end of the initialization phase, it will launch MainServiceRunnable Thread. When the sample executes overloaded onDestroy() method, it restarts theMainService again. 
+Figure 25: Overloaded onDestroy to restart MainService 
+An important method of MainService is processApiResponse(), which processes commands formatted as JSON string received from C&C server. 
+Figure 26: Processing C&C server commands 
+ClearService 
+This service invokes the ClearServiceRunnable thread, which takes care of locking/unlocking commands (blocking/unblocking user activity) so the botnet operatorcan perform remote tasks without user intervention. The ClearService also relaunches itself if there is an attempt to terminate it. 
+Figure 27: ClearService class 
+Figure 28: ClearServiceRunnableSmsKitkatService 
+This service was prepared to replace the standard SMS messaging application with a different one written by the attackers. In this version, it used a default one. 
+
+default SMS application 
+
+Commands 
+The list of commands that this malware recognized can be seen in the table and screenshot below (organized by the order they were de.ned in the code): 
+Commands Description 
+Collects the address, body, date, and type columnsfrom all SMS messages from
+#conversations content://sms/conversations/, content://sms/inboxand content://sms/sent, and sends to the C&C server 
+Collects a list of all contacts from #contacts content://com.android.contacts/data/phones andsends to the C&C server Collects all calls performed from#calls content://call_log/calls and sends to the C&C server Collects list of installed package names and labels
+#apps 
+and sends to C&C server #bhist This command is ignored in this sampleSets time period for fetching C&C server
+#interval {set:number} commands Sets the phone numbers from which to intercept#intercept 
+SMS (“all” or a list of numbers)#send id:, to:, body: Sends SMS #ussd {to:address, tel:number} Calls a number via USSD framework #send_contacts Sends SMS to all contacts in phonebook#server Sets scheduled time to run #check_apps {path:uri_to_server} Sends a list of running apps to C&C server,
+downloads archive.zip .le from path de.ned in parameter as error.zip, and unzip it. Zip archive haspassword “encryptedz1p”. Default server name ishxxp://fwg23tt23qwef.ru/
+#send_mass {messages: {to:address, Sends multiple SMS messages to different 
+body:text}, delay:ms} addresses, with a delay between sendsStarts RLA service from ClearServiceRunnable,which intercepts events from key pressAKEYCODE_HOME, AKEYCODE_CAMERA,
+#lock and AKEYCODE_FOCUS. It also interceptsonBackPressed() Activity method, mutes ringer,clears all SMS noti.cations, stops itself, and makesthe phone unresponsive
+Disables actions listed under #lock command and#unlock 
+unlocks phone by stopping ClearServiceRunnableCalls a number using standard#makecall {number:tel_number} 
+android.intent.action.CALL API #openurl {.lesDir=j:url} Opens a webpage URLHooks to a number – it forwards all incoming SMS
+#hooksms {number:tel_number} messages to a number in the parameterSets task time to unparsable string value, which
+#selfdelete 
+stops its self-scheduling tasks 
+Figure 30: List of C&C SERVER commands 
+
+
+ApiRequest, ApiResponse, ApiInterfaceImpl 
+The ApiRequest, ApiResponse, and ApiInterfaceImpl classes enable communication with the C&C server. In the connection parameters initialization, the value ofreplaceWithRandomStr variable was set to true by default and is not changed within the code. 
+Figure 31: Building C&C server connection string 
+Figure 32: Connection parameters initialization 
+An algorithm was used to generate a random string for the C&C server URL. The API connection was then initialized, and the hostname of the C&C server was set up. 
+Figure 33: Building random string for the C&C server URL 
+Figure 34: API connection initialization 
+An example of C&C server API usage was shown as the C&C server command “#contacts“ was implemented. Finally, parameters for commands are appended asJSON format and converted to string. 
+Figure 35: Setting up C&C server hostname 
+Figure 36: Example of C&C server API calling 
+
+Best Practices and Trend Micro Solutions 
+In its 2020 Security Predictions, Trend Micro predicted the continued proliferation of mobile malware families, such as Geost, that target online banking and paymentsystems. Mobile users should safeguard themselves as they navigate the treacherous mobile landscape by following best practices for securing mobile devices. One 
+such step is to avoid downloading apps outside of.cial app stores. 
+Unfortunately, threat actors also .nd ways to spread malicious apps via legitimate app stores. Along with the continued campaigns of these stores to remove 
+compromised apps, users can also avoid such apps by carefully inspecting app reviews and other information before downloading. 
+
+https://blog.trendmicro.com/trendlabs-security-intelligence/dissecting-geost-exposing-the-anatomy-of-the-android-trojan-targeting-russian-banks/ 
+
+App users should scrutinize the permissions requested by an installed app before allowing them. Afterwards, users should watch out for changes in their devices, suchas the decreased performance or battery life, which may indicate a malware infection. In this case, users should delete the newly installed app immediately. Usersshould also conduct regular audits to remove unused apps. 
+For additional defense against mobile threats, users can install a multilayered mobile security solution such as Trend Micro. Mobile Security.to protect devices frommalicious applications and other mobile threats. 
+
+Indicator of Compromise 
+SHA 256 Detection Name 
+92394e82d9cf5de5cb9c7ac072e774496bd1c7e2944683837d30b188804c1 
+AndroidOS_Fobus.AXM 
+
+
+Related Posts: 
+
+New
+ Version of XLoader That Disguises as Android Apps and an iOS Pro.le Holds New Links to FakeSpy
+
+
+Anubis
+ Android Malware Returns with Over 17,000 Samples
+
+
+Malicious
+ Optimizer and Utility Android Apps on Google Play Communicate with Trojans that Install Malware, Perform Mobile Ad Fraud
+
+
+Mac
+ Malware that Spoofs Trading App Steals User Information, Uploads it to Website 
+
+
+
+
+Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware: 
+ENTERPRISE 
+. SMALL BUSINESS 
+. HOME 
+. 
+Tags: androidGeostMalwareRussianTrojan 
+
+
+Be the .rst to comment. 
+. 
+Subscribe 
+d 
+Add 
+Disqus 
+to 
+your 
+siteAdd 
+DisqusAdd 
+
+. D NtSll 
+M 
+Dt 
+
+Security Predictions for 2020 
+
+Cybersecurity in 2020 will be viewed through many lenses — from differing attacker motivations and cybercriminal arsenal to technological developments andglobal threat intelligence — only so defenders can keep up with the broad range of threats.
+Read our security predictions for 2020. 
+
+
+Business Process Compromise 
+
+Attackers are starting to invest in long-term operations that target speci.c processes enterprises rely on. They scout for vulnerable practices, susceptiblesystems and operational loopholes that they can leverage or abuse. To learn more, read our Security 101: Business Process Compromise. 
+
+
+Recent Posts 
+
+OpenSMTPD
+ Vulnerability (CVE-2020-8794) Can Lead to Root Privilege Escalation and Remote Code Execution
+
+
+Operation
+ Overtrap Targets Japanese Online Banking Users Via Bottle Exploit Kit and Brand-New Cinobi Banking Trojan 
+
+
+
+https://blog.trendmicro.com/trendlabs-security-intelligence/dissecting-geost-exposing-the-anatomy-of-the-android-trojan-targeting-russian-banks/ 
+
+March Patch Tuesday: LNK, Microsoft Word Vulnerabilities Get Fixes, SMBv3 Patch Follows
+
+Busting Ghostcat: An Analysis of the Apache Tomcat Vulnerability (CVE-2020-1938 and CNVD-2020-10487)
+
+Dissecting Geost: Exposing the Anatomy of the Android Trojan Targeting Russian Banks 
+
+
+
+Popular Posts 
+LokiBot Impersonates Popular Game Launcher and Drops Compiled C# Code File 
+
+Miscon.gured Container Abused to Deliver Cryptocurrency-mining Malware 
+
+Dissecting Geost: Exposing the Anatomy of the Android Trojan Targeting Russian Banks 
+
+February Patch Tuesday: Fixes for Critical LNK, RDP, Trident Vulnerabilities 
+
+Outlaw Updates Kit to Kill Older Miner Versions, Targets More Systems 
+
+
+Stay Updated 
+YouremailhereSubscribeEmail Subscription 
+Home and Home Of.ce 
+
+|
+
+For Business 
+
+
+|
+
+
+Security Intelligence
+
+|
+
+
+About Trend Micro 
+
+
+Asia Paci.c Region (APAC): Australia / New Zealand, 中国, .本, ...., 台灣 
+
+
+Latin America Region (LAR): Brasil, México 
+
+
+North America Region (NABU): United States, Canada 
+
+
+
+Europe, Middle East, & Africa Region (EMEA): France, Deutschland / .sterreich / Schweiz, Italia, Россия, Espa.a, United Kingdom / Ireland 
+
+
+Privacy Statement
+
+Legal Policies 
+
+
+Copyright . 2020 Trend Micro Incorporated. All rights reserved. 
+
+
+

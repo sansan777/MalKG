@@ -1,0 +1,153 @@
+T1	Exploit 69 77	Zero-day
+T2	Organization 452 469	VeriSign iDefense
+T3	AttackerGroup 624 628	NCPH
+T4	Time 719 723	2006
+T5	Attacker 586 597	Wicked Rose
+R1	belongsTo Arg1:T5 Arg2:T3
+R2	hasAttackTime Arg1:T5 Arg2:T4
+T6	Attacker 891 898	KuNgBiM
+T7	Attacker 899 904	Rodag
+T8	Attacker 905 912	Charles
+T9	Vulnerability 1387 1440	Microsoft Word Malformed OLE Structure Code Execution
+T10	Vulnerability 1445 1500	Microsoft Excel Malformed BIFF Structure Code Execution
+T11	Organization 1635 1656	Internet Storm Center
+T12	Organization 1726 1730	SANS
+T13	Organization 1697 1705	iDefense
+T14	MalwareFamily 1942 1948	GinWui
+T15	Software 2136 2155	Microsoft Word 2002
+T16	Time 2190 2202	May 12, 2006
+T17	Attacker 2507 2518	Wicked Rose
+R3	hasAttackTime Arg1:T17 Arg2:T16
+T18	Country 2330 2343	United States
+T19	Country 2355 2360	Japan
+T20	Malware 2388 2396	GinWui.A
+T21	Malware 2401 2409	GinWui.B
+R4	hasFamily Arg1:T20 Arg2:T14
+R5	hasFamily Arg1:T21 Arg2:T14
+T22	Indicator 2853 2862	nease.net
+T23	File 3582 3613	Planning document 5-16-2006.doc
+T24	Time 3780 3792	May 17, 2006
+T25	Payload 4008 4014	GinWui
+T26	TrojanHorse 4103 4109	GinWui
+T27	TrojanHorse 4171 4182	winguis.dll
+T28	Attacker 4417 4428	Wicked Rose
+T29	Malware 4450 4456	GinWui
+R6	authored Arg1:T28 Arg2:T29
+T30	Organization 4609 4612	WHG
+T31	Time 5475 5488	June 21, 2006
+T32	Attacker 5215 5226	Wicked Rose
+R7	hasAttackTime Arg1:T32 Arg2:T31
+R8	usesMalware Arg1:T28 Arg2:T27
+R9	usesMalware Arg1:T28 Arg2:T26
+T33	Attacker 5942 5948	RipGof
+T34	Time 6086 6095	June 2006
+R10	hasAttackTime Arg1:T33 Arg2:T34
+T35	TrojanHorse 6175 6183	RipGof.B
+R11	authored Arg1:T33 Arg2:T35
+T36	Vulnerability 6216 6224	MS06-027
+T37	TrojanHorse 6236 6244	RipGof.B
+T38	Indicator 6882 6897	enjoy.irdet.com
+T39	Indicator 6902 6918	enjoy.bmwsee.com
+T40	TrojanHorse 6850 6858	RipGof.B
+R12	indicates Arg1:T38 Arg2:T40
+R13	indicates Arg1:T39 Arg2:T40
+T41	TrojanHorse 7161 7169	RipGof.A
+T42	ExploitTargetObject 7297 7316	Jet Engine Database
+T43	TrojanHorse 7263 7271	RipGof.A
+T44	Time 7328 7338	March 2005
+T45	Attacker 7408 7414	RipGof
+R14	hasAttackTime Arg1:T45 Arg2:T44
+T46	Attacker 8398 8416	Evil Security Team
+T47	GeneralVirus 8449 8455	Dasher
+R15	usesMalware Arg1:T46 Arg2:T47
+T48	TrojanHorse 8474 8482	PcShares
+R16	usesMalware Arg1:T46 Arg2:T48
+T49	Time 8942 8956	April 22, 2005
+T50	Time 8988 9001	Dec. 19, 2005
+T51	Time 9064 9078	April 27, 2006
+T52	Time 9120 9134	April 30, 2006
+T53	Time 9169 9180	May 2, 2006
+T54	Time 9236 9248	May 12, 2006
+T55	Time 9320 9332	May 15, 2006
+T56	Time 9406 9418	May 16, 2006
+T57	Time 9462 9474	May 16, 2006
+T58	Time 9521 9533	May 18, 2006
+T59	Time 9565 9577	May 19, 2006
+T60	Time 9619 9631	May 20, 2006
+T61	Time 9650 9662	May 20, 2006
+T62	Time 9688 9700	May 29, 2006
+T63	Time 9719 9731	June 1, 2006
+T64	Time 9773 9785	June 9, 2006
+T65	Time 9806 9819	June 14, 2006
+T66	Time 9838 9851	June 15, 2006
+T67	Time 9874 9887	June 15, 2006
+T68	Time 9912 9925	June 16, 2006
+T69	Time 9942 9955	June 18, 2006
+T70	Time 9974 9987	June 23, 2006
+T71	Time 10002 10015	June 23, 2006
+T72	Time 10040 10053	June 25, 2006
+T73	Time 10072 10085	June 26, 2006
+T74	Time 10104 10118	Sept. 27, 2006
+T75	Time 10140 10154	Sept. 30, 2006
+T76	Time 10173 10185	Oct. 9, 2006
+T77	Time 10232 10244	September 7
+T78	Malware 8959 8967	RipGof.A
+R17	hasAttackTime Arg1:T78 Arg2:T49
+T79	GeneralVirus 9004 9010	Dasher
+R18	hasAttackTime Arg1:T79 Arg2:T50
+T80	TrojanHorse 9020 9027	PcShare
+R19	hasAttackTime Arg1:T80 Arg2:T50
+T81	Attacker 9045 9063	Evil Security Team
+R20	hasAttackTime Arg1:T81 Arg2:T50
+R21	usesMalware Arg1:T81 Arg2:T79
+R22	usesMalware Arg1:T81 Arg2:T80
+T82	TrojanHorse 9271 9279	GinWui.A
+R23	hasAttackTime Arg1:T82 Arg2:T54
+T83	TrojanHorse 9486 9494	GinWui.A
+R24	hasAttackTime Arg1:T83 Arg2:T57
+T84	TrojanHorse 9634 9642	GinWui.B
+R25	hasAttackTime Arg1:T84 Arg2:T60
+T85	TrojanHorse 9703 9711	GinWui.C
+R26	hasAttackTime Arg1:T85 Arg2:T62
+T86	Dropper 9788 9798	Mdropper.F
+R27	hasAttackTime Arg1:T86 Arg2:T64
+T87	Malware 9822 9830	Daserf.A
+R28	hasAttackTime Arg1:T87 Arg2:T65
+T88	Dropper 9854 9864	Mdropper.G
+R29	hasAttackTime Arg1:T88 Arg2:T66
+T89	TrojanHorse 9890 9904	Booli.A Trojan
+R30	hasAttackTime Arg1:T89 Arg2:T67
+T90	Malware 9928 9934	Flux.E
+R31	hasAttackTime Arg1:T90 Arg2:T68
+T91	Malware 9958 9966	RipGof.B
+R32	hasAttackTime Arg1:T91 Arg2:T69
+T92	Dropper 9990 10001	PPDropper.A
+R33	hasAttackTime Arg1:T92 Arg2:T70
+T93	TrojanHorse 10018 10032	Booli.B Trojan
+R34	hasAttackTime Arg1:T93 Arg2:T71
+T94	Malware 10056 10064	GinWui.D
+R35	hasAttackTime Arg1:T94 Arg2:T72
+T95	Malware 10088 10096	GinWui.E
+R36	hasAttackTime Arg1:T95 Arg2:T73
+T96	Dropper 10121 10132	PPDropper.F
+R37	hasAttackTime Arg1:T96 Arg2:T74
+T97	Malware 10157 10165	GinWui.G
+R38	hasAttackTime Arg1:T97 Arg2:T75
+T98	Attacker 10853 10865	MeiGui HeiKe
+T99	Indicator 10902 10918	www.mghacker.com
+T100	Attacker 12990 12993	WHG
+T101	MalwareFamily 13127 13133	GinWui
+T102	Email 11908 11924	ncph2005@126.com
+T103	Location 12059 12083	Zigong, Sichuan Province
+T104	Country 12102 12107	China
+T105	Email 13365 13376	whg@163.com
+T106	Attacker 13490 13493	WZT
+T107	AttackerGroup 13520 13524	NCPH
+R39	belongsTo Arg1:T106 Arg2:T107
+T108	AttackerGroup 13018 13022	NCPH
+R40	belongsTo Arg1:T100 Arg2:T108
+T109	Indicator 14200 14218	tthacker.cublog.cn
+T110	Indicator 14393 14411	windowsupdates.net
+T111	Location 14559 14566	Jiangsu
+T112	Location 14572 14579	Sichuan
+T113	Organization 14245 14250	WHOIS

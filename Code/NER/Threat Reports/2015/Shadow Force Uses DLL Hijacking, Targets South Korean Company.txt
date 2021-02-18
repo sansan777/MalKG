@@ -1,0 +1,55 @@
+Trend Micro
+About TrendLabs Security Intelligence Blog
+
+
+Home » Malware » Shadow Force Uses DLL Hijacking, Targets South Korean Company
+Shadow Force Uses DLL Hijacking, Targets SouthKorean Company
+
+Posted on:September 9, 2015 at 1:00 am
+Posted in:Malware, Targeted Attacks
+Author:
+Dove Chiu (Threat Researcher)
+
+
+0
+What sort of interest would a businessman have in a news agency?
+
+That was the question that arose from our recent investigation on an attack that appears to target amedia agency in South Korea. Shadow Force is a new backdoor that replaces a DLL called by a particularWindows service. Once that backdoor is open, the attacker can use one or more tools to open up furtherholes or cause damage. This type of backdoor attack has been previously documented by Trend Micro in ablog post in May.
+
+Beginnings of an attack
+
+The attack begins when the Windows OS starts the Microsoft Distributed Transaction Coordinator (MSDTC)
+service, which coordinates transactions that span multiple resource managers, such as databases, messagequeues, and file systems. When the target computer joins a domain, once the MSDTC service starts, it willsearch the registry.
+
+Figure 1. MSDTC service DLL plugins
+
+Specifically, the MTxOCI component in MSDTC service searches for three DLLs: oci.dll, SQLLib80.dll, andxa80.dll. oci.dll isn’t normally found on the computer, but in this case, the hacker has created a backdoorcomponent , renamed it to oci.dll, and placed it in %SystemRoot%\system32\. Once the oci.dll is in place, thehacker uses a remote job command to kill the MSDTC service (taskkill /im msdtc.exe /f), causing MSDTC toreload itself. This time, however, it looks for and finds the oci.dll. Calling this DLL opens up Shadow Force.
+
+
+Figure 2. The kill command kills the MSDTC service, causing it to restart
+
+This simple technique bypasses forensics tools such as autorun.exe, and makes live detection and remediationmore difficult.
+
+Analysis of Shadow Force
+
+Shadow Force has several different variations, both in DLL and EXE formats and in a 32-bit or 64-bitimplementations. The type of variation will rely on installe.exe, the file that downloads and installs ShadowForce on the computer. If install.exe runs in 32-bit mode, it will download SuperBot.exe. If it runs in 64-bitmode, it will download SuperBotx64.exe.
+
+Figure 3. Strings in the Shadow Force install.exe downloader
+
+
+Take SuperBot.exe as an example. It is a Shadow Force .exe version, and it will connect to a C&C server(irc[.]itembuy[.]org) like a normal IRC bot.
+
+Figure 4. The version string inside the Shadow Force 32-bit EXE version
+
+The DLL version of Shadow Force uses another type of attack. Rather than connect to a C&C server, it uses aport-reuse technique by downloading and installing the file npf.sys. The npf.sys file (downloaded by ShadowForce as a part of its function) comes from famous open source project Wireshark, a well-known networkprotocol analyzer. Therefore, the npf.sys has a valid signature and can be loaded in Windows, to be used incapturing network packets. Connecting to Shadow Force requires a specific password in the correct format.
+
+Figure 5. With port-reuse, the attacker is able to get in through an open port in the firewall and the client, justas legitimate users would
+
+Once an attacker has gained access to a client system on an otherwise protected network, there are a numberof tools that are available to exploit systems, networks, and beyond. These include fileh.exe, latinfect.exe,
+and aio.exe. More information about these tools, along with information about the presumed attacker can befound in the technical brief.
+
+Trend Micro Custom Defense solutions can protect organizations from this type of backdoor attack. Thesesolutions provide in-depth contextual analysis and insight that help IT administrators properly identifysuspicious behavior on individual computers and on the network, such as the access to computers and servers.
+
+ 
+
+Tags: APTbackdoorshadow forceSouth Korea

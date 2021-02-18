@@ -1,0 +1,25 @@
+T1	Campaign 305 322	Operation Cleaver
+T2	Campaign 508 525	Operation Cleaver
+T3	MD5 1895 1927	83868cdff62829fe3b897e2720204679
+T4	Malware 1929 1940	notepad.exe
+T5	MD5 1993 2025	bfc59f1f442686af73704eff6c0226f0
+T6	Malware 2027 2039	NOTEPAD2.EXE
+T7	MD5 2091 2123	e8ea10d5cde2e8661e9512fb684c4c98
+T8	Malware 2125 2137	Notepad3.exe
+T9	MD5 2189 2221	baa76a571329cdc4d7e98c398d80450c
+T10	Malware 2223 2235	Notepad4.exe
+T11	MD5 2287 2319	19d9b37d3acf3468887a4d41bf70e9aa
+T12	Malware 2321 2334	notepad10.exe
+T13	MD5 2385 2417	d378bffb70923139d6a4f546864aa61c
+R1	indicates Arg1:T3 Arg2:T4
+R2	indicates Arg1:T5 Arg2:T6
+R3	indicates Arg1:T7 Arg2:T8
+R4	indicates Arg1:T9 Arg2:T10
+R5	indicates Arg1:T11 Arg2:T12
+T14	Malware 5945 5957	Notepad4.exe
+T15	Campaign 15602 15609	Cleaver
+T16	Campaign 16926 16933	Cleaver
+T17	Malware 15063 15075	Notepad3.exe
+T18	Malware 15077 15089	Notepad4.exe
+T19	Malware 15095 15108	notepad10.exe
+T20	Malware 15110 15122	NOTEPAD2.EXE

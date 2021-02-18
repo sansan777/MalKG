@@ -1,0 +1,75 @@
+T1	Organization 26 41	The Citizen Lab
+T3	Organization 193 220	Gamma International UK Ltd.
+T2	Software 143 158	FinFisher Suite
+R1	hasProduct Arg1:T3 Arg2:T2
+T4	ExploitTargetObject 828 860	Bahraini pro-democracy activists
+T5	Time 864 869	April
+T6	Time 874 877	May
+T7	Person 778 791	Vernon Silver
+T8	Organization 795 809	Bloomberg News
+T9	Malware 1396 1402	Finspy
+T10	ExploitTargetObject 1663 1681	Bahraini activists
+T11	Country 1789 1796	Bahrain
+T12	ThreatActor 2148 2160	Melissa Chan
+T13	Organization 2195 2212	Aljazeera English
+T14	Malware 2312 2391	324783fbc33ec117f971cca77ef7ceaf7ce229a74edd6e2b3bd0effd9ed10dcc rar.‫الفعاليات
+T15	Malware 2393 2484	c5b39d98c85b21f8ac1bedd91f0b6510ea255411cf19c726545c1d0a23035914 _gpj.ArrestedXSuspects.rar
+T16	Malware 2485 2586	c5b37bb3620d4e7635c261e5810d628fc50e4ab06b843d78105a12cfbbea40d7 KingXhamadXonXofficialXvisitXtoX.rar
+T17	Malware 2587 2670	80fb86e265d44fbabac942f7b26c973944d2ace8a8268c094c3527b83169b3cc MeetingXAgenda.rar
+T18	Malware 2671 2745	f846301e7f190ee3bb2d3821971cc2456617edc2060b07729415c45633a5a751 Rajab.rar
+T19	Malware 2819 2895	49000fc53412bfda157417e2335410cf69ac26b66b0818a3be7eff589669d040 dialoge.exe
+T20	Malware 2896 2975	cc3b65a0f559fa5e6bf4e60eef3bffe8d568a93dbb850f78bdd3560f38218b5c exe.Rajab1.jpg
+T21	Malware 2976 3055	39b325bd19e0fe6e3e0fca355c2afddfe19cdd14ebda7a5fc96491fc66e0faba exe.image1.jpg
+T22	Malware 3056 3134	e48bfeab2aca1741e6da62f8b8fc9e39078db574881691a464effe797222e632 exe.Rajab.jpg
+T23	Malware 3135 3225	2ec6814e4bad0cb03db6e241aabdc5e59661fb580bd870bdb50a39f1748b1d14 exe.Arrested Suspects.jpg
+T24	Malware 3226 3361	c29052dc6ee8257ec6c74618b6175abd6eb4400412c99ff34763ff6e20bab864 News about the existence of a new dialogue between AlWefaq & Govt..doc
+T25	Time 3367 3376	July 2012
+T26	Obfuscation 3590 3609	righttoleftoverride
+T27	Obfuscation 3612 3615	RLO
+T28	Malware 4594 4615	Arrested Suspects.jpg
+T29	Malware 4619 4644	gpj.stcepsuS detserrA.exe
+T30	Indicator 4756 4821	C:\Documents and Settings\XPMUser\Local Settings\Temp\TMP51B7AFEF
+T31	TrojanHorse 5130 5173	C:\DOCUME~1\%USER%\LOCALS~1\Temp\delete.bat
+T32	TrojanHorse 5174 5218	C:\DOCUME~1\%USER%\LOCALS~1\Temp\driverw.sys
+T33	Indicator 5287 5394	C:\Documents and Settings\%USER%\Application Data\Microsoft\Installer\{5DA45CC9-D840-47CC9F86-FD2E9A718A41}
+T34	TrojanHorse 5499 5510	driverw.sys
+T35	TrojanHorse 5532 5542	delete.bat
+T36	Time 5745 5754	July 2012
+T37	MalwareCharacteristics 5879 5896	process hollowing
+T38	Malware 5955 5967	winlogon.exe
+T39	Indicator 6893 7002	y:\lsvn_branches\finspyv4.01\finspyv2\src\target\bootkit_x32driver\objfre_w2k_x86\i386\bootkit_x32driv er.pdb
+T40	Malware 7244 7250	FinSpy
+R2	indicates Arg1:T39 Arg2:T40
+T41	Obfuscation 7705 7723	virtualised packer
+T42	Software 8256 8263	OllyDbg
+T43	Software 8742 8755	DbgBreakPoint
+T44	Indicator 10509 10566	C:\Windows\Installer\{49FD463C-18F1-63C4-8F12-49F518F127}
+T45	File 11104 11121	t111o00000000.dat
+T46	Time 11200 11224	Thu Jun 14 2012 12:31:34
+T47	Time 11359 11383	Thu Jun 14 2012 12:32:18
+T48	Time 11500 11524	Thu Jun 14 2012 12:55:12
+T49	Indicator 12026 12042	XXY1TTTTTTTT.dat
+T50	Obfuscation 12434 12445	AES-256-CBC
+T51	File 15531 15574	%USERPROFILE%\Local Settings\Temp\smtXX.tmp
+T52	File 15642 15651	smtXX.tmp
+T53	File 15884 15900	1431028D41FD.dat
+T54	Address 16788 16801	77.69.140.194
+T55	Organization 16869 16876	Batelco
+T56	Organization 16819 16824	WHOIS
+T57	Address 17521 17534	77.69.140.194
+T58	Address 17498 17512	192.168.131.65
+T59	Address 17553 17567	192.168.131.65
+T60	Address 17576 17589	77.69.149.194
+T61	Malware 18059 18070	finspyv4.01
+T62	Malware 18077 18085	finspyv2
+T63	MD5 19707 19739	c488a8aaef0df577efdf1b501611ec20
+T64	SHA-1 19746 19786	5ea6ae50063da8354e8500d02d0621f643827346
+T65	SHA-256 19795 19859	81531ce5a248aead7cda76dd300f303dafe6f1b7a4c953ca4d7a9a27b5cd6cdf
+T66	Indicator 19906 19934	tiger.gamma-international.de
+T67	Indicator 19935 19954	ff-demo.blogdns.org
+T68	Person 20071 20084	Martin Muench
+T69	Organization 20099 20123	Gamma International GmbH
+T70	Location 20178 20184	Munich
+T71	Email 20254 20281	info@gamma-international.de
+T72	Time 20291 20316	2011-04-04T11:24:20+02:00
+T73	Indicator 20682 20701	ff-demo.blogdns.org

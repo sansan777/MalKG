@@ -1,0 +1,185 @@
+T1	Campaign 4 8	VOHO
+T2	Time 94 106	July of 2012
+T3	Organization 112 128	RSA FirstWatchSM
+T4	Person 635 647	Will Gragido
+T5	Campaign 2014 2018	VOHO
+T6	MalwareCharacteristics 2141 2167	Advanced Persistent Threat
+T7	Location 2333 2342	Hong Kong
+T8	Malware 2423 2432	Gh0st RAT
+R1	hasAttackLocation Arg1:T5 Arg2:T7
+T9	Location 2566 2580	Washington, DC
+T10	Location 2585 2606	Boston, Massachusetts
+T11	Campaign 2820 2826	Aurora
+T12	Campaign 2833 2841	Ghostnet
+T13	MalwareCharacteristics 3184 3196	Water Holing
+T14	Payload 3877 3885	gh0strat
+T15	ExploitTargetObject 4254 4282	hxxp://www.xxxxxxxxtrust.com
+T16	ExploitTargetObject 4287 4312	hxxp://xxxxxxcountymd.gov
+T17	ExploitTargetObject 4555 4570	hxxp://ifxx.org
+T18	ExploitTargetObject 4575 4598	hxxp://xxxxxxcenter.org
+T19	ExploitTargetObject 4603 4617	hxxp://xxi.org
+T20	ExploitTargetObject 4622 4644	hxxp://xxxxxxx.prio.no
+T21	ExploitTargetObject 4649 4675	hxxp:/xxxxxxxxpolitics.com
+T22	ExploitTargetObject 4680 4700	hxxp://www.rfxxx.org
+T23	Organization 4734 4783	Defense Industrial Base and Educational community
+T24	ExploitTargetObject 4839 4860	hxxp://www.gftxxx.org
+T25	ExploitTargetObject 4865 4894	hxxp://www.xxxxxxantennas.com
+T26	ExploitTargetObject 5064 5087	Defense Industrial Base
+T27	Exploit 5261 5286	hxxp://xxxxxxxcurling.com
+T28	Vulnerability 5422 5435	CVE-2012-1889
+T29	Vulnerability 5455 5468	CVE-2012-1723
+R2	exploits Arg1:T27 Arg2:T28
+R3	exploits Arg1:T27 Arg2:T29
+T30	Malware 5514 5523	Gh0st RAT
+T31	Address 5569 5581	58.64.155.59
+T32	Address 5586 5598	58.64.155.57
+R4	indicates Arg1:T31 Arg2:T30
+R5	indicates Arg1:T32 Arg2:T30
+T33	Vulnerability 5809 5822	CVE-2008-3869
+T34	Vulnerability 5823 5836	CVE-2008-3870
+T35	Exploit 6416 6425	iframe.js
+T36	Malware 6525 6534	Gh0st RAT
+T37	Malware 6711 6716	gh0st
+T38	Vulnerability 6928 6941	CVE-2012-1889
+T39	Vulnerability 6961 6974	CVE-2012-1723
+R6	exploits Arg1:T37 Arg2:T38
+R7	exploits Arg1:T37 Arg2:T39
+T40	Time 7080 7095	June 25th, 2012
+T41	Time 7100 7114	July 18th 2012
+T42	Vulnerability 7156 7169	CVE-2012-1889
+T43	Vulnerability 7309 7322	CVE-2012-1889
+T44	Indicator 7429 7485	http://www.xxxxxxxcurling.com/Results/cx/magma/iframe.js
+T45	Indicator 7488 7545	http://www.xxxxxxxcurling.com/Results/cx/magma/module.php
+T46	Indicator 7548 7604	http://www.xxxxxxxcurling.com/Results/cx/magma/engine.js
+T47	Indicator 7607 7660	http://www.xxxxxxxcurling.com/Results/cx/magma/if.htm
+T48	Indicator 7663 7720	http://www.xxxxxxxcurling.com/Results/cx/magma/enblue.htm
+T49	Indicator 7723 7778	http://www.xxxxxxxcurling.com/Results/cx/magma/book.cab
+T50	Vulnerability 8330 8343	CVE-2007-4848
+T51	Exploit 8206 8215	Engine.js
+R8	exploits Arg1:T51 Arg2:T50
+T52	Organization 8384 8395	Trend Micro
+T53	Organization 8400 8406	McAfee
+T54	Organization 8411 8419	Symantec
+T55	Exploit 8115 8125	Module.php
+T56	Exploit 7822 7831	Iframe.js
+T57	Exploit 8554 8560	if.htm
+T58	Time 8775 8787	July of 2011
+R9	hasAttackTime Arg1:T51 Arg2:T58
+T59	Person 8878 8890	Mila Parkour
+T60	Region 8967 8971	Asia
+T61	Exploit 9000 9008	xKungfoo
+T62	Exploit 9326 9334	xKungFoo
+T63	Software 9752 9762	Windows XP
+T64	Software 9767 9779	Windows 2003
+T65	Software 9784 9806	Windows VistaWindows 7
+T66	Exploit 9968 9978	Enblue.htm
+T67	Vulnerability 9988 10001	CVE-2012-1889
+R10	exploits Arg1:T66 Arg2:T67
+T68	Malware 10104 10113	gh0st RAT
+T69	Payload 10354 10362	Book.cab
+T70	Payload 10363 10371	Book.cab
+T71	Malware 10467 10476	gh0st RAT
+T72	Malware 10491 10501	vptray.exe
+T73	MD5 10504 10537	e6b43 c299a9a1f5abd9be2b729e54577
+R11	indicates Arg1:T73 Arg2:T72
+T74	Indicator 10781 10830	hxxp://www.xxxxxxxcurling.com/Docs/BW06/iframe.js
+T75	Indicator 10833 10883	hxxp://www.xxxxxxxcurling.com/Docs/BW06/module.php
+T76	Indicator 10886 10935	hxxp://www.xxxxxxxcurling.com/Docs/BW06/engine.js
+T77	Indicator 10938 10984	hxxp://www.xxxxxxxcurling.com/Docs/BW06/if.htm
+T78	Indicator 10987 11037	hxxp://www.xxxxxxxcurling.com/Docs/BW06/applet.jar
+T79	Exploit 11073 11079	If.htm
+T80	Obfuscation 11321 11327	XOR 77
+T81	MD5 11391 11423	2fe340fe2574ae540bd98bd9af8ec67d
+T82	Malware 11192 11202	applet.jar
+R12	indicates Arg1:T81 Arg2:T82
+T83	TrojanHorse 14369 14378	Gh0st RAT
+T84	ExploitTargetObject 15330 15340	Dalai Lama
+T85	Malware 15852 15856	ZeuS
+T86	Malware 16870 16880	VPTray.EXE
+T87	MD5 16881 16913	e6b43c299a9a1f5abd9be2b729e54577
+T88	Malware 19106 19112	UP.BAK
+T89	Address 20173 20187	134.255.242.47
+T90	Malware 20070 20080	VPTray.EXE
+R13	indicates Arg1:T89 Arg2:T90
+T91	MD5 21120 21152	acc583fc596d38626d37cbf6de8a01cb
+T92	Malware 21153 21163	VPTray.EXE
+T93	MD5 21164 21196	b894efe4173f90479fddff455daf6ff3
+T95	Indicator 22869 22888	usc-data.suroot.com
+T96	Malware 22834 22844	VPTray.EXE
+R15	indicates Arg1:T95 Arg2:T96
+T97	Malware 23442 23453	Svohost.EXE
+T98	MD5 23454 23486	2fe340fe2574ae540bd98bd9af8ec67d
+R14	indicates Arg1:T98 Arg2:T97
+R16	indicates Arg1:T93 Arg2:T92
+R17	indicates Arg1:T91 Arg2:T92
+R18	indicates Arg1:T87 Arg2:T86
+T94	Malware 23960 23971	SVOHOST.EXE
+T99	Obfuscation 24880 24890	HEX digits
+T100	Address 26066 26078	58.64.155.59
+T101	Malware 26092 26103	SVOHOST.EXE
+R19	indicates Arg1:T100 Arg2:T101
+T102	Campaign 26835 26839	VOHO
+T103	Time 27285 27298	June 25, 2012
+T104	Software 27382 27399	Internet Explorer
+T105	Time 27409 27421	July 9, 2012
+R20	hasAttackTime Arg1:T102 Arg2:T103
+R21	hasAttackTime Arg1:T102 Arg2:T105
+T106	Time 27829 27838	July 10th
+R22	hasAttackTime Arg1:T102 Arg2:T106
+T107	ExploitTargetObject 27949 27957	Sun Java
+T108	Time 27975 27988	July 16, 2012
+R23	hasAttackTime Arg1:T102 Arg2:T108
+T109	Time 28188 28201	July 18, 2012
+R24	hasAttackTime Arg1:T102 Arg2:T109
+T110	MD5 32602 32634	03db29c71b0031af08081f5e2f7dcdf2
+T111	MD5 32635 32667	644161889f0f60885b2a0eec12038b66
+T112	Address 32712 32725	58.64.143.245
+T113	Indicator 32369 32383	Wsdhealthy.com
+T114	Indicator 32796 32815	usc-data.suroot.com
+T115	Indicator 32816 32836	usa-mail.scieron.com
+T116	Indicator 32837 32853	dll.freshdns.org
+T117	Exploit 33036 33083	www.wsdhealthy.com/userfiles/file/Applet19.html
+T118	Exploit 33084 33130	www.wsdhealthy.com/userfiles/file/Applet19.exe
+T119	Exploit 33131 33176	www.wsdhealthy.com/userfiles/file/Applet.html
+T120	Exploit 33177 33221	www.wsdhealthy.com/userfiles/file/Applet.jar
+T121	Exploit 33222 33266	www.wsdhealthy.com/userfiles/file/Applet.exe
+T122	Vulnerability 33446 33459	CVE–2011-3544
+T123	Address 33797 33809	58.64.155.59
+T124	Address 33825 33837	58.64.155.57
+T125	Address 33853 33866	58.64.143.245
+T126	Malware 33811 33820	gh0st RAT
+R25	indicates Arg1:T123 Arg2:T126
+R26	indicates Arg1:T124 Arg2:T126
+R27	indicates Arg1:T125 Arg2:T126
+T127	Indicator 33890 33904	wsdhealthy.com
+T128	Indicator 33952 33970	*******curling.com
+T129	Indicator 34018 34037	usc-data.suroot.com
+T130	Indicator 34053 34073	usa-mail.scieron.com
+T131	Indicator 34089 34105	dll.freshdns.org
+T132	Malware 34039 34048	gh0st RAT
+T133	Malware 34075 34084	gh0st RAT
+T134	Malware 34107 34116	gh0st RAT
+R28	indicates Arg1:T127 Arg2:T132
+R29	indicates Arg1:T128 Arg2:T132
+R30	indicates Arg1:T129 Arg2:T132
+R31	indicates Arg1:T130 Arg2:T133
+R32	indicates Arg1:T131 Arg2:T134
+T135	MD5 34591 34623	03db29c71b0031af08081f5e2f7dcdf2
+T136	MD5 34624 34656	644161889f0f60885b2a0eec12038b66
+T137	MD5 34657 34689	e6b43c299a9a1f5abd9be2b729e54577
+T138	MD5 34690 34722	2fe340fe2574ae540bd98bd9af8ec67d
+T139	Address 34758 34770	58.64.155.59
+T140	Address 34771 34783	58.64.155.57
+T141	Address 34784 34797	58.64.143.245
+T142	Address 34798 34810	64.26.174.74
+T143	Malware 34150 34159	gh0st RAT
+R33	indicates Arg1:T135 Arg2:T143
+R34	indicates Arg1:T136 Arg2:T143
+R35	indicates Arg1:T137 Arg2:T143
+R36	indicates Arg1:T138 Arg2:T143
+T144	Malware 35011 35020	Gh0st RAT
+R37	indicates Arg1:T139 Arg2:T144
+R38	indicates Arg1:T140 Arg2:T144
+R39	indicates Arg1:T141 Arg2:T144
+R40	indicates Arg1:T142 Arg2:T144
+T145	Exploit 35374 35382	xKungFoo

@@ -1,0 +1,141 @@
+T1	BusinessInformation 1218 1234	design documents
+T2	BusinessInformation 1236 1244	formulas
+T3	BusinessInformation 1250 1273	manufacturing processes
+T4	Campaign 1737 1742	Nitro
+T5	Time 1776 1785	July 2011
+T6	Time 1808 1822	September 2011
+R1	hasAttackTime Arg1:T4 Arg2:T6
+R2	hasAttackTime Arg1:T4 Arg2:T5
+T7	Exploit 1870 1889	Command and Control
+T8	Exploit 1891 1894	C&C
+R3	involvesMalware Arg1:T4 Arg2:T8
+R4	involvesMalware Arg1:T4 Arg2:T7
+T9	Time 1930 1940	April 2011
+R5	hasAttackTime Arg1:T4 Arg2:T9
+T10	ExploitTargetObject 2252 2256	NGOs
+R6	targets Arg1:T4 Arg2:T10
+T11	ExploitTargetObject 3225 3236	Fortune 100
+R7	targets Arg1:T4 Arg2:T11
+T12	TrojanHorse 4557 4566	PoisonIvy
+T13	Exploit 5206 5219	dumped hashes
+R8	involvesMalware Arg1:T4 Arg2:T12
+T14	Campaign 6079 6084	Nitro
+R9	involvesMalware Arg1:T14 Arg2:T13
+T15	Country 6386 6388	US
+T16	Country 6390 6400	Bangladesh
+T17	Country 6409 6411	UK
+R10	hasAttackLocation Arg1:T14 Arg2:T15
+R11	hasAttackLocation Arg1:T14 Arg2:T16
+R12	hasAttackLocation Arg1:T14 Arg2:T17
+T18	Campaign 7150 7155	Nitro
+T19	Country 6887 6894	Denmark
+T20	Country 6908 6915	Belgium
+T21	Country 6921 6932	Netherlands
+T22	Country 6935 6940	Italy
+T23	Country 6944 6949	Japan
+T24	Country 6952 6964	Saudi Arabia
+R13	hasAttackLocation Arg1:T18 Arg2:T24
+R14	hasAttackLocation Arg1:T18 Arg2:T23
+R15	hasAttackLocation Arg1:T18 Arg2:T22
+R16	hasAttackLocation Arg1:T18 Arg2:T21
+R17	hasAttackLocation Arg1:T18 Arg2:T20
+R18	hasAttackLocation Arg1:T18 Arg2:T19
+T25	Region 7875 7880	Hebei
+T26	Attacker 7944 7956	Covert Grove
+T27	Country 8370 8375	China
+T28	TrojanHorse 9428 9438	Poison Ivy
+T29	Attacker 9134 9146	Covert Grove
+R19	usesMalware Arg1:T29 Arg2:T28
+T30	Malware 9462 9465	RAT
+R20	authored Arg1:T29 Arg2:T30
+T31	Indicator 9510 9527	poisonivy-rat.com
+R21	indicates Arg1:T31 Arg2:T28
+T32	Indicator 10265 10292	AntiVirus_update_package.7z
+T33	Indicator 10293 10307	acquisition.7z
+T34	Indicator 10308 10316	offer.7z
+T35	Indicator 10317 10342	update_flashplayer10ax.7z
+R22	indicates Arg1:T32 Arg2:T28
+R23	indicates Arg1:T33 Arg2:T28
+R24	indicates Arg1:T34 Arg2:T28
+R25	indicates Arg1:T35 Arg2:T28
+T36	Indicator 10863 10883	%Temp%\happiness.txt
+T37	Indicator 10886 10901	%Temp%\xxxx.exe
+T38	Indicator 10981 10994	happiness.txt
+T39	MalwareCharacteristics 11518 11526	Camellia
+T40	Indicator 11979 12049	C:\Documents and Settings\Administrator\桌面\新建文件夹\读取文件\Release\读取文件.pdb
+T41	TrojanHorse 12337 12351	Backdoor.Odivy
+T42	Address 12641 12654	204.74.215.58
+T43	Indicator 12744 12764	antivirus-groups.com
+R26	indicates Arg1:T42 Arg2:T41
+R27	indicates Arg1:T43 Arg2:T41
+R28	indicates Arg1:T36 Arg2:T41
+R29	indicates Arg1:T37 Arg2:T41
+R30	indicates Arg1:T38 Arg2:T41
+R31	hasCharacteristics Arg1:T41 Arg2:T39
+R32	indicates Arg1:T40 Arg2:T41
+T44	Indicator 12826 12846	pr[REMOVED].noip.org
+T45	Address 12848 12862	173.252.207.71
+T46	Address 12864 12878	173.252.205.36
+T47	Address 12880 12894	173.252.205.37
+T48	Address 12896 12910	173.252.205.64
+T49	Indicator 12912 12932	antivirus-groups.com
+T50	Address 12934 12947	74.82.166.205
+T51	Address 12949 12962	204.74.215.58
+T52	Indicator 12964 12978	domain.rm6.org
+T53	Address 12980 12993	216.131.95.22
+T54	Address 12995 13008	222.255.28.27
+T55	Indicator 13048 13068	anti-virus.sytes.net
+T56	Address 13069 13083	173.252.205.36
+T57	Address 13085 13099	173.252.205.37
+T58	Address 13101 13115	173.252.205.64
+T59	Malware 13279 13292	Backdoor.Sogu
+T60	Attacker 13683 13692	Sogu gang
+R33	authored Arg1:T60 Arg2:T59
+T61	MD5 14829 14861	091457444b7e7899c242c5125ddc0571
+T62	MD5 14862 14894	6e99585c3fbd4f3a55bd8f604cb35f38
+T63	MD5 14895 14927	07e266f7fb3c36a1f3a5c5d2d229a478
+T64	MD5 14928 14960	17e7022496d8092d3ca76ae9524a7260
+T65	MD5 14961 14993	2f37912e7cb6e5c478e6dc3d0e381a24
+T66	MD5 14994 15026	5d075e9536c5494745135c1176981c96
+T67	MD5 15027 15059	76000c77ea9a214f5b2ae8cc387809db
+T68	MD5 15060 15092	a98d2c90b9494fc885c7cd35d43666ea
+T69	MD5 15093 15125	c128c40bd8acb282288e8138352ce4e1
+T70	MD5 15126 15158	cab66da82594ff5266ac8dd89e3d1539
+T71	MD5 15159 15191	70fcb3446fce23b18d9a12b2ed911e52
+T72	MD5 15192 15224	c53c93a445d751387eb167e5a2b901da
+T73	MD5 15225 15257	dd5715cb3b0cdddbe131f03cc08f0f57
+T74	MD5 15258 15290	0f54a9757f1a2fef2b04b776714a7546
+T75	MD5 15291 15323	37f70717f549f1938e5785527e56978d
+T76	MD5 15324 15356	31346e5b39ddb095d76071ac86da4c2e
+T77	MD5 15357 15389	330ddac1f605ff8abf60880c584ed797
+T78	MD5 15390 15422	457a2a8d0784e9fc8e49f6ef60f7f29e
+T79	MD5 15423 15455	87aeec7f7c4ec1b6dc5e6c39b28d8273
+T80	MD5 15456 15488	8d36fd85d9c7d1f4bb170a28cc23498a
+T81	MD5 15489 15521	de7e293aa9c4d849dc080f3e87573b24
+T82	MD5 15522 15554	64a4ad90a55e7b6c30c46135435f50a2
+R34	indicates Arg1:T44 Arg2:T28
+R35	indicates Arg1:T49 Arg2:T28
+R36	indicates Arg1:T52 Arg2:T28
+R37	indicates Arg1:T55 Arg2:T28
+R19	indicates Arg1:T61 Arg2:T28
+R20	indicates Arg1:T62 Arg2:T28
+R21	indicates Arg1:T63 Arg2:T28
+R22	indicates Arg1:T64 Arg2:T28
+R23	indicates Arg1:T65 Arg2:T28
+R24	indicates Arg1:T66 Arg2:T28
+R25	indicates Arg1:T67 Arg2:T28
+R26	indicates Arg1:T68 Arg2:T28
+R27	indicates Arg1:T69 Arg2:T28
+R28	indicates Arg1:T70 Arg2:T28
+R29	indicates Arg1:T71 Arg2:T28
+R30	indicates Arg1:T72 Arg2:T28
+R31	indicates Arg1:T73 Arg2:T28
+R32	indicates Arg1:T74 Arg2:T28
+R33	indicates Arg1:T75 Arg2:T28
+R34	indicates Arg1:T76 Arg2:T28
+R35	indicates Arg1:T77 Arg2:T28
+R36	indicates Arg1:T78 Arg2:T28
+R37	indicates Arg1:T79 Arg2:T28
+R38	indicates Arg1:T80 Arg2:T28
+R39	indicates Arg1:T81 Arg2:T28
+R40	indicates Arg1:T82 Arg2:T28

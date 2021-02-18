@@ -1,0 +1,433 @@
+MORPHISECCYBERSECURITYBLOGIranian 
+Fileless 
+Attack In.ltrates Israeli Organizations. 
+Posted 
+by 
+Michael 
+Gorelik 
+on 
+Apr 
+27, 
+2017 
+7:11:43 PM 
+Find 
+me 
+on: 
+Tweet 
+ShareShare33INTRODUCTION 
+From April 19-24, 2017, a politically-motivated, targeted campaign was carried out 
+against numerous Israeli organizations. Morphisec researchers began investigatingthe attacks on April 24 and continue to uncover more details. Initial reports of the attacks, 
+published 
+April 
+26 
+(in 
+Hebrew) 
+by 
+the 
+Israel 
+National 
+Cyber 
+Event 
+Readiness 
+Team 
+(CERT-IL) 
+and 
+The 
+Marker, 
+con.rm 
+that 
+the 
+attack 
+was 
+delivered. through compromised email accounts at Ben-Gurion University and sent to multipletargets across Israel. Ironically, Ben-Gurion University is home to Israel’s CyberSecurity Research Center. Investigators put the origin of the attack as Iranian;Morphisec’s research supports this conclusion and attributes the attacks to thesame infamous hacker group responsible for the OilRig malware campaigns. 
+The attack was delivered via Microsoft Word documents that exploited a formerzero-day vulnerability in Word, CVE-2017-0199, to install a .leless variant of theHelminth Trojan agent. Microsoft released the patch for the vulnerability on April 11,but many organizations have not yet deployed the update. The attackers actuallybased their attack on an existing Proof-of-Concept method that was published byresearchers after the patch release. 
+By hunting through known malware repositories, Morphisec identi.ed matchingsamples uploaded by Israeli high-tech development companies, medicalorganizations and education organizations, indicating that they were victims of theattack. For security purposes, Morphisec is not revealing these names. 
+The delivery was executed by compromising the email accounts of a few high-pro.le individuals at Ben-Gurion University. The Word document was sent as a replyto legitimate emails sent from those accounts and was propagated to more than 250individuals in different Israeli companies, according to CERT-IL. 
+Upon deeper investigation into the installed Helminth .leless agent, we identi.ed anear perfect match to the OilRig campaign executed by an Iranian hacker groupagainst 140 .nancial institutions in the Middle East last year, as analyzed byFireEye 
+, Palo Alto Networks and Logrhythm. This group has become one of themost active threat actors, with noteworthy abilities, resources and infrastructure;speculations indicate the hacking organization to be sponsored by the Iranian government. In other recent attacks (January 2017), the group used a fake JuniperNetworks VPN portal and fake University of Oxford websites to deliver malware asdescribed by ClearSky. 
+Our report presents the technical details of the attack, emphasizing differences fromlast year’s attack. In particular, there are several enhancements to different evasivemechanisms and some modi.cations in the communications protocol, whichdelivers PowerShell commands from the C&C. 
+The most important difference is that the use of macros was exchanged with avulnerability exploit. With their ability to set up the attack in a relatively short time,the threat actors could correctly speculate that their window of opportunity between patch release and patch rollout was still open. 
+At the time of publication, the C&C servers are still active and will be listed herein asall other signatures and indicators of compromise. 
+
+TECHNICAL ANALYSIS 
+Word Delivery 
+The different delivered documents, as shown below, are generally named with somerandom number <random number>.doc. 
+
+
+CVE-2017-0199 Vulnerability Exploit 
+The most notable difference from last year’s OilRig campaign is the way the attackwas delivered. In the previous campaign, the Iranian group sent specially craftedExcel and Word .les, which contained macros that targeted individuals wereconvinced to enable. 
+In this campaign, no macros were required. Each document utilized the vulnerability by an embedded link that delivers an .hta .le (html executable).. 
+Morphisec identi.ed the following delivered test<number>.hta .le with the same. signature delivered from the following domains: 
+
+SHA256: 5ac61ea5142d53412a251eb77f2961e3334a00c83da9087d355a49618220ac43 
+The .hta .le is immediately executed by mshta.exe, the Windows process whichexecutes html executables. As a result, the user is usually shown a warningmessage, despite the fact that the HTA is still executed even if the user chooses“No”: The .hta .le in this attack is much more sophisticated than in previous versions, andactually disables this message by sending an “Enter” command to the warning window. This is covered in the next section. 
+HTA Execution and Persistency 
+The HTA execution goes through the following steps: 
+1. 
+Before installing the agent, the .hta .le sends the “Enter” key into the Wordapplication to remove the warning message and minimize any appearance ofsuspicious execution. It is done by creating and executing a 1.vbs script. 
+
+2. 
+The next step writes and executes the 0011.ps1 PowerShell script, which isdescribed in the following section. 
+
+3. 
+The last step kills the original process that activated the .hta .le, to remove any. suspicion. 
+
+
+Helminth Trojan Installation and Persistency 
+0011.ps1 script, which is activated by the .hta .le, is in charge of generating the Helminth Trojan PowerShell and VBS .les.. 
+
+
+Morphisec identi.ed the following structure:. 
+
+This structure matches the attack structure from October 2016, as described byLogrhythm: 
+
+Aside the unique generation of the .les, the structure and the functionality of thetrojan is very similar to the previous campaign: 
+1. 
+The PowerShell script ps1 creates similar variants of Helminth trojanPowerShell and VBS .les templates (DnS1.Ps1, DnE1.Ps1, backup1.vbs). Those templates are regenerated on the infected computer by replacement ofall variables and function names to random names in order to slow down 
+
+2. 
+All the scripts are installed in the Public\Libraries\RecordedTV\ folder. 
+
+3. 
+As in the previous campaign, persistency is achieved by adding a scheduletask with a similar name to the Google update task(“GoogleUpdateTasksMachineUI”), which executes vbs every 3 minutes: 
+
+
+detection and remediation. 
+
+
+Note: All the parameters in the 0011.ps1 script can be recon.gured, thereforesome of the names could be different for the tasks and locations. 
+Communication Protocol 
+We will focus here on the DnE1.Ps1 .le because all other .les are almost identical. to the previous campaign. This .le executes some of the same commands executed. by VBS script in the previous campaign, but there are differences as well. The script connects to a C&C server – vpsupdate[.]tk. At the time of this report’s publication,the C&C server is still live; the server was .rst registered on April 16, 2017. The goal. of the script is to: 
+
+Download 
+bat script
+
+
+Execute 
+it and upload the results back to the C&C
+
+
+Clear 
+traces 
+
+
+At each new activation (.rst) activation of the download command (GET request),the infected computer receives a bat script for activation from the C&C: 
+
+vpsupdate[.]tk/index.aspx?id=<random character><randomnumber>[b] (the “b” is for download) 
+The .le name of the bat script is then delivered through the response headers, andthe content of the bat script is delivered through the response. Both of them are encoded in base 64. 
+The name of the .le is default.bat (decoded from Content-Disposition property in theheader) and it is saved temporary in the dn folder (described in the next section). 
+Note: Morphisec identi.ed several other samples of communication with differentC&C servers (“alenupdate[.]info” and “maralen[.]tk”) in which a more advancedcustomized version of Mimikatz was sent to speci.c users, and an additional agentwas installed in the “C:\Program Files (x86)\Microsoft Idle\” directory: Back to the popular variant of the protocol: As soon as the .le executes and theresult output is written to default.bat.txt (similarly to the previous campaign), theresulting .le is uploaded back to the C&C using the following URL command (POSTrequest): 
+
+vpsupdate[.]tk/index.aspx?id=<random character><randomnumber>[u] (the “u” is for upload) 
+At the same time, the DnE1.Ps1 is executed. The DnS1.Ps1 is also executed and communicates with the C&C using DNS exchange queries (the same as in theprevious campaign). This kind of communication is very hard to block since DNS isa basic functionality required in any organization. 
+Delivered Commands 
+The bat script is a customized version of Mimikatz (with slight modi.cation from thelast campaign). Its goal is to gather information from the computer and the network: 
+
+The added commands are chcp to handle non-ASCII characters (e.g. Hebrew) andthe validation of the scheduled task (which should have been added by thepersistency mechanism). 
+As mentioned in the previous section, Morphisec identi.ed an advanced version ofthe same bat script communicating with the alenupdate[.]info C&C. In that case, the information that is gathered includes A.V., Firewall and AntiSpy product information.The persistent tasks are slightly different as well, “Google Update Core” and “Google Sync Core”. 
+
+
+Remediation 
+1. 
+The scheduled task “GoogleUpdateTasksMachineUI” should be removed. Note that regular Google update tasks look like GoogleUpdateTask[Machine|User]*without the “s” in Tasks). 
+
+1. In case “Google Update Core” or “Google Sync Core” exists, those need to be removed as well. 
+
+2. 
+Access Public\Libraries\RecordedTV folder. Note that the Libraries folder in Public is hidden, and you should delete the folder and not the RecordedTVicon – if you have only the icon, then the agent is not installed. 
+
+3. 
+If the following directory exists, remove it: “Program Files(x86)\Microsoft Idle” 
+
+4. 
+If the following directory contains “WinInit.lnk” or “SyncInit.lnk” .les, remove. those .les: “%userpro.le%\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup” 
+
+
+
+Conclusion 
+Every few years, a new “logic bug” CVE in OLE object linking is identi.ed; theprevious one was three years ago (CVE-2014-0640). This kind of vulnerability is 
+rare but powerful. It allows attackers to embed OLE objects (or links in the case ofCVE-2017-0199) and bypass Microsoft validation of OLE execution without warning.In essence, it is the same as playing animation in PowerPoint. 
+Such vulnerabilities should be patched immediately. 
+It is signi.cant to note how the Iranian threat actors advanced their abilities in sucha short time: 
+Utilizing a vulnerability PoC immediately after its publication
+Setting up the required infrastructure with multiple domains and delivery 
+servers 
+Increasing the sophistication of the delivered Helminth agent, including
+regeneration of its signatures on the infected computer
+Improving the customized information gathering Mimikatz version 
+With many organizations taking high-risk vulnerabilities seriously and patching themas quickly as possible, attackers can no longer exploit them for an extended periodof time. We therefore expect that threat actors will return to macro-based campaignslike Hancitor. 
+
+Indicators of Compromise (IOCs) 
+Document delivery 
+
+HTA delivery servers: 
+
+HTA .les:. 
+
+SHA256 
+5ac61ea5142d53412a251eb77f2961e3334a00c83da9087d355a49618220a 
+Helminth Trojan Installers: 
+SHA256 
+
+C&C: 
+
+Persistency: 
+
+CERT-IL 
+has listed additional IoCs that are not mentioned in this list, which include the January campaign that involved malicious Juniper Networks VPN and fakeOxford registration form executables and their C&C domain server. 
+Topics: 0-day 
+exploits, Zero-day, Attack 
+Analysis, .leless 
+attacks. 
+
+
+
+Welcome to our Blog 
+Keeping you in the loop with company updates, industry insight, cyber securitytrends, and cyber attack information. 
+
+SUBSCRIBE TO THE BLOG Morphisec Named a Cool Vendor 2016 
+Each year Gartner identi.es new Cool Vendors it considers innovative or. 
+transformative. 
+Morphisec 
+is 
+honored 
+be 
+to 
+named 
+a 
+Cool 
+Vendor 
+2016. 
+Here's 
+more.... 
+
+
+Recent Posts 
+
+Iranian 
+Fileless 
+Attack 
+In.ltrates 
+Israeli 
+Organizations
+
+
+Building 
+Security 
+Resiliency 
+Into 
+Critical 
+Infrastructure
+
+
+Cyber 
+Defense 
+Reinvented 
+-Israel 
+Dealmakers 
+Summit 
+2017 
+
+
+
+Malware 
+Is 
+a 
+Symptom 
+– 
+Don’t 
+Treat 
+Symptoms
+
+
+Morphisec 
+Discovers 
+New 
+Fileless 
+Attack 
+Framework
+
+
+
+Andromeda’s Five 
+Star 
+Custom 
+Packer 
+– 
+Hackers’ 
+Tactics 
+Analyzed
+
+RSAC 
+2017: 
+Is 
+the 
+cybersecurity 
+industry 
+about 
+keeping 
+up 
+with 
+the 
+Joneses?
+
+
+New 
+Wave 
+of 
+Cerber 
+Ransomware 
+Sweeps 
+the 
+Globe 
+– 
+Can’t 
+Surge 
+Past 
+Morphisec
+
+
+Ready 
+for 
+RSAC 
+and 
+a 
+New 
+Take 
+on 
+Endpoint 
+Security?
+
+
+Hedge 
+Funds 
+Need 
+to 
+Hedge 
+Against 
+Hackers 
+
+
+
+
+Most Popular Posts 
+
+How 
+the 
+EPS 
+File 
+Exploit 
+Works 
+to 
+Bypass 
+EMET 
+(CVE-2015-2545) 
+– 
+A 
+Technical 
+Exploration
+
+
+Morphisec 
+Discovers 
+New 
+Fileless 
+Attack 
+Framework
+
+
+Less 
+is 
+More 
+(Dangerous): 
+A 
+Dissection 
+of 
+Fileless 
+In-Memory 
+Attacks
+
+
+Moving 
+Target 
+Defense: 
+Common 
+Practices
+
+
+Recycling 
+Known 
+Vulnerabilities 
+-Old 
+Cyber 
+Attack 
+Goes 
+Stealth 
+
+
+
+ASLR 
+-What 
+It 
+Is, 
+and 
+What 
+It 
+Isn’t 
+
+
+
+Javascript 
+in 
+IE 
+Overtakes 
+Flash 
+as 
+Number 
+One 
+Target 
+for 
+Angler 
+Exploit 
+Kit
+
+
+New 
+Wave 
+of 
+Fileless 
+Kovter 
+Backdoor 
+Trojan 
+Attacks 
+Via 
+“Targeted” 
+Macro-Based 
+Malspam 
+Campaign 
+
+
+
+
+Posts by Topic 
+
+cybersecurity 
+(30)Endpoint 
+Security 
+(28)Attack 
+Analysis 
+(21) 
+Exploits 
+(15)
+
+
+
+
+Moving 
+Target 
+Defense 
+(15) 
+
+see all 
+FOLLOWUS:©MorphisecLtd.,2016TermsofUse|PrivacyPolicy||
+

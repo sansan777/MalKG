@@ -1,0 +1,64 @@
+
+Cybersecurity threatscape 
+
+ptsecurity.com 
+
+
+Executive summary 
+Highlights of Q4 2019 include: 
+• 
+Unique cyberincidents are growing, with a 12-percent increase in their number compared to the previous quarter. 
+
+• 
+The share of targeted attacks increased by 2 percentage points versus the previous quarter, to 67 percent. This is due to a large number of APT attacks against individual organizations and entire industries. 
+
+• 
+There were 11 very active groups. Their attacks targeted mostly government institutions, industry, and finance. 
+
+• 
+Payment card information comprised a third of all data stolen from organizations (32%). This is 25 percentage points more than in the previous quarter. We believe the reason for this increase to be two-fold: the busy winter holiday purchasing season, plus the progressively growing number of MageCart attacks coupled with the second wave of attacks on Click2Gov. 
+
+• 
+Ransomware attacks are highly dangerous. The share of such attacks among malware infections was 36 percent for organizations and 17 percent for individuals (in the previous quarter, these were 27% and 7%, respectively). 
+
+• 
+A new trend in ransomware is to publish the stolen information if the victim refuses to pay up. We believe this is because more and more companies back up their data and have no need to pay for decryption. Malefactors are adjusting accordingly, and now threaten their victims with all the potential consequences of disclosure of personal data, which is subject to the protections of the European Union's General Data Protection Regulation (GDPR). 
+
+
+
+
+32% 9% 59% 21% 7% 7% 64% 
+
+Web resources 
+
+Payment card information 
+Computers, servers, 
+Personal data 
+and network equipment 
+Credentials 
+POS terminals and ATMs 
+Client databases 
+At the start of the quarter, hackers involved in attacks collectively referred to as MageCart compromised Sixth June, an online clothes store developed on Magento. Attackers injected a JavaScript sniffer (a scriptlet for stealing payment card information) into the site. To make the sniffer harder to detect, the hackers registered a domain name (mogento[.]info) that could be easily confused with that of Magento. The fake web resource was used to distribute malicious components and receive the stolen payment card information. 
+In our view, the majority of cyberattacks are not made public due to reputational risks. The result is that even organizations that investigate incidents and analyze activity by hacker groups are unable to perform a precise count. This research is conducted in order to draw the attention of companies and ordinary individuals who care about the state of information security to the key motives and methods of cyberattacks, as well as to highlight the main trends in the changing cyberthreat landscape. 
+
+Group profiles 
+APT-C-35 (Donot, SectorE02), active since 2016, attacks organizations in South Asia: Pakistan, Bangladesh, Sri Lanka, Maldives, Myanmar, Nepal, and countries of the Shanghai Cooperation Organization. The attackers take the guise of governmental institutions, military entities, and telecom companies. 
+APT28 (Fancy Bear, Sofacy), a cyberespionage group, has been active since at least 2004. The group became widely known after a series of attacks in the leadup to the 2016 U.S. presidential elections. In 2017 and 2018 the group attacked international organizations, military and defense contractors, and government institutions in Europe and South America. The group uses a variety of tools, including some of their own making. 
+APT40 (Leviathan, TEMP.Jumper, TEMP.Periscope) has been known for spyware campaigns since 2013. This group attacks transport and government, science, education, and IT companies in Western Europe, North America, and Southeast Asia. 
+Bisonal is known for developing the malware of the same name. Its history dates back to 2014. The group attacks companies mostly in Russia, South Korea, and Japan. 
+Bronze Union, also known as TG-3390, LuckyMouse, APT27, or Emissary Panda, has been involved in cyberespionage attacks since 2010. To gain a foothold on networks, the group often uses watering hole attacks: they target the websites frequented by targeted users and place malware on the websites in order to automatically infect visitors' computers. Currently the group targets governmental entities and companies involved in industry, military manufacturing, energy, aerospace, and other high-tech fields around the world. 
+Cloud Atlas has been known since 2014 for their attacks on various companies in Russia, Central Asia, and Europe (especially Portugal). 
+Cobalt has been known since 2016 for its attacks on financial institutions. The group started off by stealing from banks in CIS countries. Since 2017, it has expanded its range of targets to include banks in Eastern Europe and Southeast Asia. The group was named after Cobalt Strike, the penetration testing software used by the group to develop attacks within target networks. Its primary method of breaching corporate networks is phishing messages with malicious files in various formats: executable files, Microsoft Office documents with macros or exploits, LNK files, and passworded archives containing executable files. 
+Gamaredon has been active since 2013. The attackers focus exclusively on Ukrainian governmental entities: the C2 servers perform filtering by geographic region. In their attacks, the group uses a chain of scripts to download the Ultra VNC remote management utility to the victim's computer. They use a self-developed framework named Pteranodon for full-fledged management of infected hosts. With it, the attackers can collect information about the system and users, steal passwords, run scripts and commands, and exfiltrate information to remote servers. 
+The history of RTM dates back to 2016. The group attempts to access corporate bank accounts and steal funds. They use phishing messages to obtain access to corporate networks. Since the very start, the group has used a consistent format in such messages. Positive Technologies data indicates that in 2018 alone, the group carried out 59 mailings, the recipients of which included financial institutions. In 2019, the group moved to use of the Bitcoin blockchain. Most targets are financial institutions, although cases have also included industry, government, and IT-related organizations. In addition, the group has used .bit domains for some of their C2s. The .bit zone is powered by the Namecoin blockchain, which acts as a censor-proof and confiscation-resistant alternative to traditional DNS registrars. Experts at the PT Expert Security Center were able to use the blockchain architecture to devise an algorithm for monitoring registration of new domains by RTM and changes in their IP addresses. This enabled warning financial institutions and the security community of new C2 servers in a matter of minutes (or sometimes even before) they entered use by the 
+attackers. 
+SongXY was discovered in 2017 by Positive Technologies experts. The group's victims include at least 17 companies from Russia, Japan, Mongolia, Belarus, the United States, Tajikistan, Uzbekistan, Kyrgyzstan, Kazakhstan, and Ukraine. The group attacks defense and industry. They use emails to deliver Lurid and Gh0st malware that can steal data, take screenshots, and record audio from the victim's microphone. 
+TA505 has operated since 2014. The group's targets include major financial, manufacturing, transportation, and governmental entities in Canada, South Korea, the United Kingdom, the United States, and dozens of other countries. Phishing messages are the group's main method for penetrating target networks. With each new wave of attacks, the group has made qualitative changes to its toolkit and advanced to more sophisticated techniques for maintaining stealth. Since 2014, the group's arsenal has included the Dridex banking Trojan, Neutrino botnet, and several families of ransomware, including Locky, Jaf, and GlobeImposter. Since spring 2018 the group has used the FlawedAmmyy remote access Trojan, and since late 2018, the new ServHelper backdoor. 
+About Positive Technologies 
+ptsecurity.com 
+info@ptsecurity.com 
+Positive Technologies is a leading global provider of enterprise security solutions for vulnerability and compliance management, incident and threat analysis, and application protection. Commitment to clients and research has earned Positive Technologies a reputation as one of the foremost authorities on Industrial Control System, Banking, Telecom, Web Application, and ERP security, supported by recognition from the analyst community. Learn more about Positive Technologies at ptsecurity.com. 
+© 2020 Positive Technologies. Positive Technologies and the Positive Technologies logo are trademarks or registered trademarks of Positive Technologies. All other trademarks mentioned herein are the property of their respective owners. 
+Cybersecurity_threatscape-2019-Q4_A4.ENG.0002.03 
+
+

@@ -1,0 +1,149 @@
+APT-C-23 group evolves its Android spyware
+welivesecurity.com/2020/09/30/aptc23-group-evolves-its-android-spyware
+September 30, 2020
+ESET researchers uncover a new version of Android spyware used by the APT-C-23threat group against targets in the Middle East
+
+Lukas Stefanko
+30 Sep 2020 - 11:30AMWe have discovered a previously unreported version of Android spyware used by APT-C-23, a threat group also known as Two-tailed Scorpion and mainly targeting the MiddleEast. ESET products detect the malware as Android/SpyC23.A.
+The APT-C-23 group is known to have used both Windows and Android components inits operations, with the Android components first described in 2017. In the same year,multiple analyses of APT-C-23＊s mobile malware were published.
+Compared to the versions documented in 2017, Android/SpyC23.A has extended spyingfunctionality, including reading notifications from messaging apps, call recording andscreen recording, and new stealth features, such as dismissing notifications from built-inAndroid security apps. One of the ways the spyware is distributed is via a fake Androidapp store, using well-known apps as a lure.
+Timeline and discovery
+The group＊s activities were first described by Qihoo 360 Technology in March 2017under the name Two-tailed Scorpion. In the same year, Palo Alto Networks, Lookout andTrend Micro described other versions of the mobile malware, naming them VAMP,FrozenCell and GnatSpy, respectively. Lookout published an analysis of another versionof the malware, named Desert Scorpion, in April 2018, and at the beginning of 2020,Check Point Research reported new mobile malware attacks attributed to the APT-C-23group.
+In April 2020, @malwrhunterteam tweeted about a new Android malware sample.According to the VirusTotal service, no security vendor besides ESET detected thesample at the time. In cooperation with @malwrhunterteam, we recognized the malwareto be part of the APT-C-23 arsenal.
+Figure 1. VirusTotal detection rate for one of the newly discovered samples
+
+In June, 2020, @malwrhunterteam tweeted about another little-detected Androidmalware sample, which turned out to be connected to the sample from April. A deeperanalysis showed that both the April and June discoveries were both variants of the samenew Android malware used by the APT-C-23 group.
+Figure 2 shows the timeline of these events.
+Figure 2. Timeline of previously documented APT-C-23 mobile malware and ESET＊s 2020investigation
+
+Distribution
+Thanks to information from @malwrhunterteam, we identified a fake Android app storeused to distribute the malware. At the time of analysis, the ※DigitalApps§ store, picturedin Figure 3, contained both malicious and clean items. The non-malicious items wouldredirect users to another unofficial Android app store, serving legitimate apps. Themalware was hidden in apps posing as AndroidUpdate, Threema and Telegram. Thelatter two of these lures also downloaded the impersonated apps with full functionalityalong with the malware. This mechanism is described in detail in the Functionalitysection.
+Figure 3. The fake app store serving APT-C-23 spyware
+
+Interestingly, the downloads were limited by needing to enter a six-digit coupon code, asseen in Figure 4. This may be a way to prevent those not targeted by the group frominstalling the malware, and hence keep a lower profile. Although we didn＊t have acoupon code, downloading the app wasn＊t such a problem 每 all that was needed was toappend ※/download§ to the URL.
+Figure 4. The fake app store requiring a coupon code for downloading malware
+
+This fake app store is likely just one of the distribution methods used by the threatgroup. Our telemetry from 2020 showed samples impersonating apps that were not apart of this fake app store.
+ESET telemetry data
+According to ESET telemetry and VirusTotal data, Android/SpyC23.A has been in thewild since May 2019.
+In June 2020, ESET systems blocked this spyware on client devices in Israel. Thedetected malware samples were disguised as the messaging app ※WeMessage§, shown inFigure 5.
+While there is a legitimate messaging app called weMessage on Google Play, as seen inFigure 6, the malicious app uses entirely different graphics and doesn＊t seem toimpersonate the legitimate app other than by appropriating its name. In our research,we haven＊t found another app using the same or similar interface as the maliciousWeMessage app, so it＊s possible that the attackers created custom graphics.
+We don＊t know how this particular version of the spyware was distributed 每 themalicious WeMessage app wasn＊t offered in the aforementioned fake app store.
+Figure 5. Graphics used by the malicious WeMessage app
+
+Figure 6. The legitimate weMessage app on Google Play
+
+Functionality
+Based on our research, the malware mainly impersonates messaging apps. The attackersmight have chosen this guise to justify the various permissions requested by themalware.
+Installation and permissions
+Before installation, Android/SpyC23.A requests a number of invasive permissions,including taking pictures and videos, recording audio, reading and modifying contacts,and reading and sending SMS.
+After installation, the malware requests a series of additional, sensitive permissions,using social engineering-like techniques to fool technically inexperienced users. Theseadditional permission requests are disguised as security and privacy features:
+Under the guise of ※Messages Encryption§, the app requests permission to read theuser＊s notifications
+Under the guise of ※Private Messages§, the app requests permission to turn off PlayProtect
+Under the guise of ※Private Video Chat§, the app requests permission to record theuser＊s screen
+
+These steps are shown in the video below.
+0:00
+
+
+
+
+.After the malware is initialized, in most cases, victims are requested to manually installthe legitimate app used as a lure (e.g. Threema), which is stored in the malware＊sresources. While the legitimate app is being installed, the malware hides its presence onthe affected device. This way, the victims end up with a functioning app they intended todownload and spyware silently running in the background. In some cases (e.g.WeMessage, AndroidUpdate) the downloaded apps did not have any real functionality,and only served as bait for installing the spyware.
+When first launched, the malware starts to communicate with its Command and Control(C&C) server. It registers the new victim and sends the victim＊s device information to theC&C.
+Capabilities
+Based on the commands received, Android/SpyC23.A can perform the following actions:
+Take pictures
+Record audio
+Restart Wi-Fi
+Exfiltrate call logs
+Exfiltrate all SMS messages
+Exfiltrate all contacts
+Download files to device
+Delete files from device
+Steal files with particular extensions (pdf, doc, docx, ppt, pptx, xls, xlsx, txt, text,jpg, jpeg, png)
+Uninstall any app installed on the device
+Steal APK installers of apps installed on device
+Hide its icon
+Get credit balance of SIM on device (it can get a balance by making a call to threedifferent cellular operators: Jawwal, Wataniya, Etisalat)
+
+The following features are new in Android/SpyC23.A compared to the previouslydocumented versions:
+Record screen and take screenshots
+Record incoming and outgoing calls in WhatsApp
+Make a call while creating a black screen overlay activity (to hide call activity)
+Read text of notifications from selected messaging and social media apps:WhatsApp, Facebook, Telegram, Instagram, Skype, Messenger, Viber, imo
+Dismiss notifications from built-in security apps on some Android devices:SecurityLogAgent notifications on Samsung devices (package name contains※securitylogagent§)
+Samsung notifications (package name contains ※samsung.android§)
+MIUI Security notifications on Xiaomi devices (package name contains※com.miui.securitycenter§)
+Phone Manager on Huawei devices (package name contains※huawei.systemmanager§)
+
+
+Dismiss its own notifications (an unusual feature, possibly used in case of errors orwarnings displayed by the malware)
+
+C&C communication
+Besides spying capabilities, the malware＊s C&C communication has also undergone anupdate. In older versions, the C&C in use was hardcoded and either available in plaintext or trivially obfuscated, and thus easier to identify. In the updated version, the C&C iswell hidden using various techniques and can be remotely changed by the attacker.
+In this section, we will describe how Android/SpyC23.A retrieves its C&C server.
+The malware uses a native library with three functions. Two of them return opening andclosing HTML tags for the title and the third one returns an encrypted string.
+Figure 7. Returned strings from the native library
+
+The encrypted string serves two purposes: the first part 每 before the hyphen (※-§) 每 isused as part of the password to encrypt files extracted from the affected device. Thesecond part is first decoded (base64) and then decrypted (AES). The decrypted stringmight, for example, suggest a Facebook profile page for the C&C, but it is stillobfuscated.
+Figure 8. Decrypted but still obfuscated URL
+
+Some of the substrings in this string are replaced based on a simple substitution tableand then the domain part of the apparent URL is replaced.
+Figure 9. Decrypted and deobfuscated URL
+
+From this URL, the malware parses the HTML for its title tag.
+Figure 10. Parsing website title to retrieve the C&C server
+
+The last step is to replace the first space for a dash and the second one for a dot. Withthat, obtaining the C&C is done. Such a process allows the malware operators to changetheir C&C server dynamically.
+Figure 11. C&C communication
+
+The malware＊s live C&C servers typically pose as websites under maintenance, all usingthe same logo, shown in Figure 12.
+Figure 12. The malware＊s C&C server
+
+Conclusion
+Our research shows that the APT-C-23 group is still active, enhancing its mobile toolsetand running new operations. Android/SpyC23.A 每 the group＊s newest spyware version 每features several improvements making it more dangerous to victims.
+To prevent falling victim to spyware, we advise Android users to only install apps fromthe official Google Play Store. In cases where privacy concerns, access issues or otherrestrictions prevent users from following this advice, users should take extra care whendownloading apps from unofficial sources. We recommend scrutinizing the app＊sdeveloper, double-checking the permissions requested, and using a trustworthy and up-to-date mobile security solution.
+For any inquiries, contact us at threatintel@eset.com.
+Indicators of Compromise (IoCs)
+ESET detection name
+Android/SpyC23.A
+Hashes
+9e78e0647e56374cf9f429dc3ce412171d0b999e344f1a9dc7f8abd88d1c94f4323646829d80c55556f321518401528278e0e79fac8c12a57d9fa5459e1399fede12ce876cdb7c6fdc2742c75b1add9a6f251160c9b08f56681ea9256f8ecf3c3bcc66f891c12c134d4943654af5d6c23043e9962cff83c278dd3c98a2074a8d7b5d74030a170f5a1b0b57d41c89cea8953f5f72339b14716cef2bd11c7ecf9ae79849c9d3dc87ff6820c3f08ab90e6aeb9cc216
+C&Cs
+https://linda-gaytan[.]websitehttps://cecilia-gilbert[.]comhttps://david-gardiner[.]websitehttps://javan-demsky[.]website
+Distribution URL
+https://digital-apps[.]store
+MITRE ATT&CK techniques
+This table was built using version 7 of the ATT&CK framework.
+TacticTacticTactic IDIDID NameNameName DescriptionDescriptionDescription 
+InitialAccess T1444 Masqueradeas Legiti-mateApplication Android/SpyC23.A impersonates a legitimate chatapplication. 
+T1476 Deliver Mali-cious Appvia OtherMeans SpyC23.A can be downloaded from a malicious al-ternative app store. 
+Execu-tion T1575 Native Code SpyC23.A uses a native method to retrieve an en-crypted string to obtain its C&C. 
+Persis-tence T1402 BroadcastReceivers SpyC23.A listens for the BOOT_COMPLETEDbroadcast, ensuring that the app's functionality willbe activated every time the device starts. 
+De-fenseEva-sion T1508 SuppressApplicationIcon SpyC23.A hides its icon. 
+Discov-ery T1418 ApplicationDiscovery SpyC23.A retrieves a list of installed apps. 
+T1420 File and Di-rectoryDiscovery SpyC23.A retrieves the content of the external stor-age directory. 
+T1426 System In-formationDiscovery SpyC23.A retrieves details about the device. 
+Collec-tion T1433 Access CallLog SpyC23.A exfiltrates call log history. 
+T1432 Access Con-tact List SpyC23.A exfiltrates the victim＊s contact list. 
+T1517 AccessNotifications SpyC23.A exfiltrates messages from messagingand social media apps. 
+T1429 CaptureAudio SpyC23.A can record surroundings and calls. 
+T1512 CaptureCamera SpyC23.A can take pictures from the front or rearcameras. 
+T1412 CaptureSMSMessages SpyC23.A can exfiltrate sent and received SMSmessages. 
+T1533 Data fromLocalSystem SpyC23.A steals files with particular extensionsfrom external media. 
+T1513 ScreenCapture SpyC23.A can take screenshots. 
+Com-mandandControl T1438 AlternativeNetworkMediums SpyC23.A can use SMS to receive C&Cmessages. 
+T1437 Standard Ap-plication Lay-er Protocol SpyC23.A communicates with C&C using HTTPSand Firebase Cloud Messaging (FCM). 
+T1544 Remote FileCopy SpyC23.A can download attacker-specified files. 
+Exfiltra-tion T1532 DataEncrypted Extracted data is transmitted in password-protectedZIP files. 
+Impact T1447 Delete De-vice Data SpyC23.A can delete attacker-specified files fromthe device. 
+
+Lukas Stefanko
+30 Sep 2020 - 11:30AMNewsletter
+Discussion
+
+
+
+
+
+

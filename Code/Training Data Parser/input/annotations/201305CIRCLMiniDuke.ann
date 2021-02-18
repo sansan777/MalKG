@@ -1,0 +1,132 @@
+T1	Organization 79 84	CIRCL
+T2	Time 132 144	May 30, 2013
+T3	Time 164 176	Jul 03, 2014
+T4	Time 233 245	July 3, 2014
+T5	Malware 2409 2417	Miniduke
+T6	Organization 2421 2435	Kaspersky Labs
+T7	Organization 2437 2442	CIRCL
+T8	Malware 2893 2899	v1.ex_
+T9	MD5 2916 2948	1e1b0d16a16cf5c7f3a7c053ce78f515
+T10	SHA-1 2957 2997	de8e9def2553f4d211cc0b34a3972d9814f156aa
+T11	SHA-256 3009 3073	a1015f0b99106ae2852d740f366e15c1d5c711f57680a2f04be0283e8310f69e
+R1	indicates Arg1:T9 Arg2:T8
+R2	indicates Arg1:T10 Arg2:T8
+R3	indicates Arg1:T11 Arg2:T8
+T12	Time 3125 3149	Mon Jun 18 16:28:11 2012
+T13	Malware 3152 3160	Sample B
+T14	MD5 3364 3396	1a2edd2db71fd41e963011da8caf26cc
+T15	SHA-1 3405 3444	f344becb220de6ﬀa4d7223bdb82146d3b1c93ed
+T16	SHA-256 3456 3520	b61d409b6c1066e0c1fc4fe15f6f367be31fa2cc555cfc0ef7eeb8e5759380c0
+R4	indicates Arg1:T14 Arg2:T13
+R5	indicates Arg1:T15 Arg2:T13
+R6	indicates Arg1:T16 Arg2:T13
+T17	Time 3572 3595	Mon Mar 5 14:17:08 2012
+T18	Obfuscation 7268 7332	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$~
+T19	Indicator 14393 14414	news.grouptumbler.com
+T20	Address 14441 14455	173.194.70.101
+T21	Time 14473 14499	2013−03−03 0 1 : 5 7 : 3 7
+T22	Time 14521 14547	2013−03−06 2 3 : 3 4 : 4 7
+T23	Address 14644 14656	200.63.46.33
+T24	Time 14674 14700	2012−03−14 1 4 : 2 1 : 1 0
+T25	Time 14722 14748	2013−02−26 2 2 : 0 4 : 0 7
+T26	Address 14819 14831	200.63.46.33
+T27	Indicator 14916 14929	dvdform . com
+T28	Indicator 14958 14976	www. dvdform . com
+T29	Indicator 15005 15025	www. p90xprice . com
+T30	Indicator 15054 15083	d e x t e r s e a s o n . com
+T31	Indicator 15112 15146	www. d e x t e r s e a s o n . com
+T32	Indicator 15175 15200	news . grouptumbler . com
+T33	Indicator 15229 15255	www. babylearningdvd . com
+T34	Indicator 15284 15319	t u r b o f i r e c o u p o n . com
+T35	Indicator 15348 15388	www. t u r b o f i r e c o u p o n . com
+T36	Indicator 15417 15454	s m a l l v i l l e d v d s e t . com
+T37	Indicator 15483 15525	www. s m a l l v i l l e d v d s e t . com
+T38	Indicator 15554 15578	miamivicedvdboxset . com
+T39	Indicator 15607 15636	www. miamivicedvdboxset . com
+T40	Indicator 15665 15694	www. sexandthecityondvd . com
+T41	Indicator 15723 15753	www. sherlockholmesondvd . com
+T42	Indicator 15782 15825	t r x f o r c e k i t o r i g i n a l . com
+T43	Indicator 15854 15902	www. t r x f o r c e k i t o r i g i n a l . com
+T44	Indicator 15931 15956	weddingdressestoday . com
+T45	Indicator 15985 16016	www. maxheadroomdvdseries . com
+T46	Address 14934 14957	2 0 0 . 6 3 . 4 6 . 2 3
+T47	Address 14981 15004	2 0 0 . 6 3 . 4 6 . 2 3
+T48	Address 15030 15053	2 0 0 . 6 3 . 4 6 . 2 3
+T49	Address 15088 15111	2 0 0 . 6 3 . 4 6 . 2 3
+T50	Address 15151 15174	2 0 0 . 6 3 . 4 6 . 2 3
+T51	Address 15205 15228	2 0 0 . 6 3 . 4 6 . 2 3
+T52	Address 15260 15283	2 0 0 . 6 3 . 4 6 . 2 3
+T53	Address 15324 15347	2 0 0 . 6 3 . 4 6 . 2 3
+T54	Address 15393 15416	2 0 0 . 6 3 . 4 6 . 2 3
+T55	Address 15459 15482	2 0 0 . 6 3 . 4 6 . 2 3
+T56	Address 15530 15553	2 0 0 . 6 3 . 4 6 . 2 3
+T57	Address 15583 15606	2 0 0 . 6 3 . 4 6 . 2 3
+T58	Address 15641 15664	2 0 0 . 6 3 . 4 6 . 2 3
+T59	Address 15699 15722	2 0 0 . 6 3 . 4 6 . 2 3
+T60	Address 15758 15781	2 0 0 . 6 3 . 4 6 . 2 3
+T61	Address 15830 15853	2 0 0 . 6 3 . 4 6 . 2 3
+T62	Address 15907 15930	2 0 0 . 6 3 . 4 6 . 2 3
+T63	Address 15961 15984	2 0 0 . 6 3 . 4 6 . 2 3
+T64	Address 16021 16044	2 0 0 . 6 3 . 4 6 . 2 3
+T65	Address 16401 16413	200.63.46.33
+T66	Location 17130 17178	B e l l a Vista , El cangrejo , C a l l e 49 , 0
+T67	Country 17218 17220	PA
+T68	Time 17762 17770	20130311
+T69	Time 17792 17800	20130311
+T70	Time 17817 17825	20080328
+T71	Time 17836 17844	20080328
+T72	Person 17870 17891	Manuel I . Cabrera Ch
+T73	Email 17902 17924	ABUSE@PANAMASERVER.COM
+T74	Location 17992 18010	0000 − Panama − PA
+T75	Location 17935 17979	B e l l a Vista C a l l e 39A y Ave Cuba , 0
+T76	Country 18021 18023	PA
+T77	Time 18065 18073	20071004
+T78	Time 18084 18092	20120311
+R7	usesAddress Arg1:T5 Arg2:T46
+R8	usesAddress Arg1:T5 Arg2:T47
+R9	usesAddress Arg1:T5 Arg2:T48
+R10	usesAddress Arg1:T5 Arg2:T49
+R11	usesAddress Arg1:T5 Arg2:T50
+R12	usesAddress Arg1:T5 Arg2:T51
+R13	usesAddress Arg1:T5 Arg2:T52
+R14	usesAddress Arg1:T5 Arg2:T53
+R15	usesAddress Arg1:T5 Arg2:T54
+R16	usesAddress Arg1:T5 Arg2:T55
+R17	usesAddress Arg1:T5 Arg2:T56
+R18	usesAddress Arg1:T5 Arg2:T57
+R19	usesAddress Arg1:T5 Arg2:T58
+R20	usesAddress Arg1:T5 Arg2:T59
+R21	usesAddress Arg1:T5 Arg2:T60
+R22	usesAddress Arg1:T5 Arg2:T61
+R23	usesAddress Arg1:T5 Arg2:T62
+R24	usesAddress Arg1:T5 Arg2:T63
+R25	usesAddress Arg1:T5 Arg2:T64
+R26	usesAddress Arg1:T5 Arg2:T65
+R27	usesAddress Arg1:T5 Arg2:T23
+R28	usesAddress Arg1:T5 Arg2:T26
+R29	indicates Arg1:T27 Arg2:T1
+R30	indicates Arg1:T28 Arg2:T1
+R31	indicates Arg1:T29 Arg2:T1
+R32	indicates Arg1:T30 Arg2:T1
+R33	indicates Arg1:T31 Arg2:T1
+R34	indicates Arg1:T32 Arg2:T1
+R35	indicates Arg1:T33 Arg2:T1
+R36	indicates Arg1:T34 Arg2:T1
+R37	indicates Arg1:T35 Arg2:T1
+R38	indicates Arg1:T36 Arg2:T1
+R39	indicates Arg1:T37 Arg2:T1
+R40	indicates Arg1:T38 Arg2:T1
+R41	indicates Arg1:T39 Arg2:T1
+R42	indicates Arg1:T40 Arg2:T1
+R43	indicates Arg1:T41 Arg2:T1
+R44	indicates Arg1:T42 Arg2:T1
+R45	indicates Arg1:T43 Arg2:T1
+R46	indicates Arg1:T44 Arg2:T1
+R47	indicates Arg1:T45 Arg2:T1
+R48	indicates Arg1:T19 Arg2:T1
+R49	hasAttackTime Arg1:T1 Arg2:T24
+R50	hasAttackTime Arg1:T1 Arg2:T25
+R51	hasAttackTime Arg1:T1 Arg2:T21
+R52	hasAttackTime Arg1:T1 Arg2:T22
+R53	hasAttackTime Arg1:T1 Arg2:T17
+R54	hasCharacteristics Arg1:T1 Arg2:T18

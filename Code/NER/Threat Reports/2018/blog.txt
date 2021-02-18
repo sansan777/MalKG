@@ -1,0 +1,476 @@
+News,views,andinsightfromtheESETsecuritycommunityESETresearch:AppearancesaredeceivingwithTurla＊sbackdoor-lacedFlashPlayerinstallerBYTOM芍.FOLTYNPOSTED9JAN2018-03:00PMESETresearchers havefoundthatTurla,thenotorious state-sponsoredcyberespionagegroup,has addedafreshweapontoits arsenalthatisbeingusedinnewcampaigns targetingembassies andconsulates inthepost-Sovietstates.This newtoolattempts todupevictims intoinstallingmalwarethatis ultimately aimedatsiphoningo.sensitiveinformationfromTurla＊s targets.Thegrouphas longusedsocialengineeringtolureunsuspectingtargets intoexecutingfauxAdobeFlashPlayerinstallers.However,itdoesn＊trestonits laurels andcontinues toinnovate,as shownby recentESETresearch.Notonly does thegangnowbundleits backdoors togetherwithalegitimateFlashPlayerinstallerbut,compoundingthings further,itensures thatURLs andtheIPaddresses ituses appeartocorrespondtoAdobe＊s legitimateinfrastructure.Insodoing,theattackers essentially misusetheAdobebrandtotrickusers intodownloadingmalware.Thevictims aremadetobelievethattheonly thingthatthey aredownloadingis authenticsoftwarefromadobe.com.Unfortunately,nothingcouldbefurtherfromthetruth.Thecampaigns,whichhavebeenleveragingthenewtoolsinceatleastJuly 2016,bearseveralhallmarks associatedwiththegroup,includingMosquito,abackdoorbelievedtobethegroup＊s creation,andtheuseofIPaddresses previously linkedwiththegroup.Thenewmalicious toolalsoshares similarities withothermalwarefamilies spreadby thegroup.AttackvectorsESETresearchers havecomeupwithseveralhypotheses (showninFigure1)forhowTurla-relatedmalwarecanmakeitontoavictim＊s computerviathenewmethodofcompromise.Importantly,however,itis safetoruleoutascenarioinvolvingsomesortofcompromiseofAdobe.Turla＊smalwareis notknowntohavetaintedany legitimateFlashPlayerupdates,noris itassociatedwithany knownAdobeproductvulnerabilities.Thepossibility involvingacompromiseoftheAdobeFlashPlayerdownloadwebsitehas alsobeenpractically discarded.Typeyourkeyword...SearchOurwebsiteuses cookies.By continuingtobrowsethesiteyouareagreeingtoouruseofcookies.Formoredetails aboutcookies andhowtomanagethem,seeourCookiePolicyFigure 
+1: 
+Possible 
+interception 
+points on 
+the 
+path 
+between 
+the 
+potential 
+victim＊s machine 
+and 
+the 
+Adobe 
+servers. 
+Note 
+that 
+the 
+scenario 
+under 
+#5 
+is seen 
+as 
+very unlikely. 
+The 
+possible 
+attack 
+vectors ESET 
+researchers considered 
+are: 
+A 
+machine 
+within 
+the 
+network 
+of 
+the 
+victim＊s organization 
+could 
+be 
+hijacked 
+so 
+that 
+it 
+acts as a 
+springboard 
+for 
+a 
+local 
+Man-in-the-Middle 
+(MitM) 
+attack. 
+This would 
+e.ectively involve 
+on-the-.y redirection 
+of 
+the 
+tra.c 
+of 
+the 
+targeted 
+machine 
+to 
+a 
+compromised 
+machine 
+on 
+the 
+local 
+network. 
+The 
+attackers could 
+also 
+compromise 
+the 
+network 
+gateway of 
+an 
+organization, 
+enabling 
+them 
+to 
+intercept 
+all 
+the 
+incoming 
+and 
+outgoing 
+tra.c 
+between 
+that 
+organization＊s intranet 
+and 
+the 
+internet. 
+The 
+tra.c 
+interception 
+could 
+also 
+occur 
+at 
+the 
+level 
+of 
+internet 
+service 
+providers (ISPs), 
+a 
+tactic 
+that 
+每 as evidenced 
+by recent 
+ESET 
+research 
+into 
+surveillance 
+campaigns 
+deploying 
+FinFisher 
+spyware 
+每 is not 
+unheard 
+of. 
+All 
+the 
+known 
+victims are 
+located 
+in 
+di.erent 
+countries, 
+and 
+we 
+identi.ed 
+them 
+using 
+at 
+least 
+four 
+di.erent 
+ISPs. 
+The 
+attackers could 
+have 
+used 
+a 
+Border 
+Gateway 
+Protocol 
+(BGP) 
+hijack 
+to 
+re-route 
+the 
+tra.c 
+to 
+a 
+server 
+controlled 
+by Turla, 
+although 
+this 
+tactic 
+would 
+probably 
+rather 
+quickly set 
+o. 
+alarm 
+bells with 
+Adobe 
+or 
+BGP 
+monitoring 
+services. 
+Once 
+the 
+fake 
+Flash 
+installer 
+is downloaded 
+and 
+launched, 
+one 
+of 
+several 
+backdoors is dropped. 
+It 
+could 
+be 
+Mosquito, 
+which 
+is a 
+piece 
+of 
+Win32 
+malware, 
+a 
+malicious JavaScript 
+.le 
+communicating 
+with 
+a 
+web 
+app 
+hosted 
+on 
+Google 
+Apps Script, 
+or 
+an 
+unknown 
+.le 
+downloaded 
+from 
+a 
+bogus 
+and 
+non-existent 
+Adobe 
+URL. 
+The 
+stage 
+is then 
+set 
+for 
+the 
+mission＊s main 
+goal 
+每 ex.ltration 
+of 
+sensitive 
+data. 
+This information 
+includes the 
+unique 
+ID 
+of 
+the 
+compromised 
+machine, 
+the 
+username, 
+and 
+the 
+list 
+of 
+security products installed 
+on 
+the 
+device. 
+＆Only＊ 
+the 
+username 
+and 
+device 
+name 
+are 
+ex.ltrated 
+by Turla＊s 
+backdoor 
+Snake 
+on 
+macOS. 
+At 
+the 
+.nal 
+part 
+of 
+the 
+process, 
+the 
+fake 
+installer 
+drops 每 or 
+downloads 每 and 
+then 
+runs a 
+legitimate 
+Flash 
+Player 
+application. 
+The 
+latter＊s installer 
+is 
+either 
+embedded 
+in 
+its fake 
+counterpart 
+or 
+is downloaded 
+from 
+a 
+Google 
+Drive 
+web 
+address. 
+Mosquito 
+and 
+JavaScript 
+backdoors 
+ESET 
+researchers have 
+seen 
+in 
+the 
+wild, 
+new 
+samples of 
+the 
+backdoor 
+known 
+as Mosquito. 
+The 
+more 
+recent 
+iterations are 
+more 
+heavily 
+obfuscated 
+with 
+what 
+appears to 
+be 
+a 
+custom 
+crypter, 
+to 
+make 
+analysis 
+more 
+di.cult 
+both 
+for 
+malware 
+researchers and 
+for 
+security software＊s 
+code. 
+In 
+order 
+to 
+establish 
+persistence 
+on 
+the 
+system, 
+the 
+installer 
+tampers with 
+the 
+operating 
+system＊s registry. 
+It 
+also 
+creates an 
+administrative 
+account 
+that 
+allows remote 
+access. 
+The 
+main 
+backdoor 
+CommanderDLL 
+has the 
+.pdb 
+extension. 
+It 
+uses a 
+custom 
+encryption 
+algorithm 
+and 
+can 
+execute 
+certain 
+prede.ned 
+actions. 
+The 
+backdoor 
+keeps track 
+of 
+everything 
+it 
+does on 
+the 
+compromised 
+machine 
+in 
+an 
+encrypted 
+log 
+.le. 
+Turla 
+has been 
+operating 
+for 
+a 
+number 
+of 
+years and 
+its activities have 
+been 
+monitored 
+and 
+analyzed 
+by ESET 
+research 
+laboratories. 
+Last 
+year, 
+the 
+analysts released 
+pieces covering 
+new 
+versions 
+of 
+another 
+Turla 
+backdoor 
+called 
+Carbon, 
+watering 
+hole 
+campaigns 
+misusing 
+a 
+Firefox 
+browser 
+extension 
+and, 
+most 
+recently, 
+a 
+backdoor 
+called 
+Gazer. 
+ 
+Read 
+ESET＊s latest 
+.ndings 
+about 
+Turla 
+here 
+in: 
+Diplomats 
+in 
+Eastern 
+Europe 
+bitten 
+by 
+a 
+Turla 
+mosquito 
+Follow 
+us 
+ 
+Sign 
+up 
+to 
+our 
+newsletter 
+The 
+latest 
+security news direct 
+to 
+your 
+inbox 
+Email... 
+Submit 
+ 
+
+

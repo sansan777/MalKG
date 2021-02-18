@@ -1,0 +1,115 @@
+T1	Campaign 0 20	Operation Double Tap
+T2	Campaign 75 100	Operation Clandestine Fox
+T3	Time 240 257	November 19, 2014
+R1	hasAttackTime Arg1:T2 Arg2:T3
+T4	Vulnerability 349 362	CVE-2014-6332
+T5	Vulnerability 367 380	CVE-2014-4113
+T6	Vulnerability 382 395	CVE-2014-6332
+T7	Time 422 432	2014-11-11
+T8	Vulnerability 508 520	CVE-20144113
+T9	Time 592 602	2014-10-14
+T10	Vulnerability 615 628	CVE-2014-6332
+T11	Vulnerability 1696 1709	CVE-2014-6332
+T12	Vulnerability 2179 2192	CVE-2014-6332
+T13	Malware 2443 2454	install.exe
+R2	involvesMalware Arg1:T1 Arg2:T13
+T14	MD5 2500 2532	5a0c4e1925c76a959ab0588f683ab437
+T15	Time 2559 2579	2014-11-19 08:55:10Z
+R3	hasAttackTime Arg1:T13 Arg2:T15
+R4	indicates Arg1:T14 Arg2:T13
+R5	exploits Arg1:T13 Arg2:T12
+T16	MD5 2593 2625	6b8611f8148a6b51e37fd68e75b6a81c
+T17	Malware 2636 2647	install.exe
+T18	Payload 2836 2843	doc.exe
+T19	Vulnerability 2858 2871	CVE-2014-4113
+R6	exploits Arg1:T17 Arg2:T19
+T20	Payload 2909 2917	test.exe
+R7	hasCharacteristics Arg1:T17 Arg2:T18
+R8	hasCharacteristics Arg1:T17 Arg2:T20
+T21	MD5 3014 3046	492a839a3bf9c61b7065589a18c5aa8d
+T22	MD5 3072 3104	9342d18e7d315117f23db7553d59a9d1
+T23	MD5 3130 3162	744a17a3bc6dbd535f568ef1e87d8b9a
+T24	Time 3189 3209	2014-11-19 08:25:45Z
+T25	MD5 3222 3254	2fab77a3ff40e4f6d9b5b7e813c618e4
+T26	MD5 3277 3309	5c08957f05377004376e6a622406f9aa
+T27	MD5 3369 3401	f34d5f2d4577ed6d9ceec516c1f5a744
+T28	Time 3336 3356	2014-11-18 10:49:23Z
+T29	Indicator 3476 3540	c:\Users\aa\Documents\Visual Studio 2008\Projects\MShell\Release
+T30	Malware 3463 3474	install.exe
+R9	indicates Arg1:T29 Arg2:T30
+T31	Malware 3255 3263	test.exe
+R10	indicates Arg1:T26 Arg2:T31
+R11	hasAttackTime Arg1:T31 Arg2:T28
+R12	indicates Arg1:T27 Arg2:T31
+T32	Malware 3105 3112	doc.exe
+R13	indicates Arg1:T23 Arg2:T32
+R14	hasAttackTime Arg1:T32 Arg2:T24
+R15	indicates Arg1:T25 Arg2:T32
+T33	Malware 2989 2996	doc.exe
+R16	indicates Arg1:T21 Arg2:T33
+R17	indicates Arg1:T22 Arg2:T33
+T34	Malware 3555 3562	doc.exe
+T35	Indicator 3564 3637	c:\Users\aa\Documents\Visual Studio 2008\Projects\4113\Release \4113.pdb
+R18	indicates Arg1:T35 Arg2:T34
+T36	Malware 3639 3647	test.exe
+T37	Indicator 3649 3746	C:\Users\aa\Documents\Visual Studio 2010\Projects\MyRat\Client\Client \obj\x86\Release\Client.pdb
+R19	indicates Arg1:T37 Arg2:T36
+T38	Vulnerability 3825 3838	CVE-2014-4113
+T39	Address 4329 4344	192.157.198.103
+T40	Address 4521 4535	192.184.60.229
+T41	Address 6113 6126	198.55.115.71
+T42	Payload 6211 6236	Backdoor.APT.CookieCutter
+T43	Payload 6242 6247	Pirpi
+T44	Malware 6264 6278	newnotepad.exe
+T45	MD5 6284 6316	8849538ef1c3471640230605c2623c67
+R20	indicates Arg1:T45 Arg2:T44
+T46	Indicator 6359 6381	inform.bedircati[.]com
+T47	Indicator 6382 6400	pn.lamb-site[.]com
+T48	Address 6421 6435	192.184.60.229
+T49	Indicator 6488 6505	securitywap[.]com
+T50	Time 6639 6649	2014-11-17
+T51	Time 6651 6661	2014-11-20
+T52	Address 6663 6677	192.184.60.229
+T53	Indicator 6679 6698	www.securitywap.com
+T54	Time 6700 6710	2014-11-17
+T55	Time 6712 6722	2014-11-20
+T56	Address 6724 6738	192.184.60.229
+T57	Address 6827 6842	104.151.248.173
+T58	Indicator 6757 6780	join.playboysplus[.]com
+T59	Indicator 6952 6975	join.playboysplus[.]com
+T60	Time 6977 6987	2014-11-21
+T61	Time 6989 6999	2014-11-21
+T62	Address 7001 7016	104.151.248.173
+T63	Indicator 7018 7035	walterclean[.]com
+T64	Time 7037 7047	2014-11-18
+T65	Time 7049 7059	2014-11-20
+T66	Address 7061 7076	104.151.248.173
+T67	Indicator 7078 7099	www.walterclean[.]com
+T68	Time 7101 7111	2014-11-18
+T69	Time 7113 7123	2014-11-20
+T70	Address 7125 7140	104.151.248.173
+R21	indicates Arg1:T46 Arg2:T13
+R22	indicates Arg1:T47 Arg2:T13
+R23	usesAddress Arg1:T13 Arg2:T48
+R24	indicates Arg1:T49 Arg2:T13
+R25	hasAttackTime Arg1:T1 Arg2:T50
+R26	hasAttackTime Arg1:T1 Arg2:T51
+R27	usesAddress Arg1:T13 Arg2:T52
+R28	indicates Arg1:T53 Arg2:T13
+R29	hasAttackTime Arg1:T1 Arg2:T54
+R30	hasAttackTime Arg1:T1 Arg2:T55
+R31	usesAddress Arg1:T13 Arg2:T56
+R32	usesAddress Arg1:T13 Arg2:T57
+R33	indicates Arg1:T58 Arg2:T13
+R34	indicates Arg1:T59 Arg2:T13
+R35	hasAttackTime Arg1:T1 Arg2:T60
+R36	hasAttackTime Arg1:T1 Arg2:T61
+R37	usesAddress Arg1:T13 Arg2:T62
+R38	indicates Arg1:T63 Arg2:T13
+R39	hasAttackTime Arg1:T1 Arg2:T64
+R40	hasAttackTime Arg1:T1 Arg2:T65
+R41	usesAddress Arg1:T13 Arg2:T66
+R42	indicates Arg1:T67 Arg2:T13
+R43	hasAttackTime Arg1:T1 Arg2:T68
+R44	hasAttackTime Arg1:T1 Arg2:T69
+R45	usesAddress Arg1:T13 Arg2:T70

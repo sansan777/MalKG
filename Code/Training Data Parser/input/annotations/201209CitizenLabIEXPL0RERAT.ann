@@ -1,0 +1,65 @@
+T1	TrojanHorse 106 118	IEXPL0RE RAT
+T2	Time 344 348	2011
+T3	Time 367 371	2010
+T4	TrojanHorse 400 412	IEXPL0RE RAT
+R1	hasAttackTime Arg1:T4 Arg2:T2
+R2	hasAttackTime Arg1:T4 Arg2:T3
+T5	TrojanHorse 475 485	Sharky RAT
+T6	TrojanHorse 567 574	c0d0so0
+T7	TrojanHorse 588 602	Backdoor.Briba
+T8	TrojanHorse 1776 1788	IEXPL0RE RAT
+T9	Software 4516 4524	StrokeIt
+T10	TrojanHorse 5751 5763	IEXPL0RE.EXE
+T11	Malware 6108 6117	perf*.dat
+T12	Malware 6263 6274	ContainerV2
+T13	Malware 6435 6441	client
+T14	TrojanHorse 6925 6932	csv.exe
+T15	Malware 6961 6972	360tray.exe
+T16	Malware 7001 7012	svchost.exe
+T17	Malware 7047 7058	ContainerV2
+T18	Malware 7090 7096	client
+T19	MD5 8585 8617	d7c826ac94522416a0aecf5b7a5d2afe
+T20	MD5 8640 8672	66e1aff355c29c6f39b21aedbbed2d5c
+T21	MD5 8695 8727	21a1ee58e4b543d7f2fa3b4022506029
+T22	MD5 8750 8782	8d4e42982060d884e2b7bd257727fd7c
+T23	TrojanHorse 8509 8517	IEXPL0RE
+R3	indicates Arg1:T22 Arg2:T23
+R4	indicates Arg1:T21 Arg2:T23
+R5	indicates Arg1:T20 Arg2:T23
+R6	indicates Arg1:T19 Arg2:T23
+T24	Malware 8790 8801	CONTAINERV2
+T25	MD5 8825 8857	d46d85777062afbcda02de68c063b877
+T26	MD5 8874 8906	85e8c6ddcfa7e289be14324abbb7378d
+R7	indicates Arg1:T25 Arg2:T24
+R8	indicates Arg1:T26 Arg2:T24
+T27	Malware 8923 8929	CLIENT
+T28	MD5 8996 9028	eb51b384fcbbe468a6877f569021c5d1
+T29	MD5 9048 9080	8268297c1b38832c03f1c671e0a54a78
+R9	indicates Arg1:T28 Arg2:T27
+R10	indicates Arg1:T29 Arg2:T27
+T30	Time 8978 8994	November 1, 2011
+T31	Time 9029 9046	November 29, 2011
+R11	hasAttackTime Arg1:T27 Arg2:T30
+R12	hasAttackTime Arg1:T27 Arg2:T31
+T32	File 9494 9552	C:\Documents and Settings\user\Local Settings\Temp\31A.tmp
+T33	File 9553 9620	C:\Documents and Settings\user\Local Settings\Temp\perf6cd2e5e9.dat
+T34	TrojanHorse 9176 9184	IEXPL0RE
+R13	indicates Arg1:T32 Arg2:T34
+R14	indicates Arg1:T33 Arg2:T34
+T35	File 9696 9722	C:\WINDOWS\system\lock.dat
+T36	File 9723 9753	C:\WINDOWS\system\MSMAPI32.SRG
+T37	File 9754 9784	C:\WINDOWS\system32\STREAM.SYS
+T38	TrojanHorse 9796 9804	IEXPL0RE
+R15	indicates Arg1:T35 Arg2:T38
+R16	indicates Arg1:T36 Arg2:T38
+R17	indicates Arg1:T37 Arg2:T38
+T39	Country 10430 10435	China
+T40	TrojanHorse 10225 10233	IEXPL0RE
+R18	hasAttackLocation Arg1:T40 Arg2:T39
+T41	Obfuscation 11175 11179	0xCD
+T42	Indicator 12161 12181	update.microsoft.com
+T43	Malware 12321 12332	ContainerV2
+R19	indicates Arg1:T42 Arg2:T43
+T44	CourseOfAction 16047 16081	network intrusion detection system
+T45	TrojanHorse 15704 15716	IEXPL0RE RAT
+R20	mitigates Arg1:T44 Arg2:T45

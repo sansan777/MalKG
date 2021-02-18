@@ -1,0 +1,210 @@
+T1	Campaign 10 17	SnowMan
+T2	ExploitTargetObject 47 58	US Veterans
+T3	Vulnerability 138 151	CVE-2014-0322
+T4	ExploitTargetObject 178 216	U.S. Veterans of Foreign Wars’ website
+T5	ExploitTargetObject 218 227	vfw[.]org
+T6	ExploitTargetObject 292 319	American military personnel
+T7	Campaign 602 611	DeputyDog
+T8	Campaign 626 641	Ephemeral Hydra
+T9	Indicator 1257 1293	www.[REDACTED].com/Data/img/img.html
+T10	Software 1327 1332	IE 10
+T11	Software 1338 1349	Adobe Flash
+T12	Software 1088 1093	IE 10
+R1	hasVulnerability Arg1:T12 Arg2:T3
+T13	CourseOfAction 1446 1487	Microsoft’s Experience Mitigation Toolkit
+T14	CourseOfAction 1518 1535	updating to IE 11
+T15	Exploit 1955 1981	return-oriented programing
+T16	Exploit 1872 1890	Flash ActionScript
+T17	Exploit 2087 2119	Microsoft.XMLDOM ActiveX control
+T18	Exploit 2586 2616	corrupts a Flash Vector object
+T20	Obfuscation 3564 3579	XOR key of 0×95
+T21	Payload 3729 3741	sqlrenew.txt
+T19	Payload 3748 3758	stream.exe
+T22	MD5 4029 4061	8455bbb9a210ce603a1b646b0d951bce
+T23	Malware 4006 4013	ZxShell
+T24	Time 4100 4110	2014-02-11
+T25	Time 4168 4178	2014-02-11
+T26	Campaign 4378 4385	SnowMan
+R2	hasAttackTime Arg1:T26 Arg2:T25
+R3	hasAttackTime Arg1:T26 Arg2:T24
+R4	involvesMalware Arg1:T26 Arg2:T23
+R5	indicates Arg1:T22 Arg2:T23
+T27	Malware 4688 4695	ZxShell
+T28	Indicator 4898 4918	newss[.]effers[.]com
+R6	indicates Arg1:T28 Arg2:T27
+T29	Address 4954 4967	118.99.60.142
+R7	usesAddress Arg1:T27 Arg2:T29
+T30	Indicator 4980 4998	info[.]flnet[.]org
+R8	indicates Arg1:T30 Arg2:T27
+T31	Time 5035 5045	2014-02-12
+R9	hasAttackTime Arg1:T27 Arg2:T31
+T32	Indicator 5076 5094	info[.]flnet[.]org
+T33	Indicator 5116 5136	icybin[.]flnet[.]org
+T34	Indicator 5141 5159	book[.]flnet[.]org
+T35	Address 5220 5233	58.64.200.178
+T36	Address 5234 5247	58.64.200.179
+T37	Address 5248 5260	103.20.192.4
+T38	Time 5272 5282	2013-08-31
+T39	Time 5283 5293	2013-05-02
+T40	Time 5294 5304	2013-08-02
+T41	Time 5305 5315	2013-08-10
+T42	Time 5316 5326	2013-07-15
+T43	Time 5327 5337	2014-01-02
+T44	Time 5338 5348	2013-12-03
+T45	Time 5360 5370	2013-08-31
+T46	Time 5371 5381	2013-08-02
+T47	Time 5382 5392	2013-08-02
+T48	Time 5393 5403	2013-08-10
+T49	Time 5404 5414	2013-07-15
+T50	Time 5415 5425	2014-01-02
+T51	Time 5426 5436	2014-01-02
+T52	Indicator 5449 5467	icybin.flnet[.]org
+T53	Indicator 5468 5484	info.flnet[.]org
+T54	Indicator 5485 5501	book.flnet[.]org
+T55	Indicator 5502 5518	info.flnet[.]org
+T56	Indicator 5519 5537	icybin.flnet[.]org
+T57	Indicator 5538 5554	book.flnet[.]org
+T58	Indicator 5555 5571	info.flnet[.]org
+T59	Address 5576 5589	58.64.200.178
+T60	Address 5590 5603	58.64.200.178
+T61	Address 5604 5617	58.64.200.178
+T62	Address 5618 5631	58.64.200.179
+T63	Address 5632 5645	58.64.200.179
+T64	Address 5646 5658	103.20.192.4
+T65	Address 5659 5671	103.20.192.4
+T66	Malware 5696 5704	Gh0stRat
+T67	Indicator 5765 5783	book[.]flnet[.]org
+T68	Indicator 5788 5808	icybin[.]flnet[.]org
+R10	indicates Arg1:T68 Arg2:T66
+R11	indicates Arg1:T67 Arg2:T66
+T69	Campaign 5853 5862	DeputyDog
+T70	Malware 5900 5905	Gh0st
+T71	Malware 5940 5945	Gh0st
+T72	Indicator 6008 6026	me[.]scieron[.]com
+R12	involvesMalware Arg1:T69 Arg2:T70
+R13	indicates Arg1:T72 Arg2:T71
+T73	MD5 6048 6080	758886e58f9ea2ff22b57cbbb015166e
+T74	MD5 6098 6130	0294f9280491f85d898ebe471f0fb58e
+T75	MD5 6150 6182	9d20566a327076b7152bbf9ed20292c4
+T76	Indicator 6081 6097	book.flnet[.]org
+T77	Indicator 6131 6149	icybin.flnet[.]org
+T78	Indicator 6183 6199	me.scieron[.]com
+T79	Indicator 6205 6223	me[.]scieron[.]com
+T80	Address 6254 6266	58.64.199.22
+T81	Indicator 6272 6290	book[.]flnet[.]org
+T82	Address 6345 6356	58.64.199.0
+T83	Indicator 6375 6393	book[.]flnet[.]org
+T84	Address 6417 6429	58.64.199.27
+T85	Indicator 6489 6509	dll[.]freshdns[.]org
+T86	Indicator 6511 6533	ali[.]blankchair[.]com
+T87	Indicator 6539 6561	cht[.]blankchair[.]com
+T88	Indicator 6574 6594	dll[.]freshdns[.]org
+T89	Address 6607 6619	58.64.199.25
+T90	Indicator 6626 6648	ali[.]blankchair[.]com
+T91	Indicator 6653 6675	cht[.]blankchair[.]com
+T92	Address 6688 6700	58.64.199.22
+T93	Time 6742 6752	2012-11-12
+T94	Time 6753 6763	2012-04-09
+T95	Time 6764 6774	2012-04-09
+T96	Time 6775 6785	2012-11-08
+T97	Time 6786 6796	2012-11-23
+T98	Time 6797 6807	2012-05-29
+T99	Time 6809 6819	2012-11-28
+T100	Time 6820 6830	2012-10-24
+T101	Time 6831 6841	2012-09-18
+T102	Time 6842 6852	2012-11-25
+T103	Time 6853 6863	2012-11-27
+T104	Time 6864 6873	2012-6-28
+T105	Indicator 6875 6891	me.scieron[.]com
+T106	Address 6892 6904	58.64.199.22
+T107	Address 6926 6938	58.64.199.22
+T108	Address 6960 6972	58.64.199.22
+T109	Address 6992 7004	58.64.199.25
+T110	Address 7025 7037	58.64.199.25
+T111	Address 7055 7067	58.64.199.27
+T112	Indicator 6905 6925	cht.blankchair[.]com
+T113	Indicator 6939 6959	ali.blankchair[.]com
+T114	Indicator 6973 6991	dll.freshdns[.]org
+T115	Indicator 7005 7024	rt.blankchair[.]com
+T116	Indicator 7038 7054	book.flnet[.]org
+T117	Indicator 7341 7361	dll[.]freshdns[.]org
+T118	Campaign 7294 7309	Ephemeral Hydra
+T119	Campaign 7280 7289	DeputyDog
+T120	Indicator 7363 7385	ali[.]blankchair[.]com
+T121	Indicator 7390 7412	cht[.]blankchair[.]com
+T122	Campaign 7447 7456	DeputyDog
+T123	Campaign 7471 7486	Ephemeral Hydra
+T124	ExploitTargetObject 8942 8966	U.S. government entities
+T125	ExploitTargetObject 8967 8981	Japanese firms
+T126	ExploitTargetObject 8982 9005	Defense industrial base
+T127	ExploitTargetObject 9022 9031	Law firms
+T128	ExploitTargetObject 9032 9054	Information technology
+T129	ExploitTargetObject 9070 9086	Mining companies
+T130	ExploitTargetObject 9087 9117	Non-governmental organizations
+T131	ExploitTargetObject 9119 9123	NGOs
+T132	ExploitTargetObject 9056 9058	IT
+T133	ExploitTargetObject 9007 9010	DIB
+R14	indicates Arg1:T73 Arg2:T66
+R15	indicates Arg1:T74 Arg2:T66
+R16	indicates Arg1:T75 Arg2:T66
+R17	indicates Arg1:T76 Arg2:T66
+R18	indicates Arg1:T77 Arg2:T66
+R19	indicates Arg1:T78 Arg2:T66
+R20	indicates Arg1:T79 Arg2:T66
+R21	indicates Arg1:T81 Arg2:T66
+R22	indicates Arg1:T83 Arg2:T66
+R23	indicates Arg1:T85 Arg2:T66
+R24	indicates Arg1:T86 Arg2:T66
+R25	indicates Arg1:T87 Arg2:T66
+R26	indicates Arg1:T88 Arg2:T66
+R27	indicates Arg1:T90 Arg2:T66
+R28	indicates Arg1:T91 Arg2:T66
+R29	indicates Arg1:T105 Arg2:T66
+R30	indicates Arg1:T112 Arg2:T66
+R31	indicates Arg1:T113 Arg2:T66
+R32	indicates Arg1:T114 Arg2:T66
+R33	indicates Arg1:T115 Arg2:T66
+R34	indicates Arg1:T116 Arg2:T66
+R35	indicates Arg1:T117 Arg2:T66
+R36	usesAddress Arg1:T66 Arg2:T80
+R37	usesAddress Arg1:T66 Arg2:T82
+R38	usesAddress Arg1:T66 Arg2:T84
+R39	usesAddress Arg1:T66 Arg2:T89
+R40	usesAddress Arg1:T66 Arg2:T92
+R41	usesAddress Arg1:T66 Arg2:T106
+R42	usesAddress Arg1:T66 Arg2:T107
+R43	usesAddress Arg1:T66 Arg2:T108
+R44	usesAddress Arg1:T66 Arg2:T109
+R45	usesAddress Arg1:T66 Arg2:T110
+R46	usesAddress Arg1:T66 Arg2:T111
+R47	usesAddress Arg1:T27 Arg2:T59
+R48	usesAddress Arg1:T27 Arg2:T60
+R49	usesAddress Arg1:T27 Arg2:T61
+R50	usesAddress Arg1:T27 Arg2:T62
+R51	usesAddress Arg1:T27 Arg2:T63
+R52	usesAddress Arg1:T27 Arg2:T64
+R53	usesAddress Arg1:T27 Arg2:T65
+R54	usesAddress Arg1:T27 Arg2:T35
+R55	usesAddress Arg1:T27 Arg2:T36
+R56	usesAddress Arg1:T27 Arg2:T37
+R57	hasAttackTime Arg1:T1 Arg2:T38
+R58	hasAttackTime Arg1:T1 Arg2:T39
+R59	hasAttackTime Arg1:T1 Arg2:T40
+R60	hasAttackTime Arg1:T1 Arg2:T41
+R61	hasAttackTime Arg1:T1 Arg2:T42
+R62	hasAttackTime Arg1:T1 Arg2:T43
+R63	hasAttackTime Arg1:T1 Arg2:T44
+R64	hasAttackTime Arg1:T1 Arg2:T45
+R65	hasAttackTime Arg1:T1 Arg2:T46
+R66	hasAttackTime Arg1:T1 Arg2:T47
+R67	hasAttackTime Arg1:T1 Arg2:T48
+R68	hasAttackTime Arg1:T1 Arg2:T49
+R69	hasAttackTime Arg1:T1 Arg2:T50
+R70	hasAttackTime Arg1:T1 Arg2:T51
+R71	indicates Arg1:T52 Arg2:T27
+R72	indicates Arg1:T53 Arg2:T27
+R73	indicates Arg1:T54 Arg2:T27
+R74	indicates Arg1:T55 Arg2:T27
+R75	indicates Arg1:T56 Arg2:T27
+R76	indicates Arg1:T57 Arg2:T27
+R77	indicates Arg1:T58 Arg2:T27

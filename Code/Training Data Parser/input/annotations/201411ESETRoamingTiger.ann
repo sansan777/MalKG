@@ -1,0 +1,170 @@
+T1	Malware 0 13	Roaming tiger
+T2	Organization 67 71	ESET
+T3	ExploitTargetObject 100 106	Russia
+T4	ExploitTargetObject 126 133	Belarus
+T5	ExploitTargetObject 135 145	Kazakhstan
+T6	ExploitTargetObject 147 157	Kyrgyzstan
+T7	ExploitTargetObject 159 169	Tajikistan
+T8	ExploitTargetObject 171 178	Ukraine
+T9	ExploitTargetObject 183 193	Uzbekistan
+T10	Attacker 390 403	Roaming tiger
+T11	ExploitTargetObject 432 438	Russia
+T12	Vulnerability 469 482	CVE-2012-0158
+T13	Vulnerability 487 500	CVE-2014-1761
+T14	Malware 504 517	Win32/Korplug
+T15	Exploit 523 532	PlugX RAT
+T16	Exploit 558 567	Gh0st RAT
+T17	Malware 536 552	Win32/Farfli.BEK
+T18	Vulnerability 585 598	CVE-2014-1761
+T19	Vulnerability 632 645	CVE-2014-1761
+T20	Malware 912 925	Win32/Korplug
+T21	Dropper 1012 1028	Win32/Farfli.BEK
+T22	Dropper 1322 1338	Win32/Farfli.BEK
+T23	File 1406 1435	%WINDIR%\AppPatch\msimain.mui
+T24	Dropper 1364 1380	Win32/Farfli.BEK
+R1	indicates Arg1:T23 Arg2:T24
+T25	File 1449 1480	%WINDIR%\AppPatch\AcProtect.dll
+R2	indicates Arg1:T25 Arg2:T24
+T26	File 1520 1555	%WINDIR%\AppPatch\Custom\%GUID%.sdb
+R3	indicates Arg1:T26 Arg2:T24
+T27	Dropper 1558 1574	Win32/Farfli.BEK
+T28	Indicator 2202 2227	adobeflashupdate.dynu.com
+T29	Address 2229 2241	122.10.92.14
+T30	Location 2243 2252	Hong Kong
+T31	Indicator 2254 2280	checkpdate.youdontcare.com
+T32	Address 2282 2296	122.10.118.129
+T33	Location 2298 2307	Hong Kong
+T34	Indicator 2315 2321	dnsedc
+T35	Address 2327 2341	122.10.118.131
+T36	Location 2343 2352	Hong Kong
+T37	Indicator 2354 2370	dotkang.vicp.net
+T38	Address 2372 2386	122.10.118.131
+T39	Location 2388 2397	Hong Kong
+T40	Indicator 2399 2413	dwm.dnsedc.com
+T41	Address 2415 2429	122.10.118.131
+T42	Location 2431 2440	Hong Kong
+T43	Indicator 2442 2456	gf.arabidc.com
+T44	Address 2458 2470	122.10.83.51
+T45	Location 2472 2481	Hong Kong
+T46	Indicator 2483 2500	kkts.yeshopea.com
+T47	Address 2502 2517	103.225.196.140
+T48	Location 2519 2528	Hong Kong
+T49	Indicator 2530 2549	nativeame2.jkub.com
+T50	Address 2551 2566	103.225.196.140
+T51	Location 2568 2577	Hong Kong
+T52	Indicator 2579 2597	news.bfinancea.net
+T53	Address 2599 2613	122.10.118.129
+T54	Location 2615 2624	Hong Kong
+T55	Indicator 2626 2640	fsvts.vicp.net
+T56	Indicator 2641 2657	futuresgolda.com
+T57	Indicator 2659 2682	systemupdate5.dtdns.net
+T58	Indicator 2683 2699	googlenewsup.net
+T59	Indicator 2753 2769	niisvt.f3322.org
+T60	Address 2771 2783	122.10.83.62
+T61	Address 2784 2798	103.20.222.170
+T62	Location 2800 2809	Hong Kong
+T63	Indicator 2811 2826	note.wikaba.com
+T64	Address 2828 2840	122.10.83.62
+T65	Location 2842 2851	Hong Kong
+T66	Indicator 2853 2877	systemupdate1.suroot.com
+T67	Address 2879 2891	122.10.92.15
+T68	Location 2893 2902	Hong Kong
+T69	Indicator 2904 2928	systemupdate1.suroot.com
+T70	Address 2930 2942	122.10.92.15
+T71	Location 2944 2953	Hong Kong
+T72	Indicator 2955 2973	vk.newsupdatea.net
+T73	Address 2975 2990	123.254.109.166
+T74	Location 2992 3001	Hong Kong
+T75	Indicator 3003 3017	www.dnsqaz.com
+T76	Address 3019 3031	122.10.83.62
+T77	Location 3033 3042	Hong Kong
+T78	Indicator 3044 3059	www.sizn-ru.com
+T79	Address 3061 3073	122.10.83.62
+T80	Address 3075 3087	122.112.2.14
+T81	Location 3089 3098	Hong Kong
+T82	Indicator 3100 3124	yahoomessenger.flnet.org
+T83	Address 3126 3138	122.10.92.15
+T84	Location 3140 3149	Hong Kong
+T85	Indicator 3151 3167	transactiona.com
+T86	Address 3169 3181	122.10.92.14
+T87	Location 3183 3192	Hong Kong
+T88	Indicator 3194 3218	systemupdate2.etowns.net
+T89	Address 3220 3232	122.10.92.14
+T90	Location 3234 3243	Hong Kong
+T91	Indicator 3245 3267	adobeupdate1.dtdns.net
+T92	Address 3269 3281	122.10.92.15
+T93	Location 3283 3292	Hong Kong
+T94	Indicator 3294 3315	spacecorp.sizn-ru.com
+T95	Indicator 3317 3341	systemupdate3.suroot.com
+T96	Attacker 3454 3465	liu qiuping
+T97	Country 3521 3528	Beijing
+R4	hasAttackLocation Arg1:T96 Arg2:T97
+T98	Email 3631 3647	yuminga1@126.com
+R5	indicates Arg1:T28 Arg2:T1
+R6	usesAddress Arg1:T1 Arg2:T29
+R7	hasAttackLocation Arg1:T10 Arg2:T30
+R8	indicates Arg1:T31 Arg2:T1
+R9	usesAddress Arg1:T1 Arg2:T32
+R10	hasAttackLocation Arg1:T10 Arg2:T33
+R11	indicates Arg1:T34 Arg2:T1
+R12	usesAddress Arg1:T1 Arg2:T35
+R13	hasAttackLocation Arg1:T10 Arg2:T36
+R14	indicates Arg1:T37 Arg2:T1
+R15	usesAddress Arg1:T1 Arg2:T38
+R16	hasAttackLocation Arg1:T10 Arg2:T39
+R17	indicates Arg1:T40 Arg2:T1
+R18	usesAddress Arg1:T1 Arg2:T41
+R19	hasAttackLocation Arg1:T10 Arg2:T42
+R20	indicates Arg1:T43 Arg2:T1
+R21	usesAddress Arg1:T1 Arg2:T44
+R22	hasAttackLocation Arg1:T10 Arg2:T45
+R23	indicates Arg1:T46 Arg2:T1
+R24	usesAddress Arg1:T1 Arg2:T47
+R25	hasAttackLocation Arg1:T10 Arg2:T48
+R26	indicates Arg1:T49 Arg2:T1
+R27	usesAddress Arg1:T1 Arg2:T50
+R28	hasAttackLocation Arg1:T10 Arg2:T51
+R29	indicates Arg1:T52 Arg2:T1
+R30	usesAddress Arg1:T1 Arg2:T53
+R31	hasAttackLocation Arg1:T10 Arg2:T54
+R32	indicates Arg1:T55 Arg2:T1
+R33	indicates Arg1:T56 Arg2:T1
+R34	indicates Arg1:T57 Arg2:T1
+R35	indicates Arg1:T58 Arg2:T1
+R36	indicates Arg1:T59 Arg2:T1
+R37	usesAddress Arg1:T1 Arg2:T60
+R38	usesAddress Arg1:T1 Arg2:T61
+R39	hasAttackLocation Arg1:T10 Arg2:T62
+R40	indicates Arg1:T63 Arg2:T1
+R41	usesAddress Arg1:T1 Arg2:T64
+R42	hasAttackLocation Arg1:T10 Arg2:T65
+R43	indicates Arg1:T66 Arg2:T1
+R44	usesAddress Arg1:T1 Arg2:T67
+R45	hasAttackLocation Arg1:T10 Arg2:T68
+R46	indicates Arg1:T69 Arg2:T1
+R47	usesAddress Arg1:T1 Arg2:T70
+R48	hasAttackLocation Arg1:T10 Arg2:T71
+R49	indicates Arg1:T72 Arg2:T1
+R50	usesAddress Arg1:T1 Arg2:T73
+R51	hasAttackLocation Arg1:T10 Arg2:T74
+R52	indicates Arg1:T75 Arg2:T1
+R53	usesAddress Arg1:T1 Arg2:T76
+R54	hasAttackLocation Arg1:T10 Arg2:T77
+R55	indicates Arg1:T78 Arg2:T1
+R56	usesAddress Arg1:T1 Arg2:T79
+R57	usesAddress Arg1:T1 Arg2:T80
+R58	hasAttackLocation Arg1:T10 Arg2:T81
+R59	indicates Arg1:T82 Arg2:T1
+R60	usesAddress Arg1:T1 Arg2:T83
+R61	hasAttackLocation Arg1:T10 Arg2:T84
+R62	indicates Arg1:T85 Arg2:T1
+R63	usesAddress Arg1:T1 Arg2:T86
+R64	hasAttackLocation Arg1:T10 Arg2:T87
+R65	indicates Arg1:T88 Arg2:T1
+R66	usesAddress Arg1:T1 Arg2:T89
+R67	hasAttackLocation Arg1:T10 Arg2:T90
+R68	indicates Arg1:T91 Arg2:T1
+R69	usesAddress Arg1:T1 Arg2:T92
+R70	hasAttackLocation Arg1:T10 Arg2:T93
+R71	indicates Arg1:T94 Arg2:T1
+R72	indicates Arg1:T95 Arg2:T1

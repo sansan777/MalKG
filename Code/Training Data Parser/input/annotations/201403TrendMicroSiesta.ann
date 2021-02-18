@@ -1,0 +1,41 @@
+T1	Campaign 235 239	Safe
+T2	Campaign 4 10	Siesta
+T3	Campaign 372 378	Siesta
+T4	Campaign 876 882	Siesta
+T5	ExploitTargetObject 1037 1056	undisclosed company
+A1	ID T5 1
+R1	targets Arg1:T4 Arg2:T5
+T7	Exploit 985 1006	spear-phishing emails
+R2	involvesMalware Arg1:T4 Arg2:T7
+T8	File 1447 1522	http://{malicious domain}/{organization name}/{legitimate archive name}.zip
+T9	Dropper 1560 1570	TROJ_SLOTH
+R3	indicates Arg1:T8 Arg2:T9
+T10	Payload 1864 1883	google{BLOCKED}.exe
+R4	hasCharacteristics Arg1:T9 Arg2:T10
+T11	Indicator 2021 2062	http://www.micro{BLOCKED}. com/index.html
+R5	indicates Arg1:T11 Arg2:T9
+R6	involvesMalware Arg1:T4 Arg2:T9
+T12	Malware 2153 2165	BKDR_SLOTH.B
+R7	indicates Arg1:T11 Arg2:T12
+R8	usesMalware Arg1:T4 Arg2:T12
+T13	SHA-1 3095 3135	014542eafb792b98196954373b3fd13e60cb94fe
+T14	Dropper 3022 3087	Questionaire Concerning the Spread of Superbugs February 2014.exe
+R9	indicates Arg1:T13 Arg2:T14
+T15	Payload 3165 3177	UIODsevr.exe
+R10	hasCharacteristics Arg1:T14 Arg2:T15
+T16	Malware 3229 3241	BKDR_SLOTH.B
+T17	Indicator 3291 3307	skys{BLOCKED}com
+R11	indicates Arg1:T17 Arg2:T14
+T18	Malware 3356 3368	BKDR_SLOTH.A
+R12	hasCharacteristics Arg1:T18 Arg2:T15
+R13	indicates Arg1:T13 Arg2:T18
+R14	indicates Arg1:T17 Arg2:T18
+T19	Campaign 3501 3507	Siesta
+R15	involvesMalware Arg1:T19 Arg2:T18
+R16	involvesMalware Arg1:T19 Arg2:T16
+T20	Indicator 4521 4537	sky{BLOCKED}.com
+T21	Indicator 4571 4589	micro{BLOCKED}.com
+T22	Indicator 4594 4612	ifued{BLOCKED}.net
+T23	Attacker 4644 4651	Li Ning
+T24	Email 4688 4712	xiaomao{BLOCKED}@163.com
+R17	authored Arg1:T23 Arg2:T12

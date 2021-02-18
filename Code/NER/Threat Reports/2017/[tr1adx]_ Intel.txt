@@ -1,0 +1,166 @@
+2/28/2017 [tr1adx]: Intel 
+__ ___ __ / /_____< /___ _____/ / __
+ / __/ ___/ / __ `/ __ / |/_// /_/ / / / /_/ / /_/ /> < \__/_/ /_/\__,_/\__,_/_/|_| 
+home 
+| about 
+| articles 
+| intel 
+| contact 
+
+tr1adx Intelligence Bulletin (TIB) 00003: Bear Spotting Vol. 1: Russian Nation State Targeting of Government and Military Interests 
+[Published: January 9, 2017] [Last Updated: January 15, 2017] 
+Summary 
+The tr1adx team performs on-going research into Threat Actors, irrespective of their motivation, provenance, or targets. tr1adx Intelligence Bulletin #00003 shares intel on Russian Nation State Cyber Activity targeting Government and Military interests around the world. Please note this is an active bulletin, meaning we will occassionally add intel and information to this bulletin as we uncover new campaigns, targets or actors which meet the criteria. 
+tr1adx's research was able to identify targets in various countries and/or regions, including: Turkey Japan Denmark United States Venezuela India NATO Aliated Targets United Nations 
+Analysis 
+TTP's associated with Russian Nation State Threat Actors (Civil and Military Intelligence/GRU/APT28/APT29) allow us to track these Threat Actors' activities with a high/moderate degree of condence, and follow their trail of breadcrumbs through past, present, and future campaigns. While, for operational security reasons, we cannot go into detail on our techniques, practices, and sources for intelligence collection and analysis, we can say that the majority of the information published in this bulletin is based on in-depth research leveraging available Open Source Intelligence (OSINT) sources. In a few cases, intel data has been enriched by, derived from, and collected through other non-OSINT means. 
+Indicators of Compromise 
+Added on 2017-01-15: 
+
+Analyst Notes (and
+Creation Campaign Targeted Targeted Targeted
+Domain other fun
+Date Status Org Country Domain 
+anecdotes) 
+
+
+
+
+
+
+dpko[.]info 2016-10-Unknown United United un.org UN DPKO website 
+
+29 Nations (UN) States Department of Peacekeeping 
+https://www.tr1adx.net/intel/TIB-00003.html 
+2/28/2017 [tr1adx]: Intel 
+
+unausanyc[.]com 
+ausa[.]info 
+mea-gov[.]in 
+mfa-news[.]com 
+defenceinform[.]com 
+middle-eastreview[.]com 
+middle-easterview[.]com 
+foreign-review[.]com 
+
+2015-12­02 
+2015-07­19 
+2015-02­20 
+2015-04­30 
+2015-05­05 
+2015-04­15 
+2015-04­15 
+2015-04­14 
+
+
+Operations (DPKO) 
+United NationsUnknown Association of New York 
+Association of the UnitedInactive States Army (AUSA) 
+Ministry of 
+Inactive External Aairs (MEA) Ministry of Foreign 
+Inactive Aairs (MFA) Fake news site 
+
+MDefense Inactive Related Fake news site 
+Middle East Review of 
+Inactive International Aairs (MERIA) 
+Middle East Review of 
+Inactive International Aairs (MERIA) 
+Foreign Inactive Aairs Fake news site 
+
+
+
+Identied phishing originating from this 
+United domain targeting the
+unanyc.org
+States Venezuelan government (minpal.gob.ve) 
+ESET identied similar indicatorUnited ausa.org (ausameetings[.]com)
+States 
+in their APT28/Sednit 
+report. 
+
+India mea.gov.in N/A 
+N/A N/A N/A 
+N/A N/A N/A 
+United 
+rubincenter.org N/A 
+States 
+United 
+rubincenter.org N/A 
+States 
+N/A N/A N/A 
+Added on 2017-01-09: 
+
+
+
+
+Creation Campaign
+Domain Targeted Org
+Date Status 
+Armed Forces Communicationsafceaint[.]org 2016-11­
+Inactive and Electronics(*) 02 Association (AFCEA) 
+af-army[.]us 2016-10-Active Army / Air Force 17 
+
+Targeted Targeted Analyst Notes (and other Country Domain fun anecdotes) 
+Identied 2 related indicators, one of which ties in to another 
+United campaign:
+afcea.org
+States ns1[.]afceaint[.]org (216.155.143.28) ns2[.]afceaint[.]org (216.155.143.27) 
+
+
+
+United army.mil / The af-army[.]us domain States af.mil was seen resolving to 167.114.35.70, which is 
+https://www.tr1adx.net/intel/TIB-00003.html 
+2/28/2017 [tr1adx]: Intel 
+
+webmail­mil[.]dk (*) 
+nato­nevvs[.]org 
+jimin-jp[.]biz 
+jica-go­jp[.]biz 
+mofa-go­jp[.]com 
+turkey-mia[.]com 
+turkey­icisleri[.]com 
+
+2015-03­25 
+2016-10­05 
+2016-12­27 
+2016-12­27 
+2016-12­27 
+2016-12­20 
+2016-12­20 
+
+
+Defence
+Inactive 
+Command 
+North Atlantic TreatyUnknown Organization (NATO) Aliates 
+Liberal 
+Active Democratic Party of Japan 
+
+Japan InternationalActive Cooperation Agency 
+Ministry of
+Active 
+Foreign Aairs 
+Ministry of Active Interior Ankara (MIA) 
+Ministry of Active Interior Ankara (MIA) 
+
+
+N/A N/A 
+Japan jimin.jp 
+Japan jica.go.jp 
+Japan mofa.go.jp 
+Turkey mia.gov.tr 
+Turkey icisleri.gov.tr 
+
+listed as one of the IP addresses in the GRIZZLY STEPPE report. 
+Domain was hosted on 216.155.143.27, also seen in AFCEA campaign. Seriously? We know it's been 2 years and the Denmark Defense campaign may not have been publicized but come on guys... #BadOpsec! 
+N/A 
+Per our Japanese Gov't sources, domain has been observed in targeted malware. 
+Per our Japanese Gov't sources, domain has been observed in targeted malware. 
+Per our Japanese Gov't sources, domain has been observed in targeted malware. 
+Spoofed domain points to legitimate MIA domain: icisleri.gov.tr 
+Spoofed domain points to legitimate MIA domain: icisleri.gov.tr 
+(*) Legitimate organization appears to have claimed control over the spoofed/mimicked domain. 
+Indicators of Compromise (IOCs) [Downloadable Files]: TIB-00003 Domain IOCs [TXT] 
+If a log search for any of these Indicators of Compromise returns positive hits, we recommend you initiate appropriate cyber investigative processes immediately and engage Law Enforcement where appropriate. 
+https://www.tr1adx.net/intel/TIB-00003.html 
+

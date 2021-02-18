@@ -1,0 +1,203 @@
+
+Shaping the Future of Cybersecurity and Digital Trust 
+Partnership against Cybercrime 
+INSIGHT REPORT 
+NOVEMBER 2020 
+– – – 
+– – 
+– 
+– 
+– 
+– 
+
+– 
+– 
+– 
+
+BOX 2 
+The victims of cybercrime 
+Due to the ever-increasing number of internet users worldwide, the risk and impact of cybercrime on individuals and small and medium-sized enterprises (SMEs) globally are massive. Identity theft, romance scams, ransomware and business email compromise are costing consumers and SMEs billions with few resources available for prevention, response and recovery. Cybercrime victims need a clear path to get support, just as victims of physical crimes currently have. Unfortunately, few countries have such services, notably the United 
+Several initiatives aim to make it harder for cybercriminals to operate and some reduce their potential rewards. The Europol-led No More Ransom!15 project is a good example of a public-private initiative aimed at frustrating the cybercriminal business model and ultimately reducing criminal Kingdom, Australia, Canada and Israel, where citizens and businesses can call one central phone number or online service to report an incident and receive advice on how to respond and recover. Governments and law enforcement agencies need to define mandates for and ownership of the response. By increasing reporting and recovery resources, countries can decrease crime and revictimization. The process needs to be clear for victims, in line with a comprehensive response plan created by governments to support them. 
+
+financial gain. Other efforts, such as the Global 
+Cyber Alliance16 created by the New York County 
+District Attorney and the City of London Police 
+Commissioner, focus on disrupting cybercriminals 
+and the vulnerabilities they seek to exploit. 
+
+
+BOX 3 
+The global threat of ransomware 
+Ransomware is a fast-evolving threat. Five years ago, most ransomware attacks, with some notable exceptions, were random with a small ransom designed to entice payment. This strategy evolved into a business model in which customer service agents assist people with the purchase of ransomware services and the deposit of cryptocurrency profits, and ensure that decryption keys work, to protect their reputation. More recently, ransomware is targeted at specific organizations with large, customized demands based on perceived affordability. The malware itself is now more sophisticated, designed to act 
+Nevertheless, as security and users are not perfect, cybercrime cannot be completely prevented. Cybercriminals have proven highly adept at exploiting the digital ecosystem; the risk of getting caught remains very low due to the anonymity offered by the internet and the jurisdictional challenges of nationalized legal systems, whereas the potential returns are very high. Moreover, the profits from these malicious activities allow continuous improvements in the criminals’ and spread quickly and even exfiltrate people’s data as added leverage for extortion. The “honour” among thieves that kept targets like hospitals and critical infrastructure off the target list seems to have crumbled. The best defence for ransomware is preparation: presume you will get hit, back up your information resources, ensure continuity of operations in disruptions to the computer systems, and drill your response. Form your team in advance and include legal, technical and law enforcement members to connect you with initiatives, such as Europol’s “No More Ransom!”, that have a cache of free decryption tools and keys. 
+
+capabilities that often surpass the cybersecurity 
+investments made by their targets. 
+In the long run, in order to reduce the global impact of cybercrime and to systematically restrain cybercriminals, cybercrime must be confronted at its source by raising the cost of conducting cybercrimes, cutting the activities’ profitability and deterring criminals by increasing the direct risk they face. 
+Partnership against Cybercrime 
+
+Law enforcement against cybercrime 
+Law enforcement agencies worldwide are already engaging in commendable efforts to address this threat. Countless examples of successful action exist, although the general public is not usually aware of them.17 
+Yet law enforcement agencies still face numerous challenges as they adjust to fast-evolving digital crimes. One key difficulty is limited visibility and the lack of information. Cybercrimes are likely to not be reported at all.18,19 This situation is made worse by the anonymity and transnational nature of cybercrimes, combined with a lack of common terminology and classification of what constitutes cybercrime. 
+Cybercrimes are not considered violent crimes;20 they have a significant but almost non-measurable national impact (mostly due to under-reporting). This often leads to under-prioritizing law enforcement efforts against cybercrime, the absence of clear national cybercrime strategies and a shortage of resources invested for law enforcement. The lack of resources is particularly problematic when addressing cybercrime, which requires specific tools as well as personnel with technical skills and expertise who tend to be expensive and in high demand on the labour market.21 
+Moreover, the borderless nature of cybercrime significantly challenges the structured premise of criminal enforcement based on specific geography. In the physical world, a crime occurs in a location with the criminals physically present while, in cyberspace, criminals can live in one country, carry out crimes in another, leave evidence in a third while the victim is living in a fourth. Tracking, arresting and prosecuting cybercriminals require international information sharing and cross-border operational cooperation, which are not always aligned with existing legislative and operational frameworks. These processes also require speed. Criminals operate around the clock and constantly improve their capabilities, while the sharing of information across borders through mutual legal assistance treaties tends to be painfully slow. 
+In response to these challenges, the international community has also started taking action to enhance national law enforcement capabilities and facilitate international cooperation on cybercrime; INTERPOL’s Global Cybercrime Programme and Innovation Centre in Singapore, Europol’s European Cybercrime Centre and the Joint Cybercrime Action Taskforce hosted by the latter Centre are leading results of these efforts, as are existing international policy dialogues, such as the United Nations open-ended intergovernmental expert group on cybercrime and the Council of Europe’s Cybercrime Convention Committee representing the State Parties to the Budapest Convention. 
+However, to date, conventional governmental criminal justice efforts are proving too limited to meet the challenge. Research in the United States, for example, showed the likelihood that less than 1% of cybercrime will result in arrest.22 
+been a consensus priority area of the international 
+Council of Europe Cybercrime Programme Office, 
+community, with prominent examples of global 
+and INTERPOL’s Global Cybercrime Programme 
+initiatives led by the UN Office on Drugs and 
+and Global Complex for Innovation, further to 
+Crime’s Global Programme on Cybercrime, the 
+important bilateral and regional efforts. 
+
+1.4 
+
+The way forward 
+This threat is global – which implies that the solution must also be a globally coordinated effort. There is no single solution to reducing the harm caused by cybercrime, but it is apparent that current efforts fall short. As long as the barriers to entry for cybercrime remain low and the prosecution risk for conducting cybercrimes is limited, cybercriminals will continue to threaten societies and diminish trust in the digital economy. 
+It is inherently clear that a team is stronger than an individual. Individually, businesses and government organizations continue to thwart cybercrime the best way they can with some notable success. Cyber resilience and cybersecurity are a shared responsibility that involves everyone and, as such, requires an ongoing, holistic, systematic and coordinated approach. To improve the global security posture and to increase cyber resilience, however, the public and private sectors must work together. 
+
+
+
+2 
+
+
+Public-private cooperation against cybercrime 
+2.1 The unique role of private companies 
+In criminal investigations, law enforcement agencies together with the judiciary traditionally comprise the criminal justice process, with third parties outside this structure only responding to legal demands or requests for information. In this construct, the primary goal is prosecuting the perpetrators and adjudicating the crimes. However, when it comes to cybercrime, the private sector plays an instrumental role in the potential success of investigations due to a combination of factors. 
+
+BOX 5 The role of the ICT industry 
+Internet service providers have unique visibility into global internet traffic, while technology and cybersecurity companies have information about the users of their products and services. This information gives the private sector insights that can be used to 
+Second, practice has shown that companies subject to a cyberattack may be disinclined to report cybercrime incidents to law enforcement, and will turn instead to the private sector for recovery and investigation. Understandably, one of industry’s main objectives in the wake of an attack is business recovery and continuity, which can be in conflict with law enforcement’s objective to retrieve evidence that can support its investigation. Moreover, there is often a lack of confidence in law enforcement’s ability to effectively investigate cybercrime, while at the same time there is a fear that reporting cybercrimes may also create liability or reputational risks and even First, preventing and investigating cyber incidents requires significant technical skills and capabilities. Law enforcement agencies have different levels of capabilities in some areas than the private sector, or do not have the same resources as certain private-sector organizations. 
+identify and analyse malicious activities. Moreover, in many cases, they themselves or their customers are victims and they have either direct or indirect access to systems that are being used by criminals, which creates opportunities for disruptive actions. 
+have financial implications for the company and 
+subsequent loss of public and customer trust. 
+Third, as a result, an organization grappling with a cyberattack is often more likely to share information regarding the incident with a contracted private-sector entity (especially security companies and professional services offering relevant services for recovery, legal compliance and attribution) or a non-law enforcement government agency, such as National Computer Security Incident Response Teams (CSIRTs). 
+Moreover, due to the transnational nature of 
+cybercrimes, CSIRTs also play a role in supporting 
+international cooperation and leveraging the 
+strong CSIRTs international networks, founded 
+on trust and well-aligned objectives. International 
+While swift and effective action to a cyber incident may be aimed at limiting the damage and expediting the recovery of the organization, that focus does not preclude working effectively with law enforcement agencies to increase the latter’s chances of 
+
+
+Bridging the gap 
+Private-sector efforts to address cyber risk in general, and cybercrimes in particular, are mostly focused on raising the resilience of their products, services and networks – both through preventive and reactive measures. Companies’ efforts to deal with concrete attacks most often entail actions to accelerate organizations and fora, such as INTERPOL, the European Union Agency for Cybersecurity (ENISA) and the Forum of Incident Response and Security Teams (FIRST), are already working to enhance and expand these processes at the global level. 
+identifying and apprehending the perpetrators, which leads to a more substantial and lasting impact. Harnessing the private sector to work side by side with law enforcement officials is therefore critical to successfully combatting cybercriminals. 
+recovery and ensure business continuity, as well as eventually to prevent future malicious activities. Using the World Economic Forum framework for global cybersecurity efforts,23 this process could be illustrated as a continuous cycle, largely driven by market forces (Figure 1). 
+– 
+– 
+
+
+Driving cooperation 
+Despite these challenges, many examples of successful cooperation between private companies and law enforcement agencies exist, including collaboration initiated by a law enforcement agency, a company or a group of companies. INTERPOL and Europol are both 
+– 
+– 
+– 
+working to facilitate multinational and public-private cooperation. Leading law enforcement agencies are attempting to engage in enduring discussions with private companies. Several NGOs are working to foster multistakeholder relationships to support cooperation. 
+– 
+– 
+
+Principle 5 
+Principle 6 
+BOX 9 
+Ensuring value for participating in the cooperation 
+Capturing both the cooperation’s concrete value as well as any other opportunities it creates is essential to ensure continued commitment and increasing investments by all stakeholders. The mutual recognition of efforts is the easiest way to achieve this when successes can be communicated publicly. Moreover, two-way feedback during and following the collaboration can also optimize value creation for both sides, while the cooperation should be supported and endorsed by their leadership to ensure that the value creation is aligned with the public and the private sectors’ strategic interests. 
+
+Respecting concerns and challenges 
+All the stakeholders should acknowledge and address each other’s privacy, legal and other governance and geopolitical limitations and concerns from the outset in order to pre-empt any roadblocks to the cooperation. 
+A multilevel framework 
+These principles are aimed at global cooperation, 
+
+national or regional operations can gain but they can be applied to facilitate cooperation 
+much from the cooperation at the local level. on a regional, national or local level. Law 
+Implementing those principles normally enforcement agencies can engage with local 
+requires some adjustment to local needs and stakeholders to improve both security and 
+circumstances, based on a continuous dialogue enforcement efforts. Even global corporations’ 
+between the stakeholders. 
+
+
+appropriate. Disruption operations should be lawful and legitimate acts designed to disable a criminal’s infrastructure in order to protect the public. 
+Unintended consequences 
+Military wisdom suggests that “no battle plan survives first contact with the enemy”. Therefore, any disruptive action must take into account the potential for unintended consequences. Negative consequences can result from dismantling a criminal’s infrastructure, affecting those not involved in the criminal activity. For example, legitimate consumers or businesses may unknowingly – often through compromise – use part of the criminal’s infrastructure. Other government entities with legitimate investigations related to national security or criminal activity could be at work. In almost all operations, unwitting victims who are using an infected device will need remediation. The team will also have to consider their legal liability, as those involved in the disruption could be held responsible for any damages. Careful consideration of possible unintended consequences to legitimate disruption activities will help to minimize the possible damage, allow for proper notice and anticipate remediation. 
+The disruption will likely become public and, for the identified team members, the publicity can result in retaliation by the criminals. In some instances, a disruption could be viewed as a crime or hostile act. Importantly, public- and private-sector actors must vigilantly monitor their systems to minimize any technical or financial harm and communicate appropriately with the public at large about what has happened, while allowing stakeholders to control their level of exposure. 
+
+
+
+
+
+
+Partnering to combat global cybercrime 
+5.1 
+5.2 
+A global architecture for public-private cooperation against cybercrime 
+Despite enormous investment from both the public and private sectors, current global efforts to limit the growth of cybercrime are fragmented and insufficient. The systemic containment of cybercrime will only happen when the scope, scale and speed of public-private cooperation deepens, expanding internationally and sustained over the long term. The response to cybercrime requires an equally scalable approach. This section presents an architecture for carrying out actions based on these principles, by forming a global network of stakeholders committed to the shared mission. 
+In facilitating cooperation, the problem is neither a lack of willingness nor a shortage of operational platforms. Law enforcement agencies, NGOs and private companies cooperate eagerly and frequently. A significant number of collaborative initiatives already exist, and multiple operational bodies dot the global cyber landscape. Instead, the problem is that these efforts remain fragmented, unconnected and sporadic. No existing architecture facilitates global, comprehensive and coordinated efforts against cybercrime, allows participants to act as equal partners, or takes into consideration both public and private equities. But building on existing frameworks and lessons learned to date in the fight against cybercrime to shape such an architecture could lead to a systematic transformation in the way the respective capacities of the public and private sectors are leveraged, and to turning the tables on cybercriminals. 
+
+Building a successful architecture 
+As with many efforts in the information age, a government-centric, hierarchical approach to combatting cybercrime will not succeed. Global public-private cooperation cannot be centrally managed by one organization. Regardless of other shortcomings, conflicting priorities among sovereign nations render such a structure unworkable. Instead, an effective architecture should take a different form and have the following characteristics: 
+A distributed structure: Like the internet itself, the architecture should be distributed, comprised of autonomous elements and connected through many different pathways. A distributed structure is the only way to achieve the scope, scale and speed needed to combat cybercrime. 
+Trust: Trust is essential for successful cooperation. Trust is built up over time; nothing can replace personal relationships or the confidence stemming from historical success. However, the architecture should include operational processes designed to enhance confidence and trust when personal rapport has not yet been built among stakeholders. For example, establishing business rules and using technology that provides stakeholders maximum control over their data and assets enhance their willingness to share. 
+
+
+Unlocking the potential of privacy enhancing technologies (PETs) 
+BOX 12 
+For more information, see World Economic Forum, 
+Cyber Information Sharing: Building Collective Security, Insight Report, October 2020. 
+Privacy enhancing technologies (PETs) are a set of emerging technologies that can fundamentally reduce the risks associated with collaboration and information sharing (particularly in regulated environments). Techniques, such as federated analysis, homomorphic encryption and secure multiparty computation, are allowing to compute over encrypted data and thus enabling to process queries on each other’s data without ever learning what the other party’s data is. 
+PETs can unlock enormous possibilities of joint investigations between the public and private 
+Flexible design: An effective architecture must cover many different use cases and deal effectively with regional variations. It must adapt to the varied public-private relationships and cultures in different communities. What works in South-East Asia, for example, will not directly apply to Europe. 
+Multilevel: Experience shows that small, focused groups are best at carrying out operational activities. Further, different targets require different small-group compositions. Yet, these groups require legal, technology and organizational infrastructure to succeed; large, permanent organizations are much more efficient at providing and maintaining such infrastructure. Thus, certain architectural elements need to be temporary, while others should be permanent. The temporary elements come into existence for a specific purpose, then expand or contract as needed over the course of an activity, and disband. The permanent elements provide the “infrastructure” needed when a collaboration occurs in order to avoid inefficiencies or to “reinvent the wheel”. 
+sectors, for example by illuminating potential data and investigative opportunities in different organizations, while keeping the organization in full control over its data. 
+The Cyber Defence Alliance (CDA) is currently testing the use of a PET-enabled collaborative platform with financial institutions to improve their ability to identify fraud in data by interrogating each other’s systems for suspicious cybercrime activity. If successful, these trials may improve efficiency across investigation teams while maintaining appropriate privacy requirements protecting the data. 
+Transparent processes: Effective cooperation requires processes that are transparent and repeatable. These processes can be technical (e.g. agreeing to a standard for exchanging information), business oriented (e.g. establishing standard procedures for conducting meetings) or operational 
+(e.g. deciding on the methods used to engage in and coordinate actions among the members of the team). 
+Transparent rules: The policies and business rules governing the collaboration framework should be transparent and equitable (both in terms of the expectations and the treatment of participants). They should also incentivize team members to provide information, allocate resources and take action. 
+Equity: The architecture should treat the interests of all participating organizations equally and should allow the goals, priorities and outcomes of a specific cooperative activity to be set collectively; no single entity or side should dominate the process. Both public- and private-sector team members should take on leadership positions, depending on the circumstances. 
+
+
+5.3 
+
+A framework for success 
+
+FIGURE 2 
+What would an architecture against cybercrime incorporating these characteristics look like? One structure suggested by the Partnership against Cybercrime Working Group envisions a three-level system: 
+– A global partnership, building on the existing Forum initiative, to bring together international stakeholders to provide an overarching narrative and commitment to cooperate; foster interaction within a global network of entities that drive efforts to fight cybercrime; and facilitate 
+A global architecture for cooperation 
+strategic dialogues and processes aiming to support cooperation and overcome barriers in the long term. 
+– 
+Permanent Nodes, a global network of existing organizations that strive to facilitate public-private cooperation over time. 
+
+– 
+Threat Focus Cells (TFC), short-term, mission-driven groups of partners that engage in concrete, operational, cooperative efforts. These cells will be hosted and maintained by the Permanent Nodes. 
+
+
+
+
+– 
+– 
+– 
+
+
+
+Conclusion 
+
+Next step: implementation 
+The risk from cybercrime continues to grow, affecting everyone; current solutions are simply not sufficient. As long as the entry barriers to cybercrime are critically low, people will continue to suffer from its impact. Collaborative work is needed to make it harder for attacks to succeed and to make the penalties much stronger so the costs to the criminals outweigh the gains. 
+Businesses, governments, NGOs and international organizations must face the challenges associated with cooperating against cybercrime head-on. This report aims to help stakeholders overcome the challenges and foster the operational and conceptual processes needed. Making them a reality would be a significant step forward in this fight. 
+
+In the coming months, the Partnership against Cybercrime Working Group will continue to prepare the implementation of these concepts and widen the scope of the initiative’s efforts. Leading companies and law enforcement agencies are invited to pledge their continued commitment and support to the effort to facilitate cooperation in the fight against cybercrime. 
+The suggested architecture could eventually evolve into a newly envisioned, independent Alliance to Combat Global Cybercrime. In the interim, the World Economic Forum and key stakeholders will work together to promote the desired processes and assess the validity of the concept. 
+The need to combat cybercrime is pressing and the time to act is now. 
+
+
+
+The World Economic Forum, committed to improving the state of the world, is the International Organization for Public-Private Cooperation. 
+The Forum engages the foremost political, business and other leaders of society to shape global, regional and industry agendas. 
+World Economic Forum 
+91–93 route de la Capite CH-1223 Cologny/Geneva Switzerland 
+Tel.: +41 (0) 22 869 1212 Fax: +41 (0) 22 786 2744 contact@weforum.org www.weforum.org 
+
+
+

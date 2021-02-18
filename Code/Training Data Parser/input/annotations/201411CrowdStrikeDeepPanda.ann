@@ -1,0 +1,50 @@
+T1	Organization 169 193	CrowdStrike Intelligence
+T2	ExploitTargetObject 281 309	U.S. Defense Industrial Base
+T3	Malware 401 407	Sakula
+T4	Attacker 563 573	DEEP PANDA
+R1	authored Arg1:T4 Arg2:T3
+T5	Malware 1102 1108	Sakula
+T6	Malware 1227 1232	PlugX
+T7	File 1324 1337	MediaSoft.exe
+T8	MD5 1349 1381	d00b3169f45e74bb22a1cd684341b14a
+T9	MD5 1421 1453	ae6f33f6cdc25dc4bda24b2bccff79fe
+T10	File 1402 1409	msi.dll
+R2	indicates Arg1:T10 Arg2:T5
+R3	indicates Arg1:T7 Arg2:T5
+R4	indicates Arg1:T8 Arg2:T5
+R5	indicates Arg1:T9 Arg2:T5
+T11	Malware 1493 1499	Sakula
+T12	MD5 1522 1554	0c2674c3a97c53082187d930efb645c2
+T13	Organization 1647 1665	DTOPTOOLZ Co., Ltd
+T14	Address 1753 1768	180.210.206.246
+T15	Time 1878 1888	April 2014
+T16	Time 2072 2083	August 2014
+R6	indicates Arg1:T12 Arg2:T11
+R7	hasAttackTime Arg1:T11 Arg2:T15
+R8	hasAttackTime Arg1:T11 Arg2:T16
+R9	usesAddress Arg1:T11 Arg2:T14
+T17	Software 2305 2317	Adobe Reader
+T18	Software 2319 2330	Juniper VPN
+T19	Software 2336 2361	Microsoft ActiveX Control
+T20	Software 3383 3400	Microsoft ActiveX
+T21	Malware 3438 3444	Sakula
+T22	Malware 3518 3524	Sakula
+T23	Indicator 3652 3673	www[.]xha-mster[.]com
+R10	indicates Arg1:T23 Arg2:T22
+T24	Time 3702 3714	midSeptember
+R11	hasAttackTime Arg1:T22 Arg2:T24
+T25	Email 3756 3775	wendellom@yahoo.com
+R12	indicates Arg1:T25 Arg2:T22
+T26	Attacker 3797 3809	tonyy starke
+R13	authored Arg1:T26 Arg2:T22
+T27	Campaign 3927 3937	DEEP PANDA
+T28	Address 4032 4046	198.200.45.112
+T29	Campaign 4102 4112	DEEP PANDA
+T30	Time 4169 4183	September 2014
+T31	Indicator 4391 4416	vpn[.]foundationssl[.]com
+T32	Organization 4455 4466	CrowdStrike
+T33	Campaign 4496 4506	DEEP PANDA
+T34	Indicator 4773 4792	foundationssl[.]com
+T35	Indicator 5034 5060	news[.]foundationssl[.]com
+T36	Indicator 5081 5100	foundationssl[.]com
+T37	Campaign 5159 5169	DEEP PANDA

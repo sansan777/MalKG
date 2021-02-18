@@ -1,0 +1,113 @@
+T1	Malware 3028 3035	Taidoor
+T2	Organization 3057 3068	Trend Micro
+T3	Malware 3072 3083	BKDR_SIMBOT
+T4	Country 3432 3438	Taiwan
+R1	hasAttackLocation Arg1:T1 Arg2:T4
+T5	Software 3787 3812	Smart Protection Network™
+T6	Organization 3774 3786	Trend Micro™
+R2	hasProduct Arg1:T6 Arg2:T5
+T7	Time 4518 4531	March 4, 2009
+T8	Malware 4437 4444	Taidoor
+R3	hasAttackTime Arg1:T8 Arg2:T7
+T9	ExploitTargetObject 4786 4806	Taiwanese government
+T10	Campaign 5095 5102	Taidoor
+T11	Software 5313 5338	Microsoft Common Controls
+T12	Vulnerability 5354 5369	CVE-2012- 0158
+R4	hasVulnerability Arg1:T11 Arg2:T12
+T13	Software 5519 5531	Adobe Reader
+T14	Software 5533 5540	Acrobat
+T15	Software 5545 5557	Flash Player
+T16	Vulnerability 5581 5593	CVE-20094324
+T17	Vulnerability 5596 5609	CVE-2010-1297
+T18	Vulnerability 5613 5626	CVE-2010-2883
+T19	Vulnerability 5634 5646	CVE-20110611
+T20	Malware 5425 5432	Taidoor
+R5	exploits Arg1:T20 Arg2:T16
+R6	exploits Arg1:T20 Arg2:T17
+R7	exploits Arg1:T20 Arg2:T18
+R8	exploits Arg1:T20 Arg2:T19
+T21	Vulnerability 5720 5733	CVE-2011-1269
+T22	Vulnerability 5740 5752	CVE-20093129
+T23	Software 5790 5806	Microsoft Office
+R9	hasVulnerability Arg1:T23 Arg2:T21
+R10	hasVulnerability Arg1:T23 Arg2:T22
+T24	File 7775 7793	[2 characters].tmp
+T25	File 7903 7913	~dfds3.reg
+T26	Malware 7587 7594	Taidoor
+R11	indicates Arg1:T24 Arg2:T26
+R12	indicates Arg1:T25 Arg2:T26
+T27	Indicator 8558 8589	aaaaa.php?id=bbbbbbcccccccccccc
+T28	Email 9761 9782	minaki.yang@yahoo.com
+T29	Time 9813 9829	October 25, 2011
+T30	Address 9851 9864	60.249.219.82
+T31	MD5 9876 9908	97ff2338e568fc382d41c30c31f89720
+T32	Malware 9213 9220	Taidoor
+R13	indicates Arg1:T28 Arg2:T32
+R14	hasAttackTime Arg1:T32 Arg2:T29
+R15	indicates Arg1:T30 Arg2:T32
+R16	indicates Arg1:T31 Arg2:T32
+T33	Address 10007 10020	60.249.219.82
+T34	MD5 10032 10064	5fd848000d68f45271a0e1abd5844493
+T35	Email 10101 10121	95273503@nccu.edu.tw
+T36	Address 10163 10176	60.249.219.82
+T37	MD5 10188 10220	8406c1ae494add6e4f0e78b476fb4db0
+T38	Malware 11501 11512	BKDR_SIMBOT
+T39	Malware 11586 11602	BKDR_SIMBOT.SMXA
+T40	Malware 11607 11622	BKDR_SIMBOT.SME
+T41	MalwareFamily 11668 11674	SIMBOT
+R17	hasFamily Arg1:T40 Arg2:T41
+R18	hasFamily Arg1:T39 Arg2:T41
+R19	hasMember Arg1:T41 Arg2:T40
+R20	hasMember Arg1:T41 Arg2:T39
+T42	Obfuscation 11727 11755	Adobe Flash Player installer
+T43	MalwareCharacteristics 12565 12569	HTTP
+T44	MalwareCharacteristics 12579 12593	RC4 encryption
+T45	Malware 12368 12374	SIMBOT
+R21	hasCharacteristics Arg1:T45 Arg2:T43
+R22	hasCharacteristics Arg1:T45 Arg2:T44
+T46	Indicator 12898 12918	HKLM\SOFTWARE\McAfee
+T47	SourceCodeInformation 13115 13118	C++
+T48	SourceCodeInformation 13148 13160	11,776 bytes
+T49	Indicator 13541 13548	WinHttp
+T50	Indicator 13770 13855	[C&C]/{5 random characters}.php?id={6 random numbers}{encrypted victim’s MAC address}
+T51	Malware 13655 13662	Taidoor
+R23	indicates Arg1:T50 Arg2:T51
+T52	SystemInformation 13870 13881	MAC address
+T53	Software 15951 15975	Smart Protection Network
+T54	Organization 15939 15950	Trend Micro
+R24	hasProduct Arg1:T54 Arg2:T53
+T55	Time 16054 16066	October 2010
+T56	Malware 15904 15911	Taidoor
+R25	hasAttackTime Arg1:T56 Arg2:T55
+T57	Campaign 19543 19550	Taidoor
+T58	TrojanHorse 19645 19665	Remote Access Trojan
+R26	involvesMalware Arg1:T57 Arg2:T58
+T59	Exploit 19989 20006	denial of service
+R27	involvesMalware Arg1:T57 Arg2:T59
+T60	CourseOfAction 20316 20338	solid patch management
+T61	CourseOfAction 20340 20369	endpoint and network security
+T62	CourseOfAction 20371 20383	firewall use
+T63	CourseOfAction 20476 20496	data loss prevention
+T64	CourseOfAction 21069 21088	Enhanced visibility
+T65	CourseOfAction 21090 21108	Logs from endpoint
+T66	CourseOfAction 21123 21141	network monitoring
+T67	CourseOfAction 21353 21369	Integrity checks
+T68	CourseOfAction 21532 21560	Empowering the human analyst
+T69	Software 21864 21878	Deep Discovery
+T70	Organization 21851 21862	Trend Micro
+R28	hasProduct Arg1:T70 Arg2:T69
+T71	CourseOfAction 22315 22357	cut off communications with the C&C server
+T72	CourseOfAction 22359 22396	Determine the scope of the compromise
+T73	CourseOfAction 22419 22460	analyzing the data and forensic artifacts
+T74	CourseOfAction 22567 22591	fortify affected servers
+T75	CourseOfAction 22945 22976	education and training programs
+T76	Time 28518 28530	October 2010
+T77	Campaign 28457 28464	Taidoor
+R29	hasAttackTime Arg1:T77 Arg2:T76
+T78	Vulnerability 28996 29009	CVE-2012-0158
+T79	Vulnerability 29011 29024	CVE-2009-4324
+T80	Vulnerability 29026 29039	CVE-2010-1297
+T81	Vulnerability 29041 29054	CVE-2010-2883
+T82	Vulnerability 29056 29069	CVE-2011-0611
+T83	Vulnerability 29071 29084	CVE-2011-1269
+T84	Vulnerability 29090 29103	CVE-2009-3129

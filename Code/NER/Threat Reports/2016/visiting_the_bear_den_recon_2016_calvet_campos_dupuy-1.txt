@@ -1,0 +1,4113 @@
+Visiting The Bear Den 
+A Journey in the Land of (Cyber-)Espionage 
+
+Joan Calvet 
+
+Jessy Campos 
+
+Thomas Dupuy 
+
+1 
+
+
+Sednit Group 
+
+ 
+•Also know as APT28, Fancy Bear, Sofacy, 
+STRONTIUM, Tsar Team 
+•Group of attackers doing targeted attacks 
+since 2006 
+•Mainly interested into geopolitics 
+
+
+2 
+
+
+3 
+
+http://3.bp.blogspot.com/-jqGYLgMZvgY/Tx3dbKYM6YI/AAAAAAAAAOE/SiOMWxdFKm4/s1600/fancy+polar.jpg
+Plan 
+
+•Context 
+•The Week Serge Met The Bear 
+•The Mysterious DOWNDELPH 
+•Speculative Mumblings 
+
+
+
+CONTEXT 
+
+What kind of group is Sednit? 
+
+4 
+
+
+Who Is The Bear After? (1) 
+
+•We found a list of targets for Sednit 
+phishing campaigns: 
+–Operators used Bitly and “forgot” to set the 
+profile private 
+
+
+
+
+ (feature now removed from Bitly) 
+
+
+–Around 4,000 shortened URLs during 6 
+months in 2015 
+
+
+
+
+5 
+
+
+6 
+
+http://login.accoounts-google.com/url/?continue= 
+cGFyZXBreWl2QGdtYWlsLmNvbQ==&df=UGFraXN0YW4rRW1iYXNzeStLeWl2&tel=1 
+Who Is The Bear After? (2) 
+
+
+6 
+
+http://login.accoounts-google.com/url/?continue= 
+cGFyZXBreWl2QGdtYWlsLmNvbQ==&df=UGFraXN0YW4rRW1iYXNzeStLeWl2&tel=1 
+
+Who Is The Bear After? (2) 
+
+ 8
+parepkyiv@gmail.com 
+6 
+
+http://login.accoounts-google.com/url/?continue= 
+cGFyZXBreWl2QGdtYWlsLmNvbQ==&df=UGFraXN0YW4rRW1iYXNzeStLeWl2&tel=1 
+
+Who Is The Bear After? (2) 
+
+ 8 
+9
+parepkyiv@gmail.com 
+
+Pakistan+Embassy+Kyiv 
+
+
+6 
+http://login.accoounts-google.com/url/?continue= 
+cGFyZXBreWl2QGdtYWlsLmNvbQ==&df=UGFraXN0YW4rRW1iYXNzeStLeWl2&tel=1 
+
+Who Is The Bear After? (2) 
+
+ 8 
+9
+parepkyiv@gmail.com 
+
+Pakistan+Embassy+Kyiv 
+
+ 1026
+
+Who Is The Bear After? (3) 
+
+•Embassies and ministries of more than 40 countries 
+•NATO and EU institutions 
+•“Who’s who” of individuals involved in Eastern Europe 
+politics: 
+–Politicians 
+–Activists 
+–Journalists 
+–Academics 
+–Militaries 
+–… 
+
+
+
+
+7 
+
+
+The Bear Has Money 
+
+•A bag full of 0-day exploits: 
+
+
+8 
+
+2015 
+Apr 
+
+May 
+
+Jun 
+
+Jul 
+
+Aug 
+
+Sep Oct 
+
+CVE-2015-3043 (Flash) 
+CVE-2015-1701 (Windows LPE) 
+CVE-2015-2590 (Java) 
+
+CVE-2015-4902 (Java click-to-play bypass) 
+
+CVE-2015-7645 
+
+(Flash) 
+
+CVE-2015-2424 (Office RCE) 
+
+
+The Bear Can Code 
+
+•Tens of custom-made software used since 2006: 
+–Droppers 
+–Downloaders 
+–Reconnaissance tools 
+–Long-term spying backdoors 
+–Encryption proxy tool 
+–USB C&C channel 
+–Many helper tools 
+–… 
+
+
+
+
+ 
+
+9 
+Disclaimers 
+
+•Over the last two years we tracked Sednit closely, 
+but of course our visibility is not exhaustive 
+•How do we know it is ONE group? 
+–We don’t 
+–Our Sednit “definition” is based on their toolkit and the 
+related infrastructure 
+
+
+
+
+ 
+
+•We do not do attribution (but we point out hints that may 
+be used for that) 
+
+
+10 
+
+
+THE WEEK SERGE MET THE BEAR 
+
+11 
+
+
+Who Is Serge? 
+
+•Code name for an imaginary Sednit target 
+•Serge is a government employee with access to 
+sensitive information 
+
+
+ 
+
+•The chain of events in Serge’s attack matches 
+several real cases we investigated 
+•We use it as a textbook case to present (a part of) 
+the Sednit toolkit 
+
+
+ 
+
+
+ 
+
+12 
+
+
+13 
+Monday, 9:30AM 
+
+
+Serge Opens an Email 
+
+14 
+
+
+Legitimate URL Mimicking 
+
+15 
+
+ 6 
+8
+
+Legitimate URL Mimicking 
+
+15 
+
+ 6 
+8 
+3 
+9
+
+Legitimate URL Mimicking 
+
+15 
+
+ 6 
+8 
+11 
+14
+
+Legitimate URL Mimicking 
+
+15 
+
+ 6 
+8 
+10 
+12 
+11 
+14 
+15
+
+16 
+
+Serge clicks on the URL, and… 
+
+
+…Serge Meets SEDKIT 
+
+•Exploit-kit for targeted attacks 
+•Entry-point URLs mimic legitimate URLs 
+
+
+ 
+
+•Usually propagated by targeted phishing emails 
+(also seen with hacked website + iframe) 
+•Period of activity: September 2014 - Now 
+
+
+17 
+
+
+Landing Page (1) 
+Reconnaissance Report Building 
+
+18 
+
+ 9
+
+Landing Page (1) 
+Reconnaissance Report Building 
+
+18 
+
+ 9 
+5
+
+Landing Page (1) 
+Reconnaissance Report Building 
+
+18 
+
+ 9 
+5 
+7
+
+19 
+
+
+Crawling Sedkit 
+
+20 
+
+https://imgflip.com/readImage?iid=16586984
+
+21 
+
+Serge is selected to be 
+exploited… 
+
+
+… and Visits Sednit Exploits Factory 
+
+Vulnerability 
+
+Targeted Application 
+
+Note 
+
+CVE-2013-1347 
+
+Internet Explorer 8 
+
+CVE-2013-3897 
+
+Internet Explorer 8 
+
+CVE-2014-1510 + 
+CVE-2014-1511 
+Firefox 
+
+CVE-2014-1776 
+
+Internet Explorer 11 
+
+CVE-2014-6332 
+
+Internet Explorer 
+
+Several versions 
+
+N/A 
+
+MacKeeper 
+
+CVE-2015-2590 + 
+
+CVE-2015-4902 
+
+Java 
+
+0-day* 
+
+CVE-2015-3043 
+
+Adobe Flash 
+
+0-day* 
+
+CVE-2015-5119 
+
+Adobe Flash 
+
+Hacking Team gift 
+
+CVE-2015-7645 
+
+Adobe Flash 
+
+0-day* 
+
+
+
+22 
+
+* : At the time SEDKIT dropped them 
+
+
+… and Visits Sednit Exploits Factory 
+
+Vulnerability 
+
+Targeted Application 
+
+Note 
+
+CVE-2013-1347 
+
+Internet Explorer 8 
+
+CVE-2013-3897 
+
+Internet Explorer 8 
+
+CVE-2014-1510 + 
+
+CVE-2014-1511 
+
+Firefox 
+
+CVE-2014-1776 
+
+Internet Explorer 11 
+
+CVE-2014-6332 
+
+Internet Explorer 
+
+Several versions 
+
+N/A 
+
+MacKeeper 
+
+CVE-2015-2590 + 
+
+CVE-2015-4902 
+
+Java 
+
+0-day* 
+
+CVE-2015-3043 
+
+Adobe Flash 
+
+0-day* 
+
+CVE-2015-5119 
+
+Adobe Flash 
+
+Hacking Team gift 
+
+CVE-2015-7645 
+
+Adobe Flash 
+
+0-day* 
+
+
+
+23 
+
+* : At the time SEDKIT dropped them 
+
+
+… and Visits Sednit Exploits Factory 
+
+Vulnerability 
+
+Targeted Application 
+
+Note 
+
+CVE-2013-1347 
+
+Internet Explorer 8 
+
+CVE-2013-3897 
+
+Internet Explorer 8 
+
+CVE-2014-1510 + 
+
+CVE-2014-1511 
+
+Firefox 
+
+CVE-2014-1776 
+
+Internet Explorer 11 
+
+CVE-2014-6332 
+
+Internet Explorer 
+
+Several versions 
+
+N/A 
+
+MacKeeper 
+
+CVE-2015-2590 + 
+
+CVE-2015-4902 
+
+Java 
+
+0-day* 
+
+CVE-2015-3043 
+
+Adobe Flash 
+
+0-day* 
+
+CVE-2015-5119 
+
+Adobe Flash 
+
+Hacking Team gift 
+
+CVE-2015-7645 
+
+Adobe Flash 
+
+0-day* 
+
+
+
+24 
+
+* : At the time SEDKIT dropped them 
+
+
+… and Visits Sednit Exploits Factory 
+
+Vulnerability 
+
+Targeted Application 
+
+Note 
+
+CVE-2013-1347 
+
+Internet Explorer 8 
+
+CVE-2013-3897 
+
+Internet Explorer 8 
+
+CVE-2014-1510 + 
+
+CVE-2014-1511 
+
+Firefox 
+
+CVE-2014-1776 
+
+Internet Explorer 11 
+
+CVE-2014-6332 
+
+Internet Explorer 
+
+Several versions 
+
+N/A 
+
+MacKeeper 
+
+CVE-2015-2590 + 
+
+CVE-2015-4902 
+
+Java 
+
+0-day* 
+
+CVE-2015-3043 
+
+Adobe Flash 
+
+0-day* 
+
+CVE-2015-5119 
+
+Adobe Flash 
+
+Hacking Team gift 
+
+CVE-2015-7645 
+
+Adobe Flash 
+
+0-day* 
+
+
+
+25 
+
+* : At the time SEDKIT dropped them 
+
+
+Revamping CVE-2014-6332 
+(a.k.a. IE “Unicorn bug”) 
+
+•October 2015: 
+–Re-use of public PoC to disable VBScript “SafeMode” 
+–Next stage binary downloaded by PowerShell 
+
+
+
+
+26 
+
+
+Revamping CVE-2014-6332 
+(a.k.a. IE “Unicorn bug”) 
+
+•October 2015: 
+–Re-use of public PoC to disable VBScript “SafeMode” 
+–Next stage binary downloaded by PowerShell 
+
+
+• February 2016: 
+–No more “SafeMode” disabling, direct ROP-based 
+shellcode execution 
+–Around 400 lines of VBScript, mostly custom 
+
+
+
+
+27 
+
+
+28 
+
+
+29 
+
+
+VBScript Framework 
+
+•Functions: 
+–addToROP() 
+–getROPstringAddress () 
+–Code_section_explorer_7 () 
+–Code_section_explorer_XP() 
+–getNeddedAddresses () 
+–addrToHex () 
+–… 
+
+
+
+
+30 
+
+
+VBScript Framework 
+
+•Functions: 
+–addToROP() 
+–getROPstringAddress () 
+–Code_section_explorer_7 () 
+–Code_section_explorer_XP() 
+–getNeddedAddresses () 
+–addrToHex () 
+–… 
+
+
+
+
+Have you ever seen this somewhere? 
+
+(cuz we don’t) 
+
+30 
+
+
+31 
+
+Exploit downloads a payload 
+and… 
+
+
+Serge Meets SEDUPLOADER 
+(a.k.a. JHUHUGIT, JKEYSKW) 
+
+•Downloaded by SEDKIT 
+•Two binaries: the dropper and its embedded 
+payload 
+•Deployed as a first-stage component 
+•Period of activity: March 2015 - Now 
+
+
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+
+Payload 
+Dropping 
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+
+1026
+
+1026 
+3
+
+1026 
+4
+
+1026 
+7
+
+1026 
+9
+
+1026 
+6
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+D:\Users\thomas.dupuy\Desktop\Screen Shot 2016-06-03 at 12.00.47 PM.png
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+https://pbs.twimg.com/profile_images/570947994690674688/3PXXkV9F.png 
+
+
+•CVE-2015-1701 (0-day) 
+•CVE-2015-2387 ( ) 
+
+
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+ 
+•Windows COM object hijacking 
+•Shell Icon Overlay COM object 
+•Registry key UserInitMprLogonScript 
+•JavaScript code executed within rundll32.exe 
+•Scheduled tasks, Windows service,… 
+
+
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+
+Payload 
+
+Persistence 
+
+ 
+•Windows COM object hijacking 
+•Shell Icon Overlay COM object 
+•Registry key UserInitMprLogonScript 
+•JavaScript code executed within rundll32.exe 
+•Scheduled tasks, Windows service,… 
+
+
+
+SEDUPLOADER DROPPER 
+Workflow 
+
+Anti-
+Analysis 
+Payload 
+
+Dropping 
+
+Escalating 
+Privileges 
+Payload 
+
+Persistence 
+
+ 
+•Windows COM object hijacking Win32/COMpfun 
+•Shell Icon Overlay COM object 
+•Registry key UserInitMprLogonScript 
+•JavaScript code executed within rundll32.exe Win32/Poweliks 
+•Scheduled tasks, Windows service,… 
+
+
+
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 28
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 28
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+Direct 
+Connection 
+
+
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+
+ 28
+First Stage 
+Report 
+Parsing C&C 
+Orders 
+
+Direct 
+Connection 
+C&C 
+
+Successfully 
+
+Contacted 
+
+ 5 
+29
+SUCCESS 
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+
+ 28
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+Direct 
+Connection 
+
+Via Proxy 
+C&C 
+
+Successfully 
+
+Contacted 
+
+ 5 
+13 
+29 
+32
+FAIL 
+SUCCESS 
+
+
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+
+ 28
+First Stage 
+Report 
+Parsing C&C 
+Orders 
+
+Direct 
+Connection 
+Via Proxy 
+
+C&C 
+Successfully 
+Contacted 5 
+7 
+13 
+29 
+32
+FAIL 
+
+SUCCESS 
+
+
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 28
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+Direct 
+Connection 
+
+Via Proxy 
+Inject Into 
+Browsers 
+
+C&C 
+
+Successfully 
+
+Contacted 
+
+ 5 
+7 
+13 
+26 
+29 
+32
+FAIL 
+
+SUCCESS 
+25
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 28
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+Direct 
+Connection 
+
+Via Proxy 
+
+Inject Into 
+Browsers 
+
+C&C 
+Successfully 
+Contacted 5 
+7 
+9 
+13 
+26 
+29 
+32
+FAIL 
+
+SUCCESS 
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+First Stage 
+Report 
+
+Parsing C&C 
+Orders 
+
+D:\Users\thomas.dupuy\Documents\Screen Shot 2016-06-07 at 11.34.46 AM.png
+
+SEDUPLOADER PAYLOAD 
+Workflow 
+
+Network Link 
+Establishment 
+First Stage 
+Report 
+
+Parsing C&C 
+Orders D:\Users\thomas.dupuy\Documents\Screen Shot 2016-06-01 at 2.06.20 PM.png
+
+East Side Story 
+printf debugging 
+
+
+46 
+
+Serge opens an email 
+leading to SEDKIT, and then 
+SEDUPLOADER 
+
+9:30AM 
+Chain of Events 
+
+Mon Tue 
+
+Wed Thu 
+
+Fri 
+
+
+47 
+
+Monday, 10:00AM 
+…Serge meets SEDRECO 
+
+•Downloaded by SEDUPLOADER 
+•Backdoor with the ability to load external 
+plugins 
+•Usually deployed as a second stage backdoor 
+to spy on the infected computer 
+•Period of activity : 2012 - Now 
+
+
+48 
+
+
+Dropper 
+
+•Drops encrypted configuration 
+–In a file (“msd”) 
+–In the Windows Registry 
+
+
+•No configuration linked to the payload 
+
+
+
+Configuration Overview 
+
+ 1026
+
+Configuration Overview 
+
+ 1026 
+6
+XOR KEY 
+
+ 25
+
+Configuration Overview 
+
+ 1026 
+6
+XOR KEY 
+
+ 12 
+13 
+25
+FIELD SIZES 
+
+ 26
+
+Configuration Overview (Decrypted) 
+
+ 3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+10 
+15 
+16 
+17 
+5 
+26 
+27 
+28
+Various timeouts 
+
+ 3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+18
+Computer name 
+
+ 43 
+3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+19
+Keylogger enabled 
+
+ 47 
+3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+20 
+21 
+22
+C&C servers 
+
+ 51 
+54 
+57 
+3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+23
+Operation name 
+
+(rhst, rhbp, mctf, mtqs) 
+
+ 68 
+3 
+1026
+
+Configuration Overview (Decrypted) 
+
+('600000', '600000', ‘SERGE-PC…', 'kenlynton.com', 
+'softwaresupportsv.com', 'mtcf', '10000', '600000', '1', 
+
+ 'updmanager.com', '', '', '', '', '', '', '', '', '', '') 
+
+ 8 
+24
+Plugins list 
+
+ 72 
+3 
+1026
+
+Payload 
+
+ 2051
+
+Payload 
+
+ 2051 
+5
+
+Payload 
+
+ 2051 
+5 
+7
+
+Payload 
+
+ 2051 
+5 
+7 
+10
+
+Payload 
+
+ 2051 
+5 
+7 
+8 
+10
+
+Payload 
+
+ 2051 
+5 
+7 
+8 
+9 
+10
+
+Payload 
+
+ 2051 
+5 
+7 
+8 
+9 
+10 
+11
+
+Payload 
+
+ 2051 
+5 
+7 
+8 
+9 
+10 
+11 
+12
+
+Payload 
+
+ 2051 
+5 
+7 
+8 
+9 
+10 
+11 
+12 
+13
+
+Extending The Core (1) 
+
+•Plugins are DLLs loaded in the same address 
+space 
+•Plugins receive arguments from the core: 
+
+
+ 1026
+
+Extending The Core (1) 
+
+•Plugins are DLLs loaded in the same address 
+space 
+•Plugins receive arguments from the core: 
+
+
+ 1026 
+5 
+7 
+8
+
+Extending The Core (1) 
+
+•Plugins are DLLs loaded in the same address 
+space 
+•Plugins receive arguments from the core: 
+
+
+ 1026 
+6 
+9
+
+Extending The Core (2) 
+
+ 1028 
+3
+
+Extending The Core (2) 
+
+ 1028 
+3 
+5
+New command 
+
+
+55 
+
+Serge opens an email 
+leading to SEDKIT, and then 
+SEDUPLOADER 
+9:30AM 
+
+SEDRECO deployment 
+
+10:00AM 
+
+Chain of Events 
+
+Mon 
+
+Tue 
+
+Wed 
+
+Thu Fri 
+
+
+56 
+
+Monday, 2:00PM 
+
+
+Serge Meets XAGENT 
+(a.k.a SPLM, CHOPSTICK) 
+
+•Downloaded by SEDUPLOADER 
+•Modular backdoor developed in C++ with Windows, 
+Linux and iOS versions 
+
+
+•Deployed in most Sednit operations, usually after the 
+reconnaissance phase 
+•Period of activity: November 2012 - Now 
+
+
+57 
+
+
+58 
+
+
+ 7
+59 
+
+
+•Linux XAGENT, compiled in July 2015 
+
+
+ 7
+59 
+
+
+•Linux XAGENT, compiled in July 2015 
+•~ 18,000 lines of code in 59 classes 
+
+
+ 7
+59 
+•Linux XAGENT, compiled in July 2015 
+•~ 18,000 lines of code in 59 classes 
+•Derives from Windows version: 
+
+
+ 7
+59 
+
+ 3
+
+•Linux XAGENT, compiled in July 2015 
+•~ 18,000 lines of code in 59 classes 
+•Derives from Windows version: 
+•XAGENT major version 2, but matches the 
+logic of currently distributed binaries 
+(version 3) 
+
+
+ 7
+59 
+
+ 3
+
+Such Comments 
+
+60 
+
+<- That’s a lot 
+3
+61 main.cpp 
+3
+61 
+
+main.cpp 1028
+
+3
+61 
+
+ 24
+main.cpp 
+
+ 1027 
+1028
+
+3
+61 24 
+27
+main.cpp 
+
+ 1027 
+1028 
+1029
+
+3
+61 
+
+ 24 
+27 
+29
+main.cpp 1027 
+1028 
+1029 
+1030
+
+3
+61 24 
+27 
+29
+main.cpp 
+
+ 1027 
+1028 
+1029 
+1030 
+1031
+
+70
+62 
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 13 
+16
+AgentKernel::run() 
+
+AgentKernel 
+
+RemoteShell 
+
+FSModule 
+Keylogger 
+Channel 
+Controller 1026
+Modules 
+
+C&C 
+SERVER 68
+Unencrypted messages 
+
+ 71
+Encrypted messages 
+
+Communication Workflow 
+
+ 94 
+104
+XAGENT INFECTED COMPUTER 
+70
+62 
+
+
+ 
+
+ 
+
+ 
+
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+AgentKernel 
+RemoteShell 
+FSModule 
+
+Keylogger 
+Channel 
+
+Controller 
+
+ 1026
+Modules 
+
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 71
+Encrypted messages 
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+94 
+104
+XAGENT INFECTED COMPUTER 
+
+
+70
+62 
+
+ 
+Translates messages 
+from modules for 
+the C&C server 
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+
+AgentKernel 
+RemoteShell 
+
+FSModule 
+
+Keylogger 
+
+Channel 
+Controller 1026
+Modules 
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 
+
+ 71
+Encrypted messages 76
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+94 
+104
+XAGENT INFECTED COMPUTER 
+
+
+70
+62 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Translates messages 
+from modules for 
+the C&C server 
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+
+AgentKernel 
+
+RemoteShell 
+FSModule 
+Keylogger 
+
+Channel 
+
+Controller 
+
+ 1026
+Modules 
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 
+
+ 71
+Encrypted messages 
+
+ 76 
+79
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+94 
+104
+XAGENT INFECTED COMPUTER 
+70
+62 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+AgentKernel 
+
+RemoteShell 
+
+FSModule 
+Keylogger 
+
+Channel 
+
+Controller 
+
+ 1026
+Modules 
+
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 71
+Encrypted messages 
+
+ 76 
+79 
+80
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+94 
+104
+XAGENT INFECTED COMPUTER 
+70
+62 
+
+ 
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+AgentKernel 
+
+RemoteShell 
+
+FSModule 
+
+Keylogger 
+
+Channel 
+Controller 1026
+Modules 
+
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 71
+Encrypted messages 
+
+ 76 
+79 
+80 
+96
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+94 
+104
+XAGENT INFECTED COMPUTER 
+
+
+70
+62 
+
+ 
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+
+AgentKernel 
+
+RemoteShell 
+FSModule 
+
+Keylogger 
+
+Channel 
+Controller 1026
+Modules 
+
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 
+
+ 71
+Encrypted messages 
+
+ 76 
+79 
+80 
+96
+Communication Workflow 
+
+ 54 
+57 
+59 
+63 
+66 
+73 
+74 
+78 
+94 
+104
+XAGENT INFECTED COMPUTER 
+
+
+70
+62 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Translates messages 
+from modules for 
+the C&C server 
+
+Translates messages 
+from the C&C 
+server for modules 
+
+ 13 
+16
+AgentKernel::run() 
+
+AgentKernel 
+RemoteShell 
+
+FSModule 
+
+Keylogger 
+
+Channel 
+
+Controller 
+
+ 1026
+Modules 
+
+C&C 
+
+SERVER 
+
+ 68
+Unencrypted messages 
+
+ 71
+Encrypted messages 76 
+79 
+80 
+96
+Channel 
+
+(HTTP or emails) 
+
+Communication Workflow 
+
+ 126 
+54 
+57 
+59 
+63 
+66 
+73 
+74 
+78 
+94 
+104
+XAGENT INFECTED COMPUTER 
+
+ 165
+
+Emails Channel (1) 
+Workflow 
+
+63 
+
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+USING MailChannel 24 
+29 
+2053 
+38
+C&C SERVER 
+
+
+Emails Channel (1) 
+Workflow 
+
+63 
+
+ 2052
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+
+USING MailChannel 
+
+ 17 
+24 
+29 
+2053
+SMTPS 
+
+ 38
+C&C SERVER 
+Emails Channel (1) 
+Workflow 
+
+63 
+
+ 2052
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+
+USING MailChannel 
+
+ 17 
+24 
+29 
+2053
+SMTPS 
+
+ 38 
+39 
+42
+POP3S 
+
+C&C SERVER 
+Emails Channel (1) 
+Workflow 
+
+63 
+
+ 2052
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+
+USING MailChannel 
+
+ 17 
+24 
+29 
+2053
+SMTPS 
+
+ 38 
+39 
+40 
+42
+POP3S 
+
+ 44
+SMTPS 
+C&C SERVER 
+
+
+Emails Channel (1) 
+Workflow 
+
+63 
+
+ 2052
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+
+USING MailChannel 
+
+ 17 
+19 
+24 
+29 
+2053
+SMTPS 
+
+ 36
+POP3S 38 
+39 
+40 
+42
+POP3S 
+
+ 44
+SMTPS 
+
+C&C SERVER 
+
+
+Emails Channel (1) 
+Workflow 
+
+63 
+
+ 2052
+exfil@gmail.com 
+
+orders@gmail.com 
+
+XAGENT INFECTED 
+COMPUTER 
+USING MailChannel 17 
+19 
+24 
+29 
+2053
+SMTPS 
+
+ 36
+POP3S 
+
+ 38 
+39 
+40 
+42
+POP3S 
+
+ 44
+SMTPS 
+
+C&C SERVER 
+
+An email-based C&C protocol needs to provide: 
+1.A way to distinguish C&C emails from unrelated emails 
+2.A way to bypass spam filters 
+
+
+
+18
+Email Channel (2) 
+P2Scheme, a.k.a “Level 2 Protocol” 
+
+64 
+18
+Email Channel (2) 
+P2Scheme, a.k.a “Level 2 Protocol” 
+
+64 
+
+ 7 
+9
+base64 
+
+0 
+
+5 12 
+
+16 
+18
+Email Channel (2) 
+P2Scheme, a.k.a “Level 2 Protocol” 
+
+64 
+
+ 7 
+9 
+11 
+16
+base64 
+
+0 
+
+5 12 
+
+16 
+17
+Email Channel (3) 
+Georgian Protocol 
+
+65 
+
+
+17
+Email Channel (3) 
+Georgian Protocol 
+
+65 
+
+Georgian national ID number 
+
+
+17
+Email Channel (3) 
+Georgian Protocol 
+
+65 
+
+Georgian national ID number 
+“Hello” 
+
+
+17
+Email Channel (3) 
+Georgian Protocol 
+
+65 
+
+Georgian national ID number 
+
+“Hello” 
+
+“detailed” + timestamp 
+
+
+Bonus: XAGENT C&C Infrastructure 
+
+66 
+
+ Bonus: XAGENT C&C Infrastructure 
+
+ 5
+66 
+
+Thank you, Google search engine 
+
+
+XAGENT Proxy Server 
+
+ 5
+•Python code used between April and June 
+2015 
+
+
+
+XAGENT Proxy Server 
+
+ 5
+•Python code used between April and June 
+2015 
+•~ 12,200 lines of code 
+
+
+
+XAGENT Proxy Server 
+
+ 5
+•Python code used between April and June 
+2015 
+•~ 12,200 lines of code 
+•Translates email protocol from XAGENT 
+into a HTTP protocol for the C&C server: 
+
+
+ 10 
+11 
+12 
+13 
+15 
+16
+(over HTTP) 
+
+P3Protocol 
+
+XAGENT 
+
+PROXY BACKEND 
+
+C&C SERVER 
+
+ 23 
+24 
+25
+INBOX 
+P2Protocol 
+
+
+68 
+Serge opens an email 
+leading to SEDKIT, and then 
+SEDUPLOADER 
+
+9:30AM 
+SEDRECO deployment 
+
+10:00AM 
+XAGENT deployment 
+
+02:00PM 
+
+Chain of Events 
+
+Mon Tue 
+
+Wed Thu 
+
+Fri 
+69 
+
+Next three days… 
+
+
+Serge Meets 
+Passwords Extractors 
+
+•SecurityXploded tools (grand classic of Sednit) 
+–Cons: usually detected by AV software 
+
+
+
+
+ 
+
+•Custom tools, in particular a Windows Live 
+Mail passwords extractor compiled for Serge: 
+
+
+ 
+
+70 
+
+
+Serge Meets 
+Windows Passwords Extractors 
+
+ 
+•From registry hives 
+–Deployed with LPE for CVE-2014-4076 
+
+
+
+
+ 
+
+ 
+
+•Good ol’ Mimikatz (“pi.log”) 
+–Deployed with LPE for CVE-2015-1701 
+
+
+
+
+71 
+Serge Meets Screenshoter 
+
+•Custom tool to take screenshots each time the 
+mouse moves 
+
+
+72 
+
+
+And… Serge Meets XTUNNEL 
+
+ 
+•Network proxy tool to contact machines 
+normally unreachable from Internet 
+•Period of activity: May 2013 - Now 
+
+
+73 
+
+
+74 C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+COMPUTER A 
+(CLEAN) 
+COMPUTER B 
+
+(CLEAN) 
+
+INTERNET 
+
+INTERNAL 
+NETWORK 14
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\1L8Z2UOU\large-Computer-Icon-166.6-6012[1].gif
+C&C SERVER 
+
+Initial 
+
+Situation 
+
+
+75 
+
+ 3 
+7
+SERGE’S 
+COMPUTER 
+(XTUNNEL 
+INFECTED) 
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+Encryption 
+Handshake 
+
+ 36
+C&C SERVER 
+
+ 39 
+40
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+(CLEAN) 
+75 3 
+7
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+Encryption 
+Handshake 
+
+D5 47 A4 A4.3F 60 6A 0F 
+3B 36 04 1C.44 4A C8 BD 
+80 BE 7B 25.8E E6 FC F2 
+CD 5D 7F 3A.73 1D 59 A5 
+2D 35 77 F3.B2 1B DF 7D 
+EE 1D 1C F1.AB 91 87 87 
+… 
+T 
+
+T 36
+C&C SERVER 
+
+ 39 
+40
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+
+75 3 
+7
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+INTERNAL 
+
+NETWORK 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+Encryption 
+Handshake 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+T 
+
+T 15
+RC4 key 
+
+O 33 
+36
+C&C SERVER 
+
+ 39 
+40
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+
+75 3 
+7
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+INTERNAL 
+
+NETWORK 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+Encryption 
+Handshake 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+T 
+
+T 21
+Offset O in T 
+Proof of knowledge of T 
+
+
+ 15
+RC4 key 
+O 
+
+ 33 
+36
+C&C SERVER 
+
+ 39 
+40
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+
+76 C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+D5 47 A4 A4.3F 60 6A 0F 
+
+3B 36 04 1C.44 4A C8 BD 
+
+80 BE 7B 25.8E E6 FC F2 
+
+CD 5D 7F 3A.73 1D 59 A5 
+
+2D 35 77 F3.B2 1B DF 7D 
+
+EE 1D 1C F1.AB 91 87 87 
+
+… 
+
+Encryption 
+Handshake 
+
+D5 47 A4 A4.3F 60 6A 0F 
+3B 36 04 1C.44 4A C8 BD 
+80 BE 7B 25.8E E6 FC F2 
+CD 5D 7F 3A.73 1D 59 A5 
+2D 35 77 F3.B2 1B DF 7D 
+EE 1D 1C F1.AB 91 87 87 
+… 
+T 
+T 
+“OK” 
+
+RC4 key 
+
+RC4 Key 
+
+O 
+
+O 
+
+ 14
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\1L8Z2UOU\large-Computer-Icon-166.6-6012[1].gif
+C&C SERVER C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+COMPUTER A 
+(CLEAN) 
+COMPUTER B 
+(CLEAN) 
+77 
+
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\1L8Z2UOU\large-Computer-Icon-166.6-6012[1].gif
+C&C SERVER 
+
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+INTERNAL 
+NETWORK 
+Encryption 
+Handshake 
+
+RC4-encrypted link 
+
+ 14
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+
+78 C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\1L8Z2UOU\large-Computer-Icon-166.6-6012[1].gif
+C&C SERVER 
+
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+Encryption 
+Handshake 
+
+TLS encapsulation 
+
+(added in 2014) 
+
+ 14
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+C:\Users\i7\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\PH6XQ8PH\large-desktop-computer-pc-66.6-12852[1].gif
+COMPUTER A 
+(CLEAN) 
+COMPUTER B 
+(CLEAN) 
+28
+79 
+
+ 3 
+4
+C&C SERVER 
+
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+INTERNAL 
+NETWORK 
+Tunnels 
+
+Opening 
+
+ 21 
+31 
+22 
+19 
+20
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+
+28
+79 3 
+4
+C&C SERVER 
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+Tunnels 
+
+Opening 
+
+ 21 
+31 
+22 
+19 
+20
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+ 26
+Tunnel ID = 1
+
+28
+79 
+
+ 3 
+4
+C&C SERVER 
+
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+NETWORK 
+Tunnels 
+
+Opening 
+
+ 21 
+31 
+22 
+19 
+20
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+
+(CLEAN) 
+
+ 26
+Tunnel ID = 1
+
+
+Any kind of TCP-based 
+
+traffic can be tunneled! 
+
+(PsExec) 
+
+
+28
+79 
+
+ 3 
+4
+C&C SERVER 
+
+SERGE’S 
+COMPUTER 
+
+(XTUNNEL 
+INFECTED) 
+
+INTERNET 
+
+INTERNAL 
+
+NETWORK 
+
+Tunnels 
+
+Opening 
+
+ 21 
+31 
+22 
+19 
+20
+COMPUTER A 
+
+(CLEAN) 
+
+COMPUTER B 
+(CLEAN) 26
+Tunnel ID = 1
+
+
+ 27
+Tunnel ID = 2
+
+
+Any kind of TCP-based 
+
+traffic can be tunneled! 
+
+(PsExec) 
+
+
+Code Obfuscation (1) 
+
+•Starting in July 2015 XTUNNEL code was 
+obfuscated 
+
+
+(which is two months after the Sednit attack against 
+the German parliament, where XTUNNEL was used) 
+
+ 
+
+
+80 
+
+
+Code Obfuscation (1) 
+
+•Starting in July 2015 XTUNNEL code was 
+obfuscated 
+
+
+(which is two months after the Sednit attack against 
+the German parliament, where XTUNNEL was used) 
+
+ 
+
+•The obfuscation is a mix of classic syntactic 
+techniques, like insertion of junk code and 
+opaque predicates 
+
+
+80 
+
+
+Code Obfuscation (2) 
+
+BEFORE 
+
+AFTER 
+
+81 6 
+7
+
+Code Obfuscation (2) 
+
+BEFORE 
+
+AFTER 
+
+81 
+
+ 6 
+7
+Good toy example for automatic 
+desobfuscation magic? 
+
+
+82 
+
+Serge opens an email 
+leading to SEDKIT, and then 
+SEDUPLOADER 
+
+9:30AM 
+
+SEDRECO deployment 
+
+10:00AM 
+XAGENT deployment 
+
+02:00PM 
+
+Information 
+exfiltration and 
+lateral movements 
+
+Chain of Events 
+
+Mon 
+
+Tue 
+
+Wed 
+
+Thu Fri 
+
+
+83 
+
+Friday, 11:00AM 
+
+
+Long Term Persistence (1) 
+
+•Special XAGENT copied in Office folder under 
+the name “msi.dll” 
+
+
+84 
+
+
+Long Term Persistence (2) 
+
+•system32\msi.dll is a legitimate Windows 
+DLL needed by Office applications 
+
+
+85 
+
+
+Long Term Persistence (2) 
+
+•system32\msi.dll is a legitimate Windows 
+DLL needed by Office applications 
+•XAGENT msi.dll exports the same function 
+names as the legitimate msi.dll: 
+
+
+85 
+
+ 1027
+
+Long Term Persistence (3) 
+
+•Each time Serge starts Office, XAGENT 
+msi.dll is loaded (search-order hijacking): 
+–Loads real msi.dll from system32 
+–Fills its export table with the addresses of the real 
+msi.dll functions 
+–Starts XAGENT malicious logic 
+
+
+
+
+86 
+
+
+Long Term Persistence (3) 
+
+•Each time Serge starts Office, XAGENT 
+msi.dll is loaded (search-order hijacking): 
+–Loads real msi.dll from system32 
+–Fills its export table with the addresses of the real 
+msi.dll functions 
+–Starts XAGENT malicious logic 
+
+
+•Same technique also seen with 
+LINKINFO.dll dropped in C:\WINDOWS 
+
+
+86 
+
+
+87 
+
+Serge opens an email 
+leading to SEDKIT, and then 
+SEDUPLOADER 
+9:30AM 
+
+SEDRECO deployment 
+
+10:00AM 
+XAGENT deployment 
+
+02:00PM 
+
+Long-term 
+persistence 
+method 
+deployment 
+11:00AM 
+
+Chain of Events 
+
+Mon 
+
+Tue 
+
+Wed Thu 
+
+Fri 
+
+Information 
+exfiltration and 
+lateral movements 
+THE MYSTERIOUS DOWNDELPH 
+
+What the hell is going on here ?! 
+
+88 
+
+
+Discovery 
+September 2015 
+
+•Classic Sednit dropper 
+•Shows a decoy document 
+
+
+
+What Is In This Dropper? 
+
+
+The Ultimate Boring Component 
+
+•Delphi downloader, we named it DOWNDELPH 
+(slow clap) 
+•Simple workflow: 
+–Downloads a config (.INI file) 
+–Based on the config, downloads a payload 
+–Executes payload 
+
+
+•Persistence method: Run registry key 
+
+
+
+The Ultimate Boring Component 
+
+•Delphi downloader, we named it DOWNDELPH 
+(slow clap) 
+•Simple workflow: 
+–Downloads a config (.INI file) 
+–Based on the config, downloads a payload 
+–Executes payload 
+
+
+•Persistence method: Run registry key 
+
+
+ 8195
+
+Let The Hunt Begins 
+2013 DOWNDELPH Sample 
+
+Dropper 
+
+Helper Bootkit Installer 
+
+DOWNDELPH 
+
+ 12 
+16 
+18
+
+Let The Hunt Begins 
+2013 DOWNDELPH Sample 
+
+Dropper 
+
+Helper Bootkit Installer 
+
+DOWNDELPH 
+
+ 12 
+16 
+18
+•Infects BIOS-based systems 
+•Tested on Windows XP/7, 32bit/64bit 
+•Never been documented 
+
+
+ 9
+
+Not So Boring Component 
+
+ C:\Users\_eko\Downloads\15i0zb.jpg
+
+Bootkit Installation 
+
+MBR Legitimate data 
+
+D:\work\repo\Sednit\recon\imgs_jessy\clean_mbr.PNG
+First sectors before infection 
+
+1ST sector 
+Malicious 
+MBR 
+
+Original MBR 
+(1-byte XOR) 
+
+Hooks 
+(1-byte XOR) 
+Driver 
+
+(1-byte XOR + RC4) 
+
+Legitimate Data 
+
+D:\work\repo\Sednit\recon\imgs_jessy\clean_mbr.PNG
+D:\work\repo\Sednit\recon\imgs_jessy\infected_mbr.png
+First sectors before infection First sectors after infection 
+
+Bootkit Installation 
+
+1ST sector 
+
+2ND sector 
+
+
+Normal Boot Process 
+Windows 7 x64 
+
+BOOTMGR Winload.exe 
+
+… 
+
+Real Mode 
+
+Protected Mode 
+
+Original MBR 
+Kernel Init 
+
+
+Infected Boot Process 
+Windows 7 x64 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR 
+
+Winload.exe 
+
+ 15
+Real Mode 
+Protected Mode 
+
+Original MBR 
+
+ 44 
+56
+… Kernel Init 
+
+ 33 
+34
+
+Infected Boot Process 
+Windows 7 x64 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR 
+
+Winload.exe 15
+Real Mode 
+
+Protected Mode 
+
+Original MBR 
+
+ 44 
+56 
+16
+… 
+
+Kernel Init 
+
+ 33 
+34
+
+Malicious MBR 
+
+•Hooks INT 13h handler (low-level read/write 
+operations) 
+
+
+
+Malicious MBR 
+
+•Hooks INT 13h handler (low-level read/write 
+operations) 
+•Patches BOOTMGR in memory 
+
+
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR Winload.exe 
+
+ 15
+Real Mode 
+
+Protected Mode 
+Original MBR 
+
+ 44 
+56
+… 
+
+Kernel Init 
+
+ 34 
+35
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 7
+BOOTMGR 
+
+Winload.exe 
+
+ 15
+Real Mode 
+
+Protected Mode 
+
+Original MBR 44 
+56
+Hook 
+
+ 29
+… 
+
+Kernel Init 34 
+35
+
+BOOTMGR Hook 
+
+•Searches OslArchTransferToKernel() in 
+winload.exe to patch it 
+
+
+ kd> u winload!OslArchTransferToKernel 
+
+ winload!OslArchTransferToKernel: 
+
+ 00000000`003381f0 e961fdd5ff jmp 00000000`00097f56 
+
+
+
+Before: 
+
+After: 
+
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 7
+BOOTMGR 
+
+Winload.exe 15
+Real Mode 
+
+Protected Mode 
+
+Original MBR 44 
+56
+Hook 
+
+… 
+
+Kernel Init 34 
+35
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 7
+BOOTMGR 
+
+Winload.exe 
+
+ 15
+Real Mode 
+Protected Mode 
+
+Original MBR 44 
+56
+Hook 
+
+Hook 
+
+ 30
+… Kernel Init 
+
+ 34 
+35
+
+Winload.exe Hook 
+
+•Locates MmMapIoSpace 
+•Saves some code in ACPI.sys resources section 
+
+
+ (and makes the section executable) 
+
+
+•Hooks ACPI!GsDriverEntry 
+
+
+
+Saving Important Information 
+
+ACPI!GsDriverEntry original 
+opcodes 
+
+0: kd> db rbx $$ kernel header address 
+
+ 4d 5a 90 00 03 00 00 00-04 00 00 00 ff ff 00 00 MZ.............. 
+
+ b8 00 00 00 00 00 00 00-40 00 00 00 00 00 00 00 ........@....... 
+
+ 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 ................ 
+
+ 00 00 00 00 00 00 00 00-00 00 00 00 f8 00 00 00 ................ 
+
+ 00 74 09 00 00 b4 09 cd-21 b8 01 4c cd 21 54 68 .t......!..L.!Th 
+
+ 69 73 20 70 72 6f 67 72-61 6d 20 63 61 6e 6e 6f is program canno 
+
+ 74 20 62 65 20 72 75 6e-20 69 6e 20 44 4f 53 20 t be run in DOS 
+
+ 6d 6f 64 65 2e 0d 0d 0a-24 00 00 00 00 00 00 00 mode....$....... 
+
+ 8a 4a 9e 90 ce 2b f0 c3-ce 2b f0 c3 ce 2b f0 c3 .J...+...+...+.. 
+
+ c7 53 73 c3 aa 2b f0 c3-c7 53 63 c3 c5 2b f0 c3 .Ss..+...Sc..+.. 
+
+ ce 2b f1 c3 a2 2b c0 97-8f 00 00 f8 ff ff 30 fc .+...+........0. 
+
+ 04 00 f2 0f 00 00 48 83-ec 28 4c c3 d4 2b f0 c3 ......H..(L..+.. 
+
+ c7 53 62 c3 cf 2b f0 c3-c7 53 64 c3 cf 2b f0 c3 .Sb..+...Sd..+.. 
+
+ c7 53 61 c3 20 cd a2 02-00 f8 ff ff ce 2b f0 c3 .Sa. ........+.. 
+
+ 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 ................ 
+
+ 00 00 00 00 00 00 00 00-50 45 00 00 64 86 18 00 ........PE..d... 
+
+ 
+
+Bootkit physical address 
+
+MmMapIoSpace address 
+Bootkit Workflow 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR 
+
+Winload.exe 
+
+ACPI.sys 15 
+18
+Real Mode 
+Protected Mode 
+
+Original MBR 
+
+ 44 
+56 
+3
+Kernel Init 
+
+Hook 
+
+Hook 
+
+… 
+
+ 20
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR 
+
+Winload.exe 
+
+ACPI.sys 15 
+18
+Real Mode 
+Protected Mode 
+
+Original MBR 
+
+ 44 
+56 
+3
+Kernel Init 
+
+Hook 
+
+Hook 
+
+Hook 
+
+ 33
+… 20
+
+ACPI.sys Hook 
+
+ 
+
+•Restores ACPI!GsDriverEntry 
+•Maps the bootkit physical address into virtual 
+address space by calling MmMapIoSpace 
+•Decrypts hidden driver 
+
+
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR Winload.exe 
+
+ACPI.sys 
+Bootkit Driver 
+
+“Bootkit 
+
+user-mode 
+component” 
+
+DOWNDELPH 
+
+ 15 
+18 
+21 
+24 
+28
+Real Mode 
+
+Protected Mode 
+
+Original MBR 44 
+56 
+3
+Kernel Init 
+
+Hook Hook 
+
+Hook 
+
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 7
+BOOTMGR 
+
+Winload.exe 
+
+ACPI.sys 
+
+Bootkit Driver 
+
+“Bootkit 
+
+user-mode 
+component” 
+
+DOWNDELPH 15 
+18 
+21 
+24 
+28
+Real Mode 
+
+Protected Mode 
+Original MBR 
+
+ 44 
+56 
+3
+Kernel Init 
+
+Hook 
+
+Hook 
+
+Hook 
+
+ 34
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 
+
+ 7
+BOOTMGR 
+
+Winload.exe 
+
+ACPI.sys 
+Bootkit Driver 
+
+“Bootkit 
+user-mode 
+component” 
+DOWNDELPH 
+
+ 15 
+18 
+21 
+24 
+28
+Real Mode 
+
+Protected Mode 
+
+Original MBR 
+
+ 44 
+56 
+3
+Kernel Init 
+
+Hook Hook 
+
+Hook 34 
+6146
+
+Bootkit Workflow 
+
+ 4
+Infected MBR 7
+BOOTMGR 
+
+Winload.exe 
+ACPI.sys 
+
+Bootkit Driver 
+
+“Bootkit 
+
+user-mode 
+component” 
+
+DOWNDELPH 
+
+ 15 
+18 
+21 
+24 
+28
+Real Mode 
+
+Protected Mode 
+Original MBR 
+
+ 44 
+56 
+3
+Kernel Init 
+Hook 
+
+Hook 
+
+Hook 
+
+ 34 
+6146
+Why a DLL to load another DLL ? 
+
+ 19 
+22
+
+Who Are You Bootkit? 
+
+•Missing exported variable in DOWNDELPH 
+
+
+ 
+
+ 
+
+
+ 4
+
+Who Are You Bootkit? 
+
+•Missing exported variable in DOWNDELPH 
+
+
+ 
+
+ 
+
+•Code sharing with BlackEnergy 
+–Relocations fixing 
+–DLL injection calling three exports (“Entry”, 
+“ep_data” and “Dummy”) 
+–… 
+
+
+
+
+ 4
+
+But It’s Not The End of The Story 
+2014 DOWNDELPH Samples 
+
+Dropper 
+
+Helper 
+
+Kernel Mode 
+Rootkit 
+
+DOWNDELPH 
+
+
+Not So Boring Component++ 
+
+C:\Users\_eko\Downloads\15i24k.jpg
+
+Kernel Mode Rootkit (1) 
+
+•Registered as a Windows service 
+•Injects DOWNDELPH into explorer.exe (APC) 
+•Hides files, folders and registry keys 
+•Relies on a set of rules: 
+
+
+HIDEDRV: >>>>>>>>Hide rules>>>>>>>> rules 
+
+HIDEDRV: File rules: \Device\[…]\dnscli1.dll 
+
+HIDEDRV: File rules: \Device\[…]\FsFlt.sys 
+
+HIDEDRV: Registry rules: \REGISTRY\[…]\FsFlt 
+
+HIDEDRV: Registry rules: \REGISTRY\[…]\FsFlt 
+
+HIDEDRV: Registry rules: \REGISTRY\[…]\FsFlt 
+
+HIDEDRV: Inject dll: C:\Windows\system32\mypathcom\dnscli1.dll 
+
+HIDEDRV: Folder rules: \Device\HarddiskVolume1\Windows\system32\mypathcom 
+
+HIDEDRV: <<<<<<<<XXXXX<<<<<<<< rules 
+
+HIDEDRV: <<<<<<<<Hide rules<<<<<<<< rules 
+
+
+Kernel Mode Rootkit (2) 
+How It Works 
+
+•Two implementations of the hiding ability: 
+–SSDT hooking 
+–Minifilter driver 
+
+
+
+
+
+Implementation Minifilter 
+
+ 3075
+
+Implementation Minifilter 
+
+ 3075 
+5
+
+Implementation Minifilter 
+
+ 3075 
+5 
+9
+
+Implementation Minifilter 
+
+ 3075 
+5 
+9 
+10
+
+Who Are You Rootkit? 
+
+•Never documented (to the best of our 
+knowledge) 
+•PDB paths: 
+
+
+d:\!work\etc\hi\Bin\Debug\win7\x86\fsflt.pdb 
+d:\!work\etc\hideinstaller_kis2013\Bin\Debug\win7\x64\fsflt.pdb 
+d:\new\hideinstaller\Bin\Debug\wxp\x86\fsflt.pdb 
+Who Are You Rootkit? 
+
+•Never documented (to the best of our 
+knowledge) 
+•PDB paths: 
+
+
+d:\!work\etc\hi\Bin\Debug\win7\x86\fsflt.pdb 
+d:\!work\etc\hideinstaller_kis2013\Bin\Debug\win7\x64\fsflt.pdb 
+d:\new\hideinstaller\Bin\Debug\wxp\x86\fsflt.pdb 
+
+ 4
+
+Who Are You Rootkit? 
+
+•Never documented (to the best of our 
+knowledge) 
+•PDB paths: 
+
+
+d:\!work\etc\hi\Bin\Debug\win7\x86\fsflt.pdb 
+d:\!work\etc\hideinstaller_kis2013\Bin\Debug\win7\x64\fsflt.pdb 
+d:\new\hideinstaller\Bin\Debug\wxp\x86\fsflt.pdb 
+
+ 4 
+9
+
+To Summarize 
+
+•Seven different samples (!) of DOWNDELPH over 
+the past three years 
+•One C&C server was up for two years 
+•Persistence methods: 
+–Bootkit able to infect from Windows XP to Windows 7 
+–Rootkit 
+
+
+•So, WHY such advanced persistence methods for 
+such a simple component? 
+•DOWNDELPH downloaded SEDRECO + XAGENT in 
+a few cases, so SEDNIT related for sure 
+
+
+
+SPECULATIVE MUMBLINGS 
+
+116 
+
+http://www.musicgraphicsgalore.net/artists/musician118.gif
+
+Call For Speculation 
+
+•The diversity of Sednit software is impressive 
+(DOWNDELPH, bootkit, XAGENT, SEDKIT…) 
+•Diversity is good for their operations, as it 
+makes detection and tracking harder 
+•How did they created this software 
+ecosystem? 
+
+
+117 
+
+
+Sednit Development Process (1) 
+Developers Role 
+
+•Binaries are often compiled specifically for a 
+target, after it has been infected 
+
+
+118 
+
+XAGENT SMTP logins/passwords 
+
+ 16 
+17
+
+Sednit Development Process (1) 
+Developers Role 
+
+•Binaries are often compiled specifically for a 
+target, after it has been infected 
+•Main software evolve regularly (XTUNNEL, 
+SEDUPLOADER, XAGENT…) 
+
+
+118 
+XAGENT SMTP logins/passwords 
+
+ 16 
+17
+
+Sednit Development Process (1) 
+Developers Role 
+
+•Binaries are often compiled specifically for a 
+target, after it has been infected 
+•Main software evolve regularly (XTUNNEL, 
+SEDUPLOADER, XAGENT…) 
+
+
+118 
+
+Developers are part of the team, 
+
+not outsiders paid for a one-time job 
+
+XAGENT SMTP logins/passwords 
+
+ 16 
+17
+
+Sednit Development Process (2) 
+Software Design 
+
+•Different Sednit software share some 
+techniques: 
+–RC4 keys built as concatenation of a hardcoded 
+value and a randomly generated value 
+
+
+
+
+ (XAGENT, DOWNDELPH, SEDUPLOADER) 
+
+–Hardcoded “tokens” in network messages 
+
+
+
+
+ (XAGENT, SEDUPLOADER, SEDRECO) 
+
+
+119 
+
+
+Sednit Development Process (2) 
+Software Design 
+
+•Different Sednit software share some 
+techniques: 
+–RC4 keys built as concatenation of a hardcoded 
+value and a randomly generated value 
+
+
+
+
+ (XAGENT, DOWNDELPH, SEDUPLOADER) 
+
+–Hardcoded “tokens” in network messages 
+
+
+
+
+ (XAGENT, SEDUPLOADER, SEDRECO) 
+
+
+119 
+
+The same developers may be 
+behind this variety of software 
+
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+120 
+
+ 2050
+Linux XAGENT 
+
+Communications termination 
+
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+120 
+
+ 2050
+Linux XAGENT 
+
+Communications termination 
+
+ 13
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+120 
+
+ 2050
+Linux XAGENT 
+
+Communications termination 
+
+ 11 
+13
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+120 
+
+ 2050
+Linux XAGENT 
+
+Communications termination 
+
+ 11 
+13 
+14 
+15
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+121 
+
+ 5
+XTUNNEL report message 
+
+
+Sednit Development Process (3) 
+Programming Errors 
+
+ 
+121 
+
+ 5
+XTUNNEL report message 
+
+Developers do not have a code 
+review process (“hackish” feeling) 
+
+
+Sednit Development Process (4) 
+Seeking Inspiration 
+
+ 
+•SEDUPLOADER employed novel persistence 
+methods also found in crimeware, and shares 
+code with Carberp 
+•DOWNDELPH bootkit code bears some 
+similarities with BlackEnergy code 
+
+
+122 
+
+
+Sednit Development Process (4) 
+Seeking Inspiration 
+
+ 
+•SEDUPLOADER employed novel persistence 
+methods also found in crimeware, and shares 
+code with Carberp 
+•DOWNDELPH bootkit code bears some 
+similarities with BlackEnergy code 
+
+
+122 
+
+Developers have ties with the 
+crimeware underground 
+
+
+Sednit Development Process (5) 
+Having Fun 
+
+123 
+
+ 8 
+9 
+10 
+11 
+12 
+14
+
+Sednit Development Process (5) 
+Having Fun 
+
+123 
+
+ 8 
+9 
+10 
+11 
+12
+Developers are not working in a 
+formal environment… 
+
+ 14
+
+Mumblings Summary 
+
+ 
+Sednit has some in-house skilled developers, 
+working with little supervision, and those guys 
+have ties with crimeware underground 
+
+ 
+
+124 
+
+
+Conclusion 
+
+•Sednit activity increased a lot during the last 
+two years (targeted attacks with a LOT of 
+targets) 
+–Heard about the DNC hack last week? 
+
+
+•Sednit toolkit in constant evolution, moar fun 
+to come! 
+
+
+125 
+
+
+That’s All Folks! 
+
+ 
+
+•Feel free to poke us: 
+
+
+{calvet,campos,dupuy} .at. esetlabs.com 
+
+
+•Whitepaper coming soon!... 
+
+
+(“dans deux mois”) 
+
+126 
+
+

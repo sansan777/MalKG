@@ -1,0 +1,53 @@
+» Print 
+This copy isfor your personal,non-­commercial use only. To orderpresentation-­readycopiesfordistribution to colleagues, clientsorcustomers,use the Reprintstool atthe top ofanyarticle or visit: www.reutersreprints.com. 
+
+Suspected Russian spyware Turla targets Europe, United States 
+2:45pm EST 
+By Peter Apps and Jim Finkle 
+LONDON/BOSTON (Reuters) -­A sophisticated piece ofspyware hasbeen quietly infecting hundredsofgovernmentcomputersacross Europe and the United Statesin one ofthe mostcomplex cyber espionage programs uncovered to date. 
+Several securityresearchersand Western intelligence officerssay they believe the malware,widelyknown as Turla,isthe work ofthe Russian governmentand linked to the same software used to launch a massive breach on the U.S.militaryuncovered in 2008. 
+Itwasalso linked to a previously known,massive global cyberspying operation dubbed Red October targeting diplomatic,military and nuclear research networks. 
+Those assessments were based on analysisoftacticsemployed by hackers,along with technical indicators and the victims they targeted. 
+"Itissophisticated malware that'slinked to other Russian exploits,usesencryption and targetswestern governments.Ithas Russian paw prints all overit," said JimLewis,a former U.S.foreign service officer,now senior fellow atthe Center for Strategic and International Studies in Washington. 
+However,securityexpertscaution thatwhile the case forsaying Turla looksRussian maybe strong,itis impossible to confirm those suspicionsunlessMoscow claims responsibility.Developersoften use techniquesto cloud theiridentity. 
+The threatsurfaced this weekaftera little known German anti-­virusfirm,GData,published a reporton the virus,which it called Uroburos,the name textin the code thatmay be a reference to the Greeksymbol ofa serpenteating itsown tail. 
+Expertsin state-­sponsored cyberattackssay thatRussian government-­backed hackersare known forbeing highly disciplined,adeptathiding their tracks,extremelyeffective atmaintaining control ofinfected networks and more selective in choosing targets than their Chinese counterparts. 
+"Theyknow thatmostpeople don'thave either the technical knowledge orthe fortitude to win a battle with them.When they recognize thatsomeone isonto them,they justgo dormant,"said one expertwho helps victimsofstate-­sponsored hacking. 
+Aformer Western intelligence official commented: "Theycan draw on some veryhigh grade programmersand engineers, including the manywho work for organized criminal groups,butalso function asprivateers." 
+Russia's Federal SecurityBureau declined commentasdid Pentagon and U.S.DepartmentofHomeland Securityofficials. 
+On Friday,Britain's BAE SystemsApplied Intelligence -­the cyber armofBritain's premier defense contractor -­published its own research on the spyware,which itcalled "snake." 
+The sheer sophistication ofthe software,itsaid,wentwell beyond thatpreviously encountered -­although itdid notattribute blame forthe attack. 
+"The threat...reallydoes raise the bar in termsofwhatpotential targets,and the securitycommunityin general,have to do to keep ahead ofcyberattacks," said Martin Sutherland,managing director ofBAE Systems Applied Intelligence. 
+NATONATIONSTARGETED 
+Security firms have been monitoring Turla for several years. 
+SymantecCorp estimatesup to 1,000 networkshave been infected by Turla and a related virus,Agent.BTZ.Itnamed no victims,saying onlythatmostwere governmentcomputers. 
+BAEsaid ithascollected over100 unique samplesofTurla since 2010,including 32 fromUkraine,11 from Lithuania and 4 fromGreatBritain. Itobtained smallernumbersfromothercountries. 
+Hackersuse Turla to establish a hidden foothold in infected networksfromwhich they can search othercomputers,store stolen information,then transmitdata back to theirservers. 
+"While itseemsto be Russian,there isno way to know forsure," said Mikko Hypponen,chiefresearch officer with Helsinki-­based F-­Secure,which encountered Turla lastyear. 
+
+Security firms thatare monitoring the threathave said the operation'ssophistication suggestsitwas likely backed bya nation state and thattechnical indicators make thembelieve itisthe work ofRussian developers. 
+European governmentshave long welcomed U.S. help againstKremlin spying,butwere infuriated lastyearto discoverthe scale ofsurveillance by America's National SecurityAgencythatstretched also to their own territory. 
+AGENT.BTZ,RED OCTOBER 
+Security expertssaystealthy Turla belongsto the same familyas one ofthe mostnotoriouspiecesofspyware uncovered to date:Agent.BTZ.Itwasused in a massive cyber espionage operation on U.S. Central Command thatsurfaced in 2008 and is one ofthe mostseriousU.S.breaches to date. While Washington neverformallyattributed blame,several U.S.officialshave told Reutersthey believed itwasthe workofRussia. 
+Hypponen said Agent.BTZwasinitiallyfound in a militarynetworkofa European NATOstate in 2008,butgave no details.F-­Secure iscredited with naming thatpiece ofmalware in 2008,though researchers believe itwas created alreadyin 2006. 
+Kaspersky Lab researcherKurtBaumgartnersaid he believes Turla and Agent.BTZare related to Red October,which suddenly shutdown afterhisfirmreported on itin January2013. 
+"Unusually unique artifactslinkRed October,Agent.BTZand Turla," he said,referring to stringsoftextcontained in the code and functionalityofthe malware. 
+Eric Chien,technical director with SymantecSecurity Response,described Turla as "the evolution" ofAgent.BTZ."Theyare a very active developmentgroup,"Chien said. 
+Finland said itsForeign Ministrycomputersystemshad been penetrated byan attacklastyearbutwould notelaborate. 
+Sweden'sNational Defence Radio Establishmentsaid cyber espionage was "more common than people think",adding thatit had discovered multiple attacks againstauthorities,governments and universities,some only detected after several years. 
+Governmentsourcesin the Czech Republic,Estonia,Poland and Romania said Turla had notaffected themdirectly.Other European governmentscontacted by Reutersdeclined comment. 
+CHASINGTURLA 
+Although computersecurity researchers have been quietly studying Turla for more than two years,publicdiscussionsofthe threatonly began afterGData published its report. 
+GData spokesman Eddy Willems declined to name any victimsor identifythe author ofthe report,saying the firm was concerned the group behind Turla mightattemptto harm him. 
+Jaime Blasco,directorofAlienVaultLabs,said thatTurla was more ofa "framework" for espionage than simply malware. 
+The malware isa "rootkit" thathidesthe presence ofthe spying operation and also creates a hidden,encrypted file systemto store stolen data and toolsused by the attackers,he said.Those tools include password stealers,tiny programsfor gathering information aboutthe system and documentstealers. 
+The operatorscan download specialized toolsonto an infected system,adding any functionalitythey wantby including itin the encrypted file system,Blasco said. 
+Theyhave used dozensofdifferent"command and control"serverslocated in countries around the world to control infected systems,according to Symantec,whose researchershave helped identifyand shutdown some ofthose systems. 
+Researcherssay Turla's code is regularly updated,including changes to avoid detection asanti-­virus companiesdetectnew strains.BAEsaid ithad two samplescreated in January2014. 
+Chien said thatin some caseswhen a command and control serverwastaken offline,Turla's operatorshave quicklypushed outnew versions ofthe malware thatdirected infected computers to new command and control servers. 
+"Theyhave a superactive developmentteam," he said. 
+(Additional reporting by Jan Strouhal in Prague,Marcin Goeetig in Warsaw,Guy Faulconbridge in London,Zoran Radosavljevic in Zagreb,Gwladys Fouche in Oslo,Matthias Williams in Bucharest,Gabriela Baczynska in Moscow, Alexandra Hudson in Berlin,Johan Sennero in Stockholm,Phil Stewart in Washington;;Editing by Richard Valdmanis and Ralph Boulton) 
+© Thomson Reuters2014.All rights reserved. Usersmaydownload and printextracts ofcontentfrom this website fortheir own personal and non-­commercial use only. Republication or redistribution ofThomson Reuters content,including by framing or similar means,isexpressly prohibited withoutthe priorwritten consentofThomson Reuters.Thomson Reuters and its logo are registered trademarks or trademarksofthe Thomson Reuters group ofcompaniesaround the world. 
+Thomson Reutersjournalists are subjectto an Editorial Handbook which requires fairpresentation and disclosure ofrelevant interests. 
+This copy isfor your personal,non-­commercial use only. To orderpresentation-­readycopiesfordistribution to colleagues, clientsorcustomers,use the Reprintstool atthe top ofanyarticle or visit: www.reutersreprints.com. 
+

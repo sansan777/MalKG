@@ -1,0 +1,86 @@
+T1	Malware 45 52	Georbot
+T2	Organization 203 259	Computer Emergency Response Team” of Republic of Georgia
+T3	Organization 167 179	CERT-Georgia
+T4	Information 426 466	Georgian and American Security Documents
+T5	ExploitTargetObject 1387 1418	Georgian News-Related web-sites
+T6	ExploitTargetObject 1888 1909	www.caucasustimes.com
+T7	ExploitTargetObject 1950 1960	www.cei.ge
+T8	ExploitTargetObject 1998 2011	www.psnews.ge
+T9	ExploitTargetObject 2033 2043	ema.gov.ge
+T10	ExploitTargetObject 2044 2059	www.opentext.ge
+T11	ExploitTargetObject 2060 2072	www.presa.ge
+T12	ExploitTargetObject 2073 2087	www.presage.tv
+T13	ExploitTargetObject 2088 2103	www.psnews.info
+T14	ExploitTargetObject 2104 2126	www.resonancedaily.com
+T15	Time 2868 2883	September, 2010
+T16	Time 2949 2960	March, 2011
+T17	Time 3006 3018	April , 2011
+T18	Time 3058 3068	June, 2011
+T19	Time 3127 3140	October, 2011
+T20	Time 3179 3193	November. 2011
+T21	Time 3230 3244	December, 2011
+T22	Time 3279 3292	January, 2012
+T23	Time 3323 3334	March, 2012
+T24	Address 3022 3034	178.32.91.70
+T26	Address 3089 3102	88.198.238.55
+T25	Address 3072 3086	88.198.240.123
+T27	Address 3144 3157	94.199.48.104
+T28	Address 3197 3211	173.212.192.83
+T29	Address 3248 3259	31.31.75.63
+T30	Address 3296 3310	31.214.140.214
+T31	Address 3338 3350	78.46.145.24
+T32	Country 2910 2923	United States
+T33	Country 2977 2984	Georgia
+T34	Country 3037 3043	France
+T35	Country 3105 3112	Germany
+T36	Country 3160 3167	Hungary
+T37	Country 3214 3227	United States
+T38	Country 3262 3276	Czech Republic
+T39	Country 3313 3320	Germany
+T40	Country 3353 3360	Germany
+T41	Country 3562 3568	Canada
+T42	Country 3570 3577	Ukraine
+T43	Country 3587 3592	China
+T44	Country 3611 3617	Russia
+T45	Time 3736 3750	30 March, 2011
+T46	Time 3801 3818	14 September 2011
+T47	Time 3906 3922	25 November 2011
+T48	Time 4001 4017	12 December 2011
+T49	MalwareCharacteristics 4026 4041	Video Recording
+T50	Exploit 4277 4286	Frame.php
+T51	Malware 4359 4367	calc.exe
+T52	Malware 4368 4376	Calc.exe
+T53	GeneralVirus 4447 4458	usbserv.exe
+T54	Malware 4625 4634	frame.php
+T55	Vulnerability 4725 4738	CVE-2010-0842
+T56	Vulnerability 4740 4753	CVE-2006-3730
+T57	Vulnerability 4755 4763	MS06-057
+R1	exploits Arg1:T54 Arg2:T55
+R2	exploits Arg1:T54 Arg2:T56
+R3	exploits Arg1:T54 Arg2:T57
+T58	Malware 4824 4833	frame.php
+T59	Exploit 5004 5008	0day
+T60	MalwareCharacteristics 6206 6234	Recording Videos from Webcam
+T61	MalwareCharacteristics 6113 6152	Searching Sensitive word’s In filenames
+T62	MalwareCharacteristics 6293 6336	Modify malware code file from C&C Web Panel
+T63	MalwareCharacteristics 6340 6390	Self-Created Packer, Crypter in Assembler Language
+T64	MalwareCharacteristics 6408 6424	Update mechanism
+T65	MalwareCharacteristics 6426 6448	Base-encoded plaintext
+T66	MalwareCharacteristics 6514 6551	opening network socket at ring0 level
+T67	MalwareCharacteristics 6573 6598	TDSS Rootkit Modification
+T68	ExploitTargetObject 6763 6773	Ministries
+T69	ExploitTargetObject 6777 6787	Parliament
+T70	ExploitTargetObject 6791 6826	Critical Information Ifrastructures
+T71	ExploitTargetObject 6830 6835	Banks
+T72	ExploitTargetObject 6839 6844	NGO’s
+T73	CourseOfAction 6882 6916	Blocked each of 6 C&C IP addresses
+T74	CourseOfAction 7023 7060	identified all Georgian infected IP’s
+T75	CourseOfAction 7065 7148	gave mitigation strategies and cleaning tools to Infected Agencies and Institutions
+T76	CourseOfAction 7153 7240	Cooperated with Antivirus, IDS/IPS solutions, to create mitigating tools and signatures
+T77	CourseOfAction 7309 7328	Cooperated with FBI
+T78	CourseOfAction 7480 7509	Hosting Providers Abuse Teams
+T79	CourseOfAction 7546 7630	Law Enforcement Agencies to obtain log files and system images for Forensic Analysis
+T80	Indicator 8928 8939	Warynews.ru
+T81	Attacker 8889 8911	Russian Official State
+T82	Attacker 9024 9048	Russian Business Network
+T83	Indicator 9099 9109	www.rbc.ru

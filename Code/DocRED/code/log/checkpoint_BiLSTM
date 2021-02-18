@@ -1,0 +1,2452 @@
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.8493 | F1 0.0023 | AUC 0.0003
+Ignore ma_f1 0.0023 | input_theta 0.8493 test_result F1 0.0011 | AUC 0.0003
+| epoch   0 | time:  2.40s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.4025 | F1 0.0011 | AUC 0.0004
+Ignore ma_f1 0.0011 | input_theta 0.4025 test_result F1 0.0011 | AUC 0.0004
+| epoch   1 | time:  2.44s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1218 | F1 0.0014 | AUC 0.0004
+Ignore ma_f1 0.0014 | input_theta 0.1218 test_result F1 0.0012 | AUC 0.0004
+| epoch   2 | time:  2.58s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0005 | F1 0.0009 | AUC 0.0003
+Ignore ma_f1 0.0009 | input_theta 0.0005 test_result F1 0.0008 | AUC 0.0003
+| epoch   3 | time:  2.42s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.9596 | F1 0.0067 | AUC 0.0005
+Ignore ma_f1 0.0067 | input_theta 0.9596 test_result F1 0.0000 | AUC 0.0005
+| epoch   0 | time:  2.63s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.9528 | F1 0.0070 | AUC 0.0006
+Ignore ma_f1 0.0070 | input_theta 0.9528 test_result F1 0.0000 | AUC 0.0006
+| epoch   1 | time:  2.70s
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.3601 test_result F1 0.0625 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.3000 test_result F1 0.0625 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.2000 test_result F1 0.0625 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.0500 test_result F1 0.1176 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.0000 test_result F1 0.1266 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.0010 test_result F1 0.1798 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ALL  : Theta 0.0014 | F1 0.1905 | AUC 0.0638
+Ignore ma_f1 0.1905 | input_theta 0.1000 test_result F1 0.0909 | AUC 0.0638
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.9244 | F1 0.0057 | AUC 0.0006
+Ignore ma_f1 0.0057 | input_theta 0.9244 test_result F1 0.0038 | AUC 0.0006
+| epoch   0 | time:  3.52s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.9028 | F1 0.0148 | AUC 0.0009
+Ignore ma_f1 0.0148 | input_theta 0.9028 test_result F1 0.0099 | AUC 0.0009
+| epoch   1 | time:  3.60s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.7856 | F1 0.0223 | AUC 0.0012
+Ignore ma_f1 0.0223 | input_theta 0.7856 test_result F1 0.0149 | AUC 0.0012
+| epoch   2 | time:  3.61s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0050 | F1 0.0018 | AUC 0.0006
+Ignore ma_f1 0.0018 | input_theta 0.0050 test_result F1 0.0017 | AUC 0.0006
+| epoch   3 | time:  3.66s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0012 | AUC 0.0004
+Ignore ma_f1 0.0012 | input_theta 0.0000 test_result F1 0.0012 | AUC 0.0004
+| epoch   4 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0012 | AUC 0.0004
+Ignore ma_f1 0.0012 | input_theta 0.0000 test_result F1 0.0011 | AUC 0.0004
+| epoch   5 | time:  3.39s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0013 | AUC 0.0005
+Ignore ma_f1 0.0013 | input_theta 0.0000 test_result F1 0.0012 | AUC 0.0005
+| epoch   6 | time:  3.39s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.0500 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.8074 | F1 0.0040 | AUC 0.0005
+Ignore ma_f1 0.0040 | input_theta 0.8074 test_result F1 0.0030 | AUC 0.0005
+| epoch   0 | time:  3.58s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.6787 | F1 0.0009 | AUC 0.0003
+Ignore ma_f1 0.0009 | input_theta 0.6787 test_result F1 0.0008 | AUC 0.0003
+| epoch   0 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.6735 | F1 0.0013 | AUC 0.0004
+Ignore ma_f1 0.0013 | input_theta 0.6735 test_result F1 0.0011 | AUC 0.0004
+| epoch   1 | time:  3.59s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.4707 | F1 0.0025 | AUC 0.0005
+Ignore ma_f1 0.0025 | input_theta 0.4707 test_result F1 0.0021 | AUC 0.0005
+| epoch   2 | time:  3.58s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0174 | F1 0.0019 | AUC 0.0005
+Ignore ma_f1 0.0019 | input_theta 0.0174 test_result F1 0.0015 | AUC 0.0005
+| epoch   3 | time:  3.58s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0012 | AUC 0.0004
+Ignore ma_f1 0.0012 | input_theta 0.0000 test_result F1 0.0011 | AUC 0.0004
+| epoch   4 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0013 | AUC 0.0005
+Ignore ma_f1 0.0013 | input_theta 0.0000 test_result F1 0.0013 | AUC 0.0005
+| epoch   5 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0020 | AUC 0.0007
+Ignore ma_f1 0.0020 | input_theta 0.0000 test_result F1 0.0019 | AUC 0.0007
+| epoch   6 | time:  3.29s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0028 | AUC 0.0009
+Ignore ma_f1 0.0028 | input_theta 0.0000 test_result F1 0.0027 | AUC 0.0009
+| epoch   7 | time:  3.26s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0069 | AUC 0.0017
+Ignore ma_f1 0.0069 | input_theta 0.0000 test_result F1 0.0062 | AUC 0.0017
+| epoch   8 | time:  3.52s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0137 | AUC 0.0031
+Ignore ma_f1 0.0137 | input_theta 0.0000 test_result F1 0.0125 | AUC 0.0031
+| epoch   9 | time:  3.51s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0236 | AUC 0.0052
+Ignore ma_f1 0.0236 | input_theta 0.0000 test_result F1 0.0207 | AUC 0.0052
+| epoch  10 | time:  3.55s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0001 | F1 0.0304 | AUC 0.0065
+Ignore ma_f1 0.0304 | input_theta 0.0001 test_result F1 0.0289 | AUC 0.0065
+| epoch  11 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.8763 | F1 0.0339 | AUC 0.0070
+Ignore ma_f1 0.0339 | input_theta 0.8763 test_result F1 0.0171 | AUC 0.0070
+| epoch  12 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.4295 | F1 0.0305 | AUC 0.0070
+Ignore ma_f1 0.0305 | input_theta 0.4295 test_result F1 0.0154 | AUC 0.0070
+| epoch  13 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0245 | F1 0.0257 | AUC 0.0060
+Ignore ma_f1 0.0257 | input_theta 0.0245 test_result F1 0.0229 | AUC 0.0060
+| epoch  14 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0069 | F1 0.0188 | AUC 0.0048
+Ignore ma_f1 0.0188 | input_theta 0.0069 test_result F1 0.0178 | AUC 0.0048
+| epoch  15 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1906 | F1 0.0226 | AUC 0.0042
+Ignore ma_f1 0.0226 | input_theta 0.1906 test_result F1 0.0170 | AUC 0.0042
+| epoch  16 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1705 | F1 0.0207 | AUC 0.0037
+Ignore ma_f1 0.0207 | input_theta 0.1705 test_result F1 0.0155 | AUC 0.0037
+| epoch  17 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.3813 | F1 0.0230 | AUC 0.0035
+Ignore ma_f1 0.0230 | input_theta 0.3813 test_result F1 0.0000 | AUC 0.0035
+| epoch  18 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.3069 | F1 0.0247 | AUC 0.0032
+Ignore ma_f1 0.0247 | input_theta 0.3069 test_result F1 0.0000 | AUC 0.0032
+| epoch  19 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2041 | F1 0.0213 | AUC 0.0029
+Ignore ma_f1 0.0213 | input_theta 0.2041 test_result F1 0.0000 | AUC 0.0029
+| epoch  20 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1159 | F1 0.0164 | AUC 0.0026
+Ignore ma_f1 0.0164 | input_theta 0.1159 test_result F1 0.0000 | AUC 0.0026
+| epoch  21 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0674 | F1 0.0126 | AUC 0.0025
+Ignore ma_f1 0.0126 | input_theta 0.0674 test_result F1 0.0000 | AUC 0.0025
+| epoch  22 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0230 | F1 0.0123 | AUC 0.0024
+Ignore ma_f1 0.0123 | input_theta 0.0230 test_result F1 0.0082 | AUC 0.0024
+| epoch  23 | time:  3.37s
+-----------------------------------------------------------------------------------------
+| epoch 24 | step   50 |  ms/b 4507.09 | train loss 0.081 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0246 | F1 0.0137 | AUC 0.0024
+Ignore ma_f1 0.0137 | input_theta 0.0246 test_result F1 0.0092 | AUC 0.0024
+| epoch  24 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0307 | F1 0.0159 | AUC 0.0026
+Ignore ma_f1 0.0159 | input_theta 0.0307 test_result F1 0.0106 | AUC 0.0026
+| epoch  25 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0415 | F1 0.0195 | AUC 0.0027
+Ignore ma_f1 0.0195 | input_theta 0.0415 test_result F1 0.0131 | AUC 0.0027
+| epoch  26 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0504 | F1 0.0203 | AUC 0.0029
+Ignore ma_f1 0.0203 | input_theta 0.0504 test_result F1 0.0136 | AUC 0.0029
+| epoch  27 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0496 | F1 0.0190 | AUC 0.0031
+Ignore ma_f1 0.0190 | input_theta 0.0496 test_result F1 0.0127 | AUC 0.0031
+| epoch  28 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0340 | F1 0.0198 | AUC 0.0034
+Ignore ma_f1 0.0198 | input_theta 0.0340 test_result F1 0.0159 | AUC 0.0034
+| epoch  29 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0298 | F1 0.0233 | AUC 0.0036
+Ignore ma_f1 0.0233 | input_theta 0.0298 test_result F1 0.0194 | AUC 0.0036
+| epoch  30 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0297 | F1 0.0232 | AUC 0.0038
+Ignore ma_f1 0.0232 | input_theta 0.0297 test_result F1 0.0186 | AUC 0.0038
+| epoch  31 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0278 | F1 0.0237 | AUC 0.0040
+Ignore ma_f1 0.0237 | input_theta 0.0278 test_result F1 0.0190 | AUC 0.0040
+| epoch  32 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0266 | F1 0.0242 | AUC 0.0042
+Ignore ma_f1 0.0242 | input_theta 0.0266 test_result F1 0.0194 | AUC 0.0042
+| epoch  33 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0406 | F1 0.0251 | AUC 0.0044
+Ignore ma_f1 0.0251 | input_theta 0.0406 test_result F1 0.0168 | AUC 0.0044
+| epoch  34 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0339 | F1 0.0261 | AUC 0.0046
+Ignore ma_f1 0.0261 | input_theta 0.0339 test_result F1 0.0197 | AUC 0.0046
+| epoch  35 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0316 | F1 0.0285 | AUC 0.0047
+Ignore ma_f1 0.0285 | input_theta 0.0316 test_result F1 0.0229 | AUC 0.0047
+| epoch  36 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0357 | F1 0.0316 | AUC 0.0049
+Ignore ma_f1 0.0316 | input_theta 0.0357 test_result F1 0.0254 | AUC 0.0049
+| epoch  37 | time:  3.27s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0397 | F1 0.0340 | AUC 0.0051
+Ignore ma_f1 0.0340 | input_theta 0.0397 test_result F1 0.0273 | AUC 0.0051
+| epoch  38 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0413 | F1 0.0322 | AUC 0.0052
+Ignore ma_f1 0.0322 | input_theta 0.0413 test_result F1 0.0258 | AUC 0.0052
+| epoch  39 | time:  3.48s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0416 | F1 0.0312 | AUC 0.0053
+Ignore ma_f1 0.0312 | input_theta 0.0416 test_result F1 0.0250 | AUC 0.0053
+| epoch  40 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0382 | F1 0.0287 | AUC 0.0054
+Ignore ma_f1 0.0287 | input_theta 0.0382 test_result F1 0.0230 | AUC 0.0054
+| epoch  41 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0354 | F1 0.0280 | AUC 0.0055
+Ignore ma_f1 0.0280 | input_theta 0.0354 test_result F1 0.0225 | AUC 0.0055
+| epoch  42 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0316 | F1 0.0267 | AUC 0.0055
+Ignore ma_f1 0.0267 | input_theta 0.0316 test_result F1 0.0214 | AUC 0.0055
+| epoch  43 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0300 | F1 0.0267 | AUC 0.0057
+Ignore ma_f1 0.0267 | input_theta 0.0300 test_result F1 0.0214 | AUC 0.0057
+| epoch  44 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0283 | F1 0.0271 | AUC 0.0058
+Ignore ma_f1 0.0271 | input_theta 0.0283 test_result F1 0.0217 | AUC 0.0058
+| epoch  45 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0282 | F1 0.0267 | AUC 0.0060
+Ignore ma_f1 0.0267 | input_theta 0.0282 test_result F1 0.0214 | AUC 0.0060
+| epoch  46 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0226 | F1 0.0276 | AUC 0.0063
+Ignore ma_f1 0.0276 | input_theta 0.0226 test_result F1 0.0237 | AUC 0.0063
+| epoch  47 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0312 | F1 0.0308 | AUC 0.0064
+Ignore ma_f1 0.0308 | input_theta 0.0312 test_result F1 0.0258 | AUC 0.0064
+| epoch  48 | time:  3.31s
+-----------------------------------------------------------------------------------------
+| epoch 49 | step  100 |  ms/b 4426.77 | train loss 0.003 | NA acc: 1.00 | not NA acc: 0.06  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0409 | F1 0.0316 | AUC 0.0066
+Ignore ma_f1 0.0316 | input_theta 0.0409 test_result F1 0.0254 | AUC 0.0066
+| epoch  49 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0460 | F1 0.0330 | AUC 0.0068
+Ignore ma_f1 0.0330 | input_theta 0.0460 test_result F1 0.0265 | AUC 0.0068
+| epoch  50 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0475 | F1 0.0322 | AUC 0.0069
+Ignore ma_f1 0.0322 | input_theta 0.0475 test_result F1 0.0258 | AUC 0.0069
+| epoch  51 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0442 | F1 0.0316 | AUC 0.0069
+Ignore ma_f1 0.0316 | input_theta 0.0442 test_result F1 0.0254 | AUC 0.0069
+| epoch  52 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0384 | F1 0.0306 | AUC 0.0068
+Ignore ma_f1 0.0306 | input_theta 0.0384 test_result F1 0.0245 | AUC 0.0068
+| epoch  53 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0215 | F1 0.0287 | AUC 0.0068
+Ignore ma_f1 0.0287 | input_theta 0.0215 test_result F1 0.0251 | AUC 0.0068
+| epoch  54 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0177 | F1 0.0292 | AUC 0.0068
+Ignore ma_f1 0.0292 | input_theta 0.0177 test_result F1 0.0260 | AUC 0.0068
+| epoch  55 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0236 | F1 0.0315 | AUC 0.0068
+Ignore ma_f1 0.0315 | input_theta 0.0236 test_result F1 0.0270 | AUC 0.0068
+| epoch  56 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0252 | F1 0.0320 | AUC 0.0069
+Ignore ma_f1 0.0320 | input_theta 0.0252 test_result F1 0.0275 | AUC 0.0069
+| epoch  57 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0321 | F1 0.0337 | AUC 0.0072
+Ignore ma_f1 0.0337 | input_theta 0.0321 test_result F1 0.0290 | AUC 0.0072
+| epoch  58 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0375 | F1 0.0363 | AUC 0.0074
+Ignore ma_f1 0.0363 | input_theta 0.0375 test_result F1 0.0312 | AUC 0.0074
+| epoch  59 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0365 | F1 0.0345 | AUC 0.0076
+Ignore ma_f1 0.0345 | input_theta 0.0365 test_result F1 0.0296 | AUC 0.0076
+| epoch  60 | time:  3.47s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0376 | F1 0.0350 | AUC 0.0079
+Ignore ma_f1 0.0350 | input_theta 0.0376 test_result F1 0.0292 | AUC 0.0079
+| epoch  61 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0251 | F1 0.0346 | AUC 0.0080
+Ignore ma_f1 0.0346 | input_theta 0.0251 test_result F1 0.0304 | AUC 0.0080
+| epoch  62 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0246 | F1 0.0370 | AUC 0.0082
+Ignore ma_f1 0.0370 | input_theta 0.0246 test_result F1 0.0325 | AUC 0.0082
+| epoch  63 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0245 | F1 0.0403 | AUC 0.0083
+Ignore ma_f1 0.0403 | input_theta 0.0245 test_result F1 0.0354 | AUC 0.0083
+| epoch  64 | time:  3.40s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0238 | F1 0.0386 | AUC 0.0084
+Ignore ma_f1 0.0386 | input_theta 0.0238 test_result F1 0.0338 | AUC 0.0084
+| epoch  65 | time:  3.40s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0255 | F1 0.0376 | AUC 0.0085
+Ignore ma_f1 0.0376 | input_theta 0.0255 test_result F1 0.0330 | AUC 0.0085
+| epoch  66 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0322 | F1 0.0397 | AUC 0.0087
+Ignore ma_f1 0.0397 | input_theta 0.0322 test_result F1 0.0341 | AUC 0.0087
+| epoch  67 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0334 | F1 0.0423 | AUC 0.0090
+Ignore ma_f1 0.0423 | input_theta 0.0334 test_result F1 0.0364 | AUC 0.0090
+| epoch  68 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0390 | F1 0.0462 | AUC 0.0093
+Ignore ma_f1 0.0462 | input_theta 0.0390 test_result F1 0.0397 | AUC 0.0093
+| epoch  69 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0412 | F1 0.0504 | AUC 0.0095
+Ignore ma_f1 0.0504 | input_theta 0.0412 test_result F1 0.0433 | AUC 0.0095
+| epoch  70 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0421 | F1 0.0490 | AUC 0.0097
+Ignore ma_f1 0.0490 | input_theta 0.0421 test_result F1 0.0410 | AUC 0.0097
+| epoch  71 | time:  3.52s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0520 | F1 0.0545 | AUC 0.0100
+Ignore ma_f1 0.0545 | input_theta 0.0520 test_result F1 0.0457 | AUC 0.0100
+| epoch  72 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0601 | F1 0.0550 | AUC 0.0101
+Ignore ma_f1 0.0550 | input_theta 0.0601 test_result F1 0.0461 | AUC 0.0101
+| epoch  73 | time:  3.52s
+-----------------------------------------------------------------------------------------
+| epoch 74 | step  150 |  ms/b 4587.10 | train loss 0.002 | NA acc: 1.00 | not NA acc: 0.39  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0721 | F1 0.0566 | AUC 0.0102
+Ignore ma_f1 0.0566 | input_theta 0.0721 test_result F1 0.0474 | AUC 0.0102
+| epoch  74 | time:  3.47s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0490 | F1 0.0519 | AUC 0.0103
+Ignore ma_f1 0.0519 | input_theta 0.0490 test_result F1 0.0446 | AUC 0.0103
+| epoch  75 | time:  3.40s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0633 | F1 0.0532 | AUC 0.0106
+Ignore ma_f1 0.0532 | input_theta 0.0633 test_result F1 0.0428 | AUC 0.0106
+| epoch  76 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0587 | F1 0.0546 | AUC 0.0109
+Ignore ma_f1 0.0546 | input_theta 0.0587 test_result F1 0.0440 | AUC 0.0109
+| epoch  77 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0618 | F1 0.0575 | AUC 0.0112
+Ignore ma_f1 0.0575 | input_theta 0.0618 test_result F1 0.0462 | AUC 0.0112
+| epoch  78 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0699 | F1 0.0571 | AUC 0.0115
+Ignore ma_f1 0.0571 | input_theta 0.0699 test_result F1 0.0460 | AUC 0.0115
+| epoch  79 | time:  3.53s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0747 | F1 0.0549 | AUC 0.0116
+Ignore ma_f1 0.0549 | input_theta 0.0747 test_result F1 0.0442 | AUC 0.0116
+| epoch  80 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0630 | F1 0.0562 | AUC 0.0119
+Ignore ma_f1 0.0562 | input_theta 0.0630 test_result F1 0.0452 | AUC 0.0119
+| epoch  81 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0515 | F1 0.0602 | AUC 0.0122
+Ignore ma_f1 0.0602 | input_theta 0.0515 test_result F1 0.0485 | AUC 0.0122
+| epoch  82 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0544 | F1 0.0602 | AUC 0.0124
+Ignore ma_f1 0.0602 | input_theta 0.0544 test_result F1 0.0485 | AUC 0.0124
+| epoch  83 | time:  3.54s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0473 | F1 0.0664 | AUC 0.0128
+Ignore ma_f1 0.0664 | input_theta 0.0473 test_result F1 0.0571 | AUC 0.0128
+| epoch  84 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0644 | F1 0.0722 | AUC 0.0132
+Ignore ma_f1 0.0722 | input_theta 0.0644 test_result F1 0.0622 | AUC 0.0132
+| epoch  85 | time:  3.39s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0804 | F1 0.0765 | AUC 0.0134
+Ignore ma_f1 0.0765 | input_theta 0.0804 test_result F1 0.0659 | AUC 0.0134
+| epoch  86 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0767 | F1 0.0778 | AUC 0.0134
+Ignore ma_f1 0.0778 | input_theta 0.0767 test_result F1 0.0670 | AUC 0.0134
+| epoch  87 | time:  3.42s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0566 | F1 0.0778 | AUC 0.0133
+Ignore ma_f1 0.0778 | input_theta 0.0566 test_result F1 0.0670 | AUC 0.0133
+| epoch  88 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0411 | F1 0.0773 | AUC 0.0133
+Ignore ma_f1 0.0773 | input_theta 0.0411 test_result F1 0.0667 | AUC 0.0133
+| epoch  89 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0467 | F1 0.0833 | AUC 0.0140
+Ignore ma_f1 0.0833 | input_theta 0.0467 test_result F1 0.0719 | AUC 0.0140
+| epoch  90 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0596 | F1 0.0838 | AUC 0.0146
+Ignore ma_f1 0.0838 | input_theta 0.0596 test_result F1 0.0723 | AUC 0.0146
+| epoch  91 | time:  3.44s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0714 | F1 0.0833 | AUC 0.0150
+Ignore ma_f1 0.0833 | input_theta 0.0714 test_result F1 0.0719 | AUC 0.0150
+| epoch  92 | time:  3.47s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0710 | F1 0.0828 | AUC 0.0152
+Ignore ma_f1 0.0828 | input_theta 0.0710 test_result F1 0.0714 | AUC 0.0152
+| epoch  93 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0583 | F1 0.0819 | AUC 0.0151
+Ignore ma_f1 0.0819 | input_theta 0.0583 test_result F1 0.0706 | AUC 0.0151
+| epoch  94 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0601 | F1 0.0838 | AUC 0.0150
+Ignore ma_f1 0.0838 | input_theta 0.0601 test_result F1 0.0723 | AUC 0.0150
+| epoch  95 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0719 | F1 0.0881 | AUC 0.0149
+Ignore ma_f1 0.0881 | input_theta 0.0719 test_result F1 0.0759 | AUC 0.0149
+| epoch  96 | time:  3.31s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0862 | F1 0.0897 | AUC 0.0146
+Ignore ma_f1 0.0897 | input_theta 0.0862 test_result F1 0.0774 | AUC 0.0146
+| epoch  97 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0439 | F1 0.0773 | AUC 0.0143
+Ignore ma_f1 0.0773 | input_theta 0.0439 test_result F1 0.0680 | AUC 0.0143
+| epoch  98 | time:  3.35s
+-----------------------------------------------------------------------------------------
+| epoch 99 | step  200 |  ms/b 4556.60 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.56  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0385 | F1 0.0773 | AUC 0.0141
+Ignore ma_f1 0.0773 | input_theta 0.0385 test_result F1 0.0667 | AUC 0.0141
+| epoch  99 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0357 | F1 0.0773 | AUC 0.0144
+Ignore ma_f1 0.0773 | input_theta 0.0357 test_result F1 0.0667 | AUC 0.0144
+| epoch 100 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0538 | F1 0.0719 | AUC 0.0151
+Ignore ma_f1 0.0719 | input_theta 0.0538 test_result F1 0.0602 | AUC 0.0151
+| epoch 101 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0820 | F1 0.0755 | AUC 0.0161
+Ignore ma_f1 0.0755 | input_theta 0.0820 test_result F1 0.0633 | AUC 0.0161
+| epoch 102 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0698 | F1 0.0750 | AUC 0.0169
+Ignore ma_f1 0.0750 | input_theta 0.0698 test_result F1 0.0629 | AUC 0.0169
+| epoch 103 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0400 | F1 0.0778 | AUC 0.0168
+Ignore ma_f1 0.0778 | input_theta 0.0400 test_result F1 0.0670 | AUC 0.0168
+| epoch 104 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0255 | F1 0.0769 | AUC 0.0163
+Ignore ma_f1 0.0769 | input_theta 0.0255 test_result F1 0.0663 | AUC 0.0163
+| epoch 105 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0341 | F1 0.0764 | AUC 0.0156
+Ignore ma_f1 0.0764 | input_theta 0.0341 test_result F1 0.0641 | AUC 0.0156
+| epoch 106 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0680 | F1 0.0833 | AUC 0.0177
+Ignore ma_f1 0.0833 | input_theta 0.0680 test_result F1 0.0699 | AUC 0.0177
+| epoch 107 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0698 | F1 0.0845 | AUC 0.0191
+Ignore ma_f1 0.0845 | input_theta 0.0698 test_result F1 0.0709 | AUC 0.0191
+| epoch 108 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0791 | F1 0.0876 | AUC 0.0211
+Ignore ma_f1 0.0876 | input_theta 0.0791 test_result F1 0.0735 | AUC 0.0211
+| epoch 109 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0559 | F1 0.0800 | AUC 0.0180
+Ignore ma_f1 0.0800 | input_theta 0.0559 test_result F1 0.0671 | AUC 0.0180
+| epoch 110 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0191 | F1 0.0757 | AUC 0.0165
+Ignore ma_f1 0.0757 | input_theta 0.0191 test_result F1 0.0652 | AUC 0.0165
+| epoch 111 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0212 | F1 0.0809 | AUC 0.0160
+Ignore ma_f1 0.0809 | input_theta 0.0212 test_result F1 0.0698 | AUC 0.0160
+| epoch 112 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0270 | F1 0.0710 | AUC 0.0163
+Ignore ma_f1 0.0710 | input_theta 0.0270 test_result F1 0.0595 | AUC 0.0163
+| epoch 113 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0382 | F1 0.0690 | AUC 0.0166
+Ignore ma_f1 0.0690 | input_theta 0.0382 test_result F1 0.0578 | AUC 0.0166
+| epoch 114 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0446 | F1 0.0710 | AUC 0.0169
+Ignore ma_f1 0.0710 | input_theta 0.0446 test_result F1 0.0595 | AUC 0.0169
+| epoch 115 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0115 | F1 0.0730 | AUC 0.0168
+Ignore ma_f1 0.0730 | input_theta 0.0115 test_result F1 0.0659 | AUC 0.0168
+| epoch 116 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0173 | F1 0.0803 | AUC 0.0164
+Ignore ma_f1 0.0803 | input_theta 0.0173 test_result F1 0.0726 | AUC 0.0164
+| epoch 117 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0130 | F1 0.0803 | AUC 0.0159
+Ignore ma_f1 0.0803 | input_theta 0.0130 test_result F1 0.0726 | AUC 0.0159
+| epoch 118 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0261 | F1 0.0828 | AUC 0.0157
+Ignore ma_f1 0.0828 | input_theta 0.0261 test_result F1 0.0714 | AUC 0.0157
+| epoch 119 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0247 | F1 0.0819 | AUC 0.0156
+Ignore ma_f1 0.0819 | input_theta 0.0247 test_result F1 0.0706 | AUC 0.0156
+| epoch 120 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0456 | F1 0.0769 | AUC 0.0168
+Ignore ma_f1 0.0769 | input_theta 0.0456 test_result F1 0.0645 | AUC 0.0168
+| epoch 121 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0621 | F1 0.0774 | AUC 0.0174
+Ignore ma_f1 0.0774 | input_theta 0.0621 test_result F1 0.0649 | AUC 0.0174
+| epoch 122 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0308 | F1 0.0723 | AUC 0.0166
+Ignore ma_f1 0.0723 | input_theta 0.0308 test_result F1 0.0606 | AUC 0.0166
+| epoch 123 | time:  3.37s
+-----------------------------------------------------------------------------------------
+| epoch 124 | step  250 |  ms/b 4448.34 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.80  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0043 | F1 0.0766 | AUC 0.0153
+Ignore ma_f1 0.0766 | input_theta 0.0043 test_result F1 0.0692 | AUC 0.0153
+| epoch 124 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0068 | F1 0.0826 | AUC 0.0152
+Ignore ma_f1 0.0826 | input_theta 0.0068 test_result F1 0.0747 | AUC 0.0152
+| epoch 125 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0064 | F1 0.0738 | AUC 0.0156
+Ignore ma_f1 0.0738 | input_theta 0.0064 test_result F1 0.0667 | AUC 0.0156
+| epoch 126 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0153 | F1 0.0704 | AUC 0.0167
+Ignore ma_f1 0.0704 | input_theta 0.0153 test_result F1 0.0606 | AUC 0.0167
+| epoch 127 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0281 | F1 0.0745 | AUC 0.0180
+Ignore ma_f1 0.0745 | input_theta 0.0281 test_result F1 0.0642 | AUC 0.0180
+| epoch 128 | time:  3.39s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0234 | F1 0.0700 | AUC 0.0166
+Ignore ma_f1 0.0700 | input_theta 0.0234 test_result F1 0.0603 | AUC 0.0166
+| epoch 129 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0081 | F1 0.0721 | AUC 0.0151
+Ignore ma_f1 0.0721 | input_theta 0.0081 test_result F1 0.0633 | AUC 0.0151
+| epoch 130 | time:  3.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0032 | F1 0.0611 | AUC 0.0141
+Ignore ma_f1 0.0611 | input_theta 0.0032 test_result F1 0.0536 | AUC 0.0141
+| epoch 131 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0045 | F1 0.0684 | AUC 0.0150
+Ignore ma_f1 0.0684 | input_theta 0.0045 test_result F1 0.0611 | AUC 0.0150
+| epoch 132 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0120 | F1 0.0741 | AUC 0.0171
+Ignore ma_f1 0.0741 | input_theta 0.0120 test_result F1 0.0651 | AUC 0.0171
+| epoch 133 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0094 | F1 0.0744 | AUC 0.0180
+Ignore ma_f1 0.0744 | input_theta 0.0094 test_result F1 0.0654 | AUC 0.0180
+| epoch 134 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.3286 | F1 0.0750 | AUC 0.0191
+Ignore ma_f1 0.0750 | input_theta 0.3286 test_result F1 0.0506 | AUC 0.0191
+| epoch 135 | time:  3.37s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0149 | F1 0.0745 | AUC 0.0196
+Ignore ma_f1 0.0745 | input_theta 0.0149 test_result F1 0.0642 | AUC 0.0196
+| epoch 136 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0130 | F1 0.0741 | AUC 0.0193
+Ignore ma_f1 0.0741 | input_theta 0.0130 test_result F1 0.0638 | AUC 0.0193
+| epoch 137 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0083 | F1 0.0718 | AUC 0.0200
+Ignore ma_f1 0.0718 | input_theta 0.0083 test_result F1 0.0619 | AUC 0.0200
+| epoch 138 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2545 | F1 0.0714 | AUC 0.0202
+Ignore ma_f1 0.0714 | input_theta 0.2545 test_result F1 0.0482 | AUC 0.0202
+| epoch 139 | time:  3.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0134 | F1 0.0714 | AUC 0.0185
+Ignore ma_f1 0.0714 | input_theta 0.0134 test_result F1 0.0615 | AUC 0.0185
+| epoch 140 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0024 | F1 0.0769 | AUC 0.0160
+Ignore ma_f1 0.0769 | input_theta 0.0024 test_result F1 0.0695 | AUC 0.0160
+| epoch 141 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.0738 | AUC 0.0152
+Ignore ma_f1 0.0738 | input_theta 0.0013 test_result F1 0.0667 | AUC 0.0152
+| epoch 142 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0012 | F1 0.0735 | AUC 0.0153
+Ignore ma_f1 0.0735 | input_theta 0.0012 test_result F1 0.0664 | AUC 0.0153
+| epoch 143 | time:  3.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0027 | F1 0.0772 | AUC 0.0161
+Ignore ma_f1 0.0772 | input_theta 0.0027 test_result F1 0.0698 | AUC 0.0161
+| epoch 144 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0030 | F1 0.0671 | AUC 0.0177
+Ignore ma_f1 0.0671 | input_theta 0.0030 test_result F1 0.0606 | AUC 0.0177
+| epoch 145 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0041 | F1 0.0664 | AUC 0.0170
+Ignore ma_f1 0.0664 | input_theta 0.0041 test_result F1 0.0583 | AUC 0.0170
+| epoch 146 | time:  3.38s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1121 | F1 0.0632 | AUC 0.0162
+Ignore ma_f1 0.0632 | input_theta 0.1121 test_result F1 0.0426 | AUC 0.0162
+| epoch 147 | time:  3.34s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0018 | F1 0.0656 | AUC 0.0165
+Ignore ma_f1 0.0656 | input_theta 0.0018 test_result F1 0.0592 | AUC 0.0165
+| epoch 148 | time:  3.35s
+-----------------------------------------------------------------------------------------
+| epoch 149 | step  300 |  ms/b 4442.91 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.88  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0043 | F1 0.0723 | AUC 0.0161
+Ignore ma_f1 0.0723 | input_theta 0.0043 test_result F1 0.0645 | AUC 0.0161
+| epoch 149 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0053 | F1 0.0751 | AUC 0.0158
+Ignore ma_f1 0.0751 | input_theta 0.0053 test_result F1 0.0660 | AUC 0.0158
+| epoch 150 | time:  3.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0006 | F1 0.0658 | AUC 0.0148
+Ignore ma_f1 0.0658 | input_theta 0.0006 test_result F1 0.0594 | AUC 0.0148
+| epoch 151 | time:  3.36s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.8523 | F1 0.0037 | AUC 0.0004
+Ignore ma_f1 0.0037 | input_theta 0.8523 test_result F1 0.0018 | AUC 0.0004
+| epoch   0 | time: 12.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0286 | F1 0.0023 | AUC 0.0004
+Ignore ma_f1 0.0023 | input_theta 0.0286 test_result F1 0.0011 | AUC 0.0004
+| epoch   1 | time: 11.96s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.6713 | F1 0.0015 | AUC 0.0004
+Ignore ma_f1 0.0015 | input_theta 0.6713 test_result F1 0.0014 | AUC 0.0004
+| epoch   0 | time: 11.89s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0262 | F1 0.0031 | AUC 0.0005
+Ignore ma_f1 0.0031 | input_theta 0.0262 test_result F1 0.0023 | AUC 0.0005
+| epoch   1 | time: 11.88s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0168 | AUC 0.0025
+Ignore ma_f1 0.0168 | input_theta 0.0000 test_result F1 0.0135 | AUC 0.0025
+| epoch   4 | time: 10.73s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0380 | F1 0.0299 | AUC 0.0053
+Ignore ma_f1 0.0299 | input_theta 0.0380 test_result F1 0.0269 | AUC 0.0053
+| epoch   9 | time: 11.22s
+-----------------------------------------------------------------------------------------
+| epoch 12 | step   50 |  ms/b 5058.96 | train loss 0.079 | NA acc: 1.00 | not NA acc: 0.01  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0444 | F1 0.0232 | AUC 0.0035
+Ignore ma_f1 0.0232 | input_theta 0.0444 test_result F1 0.0211 | AUC 0.0035
+| epoch  14 | time: 11.05s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0372 | F1 0.0262 | AUC 0.0043
+Ignore ma_f1 0.0262 | input_theta 0.0372 test_result F1 0.0241 | AUC 0.0043
+| epoch  19 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 24 | step  100 |  ms/b 4899.68 | train loss 0.003 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0563 | F1 0.0323 | AUC 0.0058
+Ignore ma_f1 0.0323 | input_theta 0.0563 test_result F1 0.0300 | AUC 0.0058
+| epoch  24 | time: 11.24s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0554 | F1 0.0305 | AUC 0.0054
+Ignore ma_f1 0.0305 | input_theta 0.0554 test_result F1 0.0284 | AUC 0.0054
+| epoch  29 | time: 11.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0540 | F1 0.0433 | AUC 0.0079
+Ignore ma_f1 0.0433 | input_theta 0.0540 test_result F1 0.0398 | AUC 0.0079
+| epoch  34 | time: 11.07s
+-----------------------------------------------------------------------------------------
+| epoch 37 | step  150 |  ms/b 5252.57 | train loss 0.003 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0434 | F1 0.0361 | AUC 0.0073
+Ignore ma_f1 0.0361 | input_theta 0.0434 test_result F1 0.0349 | AUC 0.0073
+| epoch  39 | time: 11.03s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0388 | F1 0.0464 | AUC 0.0092
+Ignore ma_f1 0.0464 | input_theta 0.0388 test_result F1 0.0448 | AUC 0.0092
+| epoch  44 | time: 11.10s
+-----------------------------------------------------------------------------------------
+| epoch 49 | step  200 |  ms/b 4912.01 | train loss 0.002 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0449 | F1 0.0631 | AUC 0.0111
+Ignore ma_f1 0.0631 | input_theta 0.0449 test_result F1 0.0607 | AUC 0.0111
+| epoch  49 | time: 11.22s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0471 | F1 0.0358 | AUC 0.0070
+Ignore ma_f1 0.0358 | input_theta 0.0471 test_result F1 0.0308 | AUC 0.0070
+| epoch  54 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0446 | F1 0.0688 | AUC 0.0127
+Ignore ma_f1 0.0688 | input_theta 0.0446 test_result F1 0.0670 | AUC 0.0127
+| epoch  59 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 62 | step  250 |  ms/b 5223.04 | train loss 0.002 | NA acc: 1.00 | not NA acc: 0.02  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0716 | F1 0.0559 | AUC 0.0104
+Ignore ma_f1 0.0559 | input_theta 0.0716 test_result F1 0.0520 | AUC 0.0104
+| epoch  64 | time: 11.17s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0298 | F1 0.0509 | AUC 0.0134
+Ignore ma_f1 0.0509 | input_theta 0.0298 test_result F1 0.0488 | AUC 0.0134
+| epoch  69 | time: 11.04s
+-----------------------------------------------------------------------------------------
+| epoch 74 | step  300 |  ms/b 4906.36 | train loss 0.002 | NA acc: 1.00 | not NA acc: 0.11  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0675 | F1 0.0990 | AUC 0.0223
+Ignore ma_f1 0.0990 | input_theta 0.0675 test_result F1 0.0954 | AUC 0.0223
+| epoch  74 | time: 11.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0757 | F1 0.0949 | AUC 0.0206
+Ignore ma_f1 0.0949 | input_theta 0.0757 test_result F1 0.0915 | AUC 0.0206
+| epoch  79 | time: 11.05s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0780 | F1 0.0619 | AUC 0.0128
+Ignore ma_f1 0.0619 | input_theta 0.0780 test_result F1 0.0587 | AUC 0.0128
+| epoch  84 | time: 11.10s
+-----------------------------------------------------------------------------------------
+| epoch 87 | step  350 |  ms/b 5173.33 | train loss 0.002 | NA acc: 1.00 | not NA acc: 0.19  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0662 | F1 0.0873 | AUC 0.0209
+Ignore ma_f1 0.0873 | input_theta 0.0662 test_result F1 0.0833 | AUC 0.0209
+| epoch  89 | time: 11.25s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0256 | F1 0.0834 | AUC 0.0213
+Ignore ma_f1 0.0834 | input_theta 0.0256 test_result F1 0.0811 | AUC 0.0213
+| epoch  94 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 99 | step  400 |  ms/b 4943.17 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.21  | tot acc: 0.99 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0799 | F1 0.1111 | AUC 0.0245
+Ignore ma_f1 0.1111 | input_theta 0.0799 test_result F1 0.1083 | AUC 0.0245
+| epoch  99 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1552 | F1 0.0929 | AUC 0.0233
+Ignore ma_f1 0.0929 | input_theta 0.1552 test_result F1 0.0882 | AUC 0.0233
+| epoch 104 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0319 | F1 0.0621 | AUC 0.0171
+Ignore ma_f1 0.0621 | input_theta 0.0319 test_result F1 0.0599 | AUC 0.0171
+| epoch 109 | time: 11.09s
+-----------------------------------------------------------------------------------------
+| epoch 112 | step  450 |  ms/b 5175.86 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.14  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0197 | F1 0.0953 | AUC 0.0245
+Ignore ma_f1 0.0953 | input_theta 0.0197 test_result F1 0.0934 | AUC 0.0245
+| epoch 114 | time: 11.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1064 | F1 0.0876 | AUC 0.0243
+Ignore ma_f1 0.0876 | input_theta 0.1064 test_result F1 0.0829 | AUC 0.0243
+| epoch 119 | time: 11.22s
+-----------------------------------------------------------------------------------------
+| epoch 124 | step  500 |  ms/b 4880.91 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.42  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0517 | F1 0.0935 | AUC 0.0278
+Ignore ma_f1 0.0935 | input_theta 0.0517 test_result F1 0.0885 | AUC 0.0278
+| epoch 124 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1513 | F1 0.0950 | AUC 0.0309
+Ignore ma_f1 0.0950 | input_theta 0.1513 test_result F1 0.0896 | AUC 0.0309
+| epoch 129 | time: 11.07s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0539 | F1 0.1004 | AUC 0.0296
+Ignore ma_f1 0.1004 | input_theta 0.0539 test_result F1 0.0966 | AUC 0.0296
+| epoch 134 | time: 11.26s
+-----------------------------------------------------------------------------------------
+| epoch 137 | step  550 |  ms/b 5218.28 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.58  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0671 | F1 0.0923 | AUC 0.0272
+Ignore ma_f1 0.0923 | input_theta 0.0671 test_result F1 0.0890 | AUC 0.0272
+| epoch 139 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0434 | F1 0.0875 | AUC 0.0277
+Ignore ma_f1 0.0875 | input_theta 0.0434 test_result F1 0.0837 | AUC 0.0277
+| epoch 144 | time: 11.13s
+-----------------------------------------------------------------------------------------
+| epoch 149 | step  600 |  ms/b 4934.54 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.57  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0404 | F1 0.0975 | AUC 0.0280
+Ignore ma_f1 0.0975 | input_theta 0.0404 test_result F1 0.0943 | AUC 0.0280
+| epoch 149 | time: 11.26s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1430 | F1 0.0767 | AUC 0.0249
+Ignore ma_f1 0.0767 | input_theta 0.1430 test_result F1 0.0718 | AUC 0.0249
+| epoch 154 | time: 11.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0464 | F1 0.0962 | AUC 0.0313
+Ignore ma_f1 0.0962 | input_theta 0.0464 test_result F1 0.0925 | AUC 0.0313
+| epoch 159 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 162 | step  650 |  ms/b 5211.09 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.77  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0697 | F1 0.0845 | AUC 0.0251
+Ignore ma_f1 0.0845 | input_theta 0.0697 test_result F1 0.0811 | AUC 0.0251
+| epoch 164 | time: 11.18s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0158 | F1 0.0946 | AUC 0.0216
+Ignore ma_f1 0.0946 | input_theta 0.0158 test_result F1 0.0912 | AUC 0.0216
+| epoch 169 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 174 | step  700 |  ms/b 4918.20 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.83  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0503 | F1 0.1143 | AUC 0.0274
+Ignore ma_f1 0.1143 | input_theta 0.0503 test_result F1 0.1104 | AUC 0.0274
+| epoch 174 | time: 11.15s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0690 | F1 0.1028 | AUC 0.0292
+Ignore ma_f1 0.1028 | input_theta 0.0690 test_result F1 0.0990 | AUC 0.0292
+| epoch 179 | time: 11.22s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0446 | F1 0.0947 | AUC 0.0213
+Ignore ma_f1 0.0947 | input_theta 0.0446 test_result F1 0.0914 | AUC 0.0213
+| epoch 184 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 187 | step  750 |  ms/b 5212.47 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.59  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0555 | F1 0.1229 | AUC 0.0294
+Ignore ma_f1 0.1229 | input_theta 0.0555 test_result F1 0.1189 | AUC 0.0294
+| epoch 189 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0498 | F1 0.1236 | AUC 0.0317
+Ignore ma_f1 0.1236 | input_theta 0.0498 test_result F1 0.1193 | AUC 0.0317
+| epoch 194 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 199 | step  800 |  ms/b 4899.97 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.81  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0150 | F1 0.0894 | AUC 0.0261
+Ignore ma_f1 0.0894 | input_theta 0.0150 test_result F1 0.0858 | AUC 0.0261
+| epoch 199 | time: 11.24s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0414 | F1 0.1190 | AUC 0.0296
+Ignore ma_f1 0.1190 | input_theta 0.0414 test_result F1 0.1147 | AUC 0.0296
+| epoch 204 | time: 11.07s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0438 | F1 0.1087 | AUC 0.0368
+Ignore ma_f1 0.1087 | input_theta 0.0438 test_result F1 0.1048 | AUC 0.0368
+| epoch 209 | time: 11.09s
+-----------------------------------------------------------------------------------------
+| epoch 212 | step  850 |  ms/b 5196.29 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.91  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0198 | F1 0.1018 | AUC 0.0238
+Ignore ma_f1 0.1018 | input_theta 0.0198 test_result F1 0.0980 | AUC 0.0238
+| epoch 214 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0443 | F1 0.0889 | AUC 0.0233
+Ignore ma_f1 0.0889 | input_theta 0.0443 test_result F1 0.0850 | AUC 0.0233
+| epoch 219 | time: 11.08s
+-----------------------------------------------------------------------------------------
+| epoch 224 | step  900 |  ms/b 4892.77 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.70  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0797 | F1 0.1322 | AUC 0.0426
+Ignore ma_f1 0.1322 | input_theta 0.0797 test_result F1 0.1280 | AUC 0.0426
+| epoch 224 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0683 | F1 0.1245 | AUC 0.0344
+Ignore ma_f1 0.1245 | input_theta 0.0683 test_result F1 0.1209 | AUC 0.0344
+| epoch 229 | time: 11.26s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0498 | F1 0.1287 | AUC 0.0405
+Ignore ma_f1 0.1287 | input_theta 0.0498 test_result F1 0.1241 | AUC 0.0405
+| epoch 234 | time: 11.25s
+-----------------------------------------------------------------------------------------
+| epoch 237 | step  950 |  ms/b 5215.16 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.95  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0155 | F1 0.1111 | AUC 0.0321
+Ignore ma_f1 0.1111 | input_theta 0.0155 test_result F1 0.1076 | AUC 0.0321
+| epoch 239 | time: 11.26s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0221 | F1 0.0801 | AUC 0.0183
+Ignore ma_f1 0.0801 | input_theta 0.0221 test_result F1 0.0768 | AUC 0.0183
+| epoch 244 | time: 11.36s
+-----------------------------------------------------------------------------------------
+| epoch 249 | step 1000 |  ms/b 4946.31 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.90  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0280 | F1 0.1170 | AUC 0.0393
+Ignore ma_f1 0.1170 | input_theta 0.0280 test_result F1 0.1142 | AUC 0.0393
+| epoch 249 | time: 11.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1410 | F1 0.1117 | AUC 0.0373
+Ignore ma_f1 0.1117 | input_theta 0.1410 test_result F1 0.1064 | AUC 0.0373
+| epoch 254 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0292 | F1 0.1045 | AUC 0.0351
+Ignore ma_f1 0.1045 | input_theta 0.0292 test_result F1 0.1002 | AUC 0.0351
+| epoch 259 | time: 11.21s
+-----------------------------------------------------------------------------------------
+| epoch 262 | step 1050 |  ms/b 5248.20 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.97  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0711 | F1 0.1076 | AUC 0.0332
+Ignore ma_f1 0.1076 | input_theta 0.0711 test_result F1 0.1029 | AUC 0.0332
+| epoch 264 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0371 | F1 0.1220 | AUC 0.0355
+Ignore ma_f1 0.1220 | input_theta 0.0371 test_result F1 0.1174 | AUC 0.0355
+| epoch 269 | time: 11.11s
+-----------------------------------------------------------------------------------------
+| epoch 274 | step 1100 |  ms/b 4855.81 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.92  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0641 | F1 0.1100 | AUC 0.0348
+Ignore ma_f1 0.1100 | input_theta 0.0641 test_result F1 0.1053 | AUC 0.0348
+| epoch 274 | time: 11.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0670 | F1 0.1100 | AUC 0.0355
+Ignore ma_f1 0.1100 | input_theta 0.0670 test_result F1 0.1055 | AUC 0.0355
+| epoch 279 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0214 | F1 0.1060 | AUC 0.0329
+Ignore ma_f1 0.1060 | input_theta 0.0214 test_result F1 0.1026 | AUC 0.0329
+| epoch 284 | time: 11.10s
+-----------------------------------------------------------------------------------------
+| epoch 287 | step 1150 |  ms/b 5154.14 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.95  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0317 | F1 0.1043 | AUC 0.0326
+Ignore ma_f1 0.1043 | input_theta 0.0317 test_result F1 0.1002 | AUC 0.0326
+| epoch 289 | time: 11.05s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0112 | F1 0.1057 | AUC 0.0372
+Ignore ma_f1 0.1057 | input_theta 0.0112 test_result F1 0.1020 | AUC 0.0372
+| epoch 294 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 299 | step 1200 |  ms/b 4891.07 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.97  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0179 | F1 0.1055 | AUC 0.0374
+Ignore ma_f1 0.1055 | input_theta 0.0179 test_result F1 0.1016 | AUC 0.0374
+| epoch 299 | time: 11.17s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0497 | F1 0.1203 | AUC 0.0411
+Ignore ma_f1 0.1203 | input_theta 0.0497 test_result F1 0.1156 | AUC 0.0411
+| epoch 304 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0265 | F1 0.1256 | AUC 0.0461
+Ignore ma_f1 0.1256 | input_theta 0.0265 test_result F1 0.1213 | AUC 0.0461
+| epoch 309 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 312 | step 1250 |  ms/b 5206.44 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.97  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0243 | F1 0.1088 | AUC 0.0415
+Ignore ma_f1 0.1088 | input_theta 0.0243 test_result F1 0.1045 | AUC 0.0415
+| epoch 314 | time: 11.06s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0152 | F1 0.1270 | AUC 0.0479
+Ignore ma_f1 0.1270 | input_theta 0.0152 test_result F1 0.1227 | AUC 0.0479
+| epoch 319 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 324 | step 1300 |  ms/b 4876.28 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.96  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0607 | F1 0.1167 | AUC 0.0416
+Ignore ma_f1 0.1167 | input_theta 0.0607 test_result F1 0.1114 | AUC 0.0416
+| epoch 324 | time: 11.30s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0179 | F1 0.1102 | AUC 0.0348
+Ignore ma_f1 0.1102 | input_theta 0.0179 test_result F1 0.1071 | AUC 0.0348
+| epoch 329 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2545 | F1 0.1101 | AUC 0.0384
+Ignore ma_f1 0.1101 | input_theta 0.2545 test_result F1 0.1043 | AUC 0.0384
+| epoch 334 | time: 11.11s
+-----------------------------------------------------------------------------------------
+| epoch 337 | step 1350 |  ms/b 5193.17 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.92  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0097 | F1 0.0972 | AUC 0.0341
+Ignore ma_f1 0.0972 | input_theta 0.0097 test_result F1 0.0933 | AUC 0.0340
+| epoch 339 | time: 11.27s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0918 | F1 0.1127 | AUC 0.0389
+Ignore ma_f1 0.1127 | input_theta 0.0918 test_result F1 0.1073 | AUC 0.0389
+| epoch 344 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 349 | step 1400 |  ms/b 4936.47 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.96  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0406 | F1 0.1102 | AUC 0.0387
+Ignore ma_f1 0.1102 | input_theta 0.0406 test_result F1 0.1053 | AUC 0.0387
+| epoch 349 | time: 11.29s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2116 | F1 0.0977 | AUC 0.0303
+Ignore ma_f1 0.0977 | input_theta 0.2116 test_result F1 0.0922 | AUC 0.0303
+| epoch 354 | time: 11.25s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0364 | F1 0.1122 | AUC 0.0438
+Ignore ma_f1 0.1122 | input_theta 0.0364 test_result F1 0.1076 | AUC 0.0438
+| epoch 359 | time: 11.10s
+-----------------------------------------------------------------------------------------
+| epoch 362 | step 1450 |  ms/b 5248.01 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.98  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0368 | F1 0.1159 | AUC 0.0436
+Ignore ma_f1 0.1159 | input_theta 0.0368 test_result F1 0.1111 | AUC 0.0436
+| epoch 364 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0219 | F1 0.1069 | AUC 0.0388
+Ignore ma_f1 0.1069 | input_theta 0.0219 test_result F1 0.1027 | AUC 0.0388
+| epoch 369 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 374 | step 1500 |  ms/b 4855.29 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0578 | F1 0.0976 | AUC 0.0328
+Ignore ma_f1 0.0976 | input_theta 0.0578 test_result F1 0.0929 | AUC 0.0328
+| epoch 374 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0083 | F1 0.1053 | AUC 0.0335
+Ignore ma_f1 0.1053 | input_theta 0.0083 test_result F1 0.1009 | AUC 0.0335
+| epoch 379 | time: 11.17s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0095 | F1 0.1109 | AUC 0.0367
+Ignore ma_f1 0.1109 | input_theta 0.0095 test_result F1 0.1074 | AUC 0.0367
+| epoch 384 | time: 11.23s
+-----------------------------------------------------------------------------------------
+| epoch 387 | step 1550 |  ms/b 5212.85 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.96  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0062 | F1 0.1063 | AUC 0.0343
+Ignore ma_f1 0.1063 | input_theta 0.0062 test_result F1 0.1027 | AUC 0.0343
+| epoch 389 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0051 | F1 0.1093 | AUC 0.0363
+Ignore ma_f1 0.1093 | input_theta 0.0051 test_result F1 0.1060 | AUC 0.0363
+| epoch 394 | time: 11.18s
+-----------------------------------------------------------------------------------------
+| epoch 399 | step 1600 |  ms/b 4893.29 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0075 | F1 0.1179 | AUC 0.0406
+Ignore ma_f1 0.1179 | input_theta 0.0075 test_result F1 0.1143 | AUC 0.0406
+| epoch 399 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0112 | F1 0.1122 | AUC 0.0382
+Ignore ma_f1 0.1122 | input_theta 0.0112 test_result F1 0.1074 | AUC 0.0382
+| epoch 404 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0094 | F1 0.1137 | AUC 0.0338
+Ignore ma_f1 0.1137 | input_theta 0.0094 test_result F1 0.1100 | AUC 0.0338
+| epoch 409 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 412 | step 1650 |  ms/b 5226.61 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.96  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0124 | F1 0.1132 | AUC 0.0326
+Ignore ma_f1 0.1132 | input_theta 0.0124 test_result F1 0.1092 | AUC 0.0326
+| epoch 414 | time: 11.22s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0146 | F1 0.1125 | AUC 0.0338
+Ignore ma_f1 0.1125 | input_theta 0.0146 test_result F1 0.1078 | AUC 0.0338
+| epoch 419 | time: 11.27s
+-----------------------------------------------------------------------------------------
+| epoch 424 | step 1700 |  ms/b 4897.37 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0065 | F1 0.1098 | AUC 0.0359
+Ignore ma_f1 0.1098 | input_theta 0.0065 test_result F1 0.1059 | AUC 0.0359
+| epoch 424 | time: 11.24s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0011 | F1 0.1081 | AUC 0.0357
+Ignore ma_f1 0.1081 | input_theta 0.0011 test_result F1 0.1044 | AUC 0.0357
+| epoch 429 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1129 | F1 0.1076 | AUC 0.0370
+Ignore ma_f1 0.1076 | input_theta 0.1129 test_result F1 0.1016 | AUC 0.0370
+| epoch 434 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 437 | step 1750 |  ms/b 5205.70 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.8930 | F1 0.1003 | AUC 0.0391
+Ignore ma_f1 0.1003 | input_theta 0.8930 test_result F1 0.0940 | AUC 0.0391
+| epoch 439 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.4129 | F1 0.1218 | AUC 0.0378
+Ignore ma_f1 0.1218 | input_theta 0.4129 test_result F1 0.1170 | AUC 0.0378
+| epoch 444 | time: 11.24s
+-----------------------------------------------------------------------------------------
+| epoch 449 | step 1800 |  ms/b 4869.29 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.97  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0707 | F1 0.1079 | AUC 0.0298
+Ignore ma_f1 0.1079 | input_theta 0.0707 test_result F1 0.1036 | AUC 0.0298
+| epoch 449 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0102 | F1 0.1012 | AUC 0.0358
+Ignore ma_f1 0.1012 | input_theta 0.0102 test_result F1 0.0975 | AUC 0.0358
+| epoch 454 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0302 | F1 0.1075 | AUC 0.0376
+Ignore ma_f1 0.1075 | input_theta 0.0302 test_result F1 0.1030 | AUC 0.0376
+| epoch 459 | time: 11.25s
+-----------------------------------------------------------------------------------------
+| epoch 462 | step 1850 |  ms/b 5230.31 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0056 | F1 0.1092 | AUC 0.0363
+Ignore ma_f1 0.1092 | input_theta 0.0056 test_result F1 0.1058 | AUC 0.0363
+| epoch 464 | time: 11.33s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0103 | F1 0.1125 | AUC 0.0375
+Ignore ma_f1 0.1125 | input_theta 0.0103 test_result F1 0.1092 | AUC 0.0375
+| epoch 469 | time: 11.24s
+-----------------------------------------------------------------------------------------
+| epoch 474 | step 1900 |  ms/b 4926.31 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.98  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0089 | F1 0.1134 | AUC 0.0380
+Ignore ma_f1 0.1134 | input_theta 0.0089 test_result F1 0.1095 | AUC 0.0380
+| epoch 474 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0053 | F1 0.1119 | AUC 0.0369
+Ignore ma_f1 0.1119 | input_theta 0.0053 test_result F1 0.1085 | AUC 0.0369
+| epoch 479 | time: 11.35s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0077 | F1 0.1092 | AUC 0.0352
+Ignore ma_f1 0.1092 | input_theta 0.0077 test_result F1 0.1050 | AUC 0.0352
+| epoch 484 | time: 11.12s
+-----------------------------------------------------------------------------------------
+| epoch 487 | step 1950 |  ms/b 5242.40 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.98  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0061 | F1 0.1131 | AUC 0.0373
+Ignore ma_f1 0.1131 | input_theta 0.0061 test_result F1 0.1093 | AUC 0.0373
+| epoch 489 | time: 11.17s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0117 | F1 0.1168 | AUC 0.0367
+Ignore ma_f1 0.1168 | input_theta 0.0117 test_result F1 0.1124 | AUC 0.0367
+| epoch 494 | time: 11.25s
+-----------------------------------------------------------------------------------------
+| epoch 499 | step 2000 |  ms/b 4922.64 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0034 | F1 0.1060 | AUC 0.0343
+Ignore ma_f1 0.1060 | input_theta 0.0034 test_result F1 0.1027 | AUC 0.0343
+| epoch 499 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0203 | F1 0.1096 | AUC 0.0360
+Ignore ma_f1 0.1096 | input_theta 0.0203 test_result F1 0.1053 | AUC 0.0360
+| epoch 504 | time: 11.23s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0240 | F1 0.1163 | AUC 0.0340
+Ignore ma_f1 0.1163 | input_theta 0.0240 test_result F1 0.1119 | AUC 0.0340
+| epoch 509 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 512 | step 2050 |  ms/b 5233.83 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0117 | F1 0.1176 | AUC 0.0353
+Ignore ma_f1 0.1176 | input_theta 0.0117 test_result F1 0.1132 | AUC 0.0353
+| epoch 514 | time: 11.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0338 | F1 0.1050 | AUC 0.0337
+Ignore ma_f1 0.1050 | input_theta 0.0338 test_result F1 0.1011 | AUC 0.0337
+| epoch 519 | time: 11.07s
+-----------------------------------------------------------------------------------------
+| epoch 524 | step 2100 |  ms/b 4944.23 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0063 | F1 0.1031 | AUC 0.0304
+Ignore ma_f1 0.1031 | input_theta 0.0063 test_result F1 0.0989 | AUC 0.0304
+| epoch 524 | time: 11.15s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0154 | F1 0.1111 | AUC 0.0324
+Ignore ma_f1 0.1111 | input_theta 0.0154 test_result F1 0.1065 | AUC 0.0324
+| epoch 529 | time: 11.17s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0045 | F1 0.1090 | AUC 0.0335
+Ignore ma_f1 0.1090 | input_theta 0.0045 test_result F1 0.1050 | AUC 0.0335
+| epoch 534 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 537 | step 2150 |  ms/b 5210.60 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0042 | F1 0.1113 | AUC 0.0335
+Ignore ma_f1 0.1113 | input_theta 0.0042 test_result F1 0.1073 | AUC 0.0335
+| epoch 539 | time: 11.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0069 | F1 0.1193 | AUC 0.0356
+Ignore ma_f1 0.1193 | input_theta 0.0069 test_result F1 0.1149 | AUC 0.0356
+| epoch 544 | time: 11.21s
+-----------------------------------------------------------------------------------------
+| epoch 549 | step 2200 |  ms/b 4907.88 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0043 | F1 0.1137 | AUC 0.0328
+Ignore ma_f1 0.1137 | input_theta 0.0043 test_result F1 0.1100 | AUC 0.0328
+| epoch 549 | time: 11.13s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0086 | F1 0.1202 | AUC 0.0400
+Ignore ma_f1 0.1202 | input_theta 0.0086 test_result F1 0.1151 | AUC 0.0400
+| epoch 554 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0718 | F1 0.1196 | AUC 0.0340
+Ignore ma_f1 0.1196 | input_theta 0.0718 test_result F1 0.1151 | AUC 0.0340
+| epoch 559 | time: 11.30s
+-----------------------------------------------------------------------------------------
+| epoch 562 | step 2250 |  ms/b 5285.42 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0080 | F1 0.1103 | AUC 0.0325
+Ignore ma_f1 0.1103 | input_theta 0.0080 test_result F1 0.1055 | AUC 0.0325
+| epoch 564 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0253 | F1 0.0903 | AUC 0.0209
+Ignore ma_f1 0.0903 | input_theta 0.0253 test_result F1 0.0871 | AUC 0.0209
+| epoch 569 | time: 11.20s
+-----------------------------------------------------------------------------------------
+| epoch 574 | step 2300 |  ms/b 4864.67 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.97  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0012 | F1 0.0929 | AUC 0.0309
+Ignore ma_f1 0.0929 | input_theta 0.0012 test_result F1 0.0891 | AUC 0.0309
+| epoch 574 | time: 11.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0016 | F1 0.0998 | AUC 0.0310
+Ignore ma_f1 0.0998 | input_theta 0.0016 test_result F1 0.0974 | AUC 0.0310
+| epoch 579 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1037 | F1 0.1013 | AUC 0.0297
+Ignore ma_f1 0.1013 | input_theta 0.1037 test_result F1 0.0952 | AUC 0.0297
+| epoch 584 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 587 | step 2350 |  ms/b 5197.38 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2383 | F1 0.0956 | AUC 0.0298
+Ignore ma_f1 0.0956 | input_theta 0.2383 test_result F1 0.0890 | AUC 0.0297
+| epoch 589 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0016 | F1 0.1121 | AUC 0.0377
+Ignore ma_f1 0.1121 | input_theta 0.0016 test_result F1 0.1088 | AUC 0.0377
+| epoch 594 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 599 | step 2400 |  ms/b 4928.21 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0019 | F1 0.1154 | AUC 0.0421
+Ignore ma_f1 0.1154 | input_theta 0.0019 test_result F1 0.1121 | AUC 0.0421
+| epoch 599 | time: 11.18s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0017 | F1 0.1128 | AUC 0.0393
+Ignore ma_f1 0.1128 | input_theta 0.0017 test_result F1 0.1096 | AUC 0.0393
+| epoch 604 | time: 11.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0026 | F1 0.1077 | AUC 0.0394
+Ignore ma_f1 0.1077 | input_theta 0.0026 test_result F1 0.1040 | AUC 0.0394
+| epoch 609 | time: 11.13s
+-----------------------------------------------------------------------------------------
+| epoch 612 | step 2450 |  ms/b 5170.44 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0087 | F1 0.1114 | AUC 0.0374
+Ignore ma_f1 0.1114 | input_theta 0.0087 test_result F1 0.1071 | AUC 0.0374
+| epoch 614 | time: 11.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2639 | F1 0.1127 | AUC 0.0420
+Ignore ma_f1 0.1127 | input_theta 0.2639 test_result F1 0.1060 | AUC 0.0420
+| epoch 619 | time: 11.18s
+-----------------------------------------------------------------------------------------
+| epoch 624 | step 2500 |  ms/b 4924.67 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0651 | F1 0.1115 | AUC 0.0377
+Ignore ma_f1 0.1115 | input_theta 0.0651 test_result F1 0.1056 | AUC 0.0377
+| epoch 624 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0076 | F1 0.1140 | AUC 0.0368
+Ignore ma_f1 0.1140 | input_theta 0.0076 test_result F1 0.1099 | AUC 0.0368
+| epoch 629 | time: 11.15s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0105 | F1 0.1117 | AUC 0.0379
+Ignore ma_f1 0.1117 | input_theta 0.0105 test_result F1 0.1071 | AUC 0.0379
+| epoch 634 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 637 | step 2550 |  ms/b 5243.11 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0597 | F1 0.1105 | AUC 0.0377
+Ignore ma_f1 0.1105 | input_theta 0.0597 test_result F1 0.1050 | AUC 0.0377
+| epoch 639 | time: 11.13s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0061 | F1 0.1093 | AUC 0.0360
+Ignore ma_f1 0.1093 | input_theta 0.0061 test_result F1 0.1050 | AUC 0.0360
+| epoch 644 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 649 | step 2600 |  ms/b 4901.78 | train loss 0.000 | NA acc: 1.00 | not NA acc: 0.99  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0089 | F1 0.1124 | AUC 0.0353
+Ignore ma_f1 0.1124 | input_theta 0.0089 test_result F1 0.1081 | AUC 0.0353
+| epoch 649 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0054 | F1 0.1079 | AUC 0.0350
+Ignore ma_f1 0.1079 | input_theta 0.0054 test_result F1 0.1036 | AUC 0.0350
+| epoch 654 | time: 11.32s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.1094 | AUC 0.0351
+Ignore ma_f1 0.1094 | input_theta 0.0013 test_result F1 0.1057 | AUC 0.0351
+| epoch 659 | time: 11.20s
+-----------------------------------------------------------------------------------------
+| epoch 662 | step 2650 |  ms/b 5210.15 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0012 | F1 0.1220 | AUC 0.0368
+Ignore ma_f1 0.1220 | input_theta 0.0012 test_result F1 0.1181 | AUC 0.0368
+| epoch 664 | time: 11.28s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0266 | F1 0.1165 | AUC 0.0414
+Ignore ma_f1 0.1165 | input_theta 0.0266 test_result F1 0.1117 | AUC 0.0414
+| epoch 669 | time: 11.21s
+-----------------------------------------------------------------------------------------
+| epoch 674 | step 2700 |  ms/b 4947.36 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0082 | F1 0.1076 | AUC 0.0335
+Ignore ma_f1 0.1076 | input_theta 0.0082 test_result F1 0.1034 | AUC 0.0335
+| epoch 674 | time: 11.25s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0037 | F1 0.1138 | AUC 0.0422
+Ignore ma_f1 0.1138 | input_theta 0.0037 test_result F1 0.1096 | AUC 0.0422
+| epoch 679 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0023 | F1 0.1116 | AUC 0.0434
+Ignore ma_f1 0.1116 | input_theta 0.0023 test_result F1 0.1077 | AUC 0.0434
+| epoch 684 | time: 11.26s
+-----------------------------------------------------------------------------------------
+| epoch 687 | step 2750 |  ms/b 5237.38 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0157 | F1 0.1214 | AUC 0.0432
+Ignore ma_f1 0.1214 | input_theta 0.0157 test_result F1 0.1159 | AUC 0.0432
+| epoch 689 | time: 11.22s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0110 | F1 0.1237 | AUC 0.0426
+Ignore ma_f1 0.1237 | input_theta 0.0110 test_result F1 0.1189 | AUC 0.0425
+| epoch 694 | time: 11.22s
+-----------------------------------------------------------------------------------------
+| epoch 699 | step 2800 |  ms/b 4874.23 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0117 | F1 0.1189 | AUC 0.0420
+Ignore ma_f1 0.1189 | input_theta 0.0117 test_result F1 0.1140 | AUC 0.0420
+| epoch 699 | time: 11.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0056 | F1 0.1148 | AUC 0.0416
+Ignore ma_f1 0.1148 | input_theta 0.0056 test_result F1 0.1103 | AUC 0.0416
+| epoch 704 | time: 11.18s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0117 | F1 0.1209 | AUC 0.0404
+Ignore ma_f1 0.1209 | input_theta 0.0117 test_result F1 0.1157 | AUC 0.0404
+| epoch 709 | time: 11.13s
+-----------------------------------------------------------------------------------------
+| epoch 712 | step 2850 |  ms/b 5232.53 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0166 | F1 0.1128 | AUC 0.0378
+Ignore ma_f1 0.1128 | input_theta 0.0166 test_result F1 0.1080 | AUC 0.0378
+| epoch 714 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0189 | F1 0.1140 | AUC 0.0410
+Ignore ma_f1 0.1140 | input_theta 0.0189 test_result F1 0.1086 | AUC 0.0410
+| epoch 719 | time: 11.22s
+-----------------------------------------------------------------------------------------
+| epoch 724 | step 2900 |  ms/b 4871.63 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0183 | F1 0.1165 | AUC 0.0437
+Ignore ma_f1 0.1165 | input_theta 0.0183 test_result F1 0.1117 | AUC 0.0437
+| epoch 724 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0280 | F1 0.1194 | AUC 0.0436
+Ignore ma_f1 0.1194 | input_theta 0.0280 test_result F1 0.1138 | AUC 0.0436
+| epoch 729 | time: 11.14s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0004 | F1 0.1397 | AUC 0.0459
+Ignore ma_f1 0.1397 | input_theta 0.0004 test_result F1 0.1367 | AUC 0.0459
+| epoch 734 | time: 11.04s
+-----------------------------------------------------------------------------------------
+| epoch 737 | step 2950 |  ms/b 5234.10 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0004 | F1 0.1230 | AUC 0.0461
+Ignore ma_f1 0.1230 | input_theta 0.0004 test_result F1 0.1196 | AUC 0.0461
+| epoch 739 | time: 11.06s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0002 | F1 0.1227 | AUC 0.0448
+Ignore ma_f1 0.1227 | input_theta 0.0002 test_result F1 0.1201 | AUC 0.0448
+| epoch 744 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 749 | step 3000 |  ms/b 4892.55 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.1250 | AUC 0.0452
+Ignore ma_f1 0.1250 | input_theta 0.0013 test_result F1 0.1212 | AUC 0.0452
+| epoch 749 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0002 | F1 0.1226 | AUC 0.0406
+Ignore ma_f1 0.1226 | input_theta 0.0002 test_result F1 0.1195 | AUC 0.0406
+| epoch 754 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0174 | F1 0.1214 | AUC 0.0496
+Ignore ma_f1 0.1214 | input_theta 0.0174 test_result F1 0.1159 | AUC 0.0496
+| epoch 759 | time: 11.17s
+-----------------------------------------------------------------------------------------
+| epoch 762 | step 3050 |  ms/b 5155.21 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0170 | F1 0.1229 | AUC 0.0456
+Ignore ma_f1 0.1229 | input_theta 0.0170 test_result F1 0.1176 | AUC 0.0456
+| epoch 764 | time: 11.18s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0001 | F1 0.1168 | AUC 0.0418
+Ignore ma_f1 0.1168 | input_theta 0.0001 test_result F1 0.1141 | AUC 0.0418
+| epoch 769 | time: 11.04s
+-----------------------------------------------------------------------------------------
+| epoch 774 | step 3100 |  ms/b 4903.49 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0003 | F1 0.1176 | AUC 0.0406
+Ignore ma_f1 0.1176 | input_theta 0.0003 test_result F1 0.1149 | AUC 0.0406
+| epoch 774 | time: 11.07s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0002 | F1 0.1168 | AUC 0.0457
+Ignore ma_f1 0.1168 | input_theta 0.0002 test_result F1 0.1142 | AUC 0.0457
+| epoch 779 | time: 11.15s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0035 | F1 0.1185 | AUC 0.0493
+Ignore ma_f1 0.1185 | input_theta 0.0035 test_result F1 0.1140 | AUC 0.0493
+| epoch 784 | time: 11.14s
+-----------------------------------------------------------------------------------------
+| epoch 787 | step 3150 |  ms/b 5181.43 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.1218 | AUC 0.0474
+Ignore ma_f1 0.1218 | input_theta 0.0013 test_result F1 0.1179 | AUC 0.0474
+| epoch 789 | time: 11.11s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0038 | F1 0.1305 | AUC 0.0511
+Ignore ma_f1 0.1305 | input_theta 0.0038 test_result F1 0.1257 | AUC 0.0511
+| epoch 794 | time: 11.08s
+-----------------------------------------------------------------------------------------
+| epoch 799 | step 3200 |  ms/b 4864.29 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0078 | F1 0.1322 | AUC 0.0501
+Ignore ma_f1 0.1322 | input_theta 0.0078 test_result F1 0.1271 | AUC 0.0501
+| epoch 799 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0086 | F1 0.1253 | AUC 0.0456
+Ignore ma_f1 0.1253 | input_theta 0.0086 test_result F1 0.1206 | AUC 0.0456
+| epoch 804 | time: 11.28s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.1256 | AUC 0.0435
+Ignore ma_f1 0.1256 | input_theta 0.0013 test_result F1 0.1213 | AUC 0.0435
+| epoch 809 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 812 | step 3250 |  ms/b 5265.86 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0146 | F1 0.1257 | AUC 0.0435
+Ignore ma_f1 0.1257 | input_theta 0.0146 test_result F1 0.1205 | AUC 0.0435
+| epoch 814 | time: 11.16s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0078 | F1 0.1237 | AUC 0.0436
+Ignore ma_f1 0.1237 | input_theta 0.0078 test_result F1 0.1186 | AUC 0.0436
+| epoch 819 | time: 11.20s
+-----------------------------------------------------------------------------------------
+| epoch 824 | step 3300 |  ms/b 4880.77 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0044 | F1 0.1202 | AUC 0.0425
+Ignore ma_f1 0.1202 | input_theta 0.0044 test_result F1 0.1151 | AUC 0.0425
+| epoch 824 | time: 11.20s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0003 | F1 0.1211 | AUC 0.0327
+Ignore ma_f1 0.1211 | input_theta 0.0003 test_result F1 0.1165 | AUC 0.0327
+| epoch 829 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0006 | F1 0.1155 | AUC 0.0377
+Ignore ma_f1 0.1155 | input_theta 0.0006 test_result F1 0.1111 | AUC 0.0377
+| epoch 834 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 837 | step 3350 |  ms/b 5180.14 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0135 | F1 0.1142 | AUC 0.0403
+Ignore ma_f1 0.1142 | input_theta 0.0135 test_result F1 0.1098 | AUC 0.0403
+| epoch 839 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0079 | F1 0.1174 | AUC 0.0416
+Ignore ma_f1 0.1174 | input_theta 0.0079 test_result F1 0.1127 | AUC 0.0416
+| epoch 844 | time: 11.16s
+-----------------------------------------------------------------------------------------
+| epoch 849 | step 3400 |  ms/b 4897.85 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0031 | F1 0.1174 | AUC 0.0418
+Ignore ma_f1 0.1174 | input_theta 0.0031 test_result F1 0.1131 | AUC 0.0418
+| epoch 849 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0040 | F1 0.1163 | AUC 0.0418
+Ignore ma_f1 0.1163 | input_theta 0.0040 test_result F1 0.1119 | AUC 0.0418
+| epoch 854 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0055 | F1 0.1157 | AUC 0.0406
+Ignore ma_f1 0.1157 | input_theta 0.0055 test_result F1 0.1111 | AUC 0.0406
+| epoch 859 | time: 11.10s
+-----------------------------------------------------------------------------------------
+| epoch 862 | step 3450 |  ms/b 5148.89 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0031 | F1 0.1137 | AUC 0.0407
+Ignore ma_f1 0.1137 | input_theta 0.0031 test_result F1 0.1093 | AUC 0.0407
+| epoch 864 | time: 10.96s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0017 | F1 0.1166 | AUC 0.0406
+Ignore ma_f1 0.1166 | input_theta 0.0017 test_result F1 0.1124 | AUC 0.0406
+| epoch 869 | time: 11.21s
+-----------------------------------------------------------------------------------------
+| epoch 874 | step 3500 |  ms/b 4876.08 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0025 | F1 0.1171 | AUC 0.0479
+Ignore ma_f1 0.1171 | input_theta 0.0025 test_result F1 0.1127 | AUC 0.0479
+| epoch 874 | time: 11.06s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0031 | F1 0.1202 | AUC 0.0444
+Ignore ma_f1 0.1202 | input_theta 0.0031 test_result F1 0.1157 | AUC 0.0444
+| epoch 879 | time: 11.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0016 | F1 0.1153 | AUC 0.0382
+Ignore ma_f1 0.1153 | input_theta 0.0016 test_result F1 0.1111 | AUC 0.0382
+| epoch 884 | time: 11.23s
+-----------------------------------------------------------------------------------------
+| epoch 887 | step 3550 |  ms/b 5187.28 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0027 | F1 0.1150 | AUC 0.0352
+Ignore ma_f1 0.1150 | input_theta 0.0027 test_result F1 0.1109 | AUC 0.0352
+| epoch 889 | time: 11.21s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0028 | F1 0.1131 | AUC 0.0363
+Ignore ma_f1 0.1131 | input_theta 0.0028 test_result F1 0.1088 | AUC 0.0363
+| epoch 894 | time: 11.09s
+-----------------------------------------------------------------------------------------
+| epoch 899 | step 3600 |  ms/b 4897.50 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0027 | F1 0.1162 | AUC 0.0395
+Ignore ma_f1 0.1162 | input_theta 0.0027 test_result F1 0.1117 | AUC 0.0395
+| epoch 899 | time: 11.23s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0060 | F1 0.1222 | AUC 0.0419
+Ignore ma_f1 0.1222 | input_theta 0.0060 test_result F1 0.1176 | AUC 0.0419
+| epoch 904 | time: 11.19s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0059 | F1 0.1209 | AUC 0.0434
+Ignore ma_f1 0.1209 | input_theta 0.0059 test_result F1 0.1157 | AUC 0.0434
+| epoch 909 | time: 11.13s
+-----------------------------------------------------------------------------------------
+| epoch 912 | step 3650 |  ms/b 5225.42 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0031 | F1 0.1237 | AUC 0.0426
+Ignore ma_f1 0.1237 | input_theta 0.0031 test_result F1 0.1189 | AUC 0.0426
+| epoch 914 | time: 11.24s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0027 | F1 0.1232 | AUC 0.0435
+Ignore ma_f1 0.1232 | input_theta 0.0027 test_result F1 0.1188 | AUC 0.0435
+| epoch 919 | time: 11.13s
+-----------------------------------------------------------------------------------------
+| epoch 924 | step 3700 |  ms/b 4881.82 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0011 | F1 0.1179 | AUC 0.0483
+Ignore ma_f1 0.1179 | input_theta 0.0011 test_result F1 0.1133 | AUC 0.0483
+| epoch 924 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0013 | F1 0.1209 | AUC 0.0457
+Ignore ma_f1 0.1209 | input_theta 0.0013 test_result F1 0.1166 | AUC 0.0457
+| epoch 929 | time: 11.08s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0006 | F1 0.1156 | AUC 0.0457
+Ignore ma_f1 0.1156 | input_theta 0.0006 test_result F1 0.1116 | AUC 0.0457
+| epoch 934 | time: 11.08s
+-----------------------------------------------------------------------------------------
+| epoch 937 | step 3750 |  ms/b 5233.25 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0137 | F1 0.1083 | AUC 0.0498
+Ignore ma_f1 0.1083 | input_theta 0.0137 test_result F1 0.1022 | AUC 0.0498
+| epoch 939 | time: 11.09s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0034 | F1 0.1182 | AUC 0.0443
+Ignore ma_f1 0.1182 | input_theta 0.0034 test_result F1 0.1137 | AUC 0.0443
+| epoch 944 | time: 11.15s
+-----------------------------------------------------------------------------------------
+| epoch 949 | step 3800 |  ms/b 4839.85 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0015 | F1 0.1193 | AUC 0.0444
+Ignore ma_f1 0.1193 | input_theta 0.0015 test_result F1 0.1148 | AUC 0.0444
+| epoch 949 | time: 11.13s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0012 | F1 0.1189 | AUC 0.0454
+Ignore ma_f1 0.1189 | input_theta 0.0012 test_result F1 0.1148 | AUC 0.0454
+| epoch 954 | time: 11.15s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0001 | F1 0.1166 | AUC 0.0459
+Ignore ma_f1 0.1166 | input_theta 0.0001 test_result F1 0.1131 | AUC 0.0459
+| epoch 959 | time: 11.26s
+-----------------------------------------------------------------------------------------
+| epoch 962 | step 3850 |  ms/b 5193.58 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0007 | F1 0.1182 | AUC 0.0450
+Ignore ma_f1 0.1182 | input_theta 0.0007 test_result F1 0.1140 | AUC 0.0450
+| epoch 964 | time: 11.25s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0004 | F1 0.1227 | AUC 0.0438
+Ignore ma_f1 0.1227 | input_theta 0.0004 test_result F1 0.1185 | AUC 0.0438
+| epoch 969 | time: 11.19s
+-----------------------------------------------------------------------------------------
+| epoch 974 | step 3900 |  ms/b 4929.94 | train loss 0.000 | NA acc: 1.00 | not NA acc: 1.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0011 | F1 0.1194 | AUC 0.0484
+Ignore ma_f1 0.1194 | input_theta 0.0011 test_result F1 0.1154 | AUC 0.0484
+| epoch 974 | time: 11.13s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0010 | F1 0.1192 | AUC 0.0476
+Ignore ma_f1 0.1192 | input_theta 0.0010 test_result F1 0.1150 | AUC 0.0476
+| epoch 979 | time: 11.18s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0007 | F1 0.1231 | AUC 0.0468
+Ignore ma_f1 0.1231 | input_theta 0.0007 test_result F1 0.1189 | AUC 0.0468
+| epoch 984 | time: 11.08s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.3000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.3000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.2000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.2000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.1000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.4000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.4000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0142 | AUC 0.0024
+Ignore ma_f1 0.0142 | input_theta 0.0000 test_result F1 0.0138 | AUC 0.0024
+| epoch   4 | time:  8.75s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.3000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.3000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+| epoch  4 | step   50 |  ms/b 6039.10 | train loss 0.096 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0956 | F1 0.0074 | AUC 0.0012
+Ignore ma_f1 0.0074 | input_theta 0.0956 test_result F1 0.0071 | AUC 0.0012
+| epoch   4 | time: 63.68s
+-----------------------------------------------------------------------------------------
+| epoch  9 | step  100 |  ms/b 7389.30 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0367 | F1 0.0176 | AUC 0.0025
+Ignore ma_f1 0.0169 | input_theta 0.0367 test_result F1 0.0166 | AUC 0.0024
+| epoch   9 | time: 64.04s
+-----------------------------------------------------------------------------------------
+| epoch 14 | step  150 |  ms/b 7303.25 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0217 | F1 0.0203 | AUC 0.0037
+Ignore ma_f1 0.0198 | input_theta 0.0217 test_result F1 0.0194 | AUC 0.0036
+| epoch  14 | time: 63.87s
+-----------------------------------------------------------------------------------------
+| epoch 19 | step  200 |  ms/b 7344.19 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0532 | F1 0.0269 | AUC 0.0052
+Ignore ma_f1 0.0269 | input_theta 0.0532 test_result F1 0.0257 | AUC 0.0051
+| epoch  19 | time: 63.38s
+-----------------------------------------------------------------------------------------
+| epoch 24 | step  250 |  ms/b 7282.59 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0678 | F1 0.0447 | AUC 0.0092
+Ignore ma_f1 0.0435 | input_theta 0.0678 test_result F1 0.0426 | AUC 0.0090
+| epoch  24 | time: 63.43s
+-----------------------------------------------------------------------------------------
+| epoch 29 | step  300 |  ms/b 7323.29 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0765 | F1 0.0633 | AUC 0.0160
+Ignore ma_f1 0.0633 | input_theta 0.0765 test_result F1 0.0618 | AUC 0.0159
+| epoch  29 | time: 63.72s
+-----------------------------------------------------------------------------------------
+| epoch 34 | step  350 |  ms/b 7297.70 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.1555 | F1 0.0873 | AUC 0.0310
+Ignore ma_f1 0.0873 | input_theta 0.1555 test_result F1 0.0856 | AUC 0.0306
+| epoch  34 | time: 63.80s
+-----------------------------------------------------------------------------------------
+| epoch 39 | step  400 |  ms/b 7347.32 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.02  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0462 | F1 0.1115 | AUC 0.0465
+Ignore ma_f1 0.1115 | input_theta 0.0462 test_result F1 0.1103 | AUC 0.0462
+| epoch  39 | time: 63.64s
+-----------------------------------------------------------------------------------------
+| epoch 44 | step  450 |  ms/b 7322.47 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.06  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0848 | F1 0.1250 | AUC 0.0557
+Ignore ma_f1 0.1250 | input_theta 0.0848 test_result F1 0.1235 | AUC 0.0552
+| epoch  44 | time: 63.76s
+-----------------------------------------------------------------------------------------
+| epoch 49 | step  500 |  ms/b 7251.44 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.11  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.2436 | F1 0.1476 | AUC 0.0639
+Ignore ma_f1 0.1465 | input_theta 0.2436 test_result F1 0.1456 | AUC 0.0629
+| epoch  49 | time: 63.61s
+-----------------------------------------------------------------------------------------
+| epoch 54 | step  550 |  ms/b 7336.10 | train loss 0.001 | NA acc: 1.00 | not NA acc: 0.05  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0599 | F1 0.1165 | AUC 0.0570
+Ignore ma_f1 0.1149 | input_theta 0.0599 test_result F1 0.1138 | AUC 0.0563
+| epoch  54 | time: 63.93s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+| epoch  4 | step   50 |  ms/b 4304.41 | train loss 0.090 | NA acc: 1.00 | not NA acc: 0.00  | tot acc: 1.00 
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0812 | F1 0.0114 | AUC 0.0013
+Ignore ma_f1 0.0114 | input_theta 0.0812 test_result F1 0.0109 | AUC 0.0013
+| epoch   4 | time: 49.65s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0002 | input_theta 0.0000 test_result F1 0.0002 | AUC 0.0001
+| epoch   0 | time: 48.10s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0002 | AUC 0.0001
+Ignore ma_f1 0.0002 | input_theta 0.0000 test_result F1 0.0001 | AUC 0.0001
+| epoch   1 | time: 39.84s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0016 | AUC 0.0004
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0002 | AUC 0.0001
+Ignore ma_f1 0.0002 | input_theta 0.0000 test_result F1 0.0002 | AUC 0.0001
+| epoch   0 | time: 49.12s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0003 | AUC 0.0001
+| epoch   1 | time: 39.81s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0002 | AUC 0.0001
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0003 | AUC 0.0001
+| epoch   0 | time: 48.02s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0002 | AUC 0.0001
+| epoch   1 | time: 40.31s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0003 | AUC 0.0001
+| epoch   0 | time: 49.49s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0003 | AUC 0.0001
+| epoch   1 | time: 40.61s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0002 | AUC 0.0001
+Ignore ma_f1 0.0002 | input_theta 0.0000 test_result F1 0.0002 | AUC 0.0001
+| epoch   0 | time: 77.60s
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+ALL  : Theta 0.0000 | F1 0.0003 | AUC 0.0001
+Ignore ma_f1 0.0003 | input_theta 0.0000 test_result F1 0.0003 | AUC 0.0001
+| epoch   1 | time: 77.78s
+-----------------------------------------------------------------------------------------
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000
+Ignore ma_f1 0.0000 | input_theta 0.5000 test_result F1 0.0000 | AUC 0.0000

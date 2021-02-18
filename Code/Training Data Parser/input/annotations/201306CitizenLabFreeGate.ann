@@ -1,0 +1,71 @@
+T1	Organization 38 53	The Citizen Lab
+T3	Attacker 399 431	Pro-Government Electronic Actors
+T4	Attacker 515 537	Syrian Electronic Army
+T5	Time 812 816	2012
+R1	hasAttackTime Arg1:T4 Arg2:T5
+T6	Payload 912 932	Morgan Marquis-Boire
+T7	Payload 937 949	Eva Galperin
+T8	Organization 971 1001	Electronic Frontier Foundation
+T9	Organization 1074 1083	Telecomix
+T10	Organization 1204 1215	Cyber Arabs
+T11	ExploitTargetObject 642 658	Syrian activists
+T13	Time 2191 2210	second week of June
+T2	Time 3088 3101	June 15, 2013
+T12	File 3103 3114	VPN-PRO.zip
+T15	File 3202 3213	VPN-Pro.exe
+T14	TrojanHorse 6507 6521	ShadowTech Rat
+T16	Exploit 6762 6772	keylogging
+T17	Exploit 6777 6808	remote activation of the webcam
+T18	Malware 7082 7093	VPN-Pro.exe
+T19	Malware 7098 7108	svhost.exe
+T20	Time 7216 7229	June 20, 2013
+T21	Malware 7231 7242	svchost.exe
+T22	Malware 7313 7324	VPN-Pro.exe
+T23	Address 7538 7549	31.9.48.119
+T24	Indicator 7458 7477	thejoe.publicvm.com
+T25	Address 7570 7578	31.9.0.0
+T26	Address 7581 7593	31.9.127.255
+R2	usesAddress Arg1:T22 Arg2:T23
+R3	indicates Arg1:T24 Arg2:T22
+T28	Malware 8212 8221	Gh0st RAT
+T27	Malware 7805 7843	malicious installers for Green Simurgh
+T29	Time 8812 8824	January 2013
+T30	Campaign 8596 8604	campaign
+R4	hasAttackTime Arg1:T30 Arg2:T29
+T31	ExploitTargetObject 8910 8927	Syrian opposition
+R5	targets Arg1:T30 Arg2:T31
+T32	Email 9402 9408	e-mail
+T33	Time 10588 10607	06/19/2013 22:00:22
+T34	Time 10628 10647	06/19/2013 22:00:22
+T35	Time 10547 10572	06/16/2013 16:49:04 [UTC]
+T36	Time 10860 10889	07/17/2012 22:58:51.981 [UTC]
+T37	Time 10907 10936	07/17/2012 22:58:51.981 [UTC]
+T38	Time 10953 10982	07/17/2012 22:58:51.981 [UTC]
+T39	Time 11002 11031	12/27/2012 10:55:02.540 [UTC]
+T40	Indicator 12447 12519	http://[REDACTED]om/g.php?url=http://www.youtube.com/watch?v=jDkluDCn7fA
+T41	Indicator 12544 12625	http://google-panel.html5.me/g.php?url=http://www.youtube.com/watch?v=Uw3Ny2A1WvQ
+T42	Indicator 12650 12737	http://forgoogle.allalla.com/u.php?url=http://www.alkalimaonline.com/news.php?id=118868
+T43	Indicator 14202 14378	HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "Shell" /d "C:\WINDOWS\explorer.exe, C:\Documents and Settings\user\Local Settings\Temp\atiapfxx.exe
+T44	Indicator 14825 14839	tn5.linkpc.net
+T45	Indicator 14908 14922	tn5.linkpc.net
+T46	Address 14927 14941	94.252.198.112
+T47	Address 14960 14972	94.252.192.0
+T48	Address 14975 14989	94.252.255.255
+T49	Time 15113 15125	October 2012
+T50	File 15321 15334	123.functions
+T51	Indicator 15569 15583	tn5.linkpc.net
+T52	Attacker 2724 2733	attackers
+R6	hasAttackTime Arg1:T52 Arg2:T13
+T53	Malware 2285 2316	malicious installer of Freegate
+R7	hasAttackTime Arg1:T53 Arg2:T13
+R8	authored Arg1:T52 Arg2:T53
+R9	indicates Arg1:T12 Arg2:T53
+R10	indicates Arg1:T15 Arg2:T53
+R11	hasAttackTime Arg1:T30 Arg2:T33
+R12	hasAttackTime Arg1:T30 Arg2:T34
+R13	hasAttackTime Arg1:T30 Arg2:T35
+R14	hasAttackTime Arg1:T30 Arg2:T36
+R15	hasAttackTime Arg1:T30 Arg2:T37
+R16	hasAttackTime Arg1:T30 Arg2:T38
+R17	hasAttackTime Arg1:T30 Arg2:T39
+R18	hasAttackTime Arg1:T30 Arg2:T49

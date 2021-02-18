@@ -1,0 +1,115 @@
+T1	ExploitTargetObject 33 40	Vietnam
+T2	ExploitTargetObject 45 50	India
+T3	ExploitTargetObject 359 366	Vietnam
+T4	ExploitTargetObject 374 379	India
+T5	Malware 534 540	KeyBoy
+T6	File 858 882	THAM luan- GD- NCKH2.doc
+T7	Vulnerability 965 973	MS12-060
+R1	exploits Arg1:T5 Arg2:T7
+R2	indicates Arg1:T6 Arg2:T5
+T8	File 1533 1557	THAM luan- GD- NCKH2.doc
+T9	MD5 1576 1608	161c840748df9b49fda878394398425a
+T10	SHA-1 1616 1656	e3cc84a4dc66e43453a039c3c983fcef92eafa7d
+T11	SHA-256 1666 1730	5ba8c42807bee050aa474fe3c876936d196c65dca9895ccd2e317133188c905e
+T12	MD5 2026 2058	1f4d22e5131a66aa24f44eb0d4f1b54d
+T13	SHA-1 2066 2106	2c8a144331ec124755413f31a83e21015c74f2ec
+R3	indicates Arg1:T8 Arg2:T5
+R4	indicates Arg1:T9 Arg2:T5
+R5	indicates Arg1:T11 Arg2:T5
+R6	indicates Arg1:T10 Arg2:T5
+T14	SHA-256 2116 2180	1c076413cca929b7004863f1a3992afda665786d6e179b9886ddeb8062194049
+T15	Dropper 1930 1937	dropper
+A1	ID T15 1
+R7	indicates Arg1:T12 Arg2:T15
+R8	indicates Arg1:T13 Arg2:T15
+R9	indicates Arg1:T14 Arg2:T15
+T16	Malware 2377 2390	CREDRIVER.dll
+T17	MD5 2462 2494	2df60de8cb6b9fe7db1ea10581cfcda4
+T18	SHA-1 2502 2542	fb8057595f2bb53331620c717775751df781c151
+T19	SHA-256 2552 2616	ba4863d8a22864fa50a32aa85bc808371f05e8953167d34251cbd779d33e2d6d
+R10	indicates Arg1:T17 Arg2:T16
+R11	indicates Arg1:T18 Arg2:T16
+R12	indicates Arg1:T19 Arg2:T16
+T20	Vulnerability 2804 2817	CVE-2012-0158
+T21	ExploitTargetObject 3036 3044	Calcutta
+T22	ExploitTargetObject 3048 3053	India
+T23	Attacker 3412 3428	Amir Kumar Gupta
+R13	exploits Arg1:T5 Arg2:T20
+T24	MD5 3460 3492	dff54d302900e323c8988c725bbe2299
+T25	SHA-1 3500 3540	c5c0bae48c326006b9dcc99855646d3be0b474c1
+T26	SHA-256 3550 3614	1595ea659a87677c59a195a3aeec9e3ef135c808ec353222e8eaa662117c9362
+T27	File 3430 3441	iafbsnl.doc
+T28	Malware 3756 3769	CREDRIVER.dll
+T29	MD5 3788 3820	2b8c79678fa970ca4e229121e3de206f
+T30	SHA-1 3828 3868	5e4b7268606d6c98d00874431d39c34971149200
+T31	SHA-256 3878 3942	c22792dbf9a0279b36fa22f775a92ddfea9545cc842381ba84c2402c76aa393a
+R14	indicates Arg1:T29 Arg2:T28
+R15	indicates Arg1:T30 Arg2:T28
+R16	indicates Arg1:T31 Arg2:T28
+T32	Time 4122 4136	April 1st 2013
+T33	Malware 4619 4652	C:\WINDOWS\system32\CREDRIVER.dll
+T34	MalwareCharacteristics 4970 5010	Steal credentials from Internet Explorer
+T35	MalwareCharacteristics 5014 5052	Steal credentials from Mozilla Firefox
+T37	MalwareCharacteristics 5125 5155	Operate in an interactive mode
+T36	MalwareCharacteristics 5056 5075	Install a keylogger
+R17	hasCharacteristics Arg1:T33 Arg2:T34
+R18	hasCharacteristics Arg1:T33 Arg2:T35
+R19	hasCharacteristics Arg1:T33 Arg2:T36
+R20	hasCharacteristics Arg1:T33 Arg2:T37
+T38	Indicator 6233 6252	silence.phdns01.com
+T39	Indicator 6253 6268	cpnet.phmail.us
+T40	Indicator 6269 6286	imlang.phmail.org
+T41	Indicator 6355 6369	cresy.zyns.com
+T42	Indicator 6370 6384	preter.epac.to
+T43	Indicator 6385 6401	backto.ddns.name
+T44	Time 6752 6765	May 21st 2013
+T45	Time 6767 6780	May 25th 2013
+T46	Address 6782 6795	199.193.66.51
+T47	Indicator 6854 6869	cpnet.phmail.us
+T48	Time 6871 6884	May 10th 2013
+T49	Time 6886 6899	May 24th 2013
+T50	Address 6901 6914	199.193.66.51
+T51	Indicator 6973 6990	imlang.phmail.org
+T52	Time 6992 7005	May 22nd 2013
+T53	Time 7007 7020	May 23rd 2013
+T54	Address 7022 7035	199.193.66.51
+T55	Indicator 7094 7109	vtt.phdns01.com
+T56	Time 7111 7125	March 9th 2013
+T57	Time 7127 7142	April 19th 2013
+T58	Address 7144 7157	199.193.66.51
+T59	Time 7232 7245	May 31st 2013
+T60	Time 7247 7260	May 31st 2013
+T61	Address 7262 7273	1.235.10.28
+T62	Time 7339 7352	May 18th 2013
+T63	Time 7354 7367	May 28th 2013
+T64	Address 7369 7383	113.160.44.154
+T65	Obfuscation 8018 8036	multiply with 0x69
+T66	Malware 10244 10250	KeyBoy
+T67	Organization 15593 15599	Rapid7
+R21	hasCharacteristics Arg1:T66 Arg2:T65
+R22	indicates Arg1:T38 Arg2:T66
+R23	indicates Arg1:T39 Arg2:T66
+R24	indicates Arg1:T40 Arg2:T66
+R25	indicates Arg1:T41 Arg2:T66
+R26	indicates Arg1:T42 Arg2:T66
+R27	indicates Arg1:T43 Arg2:T66
+R28	indicates Arg1:T51 Arg2:T66
+R29	indicates Arg1:T55 Arg2:T66
+R30	hasAttackTime Arg1:T66 Arg2:T44
+R31	hasAttackTime Arg1:T66 Arg2:T45
+R32	hasAttackTime Arg1:T66 Arg2:T48
+R33	hasAttackTime Arg1:T66 Arg2:T49
+R34	hasAttackTime Arg1:T66 Arg2:T52
+R35	hasAttackTime Arg1:T66 Arg2:T53
+R36	hasAttackTime Arg1:T66 Arg2:T56
+R37	hasAttackTime Arg1:T66 Arg2:T57
+R38	hasAttackTime Arg1:T66 Arg2:T59
+R39	hasAttackTime Arg1:T66 Arg2:T60
+R40	hasAttackTime Arg1:T66 Arg2:T62
+R41	hasAttackTime Arg1:T66 Arg2:T63
+R42	usesAddress Arg1:T66 Arg2:T46
+R43	usesAddress Arg1:T66 Arg2:T50
+R44	usesAddress Arg1:T66 Arg2:T54
+R45	usesAddress Arg1:T66 Arg2:T58
+R46	usesAddress Arg1:T66 Arg2:T61
+R47	usesAddress Arg1:T66 Arg2:T64

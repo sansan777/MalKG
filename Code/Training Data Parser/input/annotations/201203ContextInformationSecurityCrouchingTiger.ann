@@ -1,0 +1,95 @@
+T1	ThreatActor 5131 5149	Chinese government
+T2	Country 5737 5742	China
+T3	Exploit 6878 6886	zero day
+T4	FinancialInformation 8078 8087	economics
+T5	Information 8089 8111	trade and human rights
+T6	ExploitTargetObject 8133 8155	government departments
+T7	ExploitTargetObject 8157 8166	embassies
+T8	ExploitTargetObject 8182 8186	NGOs
+T9	ExploitTargetObject 8235 8237	UN
+T10	ExploitTargetObject 8239 8242	G20
+T11	ExploitTargetObject 8244 8254	World Bank
+T12	ExploitTargetObject 8259 8262	IMF
+T13	Organization 9470 9522	Centre for the Protection of National Infrastructure
+T14	Organization 9549 9552	FBI
+T15	CourseOfAction 10997 11007	anti-virus
+T16	CourseOfAction 11012 11021	firewalls
+T17	CourseOfAction 11285 11304	penetration testing
+T18	File 14678 14687	Adobe PDF
+T19	File 14691 14716	Microsoft Office document
+T20	Software 15038 15055	Internet Explorer
+T21	Software 15059 15066	Firefox
+T22	Country 16517 16522	Japan
+T23	Country 16524 16530	Taiwan
+T24	Country 16563 16568	Tibet
+T25	Country 16570 16578	Mongolia
+T26	Country 16678 16680	US
+T27	Country 16682 16688	Russia
+T28	Country 16694 16696	UK
+T29	Country 16698 16705	Germany
+T30	Country 16707 16713	France
+T31	Country 16718 16723	India
+T32	Attacker 16323 16328	China
+R1	hasAttackLocation Arg1:T32 Arg2:T22
+R2	hasAttackLocation Arg1:T32 Arg2:T23
+R3	hasAttackLocation Arg1:T32 Arg2:T24
+R4	hasAttackLocation Arg1:T32 Arg2:T25
+R5	hasAttackLocation Arg1:T32 Arg2:T26
+R6	hasAttackLocation Arg1:T32 Arg2:T27
+R7	hasAttackLocation Arg1:T32 Arg2:T28
+T33	Attacker 16774 16779	China
+R8	hasAttackLocation Arg1:T33 Arg2:T29
+R9	hasAttackLocation Arg1:T33 Arg2:T30
+R10	hasAttackLocation Arg1:T33 Arg2:T31
+T34	Country 16790 16796	Brazil
+T35	Country 16798 16802	Iran
+T36	Location 16804 16813	Australia
+R11	hasAttackLocation Arg1:T33 Arg2:T36
+R12	hasAttackLocation Arg1:T33 Arg2:T34
+R13	hasAttackLocation Arg1:T33 Arg2:T35
+T37	ExploitTargetObject 17428 17446	separatist Uighurs
+T38	ExploitTargetObject 17491 17510	Tibetan separatists
+T39	ExploitTargetObject 17512 17536	pro-democracy supporters
+T40	ExploitTargetObject 17538 17573	supporters of an independent Taiwan
+T41	ExploitTargetObject 17611 17621	Falun Gong
+T42	Exploit 18686 18707	passive email attacks
+T43	Attacker 18437 18442	China
+R14	usesMalware Arg1:T43 Arg2:T42
+T44	Campaign 19323 19329	Aurora
+T45	Organization 19349 19355	Google
+T46	Organization 19357 19362	Adobe
+T47	Organization 19364 19371	Juniper
+T48	Organization 19373 19389	Northrup Grumman
+T49	Campaign 19421 19433	Night Dragon
+T50	ExploitTargetObject 19490 19503	energy sector
+T51	Campaign 19514 19523	Shady RAT
+T52	ExploitTargetObject 19554 19568	steel industry
+T53	ExploitTargetObject 19570 19587	heavy engineering
+T54	ExploitTargetObject 19589 19601	construction
+T55	ExploitTargetObject 19606 19630	communications companies
+R15	targets Arg1:T44 Arg2:T45
+R16	targets Arg1:T44 Arg2:T46
+R17	targets Arg1:T44 Arg2:T47
+R18	targets Arg1:T44 Arg2:T48
+R19	targets Arg1:T49 Arg2:T50
+R20	targets Arg1:T51 Arg2:T52
+R21	targets Arg1:T51 Arg2:T53
+R22	targets Arg1:T51 Arg2:T54
+R23	targets Arg1:T51 Arg2:T55
+T56	ExploitTargetObject 20090 20093	RSA
+T57	AccountAuthenticationInformation 20169 20183	SecurID tokens
+T58	Organization 20480 20495	Lockheed Martin
+T59	Attacker 23733 23757	People’s Liberation Army
+T60	ExploitTargetObject 24316 24324	Pentagon
+T61	Malware 25085 25092	Stuxnet
+T62	MalwareFamily 36198 36210	Five Poisons
+T63	AttackerGroup 44377 44381	3PLA
+T64	Organization 51189 51194	COMAC
+T65	Organization 51147 51187	Commercial Aircraft Corporation of China
+T66	Organization 52146 52162	Parker Aerospace
+T67	Organization 52164 52180	General Electric
+T68	Organization 52182 52191	Honeywell
+T69	Organization 52196 52204	Goodrich
+T70	TechnologyInformation 54988 55024	designs for the body of the aircraft
+T71	TechnologyInformation 55052 55075	aerodynamic information
+T72	TechnologyInformation 55154 55168	engine designs

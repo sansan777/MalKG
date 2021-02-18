@@ -1,0 +1,66 @@
+T1	Malware 0 9	OnionDuke
+T2	Country 154 160	Russia
+T3	MalwareFamily 480 488	MiniDuke
+T4	ExploitTargetObject 542 546	NATO
+T5	ExploitTargetObject 551 579	European government agencies
+T6	Malware 641 649	MiniDuke
+T7	MalwareFamily 740 749	OnionDuke
+T8	SHA-1 1458 1498	a75995f94854dea8799650a2f4a97980b71199d2
+T9	Dropper 1512 1542	Trojan-Dropper:W32/OnionDuke.A
+R1	hasMember Arg1:T7 Arg2:T9
+R2	hasAttackLocation Arg1:T9 Arg2:T2
+T10	Payload 1943 1967	Backdoor:W32/OnionDuke.B
+T11	SHA-1 1889 1929	b491c14d8cfb48636f6095b7b16555e9a575d57f
+R3	indicates Arg1:T11 Arg2:T9
+R4	hasCharacteristics Arg1:T9 Arg2:T10
+T12	MalwareFamily 2525 2534	OnionDuke
+T13	SHA-1 3197 3237	d433f281cf56015941a1c2cb87066ca62ea1db37
+T14	Malware 3251 3275	Backdoor:W32/OnionDuke.A
+R5	indicates Arg1:T13 Arg2:T14
+R6	hasFamily Arg1:T14 Arg2:T12
+T15	Indicator 3349 3361	overpict.com
+R7	indicates Arg1:T15 Arg2:T14
+T16	Indicator 3474 3486	overpict.com
+R8	indicates Arg1:T16 Arg2:T14
+T17	Attacker 3566 3576	John Kasai
+R9	usesMalware Arg1:T17 Arg2:T14
+T18	Time 3542 3546	2011
+T19	Attacker 3606 3616	John Kasai
+T20	Indicator 3657 3676	airtravelabroad.com
+T21	Indicator 3678 3697	beijingnewsblog.net
+T22	Indicator 3699 3715	grouptumbler.com
+T23	Indicator 3717 3731	leveldelta.com
+T24	Indicator 3733 3747	nasdaqblog.net
+T25	Indicator 3749 3765	natureinhome.com
+T26	Indicator 3767 3781	nestedmail.com
+T27	Indicator 3783 3798	nostressjob.com
+T28	Indicator 3800 3812	nytunion.com
+T29	Indicator 3814 3829	oilnewsblog.com
+T30	Indicator 3831 3844	sixsquare.net
+T31	Indicator 3849 3864	ustradecomp.com
+T32	Indicator 3906 3920	leveldelta.com
+T33	Indicator 3925 3941	grouptumbler.com
+T34	MalwareFamily 3997 4005	MiniDuke
+T35	MalwareFamily 4044 4053	OnionDuke
+T36	MalwareFamily 4058 4066	MiniDuke
+T37	MalwareFamily 4239 4248	OnionDuke
+T38	MalwareFamily 4253 4261	MiniDuke
+T39	MalwareFamily 4358 4367	OnionDuke
+T40	Time 4447 4459	October 2013
+T41	Time 4515 4531	February of 2014
+T42	MalwareFamily 4533 4542	OnionDuke
+T43	MalwareFamily 4717 4726	OnionDuke
+T44	MalwareFamily 5053 5062	OnionDuke
+T45	CourseOfAction 5889 5893	VPNs
+T46	MD5 6087 6127	a75995f94854dea8799650a2f4a97980b71199d2
+T47	MD5 6130 6170	b491c14d8cfb48636f6095b7b16555e9a575d57f
+T48	MD5 6173 6213	d433f281cf56015941a1c2cb87066ca62ea1db37
+T49	Dropper 6227 6257	Trojan-Dropper:W32/OnionDuke.A
+T50	Malware 6259 6283	Backdoor:W32/OnionDuke.A
+R10	indicates Arg1:T48 Arg2:T49
+R11	indicates Arg1:T47 Arg2:T49
+R12	indicates Arg1:T46 Arg2:T49
+R13	hasMember Arg1:T44 Arg2:T49
+R14	hasMember Arg1:T44 Arg2:T50
+T51	Malware 6289 6313	Backdoor:W32/OnionDuke.B
+R15	hasMember Arg1:T44 Arg2:T51

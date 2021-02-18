@@ -1,0 +1,33 @@
+T1	Malware 101 110	Darkseoul
+T2	Malware 111 116	Jokra
+T3	Time 139 153	March 21, 2013
+T4	Organization 70 77	Fidelis
+T5	ExploitTargetObject 246 298	South Korean broadcasting and banking infrastructure
+T6	ExploitTargetObject 435 447	Saudi Aramco
+T7	Malware 455 462	Shamoon
+T8	Malware 472 479	Shamoon
+T9	Indicator 1103 1110	HASTATI
+T10	Indicator 1116 1124	PR!NCPES
+T11	Malware 1227 1234	Shamoon
+T12	Malware 1463 1472	DarkSeoul
+T13	Malware 1479 1484	Jokra
+R2	indicates Arg1:T9 Arg2:T12
+R3	indicates Arg1:T10 Arg2:T13
+T14	Malware 1622 1636	239ed75323.exe
+T15	Malware 1638 1649	mb_join.exe
+T16	MD5 1652 1684	5fcd6e1dace6b0599429d913850f0364
+T17	MD5 1685 1717	0a8032cd6b4a710b1771a080fa09fb87
+R1	indicates Arg1:T16 Arg2:T14
+R4	indicates Arg1:T17 Arg2:T15
+T18	System 2906 2916	Windows XP
+T19	Indicator 4929 4954	taskkill /F /IM pasvc.exe
+T20	Indicator 4957 4983	taskkill /F /IM Clisvc.exe
+T21	Indicator 4986 5002	shutdown -r -t 0
+T22	Software 5563 5575	ViRobot ISMS
+T23	Organization 5595 5604	HAURI Inc
+R5	hasProduct Arg1:T23 Arg2:T22
+T24	Malware 6830 6837	Shamoon
+T25	Software 8980 8991	Fidelis XPS
+T26	Malware 9011 9020	DarkSeoul
+T27	Malware 9021 9026	Jokra
+T28	TrojanHorse 9064 9087	Trojan.Win32.EraseMBR.b

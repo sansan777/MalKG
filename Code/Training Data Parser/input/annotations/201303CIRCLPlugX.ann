@@ -1,0 +1,269 @@
+T1	Malware 42 47	PlugX
+T2	Organization 89 94	CIRCL
+T3	Time 153 167	March 29, 2013
+T4	Malware 4116 4121	Plugx
+T5	Software 4393 4396	UAC
+T6	File 4743 4753	update.exe
+T7	MD5 4770 4802	f1f48360f95e1b43e9fba0fec5a2afb8
+T8	SHA-1 4811 4851	70ceb467db7b0161d22e4545479f747417b9705a
+T9	SHA-256 4863 4927	2bc5ce39dd9afe2157448d3f6d8cb9c549ed39543d159616e38480b9e6c11c49
+T10	Software 4980 4990	MS Windows
+T11	Time 5071 5094	Sat Jun 9 15:19:49 2012
+T12	Organization 5122 5128	McAfee
+T13	File 5198 5209	mcvsmap.exe
+T14	MD5 5829 5861	4e1e0b8b0673937415599bf2f24c44ad
+T15	SHA-1 5870 5910	9224de3af2a246011c6294f64f27206d165317ba
+T16	SHA-256 5922 5986	ae16e10e621d6610a3f7f2c7122f9d1263700ba02d1b90e42798decb2fe84096
+T17	Time 6100 6123	Fri May 8 17:59:52 2009
+T18	Software 6039 6049	MS Windows
+T19	Organization 6236 6242	McAfee
+T20	Time 6363 6382	5 : 2 4 PM 5/8/2009
+T21	Organization 6403 6409	McAfee
+T22	Software 6485 6505	McAfee VirusScan API
+R2	hasProduct Arg1:T21 Arg2:T22
+T23	File 6617 6628	McVsMap.EXE
+T24	MD5 6723 6756	4 e1e0b8b0673937415599bf2f24c44ad
+T25	MD5 6763 6804	9224 de3af2a246011c6294f64f27206d165317ba
+T26	MD5 6814 6878	ae16e10e621d6610a3f7f2c7122f9d1263700ba02d1b90e42798decb2fe84096
+T27	File 7000 7010	McUtil.DLL
+T28	MD5 7027 7058	ad4a646b38a482cc07d5b09b4ﬀfd3b3
+T29	SHA-1 7067 7107	ae0f9bf2740d00c5d485827eb32aca33feaa3a90
+T30	SHA-256 7119 7183	0a99238e1ebebc47d7a89b2ccddfae537479f7f77322b5d4941315d3f7e5ca48
+T31	Software 7242 7252	MS Windows
+T32	Time 7645 7669	Wed Mar 13 02:52:28 2013
+T33	File 7788 7802	McUtil.DLL.PPT
+T34	MD5 7819 7851	545bb4365a9b7cdb6d22844ebeedda93
+T35	SHA-1 7860 7899	a267f1183b4ﬀ843d68a63264846abf78cc71d1f
+T36	SHA-256 7911 7975	d4fe890a08d4dd44b58a3b85b2a7e89536338099c1c42a9b7e85f4007b0a37b7
+T37	File 8191 8207	dump00C60000.bin
+T38	MD5 8224 8256	65ceb039e7b4731a165cfee081e220af
+T39	SHA-1 8265 8305	b49766187971e3070644a9de2054bc93241b2263
+T40	SHA-256 8317 8380	deeac56026f3804968348c8afa5b7aba10900aeabee05751c0fcac2b88cﬀ71e
+T41	Time 8500 8524	Mon Nov 26 04:46:01 2012
+T42	File 8905 8912	UAC.TMP
+T43	MD5 8929 8961	52df5c2c07433e2a8f054c2347acb3b4
+T44	SHA-1 8970 9010	8051474c1fc0d8f404a42ea32eca1699e54f02e1
+T45	SHA-256 9022 9086	dc09091e5d0ce03c6144748f17bd636f2f0b2ca56f88b550c1d48860596dbdb1
+T46	Software 9145 9155	MS Windows
+T47	Time 9204 9228	Thu Mar 29 08:03:43 2012
+T48	Organization 9730 9735	CIRCL
+T49	Software 9960 9967	Windows
+T50	Software 10036 10039	UAC
+T51	Time 10554 10564	2013-03-26
+T52	Dropper 11308 11316	Sample A
+T53	Malware 11373 11381	Sample B
+T54	Malware 11383 11391	Sample C
+T55	Malware 11396 11404	Sample D
+T56	File 12191 12204	mcvsmap . exe
+T57	Time 12140 12150	2009−05−14
+T58	Time 12205 12215	2013−03−13
+T59	File 12254 12265	McUtil .DLL
+T60	Time 12266 12276	2013−03−13
+T61	File 12317 12332	McUtil .DLL.PPT
+T62	File 12520 12531	mcvsmap.exe
+T63	Organization 12639 12645	McAfee
+T64	File 12695 12705	McUtil.DLL
+T65	Organization 12822 12828	McAfee
+T66	File 14405 14415	McUtil.DLL
+T67	File 14468 14482	McUtil.DLL.PPT
+T68	File 14599 14613	McUtil.DLL.PPT
+T69	Malware 15949 15957	Sample D
+T70	Malware 15830 15838	Sample E
+T71	Malware 15991 15999	Sample E
+T72	Malware 16247 16255	Sample E
+T73	File 16367 16378	msiexec.exe
+T74	File 16317 16328	svchost.exe
+T75	CourseOfAction 16536 16556	User Account Control
+T76	Malware 16791 16799	Sample F
+T77	Malware 17248 17256	Sample B
+T78	File 17640 17655	XPlugOption.cpp
+T79	File 17657 17670	XPlugDisk.cpp
+T80	File 17672 17687	XPlugScreen.cpp
+T81	File 17689 17705	XPlugProcess.cpp
+T82	File 17707 17723	XPlugService.cpp
+T83	File 17725 17739	XPlugShell.cpp
+T84	File 17740 17755	XPlugTelnet.cpp
+T85	File 17757 17773	XPlugRegedit.cpp
+T86	File 17775 17791	XPlugNethood.cpp
+T87	File 17792 17808	XPlugPortMap.cpp
+T88	File 17809 17821	XPlugSQL.cpp
+T89	File 17823 17839	XPlugNetstat.cpp
+T90	File 17840 17858	XPlugKeyLogger.cpp
+T91	Exploit 19524 19535	XPlugOption
+T92	Exploit 19621 19632	XPlugOption
+T93	Exploit 19738 19747	XPlugDisk
+T94	Exploit 19864 19873	XPlugDisk
+T95	Exploit 20522 20533	XPlugScreen
+T96	Exploit 20766 20778	XPlugProcess
+T97	Exploit 20888 20900	XPlugService
+T98	Exploit 21141 21151	XPlugShell
+T99	Exploit 21606 21617	XPlugTelnet
+T100	Exploit 21693 21705	XPlugRegedit
+T101	Exploit 21915 21927	XPlugNethood
+T102	Exploit 22011 22023	XPlugPortMap
+T103	Exploit 22125 22133	XPlugSQL
+T104	Exploit 22326 22338	XPlugNetstat
+T105	Exploit 22463 22477	XPlugKeyLogger
+T106	Indicator 27011 27069	C: \ Documents and S e t t i n g s \ A l l Users \VirusMap
+T107	Indicator 27197 27274	HKEY_CURRENT_USER\ Software \ M i c r o s o f t \Windows\ CurrentVersion \Run
+T108	Indicator 27377 27445	HKEY_LOCAL_MACHINE\SYSTEM\ ControlSet001 \ S e r v i c e s \VirusMap
+T109	Indicator 27593 27615	help.yahoo-upgrade.com
+T110	Address 27617 27632	122.199.194.197
+T111	Time 27730 27740	2013-03-26
+T112	Indicator 27842 27868	help . yahoo−upgrade . com
+T113	Indicator 27869 27898	support . yahoo−upgrade . com
+T114	Indicator 27899 27928	update . ayuisyahooapis . com
+T115	Indicator 27929 27959	support . ayuisyahooapis . com
+T116	Indicator 27960 28007	update . t r e n d m i c r o s o f t . co . i n
+T117	Address 28910 28923	122.199.128.0
+T118	Address 28926 28941	122.199.255.255
+T119	Location 29552 29571	5F SeoulAcademy B/D
+T120	Location 29573 29590	967−6 Daechi−Dong
+T121	Location 29593 29612	Gangnam−Gu, 135−280
+T122	Email 29538 29551	ip@nexg . net
+T123	Address 30221 30234	122.199.128.0
+T124	Address 30237 30252	122.199.255.255
+T125	Indicator 30712 30729	YAHOO−UPGRADE.COM
+T126	Organization 30750 30795	JIANGSU BANGNING SCIENCE & TECHNOLOGY CO. LTD
+T127	Indicator 30897 30911	DNS5. 4CUN.COM
+T128	Indicator 30926 30940	DNS6. 4CUN.COM
+T129	Time 30968 30979	08−aug−2012
+T130	Time 30996 31011	18− j u l −2011
+T131	Time 31030 31044	18−j u l −2013
+T132	Time 31082 31098	Wed, 27 Mar 2013
+T133	Indicator 31136 31155	yahoo−upgrade . com
+T134	Email 31204 31228	whiteyoo_123@yahoo . com
+T135	Email 31344 31368	whiteyoo_123@yahoo . com
+T136	Email 31479 31503	whiteyoo_123@yahoo . com
+T137	Email 31618 31642	whiteyoo_123@yahoo . com
+T138	Malware 32218 32223	PlugX
+T139	Malware 32043 32048	PlugX
+T140	Indicator 32959 32970	\PIPE\a$PID
+T141	Indicator 32971 32982	\PIPE\b$PID
+T142	Indicator 32983 33006	\PIPE\RUN_AS_USER($PID)
+T143	File 33132 33142	update.exe
+T144	MD5 33170 33202	f1f48360f95e1b43e9fba0fec5a2afb8
+T145	SHA-1 33203 33244	70 ceb467db7b0161d22e4545479f747417b9705a
+T146	SHA-256 33247 33310	bc5ce39dd9afe2157448d3f6d8cb9c549ed39543d159616e38480b9e6c11c49
+T147	File 33314 33325	mcvsmap.exe
+T148	MD5 33353 33386	4 e1e0b8b0673937415599bf2f24c44ad
+T149	SHA-1 33387 33428	9224 de3af2a246011c6294f64f27206d165317ba
+T150	SHA-256 33429 33493	ae16e10e621d6610a3f7f2c7122f9d1263700ba02d1b90e42798decb2fe84096
+T151	File 33497 33507	McUtil.DLL
+T152	MD5 33550 33582	ad4a646b38a482cc07d5b09b4fffd3b3
+T153	SHA-1 33583 33623	ae0f9bf2740d00c5d485827eb32aca33feaa3a90
+T154	SHA-256 33624 33689	0 a99238e1ebebc47d7a89b2ccddfae537479f7f77322b5d4941315d3f7e5ca48
+T155	File 33953 33967	McUtil.DLL.PPT
+T156	MD5 33995 34028	545 bb4365a9b7cdb6d22844ebeedda93
+T157	SHA-1 34029 34069	a267f1183b4ff843d68a63264846abf78cc71d1f
+T158	SHA-256 34070 34134	d4fe890a08d4dd44b58a3b85b2a7e89536338099c1c42a9b7e85f4007b0a37b7
+T159	File 34138 34145	UAC.TMP
+T160	MD5 34173 34206	52 df5c2c07433e2a8f054c2347acb3b4
+T161	SHA-1 34207 34248	8051474 c1fc0d8f404a42ea32eca1699e54f02e1
+T162	SHA-256 34249 34313	dc09091e5d0ce03c6144748f17bd636f2f0b2ca56f88b550c1d48860596dbdb1
+T163	Indicator 34392 34417	C: \ ProgramData\VirusMap
+T164	Indicator 34430 34464	C: \ Users \ A l l Users \VirusMap
+T165	Indicator 34477 34535	C: \ Documents and S e t t i n g s \ A l l Users \VirusMap
+T166	Indicator 34549 34582	%ALLUSERSPROFILE%\SxS\bug . l o g
+T167	Indicator 34583 34655	C: \ Documents and S e t t i n g s \ A l l Users \VirusMap\NvSmart . hlp
+T168	Indicator 34676 34744	HKEY_LOCAL_MACHINE\SYSTEM\ ControlSet001 \ S e r v i c e s \VirusMap
+T169	Malware 34777 34785	Sample B
+R3	indicates Arg1:T168 Arg2:T169
+T170	Indicator 34788 34865	HKEY_CURRENT_USER\ Software \ M i c r o s o f t \Windows\ CurrentVersion \Run
+T171	Malware 34898 34906	Sample B
+R4	indicates Arg1:T170 Arg2:T171
+T172	Indicator 34966 34992	help . yahoo−upgrade . com
+T173	Address 34995 35010	122.199.194.197
+T174	Malware 36209 36217	Sample A
+T175	Malware 37342 37350	Sample B
+T176	File 37352 37363	mcvsmap.exe
+R5	indicates Arg1:T176 Arg2:T175
+T177	Malware 37449 37457	Sample C
+T178	File 37459 37469	McUtil.DLL
+R6	indicates Arg1:T178 Arg2:T177
+T179	Malware 38766 38774	Sample D
+T180	File 38776 38790	McUtil.DLL.PPT
+R7	indicates Arg1:T180 Arg2:T179
+T181	Malware 38826 38834	Sample E
+T182	Malware 38869 38877	Sample F
+T183	File 38879 38886	UAC.TMP
+R8	indicates Arg1:T183 Arg2:T182
+T184	Malware 4643 4651	Sample A
+T185	Malware 5097 5105	Sample B
+T186	Malware 6882 6890	Sample C
+T187	Malware 6913 6921	Sample B
+T188	Malware 6929 6937	Sample D
+T189	Malware 7672 7680	Sample D
+T190	Malware 7717 7725	Sample C
+T191	Malware 7758 7766	Sample A
+T192	Malware 8094 8102	Sample E
+T193	Malware 8527 8535	Sample F
+R9	indicates Arg1:T7 Arg2:T184
+R1	indicates Arg1:T6 Arg2:T184
+R10	indicates Arg1:T8 Arg2:T184
+R11	indicates Arg1:T9 Arg2:T184
+R12	indicates Arg1:T13 Arg2:T185
+R13	indicates Arg1:T14 Arg2:T185
+R14	indicates Arg1:T15 Arg2:T185
+R15	indicates Arg1:T16 Arg2:T185
+R16	indicates Arg1:T27 Arg2:T186
+R17	indicates Arg1:T28 Arg2:T186
+R18	indicates Arg1:T29 Arg2:T186
+R19	indicates Arg1:T30 Arg2:T186
+R20	indicates Arg1:T33 Arg2:T189
+R21	indicates Arg1:T34 Arg2:T189
+R22	indicates Arg1:T36 Arg2:T189
+R23	indicates Arg1:T35 Arg2:T189
+R24	indicates Arg1:T37 Arg2:T192
+R25	indicates Arg1:T38 Arg2:T192
+R26	indicates Arg1:T39 Arg2:T192
+R27	indicates Arg1:T40 Arg2:T192
+R28	indicates Arg1:T42 Arg2:T193
+R29	indicates Arg1:T43 Arg2:T193
+R30	indicates Arg1:T44 Arg2:T193
+R31	indicates Arg1:T45 Arg2:T193
+R32	indicates Arg1:T78 Arg2:T91
+R33	indicates Arg1:T79 Arg2:T93
+R34	indicates Arg1:T80 Arg2:T95
+R35	indicates Arg1:T81 Arg2:T96
+R36	indicates Arg1:T82 Arg2:T97
+R37	indicates Arg1:T83 Arg2:T98
+R38	indicates Arg1:T84 Arg2:T99
+R39	indicates Arg1:T85 Arg2:T100
+R40	indicates Arg1:T86 Arg2:T101
+R41	indicates Arg1:T87 Arg2:T102
+R42	indicates Arg1:T88 Arg2:T103
+R43	indicates Arg1:T89 Arg2:T104
+R44	indicates Arg1:T90 Arg2:T105
+R45	indicates Arg1:T106 Arg2:T138
+R46	indicates Arg1:T107 Arg2:T138
+R47	indicates Arg1:T108 Arg2:T138
+R48	indicates Arg1:T109 Arg2:T138
+R49	indicates Arg1:T110 Arg2:T138
+R50	indicates Arg1:T112 Arg2:T138
+R51	indicates Arg1:T113 Arg2:T138
+R52	indicates Arg1:T114 Arg2:T138
+R53	indicates Arg1:T115 Arg2:T138
+R54	indicates Arg1:T116 Arg2:T138
+R55	indicates Arg1:T117 Arg2:T138
+R56	indicates Arg1:T118 Arg2:T138
+R57	indicates Arg1:T122 Arg2:T138
+R58	indicates Arg1:T123 Arg2:T138
+R59	indicates Arg1:T124 Arg2:T138
+R60	indicates Arg1:T125 Arg2:T138
+R61	indicates Arg1:T127 Arg2:T138
+R62	indicates Arg1:T128 Arg2:T138
+R63	indicates Arg1:T133 Arg2:T138
+R64	indicates Arg1:T134 Arg2:T138
+R65	indicates Arg1:T135 Arg2:T138
+R66	indicates Arg1:T136 Arg2:T138
+R67	indicates Arg1:T137 Arg2:T138
+R68	indicates Arg1:T140 Arg2:T138
+R69	indicates Arg1:T141 Arg2:T138
+R70	indicates Arg1:T142 Arg2:T138
+R71	indicates Arg1:T163 Arg2:T138
+R72	indicates Arg1:T164 Arg2:T138
+R73	indicates Arg1:T165 Arg2:T138
+R74	indicates Arg1:T166 Arg2:T138
+R75	indicates Arg1:T167 Arg2:T138
+R76	indicates Arg1:T168 Arg2:T138

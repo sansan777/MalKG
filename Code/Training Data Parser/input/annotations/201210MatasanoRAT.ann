@@ -1,0 +1,61 @@
+T1	Malware 136 163	Remote Administration Tools
+T2	Exploit 1729 1739	keylogging
+T3	Malware 1695 1699	RATs
+T4	Exploit 1741 1766	screen and camera capture
+T5	Exploit 1768 1783	file management
+T6	Exploit 1827 1846	registry management
+T7	Exploit 1785 1810	code and script execution
+T8	Exploit 1812 1825	power control
+T9	Exploit 1852 1869	password sniffing
+T10	Malware 2006 2015	DarkComet
+T11	Malware 2017 2024	Bandook
+T12	Malware 2026 2035	CyberGate
+T13	Malware 2040 2050	Xtreme RAT
+T14	SourceCodeInformation 2136 2142	Delphi
+T15	MalwareCharacteristics 2612 2630	reverse-connecting
+T16	Malware 2575 2578	RAT
+R1	hasCharacteristics Arg1:T16 Arg2:T15
+T17	Malware 3628 3637	DarkComet
+T18	Indicator 4047 4048	|
+R2	indicates Arg1:T18 Arg2:T17
+T19	Exploit 5191 5204	SQL Injection
+T20	Malware 5208 5217	DarkComet
+T21	Exploit 6285 6292	QuickUp
+T22	Malware 9222 9229	Bandook
+T23	MalwareCharacteristics 9253 9256	C++
+R3	hasCharacteristics Arg1:T22 Arg2:T23
+T24	MalwareCharacteristics 9261 9267	Delphi
+R4	hasCharacteristics Arg1:T22 Arg2:T24
+T25	MalwareCharacteristics 9303 9320	process injection
+T26	MalwareCharacteristics 9322 9335	API unhooking
+T27	MalwareCharacteristics 9341 9356	kernel patching
+R5	hasCharacteristics Arg1:T22 Arg2:T25
+R6	hasCharacteristics Arg1:T22 Arg2:T26
+R7	hasCharacteristics Arg1:T22 Arg2:T27
+T28	Obfuscation 9887 9919	XORing against the constant 0xE9
+T29	Indicator 9984 9987	&&&
+T30	Software 10062 10078	TightVNC 1.2.9.0
+T31	Malware 10256 10263	Bandook
+R8	indicates Arg1:T29 Arg2:T31
+T32	Malware 11510 11519	CyberGate
+T33	MalwareCharacteristics 11560 11566	Delphi
+R9	hasCharacteristics Arg1:T32 Arg2:T33
+T34	Software 11658 11664	LordPE
+T35	Software 11808 11812	PEiD
+T36	Software 11817 11831	Detect It Easy
+T37	Software 11947 11959	ProtectionID
+T38	Obfuscation 12599 12664	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567 89+/
+T39	Obfuscation 12686 12751	0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx yz+/
+T40	Indicator 12994 13000	###@@@
+T41	Indicator 13311 13355	njgnjvejvorenwtrnionrionvironvrnvcg210public
+T42	Malware 13778 13787	CyberGate
+R10	indicates Arg1:T40 Arg2:T42
+R11	indicates Arg1:T41 Arg2:T42
+T43	Malware 14658 14668	Xtreme RAT
+T44	File 15327 15336	user.info
+R12	indicates Arg1:T44 Arg2:T43
+T45	MD5 15544 15576	a933d13f81649bebe035dc21f4002ff1
+T46	MD5 15666 15698	202cb962ac59075b964b07152d234b70
+T47	Indicator 18638 18650	\x58\x0d\x0a
+T48	Malware 18746 18756	Xtreme RAT
+R13	indicates Arg1:T47 Arg2:T48

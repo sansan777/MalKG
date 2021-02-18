@@ -1,0 +1,275 @@
+
+web use only 
+
+Contents 
+Executive Summary ......................................................................................................... 3 Key Findings ............................................................................................................................4 Attack timeline.........................................................................................................................4 
+Tools Arsenal ................................................................................................................... 5 Chinoxy.....................................................................................................................................5 PcShare....................................................................................................................................6 
+PcShareDropper.......................................................................................................................7 PcShareLoader.........................................................................................................................7 PcMain .......................................................................................................................................8 
+Ccf32..................................................................................................................................... 10 
+FunnyDream toolset....................................................................................................... 11 FunnyDream.......................................................................................................................... 11 
+FunnyDreamDropper.............................................................................................................11 FunnyDream backdoor .........................................................................................................12 C&C communication.............................................................................................................13 Backdoor Capabilities ...........................................................................................................14 
+Filepak................................................................................................................................... 15 ScreenCap............................................................................................................................. 16 Keyrecord.............................................................................................................................. 17 FilepakMonitor...................................................................................................................... 18 TcpBridge.............................................................................................................................. 20 Tcp_transfer.......................................................................................................................... 20 Md_client............................................................................................................................... 21 
+C&C infrastructure ......................................................................................................... 21 
+Attribution....................................................................................................................... 24 
+IOCs ................................................................................................................................ 24 Hashes .................................................................................................................................. 24 Mutexes ................................................................................................................................ 26 Events.................................................................................................................................... 26 Paths ..................................................................................................................................... 26 File Mappings ....................................................................................................................... 27 
+Author: 
+Victor Vrabie ¨C Security Researcher 
+Bitdefender DracoTeam . WHITEPAPER 
+Dissecting a Chinese APT Targeting South Eastern Asian Government Institutions 
+
+Executive Summary 
+Bitdefender researchers are constantly monitoring APT groups and their activities around the world, in an effort to gain better insights into their tactics, techniques and targeted victims. While some APT 
+groups operate for financial profit, others have been 
+attributed to nation states and may follow a political agenda. Forensic artefacts left behind by APT groups 
+when using custom-built tools or specific payloads 
+can sometimes point to a known actor, but may also reveal additional information about how the groups operate after compromising a target. 
+When monitoring for activity of APT groups in the Asian region, Bitdefender researchers found signs of a complex and targeted espionage attack on potential government sector victims in South East Asia, carried out by a sophisticated Chinese APT group, judging from some of the forensic artifacts left behind. The operation was conducted over at least a few years, as the earliest signs of potential compromise date back to late 2018. While current forensic evidence follows the attack timeline up to 2020, a large number of C&C servers are inactive. It¡¯s likely the overall attacker-controlled infrastructure used in the attack is currently inactive, even though very few C&Cs have been found to still be operational. 
+This research focuses on dissecting an APT attack and providing a full report on the tools, tactics and techniques used by the sophisticated group during the attack. 
+While the incident has been mentioned by other security researchers, Bitdefender¡¯s investigation focuses on offering a detailed timeline of the attack by piecing all the forensic evidence together and creating a case study example. The report also provides a technical analysis of the tools used in this targeted attack and how the components were tied to each other. 
+The attack has a complex and complete arsenal of droppers, backdoors and other tools involving Chinoxy backdoor, PCShare RAT and FunnyDream backdoor binaries, with forensic artefacts pointing towards a sophisticated Chineseactor. Some of these open source Remote Access Trojans (RATs) are known to be of Chinese origin, along with some other resources set to Chinese. The FunnyDream backdoor is far more complex than the others, implementing a wide range of persistence mechanism and a large number of droppers, suggesting it¡¯s custom-made. 
+The earliest signs of attack date back to November 2018, followed by an increase in activity by the Chinese APT group starting early 2019. Starting then, 
+over a span of five months, around 200 systems 
+seem to have shown signs of having various tools associated with the investigated APT deployed within them. Some evidence suggests threat actors may have managed to compromise domain controllers from the victim¡¯s network, allowing them to move laterally and potentially gain control over a large number of machines from that infrastructure. 
+The investigation points to an attack meant to ensure persistence in the victims¡¯ network for as long as possible, to spy on victims by monitoring their 
+activities and to exfiltrate intelligence. 
+4 
+5 
+6 
+7 
+8 
+There are implemented only a subset of modules that are present in the Github code: 
+-
+10 
+11 
+12 
+13 
+The payload of a packet is transformed by XOR-ingit with a random value and compressing it with zLibalgorithm. The 
+resulted buffer is set as body for an http packet formed from the next template:              
+
+Fig. 7 ¨C HTTP request template 
+The Host header is assigned the C&C address and the POST path is formed as follows: /<seconds>/<random>/<incremental value module 1000>/<day>/<month>/<hour>/<minute>. ad5a170f3ec0a4a152da0f920c9e3c0f This sample, like the previous one, obtains the proxy by looking into the registry, but it searches for a socks proxy. 
+If such exists, it initiates a TCP connection to the proxy server and sends a 13-byte message corresponding to the following ¡°VER=0x4¡±, ¡°CMD=0x1¡±, ¡°DSTPORT¡±, ¡°DSTIP¡± ¡°ID=¡¯htun¡± packet which should create a tunnel to the C&C through the proxy. 
+The payload of a packet is compressed in the same way as b190911ebc6cce700f02bc90a3294fd2 does, the 
+difference appears in the http packet template, in which the obfuscated payload is embedded: 
+
+Fig. 8 ¨C HTTP replay template 
+The http packet corresponds to an HTTP replay and the ¡°%s¡± parameter is filled with the ¡°Date¡± header option assigning to it the current time in the ¡°%a, %d %b %Y %H:%M:%S GMT¡± format (e.g. ¡°Date: Tue, 15 Nov 1994 08:12:31 GMT¡±) 
+Backdoor Capabilities 
+As stated above, the backdoor tries to delete a file whose file path replaced the ¡°funnydream¡± string from the template. Usually the deleted file is the dropper component. 
+The second action some executables take is to run the ¡°whoami/upn&whoami/fqdn&whoami/logonid&whoami/all¡±, which extracts much user information from the system, and to send the output to the C&C. 
+Another distinct characteristic of some samples is that they check for the existence of ¡°Bka.exe¡± or ¡°BkavUtil.exe¡± processes. If such a process exists, then the backdoor, in a separated thread, enumerates the system windows using 
+EnumWindows function. The WNDENUMPROC callback function used for enumeration searches for a specific visible window that has the window text set to ¡°OK¡± and it belongs to the ¡°BkavSystemServer.exe¡± process. To that window a ¡°BM_CLICK¡± message is sent. The backdoor capabilities are implemented in two classes called CShellManager and CFileManager. 
+The CShellManager class is responsible for creating a cmd.exe process and for connecting the stdin/stdout/stderr of that process to the C&C to receive commands and send back the output of those commands. 
+The CFileManager implements operations like file upload, file download, directory listing, file and directory removal/ movement and, of course, the file execution operation (using ShellExecuteA or CreateProcessA). 
+
+Filepak 
+The Filepak component is used for file collection, being deployed in the same manner as ccf32.exe: 
+.. C:\Windows\system32\cmd.exe /c ¡°copy c:\users\public\bin\filepak.exe \\<remote host>\c$\users\public\ /Y¡± .. schtasks /create /s <remote host> /u ¡°<user>¡± /p ¡°<password>¡± /ru ¡°SYSTEM¡± /tn one /sc MONTHLY /tr ¡°c:\ 
+users\public\filepak.exe 20191101¡± /F 
+All samples of that component related to the case have the ¡°C:\works\prjs\filepak\Release\filepak.pdb¡± pdb path set and are deployed under the same name ¡°filepak.exe¡±. Another observation about the FilePak is that it was deployed exclusively by FunnyDream backdoor, that fact being illustrated in the presented timeline. 
+At runtime, the executable checks if another instance is already running by invoking the CreateFileA function with CREATE_NEW flag on the file ¡°zt¡± (located in the same folder as the executable itself). It then checks if there is at least one command line argument and parses the first one. The first argument should contain at least 8 characters, the first 
+8 being the representation of a timestamp in the ¡°yyyymmdd¡± form (e.g. ¡°20191101¡±). All remaining characters of the 
+first argument, if such exists, are used as a key for a XOR operation, which will be described below. 
+Next action is the listing of all logical drives (excluding CDROMs and some directories like ¡°c:\windows\¡±) to collect all files that have a particular extension and a LastWriteTime greater than the timestamp given as argument. The list of extension is hardcoded in the executable and is the same in all binaries we found - ¡°doc;docx;ppt;pptx;xls;xlsx;pdf;¡±. 
+If a file matches the criteria, it is represented as a binary blob, and that blob is appended to the file ¡°pak¡± (located in the same directory as the executable). The binary blob has a specific format presented in the next image: 
+
+Fig. 9 - Archive blob format 
+The file content is compressed with zLib algorithm and then is obfuscated with a XOR operation using the string key from the command line or the ¡°qwerasdf¡± string if the command line argument doesn¡¯t contain the key. The file name is obfuscated using XOR with the same key as the compressed file content. The file content may be uncompressed if the compression size is greater than the actual file size, the first segment being corresponding initialized. 
+After the collection process is done, the ¡°pak¡± file is renamed under the ¡°pak.z¡± name. 
+
+
+ScreenCap 
+The ScreenCap component, as the name suggests, has the capability of taking screenshots and was discovered during the analyzing of the DLL_Deploy binaries from our collection. 
+The DLL_Deploy binary (e.g. e2d5565c2d5b5621b2272ea01e3a18d6) for this component has a specific pdb path set -¡°E:\Works\self2\screencap\builder\builder_mul\Release\Dll_deploy.pdb¡±. 
+Its responsibility is to extract the template binary and to customize it by writing a config buffer next to the ¡°prettygirl¡± string. The config looks like: 
+
+After the customization, the ScreenCap is dropped to ¡°C:\ProgramData\winscr\winscr.dll¡± and it is set to persist by creating the ¡°HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\winscru¡± registry key and assigning it the rundll32¡±C:\ProgramData\winscr\winscr.dll¡±,Start string value (it creates the ¡°winscr¡± key value under HKLMRun if the process has the corresponding privileges). 
+The dropped ScreenCap uses the well-known chain of WINAPI function exported by Gdiplus.dll (GdiplusStartup, CreateDCW, CreateDIBSection, BitBlt, GdipSaveImageToFile, etc.) for screen capturing. The obtained jpeg image is temporarily saved as ¡°ws.tmp¡± file in the same folder where the ScreenCap is dropped. Then, the ws.tmp file is transformed into a binary blob (having the same format as that used by FilePak) and is appended to an archive file. It is important to note that the file name used in the corresponding blob is obtained in the following manner: 
+
+The archive name where all blobs with screenshots are stored is obtained in a similar way: 
+
+The samples we found are using the following config: (5, 30, 8, ¡°qwerasdf¡±, 21, ¡°C:\users\public\winsf¡±) which means that each archive will contain 30 blobs of images taken with a delay of 5 seconds. As key for obfuscation the ¡°qwerasdf¡± string will be used and all the archives will be written to ¡°C:\users\public\winsf¡± folder. An important 
+observation is that all of that happens in an infinite loop meaning that the computer screen will be monitored all the 
+time. 
+
+Keyrecord 
+The Keyrecord component is responsible for logging keystrokes on the victims¡¯ system. It is dropped by a corresponding DLL_Deploy dropper, an example of which is 8a278b97b8d33990d361149ee9921f9a. 
+The droppers we found have the template binary of the Keyrecod in a resource. The process of customization is similar to that of the ScreenCap and consists of obtaining the config buffer and writing it next to the ¡°prettygirl¡± string. The config of Keyrecord has the folowing format: 
+
+The dropper is also responsible for creating the ¡°%APPDATA%\maxbear¡± folder where the Keyrecord is written under a randomized name (the same format ¡°%c%c%c%c%cutil.exe¡± used by FunnyDream droppers). Besides the KeyrecordDLL file, the dropper creates a .lnk file that should load the DLL file using rundll32.exe. After the .lnk is created, the dropper sets up the persistence by overwriting the default Startup folder with the %APPDATA%\maxbear (the value of HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\startup is modified). 
+The keylogger runs an infinite loop, the block of which creates an archive file naming it like the ScreenCap does (using the ¡°%s\\fpak_%s_%d_%d_%d_%d.z¡± format string), starts logging the keystrokes to a ¡°tk.tmp¡± file, and after obtaining a long enough recording, it adds the log as a blob using the same format like Filepak to the archive. The file name field of blob corresponds to: 
+
+The logging algorithm is illustrated in the following images: 
+
+
+
+FilepakMonitor 
+A much more interesting component of the toolset is FilePakMonitor. It embeds the FilePak capabilities but in a more complex way, being directly controlled by the attackers through a protocol over TCP. 
+This component is brought on the victim system by using a DLL_Deploy binary (e.g. d3a6653b748eb5ff467149c9150762a1). 
+The DLL_Deploydropper can be recognized by its specific pdb path - ¡°E:\Works\MF\hjbuilder2\ Release\wp_clt.pdb¡± and, also, by the ¡°BIN¡± resource that contains the template of the payload. The dropper obtains the resource buffer and adds the base64 representation of the C&C address next to the ¡°prettygirl¡± string. The d3a6653b748eb5ff467149c9150762a1 sample, for example, adds the ¡°QqQq8aQm9WxjB4IjM32nMFsWOpnt9GTkBGT=¡± base64 string to the template, which is the representation of www. ws2008update.com:18198. 
+Before dropping the FilePakMonitor, the dropper runs the ¡°cmd /c net stop WSearch¡± command. Then the payload is dropped to the ¡°C:\Windows\System32\msfte.dll¡±and two other commands are executed - ¡°cmd /c net start WSearch¡± and ¡°cmd.exe /c scconfigwsearch start= auto¡±. 
+The goal of the executed commands in combination to the file path used by the dropper is to achieve stealth and privilege escalation. By setting the WSearch service to start automatically, the attackers ensure persistence as well. 
+This mechanism is called ¡°Phantom DLL Hijacking¡± because msfte.dll does not exist by default on Windows system, but C:\Windows\system32\SearchIndexer.exe (corresponding binary for WSearch service) tries to load that DLL each time it starts. Moreover, the WSearch service runs with SYSTEM privileges, which means that the msfte.dll file will be executed as SYSTEM as well. 
+Some of the paths where DLL_Deploy dropper was located are presented in the next table: 
+%USERS%\public\y54947.exe 
+%USERS%\Public\M93732.exe 
+%USERS%\public\x4984.exe 
+The FilepakMonitor component has the ¡°orign.dll¡± ExportName and the corresponding ¡°E:\Works\MF\oclt\rlsdll\orign. pdb¡± pdb path. It exports two functions, called ¡°Start¡± and ¡°StartD¡±. 
+Interestingly, all the samples of FilePakMonitor try to inject themselves into the ¡°Bka.exe¡± process. The injection happens in the ¡°Start¡± function. The DllMain function checks if the process that loaded the DLL has the ¡°Bka¡± substring exiting if not. 
+The samples that are dropped under the ¡°msfte.dll¡± name have a more complex logic. In the DllMain of such DLL, the process name is checked for ¡°Bka¡± substring but also it is checked if the name differs from rundll32, in which case the Start function is executed. 
+During the injection, a ¡°Bka.exe¡± process is created, and using VirtualAllocEx, WriteProcessMemory and CreateRemoteThread, the process is forced to load the DLL component. 
+This component collects files with a specific extension from a hardcoded list similar with that presented in the FilePak component (¡°doc;docx;ppt;pptx;xls;xlsx;txt;pdf;¡±). 
+The file listing action processes all logical drives and it is triggered every 12 hours. The first listing targets files that have the extension included in the hardcoded list and the last change to the file was made no more than 20 days ago. After the first listing is completed, a SYSTEMTIME structure with current time is written to the ¡°ft.data¡± file located in the same folder as the module. That structure will be updated after each file listing and, starting with the second listing, the FilePakMonitor will collect only files that were changed after the last listing (the ft.data SYSTEMTIME structure will be used). This means that we are dealing with a component that monitors all files for changes and collects them for exfiltration. Moreover, all files that matches the criteria are added to a ¡°fpak_<current tick count>.z¡± archive in the same folder with the module having the same format like that used by FilePak. 
+Another interesting capability of the FilePakMonitor is the removable drive insertion detection and file collection from removable devices. This is done by creating a window that intercept the WM_DEVICECHANGE events with parameters DBT_DEVICEARRIVAL or DBT_DEVNODES_CHANGED. If such an event occurs, then all removable drives are listed and 
+all files are added to a new archive, which later is uploaded to C&C. 
+The folder with archives is listed every 60 seconds and if any file with a name having the ¡°fpak¡± prefix and ¡°.z¡± extension 
+is detected, then a message to the C&C is sent and in a separated thread.The module receives commands to list the folder with archived or to upload one or more archives. 
+
+TcpBridge 
+This tool is used to obtain access to the internal network of the victim. 
+We found only one sample of this tool used in the investigated attack and this is cd4ddac604e440197fb6838cc1fca313. Its pdb path is ¡°C:\works\prjs\tcp_bridge_proxy\tbp_clt\Release\tbp_clt.pdb¡±. The location of the project is the same as the one used for Funnydream and Filepak, which suggests that it is custom made. 
+The executable accepts 2 command line arguments, an IP address and a port, as the usage message states: 
+¡°usage: tcp_bridge_clt.exe bridge_ipbridge_port¡± The IP address to which the tool connects is assigned to the attacker¡¯s server that sends to the tool commands to 
+connect to a given IP address and to push incoming traffic through that connection and to send back the outcoming 
+data. 
+The Tcp Bridge tool was located in a few locations as: 
+
+%USERS%\public\downloads\tbp_clt21.exe 
+%USERS%\public\libraries\googleupdat.exe 
+%USERS%\public\libraries\asf32.exe 
+Analyzing the command line data feed, we identified 3 different command line arguments given to the executable: 
+. 58.64.184.203 443 . 58.64.209.83 443 . 58.64.209.83 8888 
+
+Tcp_transfer 
+Another tool related to the FunnyDream toolset is the so called TcpTransfer. The specific details of this tool are its ¡°tcp_transfer.exe¡± Export Name and the ¡°C:\works\self\tcp_transfer\Release\tcp_transfer.pdb¡± pdb path. 
+We were able to find only 2 samples of the tool used in this attack: 
+.. 88e486dc8f876359617870c999d9b1d2 (C&C address -154.216.2[.]135) 
+.. 470bcfdf9e7aad3831d84a04d75337ab (C&C address -58.64.184[.]201) 
+The executable binds to ¡°0.0.0.0:8080¡¯ address and starts listening for local connection. For each incoming connection 
+on the local address, it creates a new connection to the C&C and start receiving and sending the data. 
+The goal of such tool is to bypass network restriction such that the compromised machines that are not connected directly to the internet can communicate with the C&C through another compromised machine that has an internet connection. 
+
+Md_client 
+The Md_client module is another custom made backdoor like component with the ¡°C:\works\prjs\MD\md_client\ rlsexe\md_client.pdb¡± pdb path and the ¡°prettygirl¡± string that matches the known pattern of the toolset. Also, there are some RTTI artefacts present in binaries that can be found in the FilePakMonitor binaries (e.g. FileTransmitBase, FileTransmitDownload and FileTransmitUpload class names). 
+Furthermore, the samples we found connect to subdomains of wmiprvse[.]com. 
+This component uses the UDP and the 53 port to communicate with the C&C server and is capable of: 
+.. Collecting system information like computer name, user name, osverion, processor architecture; .. Creating a remote shell by running a cmd.exe with stdin/stdout/stderr ¡°connected¡± to the C&C .. Sending the Logical Drive Strings .. Listing a directory .. Uploading and downloading a file .. Deleting a directory .. Executing a command using ShellExecuteW .. Executing a command using CreateDesktop (¡°mydktop1¡±) and CreateProcess 
+C&C infrastructure 
+The domains or IP addresses of command and control servers are hardcoded in binary files. For each component, the 
+table below illustrates the C&Cs found in samples. 
+
+PcShare www.bitupdating[.]com www.iatupdate[.]com 
+
+FilePakMonitor www.ws2008update[.]com Tcp transfer 154.216.2[.]135 
+
+
+Most of the infrastructure is located in Hong Kong, except for three servers: one in Vietnam, one in China and one in 
+South Korea. 
+
+
+All of these domains used by attackers were registered using the same email address ¡°newday20180314@outlook. com¡±. However, the list of domains registered using this address is more extensive: 
+.. leapconfig[.]com .. updateui[.]com .. realteke[.]com .. ksdeui[.]com .. msseces[.]com .. osppsvc[.]com .. nissrv[.]com .. unikeyupdating[.]com .. unikeyupdate[.]com .. mdnsresponder[.]com .. winserverupdate[.]com .. wmiprvse[.]com .. igfxpers[.]com .. bitupdating[.]com .. eofficeupdate[.]com .. mfaupdating[.]com .. mfaupdate[.]com .. bkavutil[.]com .. eofficeupdating[.]com .. igfxsrvc[.]com .. ws2008update[.]com .. ksdeupdate[.]com .. iatupdate[.]com .. iumsvc[.]com 
+
+
+Attribution 
+Attributing APT style attacks to a particular group or country can be extremely difficult, mostly because forensic 
+artefacts can sometimes be planted intentionally, C&C infrastructure can reside anywhere in the world, and the tools used can be repurposed from other APT groups. 
+While having a C&C infrastructure based in the same region as the victims isn¡¯t usually considered a sign that attackers share the same geographical region, the internet infrastructure within that particular region is highly restrictive. It¡¯s likely that relying on a locally deployed C&C infrastructure would bring several advantages to the APT group. 
+For instance, it could be easier to manage and control, while at the same time the C&C IPs wouldn¡¯t be flagged as 
+suspicious, as they would be part of the same regional internet infrastructure. Opting for a command and control infrastructure deployed anywhere else in the world would have potentially raised some security alarms. 
+During this analysis, some forensic artefacts seem to suggest a Chinese-speaking APT group, as some of the resources found in several binaries had a language set to Chinese, and the Chinoxy backdoor used during the campaign is a Trojan known to have been used by Chinese-speaking threat actors. 
+While we¡¯re constantly monitoring for APT-like activity around the world, not all APT-style attacks can be attributed to a known APT group, mostly because some of the used the tools are sometimes share between multiple groups. 
+
+IOCs 
+An up-to-date and complete list of indicators of compromise is available to Bitdefender Advanced Threat Intelligence users. More information about the program is available at https://www.bitdefender.com/oem/advanced-
+threatintelligence.html 
+Hashes 
+Component Sha256 
+ccf32/ccf64 1cd8b6f1e2d49e6605f5ae695ea126eee8c82264a9644758126a4c30662ce9d5 
+91dfbee660be3d11f8a631b4bbf552d0ee60ec908f4d0817643d591726d53bfd 
+Chinoxy dropper 69c1f791402e36a360a901e3e42c177b02281a84c275a228b00b86596636fa95 
+8ff4979b40ffcef7eedcfeb6fb4fecb42aceb53bc816dc4d36428e12ad67d051 
+e5365d81ee31e9b86ea14e1ee7abf0809337f3bc9e7b00d7492c2caed4ca5f36 c01110788b9345b5564c1b5b0876a27e1b2501b19b90280054026e89f68a4f48 
+Chinoxy Backdoor 2d20fc0fd6ef07c367761abe97762f044e90e428addd9a9af7b6cf88087d455b 
+6f7f142089b1d2e48880f59362c7c50e5d193166bdd5e4b27318133e8fe27b2c 
+PcShare dropper f3b16798054a4510650682e17ae5bc12d27b460eac8314318eeda5e0488869dc 
+9670563876caa2587d4001d3cbda11a4ca4601fd9f0555ec9468f4796fce7ae6 
+26afbe3cab4967cb48ada596959ef77367da9cb194c71db77ebe1fcbe7aabf6f 
+0a2a047c2b670f7da11a7d72e2ab3b867eebb6ccbe3ccad92817a6e74ac343a2 
+70891a33bcd94e40cdbb0660b983dd7dc439005b2cae614c7b7504fd24eb8696 942e810563d142c949215dbe38562f1ffb31d4b9afc8a98047d97ed2e7ece478 PcShare loader f976a52f2d82e608f95e95d41e2eacad58e19a9e9cb92f061090d72fd2703413 
+f262662bd9c78137837e5943f891da3b520095668c0592bc11c0dc742db0640a 
+9a3829bd0a4dd7b72c54d1aed972f91aede57357d7a9dcd3d9f8b8d192189a03 
+e61649ac70198e223c123ad29c7d02ebe4fe6da7f35282d26bd93d466e85176d 
+f6f9d0620db35c1f6a3fad9c9bc6d7aaf6594355b606bce2b9513aa721679d95 
+139d4c31f1dfd17b74506931622d12c537d597c85e52a58065cf3a917b469aea 
+a224ab4d8ca5ed62755b1b7f36ce6c80e89a684d1e792400d8fa889b1860fcc6 
+311f3011172618c95fcf339ac3ddce10c415c95215eb6cea60d5eb9b00a5de51 
+0f5cac319750d37eb6a7d38c1deec7d5839c642287b48b0fb8a1921185b521f1 
+f76847bed642a92d3a5fac4782d0ae2a140203579f43f7b3c8db4090853986ad 
+7b524c3bdd5d5474b6e050084e3f32d2bf7f5c4539b44221e4bc2987b2deb56d 
+8d3b5825690d4f893cc577b22cbe3c12232b9895c9a0417b750ba722e8851d6d 
+4caab78b44c288406b3d66feab853a399c72b237e244993434dd6206013cc371 8c49d7f83af949f4145d5da32c308ef98ebfc5fce030a405bf2b6855a8a0575e 
+PcMain 85bd4f36c20222d1e0a1908bb2befd9a19d9e476ef8fdffa8c7b2f14ec22ce01 
+7ecba3270ff06c5d618a78c4e471f457e8672211bb8cdd4aa58b6516ea5fe603 f7356689c3c4caca57d7edd4a45ac3a2cfa672ccf444e80a69fd271210d320f3 
+MD_Client 631c62e067667a02da63a97aeeb556bece8394deee59e62b48f63baecf4cf613 
+2e6dfca6b2b8a11d6eb8933bd7ed7f17ca46499a3ee548bbb086406eb57b2204 
+28570122e952f25c92dfb83707c502a5036b9f99770127435cbb8c7e6796cce4 
+FilePakMonitor 25ce8296bc4da119093d847afc18ee030a4c94a39066732227a73f8908c40292 
+a276a0e01b5024f46ef1a05a5e9810c39b8757a0cea665519bf619bf35604008 
+a78dace0fd8c043016406f99f0103cd7ebee67e21261c0097efe6072bfc680b0 
+58f88767a4599a95f29048852f92afe52a32b646ffdd50291cd1be5a97ebe7ea 
+2fdc7963612be26b8c13ed59572bd2785c1d11da15494c34a0f1632530fddf64 
+409e95e0824c4e80450196dbde2e64a2424d3e724760e471c1e68d3fb67dec24 
+FunnyDreamTcpBridge  915af21d627f5bec059800bb9740a228e93fae8dd4fd574bd4d2812c7d6adf8d  
+FunnyDreamTcpTransfer  32cabf2952f88283251c36751e04a45bfa78cdb0835460619d4812b882795c03  
+63e8488de30c9b615c76d4e568f0a1b738fcad665e58571c299d8e9d7752a637  
+
+FunnyDreamKeylogger aaf9ce055918b0092bba7db26816237170870601614155defe143986b5dac8fe 
+05f9a809a6800112fa1e02975489974d003d55810a4cfb11a0705e8a427ea734 
+FunnyDreamScreenCap 2bf0b8453c5f5a3f616894d72acb61868bb6c75403891411a123eceb6d0f9f9b 
+46e1381c0228502276f1eb3b755f9f34f6a6d4ffbbecc95bde852ddf40e09ad8 
+74b8030c67320030998e8f58da4a6215dd4cc4c0aef7863c5fc8a1985cbf22a4 
+FunnyDreamFilePak 9a63d810f69eb35ee8ee3797bd1574e08b67f31c0e368bf9cf01202f5f73c664 
+1aa170383d473b6adb16032942b34eb136dd013ea8e2f5cc8fec7356a92191b3 
+FunnyDreamBackdoor 7d92c7bc22dc95526a0c8713211b9bcfe85cac2c4a760067e69992afa19efbe5 
+455d890479f1137797bfb32e6f5f1a4634a69c11654bb5ec0b6710a25418a12e 
+ba3d8ff9b3f6b6223dd33dee15321e267cc28627723e68cd632e59d85c529330 
+780739a25d90fd850e82792d59de4c04530337e79cd4b7a3149f229b75a7d5ce 
+682df3d96cf40a24637905d9ab7a62e3dd0777a1320b078bc89951076f842744 
+47519ef2e613fd17b18e885bb09cfa1e047feaa86d6d16d3916d14c3b244c533 
+5e90afbdfb63110fa3c9cdd79ef474852996a895a6bad66a663e2ccc51dd339b 
+Dll_Deploy 145ec6dac68fe28857220db70575c5f97540c901509e1b009ecb7857047d0bfd 
+5648ba8ba4d1dd623f82fb9adebcf87085a8a619147e7979ea08f763ab69b0cb 
+c41fa483bd7e186d754d592405d4649adcb78192b3a66586e526ecb6be0f17b5 
+aefe49a247322d3bbefc9e29d30c809499518b947a88d0c2ac9e11cf735b1544 
+80a1fd088d0153a0c33fd606660f9d8e82349cdb6fade850cc06e07fe6732d4b 
+e97ac9089fa80dc38e8fe920008c117d93203e45a1516d24b59f17f7055b8ced 
+
+
+Mutexes 
+_mhello_scrream 
+_mhello_hidream 
+_mhello_xhdream 
+_mhello_krcream 
+
+Events 
+_zent0 
+_endznt0 
+_zkent0 
+
+Paths 
+
+%USERS%\public\x4984.exe 
+
+File Mappings 
+7f8b6a244035c9e5b 
+55fc3f9a654c50093 
+
+WHY BITDEFENDER? 
+UNDISPUTED INNOVATION LEADER. WORLD¡¯S FIRST END-TO-END BREACH AVOIDANCE 
+38% of all cybersecurity vendors worldwide integrated The first security solution to unify hardening, prevention, at least one Bitdefender technology. Present in 150 detection and response across endpoint, network and countries. cloud. 
+#1 RANKED SECURITY. AWARDED ACROSS THE BOARD. 
+
+
+
+

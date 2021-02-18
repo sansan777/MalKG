@@ -1,0 +1,91 @@
+Japan-Linked Organizations Targeted in Long-Runningand Sophisticated Attack Campaign
+symantec-enterprise-blogs.security.com/blogs/threat-intelligence/cicada-apt10-japan-espionage
+Posted: 17 Nov, 20208 Min ReadThreat Intelligence
+Evidence that advanced persistent threat group Cicada is behindattack campaign targeting companies in 17 regions and multiplesectors.
+A large-scale attack campaign is targeting multiple Japanese companies, includingsubsidiaries located in as many as 17 regions around the globe in a likely intelligence-gathering operation.
+Companies in multiple sectors are targeted in this campaign, including those operating in theautomotive, pharmaceutical, and engineering sector, as well as managed service providers(MSPs).
+The scale and sophistication of this attack campaign indicates that it is the work of a largeand well-resourced group, with Symantec, a division of Broadcom (NASDAQ: AVGO),discovering enough evidence to attribute it toCicada (aka APT10, Stone Panda, CloudHopper).Cicada has been involved in espionage-type operations since 2009, and U.S.government officials have linked the activities of APT10, which we track as Cicada, to theChinese government.
+Cicada has historically been known to target Japan-linked organizations, and has alsotargeted MSPs in the past. The group is using living-off-the-land tools as well as custommalware in this attack campaign, including a custom malware - Backdoor.Hartip - thatSymantec has not seen being used by the group before. Among the machines compromisedduring this attack campaign were domain controllers and file servers, and there was evidenceof files being exfiltrated from some of the compromised machines.
+The attackers extensively use DLL side-loading in this campaign, and were also seenleveraging the ZeroLogon vulnerability that was patched in August 2020.
+How was this campaign discovered?
+This campaign was first discovered by Symantec when suspicious DLL side-loading activityon one of our customer＊s networks triggered an alert in our Cloud Analytics.technology,which is available in Symantec Endpoint Security Complete (SESC). This activity was thenreviewed by our Threat Hunter analysts before being passed on to our investigations team forfurther analysis.
+Cloud Analytics leverages artificial intelligence in order to comb through Symantec＊s vastdata and spot patterns associated with targeted attacks. It is capable of automaticallyflagging incidents that would otherwise have taken thousands of hours of analyst time toidentify. The initial Cloud Analytics alert allowed our threat hunting team to identify furthervictims of this activity, build a more complete picture of this campaign, and attribute thisactivity to Cicada. It also allowed us to update and create new protections to ensure ourcustomers are protected from this activity.
+Victims
+This campaign has been ongoing since at least mid-October 2019, right up to the beginningof October 2020, with the attack group active on the networks of some of its victims for closeto a year. The campaign is very wide-ranging, with victims in a large number of regionsworldwide.
+Figure 1. Locations of some of the companies targeted in this campaign; most of those targeted have links to Japan or Japanese organizations
+The companies hit are, in the main, large, well-known organizations, many of which havelinks to Japan or Japanese companies, which is one of the main factors tying the victimstogether. Cicada has been known to have a strong focus on Japanese organizations inprevious attack campaigns. As is clear from the map in Figure 1, South and East Asia arestrong areas of focus for the attackers in this campaign. It is unusual to see a reportedlyChinese-government-linked group attacking companies within China＊s borders but, likemany of the companies targeted in this campaign, the target in that instance is a subsidiaryof a Japanese organization.
+We also saw similar loaders on all the victim networks. These are among the main factorslinking these victims together, with all of them coming from a wide variety of sectors,including:
+Automotive, with some manufacturers and organizations involved in supplying parts tothe motor industry also targeted, indicating that this is a sector of strong interest to theattackers
+Clothing
+Conglomerates
+Electronics
+Engineering
+General Trading Company
+Government
+Industrial Products
+Managed Service Providers
+Manufacturing
+Pharmaceutical
+Professional Services
+
+The amount of time the attackers spent on the networks of victims varied, with the attackersspending a significant amount of time on the networks of some victims, while spending justdays on other victim networks. In some cases, too, the attackers spent some time on anetwork but then the activity would cease, but start again some months later.
+Tactics, tools, and procedures
+We observed the attackers using a wide variety of living-off-the-land, dual-use, and publiclyavailable tools and techniques in these attacks, including:
+Network Reconnaissance 每 gathering information from machines on the network.
+Credential Theft 每 stealing user names and passwords, potentially to provide them withfurther access to the victim network.
+RAR archiving 每 files are transferred to staging servers before exfiltration. They may beencrypted or compressed, to make them easier to extract.
+Certutil 每 a command-line utility that can be exploited and used for various maliciouspurposes, such as to decode information, to download files, and to install browser rootcertificates.
+Adfind 每 a command-line tool that can be used to perform Active Directory queries.
+Csvde 每 can be used to extract Active Directory files and data.
+Ntdsutil 每 can be used as a credential-dumping tool.
+WMIExec 每 can be used for lateral movement and to execute commands remotely.
+PowerShell - a powerful interactive command-line interface and scripting environmentincluded in the Windows operating system. It can be used to find information andexecute code, and is frequently abused by malicious actors.
+
+The threat actors also use a legitimate cloud file-hosting service for exfiltration.
+The attackers also use DLL side-loading at multiple stages during the attack, including usingit to load Backdoor.Hartip. DLL side-loading occurs when attackers are able to replace alegitimate library with a malicious one, allowing them to load malware into legitimateprocesses. Attackers use DLL side-loading to try and hide their activity by making it looklegitimate, and it also helps them avoid detection by security software. It is a tactic that iscommonly used by APT groups and has often been observed being used by nation-statebacked actors. Monitoring networks for unusual activity, as Symantec＊s Cloud Analyticstechnology does, is key for detecting this kind of malicious activity.
+The attackers were also seen deploying a tool capable of exploiting the ZeroLogonvulnerability (CVE-2020-1472). The critical elevation-of-privilege vulnerability was firstdisclosed and patched on August 11, 2020, and can allow attackers to spoof a domaincontroller account and then potentially use it to steal domain credentials, take over thedomain, and completely compromise all Active Directory identity services. It has beenexploited by multiple malicious actors since its disclosure, leading both Microsoft and theDepartment of Homeland Security＊s (DHS) Cybersecurity and Infrastructure Security Agency(CISA) to issue warnings to Windows users to patch the issue as quickly as possible.
+Links to Cicada
+The scale and sophistication of this attack campaign indicate that it is the work of a large andwell-resourced group, such as a nation-state actor, with Symantec discovering enoughevidence to attribute it with medium confidence to Cicada.
+Symantec analysts have linked this activity to Cicada due to the use of previously seenobfuscation techniques and shellcode on loader DLLs.
+Activity seen in one of the victim organizations has various trait similarities with previouslyseen Cicada activity that was described in a blog by Cylance in 2019, including:
+Third-stage DLL has an export named "FuckYouAnti"
+Third-stage DLL uses.CppHostCLR.technique to inject and execute the .NET loaderassembly
+.NET Loader.is obfuscated with ConfuserEx v1.0.0
+Final payload is QuasarRAT 每 an open-source backdoor used by Cicada in the past
+
+In another affected organization, the loaders deploying Backdoor.Hartip overlap in theobfuscation and shellcode used, making us confident it is the same actor in bothorganizations.
+Similarities between activity in both organizations
+Side-loading DLL
+C++ usage
+API call sequence
+GetModuleFileName -> lstrcat -> CreateFile -> ReadFile
+Load next-stage payload from another file
+Obfuscation: lots of garbage OutputDebugString, _time64, srand, rand API calls
+
+Figure 2. Image showing links between Cicada and two victim organizations in this campaign
+These similarities leave us confident that this is the same group carrying out this activity inboth organizations, and that this group is Cicada. Historically, Cicada has been seen usingcustom DLL loaders to decrypt and execute its final payload, as is observed in these attacks.We also saw similar loaders as those used in these two organizations used on other victimnetworks.
+The scale of the operations also points to a group of Cicada＊s size and capabilities. Thetargeting of multiple large organizations in different geographies at the same time wouldrequire a lot of resources and skills that are generally only seen in nation-state backedgroups. The link all the victims have to Japan also points towards Cicada, which has beenknown to target Japanese organizations in the past.
+The targeting of MSPs is also a hallmark of Cicada＊s activity. Successfully compromising anMSP can give attackers high-level access to multiple companies without them having tocompromise the individual companies＊ networks.
+We have also seen Cicada utilizing some of the same publicly available tools 每 such asWMIExec 每 in the past. The attackers also take various steps to reduce the chances of theiractivity being spotted 每 including searching for security software on victim machines usingWMIC, and using PowerShell to clear event logs to hide their activity once they are finishedon victim machines. This kind of activity is the hallmark of sophisticated and experiencedthreat actors.
+All of these facts point to Cicada being the perpetrator of these wide-ranging andsophisticated attacks.
+Intelligence gathering and stealing information has generally been the motivation behindCicada＊s attacks in the past, and that would appear to be the case in this attack campaign too.We observed the attackers archiving some folders of interest in these attacks, including inone organization folders relating to human resources (HR), audit and expense data, andmeeting memos.
+Conclusion
+Japan-linked organizations need to be on alert as it is clear they are a key target of thissophisticated and well-resourced group, with the automotive industry seemingly a key targetin this attack campaign. However, with the wide range of industries targeted by these attacks,Japanese organizations in all sectors need to be aware that they are at risk of this kind ofactivity.
+Cicada clearly still has access to a lot of resources and skills to allow it to carry out asophisticated and wide-ranging campaign like this, so the group remains highly dangerous.Its use of a tool to exploit the recently disclosed ZeroLogon vulnerability and a custombackdoor that has not been observed by Symantec before show that it continues to evolve itstools and tactics to actively target its victims.
+The group＊s use of techniques such as DLL side-loading and a wide array of living-off-the-land tools underline the need for organizations to have a comprehensive security solution inplace to detect this kind of suspicious activity before actors like Cicada have the chance todeploy malware or steal information from their networks.
+Protection/Mitigation
+This activity was first discovered thanks to an alert triggered by our CloudAnalytics.technology, which is available in Symantec Endpoint Security Complete (SESC).
+Indicators of Compromise (IoCs)
+8b6ad87e408e38fc1db868da6e643f616dac59fbae08382c4a7dd4ea119ea057d5e38ac1187c607e701f506c4015bde94be6c485d566d004d810d7565c18874326460aa2df29f766cb5712ebca44cb3365ebfdb5cae0b2ec36ef1e3568911d6acdec58a57381bb8c1e374efb0bf1897d89d1e096d2b704820893859d9f08d086ea9d994de91389280b334f2af991baa49ca613a6bf898d7bb25f88cc66488f5c3f5b623222c755d59052fab9e096c9d2b9a47d06b3a5de62fb9a66750af4efc427873e3d4ec3a0e7d66bee8bda4d65cc8fcefbdca2c8d5c049372a63ff0bc2edcf3ae16b01f7eb129e0e7387ac7feb61ecfce5db0d7494b3962c02c681f504d4578ea26729b43fd976365a6700c80950e0b71a39e67bfff715423d60ae6bfab903ab1588acaabdb509e9db7cfe1e60522bc8baa13bbd35160b4bde7d1b6402ef4a08eb0eb1f4ebb54bceabbebcb7da48238f0278ae5421326ee65ec7951e4239
+178.73.210.238188.119.112.225213.252.246.24545.14.224.9345.67.230.13481.7.7.15995.179.143.32
+
+
+About the Author
+Threat Hunter Team
+Symantec
+The Threat Hunter Team is a group of security experts within Symantec whose mission is toinvestigate targeted attacks, drive enhanced protection in Symantec products, and offeranalysis that helps customers respond to attacks.
+
+
+
+  
+

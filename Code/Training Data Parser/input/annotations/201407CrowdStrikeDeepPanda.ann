@@ -1,0 +1,37 @@
+T1	Organization 223 234	CrowdStrike
+T2	Organization 1806 1817	CrowdStrike
+T3	Software 1835 1846	Falcon Host
+R1	hasProduct Arg1:T2 Arg2:T3
+T4	Software 2143 2154	Falcon Host
+T5	Attacker 2265 2275	DEEP PANDA
+T6	Organization 2375 2386	CrowdStrike
+T7	Address 2401 2411	DEEP PANDA
+T8	ExploitTargetObject 2475 2551	government, defense, financial, legal, and the telecommunications industries
+T9	Software 2573 2584	Falcon Host
+T10	Software 2784 2795	Falcon Host
+T11	Information 2942 2975	Southeast Asia policy information
+T12	Software 3978 3989	Falcon Host
+T13	Exploit 4609 4627	powershell scripts
+T14	Attacker 4982 4992	DEEP PANDA
+R2	authored Arg1:T14 Arg2:T13
+T15	Obfuscation 5069 5075	base64
+R3	hasCharacteristics Arg1:T13 Arg2:T15
+T16	Payload 7142 7147	Wafer
+T17	Malware 7375 7389	MadHatter .NET
+T18	Attacker 7440 7450	DEEP PANDA
+R4	authored Arg1:T18 Arg2:T17
+T19	Attacker 7593 7603	DEEP PANDA
+T20	Attacker 7806 7816	DEEP PANDA
+T21	Exploit 8152 8170	powershell scripts
+R5	authored Arg1:T20 Arg2:T21
+T22	Exploit 8286 8313	Cult of the Dead Cow’s NetE
+T23	Malware 9533 9543	cftmon.exe
+T24	Password 9657 9662	uinfw
+T25	Exploit 9849 9852	WMI
+T26	Attacker 10436 10446	DEEP PANDA
+T27	ExploitTargetObject 10512 10548	multinational financial institutions
+T28	ExploitTargetObject 10550 10559	law firms
+T29	ExploitTargetObject 10561 10580	defense contractors
+T30	ExploitTargetObject 10586 10605	government agencies
+T31	Software 10822 10833	Falcon Host
+T32	Software 10848 10859	Falcon Host

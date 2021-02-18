@@ -1,0 +1,193 @@
+T1	Malware 4 12	MiniDuke
+T2	Person 141 152	Costin Raiu
+T3	Person 154 168	Igor Soumenkov
+T4	Person 170 186	Kurt Baumgartner
+T5	Person 188 201	Vitaly Kamluk
+T6	Organization 237 250	Kaspersky Lab
+T7	Time 254 267	Feb 12th 2013
+T8	Exploit 378 396	Adobe Reader 0-day
+T9	Malware 504 511	ItaDuke
+T10	Malware 539 543	Duqu
+T11	Vulnerability 745 758	CVE-2013-0640
+T12	Organization 859 869	CrySyS Lab
+T13	Dropper 1485 1503	Visaform Tukey.pdf
+T14	Organization 1519 1526	FireEye
+T15	Organization 273 274	E
+T16	Malware 1541 1549	MiniDuke
+T17	Organization 1814 1818	NATO
+T18	MD5 2199 2231	3668b018b4bb080d1875aee346e3650a
+T19	MD5 2232 2264	88292d7181514fda5390292d73da28d4
+T20	MD5 2265 2297	3f301758aa3d5d123a9ddbad1890853b
+T21	MD5 2298 2330	0cdf55626e56ffbf1b198beb4f6ed559
+T22	MD5 2331 2363	cf5a5239ada9b43592757c0d7bf66169
+T23	MD5 2364 2396	c03bcb0cde62b3f45b4d772ab635e2b0
+T24	Dropper 2398 2413	action_plan.pdf
+T25	Dropper 2433 2449	ASEM_seminar.pdf
+T26	Dropper 2469 2484	EUAG_report.pdf
+T27	Dropper 2507 2517	report.pdf
+T28	Dropper 2535 2550	EUAG_report.pdf
+T29	Dropper 2570 2612	The 2013 Armenian Economic Association.pdf
+T30	Country 2561 2568	Belgium
+T31	Country 2528 2533	Spain
+T32	Country 2495 2505	Luxembourg
+T33	Country 2460 2467	Hungary
+T34	Country 2424 2431	Belgium
+T35	Country 2623 2630	Belgium
+R1	hasAttackLocation Arg1:T24 Arg2:T34
+R2	hasAttackLocation Arg1:T25 Arg2:T33
+R3	hasAttackLocation Arg1:T26 Arg2:T32
+R4	hasAttackLocation Arg1:T27 Arg2:T31
+R5	hasAttackLocation Arg1:T28 Arg2:T30
+R6	hasAttackLocation Arg1:T29 Arg2:T35
+T36	Software 3931 3954	RtlDecompressBuffer API
+T37	Software 4034 4048	LoadLibary API
+T38	Malware 4172 4184	Resource 101
+T39	Malware 4295 4307	Resource 102
+T40	Dropper 4748 4781	c:\src\dlldropper\Release\L2P.pdb
+T41	Dropper 4785 4821	C:\src\hellodll\Release\hellodll.pdb
+T42	Time 5060 5072	Feb 20, 2013
+R7	hasAttackTime Arg1:T41 Arg2:T42
+R8	hasAttackTime Arg1:T40 Arg2:T42
+T43	Time 5115 5135	Feb 20 10:51:16 2013
+T44	Time 5194 5214	Feb 20 10:57:52 2013
+R9	hasAttackTime Arg1:T38 Arg2:T44
+T45	Obfuscation 6949 6973	ROL’ed with a linear key
+T46	Obfuscation 6978 7001	XOR’ed with a fixed key
+T47	Software 8597 8609	apispy32.exe
+T48	Indicator 11117 11121	uri!
+T49	Malware 10954 10962	MiniDuke
+R10	indicates Arg1:T48 Arg2:T49
+T50	Country 11341 11348	Hungary
+T51	Address 11367 11381	194.38.160.153
+T52	Country 11384 11395	Switzerland
+T53	Country 11413 11422	Luxemburg
+T54	Address 11439 11451	95.128.72.24
+T55	Country 11454 11460	France
+T56	Country 11481 11488	Belgium
+T57	Address 11511 11523	72.34.47.186
+T58	Country 11526 11532	United
+T59	Country 11611 11618	Germany
+T60	Address 11595 11608	188.40.99.143
+T61	Indicator 11350 11365	arabooks[dot]ch
+T62	Indicator 11397 11411	/lib/index.php
+T63	Indicator 11424 11437	artas[dot]org
+T64	Indicator 11462 11479	/engine/index.php
+T65	Indicator 11490 11509	tsoftonline[dot]com
+T66	Indicator 11541 11557	/views/index.php
+T67	Indicator 11571 11593	www[dot]eamtm[dot]co m
+T68	Indicator 11620 11640	/piwik/web/index.php
+T69	Indicator 12001 12017	lUFEfiHKljfLKWPR
+T70	Malware 12826 12830	Duqu
+T71	Time 12839 12843	2011
+T72	Obfuscation 12988 12993	DWORD
+T73	Malware 13403 13411	MiniDuke
+R11	hasCharacteristics Arg1:T73 Arg2:T72
+T74	Exploit 15224 15238	1109821546.gif
+T75	Exploit 15242 15289	http://tsoftonline.com/views/img/1109821546.gif
+T76	Time 15313 15342	Mon, 25 Feb 2013 12:34:13 GMT
+T77	Time 15373 15402	Mon, 25 Feb 2013 10:59:49 GMT
+T78	Obfuscation 15688 15703	UCL compression
+T79	Time 15817 15841	Mon Jun 18 17:28:11 2012
+T80	Address 16102 16114	200.63.46.23
+T81	Address 16280 16292	200.63.46.23
+T82	Country 16306 16312	Panama
+T83	MD5 16558 16590	1e1b0d16a16cf5c7f3a7c053ce78f515
+T84	MD5 16591 16623	53db085a276ebbf5798ba756cac833ea
+T85	MD5 16720 16752	6bc34809e44c40b61dd29e0a387ee682
+T86	Address 16865 16878	85.95.236.114
+T87	Country 16791 16797	Turkey
+T88	Time 16923 16947	Tue Nov 13 14:30:12 2012
+T89	Country 17480 17494	Czech Republic
+T90	Country 17268 17275	Ukraine
+T91	Country 17306 17313	Belgium
+T92	Country 17346 17354	Portugal
+T93	Country 17368 17375	Romania
+T94	Country 17508 17515	Ireland
+T95	Country 17529 17542	United States
+T96	Country 17600 17607	Hungary
+T97	ExploitTargetObject 17728 17735	Belgium
+T98	ExploitTargetObject 17737 17743	Brazil
+T99	ExploitTargetObject 17745 17753	Bulgaria
+T100	ExploitTargetObject 17755 17769	Czech Republic
+T101	ExploitTargetObject 17771 17778	Georgia
+T102	ExploitTargetObject 17780 17787	Germany
+T103	ExploitTargetObject 17789 17796	Hungary
+T104	ExploitTargetObject 17798 17805	Ireland
+T105	ExploitTargetObject 17807 17813	Israel
+T106	ExploitTargetObject 17815 17820	Japan
+T107	ExploitTargetObject 17822 17828	Latvia
+T108	ExploitTargetObject 17830 17837	Lebanon
+T109	ExploitTargetObject 17839 17848	Lithuania
+T110	ExploitTargetObject 17850 17860	Montenegro
+T111	ExploitTargetObject 17862 17870	Portugal
+T112	ExploitTargetObject 17872 17879	Romania
+T113	ExploitTargetObject 17901 17909	Slovenia
+T114	ExploitTargetObject 17881 17899	Russian Federation
+T115	ExploitTargetObject 17911 17916	Spain
+T116	ExploitTargetObject 17918 17924	Turkey
+T117	ExploitTargetObject 17926 17933	Ukraine
+T118	ExploitTargetObject 17935 17949	United Kingdom
+T119	ExploitTargetObject 17954 17967	United States
+T120	Campaign 18099 18110	Red October
+T121	CourseOfAction 18220 18253	Update Java to the latest version
+T122	CourseOfAction 18302 18360	Update Microsoft Windows and Office to the latest versions
+T123	CourseOfAction 18361 18402	Update Adobe Reader to the latest version
+T124	Indicator 18515 18526	arabooks.ch
+T125	Indicator 18529 18538	artas.org
+T126	Indicator 18541 18556	tsoftonline.com
+T127	Indicator 18559 18572	www.eamtm.com
+T128	Indicator 18575 18596	news.grouptumbler.com
+T129	Address 18635 18647	200.63.46.23
+T130	Address 18650 18664	194.38.160.153
+T131	Address 18667 18679	95.128.72.24
+T132	Address 18697 18710	188.40.99.143
+T133	Address 18682 18694	72.34.47.186
+T134	Address 18713 18726	85.95.236.114
+T135	Software 18798 18830	Kaspersky Internet Security 2013
+T136	CourseOfAction 18874 18929	Be wary of opening suspicious documents on your systems
+T137	CourseOfAction 18940 18991	use another computer without an Internet connection
+T138	CourseOfAction 19002 19048	upload the document to Google Docs for viewing
+T139	Indicator 19155 19165	@34fZ7E*p\
+T140	Attacker 19795 19798	29A
+T141	Indicator 20905 20937	HEUR:Backdoor.Win32.MiniDuke.gen
+T142	Indicator 20939 20962	Backdoor.Win32.Miniduke
+T143	ExploitTargetObject 21013 21033	Exploit.JS.Pdfka.giy
+R12	mitigates Arg1:T136 Arg2:T16
+R13	mitigates Arg1:T137 Arg2:T16
+R14	mitigates Arg1:T138 Arg2:T16
+R15	mitigates Arg1:T121 Arg2:T16
+R16	mitigates Arg1:T122 Arg2:T16
+R17	mitigates Arg1:T123 Arg2:T16
+R18	usesAddress Arg1:T16 Arg2:T129
+R19	usesAddress Arg1:T16 Arg2:T130
+R20	usesAddress Arg1:T16 Arg2:T131
+R21	usesAddress Arg1:T16 Arg2:T132
+R22	usesAddress Arg1:T16 Arg2:T133
+R23	usesAddress Arg1:T16 Arg2:T134
+R24	usesAddress Arg1:T16 Arg2:T51
+R25	usesAddress Arg1:T16 Arg2:T54
+R26	usesAddress Arg1:T16 Arg2:T57
+R27	usesAddress Arg1:T16 Arg2:T60
+R28	usesAddress Arg1:T16 Arg2:T80
+R29	usesAddress Arg1:T16 Arg2:T81
+R30	usesAddress Arg1:T16 Arg2:T86
+R31	indicates Arg1:T124 Arg2:T16
+R32	indicates Arg1:T125 Arg2:T16
+R33	indicates Arg1:T126 Arg2:T16
+R34	indicates Arg1:T127 Arg2:T16
+R35	indicates Arg1:T128 Arg2:T16
+R36	indicates Arg1:T139 Arg2:T16
+R37	indicates Arg1:T83 Arg2:T16
+R38	indicates Arg1:T84 Arg2:T16
+R39	indicates Arg1:T85 Arg2:T16
+R40	indicates Arg1:T61 Arg2:T16
+R41	indicates Arg1:T62 Arg2:T16
+R42	indicates Arg1:T63 Arg2:T16
+R43	indicates Arg1:T64 Arg2:T16
+R44	indicates Arg1:T65 Arg2:T16
+R45	indicates Arg1:T66 Arg2:T16
+R46	indicates Arg1:T67 Arg2:T16
+R47	indicates Arg1:T68 Arg2:T16
+R48	indicates Arg1:T69 Arg2:T16
+R49	indicates Arg1:T141 Arg2:T16
+R50	indicates Arg1:T142 Arg2:T16

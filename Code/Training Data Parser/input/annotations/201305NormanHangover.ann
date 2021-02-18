@@ -1,0 +1,31 @@
+T1	Campaign 10 18	HANGOVER
+T2	Country 180 185	India
+R1	hasAttackLocation Arg1:T1 Arg2:T2
+T3	ExploitTargetObject 427 435	Pakistan
+T4	ExploitTargetObject 456 469	United States
+R2	targets Arg1:T1 Arg2:T3
+R3	targets Arg1:T1 Arg2:T4
+T5	Organization 554 561	Telenor
+T6	Time 720 734	March 17, 2013
+T7	Exploit 887 908	Spear phishing emails
+R4	involvesMalware Arg1:T1 Arg2:T7
+T8	Organization 1028 1040	Norman Shark
+T9	Campaign 1191 1199	HangOver
+T10	ExploitTargetObject 1821 1829	Pakistan
+T11	ExploitTargetObject 1831 1835	Iran
+T12	ExploitTargetObject 1845 1858	United States
+R5	targets Arg1:T9 Arg2:T10
+R6	targets Arg1:T9 Arg2:T11
+R7	targets Arg1:T9 Arg2:T12
+T13	Campaign 2679 2687	Hangover
+T14	Campaign 3229 3237	Hangover
+T15	Country 3724 3729	China
+R8	hasAttackLocation Arg1:T14 Arg2:T15
+T16	Campaign 3800 3808	Hangover
+T17	Country 3866 3871	India
+R9	hasAttackLocation Arg1:T16 Arg2:T17
+T18	Organization 4357 4364	Telenor
+T19	ExploitTargetObject 4581 4590	Pakistani
+T20	ExploitTargetObject 4595 4597	US
+R10	targets Arg1:T16 Arg2:T19
+R11	targets Arg1:T16 Arg2:T20

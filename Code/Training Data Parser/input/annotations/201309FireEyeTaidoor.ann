@@ -1,0 +1,102 @@
+T1	Malware 60 67	Taidoor
+T2	Time 76 94	September 06, 2013
+T3	Malware 185 192	Taidoor
+T4	ExploitTargetObject 371 377	Taiwan
+T5	Time 760 764	2008
+R1	hasAttackTime Arg1:T3 Arg2:T5
+T6	Email 422 442	spear-phishing email
+T7	Malware 862 869	Taidoor
+T8	Time 959 963	2011
+T9	Time 968 972	2012
+T10	Malware 1028 1035	Taidoor
+T11	Malware 1123 1130	Taidoor
+T12	Malware 1735 1742	Taidoor
+T13	Malware 1817 1824	Taidoor
+T14	Time 1997 2001	2008
+R2	hasAttackTime Arg1:T13 Arg2:T14
+T15	Indicator 2032 2093	GET /[5 characters].php?id=[6 numbers][12 characters/numbers]
+R3	indicates Arg1:T15 Arg2:T13
+T16	MD5 2603 2635	be1d972819e0c5bf80bf1691cc563400
+T17	Vulnerability 2700 2713	CVE-2012-0158
+T18	Malware 1593 1600	Taidoor
+T19	Malware 2538 2545	Taidoor
+R4	exploits Arg1:T19 Arg2:T17
+R5	indicates Arg1:T16 Arg2:T19
+T20	Obfuscation 2927 2968	XOR-encoded with the key "0x02" or "0x03"
+R6	hasCharacteristics Arg1:T19 Arg2:T20
+T21	Indicator 3388 3407	tw.myblog.yahoo.com
+R7	indicates Arg1:T21 Arg2:T19
+T22	Obfuscation 3572 3582	RC4 cipher
+T23	Obfuscation 3631 3639	asdfasdf
+T24	Malware 3795 3802	Taidoor
+R8	hasCharacteristics Arg1:T24 Arg2:T22
+R9	hasCharacteristics Arg1:T24 Arg2:T23
+T25	Dropper 3836 3843	dropper
+T26	Malware 3871 3878	Taidoor
+T27	Indicator 3934 3953	roudan.serveftp.com
+T28	Address 3955 3967	69.95.218.31
+T29	Address 3989 4002	120.50.40.145
+T30	Indicator 3973 3987	mac.gov.hpc.tw
+R10	indicates Arg1:T27 Arg2:T25
+R11	indicates Arg1:T30 Arg2:T25
+R12	usesAddress Arg1:T25 Arg2:T28
+R13	usesAddress Arg1:T25 Arg2:T29
+T31	Indicator 4567 4650	/[file name].jsp?[2 random characters]=[6 random characters][encrypted MAC address]
+R14	indicates Arg1:T31 Arg2:T26
+T32	MD5 4709 4741	b0fd4d5fb6d8acb1ccfb54d53c08f11f
+T33	Malware 4771 4778	Taidoor
+T34	MD5 4853 4885	d9940a3da42eb2bb8e19a84235d86e91
+T35	MD5 4907 4939	c4de3fea790f8ff6452016db5d7aa33f
+R15	indicates Arg1:T34 Arg2:T33
+R16	indicates Arg1:T35 Arg2:T33
+R17	indicates Arg1:T32 Arg2:T33
+T36	MD5 4983 4990	Taidoor
+T37	MD5 5096 5103	Taidoor
+T38	Malware 5354 5361	Taidoor
+T39	ExploitTargetObject 5453 5459	Taiwan
+T40	MalwareFamily 5639 5646	Taleret
+T41	Malware 5686 5693	Taidoor
+T42	MD5 5743 5775	6cd1bf0e8adcc7208b82e1506efdba8d
+T43	MD5 5777 5809	525fd346b9511a84bbe26eb47b845d89
+T44	MD5 5814 5846	5c887a31fb4713e17c5dda9d78aab9fe
+T45	Obfuscation 6007 6017	RC4 cipher
+T46	Obfuscation 6042 6050	c37f12a0
+T47	Malware 5726 5733	samples
+R18	hasMember Arg1:T40 Arg2:T47
+R19	indicates Arg1:T42 Arg2:T47
+R20	indicates Arg1:T44 Arg2:T47
+R21	indicates Arg1:T43 Arg2:T47
+R22	hasCharacteristics Arg1:T47 Arg2:T45
+R23	hasCharacteristics Arg1:T47 Arg2:T46
+T48	Indicator 6154 6172	opp.gov.taiwans.tw
+T49	Indicator 6173 6195	nscnet.gov.medicare.tw
+T50	Indicator 6196 6212	mac.gov.skies.tw
+T51	Indicator 6213 6235	klserver.servehttp.com
+T52	Indicator 6236 6258	kllserver.serveftp.com
+T53	Address 6259 6274	202.142.153.154
+T54	Address 6275 6289	80.149.239.139
+T55	Address 6290 6305	202.142.172.131
+T56	Indicator 6306 6330	www.facebook.trickip.NET
+T57	Indicator 6331 6358	www.braintrust.AlmostMy.COM
+T58	ExploitTargetObject 6424 6430	Taiwan
+T59	Malware 6367 6374	Taidoor
+T60	Indicator 6485 6499	mac.gov.hpc.tw
+T61	Malware 6501 6508	Taidoor
+T62	Indicator 6514 6530	mac.gov.skies.tw
+T63	Malware 6532 6539	Taleret
+R24	indicates Arg1:T48 Arg2:T63
+R25	indicates Arg1:T49 Arg2:T63
+R26	indicates Arg1:T51 Arg2:T63
+R27	indicates Arg1:T50 Arg2:T63
+R28	indicates Arg1:T52 Arg2:T63
+R29	usesAddress Arg1:T63 Arg2:T53
+R30	usesAddress Arg1:T63 Arg2:T54
+R31	usesAddress Arg1:T63 Arg2:T55
+R32	indicates Arg1:T56 Arg2:T63
+R33	indicates Arg1:T57 Arg2:T63
+T64	Malware 6559 6566	Taidoor
+T65	Time 6630 6634	2008
+R34	hasAttackTime Arg1:T64 Arg2:T65
+T66	Malware 6737 6744	Taidoor
+T67	MalwareCharacteristics 6698 6709	Yahoo Blogs
+R35	hasCharacteristics Arg1:T66 Arg2:T67

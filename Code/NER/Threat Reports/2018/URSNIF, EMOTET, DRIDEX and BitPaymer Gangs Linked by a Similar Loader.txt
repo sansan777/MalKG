@@ -1,0 +1,230 @@
+
+Trend
+ Micro 
+
+
+
+About
+ TrendLabs Security Intelligence Blog 
+
+
+
+Search:Goto…HomeCategoriesHome...Botnets... URSNIF, EMOTET, DRIDEX and BitPaymer Gangs Linked by a Similar Loader 
+URSNIF, EMOTET, DRIDEX and BitPaymer Gangs Linked by a SimilarLoader 
+
+Posted on:December 18, 2018 
+at 4:51 am 
+
+Posted in:Botnets, Malware 
+Author: 
+
+Trend Micro 
+
+
+As ransomware and banking trojans captured the interest – and pro.ts – of the world with their destructive routines, cybersecurity practitioners haverepeatedly published 
+online and of.ine how cybercriminals have compartmentalized their schemes through exchange of information and banded professionalorganizations. As a more concrete proof of the way these symbiotic relationships and work .ows intersect, we discovered a connection between EMOTET,URSNIF, DRIDEX and BitPaymer from open source information and the loaders of the samples we had, functioning as if tasks were divided among different developers and operators. 
+
+Figure 1. Connections of EMOTET, DRIDEX, URSNIF and BitPaymer. 
+Background and details 
+In order to have a better understanding of the signi.cance of these connections, here’s a summarized background of each malware family: 
+
+URSNIF / GOZI-ISFB 
+
+Still considered as one of the global top threats, this banking trojan’s source code was among those repeatedly leaked because of its evolution and notorietyfor adaptive behaviors. This spyware monitors traf.c, features a keylogger, and steals credentials stored in browsers and applications. The malware creators ofGOZI admitted to its creation and distribution, and was sentenced in 2015 and 2016. 
+
+DRIDEX 
+Another banking trojan that targets banking and .nancial institutions, the cybercriminals behind it use various methods and techniques to steal personalinformation and credentials through malicious attachments and HTML injections. DRIDEX evolved from CRIDEX, GameOver Zeus and ZBOT, and provedto be resilient even after it was momentarily taken down in 2015 through a partnership with the FBI. 
+
+
+EMOTET 
+Discovered by Trend Micro in 2014, this malware acts as a loader for payloads such as Gootkit, ZeusPanda, IcedID, TrickBot, and DRIDEX for criticalattacks. Other publications have also mentioned observing obfuscation techniques between EMOTET and URSNIF/GOZI-ISFB. 
+
+BitPaymer 
+This ransomware was used to target medical institutions via remote desktop protocol and other email-related techniques, momentarily shutting down routineservices for a high ransom. Security researchers later published evidence that not only was DRIDEX dropping BitPaymer, but that it also came from the same 
+cybercriminal group. 
+
+During our analysis, we found evidence that the malware families identi.ed had shared loaders: the overview of the payload decryption procedure, and theloaders’ internal data structure. While the .rst .gure of the disassembled PE packers had small differences in their arithmetic operations’ instructions, wefound that the four payload decryption procedures were identical in data structures’ overview on the way they decrypted the actual PE payloads. 
+
+
+Figure 2. Overview of identical structures of payloads’ loader decryption procedures. 
+Further analysis also revealed that the internal data structure of the four malware families were the same. We compared the disassembled codes from thesamples we had and noticed the encrypted payload address and size placed into the decryption procedure located at offset 0x34 and 0x38. 
+
+Figure 3. Identical data structures show similar payload addresses and sizes. Figure 4. Data structure used by the shared loader. 
+
+As cybercrime organizational structures in some countries tend to compartmentalize work, we suspect that the four malware families’ gangs might be incontact with the same weapon providers for PE loaders. In addition, it’s also possible that these four cybercrime groups may establish some attributional –working or otherwise – relationships and have exchanged or continue to exchange resources. 
+In our history of monitoring botnets and the underground organizations who make and/or use them, the cybercriminals behind EMOTET may be sharing tocollaborate with trusted, highly-skilled cybercriminal groups, and may be a sign of these four groups’ ongoing and intriguing relationship. 
+
+Alliances like these could lead to more destructive malware deployments in the future. More than ever, it is important for organizations to heightencybersecurity preventive measures, such as establishing policies and procedures for handling security threats. Regular education awareness sessions andreminders for employees can help protect the enterprise from attacks and intrusions from malicious emails and URLs. Installing and updating a multi-layeredprotection and solution in preventing online banking threats can go a long way in securing businesses. 
+
+Trend Micro Solutions 
+Trend Micro endpoint solutions such as the.Smart Protection Suites.and.Worry-Free Business Security.solutions can protect users and businesses from threatsby detecting malicious .les and messages as well as blocking all related malicious URLs. Trend Micro. Deep Discovery. has an email inspection layer thatcan protect enterprises by detecting malicious attachments and URLs. 
+Trend Micro.XGen. security.provides a cross-generational blend of threat defense techniques to protect systems from all types of threats, includingransomware and cryptocurrency-mining malware. It features high-.delity.machine learning.on.gateways.and.endpoints, and protects physical, virtual, andcloud workloads. With capabilities like web/URL .ltering, behavioral analysis, and custom sandboxing, XGen security can secure systems against modernthreats that bypass traditional controls; exploit known, unknown, or undisclosed vulnerabilities; either steal or encrypt personally identi.able data; or conductmalicious cryptocurrency mining. Smart, optimized, and connected, XGen security powers Trend Micro’s suite. 
+Indicators of Compromise 
+Malware SHA256 
+URSNIF 9d38a0220b2dfb353fc34d03079f2ba2c7de1d4a234f6a2b06365bfc1870cd89 DRIDEX cbd130b4b714c9bb0a62e45b2e07f3ab20a6db3abd1899aa3ec21f402d25779e EMOTET 0a47f5b274e803754ce84ebd66599eb35795fb851f55062ff042e73e2b9d5763 BitPaymer d693c33dd550529f3634e3c7e53d82df70c9d4fbd0c339dbc1849ada9e539ea2 
+
+
+Related Posts: 
+
+Exploring Emotet: Examining Emotet’s Activities, Infrastructure
+
+Monero-Mining RETADUP Worm Goes Polymorphic, Gets an AutoHotKey Variant
+
+IQY
+ and PowerShell Abused by Spam Campaign to Infect Users in Japan with BEBLOH and URSNIF
+
+
+Phishing
+ Campaign uses Hijacked Emails to Deliver URSNIF by Replying to Ongoing Threads 
+
+
+
+
+Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware:  
+ENTERPRISE 
+. 
+ SMALL BUSINESS 
+. 
+ HOME 
+. 
+ 
+Tags: BitPaymerDRIDEXEMOTETURSNIF 
+ 
+1 Comment  TrendLabs 
+  
+Login 
+1 
+ 
+
+
+. Recommend t Tweet f Share Sort by Best 
+
+ali amair . a 
+day 
+ago 
+
+Can we also have SHA1 for these .les as currently we dont have option in TMCM to add SHA256 under "User de.ne objects" 
+
+. Reply . Share . 
+
+
+
+
+. 
+Subscribe 
+d 
+Add 
+Disqus 
+to 
+your 
+siteAdd 
+DisqusAdd 
+% 
+Disqus' 
+Privacy 
+PolicyPrivacy 
+PolicyPrivacy 
+
+Featured Stories 
+
+systemd
+ Vulnerability Leads to Denial of Service on Linux
+
+
+qkG
+ Filecoder: Self-Replicating, Document-Encrypting Ransomware
+
+
+Mitigating
+ CVE-2017-5689, an Intel Management Engine Vulnerability
+
+
+A
+ Closer Look at North Korea’s Internet 
+
+
+
+From
+ Cybercrime to Cyberpropaganda 
+
+
+
+
+Security Predictions for 2019 
+
+Our security predictions for 2019 are based on our experts’ analysis of the progress of current and emerging technologies, user behavior, and markettrends, and their impact on the threat landscape. We have categorized them according to the main areas that are likely to be affected, given the sprawlingnature of the technological and sociopolitical changes under consideration.
+Read our security predictions for 2019. 
+
+
+Business Process Compromise 
+
+Attackers are starting to invest in long-term operations that target speci.c processes enterprises rely on. They scout for vulnerable practices, susceptiblesystems and operational loopholes that they can leverage or abuse. To learn more, read our Security 101: Business Process Compromise. 
+
+
+Recent Posts 
+
+Android Wallpaper Apps Found Running Ad Fraud Scheme
+
+URSNIF, EMOTET, DRIDEX and BitPaymer Gangs Linked by a Similar Loader
+
+Cybercriminals Use Malicious Memes that Communicate with Malware
+
+Tildeb: Analyzing the 18-year-old Implant from the Shadow Brokers’ Leak
+
+Cryptocurrency Miner Spreads via Old Vulnerabilities on Elasticsearch 
+
+
+Popular Posts 
+December Patch Tuesday: Year-End Batch Addresses Win32k Elevation of Privilege and Windows DNS Server Vulnerabilities 
+Fake Banking App Found on Google Play Used in SMiShing Scheme 
+Exploring Emotet: Examining Emotet’s Activities, Infrastructure 
+Cryptocurrency Miner Spreads via Old Vulnerabilities on Elasticsearch 
+
+
+
+TrickBot’s Bigger Bag of Tricks 
+
+
+Stay Updated 
+YouremailhereSubscribeEmail Subscription 
+Home and Home Of.ce 
+
+|
+
+For Business 
+
+
+|
+
+
+Security Intelligence
+
+|
+
+
+About Trend Micro 
+
+
+Asia Paci.c Region (APAC): Australia / New Zealand, 中国, 日本, ...., 台灣 
+
+
+Latin America Region (LAR): Brasil, México 
+
+
+North America Region (NABU): United States, Canada 
+
+
+
+Europe, Middle East, & Africa Region (EMEA): France, Deutschland / .sterreich / Schweiz, Italia, Россия, Espa.a, United Kingdom / Ireland 
+
+
+Privacy Statement
+
+Legal Policies 
+
+
+Copyright . 2018 Trend Micro Incorporated. All rights reserved. 
+
+
+
+

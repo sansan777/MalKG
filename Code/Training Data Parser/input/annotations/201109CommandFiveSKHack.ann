@@ -1,0 +1,195 @@
+T1	Time 116 125	July 2011
+T2	Time 1013 1025	28 July 2011
+T3	ExploitTargetObject 1026 1043	SK Communications
+T4	ExploitTargetObject 1212 1219	CyWorld
+T5	ExploitTargetObject 1224 1228	Nate
+T6	Country 1297 1308	South Korea
+T7	Country 1483 1488	China
+T8	Country 1490 1495	Japan
+T9	Country 1501 1514	United States
+T10	Country 1516 1522	Taiwan
+T11	Country 1524 1531	Vietnam
+T12	Country 1536 1542	Europe
+T13	Time 3103 3112	June 2011
+T14	Obfuscation 3741 3750	waypoints
+T15	Information 3957 3962	names
+T16	Information 3964 3977	phone numbers
+T17	Information 3979 4003	home and email addresses
+T18	Information 4005 4016	birth dates
+T19	Information 4018 4032	gender details
+T20	Information 4144 4173	resident registration numbers
+T21	Information 4034 4050	user identifiers
+T22	Information 4052 4061	passwords
+T23	Organization 4517 4524	ESTsoft
+T24	Software 4496 4515	ALZip update server
+R1	hasProduct Arg1:T23 Arg2:T24
+T25	Organization 4864 4893	Korean National Police Agency
+T26	Software 5550 5555	ALYac
+R2	hasProduct Arg1:T23 Arg2:T26
+T27	Software 6311 6351	ALTools Common Module Update Application
+T28	Software 6353 6367	ALCMUpdate.exe
+T29	File 6578 6586	ALAd.dll
+T30	Time 7721 7734	4 August 2011
+T31	ExploitTargetObject 1416 1433	SK Communications
+T32	TrojanHorse 9318 9336	Backdoor.Agent.Hza
+T33	Dropper 9163 9177	ALCMUpdate.exe
+T34	TrojanHorse 9522 9565	Trojan.Dropper.Agent.Hza Backdoor.Agent.Hza
+T35	TrojanHorse 9572 9603	V.DRP.Agent.Hza V.BKD.Agent.Hza
+T36	Address 9811 9825	116.127.121.41
+T37	Indicator 9946 9962	update.alyac.org
+T38	Time 10239 10251	18 July 2011
+T39	Time 10256 10268	25 July 2011
+T40	Malware 10423 10428	x.exe
+T41	SHA-1 11322 11371	5A1B E6AD CB2C C40B 2E9D 6B6C 569F D4DA B273 E7AD
+T42	Malware 11277 11282	x.exe
+R3	indicates Arg1:T41 Arg2:T42
+T43	Malware 11684 11694	nateon.exe
+T44	Malware 11771 11778	rar.exe
+T45	Indicator 12391 12409	www.cph.com.tw/act
+R4	indicates Arg1:T45 Arg2:T44
+R5	indicates Arg1:T45 Arg2:T43
+T46	ExploitTargetObject 12478 12502	Cite Media Holding Group
+T47	Software 12801 12818	Microsoft Windows
+T48	Time 13053 13065	26 July 2011
+T49	Malware 13150 13160	nateon.exe
+R6	hasAttackTime Arg1:T49 Arg2:T48
+T50	Location 13570 13578	Nonhyeon
+T51	Indicator 13703 13719	ro.diggfunny.com
+T52	Indicator 13976 13986	cph.com.tw
+T53	Malware 14240 14285	Heuristic.BehavesLike.Win32.PasswordStealer.H
+T54	SHA-1 14403 14452	F84C D73D ABF1 8660 7F98 6DF9 8C54 02A5 7BB5 8AD1
+T55	Malware 14352 14362	nateon.exe
+R7	indicates Arg1:T54 Arg2:T55
+T56	Malware 14473 14486	Backdoor.Sogu
+T57	Malware 14582 14589	rar.exe
+T58	SHA-1 14630 14679	E87C 3ACB A599 5E01 7AD3 1B29 A5E2 FE36 3ED4 D9EB
+R8	indicates Arg1:T58 Arg2:T57
+T59	Indicator 14997 15015	www.cph.com.tw/act
+T60	Malware 14946 14956	nateon.exe
+T61	Malware 14960 14967	rar.exe
+T62	Malware 14974 14979	x.exe
+R9	indicates Arg1:T59 Arg2:T60
+R10	indicates Arg1:T59 Arg2:T61
+R11	indicates Arg1:T59 Arg2:T62
+T63	Organization 15037 15061	Cite Media Holding Group
+T64	Country 15117 15123	Taiwan
+T65	Address 15552 15567	116.127.121.109
+R12	indicates Arg1:T65 Arg2:T60
+T66	Malware 16694 16706	winsvcfs.dll
+T67	Dropper 16631 16641	nateon.exe
+T68	Indicator 17497 17516	nateon.duamlive.com
+T69	Malware 16935 16945	nateon.exe
+R13	indicates Arg1:T68 Arg2:T69
+T70	Address 17758 17771	192.168.0.200
+R14	indicates Arg1:T70 Arg2:T69
+T71	Time 18548 18577	27 September 2010 at 01:17.04
+T72	Malware 19005 19018	Backdoor.Sogu
+T73	Indicator 19044 19057	bbs.afbjz.com
+R15	indicates Arg1:T73 Arg2:T72
+T74	Indicator 19061 19082	newhose.ntimobile.com
+T75	Indicator 19090 19108	www.adv138mail.com
+R16	indicates Arg1:T75 Arg2:T72
+T76	Indicator 20846 20861	CONFIG DESTORY!
+T77	Malware 20798 20808	nateon.exe
+R17	indicates Arg1:T76 Arg2:T77
+T78	MalwareCharacteristics 21899 21910	polymorphic
+R18	hasCharacteristics Arg1:T77 Arg2:T78
+T79	Indicator 24142 24161	nateon.duamlive.com
+T80	SystemInformation 24566 24621	Mozilla/4.0·(compatible;·MSIE·6.0;·Windows·NT·5. 1;SV1;
+T81	Address 26612 26626	121.78.237.135
+T82	Address 27250 27265	116.127.121.109
+T83	Address 27420 27434	116.127.121.41
+T84	Address 28166 28177	116.127.0.0
+T85	Address 29418 29432	202.30.224.240
+T86	ThreatActor 31101 31115	Guangming Wang
+T87	Indicator 31305 31314	alyac.org
+T88	Address 31884 31898	222.122.20.241
+T89	ThreatActor 36813 36823	Lee Cooper
+T90	Indicator 37827 37845	cache.mindplat.com
+T91	Indicator 37852 37867	bbs.ezxsoft.com
+T92	TrojanHorse 38041 38065	Trojan.Win32.AgentBypass
+R19	indicates Arg1:T91 Arg2:T92
+T93	Address 38179 38193	202.30.224.240
+R20	indicates Arg1:T93 Arg2:T92
+T94	Indicator 38149 38165	update.alyac.org
+R21	indicates Arg1:T94 Arg2:T92
+T95	TrojanHorse 38388 38408	Trojan.Win32.Generic
+T96	Indicator 20030 20042	advapi32.dll
+T97	Indicator 20044 20057	cryptbase.dll
+T98	Indicator 20059 20068	gdi32.dll
+T99	Indicator 20070 20082	iphlpapi.dll
+T100	Indicator 20084 20096	kernel32.dll
+T101	Indicator 20098 20105	mpr.dll
+T102	Indicator 20107 20117	msvcrt.dll
+T103	Indicator 20119 20128	ntdll.dll
+T104	Indicator 20130 20140	odbc32.dll
+T105	Indicator 20142 20151	ole32.dll
+T106	Indicator 20153 20162	psapi.dll
+T107	Indicator 20164 20171	sfc.dll
+T108	Indicator 20173 20184	shell32.dll
+T109	Indicator 20186 20197	shlwapi.dll
+T110	Indicator 20199 20209	user32.dll
+T111	Indicator 20211 20222	userenv.dll
+T112	Indicator 20224 20235	version.dll
+T113	Indicator 20237 20248	wininet.dll
+T114	Indicator 20250 20260	ws2_32.dll
+T115	Indicator 20262 20274	wtsapi32.dll
+T116	Indicator 33949 33958	ALYAC.ORG
+T117	Indicator 33960 33973	NPROTECTS.ORG
+T118	Indicator 33975 33990	TRENDMICROS.NET
+T119	Indicator 33992 34002	BOMULS.COM
+T120	Indicator 35699 35710	DAUMFAN.COM
+T121	Indicator 35901 35914	DIGGFUNNY.COM
+T122	Indicator 35916 35927	EDSPLAN.COM
+T123	Indicator 35929 35940	EZXSOFT.COM
+T124	Indicator 36493 36504	NATEFAN.COM
+T125	Indicator 36524 36537	PROJECTXZ.COM
+T126	Indicator 36629 36643	FINALCOVER.COM
+T127	Indicator 36645 36657	MINDPLAT.COM
+T128	Indicator 36659 36670	SOUCESP.COM
+T129	Address 35715 35722	8.5.1.8
+T130	Address 34900 34908	8.5.1.42
+T131	Address 35715 35722	8.5.1.8
+T132	Address 34900 34908	8.5.1.42
+T133	Address 29519 29526	8.8.8.8
+T134	Address 15552 15567	116.127.121.109
+T135	Address 29519 29526	8.8.8.8
+T136	Address 35842 35855	61.19.250.219
+T137	Address 35864 35876	64.74.223.10
+T138	Address 26690 26699	127.0.0.1
+T139	Address 29418 29432	202.30.224.240
+T140	Address 34960 34974	192.168.10.132
+T141	Address 36370 36384	69.197.132.132
+T142	Address 36406 36420	218.213.229.69
+T143	Address 36426 36440	218.213.229.68
+T144	Address 36451 36463	64.74.223.48
+T145	Address 36542 36550	8.5.1.11
+T146	Address 36563 36577	202.181.170.67
+T147	Address 36601 36612	61.82.71.30
+T96	MD5 81137 81176	16A3 1AA8 E7DD F66A 3155 1840 573B 6575
+T97	Malware 81221 81236	$$$$$$$$mtx.bat
+T98	Malware 81237 81250	winscard2.exe
+R22	indicates Arg1:T96 Arg2:T97
+R23	indicates Arg1:T96 Arg2:T98
+T99	MD5 81298 81337	ABA9 BAEA 7082 5E6A DF07 2358 7F27 3DC4
+T100	Malware 81383 81396	zhenxiang.exe
+T101	Malware 81397 81409	winscard.exe
+R24	indicates Arg1:T99 Arg2:T100
+R25	indicates Arg1:T99 Arg2:T101
+T102	MD5 81467 81506	BCE1 069D D099 F151 70C5 FD05 BAE9 21B5
+T103	Malware 81585 81597	106140_d.bat
+T104	Malware 81598 81611	tcmoniter.exe
+R26	indicates Arg1:T102 Arg2:T103
+R27	indicates Arg1:T102 Arg2:T104
+T105	MD5 81646 81685	E8EE 9373 EE6C 8360 42E8 F48D 8DE2 DDA9
+T106	Malware 81735 81750	$$$$$$$$fbl.bat
+T107	Malware 81751 81765	tcomoniter.exe
+R28	indicates Arg1:T105 Arg2:T106
+R29	indicates Arg1:T105 Arg2:T107
+T108	MD5 81800 81839	FDF2 C5C2 B187 4EFE 7FD3 3509 2DF2 D3BC
+T109	Malware 81884 81895	40984_d.bat
+T110	Malware 81896 81908	wincard0.dll
+T111	Malware 81909 81920	uxtheme.dll
+R30	indicates Arg1:T108 Arg2:T109
+R31	indicates Arg1:T108 Arg2:T110
+R32	indicates Arg1:T108 Arg2:T111

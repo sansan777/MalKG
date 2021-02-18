@@ -1,0 +1,76 @@
+T1	ExploitTargetObject 280 301	Tibetan organizations
+T2	Malware 168 172	LURK
+T3	Software 910 926	Microsoft Office
+T4	TrojanHorse 1079 1083	LURK
+T5	TrojanHorse 1137 1145	Gh0stRAT
+T6	Address 1290 1304	184.105.64.183
+T7	Indicator 1351 1364	dtl.eatuo.com
+T8	Indicator 1274 1285	dtl.dnsd.me
+R1	indicates Arg1:T8 Arg2:T4
+R2	indicates Arg1:T6 Arg2:T4
+R3	indicates Arg1:T7 Arg2:T4
+T9	Organization 1751 1762	Citizen Lab
+T10	Time 2130 2147	May and July 2012
+T11	TrojanHorse 2644 2648	LURK
+T12	MalwareCharacteristics 2705 2723	social engineering
+R4	hasCharacteristics Arg1:T11 Arg2:T12
+T13	Software 3359 3375	Microsoft Office
+T14	Software 3392 3396	Word
+T15	Software 3415 3420	Excel
+T16	Time 4160 4172	May 24, 2012
+T17	Address 4291 4305	209.234.204.31
+T18	Email 4058 4065	Droeshi
+T19	Password 4500 4504	4155
+T20	File 4547 4564	Droeshi final.doc
+T21	Time 4843 4849	July 5
+T22	Email 4789 4812	Statement of the Kashag
+T23	Password 4941 4945	0706
+T24	Address 5217 5230	65.166.97.211
+T25	Email 5294 5308	eabliz@gmx.com
+T26	Email 5313 5327	hientr@gmx.com
+T27	File 5379 5395	July6thFinal.doc
+T28	Email 5511 5528	The concept notes
+T29	Time 5570 5577	July 17
+T30	File 5933 5955	EIDHR_action_plan.xlsx
+T31	Password 7000 7005	19333
+T32	Attacker 7637 7646	walkinnet
+T33	Email 7994 8017	c100tibet_board@gmx.com
+T34	Email 8022 8047	ijoni_futbollisti@gmx.com
+T35	Email 8177 8193	abarbour@gmx.com
+T36	Email 8195 8209	jigme1@gmx.com
+T37	Email 8214 8228	agnes9@gmx.com
+T38	Address 8338 8351	207.178.172.2
+T39	Email 8385 8420	August visit of South African group
+T40	Time 8456 8463	July 20
+R5	hasAttachment Arg1:T22 Arg2:T27
+R6	hasAttachment Arg1:T18 Arg2:T20
+R7	hasAttachment Arg1:T28 Arg2:T30
+T41	Password 9293 9297	1959
+T42	File 9374 9413	Dharamsala August 2012 Full program.xls
+R8	hasAttachment Arg1:T39 Arg2:T42
+T43	File 9681 9688	set.xls
+T44	MD5 10183 10215	58f6922dedb0d43c4478a4f38ad08620
+T45	MD5 10235 10267	f2a0787388dd6373336b3f23f204524a
+T46	MD5 10293 10325	0fe550a5d1187d38984c505ef7741638
+T47	MD5 10368 10400	971f99af0f9df674a79507ed7b3010fb
+T48	TrojanHorse 10907 10926	%Temp%\iexplore.exe
+T49	MD5 11171 11203	16160a6a9b905c69cb8e92c319212980
+T50	MD5 11223 11255	1c22ee3326affee30c3fa65f0b8413d5
+T51	File 11294 11340	%AppData%\Application Data\Help\CREATELINK.EXE
+T52	File 11341 11371	%AppData%\Help\IconCacheEt.DAT
+T53	File 11372 11403	%AppData%\Help\IconConfigEt.DAT
+T54	File 11404 11431	%AppData\\Help\iexplore.exe
+T55	Indicator 11726 11797	C:\Documents and Settings\user\Start Menu\Programs\Startup\iexplore.lnk
+T56	Indicator 12573 12583	0x11B297A9
+T57	Campaign 14095 14100	TIBET
+T58	Campaign 14131 14135	T706
+T59	Campaign 14240 14244	T801
+T60	TrojanHorse 14822 14836	Troj~Agent-XAT
+T61	TrojanHorse 14847 14861	TROJ_MDROP.TPB
+T62	TrojanHorse 14866 14880	TROJ_MDROP.TPC
+T63	Software 14966 14977	Generic PWS
+T64	Campaign 15072 15079	IE_0day
+T65	Indicator 15219 15230	DbxUpdateET
+T66	Indicator 15304 15315	IconCacheEt
+T67	Indicator 15322 15334	IconConfigEt
+T68	Address 16443 16457	184.105.64.183

@@ -1,0 +1,225 @@
+T1	Campaign 26 38	SAFFRON ROSE
+T2	Malware 3766 3773	Shamoon
+T3	Organization 3839 3843	NMCI
+T4	Organization 3811 3837	Navy Marine Corps Intranet
+T5	Attacker 3940 3958	Ajax Security Team
+T6	Country 4006 4010	Iran
+R1	hasAttackLocation Arg1:T5 Arg2:T6
+T7	Indicator 4089 4103	ashiyane[.]org
+T8	Indicator 4108 4122	shabgard[.]org
+T9	Attacker 4191 4197	AjaxTM
+T10	Attacker 4224 4242	Ajax Security Team
+T11	Attacker 4474 4492	Ajax Security Team
+T12	Attacker 4573 4591	Ajax Security Team
+T13	Attacker 4898 4916	Ajax Security Team
+T14	Attacker 5047 5065	Ajax Security Team
+T15	Organization 5013 5020	FireEye
+T16	ExploitTargetObject 5138 5161	defense industrial base
+T17	ExploitTargetObject 5179 5192	Unites States
+T18	ExploitTargetObject 5215 5266	local Iranian users of anti-censorship technologies
+T19	AttackerGroup 6489 6517	Network Crack Program Hacker
+T20	Attacker 6543 6563	Wicked/Withered Rose
+R2	belongsTo Arg1:T20 Arg2:T19
+T21	ExploitTargetObject 7315 7341	U.S. Department of Defense
+T22	Attacker 7378 7381	whg
+T23	Malware 7453 7458	PlugX
+R3	authored Arg1:T22 Arg2:T23
+T24	Malware 7459 7463	SOGU
+R4	authored Arg1:T22 Arg2:T24
+T25	Organization 7590 7611	Honker Union of China
+T26	Country 7895 7899	Iran
+T27	Organization 8648 8681	Iranian Revolutionary Guard Corps
+T28	Organization 8683 8687	IRGC
+T29	Attacker 8769 8788	Basij Cyber Council
+T30	Malware 9467 9474	Shamoon
+T31	ExploitTargetObject 9510 9522	Saudi Arabia
+T32	ExploitTargetObject 9527 9532	Qatar
+T33	Country 8959 8963	Iran
+R5	hasAttackLocation Arg1:T29 Arg2:T33
+T34	Malware 9697 9704	Stuxnet
+T35	Malware 9709 9714	Flame
+T36	Attacker 11215 11233	Ajax Security Team
+T37	Vector 11375 11388	sending email
+T38	Vector 11390 11423	private messages via social media
+T39	Vector 11425 11441	fake login pages
+T40	Vector 11451 11490	propagation of anti-censorship software
+T41	Indicator 11863 11881	aeroconf2014[.]org
+T42	Software 13730 13737	Psiphon
+T43	Software 13742 13751	Ultrasurf
+T44	Malware 14282 14289	Stealer
+T45	MalwareFamily 14438 14445	Stealer
+T46	Dropper 14568 14579	IntelRS.exe
+R6	hasFamily Arg1:T46 Arg2:T45
+R7	hasMember Arg1:T45 Arg2:T46
+T47	Dropper 14828 14839	IntelRS.exe
+T48	Malware 14879 14886	Stealer
+T49	Attacker 14368 14386	Ajax Security Team
+R8	usesDropper Arg1:T49 Arg2:T46
+T50	File 14954 14972	AppTransferWiz.dll
+R9	indicates Arg1:T50 Arg2:T47
+R10	indicates Arg1:T50 Arg2:T48
+T51	Dropper 15226 15237	IntelRS.exe
+T52	File 15297 15313	DelphiNative.dll
+T53	File 15392 15410	IntelRS.exe.config
+T54	File 15471 15489	AppTransferWiz.dll
+T55	File 15535 15553	RapidStartTech.stl
+R11	indicates Arg1:T52 Arg2:T48
+R12	indicates Arg1:T53 Arg2:T48
+R13	indicates Arg1:T54 Arg2:T48
+R14	indicates Arg1:T55 Arg2:T48
+T56	File 15791 15809	AppTransferWiz.dll
+T57	Malware 16325 16336	IntelRS.exe
+T58	File 16359 16377	AppTransferWiz.DLL
+R15	indicates Arg1:T58 Arg2:T57
+T59	File 16412 16423	sqlite3.dll
+R16	indicates Arg1:T59 Arg2:T57
+T60	Malware 16467 16478	IntelRS.exe
+T61	File 16514 16532	AppTransferWiz.DLL
+R17	indicates Arg1:T61 Arg2:T60
+T62	Malware 16721 16732	IntelRS.exe
+T63	Malware 16812 16823	IntelRS.exe
+T64	Payload 16856 16872	DelphiNative.DLL
+R18	hasCharacteristics Arg1:T63 Arg2:T64
+T65	Payload 17516 17528	vaultcli.DLL
+T66	Malware 17424 17431	Stealer
+R19	hasCharacteristics Arg1:T66 Arg2:T65
+T67	Obfuscation 18227 18242	Rijndael cipher
+T68	Obfuscation 18285 18288	AES
+T69	Password 18492 18502	HavijeBaba
+T70	Indicator 18519 18528	salam!*%#
+T71	Campaign 18923 18935	Saffron Rose
+T72	MD5 19316 19348	6dc7cc33a3cdcfee6c4edb6c085b869d
+T73	MD5 19455 19487	3d26442f06b34df3d5921f89bf680ee9
+T74	MD5 19570 19602	3efd971db6fbae08e96535478888cff9
+T75	MD5 19660 19692	288c91d6c0197e99b92c06496921bf2f
+T76	Time 20102 20111	2014-3-15
+T77	Time 20036 20046	2014-03-15
+T78	Time 20019 20029	2013-10-29
+T79	Indicator 20807 20873	d:\svn\Stealer\source\Stealer\Stealer\obj\ x86\Release\Stealer.pdb
+T80	Indicator 20878 20952	f:\Projects\C#\Stealer\source\Stealer\ Stealer\obj\x86\Release\Stealer.pdb
+T81	Campaign 20517 20529	Saffron Rose
+T82	SHA-256 21585 21650	5156aca994ecfcb40458ead8c830cd66469d5f5 a031392898d323a8d7a7f23d3
+T83	Malware 21882 21893	Stealer.exe
+R20	indicates Arg1:T82 Arg2:T83
+T84	Attacker 22458 22476	Ajax Security Team
+T85	Time 22590 22600	2014-04-08
+R21	hasAttackTime Arg1:T84 Arg2:T85
+T86	Exploit 22557 22572	Stealer Builder
+T87	Time 23708 23718	2013-12-19
+T88	Malware 23673 23688	Stealer Builder
+R22	hasAttackTime Arg1:T88 Arg2:T87
+T89	MD5 23801 23833	1823b77b9ee6296a8b997ffb64d32d21
+R23	indicates Arg1:T89 Arg2:T88
+T90	SHA-256 23943 24008	5156aca994ecfcb40458ead8c830cd66469d5f5 a031392898d323a8d7a7f23d3
+R24	indicates Arg1:T90 Arg2:T88
+T91	Attacker 24392 24410	Ajax Security Team
+T92	File 24473 24491	RapidStartTech.stl
+T93	File 24519 24537	RapidStartTech.stl
+T94	Campaign 25051 25063	Saffron Rose
+T95	Indicator 25588 25606	aeroconf2014[.]org
+T96	Indicator 25631 25648	info@usa.gov[.]us
+T97	Email 25728 25753	keyvan.ajaxtm@gmail[.]com
+T98	Indicator 25787 25799	ajaxtm[.]org
+T99	Attacker 25820 25838	Ajax Security Team
+T100	Organization 25977 25983	Google
+T101	Organization 25985 25993	Facebook
+T102	Organization 25995 26000	Yahoo
+T103	Organization 26005 26013	LinkedIn
+T104	Address 26344 26358	88.150.227.197
+T105	Email 26543 26561	osshom@yahoo[.]com
+T106	Indicator 26744 26761	intelupdate[.]com
+T107	Indicator 26766 26779	ultrasms[.]ir
+T108	Email 26805 26823	lvlr98@gmail[.]com
+T109	Address 26919 26930	5.9.244.151
+T110	Indicator 26955 26978	ns2. aeroconf2014[.]org
+T111	Indicator 26983 27012	office.windowsessentials[.]tk
+T112	MD5 27068 27100	1d4d9f6e6fa1a07cb0a66a9ee06d624a
+T113	Campaign 26846 26858	Saffron Rose
+T114	Malware 27119 27126	Stealer
+R25	indicates Arg1:T112 Arg2:T114
+R26	indicates Arg1:T110 Arg2:T114
+R27	indicates Arg1:T111 Arg2:T114
+R28	usesAddress Arg1:T114 Arg2:T109
+R29	involvesMalware Arg1:T113 Arg2:T114
+T115	Campaign 26036 26048	Saffron Rose
+T116	Indicator 26195 26213	intel-update[.]com
+T117	Indicator 26218 26237	update-mirror[.]com
+T118	Indicator 26264 26285	james.mateo@aim[.]com
+T119	Indicator 26298 26316	intel-update[.]com
+T120	Address 27264 27276	81.17.28.235
+T121	Indicator 27171 27189	intel-update[.]com
+R30	indicates Arg1:T121 Arg2:T114
+R31	usesAddress Arg1:T114 Arg2:T120
+T122	Indicator 27387 27404	pluginadobe[.]com
+R32	indicates Arg1:T122 Arg2:T114
+T123	ExploitTargetObject 28097 28101	Iran
+T124	Address 28477 28489	81.17.28.227
+T125	Time 28491 28501	2013-11-28
+T126	Time 28503 28512	2014-4-10
+T127	Indicator 28514 28532	xn--google-yri.com
+T128	Indicator 28459 28475	yahoomail.com.co
+T129	Address 28534 28546	81.17.28.229
+T130	Time 28548 28558	2013-12-08
+T131	Time 28560 28570	2014-01-15
+T132	Indicator 28572 28590	privacy-google.com
+T133	Indicator 28591 28605	appleid.com.co
+T134	Indicator 28607 28625	accounts-apple.com
+T135	Indicator 28626 28644	users-facebook.com
+T136	Address 28646 28658	81.17.28.229
+T137	Address 28659 28671	81.17.28.231
+T138	Address 28672 28684	81.17.28.231
+T139	Address 28685 28697	81.17.28.231
+T140	Address 28720 28732	81.17.28.231
+T141	Indicator 28699 28719	xn--facebook-06k.com
+T142	Time 28879 28889	2014-02-14
+T143	Time 28890 28900	2014-02-20
+T144	Time 28901 28911	2013-12-31
+T145	Time 28912 28922	2014-01-15
+T146	Time 28923 28933	2013-11-27
+T147	Time 28935 28945	2014-02-23
+T148	Time 28946 28956	2014-02-20
+T149	Time 28957 28967	2014-02-20
+T150	Time 28968 28978	2014-01-15
+T151	Time 28979 28989	2014-03-07
+T152	Attacker 29112 29122	HUrr!c4nE!
+T153	Attacker 29129 29135	Cair3x
+T154	AttackerGroup 29046 29064	Ajax Security Team
+R33	belongsTo Arg1:T152 Arg2:T154
+R34	belongsTo Arg1:T153 Arg2:T154
+T155	Attacker 29358 29362	0day
+T156	Attacker 29366 29377	Mohammad PK
+T157	Attacker 29384 29390	Crim3r
+R35	belongsTo Arg1:T155 Arg2:T154
+R36	belongsTo Arg1:T157 Arg2:T154
+R37	belongsTo Arg1:T156 Arg2:T154
+T158	AttackerGroup 29397 29415	Ajax Security Team
+T159	Indicator 29427 29439	ajaxtm[.]org
+T160	Attacker 31529 31538	HUrr!c4nE
+T161	Indicator 31503 31515	ajaxtm[.]org
+T162	Attacker 31547 31553	k3yv4n
+T163	Attacker 31579 31589	HUrr!c4nE!
+T164	Indicator 31682 31694	ajaxtm[.]org
+T165	Email 31731 31756	keyvan.ajaxtm@gmail[.]com
+T166	Indicator 31818 31837	aerospace2014[.]org
+R38	targets Arg1:T1 Arg2:T16
+R39	targets Arg1:T1 Arg2:T17
+R40	targets Arg1:T1 Arg2:T18
+R41	targets Arg1:T1 Arg2:T21
+R42	targets Arg1:T1 Arg2:T31
+R43	targets Arg1:T1 Arg2:T32
+R44	targets Arg1:T1 Arg2:T123
+R45	hasCharacteristics Arg1:T44 Arg2:T37
+R46	hasCharacteristics Arg1:T44 Arg2:T38
+R47	hasCharacteristics Arg1:T44 Arg2:T39
+R48	hasCharacteristics Arg1:T44 Arg2:T40
+R49	hasCharacteristics Arg1:T44 Arg2:T67
+R50	hasCharacteristics Arg1:T44 Arg2:T68
+R51	usesAddress Arg1:T5 Arg2:T136
+R52	usesAddress Arg1:T5 Arg2:T137
+R53	usesAddress Arg1:T5 Arg2:T138
+R54	usesAddress Arg1:T5 Arg2:T139
+R55	usesAddress Arg1:T5 Arg2:T140
+R56	usesAddress Arg1:T5 Arg2:T124
+R57	usesAddress Arg1:T5 Arg2:T129
+R58	usesAddress Arg1:T5 Arg2:T109
+R59	usesAddress Arg1:T5 Arg2:T104

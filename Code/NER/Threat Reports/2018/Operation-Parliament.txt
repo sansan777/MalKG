@@ -1,0 +1,130 @@
+¨C 
+SavewebpagesasPDFwithPDFmyURLCisco Talos recently published 
+a 
+blogpost 
+describingtargeted attacks in the Middle East region which we believe may be connected. 
+Victimology and Statistics 
+Based on our findings, we believe the attackers represent a previously unknown geopolitically motivated threat actor. The campaign started in 2017, with the attackers doing just enough to achieve their goals. They most likelyhave access to additionaltools when needed and appear to have access to an elaborate database of contacts in sensitive organizations and personnel worldwide, especially of vulnerable and non-trained staff. The victim systems range from personal desktop or laptop systems to large servers with domain controller roles or similar. The nature of the targeted ministries varied, including those responsible for telecommunications, health, energy, justice, finance and so on. 
+Victims have been spotted in the Palestinian Territories, Egypt, Jordan, the UAE, Saudi Arabia, Djibouti, Qatar, Lebanon, Chile, Somalia, Iraq, Morocco, Syria, India, Iran, Canada, the USA, the UK, Germany, Israel, Afghanistan, Serbia, Russia, Oman, Kuwait, South Korea and Denmark. 
+Num be r o f vict im  
+Vict im o r ganiz at io n t ype  o r ganiz at io ns  
+Unknown  91  
+Senates/Parliaments  7  
+Prime Ministerial Offices  3  
+Military/Intelligence Agencies  5  
+Other Gov./Ministerial/Diplomatic  20  
+Offices  
+Financial/Banking Institutions  5  
+Media Outlets  2  
+Olympic/Sports Bodies  2  
+Research Centers/Scholars  2  
+Election 
+Commissions 
+ 1  
+
+
+Distribution/Logistics 1 
+
+The number of victims/victim organizations probably doesn¡¯t represent the full scope of the attacks ¨C only a portion. 
+
+Attack description and attribution 
+Operation Parliament appears to be another symptom of escalating tensions in the Middle East region. The attackers have taken great care to stay under the radar, imitating another attackgroup in the region. They have been particularly careful to verify victim devices before proceeding with the infection, safeguarding their command and control servers. The targeting seems to have slowed down 
+since 
+the 
+beginning of 2018, probably winding down when the desired data or access was obtained. The targeting of specific victims is unlike previously seen behavior in regional campaigns by Gaza Cybergang or Desert 
+Falcons 
+and points to an elaborate information-gathering exercise that was carried out before the attacks (physical and/or digital). 
+
+With deception and false flags increasingly being employed by threat actors, attribution is a hard and complicated task that requires solid evidence, especially in complex regions such as the Middle East. 
+See the following for more information and examples of false flags being used in cyberattacks: 
+Wave 
+your 
+false 
+flags! 
+¡­or 
+the 
+Nightmares 
+and 
+Nuances 
+of 
+a 
+Self-Aware 
+Attribution 
+Space 
+
+OlympicDestroyer 
+is 
+here 
+to 
+trick 
+the 
+industry 
+
+
+Malware description 
+The malware was first seen packed with VMProtect; when unpacked the sample didn¡¯t show any similarities with previously known malware. All the strings and settings were encrypted and obfuscated. Functionality was identified that enables HTTP communication withthe C&C server and invokes ¡°processcreate¡± based on parameters received as a response. 
+The configuration and strings are encrypted using 3DES and Base64 encoding. Data sent to the C&C server is also encrypted using 3DES and Base64. Different keys are used for local and network encryption. 
+The malware starts communicating with the C&C server by sending basic information about the infected machine. The C&C server then replies with the encrypted serialized configuration. 
+The malware basically provides a remote CMD/PowerShell terminal for the attackers, enabling them to execute scripts/commands and receive the results via HTTP requests. 
+SavewebpagesasPDFwithPDFmyURL
+Sample of the C&C response with encrypted commands and configurations 
+
+Examples of attack decoys 
+
+Translation: Contacts list of media personnel 
+SavewebpagesasPDFwithPDFmyURL
+Translation: Relations between UAE and Jordan, and the impact caused by the non-boycott of Qatar 
+SavewebpagesasPDFwithPDFmyURL
+Translation: Military retirement statement 2017 June 
+SavewebpagesasPDFwithPDFmyURL
+Translation: The new Hamas structure for Gaza strip 2017 
+SavewebpagesasPDFwithPDFmyURL
+
+What should high-pro.le organizations do? 
+High-profile organizations should have elevated levels of cybersecurity. Attacks against them are inevitable and are unlikely to ever cease. These organizations need to pay particular attention to their security, implementing additional measures to ensure they are well protected. Anti-targeted attack solutions, threat intelligence capabilities and data flows, default-deny application lockdown, endpoint detection and response, data leak and insider threat prevention, and even isolated/air-gapped networks should form the basis of any strategy for protecting organizations in the current threat landscape. 
+SavewebpagesasPDFwithPDFmyURLThe victims of Operation Parliament need to re-evaluate their approach to cybersecurity. 
+
+Additional information 
+For more information about the attacks and the indicators of compromise, please contact: 
+intelreports@kaspersky.com 
+Alternatively, please visit: https://www.kaspersky.com/enterprise-security/apt-intelligence-reporting 
+To find more information about cybersecurity awareness training for enterprise or government staff, 
+go to Kaspersky 
+Security 
+Awareness. 
+
+Share post on: 
+
+Related Posts 
+
+LEAVE A REPLY 
+Your 
+email 
+address 
+will 
+not be published. Required fields are marked * 
+SavewebpagesasPDFwithPDFmyURLEnter your comment here 
+Name * 
+Email * 
+Notify me when new comments are added. 
+
+SavewebpagesasPDFwithPDFmyURL
+Please upgrade to a supported browser to get a reCAPTCHA challenge. 
+Alternatively if you think you are getting this page in error, please check your internet connection and reload. 
+
+. 2018 
+AO 
+Kaspersky 
+Lab. 
+All Rights Reserved. Email Registered trademarks and service marks are the property of their respective owners. 
+Contact 
+us 
+| Privacy 
+Policy 
+| License 
+Agreement 
+
+
+SavewebpagesasPDFwithPDFmyURL
+
+

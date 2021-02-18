@@ -1,0 +1,35 @@
+T1	ExploitTargetObject 184 191	Israeli
+T2	Malware 674 680	Gholee
+T3	Malware 642 648	Gholee
+T4	File 812 842	Operation Protective Edge.xlsb
+R1	indicates Arg1:T4 Arg2:T2
+T5	MD5 850 882	d0c3f4c9896d41a7c42737134ffb4c2e
+R2	indicates Arg1:T5 Arg2:T2
+T6	Time 938 952	10 August 2014
+R3	hasAttackTime Arg1:T2 Arg2:T6
+T7	Country 959 965	Israel
+R4	hasAttackLocation Arg1:T2 Arg2:T7
+T8	Organization 1259 1268	Kaspersky
+T9	Malware 1273 1303	TrojanDropper.MSExcel.Agent.ce
+T10	Exploit 1508 1526	social engineering
+R5	hasAttackLocation Arg1:T10 Arg2:T7
+T11	Malware 2421 2444	NTUSER.data.{GUIDE}.dll
+T12	MD5 2451 2483	48573a150562c57742230583456b4c02
+R6	indicates Arg1:T12 Arg2:T11
+T13	Obfuscation 2615 2625	obfuscated
+R7	hasCharacteristics Arg1:T11 Arg2:T13
+T14	Malware 2982 2988	Gholee
+T15	Address 3109 3121	83.170.33.60
+R8	usesAddress Arg1:T14 Arg2:T15
+T16	MD5 3720 3767	9C 80 C2 47 40 6D 6C ED FC E0 08 AE EF D9 98 90
+R9	indicates Arg1:T16 Arg2:T14
+T17	Malware 4110 4124	svchost 67.exe
+T18	MD5 4132 4164	916be1b609ed3dc80e5039a1d8102e82
+R10	indicates Arg1:T18 Arg2:T17
+T19	Address 4410 4422	83.170.33.37
+R11	usesAddress Arg1:T17 Arg2:T19
+T20	File 4474 4504	Operation Protective Edge.xlsb
+R12	indicates Arg1:T20 Arg2:T17
+T21	Address 4955 4967	83.170.33.60
+T22	Address 4968 4980	83.170.33.37
+T23	File 5061 5083	NTUSER.DAT.{$GUID}.dll

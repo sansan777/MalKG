@@ -1,0 +1,16 @@
+T1	TrojanHorse 65 69	Duqu
+T2	Malware 467 474	Stuxnet
+T3	Indicator 1062 1064	~d
+T4	File 1760 1770	Mrxcls.sys
+T5	Indicator 1821 1831	Mrxcls.sys
+T6	Indicator 1852 1868	Mrxnet.sys 17400
+T7	Indicator 1882 1899	Jmidebs.sys 25552
+T8	File 3944 3967	Rootkit.Win32.Stuxnet.a
+T9	File 4126 4137	rtniczw.sys
+T10	MD5 4165 4197	546C4BBEBF02A1604EB2CAAAD4974DE0
+T11	File 5987 5999	rndismpc.sys
+T12	MD5 6033 6065	9AEC6E10C5EE9C05BED93221544C783E
+R1	indicates Arg1:T3 Arg2:T2
+R2	indicates Arg1:T5 Arg2:T2
+R3	indicates Arg1:T6 Arg2:T2
+R4	indicates Arg1:T7 Arg2:T2

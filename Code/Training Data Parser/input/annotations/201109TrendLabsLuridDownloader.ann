@@ -1,0 +1,217 @@
+T1	Malware 1906 1922	Lurid Downloader
+T2	MalwareFamily 1968 1973	Enfal
+T3	Country 2019 2025	Russia
+T4	Country 2865 2870	China
+T5	Campaign 3110 3116	Aurora
+T6	Organization 3128 3134	Google
+R3	targets Arg1:T5 Arg2:T6
+T7	Time 3138 3147	late 2009
+R4	hasAttackTime Arg1:T5 Arg2:T7
+T8	Country 3458 3462	U.S.
+R5	hasAttackLocation Arg1:T5 Arg2:T8
+T9	Information 3757 3771	space industry
+T10	Information 3786 3817	operations in oil & gas, mining
+T11	MalwareCharacteristics 4711 4725	spear phishing
+T12	MalwareFamily 5154 5159	Enfal
+T13	ExploitTargetObject 5241 5245	NGOs
+T14	Malware 4938 4954	Lurid Downloader
+T15	Attacker 5430 5438	GhostNet
+T16	Attacker 5445 5454	ShadowNet
+T17	AttackerGroup 5854 5869	Byzantine Hades
+T18	Attacker 5921 5937	Byzantine Anchor
+T19	Attacker 5941 5957	Byzantine Candor
+T20	Attacker 5964 5982	Byzantine Foothold
+R7	belongsTo Arg1:T18 Arg2:T17
+R8	belongsTo Arg1:T19 Arg2:T17
+R9	belongsTo Arg1:T20 Arg2:T17
+# T21	ExploitTargetObject 6402 6419	Tibetan community
+T22	Malware 6255 6271	Lurid Downloader
+T23	Country 7839 7849	Kazakhstan
+T24	Country 7860 7867	Ukraine
+T25	Campaign 6838 6854	Lurid Downloader
+R11	hasAttackLocation Arg1:T25 Arg2:T23
+R12	hasAttackLocation Arg1:T25 Arg2:T24
+T26	Software 10262 10274	Adobe Reader
+T27	Software 10292 10307	Microsoft Ofﬁce
+T28	Email 10969 10988	ohhdl@dalailama.com
+T29	File 11117 11141	LOSAR FLYER_edited-3.pdf
+R13	hasAttachment Arg1:T28 Arg2:T29
+T30	Email 11326 11342	emb107@gawab.com
+T31	Address 11376 11387	96.46.11.88
+T32	Address 11286 11298	66.220.20.18
+T33	Indicator 11269 11284	info3.gawab.com
+T34	MD5 12151 12183	84d24967cb5cbacf4052a3001692dd54
+T35	File 12185 12195	ctfmon.exe
+T36	MD5 11884 11916	322fcf1b134fef1bae52fbd80a373ede
+T37	File 11918 11942	LOSAR_FLYER_edited-3.pdf
+T38	Vulnerability 12018 12029	util.printd
+T39	Vulnerability 12045 12057	CVE2009-4324
+T40	Malware 11944 11960	TROJ_PIDIEF.SMZX
+R14	exploits Arg1:T40 Arg2:T38
+R15	exploits Arg1:T40 Arg2:T39
+T41	Software 12072 12088	Adobe Reader 9.x
+R16	hasVulnerability Arg1:T41 Arg2:T39
+R17	hasVulnerability Arg1:T41 Arg2:T38
+T42	Malware 12197 12209	TROJ_MECIV.A
+R18	exploits Arg1:T42 Arg2:T38
+T43	Vulnerability 12294 12307	CVE-2009-4324
+R19	exploits Arg1:T42 Arg2:T43
+T44	MD5 12423 12455	3447416fbbc65906bd0384d4c2ba479e
+T45	File 12457 12469	mspmsnsr.dll
+R20	indicates Arg1:T35 Arg2:T42
+R21	indicates Arg1:T34 Arg2:T42
+R22	indicates Arg1:T37 Arg2:T40
+R23	indicates Arg1:T36 Arg2:T40
+T46	Malware 12478 12490	TROJ_MECIV.A
+R24	indicates Arg1:T45 Arg2:T46
+R25	indicates Arg1:T44 Arg2:T46
+T47	Dropper 12685 12695	ctfmon.exe
+T48	File 12768 12780	mspmsnsr.dll
+R26	indicates Arg1:T48 Arg2:T47
+T49	Indicator 12889 12947	HKLM\SYSTEM\CurrentControlSet\Services\WmdmPmSp\Parameters
+T50	MD5 13146 13178	856de08a947a40e00ea7ed66b8e02c53
+T51	File 13180 13191	isssync.exe
+T52	GeneralVirus 13193 13208	WORM_OTORUN.TMP
+R27	indicates Arg1:T51 Arg2:T52
+R28	indicates Arg1:T50 Arg2:T52
+T53	SystemInformation 13745 13758	Computer name
+T54	SystemInformation 13759 13770	MAC address
+T55	SystemInformation 13771 13794	computer OS and version
+T56	NetworkInformation 13795 13805	IP address
+T57	SystemInformation 13819 13851	language of the operating system
+T58	MalwareCharacteristics 14273 14298	XOR singlebyte encryption
+T59	MalwareCharacteristics 15100 15113	HTTP protocol
+T60	Indicator 15235 15248	/trandocs/mm/
+T61	Indicator 15415 15418	123
+T62	Password 15893 15903	hallelujah
+T63	Indicator 16438 16488	/trandocs/mm/ <machine_name>:<MAC address>/Cmwhite
+T64	Indicator 16790 16809	/cgl-bin/Clnpp5.cgi
+T65	Indicator 16900 16918	/cgl-bin/Rwpq1.cgi
+T66	Indicator 21576 21619	e:\programs\LuridDownLoader\LuridDownloader
+T67	TrojanHorse 21624 21676	Falcon\DllServiceTrojan\Release\DllServiceTrojan.pdb
+R29	indicates Arg1:T66 Arg2:T67
+T68	Indicator 21677 21720	e:\programs\LuridDownLoader\LuridDownloader
+T69	Malware 21725 21766	Falcon\ServiceDll\Release\ ServiceDll.pdb
+R30	indicates Arg1:T68 Arg2:T69
+T70	Email 22666 22687	bruce_tuner@yahoo.com
+T71	Email 22694 22711	icqmaster@163.com
+T72	Malware 21811 21827	Lurid DownLoader
+T73	Indicator 22869 22883	mailru-vip.com
+T74	Indicator 22884 22898	yandex-vip.com
+T75	Indicator 22899 22921	google-ofﬁceonline.com
+T76	Indicator 22922 22940	ofﬁce-helppane.com
+T77	Indicator 22941 22954	foxit-pro.com
+T78	Indicator 22955 22968	ymail-vip.com
+T79	Indicator 22969 22982	ymail-pro.com
+T80	Indicator 22983 22997	yandex-pro.com
+T81	Indicator 22998 23014	google-ofﬁce.com
+T82	Indicator 23015 23029	mailru-pro.com
+T83	Person 23031 23042	xiaohu wang
+T84	Email 23043 23064	bruce_tuner@yahoo.com
+T85	Indicator 23142 23152	hoticq.com
+T86	Indicator 23153 23163	redhag.com
+T87	Indicator 23164 23173	zadhc.com
+T88	Indicator 23174 23185	lasmail.com
+T89	Indicator 23186 23197	hotoicq.com
+T90	Person 23199 23209	jason bush
+T91	Email 23210 23227	icqmaster@163.com
+T92	Location 23271 23283	Xueyuan Road
+T93	Location 23284 23300	Haidian District
+T94	Location 23301 23308	Beijing
+T95	Country 26548 26555	Vietnam
+T96	Country 26557 26562	India
+T97	Country 26564 26572	Mongolia
+T98	Country 26577 26582	China
+T99	Time 26731 26749	June and July 2011
+T100	Campaign 27592 27598	strong
+T101	Country 27648 27655	Vietnam
+R31	hasAttackLocation Arg1:T100 Arg2:T101
+T102	Campaign 27658 27666	ejun0708
+T103	Country 27677 27683	Russia
+T104	Country 27690 27697	Ukraine
+T105	Country 27712 27726	Czech Republic
+T106	Country 27728 27738	Kazakhstan
+T107	Country 27740 27751	Switzerland
+T108	Country 27753 27763	Tajikistan
+T109	Country 27768 27775	Belarus
+R32	hasAttackLocation Arg1:T102 Arg2:T103
+R33	hasAttackLocation Arg1:T102 Arg2:T104
+R34	hasAttackLocation Arg1:T102 Arg2:T105
+R35	hasAttackLocation Arg1:T102 Arg2:T106
+R36	hasAttackLocation Arg1:T102 Arg2:T107
+R37	hasAttackLocation Arg1:T102 Arg2:T108
+R38	hasAttackLocation Arg1:T102 Arg2:T109
+T110	Campaign 27777 27785	ejun0614
+T111	Country 27797 27803	Russia
+T112	Country 27810 27815	China
+T113	Country 27822 27832	Kyrgyzstan
+T114	Country 27839 27849	Tajikistan
+T115	Country 27864 27866	UK
+T116	Country 27868 27870	US
+T117	Country 27872 27880	S. Korea
+T118	Country 27882 27896	Czech republic
+T119	Country 27898 27906	Pakistan
+T120	Country 27908 27915	Germany
+T121	Country 27920 27930	Kazakhstan
+R39	hasAttackLocation Arg1:T110 Arg2:T111
+R40	hasAttackLocation Arg1:T110 Arg2:T112
+R41	hasAttackLocation Arg1:T110 Arg2:T113
+R42	hasAttackLocation Arg1:T110 Arg2:T114
+R43	hasAttackLocation Arg1:T110 Arg2:T115
+R44	hasAttackLocation Arg1:T110 Arg2:T116
+R45	hasAttackLocation Arg1:T110 Arg2:T117
+R46	hasAttackLocation Arg1:T110 Arg2:T118
+R47	hasAttackLocation Arg1:T110 Arg2:T119
+R48	hasAttackLocation Arg1:T110 Arg2:T120
+R49	hasAttackLocation Arg1:T110 Arg2:T121
+T122	Campaign 27933 27945	strongNewDns
+T123	Country 27994 28001	Vietnam
+R50	hasAttackLocation Arg1:T122 Arg2:T123
+T124	Campaign 28004 28012	ejun0509
+T125	Country 28024 28030	Russia
+T126	Country 28037 28044	Ukraine
+R51	hasAttackLocation Arg1:T124 Arg2:T125
+R52	hasAttackLocation Arg1:T124 Arg2:T126
+T127	Campaign 28046 28054	ejun0511
+T128	Country 28066 28072	Russia
+T129	Country 28079 28086	Ukraine
+T130	Country 28093 28103	Kazakhstan
+T131	Country 28119 28133	Czech Republic
+T132	Country 28138 28148	Azerbaijan
+R53	hasAttackLocation Arg1:T127 Arg2:T132
+R54	hasAttackLocation Arg1:T127 Arg2:T128
+R55	hasAttackLocation Arg1:T127 Arg2:T129
+R56	hasAttackLocation Arg1:T127 Arg2:T130
+R57	hasAttackLocation Arg1:T127 Arg2:T131
+T133	Campaign 28150 28154	7-28
+T134	Country 28166 28173	Vietnam
+T135	Country 28190 28193	UAE
+T136	Country 28195 28203	Cambodia
+T137	Country 28205 28213	Thailand
+T138	Country 28218 28223	China
+R58	hasAttackLocation Arg1:T133 Arg2:T134
+R59	hasAttackLocation Arg1:T133 Arg2:T135
+R60	hasAttackLocation Arg1:T133 Arg2:T136
+R61	hasAttackLocation Arg1:T133 Arg2:T137
+R62	hasAttackLocation Arg1:T133 Arg2:T138
+T139	Campaign 28225 28233	ejun0503
+T140	Country 28245 28251	Russia
+T141	Country 28266 28273	Ukraine
+T142	Country 28278 28292	Czech Republic
+R63	hasAttackLocation Arg1:T139 Arg2:T140
+R64	hasAttackLocation Arg1:T139 Arg2:T141
+R65	hasAttackLocation Arg1:T139 Arg2:T142
+T143	Campaign 28294 28307	0dayaug12.exe
+T144	Country 28319 28326	Belarus
+T145	Country 28336 28346	Kazakhstan
+R66	hasAttackLocation Arg1:T143 Arg2:T144
+R67	hasAttackLocation Arg1:T143 Arg2:T145
+T146	Country 28414 28425	Netherlands
+T147	Country 28441 28452	Switzerland
+T148	Region 28461 28475	European Union
+T149	Malware 33708 33724	Lurid Downloader
+T150	MalwareFamily 33668 33673	Enfal
+R6	hasFamily Arg1:T149 Arg2:T150
+R10	hasMember Arg1:T150 Arg2:T149
+R1	hasMember Arg1:T2 Arg2:T1
+R2	hasFamily Arg1:T1 Arg2:T2

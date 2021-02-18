@@ -1,0 +1,117 @@
+OceanLotus: Extending Cyber Espionage Operations ThroughFake Websites
+volexity.com/blog/2020/11/06/oceanlotus-extending-cyber-espionage-operations-through-fake-websites
+November 6, 2020
+by Steven Adair, Thomas Lancaster, Volexity Threat Research
+Since Volexity¡¯s 2017 discovery that OceanLotus was behind a sophisticated massive digital surveillancecampaign, the threat group has continued to evolve. In 2019, Volexity gave a presentation at RSAConference that provided a historic and up-to-date look at various operations of the Vietnamese threatactor OceanLotus. Notably, the presentation revealed that, for years, OceanLotus set up and operatedmultiple activist, news, and anti-corruption websites. At first glance, it appeared these were realwebsites that had been compromised. These fake websites were convincingly legitimate and allowedOceanLotus to have full control over the tracking of and attacks against website visitors. The mostpopular of these websites even had a corresponding Facebook page with over 20,000 followers.Shortly after the presentation was given, these websites were shut down or abandoned.
+However, old habits and successful techniques die hard. Volexity has identified multiple new attackcampaigns being launched by OceanLotus via multiple fake websites and Facebook pages that havebeen set up within the last year. In addition to targeting those within Vietnam, Volexity has seenrenewed targeting of OceanLotus¡¯s neighbors throughout Southeast Asia. These websites have beenobserved profiling users, redirecting to phishing pages, and being leveraged to distribute malwarepayloads for Windows and OSX. This post will focus on one of the larger campaigns where OceanLotushas leveraged multiple fake news websites to target users.
+Newsworthy Websites
+Throughout the year, Volexity identified multiple Vietnamese-language news websites that appeared tobe compromised, as they were being used to load an OceanLotus web profiling framework. The exactfunctionality varied from site to site, but the goal of these frameworks was to gather information aboutsite visitors and, in some cases, deliver malware. This code appears to be a variation of what Volexityhas previously described as Framework A.
+However, upon closer inspection of the websites, Volexity found the sites were not compromised,instead they were created and operated by OceanLotus. Each of the websites appears to have had adecent level of effort to build it, as there are numerous variations in themes, content, and even customimages and slogans.The websites all claim to be news sites and contain a great deal of benign content,with no malicious redirects or profiling in place on the vast majority of pages including the main indexpage. Instead, generally speaking, only a handful of specific articles within each site contain maliciouscontent. The sites vary in theme, with some focused on Vietnamese news while others are focused onnews themed around other Southeast Asian countries.
+A list of websites that Volexity has identified is provided below. Each listing includes a thumbnail imagethat can be clicked to a see larger screen shot of the website. The majority of these websites are still liveat the time of this blog post and Volexity recommends against visiting them.
+WebsiteWebsiteWebsiteWebsite Theme/NotesTheme/NotesTheme/NotesTheme/Notes 
+baodachieu.com
+ This website covers general news and is written in Vietnamese. It has a cus-tom logo and slogan indicating it publishes things that others want to hide. 
+baomoivietnam.-com
+ This website covers general news and is written in Vietnamese. It has a cus-tom logo and tagline indicating it has short and reliable news. 
+ledanvietnam.org
+ This website shares ¡°the people¡¯s news¡± and is written in Vietnamese. It isdesigned to provide news that is different than that of official governmentnews. It has a custom logo and slogan mentioning truth and responsibility. 
+nhansudaihoi13.org
+ This website is dedicated to news surrounding the upcoming 13th NationalCongress of the Communist Party of Vietnam, which convenes in January2021. There is no custom logo or slogan for this website. 
+tocaoonline.org
+ This website is dedicated to news and the ¡°truth.¡± The website has a cus-tomized header image that is displayed on all pages. 
+thamcungbisu.org
+ This website covers general news and is written in Vietnamese. There is nocustom logo or slogan for this website. It uses many WordPress defaults toinclude the website description of ¡°Just another WordPress site.¡± 
+tinmoivietnam.com
+ This website covers general news and is written in Vietnamese. There is nocustom logo or slogan for this website. The domain name is very similar innaming to a non-malicious website that is accessible via tinmoivietnam.net. 
+kmernews.com
+ This website covers general news and is written in Cambodian. It purports tobe an ¡°online newspaper¡± and does not have a custom logo or slogan. 
+laostimenews.com
+ This website covers general news and is written in English and Laotian. Itlooks to take much of its content from the website of the Laotian Times (lao-tiantimes.com). The website does not have a custom logo or slogan. 
+malaynews.org
+ This website covers general news and is written in English and Malay. Thewebsite does not have a custom logo or slogan. 
+philiippines-news.net
+ This website covers general news and is written in English. The website doesnot have a custom logo or slogan. 
+khmer-livenews.-com
+ This website covers general news and is written in Cambodian. The websitedoes not have a custom logo or slogan. 
+khmerleaks.com
+ This website focuses specifically on Cambodia-centric news and offers con-tent in both Cambodian and English. The slogan for the site is ¡°Stay up todate with the hottest news about the country.¡± 
+
+While a couple of the websites above may use a similar layout, the vast majority have their own themeand layout which makes the sites appear to have nothing to do with one another. The sites also largelystick to a wide variety of news that would be interesting to the masses across the different targeted userbases.
+However, one of the sites is a bit more specific than the rest and is quite political in nature..The websitenhansudaihoi13[.]org pertains to the upcoming 13th Vietnamese Communist Congress where newpolitical leaders will be elected. This website has a corresponding Facebook page filled with posts copiedfrom other Vietnamese media outlets focusing on corruption within Vietnamese politics. The page hasover 1,000 likes and interactions from a number of individuals in Vietnam. Notably, the Facebook pagehas a Messenger account associated with it which could be used to send messages to individuals ofinterests.
+Targeting Visitors
+The websites contain numerous articles and content to make them seem legitimate; in some cases thewebsites have over 10,000 individual news articles. Volexity has found the content is largely scrapedand reposted in full from various other legitimate online news outlets. This appears to be done in anautomated fashion and most likely through WordPress plugins. Numerous posted articles and imagescan be directly tracked back to other online blogs and newspapers; sometimes the byline or evenwatermark in images show directly where the article was sourced. In some cases, only a small number ofpages on the site contains malicious code; in other cases, the profiling code is pervasive.
+Volexity believes it is likely that individuals are targeted through these websites in two ways. The first isthrough profiling frameworks that exist on many of the pages that can be used to identify and evaluateinformation about users that visit the website by happenstance. The second is through individuallytargeting victims who are sent links to specific news containing malware delivery logic through spearphishing and social media messages.
+When the users visit a page with an infection chain on it, malicious JavaScript is loaded. The exactworkflow of the script varies between different infected pages but generally there are two parts:
+1. 
+A script to capture and store information about the visitor;
+2. 
+A second script which socially engineers targets into downloading a fake software update ordocument. The exact nature of the malware downloaded is sometimes configured based on theuser¡¯s browser and the content.
+
+To illustrate a real example of how this worked and looked to a website visitor, the following section willuse one of the few pages of the fake site baomoivietnam[.]com that was designed to profile visitorsand deliver malware or a phishing link..On this site, a news story(https://www.baomoivietnam[.]com/dai-hoc-ton-duc-thang-hieu-truong-lam-quyen-de-xay-ra-sai-pham/) about an investigation into potential improper conduct by a university professor in Vietnamcontained malicious content. Once the page was accessed, a special OceanLotus server on thehostname.cdn.arbenha[.]com would be leveraged to load malicious JavaScript to load a fake videoplayer. At first, the page would display a dialog indicating that the video was loading (.ang t.i) asshown in Figure 1 below.
+Figure 1. Fake video player dialog indicating a video is loading
+If the visitor is coming from a Windows system, after a few seconds the video will fail to load. A messagewill be displayed indicating that Flash Player is required, along with a button that can be clicked toimmediately upgrade. An image of how this appears to the visitor is shown in Figure 2 below.
+Figure 2. Message displayed alerting the user to upgrade Flash Player
+The button would then lead to the download a RAR archive named Adobe_Flash_Install.rar. Thisarchive was designed to fool the targeted user into infected themselves with a Cobalt Strike implant.Details on the contents of this file are included later in this report.
+If a visiting user is on a mobile device that was detected as running iOS or Android, an image isdisplayed, indicating that the requested video contains age-restricted content. The visitor is supposed to¡°Sign in¡± to view the content as shown in Figure 3.
+Figure 3. Mobile users presented with ¡°Sign in¡± message
+The SIGN IN button contained a hyperlink to a page on the hostname accounts.gservice[.]reviews.This page was down did not return interesting content in any of Volexity¡¯s tests. Volexity believes thispage is likely intended to be used for phishing credentials.
+Finally, if users attempt to access the page using a device for which there is no configured payload, theyare advised to access the content using a different device. The error this is displayed is shown in Figure4.
+Figure 4. Message displayed to users not on Windows, Android, or iOS devices.
+The appearance of the overlay and the URL for the various buttons shown above are generatedaccording to the visitor¡¯s browser data. A closer look at the payload delivery component of theJavaScript is shown below. It shows the malware download URLs hosted on Dropbox for Windowsusers, and the identical phishing links for Android and iOS visitors.
+var os_url_mapping = {¡®windows_x86.:¡¯https://www.dropbox[.]com/s/puhwqhjcvn2xuum/Adobe_Flash_Install.rar?dl=1¡¯,¡®windows_x64.:¡¯https://www.dropbox[.]com/s/puhwqhjcvn2xuum/Adobe_Flash_Install.rar?dl=1¡¯,¡®linux_x86¡¯:¡±,¡®linux_x64¡¯:¡±,¡®mac_os¡¯:¡±,¡®android¡¯:¡¯https://accounts.gservice[.]reviews/?ancf_=36562273654a289e0cc0418f1c9d4b&_hhobt=5b878805dc643d7e66d81b45797a3d323baa7def&edobt=5edf2e13.,¡®ios¡¯:¡¯https://accounts.gservice[.]reviews/?ancf_=36562273654a289e0cc0418f1c9d4b&_hhobt=5b878805dc643d7e66d81b45797a3d323baa7def&edobt=5edf2e13.};
+On other websites, different cloud storage solutions such as Amazon S3 or Google Drive were used tohost Windows, OSX, and Android malware payloads. The OSX and Android implants will be detailed ina future blog.
+Cobalt Strike: For Red Teams and Nation State Actors
+The Adobe_Flash_install.rar archive that was returned from the baomoivietnam[.]com websitecontained the files Flash_Adobe_Install.exe and goopdate.dll. The table below provides somebasic information on all three of these files.
+FilenameFilename SHA256SHA256 NotesNotes 
+Adobe_Flash_In-stall.rar 230ac0808fde525306d6e55d389849f67fc328968c433a5053d676d688032e6f RAR filecontain-ingAdobe_Flash_Install.exeandgoop-date.dll 
+Flash_Adobe_In-stall.exe 69061e33acb7587d773d05000390f9101f71dfd6eed7973b551594eaf3f04193 A legiti-matecopy ofGoogle¡¯sUpdateutility 
+goop-date.dll 7fd58fa4c9f24114c08b3265d30be5aa8f6519ebd2310cc6956eda6c6e6f56f0 A mali-ciousDLLcraftedby theattacker 
+
+The file goopdate.dll has the hidden file attribute set and will not show in Windows Explorer onsystems using default settings. This results in the user seeing only the Flash_Adobe_Install.exe fileto execute in order to install what they believe to be an update to Flash Player. When run, it willautomatically load goopdate.dll due to search order hijacking. Goopdate.dll is a highly obfuscatedloader whose ultimate purpose is to load a Cobalt Strike stager into memory and then execute it. TheCobalt Strike stager will simply try to download and execute a shellcode from a remote server, in thiscase using the following URL:
+summerevent.webhop[.]net/QuUA
+The table below has the details for the returned file from the Cobalt Strike staging server at the time ofanalysis.
+SHA256 Notes 
+cbca9a92a6aa067ff4cab8f1d34ec49ffc9a06c90881f48-da369c973182ce06d BEACON binary returned by C2server 
+
+This payload is configured to talk to the same domain (summerevent.webhop[.]net) using a malleablecommand-and-control (C2) profile for Cobalt Strike that impersonates Google¡¯s Safe Browsing service.This malleable C2 profile is used by a wide variety of red team and real-world attackers. It is readilyavailable on GitHub and has been used by OceanLotus as far back as 2017. The payload containedseveral configuration strings encoded with the single-byte XOR key 0x69.. Interesting and relevantdecoded strings are listed below:
+summerevent.webhop.net,/safebrowsing/rd/tnOztRgLx1ugKt8uumGcreRFm5CqXD9ge-zzz5sA6WzhC Mozilla/5.0 (Windows NT 6.0; rv:34.0) Gecko/20100101 Firefox/34.0 @/safebrowsing/rd/r8l4jO3947jVxa5wBhEijGc0y77iX4oFy GAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 Accept-Language: en-US,en;q=0.5 Accept-Encoding: gzip, de.ate PREF=ID= Cookie GAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 Accept-Language: en-US,en;q=0.5 Accept-Encoding: gzip, de.ate U=sRv85UHijBrrWiHz PREF=ID=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+Conclusion
+OceanLotus has continued to evolve the ways in which it seeks to target individuals outside of spearphishing and leveraging compromised websites. The creation and maintenance of several websites, forthe purpose of creating a larger online presence in which the attack chain against visitors can be fullycontrolled, is not an attack method commonly identified. This level of effort shows that OceanLotus willgo to great lengths to extend its reach and find new ways to compromise individuals and organizations ithas set its focus on.
+Individuals that are at high risk and likely to be targeted by OceanLotus should be particularly carefulwith respect to websites they are visiting, especially if the websites are suggested or otherwise linked tovia e-mail, chat, messaging services, or even SMS. Further, regardless of the websites, Volexityrecommends these individuals use extreme caution if a website presents a file for download or requeststhat they sign in. OceanLotus has used techniques to fool users into revealing their credentials,authorizing malicious OAuth access, or downloading malware onto their systems for several years.
+Indicators of Compromise
+Value Type Notes 
+thamcungbisu[.]org Domain Fake siteset up byOceanLo-tus 
+baomoivietnam[.]com Domain Fake siteset up byOceanLo-tus 
+baodachieu[.]com Domain Fake siteset up byOceanLo-tus 
+nhansudaihoi13[.]org Domain Fake siteset up byOceanLo-tus 
+tinmoivietnam[.]com Domain Fake siteset up byOceanLo-tus 
+laostimenews[.]com Domain Fake siteset up byOceanLo-tus 
+malaynews[.]org Domain Fake siteset up byOceanLo-tus 
+kmernews[.]com Domain Fake siteset up byOceanLo-tus 
+philiippinesnews[.]net Domain Fake siteset up byOceanLo-tus 
+ledanvietnam[.]org Domain Fake siteset up byOceanLo-tus 
+khmerleaks[.]com Domain Fake siteset up byOceanLo-tus 
+khmer-livenews[.]com Domain Fake siteset up byOceanLo-tus 
+hypepodscase[.]com Domain Used tohostOceanLo-tus profil-ing kit andmalwaredeliveryJS 
+arbenha[.]com Host-name Used tohostOceanLo-tus profil-ing kit andmalwaredeliveryJS 
+gservice[.]reviews Domain Likelyused inAndroidphishing inSWCcontext 
+summerevent.webhop[.]net Domain CobaltStrike C2address 
+dance-til-dawn.podzone[.]net Domain CobaltStrike C2address 
+andreagahuvrauvin[.]com Domain OceanLo-tus DNSmalwareC2address 
+theme.blogwix[.]com Host-name Used tohostOceanLo-tus profil-ing kit andmalwaredeliveryJS 
+outlook-client[.]com Domain Likelyused inphishing inSWCcontext 
+gusercontent[.]com Domain Likelyused inphishing inSWCcontext 
+serrvice[.]net Domain Likelyused inphishing inSWCcontext 
+yhsetting[.]com Domain Likelyused inphishing inSWCcontext 
+hmacount[.]com Domain Likelyused inphishing inSWCcontext 
+fontloading[.]com Domain Likelyused inphishing inSWCcontext 
+viewerservice[.]com Domain Likelyused inphishing inSWCcontext 
+cbca9a92a6aa067ff4cab8f1d34ec49ffc9a06c90881f48da369c973182ce06d SHA256 Cobalt-StrikeBeaconfile 
+230ac0808fde525306d6e55d389849f67fc328968c433a5053d676d688032e6f SHA256 RAR deliv-ery file 
+7fd58fa4c9f24114c08b3265d30be5aa8f6519ebd2310cc6956eda6c6e6f56f0 SHA256 LoaderDLL 
+
+
+
+
+  
+

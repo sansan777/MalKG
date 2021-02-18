@@ -1,0 +1,32 @@
+T1	TrojanHorse 0 20	Trojan.APT.BaneChant
+T2	Dropper 558 575	Islamic Jihad.doc
+T3	ExploitTargetObject 649 692	governments of Middle East and Central Asia
+T4	Payload 3376 3388	MSCOMCTL.ocx
+T5	Vulnerability 3402 3415	CVE 2012-0158
+T6	Indicator 3864 3867	moo
+T7	Indicator 4366 4407	hxxp://symbisecure.com/update/winword.pkg
+T8	Dropper 5407 5418	winword.pkg
+T9	Payload 6485 6524	hxxp://kibber.no-ip.org/adserv/logo.jpg
+T10	Software 6537 6548	Mozilla/4.0
+T11	Software 6562 6570	MSIE 6.0
+T12	Software 6572 6586	Windows NT 5.1
+T13	File 6861 6900	C:\ProgramData\Google2\GoogleUpdate.exe
+T14	File 7092 7108	GoogleUpdate.exe
+T15	Indicator 7486 7523	hxxp://symbisecure.com/adserv/get.php
+T16	Obfuscation 7527 7534	Base-64
+T17	Indicator 7610 7619	BaneChant
+T18	TrojanHorse 7798 7818	Trojan.APT.BaneChant
+T19	Payload 8322 8338	GoogleUpdate.exe
+T20	Payload 8412 8428	GoogleUpdate.exe
+R1	hasCharacteristics Arg1:T18 Arg2:T20
+R2	hasCharacteristics Arg1:T18 Arg2:T19
+R3	indicates Arg1:T17 Arg2:T18
+R4	indicates Arg1:T15 Arg2:T18
+R5	hasCharacteristics Arg1:T18 Arg2:T16
+R6	indicates Arg1:T14 Arg2:T18
+R7	indicates Arg1:T13 Arg2:T18
+R8	hasCharacteristics Arg1:T18 Arg2:T9
+R9	hasCharacteristics Arg1:T8 Arg2:T9
+R10	hasCharacteristics Arg1:T2 Arg2:T4
+R11	indicates Arg1:T6 Arg2:T1
+R12	indicates Arg1:T7 Arg2:T1

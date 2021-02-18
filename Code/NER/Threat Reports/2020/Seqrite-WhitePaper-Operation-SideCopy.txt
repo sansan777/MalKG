@@ -1,0 +1,536 @@
+
+which has been incorrectly attributed for years 
+A report by Quick Heal Technologies Limited, India 
+
+
+
+Introduction 
+Quick Heal¡¯s threat intelligence team recently uncovered evidence of an advanced persistent threat (APT) against Indian defence forces. Our analysis shows that many old campaigns and attacks in the past one year relate to 'Operation SideCopy' by common IOCs. The background and analysis in this paper provide complete forensic and useful details of our current research on the malware in this operation. 
+
+Key Findings 
+. 
+Operation SideCopy is active from early 2019, till date. 
+
+. 
+This cyber-operation has been only targeting Indian defence forces and armed forces personnel. 
+
+. 
+Malware modules seen are constantly under development and updated modules are released after a reconnaissance of victim data. 
+
+. 
+Actors are keeping track of malware detections and updating modules when detected by Anti-Virus solutions. 
+
+. 
+Almost all CnC Servers belongs to Contabo GmbH and server names are similar to machine names found in the Transparent Tribe report. 
+
+. 
+This threat actor is misleading the security community by copying TTPs that point at Sidewinder APT group. 
+
+. 
+We believe that this threat actor has links with Transparent Tribe APT group. 
+
+
+
+Summary 
+A couple of months ago, Quick Heal¡¯s Next-Gen Behavioural Detection System alerted on a few processes executing HTA from few non-reputed websites. We have made a list of URLs, connected from mshta.exe, across multiple customers: 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/Armed-Forces-Spl-Allowance-Order/html/ 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/Defence-Production-Policy-2020/html/ 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/Images/8534 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/IncidentReport/html/ 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/ParaMil-Forces-Spl-Allowance-Order/html/ 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/Req-Data/html 
+hxxps://demo[.]smart-hospital[.]in/uploads/sta._documents/19/Sheet_Roll/html 
+
+
+
+The highlighted ones were sent to targets across Indian defence units and armed forces individuals. 
+We started tracking this campaign as it was targeting critical Indian organizations. Traces of this operation can be tracked from early 2019 till date. Till now, we have observed three infection chain processes. 
+Initial infection vector in two of the chains was LNK .le, that came from a malspam. But in 
+one case, we saw attackers making use of template injection attack and equation editor vulnerability (CVE-2017-11882) as the initial infection vector. Though the initial infection 
+vector is di.erent in the third case, the .nal payload is similar to the .rst two chains. 
+Below images will provide an overview of malware infection in victim machines. 
+Infection Chain ¨C Version 1: 
+
+
+
+
+
+Infection Chain ¨C Version 3: 
+
+
+
+The victim receives LNK .les, compressed into ZIP/RAR via emails. These .les are 
+shortcuts executing mshta.exe and providing remote HTA URL as the parameter. LNKs 
+have a double extension with document icons, to trick the victim into opening the .le. Victims just have to execute LNK .les and rest all modules follow in background. 
+
+
+Initial Infection Vector: Template Injection 
+
+
+
+
+
+Decoy Documents/Images: 
+Names of initial infection LNKs/Documents seems to be quite realistic and lure the victim 
+into opening it. And as the same say, the contents of decoy are related. Some sample decoy that we saw are: 
+
+
+
+
+
+
+
+
+
+
+
+
+Toolkit for both HTA-Stagers 
+Stage-1 and Stage-2 HTA .les seem to be created using CACTUSTORCH toolkit, which is 
+available on GitHub. 
+https://github.com/mdsecactivebreach/CACTUSTORCH 
+CactusTorch is inspired by StarFighters and uses the DotNetToJScript tool. It loads and 
+executes malicious .NET assemblies directly from memory. Similar to other .leless attack 
+techniques, DotNetToJScript does not write any part of the malicious .NET assembly on the victim machine. This blog contains good insight into how this toolkit works. 
+Stage-1 HTA: 
+
+This HTA .le is remotely downloaded via one of the URLs given in summary. It has 2 embedded .les; a decoy document (can be an image .le) and a DotNET module 
+named ¡®hta.dll¡¯. DotNET serialization is used to execute ¡®hta.dll¡¯ module. 
+The .rst section in this HTA .le checks for installed DotNET version and creates a .le at ¡®C:\ProgramData\script.js¡¯. This JS .le is responsible for restarting victim machine so that 
+no traces of running mshta.exe can be found. 
+
+
+The functionality of embedded DotNET module named ¡®hta.dll¡¯ can be seen using dnSpy tool. Looking at code, we can see that the malware modules are constantly under development. 
+
+
+It then downloads the later stage HTA ¡ª next stage HTA is decompressed in the same 
+way as decoy document i.e. Base64 + GZip decoding is done to get Stage-2 HTA .le. 
+
+
+Stage-2 HTA is nearly similar to Stage-1 HTA but has more embedded modules. Stage-2 
+HTA again uses DotNET serialization to execute embedded components with .le-less 
+technique. 
+At .rst, it checks for installed DotNET version: 
+
+Later it checks for installed Antivirus product and passes all information to serialized DotNet module named ¡®preBotHta.dll¡¯. 
+
+
+The functionality of ¡®preBotHta.dll¡¯ can be seen via dnSpy tool. As we can see, none of the functions are obfuscated. Similar to ¡®hta.dll¡¯, this malware module is also constantly under development as can be seen below. 
+
+
+Other functionality includes:   . Copying ¡°Credwiz.exe¡± (legit) from system32/SysWOW64 folder to 
+¡°C:\ProgramData\Adobe\credwiz.exe¡±   . Drop Object1 from HTA into ¡°C:\ProgramData\Adobe\DUser.dll¡±   . Drop and execute BAT .le for persistence at ¡°C:\ProgramData\Adobe\addreg.bat¡±   . Drop Object2 from HTA into ¡°%temp%\MicroSoft\winms.exe¡±   . Execute ¡°Credwiz.exe¡± 
+
+
+
+
+
+BAT module: 
+BAT .le adds registry entry into Run folder. Thus running credwiz.exe on the machine on 
+every startup. 
+
+Script.js .le: 
+This .le is executed via cmd.exe to restart victim machine. Contents of this .le are: 
+var shell = new ActiveXObject('WScript.Shell');WScript.Sleep(900000);var exec = shell.Exec ('cmd.exe /k shutdown /r /t 0');exec.StdIn.Close(); 
+
+Side-Loading technique: 
+
+¡°Credwiz.exe¡± is a legit windows .le copied from system32/SysWOW64 folder to 
+¡°C:\ProgramData\Adobe\credwiz.exe¡±. When this .le gets executed, it will side-load malicious duser.dll .le which is dropped in the same folder. 
+
+Module ¡®DUser.dll¡¯ is embedded as the 1st object into Stage-2 HTA .le. The .le gets dropped into ¡°C:\ProgramData\Adobe\DUser.dll¡±. It has only 1 export function i.e. ¡°c.leexists¡±. 
+As the names suggsts, its only function is to check for the presence of a .le at 
+
+
+It will then launch the RAT module ¡°winms.exe¡±. 
+
+
+In a few instances, we saw a completely di.erent version of DUser.dll module. This DLL had an export named as ¡°DllMain¡±. An interesting PDB string was observed in this .le. 
+¡°F:\Packers\CyberLink\Latest Source\Multithread Protocol Architecture\Final Version\ DUser\Release\x86\DUser.pdb¡± 
+As per the PDB path, DUser was developed in the folder ¡°CyberLink\Latest Source\Multithread Protocol Architecture¡±. At this stage, we are not aware of any similar 
+tool. 
+This Duser.dll will initiate the connection over this IP address ¡®173.212.224.110¡¯ over TCP port ¡®6102¡¯. This IP address & port can be found out in .le as it is mentioned in cleartext. 
+Once successfully connected, it will try to delete a BAT .le from Program Data as can be 
+seen in below image and then proceed for performing various operations based on the command received from C2C. 
+
+
+
+The commands are numbers from 0 to 15, so it compares each time when it receives the 
+command from C2. 
+
+Based on the commands, it fetches the index value and redirects to speci.c function/module to perform the desired operation as shown in below .gs. 
+
+
+For example if C2 sends 0, then it collects the Computer Name, Username, OS version etc. and sends it back to C2. 
+
+
+
+This is a RAT tool and has very high resemblance with code found on below GitHub link. 
+https://github.com/Grampinha/AllaKore_Remote/blob/master/Source/Client/Form_Main.pas 
+Allakore_Remote is an opensource software written in Delphi. 
+
+The communication happens via 173.249.50.230 over TCP Port 3245. 
+
+
+In a few attack chains, we saw a DotNET based RAT being dropped in the startup folder by mshta process. This previously unseen RAT is used to perform multiple malicious tasks like: 
+  . Download and execute .les   . Upload .les   . Run process   . Delete .les   . Rename .les   . Create directory   . List directory   . Get process info   . Kill process   . Copy clipboard data   . Set clipboard data   . Screen capture   . ShellExecute command   . Exit process 
+
+
+
+Similar to other modules, even this module is not obfuscated. Every function has meaningful names and readable code. 
+
+
+
+
+D:\Pkgs\Project\1-Stagers\5-DUser\Debug\x86\hello-world.pdb D:\Pkgs\Project\5-DUser\Debug\x86\hello-world.pdb D:\Pkgs\Project\Cyrus_HTA1+HTTP_HTA2+VNext_HTA3\hta\obj\Debug\hta.pdb 
+E:\OpenRATs\NigthFury\NightFury HTA upload\preBotHta\obj\Debug\preBotHta.pdb 
+F:\Packers\CoreDll\DUser\Release\x86\hello-world.pdb F:\Packers\CoreDll\preBotHta\preBotHta\obj\Release\preBotHta.pdb 
+F:\Packers\CyberLink\Latest Source\Exploit Dropper\Update or Install\Dropper\Release\Update-Install.pdb 
+F:\Packers\CyberLink\Latest Source\Exploit Dropper\Update or Install\Dropper\x64\Release\Update-Install.pdb F:\Packers\CyberLink\Latest Source\Multithread Protocol Architecture\Final Version\DUser\Release\x86\DUser.pdb E:\Packers\CyberLink\Latest Source\Multithread Protocol Architecture\Final Version\DUser\Release\x86\DUser.pdb 
+G:\AT\Pkgs\Pkgs\Project\3-hta(hta1)_new_path\hta\obj\Debug\hta.pdb D:\Pkgs\Project\Standalone_HTA_With_Startup_Path\Project\preBotHta\obj\Debug\preBotHta.pdb 
+By looking at changes in codes across di.erent versions and changes in PDB paths, we 
+can conclude that this malware is constantly under development. Attackers are updating codes after a reconnaissance of victim environment. 
+We believe, this group is using a commercial tool to install the backdoor. However, we do not have any intel on the same. If you have some knowledge about any of the above tools, we will be very interested in knowing about it. 
+
+
+
+All the names for modules like ¡®preBotHta.dll¡¯, ¡®DUser.dll¡¯ were similar to some of the Sidewinder attacks. Credwiz.exe was used for side-loading ¡®DUser.dll¡¯ and entire infection 
+.ow was similar. Few of researchers on Twitter and some Chinese organization blogs 
+were also seen attributing this attack to Sidewinder without many details. SideWinder is an APT group allegedly to work for Indian interest. But this attack was targeting Indian defence organizations and armed forces veterans. So, it makes no sense on this attribution. Lastly, we found just one good blog that considered this attack to be a 
+¡°Copy cat of APT Sidewinder¡±. 
+Hence, not related to the Sidewinder APT group: 
+1] Sidewinder uses dotNET compiled ¡®DUser.dll¡¯ backdoors. But all ¡®DUser.dll¡¯ .les in this      operation were compiled in Delphi/VC++. 
+
+
+
+Understanding who is behind an attack is usually a priority when the attack is on critical organizations. So, it was a crucial component of our investigation. Now, to hunt the real 
+actor behind this operation, we started looking towards older samples, .le meta, code, 
+Domains, IP infrastructure. These are all the Command and Control server IP and domains that we saw being used in this operation: 
+144[.]91[.]91[.]236 144[.]91[.]65[.]100 164[.]68[.]108[.]22 173[.]249[.]50[.]230 173[.]212[.]224[.]110 167[.]86[.]116[.]39  vmi312537[.]contaboserver[.]net vmi296708[.]contaboserver[.]net newsindia[.]ddns[.]net mfahost[.]ddns[.]net vmi314646[.]contaboserver[.]net vmi192147[.]contaboserver[.]net vmi268056[.]contaboserver[.]net  
+
+Almost all C2 belongs to Contabo GmbH, a hosting provider that seems to be currently favoured by Pakistan based threat actors. Many Crimson RAT, another tool of Transparent tribe group, connect to Contabo GmbH. 
+Also, in one of the reports by amnesty, transparent tribe actors RAT were found using 
+computer name ¡®VMI70913¡¯ and the same sample connected to C2 with a domain name of ¡®vmi70913.contabo.host¡¯ by the hosting company Contabo GmbH. 
+
+
+
+
+One of the domain, that hosted HTA was interesting: ¡°hxxps://drivetoshare[.]com¡± 
+It was registered to: 
+Name  Muhammad Talha  
+Organization  web designing  
+Address  Shop No 36/ B 2nd Floor Dubai Plaza Murree Road  
+City  Rawalpindi  
+State / Province  Punjab  
+Postal Code  46000  
+Country  PK  
+Phone  +92.3316133447  
+Email  kingsman.sher@gmail.com  
+
+We found few other domains that were recently registered to email ID 
+¡®kingsman.sher@gmail.com¡¯: 
+(Domain)  (Registration)  (Expiry)  
+drivetoshare.com  2020-08-07  2021-08-06  
+updatedportal.com  2020-08-07  2021-08-06  
+socialistfourm.com  2020-03-13  2021-03-12  
+mailfourms.com  2020-03-02  2021-03-01  
+
+A recent report on Transparent tribe showed this group to be using a similar naming convention to host a variety of malware. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A7C9018A5041F2D839F0EC 
+Stage-1 HTA 
+2AB7657DCF C4A75A64F19BD594B4BB28 3452D0A98B6E6E86566E24D 820BFB7B403E72F84E2 
+Stage-1 HTA 
+Portable 
+D:\Pkgs\Project\ embedded 
+Executable 32 
+Cyrus_HTA1+HTTP 
+module 
+.NET Assembly 
+_HTA2+VNext_ HTA3\hta\obj\
+'hta.dll' 
+Debug\hta.pdb 
+18FB04B37C7A6106FB40C5 
+Stage-2 HTA 
+AAFDDD8935 DD0762FC58ACB30F75B0A2 A14DBEF2CCDA553EA9DDE 08A180C60CD4113E1A506 
+Stage-2 HTA 
+Portable 
+D:\C\Proj\preBot
+#2019 
+embedded 
+Executable 32 
+Hta_new\preBot#2020 -
+module 
+.NET Assembly 
+Hta\obj\Debug\version 1 preBotHta.pdb
+'preBotHta.dll' 
+AC4A8D82D91286D5E0F59B 
+Duser.dll 
+Microsoft 
+D:\Pkgs\Project\ 
+85C8975DF8 
+Visual C++ 8.0 
+1-Stagers\5-DUser 
+(Debug) 
+\Debug\x86\helloFB761A2DA4841F8739D33A 
+-world.pdb
+682C5F2F39A033C7BA1643 0CE5785F7D51AB5D1537 
+AF0DD0070C02E150644968 
+winms.exe 
+Borland 
+173.249. 
+vmi192147 
+53BEFFA331 
+Delphi 4.0 
+50.230 
+[.]contabo server[.]net
+8C6AFF2224FDD54615EF99D :3245
+32A6134C961B6D7D576B6F F94F6B228EB8AF855AF 
+B065FB5E013D4393544E29B 
+sihostt.exe 
+Portable 
+173.212. 
+hxxp://173 4D596C932 
+Executable 32 
+224.110 
+[.]212[.]224 .NET Assembly 
+[.]110/h_ttp
+A8D8A56CDA7E29DD64CF28 B2BDAD19E8DCBF78E5900C F9CA53F952E9FD2452EB 
+
+
+Stage-2 HTA 
+CB3B35EAEE27C12751D 
+Stage-2 HTA Portable 
+D:\C\Proj\preBotH embedded 
+Executable 32 ta_new\preBotHta 
+module .NET Assembly \obj\Debug\ preBotHta.pdb
+'preBotHta.dll'
+#2020 -
+version 
+15A33804C2560B1651D3B38 
+Duser.dll 
+Microsoft D:\Pkgs\Project\
+1.1 
+EE7D88CED 
+Visual C++ 8.0 
+5-DUser\Debug\ 
+(Debug) 
+x86\hello-7B722C66602E53D17316353 
+world.pdb
+7FA66056A78E3043BFDDDC B6FC06F31F1F7F25ED8 
+9B6DC22380B809099F48A02 
+winms.exe 
+Borland 
+173.249. 89DC38EA7 
+Delphi 4.0 
+50.230 
+27AF16554281F3DD773E767 
+68F13B099B41624BEC5AB04 
+05A09C26595A49E80E 
+139.59. BF3EF3213 
+918F7248E81748D727F74BA Stage-2 HTA 
+55.198 
+87E5AB38B3E2BB5F63FD40D 
+97A225F9DEDB724B0703852 
+1EE4766A233F718CA2 
+Stage-2 HTA Portable 
+E:\OpenRATs\ embedded 
+Executable 32 
+NigthFury\Night module 
+.NET Assembly Fury HTA upload\ preBotHta\obj\'preBotHta.dll'
+#2020 -
+Debug\version 2 preBotHta.pdb 
+9F3069FC2B8DAD266B52C6 
+Duser.dll 
+Borland 
+E:\Packers\Cyber tor-relay-
+50CF3D730D Delphi 3.0 
+Link\Latest Source 
+2[.]innonet \Multithread 
+life[.]com:
+A866800A90A404FEB4A9681 
+Protocol 
+61023C487BFD7114A5EC521516E 
+Architecture\Final
+BA8C0178FB3F08F74A 
+Version\DUser\ 
+Release\x86\ 
+DUser.pdb 
+
+
+
+
+49CB8BB67B1F89E5184926B 
+Stage-2 HTA 
+7EAD6660510AA9A7E58094F 05A8655DF23FE680B57D511 41E6E6D124C9A678D1 
+Stage-2 HTA 
+Portable 
+E:\OpenRATs\ embedded 
+Executable 32 
+NigthFury\Night module 
+.NET Assembly Fury HTA upload\ preBotHta\obj\
+'preBotHta.dll'
+#2020 -
+Debug\version preBotHta.pdb
+2.1 
+wordicon.exe 
+Microsoft F:\Packers\Cyber 
+Visual C++ 8 
+Link\Latest Source \Exploit Dropper\ Update or Install\ Dropper\Release\ Update-Install.pdb 
+.les 
+144.91.91. 
+mfahost.
+3EECA29E55C31C3904231D 
+Borland F:\Packers\Cyber 
+236:6102 
+ddns.net \Multithread 
+5B5FC6A513 Delphi 3.0 
+Link\Latest Source 
+vmi3125370A6D33BDC0B70A45626211 
+Protocol .contabo
+393D67566E1C9EBFFF020F7 
+Architecture\Final server.net
+FF1EF23DC93EDE0C27A 
+Version\DUser\ 
+Release\x86\ 
+
+DUser.pdb 
+164.68. 
+vmi314646 88CCF6970 
+F4FD6FA576313508A0B8936 
+Duser.dll 
+Borland F:\Packers\Cyber 108.22: 
+.contabo \Multithread 
+Delphi 3.0 
+Link\Latest Source 
+6102 
+server.net
+1D09E91D72C86216F559760 
+Protocol
+DA0F07ACDC0CFF8C0649C6 
+Architecture\FinalE1782DB1F20DCC7E48F Version\DUser\ 
+Release\x86\#2019 -
+DUser.pdb
+version 3 AA031C2D987DB4759A83C5 
+wordicon.exe 
+Microsoft F:\Packers\Cyber 
+69392AA971 Visual C++ 8.0 
+Link\Latest Source (DLL) 
+\Exploit Dropper
+36C9022B8D2260B360DC93 
+\Update or Install\
+90C146636A97AA984CDF517 Dropper\x64\6036CD4E444840216F8 
+Release\ Update-Install.pdb 
+Older 
+
+B29E7FAC2D84DA758473F3B 5E81F3265 
+92E9CEEDF28C99F90F8892A 
+EC9D2FA413FF0F4F17C5B03 16D05871E95993C3FA 
+6E0AB86CBBF5A19C77DCC8 
+85484D1539 70E2236E467D2B453E6C412 D32D0BD0AB256603E50339 B644D064DE18DBCB539 
+
+Duser.dll Borland F:\Packers\ 
+Delphi 3.0 
+CyberLink\Latest Source\ Multithread Protocol Architecture\Final Version\DUser\ 
+Release\x86\ 
+DUser.pdb 
+%PROGRAM DATA%\git\ 
+duser.dll 
+
+
+
+
+
+Stage-1 HTA embedded module 
+'hta.dll' 
+hta.pdb 
+3B07961844D8235C1F40C12 
+Stage-2 HTA 
+28299B5D7 
+%PROGRAM 234DEFC7E28089CE8114190 
+DATA%\adobe\ 7CEB16F3C80B12B6C19A451 
+tmphta.hta 
+6D97F049EC66AF633D 
+Stage-2 HTA 
+Portable 
+D:\C\Proj\preBot embedded 
+Executable 32 
+Hta_new\preBot 
+module 
+.NET Assembly 
+Hta\obj\Debug\ preBotHta.pdb
+'preBotHta.dll' 
+C926AF149B4A152403D0955 
+Duser.dll 
+Microsoft 
+D:\C\Proj\DUser\ 
+E0ED9AC5F 
+Visual C++ 8.0 
+Debug\x86\ 
+(Debug) 
+hello-world.pdb
+9D7EDFA9834F4C5B5B35C04 C7906993C330FC0A29382A6 9F9601793211CCF253 
+DE3CB976504716C7E2689C6 
+winms.exe 
+Borland 
+173.212. 96CAB2075 
+Delphi 4.0 
+224.110 
+8B11DB3A20F447B31CFC6A 6AF626C037B8F77ED0F96F
+Older 
+7210F9D58A21F83E6EDA
+.les 909DB7C009BFAC6793D6C2 
+173.212. 5E82188BCD 
+winms.exe 
+Borland 
+224.110
+Delphi 4.0 
+43D469F38545B63389712EB A636E87AD483308EB6CE609 
+C1117A2FDDDCEFE1A2 
+E61B7D68E7E2F33A09CBA6 
+Stage-2 HTA 8DF04FE78E 
+1E36DC2D6CA94E14DC7AC C7C183D1CCA3E05D6F0181 3C9A1918EF99F9CAAE693 
+Stage-2 HTA 
+Portable 
+D:\Pkgs\Project\ embedded 
+Executable 32 
+Standalone_HTA_ 
+module 
+.NET Assembly 
+With_Startup_Path 
+\Project\preBotHta'preBotHta.dll' 
+\obj\Debug\ preBotHta.pdb 
+144.91.
+41FE9857A47D37CE7B69C8 
+sihostt.exe 
+Borland 
+hxxp:// 15E55A14D5 
+91.236
+Delphi 4.0 
+mfahost[.] 
+
+ddns[.]net/
+38A5E825577B51EEFE4C571 classical/
+D29B34713B4FD2A2B09A01 3DF4803110D5CE553E8 
+
+
+
+
+
+
+

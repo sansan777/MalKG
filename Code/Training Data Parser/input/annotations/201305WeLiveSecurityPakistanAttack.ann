@@ -1,0 +1,158 @@
+T1	ExploitTargetObject 309 317	Pakistan
+T2	ExploitTargetObject 588 596	Pakistan
+T3	Region 41 51	South Asia
+T4	Country 709 714	India
+T5	Time 1463 1478	March 31st 2012
+T6	Time 2044 2065	March until June 2012
+T7	Time 2114 2166	beginning of July until the beginning of August 2012
+T8	Time 2260 2285	August and September 2012
+T9	Time 2666 2676	early 2011
+T10	Vulnerability 2769 2782	CVE-2012-0158
+T11	Indicator 3087 3102	feds.comule.com
+T12	Indicator 3146 3160	digitalapp.org
+T13	ExploitTargetObject 3851 3859	Pakistan
+T14	File 4027 4070	pakistandefencetoindiantopmiltrysecreat.exe
+T15	Email 3290 3295	email
+R1	hasAttachment Arg1:T15 Arg2:T14
+T16	File 4149 4174	pakterrisiomforindian.exe
+R2	hasAttachment Arg1:T15 Arg2:T16
+T17	Time 4341 4352	August 2011
+T18	ExploitTargetObject 4368 4376	Pakistan
+T19	Payload 4688 4698	Downloader
+T20	Payload 4751 4768	Document uploader
+T21	Payload 4888 4916	System information gathering
+T22	Payload 5132 5141	Keylogger
+T23	Payload 5217 5227	Screenshot
+T24	Payload 5289 5307	Connect-back shell
+T25	Payload 5427 5439	Public Tools
+T26	Software 5468 5479	WebPassView
+T27	Software 5484 5497	Mail PassView
+T28	Organization 5504 5511	NirSoft
+R3	hasProduct Arg1:T28 Arg2:T27
+R4	hasProduct Arg1:T28 Arg2:T26
+T29	Payload 5661 5701	Selfreplication through removable drives
+T30	CourseOfAction 6466 6501	examining your HTTP network traffic
+T31	Obfuscation 7276 7281	ROT-1
+T32	Indicator 7306 7324	gjmftbttpdjbuf/ofu
+T33	Indicator 8073 8092	wearwellgarments.eu
+T34	Indicator 8099 8110	secuina.com
+T35	Campaign 8319 8327	campaign
+T36	Country 8462 8467	India
+R5	hasAttackLocation Arg1:T35 Arg2:T36
+T37	Time 8590 8608	5:06 and 13:45 UTC
+R6	hasAttackTime Arg1:T35 Arg2:T37
+T38	Attacker 8845 8860	malware authors
+T39	Indicator 9012 9020	ramukaka
+T40	Campaign 9318 9326	campaign
+T41	Country 9582 9587	India
+R7	hasAttackLocation Arg1:T40 Arg2:T41
+T42	ExploitTargetObject 9641 9649	Pakistan
+T43	Campaign 9678 9686	campaign
+R8	targets Arg1:T43 Arg2:T42
+T44	Country 10096 10103	Ukraine
+T45	Country 10108 10118	Kazakhstan
+T46	ExploitTargetObject 10754 10762	Pakistan
+T47	Vulnerability 11361 11374	CVE-2012-0158
+T48	Campaign 10905 10914	campaigns
+R9	targets Arg1:T48 Arg2:T46
+T49	SHA-1 11390 11430	3b1d9d65159bea24ab1060e5603f9e3c2d38d08d
+T50	Payload 11435 11460	pakterrisiomforindian.exe
+T51	SHA-1 11511 11551	1db89237ef786c7f22a8d4cd7eccda8f6286a6de
+T52	Payload 11466 11509	pakistandefencetoindiantopmiltrysecreat.exe
+T53	Payload 11556 11566	Downloader
+T54	Payload 11572 11589	Document uploader
+T55	Payload 11595 11623	System information gathering
+T56	Payload 11629 11638	Keylogger
+T57	Payload 11644 11654	Screenshot
+T58	Payload 11660 11678	Connect-back shell
+T59	Payload 11685 11726	Self-replication through removable drives
+T60	SHA-1 11728 11767	20A29D1F89C07BAFBB4C61CE208531D68125C8E
+T61	SHA-1 11769 11809	d859f1cf99049f89258c1faa59dcd97f587e45ac
+T62	SHA-1 11811 11851	08ce405f0a0277de355454862b164ffd94a7ea36
+T63	SHA-1 11852 11892	DB22E7DEA0C1CAF203072693485DE4E4FD2CB56A
+T64	SHA-1 11893 11933	0D610F3F51750EADCF426E10E6DE5313605400FA
+T65	SHA-1 11935 11975	AE7B9CFB10CD65B98C59DC012D6726B66BE92897
+T66	SHA-1 11976 12016	A0DD0B8FD0C98E917BFDC96182088CAB5505CCD2
+T67	SHA-1 12017 12057	09D4ECA67B1D071E57C5951D97FE9DD9C62F1580
+T68	GeneralVirus 12137 12152	Win32/Agent.NLD
+T69	TrojanHorse 12162 12181	Win32/Spy.Agent.NZD
+T70	TrojanHorse 12193 12212	Win32/Spy.Agent.OBF
+T71	TrojanHorse 12224 12243	Win32/Spy.Agent.OBV
+T72	TrojanHorse 12255 12278	Win32/Spy.KeyLogger.NZL
+T73	TrojanHorse 12290 12313	Win32/Spy.KeyLogger.NZN
+T74	TrojanHorse 12325 12341	Win32/Spy.VB.NOF
+T75	TrojanHorse 12353 12369	Win32/Spy.VB.NRP
+T76	TrojanHorse 12381 12413	Win32/TrojanDownloader.Agent.RNT
+T77	TrojanHorse 12426 12458	Win32/TrojanDownloader.Agent.RNV
+T78	TrojanHorse 12471 12503	Win32/TrojanDownloader.Agent.RNW
+T79	TrojanHorse 12516 12528	Win32/VB.NTC
+T80	TrojanHorse 12541 12553	Win32/VB.NVM
+T81	TrojanHorse 12566 12578	Win32/VB.NWB
+T82	TrojanHorse 12591 12603	Win32/VB.QPK
+T83	TrojanHorse 12616 12628	Win32/VB.QTV
+T84	TrojanHorse 12641 12653	Win32/VB.QTY
+T85	TrojanHorse 12666 12685	Win32/Spy.Agent.NVL
+T86	TrojanHorse 12698 12717	Win32/Spy.Agent.OAZ
+T87	Time 12742 12763	16 May 2013 - 10:15AM
+T88	Person 12726 12741	Jean-Ian Boutin
+T89	Campaign 466 474	campaign
+R10	targets Arg1:T89 Arg2:T1
+R11	hasAttackLocation Arg1:T89 Arg2:T3
+R12	targets Arg1:T89 Arg2:T2
+R13	hasAttackLocation Arg1:T89 Arg2:T4
+T90	Malware 1681 1699	malicious binaries
+T91	Attacker 1988 1997	attackers
+R14	hasAttackTime Arg1:T91 Arg2:T6
+R15	authored Arg1:T91 Arg2:T90
+R16	hasAttackTime Arg1:T91 Arg2:T8
+R17	hasAttackTime Arg1:T91 Arg2:T9
+T92	Campaign 2613 2621	campaign
+R18	exploits Arg1:T90 Arg2:T10
+T93	Malware 3124 3140	malicious binary
+R19	indicates Arg1:T11 Arg2:T93
+R20	indicates Arg1:T12 Arg2:T93
+R21	indicates Arg1:T15 Arg2:T93
+T94	Malware 4447 4455	droppers
+R22	hasCharacteristics Arg1:T94 Arg2:T19
+R23	hasAttackTime Arg1:T94 Arg2:T17
+R24	hasCharacteristics Arg1:T94 Arg2:T20
+R25	hasCharacteristics Arg1:T94 Arg2:T21
+R26	hasCharacteristics Arg1:T94 Arg2:T22
+R27	hasCharacteristics Arg1:T94 Arg2:T23
+R28	hasCharacteristics Arg1:T94 Arg2:T24
+R29	hasCharacteristics Arg1:T94 Arg2:T25
+R30	hasCharacteristics Arg1:T94 Arg2:T29
+T95	Malware 5766 5779	malware files
+R31	hasCharacteristics Arg1:T95 Arg2:T31
+R32	indicates Arg1:T32 Arg2:T95
+T96	Campaign 7410 7418	campaign
+R33	mitigates Arg1:T30 Arg2:T96
+R34	indicates Arg1:T33 Arg2:T95
+R35	indicates Arg1:T34 Arg2:T95
+R36	usesMalware Arg1:T48 Arg2:T68
+R37	usesMalware Arg1:T48 Arg2:T69
+R38	usesMalware Arg1:T48 Arg2:T70
+R39	usesMalware Arg1:T48 Arg2:T71
+R40	usesMalware Arg1:T48 Arg2:T72
+R41	usesMalware Arg1:T48 Arg2:T73
+R42	usesMalware Arg1:T48 Arg2:T74
+R43	usesMalware Arg1:T48 Arg2:T75
+R44	usesMalware Arg1:T48 Arg2:T76
+R45	usesMalware Arg1:T48 Arg2:T77
+R46	usesMalware Arg1:T48 Arg2:T78
+R47	usesMalware Arg1:T48 Arg2:T79
+R48	usesMalware Arg1:T48 Arg2:T80
+R49	usesMalware Arg1:T48 Arg2:T81
+R50	usesMalware Arg1:T48 Arg2:T82
+R51	usesMalware Arg1:T48 Arg2:T83
+R52	usesMalware Arg1:T48 Arg2:T84
+R53	usesMalware Arg1:T48 Arg2:T85
+R54	usesMalware Arg1:T48 Arg2:T86
+R55	indicates Arg1:T60 Arg2:T94
+R56	indicates Arg1:T61 Arg2:T94
+R57	indicates Arg1:T62 Arg2:T94
+R58	indicates Arg1:T63 Arg2:T94
+R59	indicates Arg1:T64 Arg2:T94
+R60	indicates Arg1:T65 Arg2:T94
+R61	indicates Arg1:T66 Arg2:T94
+R62	indicates Arg1:T67 Arg2:T94

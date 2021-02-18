@@ -1,0 +1,346 @@
+T1	Time 27 37	March 2013
+T2	Organization 39 54	The Citizen Lab
+T4	Malware 387 396	FinFisher
+T5	ExploitTargetObject 400 408	Ethiopia
+T6	ExploitTargetObject 585 592	Vietnam
+T7	Malware 510 523	FinSpy Mobile
+T8	ExploitTargetObject 787 796	Australia
+T9	ExploitTargetObject 798 805	Bahrain
+T10	ExploitTargetObject 807 817	Bangladesh
+T11	ExploitTargetObject 819 825	Brunei
+T12	ExploitTargetObject 827 833	Canada
+T13	ExploitTargetObject 835 849	Czech Republic
+T14	ExploitTargetObject 851 858	Estonia
+T15	ExploitTargetObject 860 868	Ethiopia
+T16	ExploitTargetObject 870 877	Germany
+T17	ExploitTargetObject 879 884	India
+T18	ExploitTargetObject 886 895	Indonesia
+T20	ExploitTargetObject 904 910	Latvia
+T19	ExploitTargetObject 897 902	Japan
+T21	ExploitTargetObject 912 920	Malaysia
+T22	ExploitTargetObject 922 928	Mexico
+T23	ExploitTargetObject 930 938	Mongolia
+T24	ExploitTargetObject 940 951	Netherlands
+T25	ExploitTargetObject 953 958	Qatar
+T26	ExploitTargetObject 960 966	Serbia
+T27	ExploitTargetObject 968 977	Singapore
+T28	ExploitTargetObject 979 991	Turkmenistan
+T29	ExploitTargetObject 993 1013	United Arab Emirates
+T30	ExploitTargetObject 1015 1029	United Kingdom
+T31	ExploitTargetObject 1031 1044	United States
+T32	ExploitTargetObject 1046 1053	Vietnam
+T33	Campaign 1061 1067	FinSpy
+R1	involvesMalware Arg1:T33 Arg2:T7
+R2	targets Arg1:T33 Arg2:T5
+R3	involvesMalware Arg1:T33 Arg2:T7
+R4	involvesMalware Arg1:T33 Arg2:T4
+R5	involvesMalware Arg1:T33 Arg2:T7
+T3	ExploitTargetObject 1080 1088	Ethiopia
+R6	targets Arg1:T33 Arg2:T3
+T34	ExploitTargetObject 1106 1114	Ginbot 7
+R7	targets Arg1:T33 Arg2:T34
+T35	Campaign 1323 1336	FinSpy Mobile
+T36	Malware 1359 1380	Android FinSpy Mobile
+R8	involvesMalware Arg1:T35 Arg2:T36
+T37	ExploitTargetObject 1435 1442	Vietnam
+R9	targets Arg1:T35 Arg2:T37
+T38	Organization 1552 1571	Gamma International
+T39	Malware 1793 1802	FinFisher
+T40	Location 1872 1878	Munich
+T41	Organization 1885 1909	Gamma International GmbH
+R10	hasAttackLocation Arg1:T39 Arg2:T40
+T42	Time 2310 2319	July 2012
+T43	ExploitTargetObject 2410 2428	Bahraini activists
+T44	Malware 2498 2504	FinSpy
+T45	Campaign 2553 2559	FinSpy
+R11	targets Arg1:T45 Arg2:T43
+T46	SystemInformation 2616 2625	passwords
+T47	TechnologyInformation 2630 2641	Skype calls
+T48	Location 2787 2794	Bahrain
+R12	hasAttackLocation Arg1:T45 Arg2:T48
+T49	Malware 2904 2913	FinFisher
+T50	Person 2929 2946	Claudio Guarnieri
+T51	Organization 2950 2956	Rapid7
+T52	Organization 3203 3209	Rapid7
+T53	Organization 3312 3323	CrowdStrike
+T54	Organization 3328 3338	SpiderLabs
+T55	Campaign 3378 3384	FinSpy
+T56	Organization 3479 3485	Rapid7
+T57	Country 3673 3685	Turkmenistan
+R13	hasAttackLocation Arg1:T55 Arg2:T57
+T58	Location 3757 3768	August 2012
+T59	Location 3881 3893	October 2012
+T60	Campaign 4377 4389	Turkmenistan
+T61	Campaign 4394 4401	Bahrain
+T62	Time 4481 4492	August 2012
+T63	Organization 4528 4553	NGO Privacy International
+T64	Organization 5134 5185	European Centre for Constitutional and Human Rights
+T65	Organization 5187 5192	ECCHR
+T66	Organization 5199 5230	Bahrain Center for Human Rights
+T67	Organization 5232 5245	Bahrain Watch
+T68	Organization 5251 5276	Reporters Without Borders
+T69	Organization 5304 5357	Organization for Economic Cooperation and Development
+T70	Organization 5359 5363	OECD
+T71	Organization 5412 5417	Gamma
+T72	Campaign 5679 5686	Bahrain
+T73	Malware 5658 5664	FinSpy
+R14	attributedTo Arg1:T73 Arg2:T72
+T74	Campaign 6879 6888	FinFisher
+T75	Campaign 7063 7069	FinSpy
+T76	ExploitTargetObject 7150 7158	Ethiopia
+T77	ExploitTargetObject 7163 7170	Vietnam
+R15	targets Arg1:T75 Arg2:T76
+R16	targets Arg1:T75 Arg2:T77
+T78	Time 7588 7600	October 2012
+T79	Campaign 7635 7641	FinSpy
+T80	Campaign 8018 8024	FinSpy
+T81	Campaign 7761 7767	FinSpy
+T82	Campaign 7858 7864	FinSpy
+T83	Campaign 8122 8128	FinSpy
+T84	Campaign 8279 8285	FinSpy
+T85	ExploitTargetObject 8511 8517	Canada
+T86	ExploitTargetObject 8519 8529	Bangladesh
+T87	ExploitTargetObject 8531 8536	India
+T88	ExploitTargetObject 8538 8546	Malaysia
+T89	ExploitTargetObject 8548 8554	Mexico
+T90	ExploitTargetObject 8556 8562	Serbia
+T91	ExploitTargetObject 8564 8571	Vietnam
+R17	targets Arg1:T84 Arg2:T85
+R18	targets Arg1:T84 Arg2:T86
+R19	targets Arg1:T84 Arg2:T87
+R20	targets Arg1:T84 Arg2:T88
+R21	targets Arg1:T84 Arg2:T89
+R22	targets Arg1:T84 Arg2:T90
+R23	targets Arg1:T84 Arg2:T91
+T92	ExploitTargetObject 8992 8998	Brunei
+T93	ExploitTargetObject 9000 9003	UAE
+T94	ExploitTargetObject 9005 9011	Latvia
+T95	ExploitTargetObject 9017 9025	Mongolia
+T96	Campaign 9044 9050	FinSpy
+R24	targets Arg1:T96 Arg2:T92
+R25	targets Arg1:T96 Arg2:T93
+R26	targets Arg1:T96 Arg2:T94
+R27	targets Arg1:T96 Arg2:T95
+T97	ExploitTargetObject 9114 9123	Australia
+T98	ExploitTargetObject 9125 9132	Bahrain
+T99	ExploitTargetObject 9134 9144	Bangladesh
+T100	ExploitTargetObject 9146 9152	Brunei
+T101	ExploitTargetObject 9154 9160	Canada
+T102	ExploitTargetObject 9162 9176	Czech Republic
+T103	ExploitTargetObject 9178 9185	Estonia
+T104	ExploitTargetObject 9187 9195	Ethiopia
+T105	ExploitTargetObject 9197 9204	Germany
+T106	ExploitTargetObject 9206 9211	India
+T107	ExploitTargetObject 9213 9222	Indonesia
+T108	ExploitTargetObject 9224 9229	Japan
+T109	ExploitTargetObject 9231 9237	Latvia
+T110	ExploitTargetObject 9239 9247	Malaysia
+T111	ExploitTargetObject 9249 9255	Mexico
+T112	ExploitTargetObject 9257 9265	Mongolia
+T113	ExploitTargetObject 9267 9278	Netherlands
+T114	ExploitTargetObject 9280 9285	Qatar
+T115	ExploitTargetObject 9287 9293	Serbia
+T116	ExploitTargetObject 9295 9304	Singapore
+T117	ExploitTargetObject 9306 9318	Turkmenistan
+T118	ExploitTargetObject 9320 9340	United Arab Emirates
+T119	ExploitTargetObject 9342 9356	United Kingdom
+T120	ExploitTargetObject 9358 9371	United States
+T121	ExploitTargetObject 9373 9380	Vietnam
+T122	Campaign 9490 9496	FinSpy
+T123	Campaign 9572 9578	FinSpy
+T124	Malware 9678 9687	FinFisher
+T125	Campaign 9930 9936	FinSpy
+T126	Country 10329 10338	Australia
+T127	Address 10340 10353	77.69.181.162
+T128	Address 10303 10318	117.121.xxx.xxx
+T129	Country 10377 10384	Bahrain
+T130	Address 10386 10401	180.211.xxx.xxx
+T131	Address 10444 10459	168.144.xxx.xxx
+T132	Country 10432 10442	Bangladesh
+T133	Country 10476 10482	Canada
+T134	Address 10484 10499	168.144.xxx.xxx
+T135	Country 10516 10522	Canada
+T136	Address 10524 10538	217.16.xxx.xxx
+T137	Country 10551 10565	Czech Republic
+T138	Address 10567 10582	217.146.xxx.xxx
+T139	Country 10606 10613	Estonia
+T140	Address 10615 10627	213.55.99.74
+T141	Country 10644 10651	Estonia
+T142	Address 10653 10667	80.156.xxx.xxx
+T143	Country 10695 10702	Germany
+T144	Address 10704 10718	37.200.xxx.xxx
+T145	Country 10738 10745	Germany
+T146	Address 10774 10788	178.77.xxx.xxx
+T147	Country 10807 10814	Germany
+T148	Address 10816 10830	119.18.xxx.xxx
+T149	Country 10843 10848	India
+T150	Address 10850 10864	119.18.xxx.xxx
+T151	Country 10877 10882	India
+T152	Address 10884 10898	118.97.xxx.xxx
+T153	Country 10911 10920	Indonesia
+T154	Address 10922 10936	118.97.xxx.xxx
+T155	Country 10949 10958	Indonesia
+T156	Address 10960 10974	103.28.xxx.xxx
+T157	Country 10997 11006	Indonesia
+T158	Address 11008 11021	112.78.143.34
+T159	Country 11035 11044	Indonesia
+T160	Address 11046 11059	112.78.143.26
+T161	Country 11073 11082	Indonesia
+T162	Address 11084 11099	117.121.xxx.xxx
+T163	Country 11110 11118	Malaysia
+T164	Address 11120 11135	187.188.xxx.xxx
+T165	Country 11151 11157	Mexico
+T166	Address 11159 11174	201.122.xxx.xxx
+T167	Country 11184 11190	Mexico
+T168	Address 11192 11207	164.138.xxx.xxx
+T169	Country 11216 11227	Netherlands
+T170	Address 11229 11241	164.138.28.2
+T171	Country 11250 11261	Netherlands
+T172	Address 11263 11276	78.100.57.165
+T173	Country 11307 11312	Qatar
+T174	Address 11314 11329	195.178.xxx.xxx
+T175	Country 11359 11365	Serbia
+T176	Address 11367 11382	117.121.xxx.xxx
+T177	Country 11393 11402	Singapore
+T178	Address 11404 11418	217.174.229.82
+T179	Country 11448 11460	Turkmenistan
+T180	Address 11462 11475	72.22.xxx.xxx
+T181	Country 11491 11504	United States
+T182	Address 11506 11521	166.143.xxx.xxx
+T183	Country 11541 11554	United States
+T184	Address 11556 11571	117.121.xxx.xxx
+T185	Country 11582 11595	United States
+T186	Address 11597 11612	117.121.xxx.xxx
+T187	Country 11623 11636	United States
+T188	Address 11638 11653	117.121.xxx.xxx
+T189	Country 11664 11677	United States
+T190	Address 11679 11694	117.121.xxx.xxx
+T191	Country 11705 11718	United States
+T192	Address 11720 11734	183.91.xxx.xxx
+T193	Country 11772 11779	Vietnam
+T194	Organization 11902 11909	GPLHost
+T195	Country 11932 11941	Singapore
+T196	Country 11943 11951	Malaysia
+T197	Country 11953 11962	Australia
+T198	Country 11964 11966	US
+T199	Country 12138 12145	Germany
+T200	Person 12230 12243	Martin Muench
+T201	Campaign 12261 12267	FinSpy
+T202	Organization 12305 12321	Verizon Wireless
+T203	Country 12560 12565	Qatar
+T204	Organization 12598 12604	Rapid7
+T205	Indicator 12865 12887	http://qhotels.gov.qa/
+T206	Campaign 12954 12960	FinSpy
+T207	ExploitTargetObject 12893 12901	ETHIOPIA
+T208	ExploitTargetObject 12906 12913	VIETNAM
+R28	targets Arg1:T206 Arg2:T207
+R29	targets Arg1:T206 Arg2:T208
+T209	Time 13255 13266	August 2012
+T210	Address 13503 13515	213.55.99.74
+T211	Address 13523 13534	213.55.99.0
+T212	Time 13659 13669	March 2013
+T213	Country 13768 13775	Bahrain
+T214	Country 13780 13792	Turkmenistan
+T215	MD5 13800 13832	8ae2febe04102450fdbc26a38037c82b
+T216	SHA-1 13841 13881	1fd0a268086f8d13c6a3262d41cce13470886b09
+T217	SHA-256 13892 13955	ff6f0bcdb02a9a1c10da14a0844ed6ec6a68c13c04b4c122afc559d606762fa
+T218	Time 14395 14414	2011-07-05 08:25:31
+T219	Malware 14014 14020	FinSpy
+R30	hasAttackTime Arg1:T219 Arg2:T218
+R31	indicates Arg1:T217 Arg2:T219
+R32	indicates Arg1:T216 Arg2:T219
+R33	indicates Arg1:T215 Arg2:T219
+T220	Time 14061 14065	2012
+R34	hasAttackTime Arg1:T219 Arg2:T220
+T221	SHA-256 14683 14747	ba21e452ee5ff3478f21b293a134b30ebf6b7f4ec03f8c8153202a740d7978b2
+T222	SHA-256 14807 14871	62bde3bac3782d36f9f2e56db097a4672e70463e11971fad5de060b191efb196
+R35	indicates Arg1:T221 Arg2:T219
+R36	indicates Arg1:T222 Arg2:T219
+T223	ExploitTargetObject 15102 15110	Ginbot 7
+T224	Malware 15453 15459	FinSpy
+T225	Malware 15782 15807	FinSpy Mobile for Android
+T226	Country 15868 15875	Vietnam
+T227	MalwareFamily 15945 15954	FinFisher
+T228	Malware 15995 16001	FinSpy
+R37	hasMember Arg1:T227 Arg2:T228
+R38	hasFamily Arg1:T228 Arg2:T227
+T229	Malware 16144 16150	FinSpy
+T230	Country 16165 16172	Bahrain
+T231	Software 16036 16039	iOS
+T232	Software 16041 16048	Android
+T233	Software 16050 16064	Windows Mobile
+T234	Software 16066 16073	Symbian
+T235	Software 16078 16088	Blackberry
+T236	MD5 16481 16513	573ef0b7ff1dab2c3f785ee46c51a54f
+T237	SHA-1 16522 16562	d58d4f6ad3235610bafba677b762f3872b0f67cb
+T238	SHA-256 16573 16637	363172a2f2b228c7b00b614178e4ffa00a3a124200ceef4e6d7edb25a4696345
+R39	indicates Arg1:T236 Arg2:T225
+R40	indicates Arg1:T237 Arg2:T225
+R41	indicates Arg1:T238 Arg2:T225
+T239	Address 17208 17220	183.91.2.199
+T240	Address 17230 17240	183.91.0.0
+T241	Address 17243 17255	183.91.9.255
+T242	Country 17283 17290	Vietnam
+T243	Person 21281 21298	Guido Westerwelle
+T244	Person 21426 21442	Marietje Schaake
+R42	usesAddress Arg1:T4 Arg2:T127
+R43	usesAddress Arg1:T4 Arg2:T128
+R44	usesAddress Arg1:T4 Arg2:T130
+R45	usesAddress Arg1:T4 Arg2:T131
+R46	usesAddress Arg1:T4 Arg2:T134
+R47	usesAddress Arg1:T4 Arg2:T136
+R48	usesAddress Arg1:T4 Arg2:T138
+R49	usesAddress Arg1:T4 Arg2:T140
+R50	usesAddress Arg1:T4 Arg2:T142
+R51	usesAddress Arg1:T4 Arg2:T144
+R52	usesAddress Arg1:T4 Arg2:T146
+R53	usesAddress Arg1:T4 Arg2:T148
+R54	usesAddress Arg1:T4 Arg2:T150
+R55	usesAddress Arg1:T4 Arg2:T152
+R56	usesAddress Arg1:T4 Arg2:T154
+R57	usesAddress Arg1:T4 Arg2:T156
+R58	usesAddress Arg1:T4 Arg2:T158
+R59	usesAddress Arg1:T4 Arg2:T160
+R60	usesAddress Arg1:T4 Arg2:T162
+R61	usesAddress Arg1:T4 Arg2:T164
+R62	usesAddress Arg1:T4 Arg2:T166
+R63	usesAddress Arg1:T4 Arg2:T168
+R64	usesAddress Arg1:T4 Arg2:T170
+R65	usesAddress Arg1:T4 Arg2:T172
+R66	usesAddress Arg1:T4 Arg2:T174
+R67	usesAddress Arg1:T4 Arg2:T176
+R68	usesAddress Arg1:T4 Arg2:T178
+R69	usesAddress Arg1:T4 Arg2:T180
+R70	usesAddress Arg1:T4 Arg2:T182
+R71	usesAddress Arg1:T4 Arg2:T184
+R72	usesAddress Arg1:T4 Arg2:T186
+R73	usesAddress Arg1:T4 Arg2:T188
+R74	usesAddress Arg1:T4 Arg2:T190
+R75	usesAddress Arg1:T4 Arg2:T192
+R76	usesAddress Arg1:T4 Arg2:T210
+R77	usesAddress Arg1:T4 Arg2:T211
+R78	usesAddress Arg1:T4 Arg2:T239
+R79	usesAddress Arg1:T4 Arg2:T240
+R80	usesAddress Arg1:T4 Arg2:T241
+R81	targets Arg1:T33 Arg2:T100
+R82	targets Arg1:T33 Arg2:T101
+R83	targets Arg1:T33 Arg2:T102
+R84	targets Arg1:T33 Arg2:T103
+R85	targets Arg1:T33 Arg2:T104
+R86	targets Arg1:T33 Arg2:T105
+R87	targets Arg1:T33 Arg2:T106
+R88	targets Arg1:T33 Arg2:T107
+R89	targets Arg1:T33 Arg2:T108
+R90	targets Arg1:T33 Arg2:T109
+R91	targets Arg1:T33 Arg2:T110
+R92	targets Arg1:T33 Arg2:T111
+R93	targets Arg1:T33 Arg2:T112
+R94	targets Arg1:T33 Arg2:T113
+R95	targets Arg1:T33 Arg2:T114
+R96	targets Arg1:T33 Arg2:T115
+R97	targets Arg1:T33 Arg2:T116
+R98	targets Arg1:T33 Arg2:T117
+R99	targets Arg1:T33 Arg2:T118
+R100	targets Arg1:T33 Arg2:T119
+R101	targets Arg1:T33 Arg2:T120
+R102	targets Arg1:T33 Arg2:T121

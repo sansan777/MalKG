@@ -1,0 +1,129 @@
+T1	AttackerGroup 273 278	1.php
+T2	Exploit 347 368	spear-phishing emails
+T3	Exploit 374 399	malicious PDF attachments
+T4	Exploit 403 434	web links to binary executables
+T5	Malware 442 452	Poison Ivy
+T6	Country 533 538	China
+T7	Country 539 541	US
+T8	ExploitTargetObject 561 577	Defense entities
+T9	ExploitTargetObject 587 606	Geospatial industry
+T10	Organization 608 615	Zscaler
+R1	belongsTo Arg1:T5 Arg2:T1
+R2	hasAttackLocation Arg1:T5 Arg2:T6
+R3	hasAttackLocation Arg1:T5 Arg2:T7
+T11	Software 2020 2030	ThreatlabZ
+T12	Organization 2012 2019	Zscaler
+R4	hasProduct Arg1:T12 Arg2:T11
+T13	Time 6249 6253	2009
+T14	Attacker 6048 6053	1.php
+R5	hasAttackTime Arg1:T14 Arg2:T13
+T15	File 6676 6722	WWW.DREAMLIFES.NET/Afghanistan/Afghanistan.zip
+T16	MD5 6729 6761	052E62513505A25CCFADF900A052709C
+T17	Malware 6859 6873	Poison Ivy RAT
+R6	indicates Arg1:T15 Arg2:T17
+R7	indicates Arg1:T16 Arg2:T17
+T18	Vulnerability 7130 7143	CVE-2009-4324
+R8	exploits Arg1:T17 Arg2:T18
+T19	File 7444 7455	SUCHOST.EXE
+T20	File 7469 7480	Request.pdf
+T21	MD5 7503 7535	B0EECA383A7477EE689EC807B775EBBB
+T22	Malware 7378 7392	Poison Ivy RAT
+R9	indicates Arg1:T19 Arg2:T22
+R10	indicates Arg1:T21 Arg2:T22
+R11	indicates Arg1:T20 Arg2:T22
+T23	Indicator 7795 7816	CECON.FLOWER-SHOW.ORG
+T24	Time 7836 7845	July 2011
+T25	Attacker 7747 7752	1.php
+R12	hasAttackTime Arg1:T25 Arg2:T24
+R13	indicates Arg1:T23 Arg2:T22
+T26	Country 8049 8054	Japan
+T27	Country 8056 8061	China
+T28	Country 8063 8069	Taiwan
+T29	Country 8072 8075	USA
+R14	hasAttackLocation Arg1:T25 Arg2:T26
+R15	hasAttackLocation Arg1:T25 Arg2:T27
+R16	hasAttackLocation Arg1:T25 Arg2:T28
+R17	hasAttackLocation Arg1:T25 Arg2:T29
+T30	Vulnerability 8255 8268	CVE-2010-2883
+T31	Vulnerability 7979 7992	CVE-2010-2883
+T32	Malware 8279 8289	Poison Ivy
+R18	exploits Arg1:T32 Arg2:T31
+R19	exploits Arg1:T32 Arg2:T30
+T33	File 8506 8519	Halloween.scr
+T34	MD5 8525 8557	5B90896127179F0AD2E6628593CDB60D
+T35	Vulnerability 8182 8195	CVE-2010-2883
+R20	exploits Arg1:T32 Arg2:T35
+R21	indicates Arg1:T33 Arg2:T32
+R22	indicates Arg1:T34 Arg2:T32
+T36	Indicator 8767 8787	FREE.COFFEELAUCH.COM
+T37	Address 8789 8800	98.126.69.3
+T38	Indicator 8804 8823	FIREHAPPY.SYTES.NET
+T39	Address 8827 8838	98.126.69.3
+T40	MalwareCharacteristics 9181 9195	base64 encoded
+T41	MalwareCharacteristics 9224 9228	0x3C
+T42	MalwareCharacteristics 9233 9237	0x3E
+T43	TrojanHorse 10079 10096	Win32.Buzus.cvdu7
+T44	TrojanHorse 10125 10150	Trojan.Win32.Agent. eevf8
+T45	Indicator 12099 12172	FQDN/css.ashx?sc=[data1]&sp=[data2]&ad=[data3]&dh=[data4]&mr=[d ata5]&tk=
+T46	Indicator 12411 12434	HOUSE.SUPERDOGDREAM.COM
+T47	Indicator 12435 12460	HOME.ALLMYDEARFRIENDS.COM
+T48	Indicator 12461 12484	GOOGLETIME.SERVEIRC.COM
+T49	Indicator 12487 12509	INFO.SPORTGAMEINFO.COM
+T50	Indicator 12510 12534	PEOPLE.ENJOYHOLIDAYS.NET
+T51	Indicator 12535 12561	PEARHOST.SERVEHALFLIFE.COM
+T52	Indicator 12845 12889	FQDN/[data1]/[data2]/[data3]/[data4]/[data5]
+T53	Indicator 13189 13219	SATELLITE.QUICKSEARCHMOVIE.COM
+T54	Indicator 13220 13237	WWW.TOYHOPING.COM
+T55	Indicator 13238 13260	WORK.FREETHROWLINE.NET
+T56	Indicator 13261 13279	SEA.ANIMALFANS.NET
+T57	Indicator 13280 13297	WWW.SEARCHSEA.NET
+T58	Indicator 13298 13317	LOVE.ANIMALFANS.NET
+T59	Indicator 13318 13333	WWW.JOBCALL.ORG
+T60	Time 13671 13685	August 3, 2011
+T61	Attacker 13462 13467	1.php
+R23	hasAttackTime Arg1:T61 Arg2:T60
+T62	AttackerGroup 12684 12689	1.php
+T63	Indicator 14651 14671	WWW.SAVAGECOUNTY.NET
+T64	Indicator 14672 14698	LOOK.CAPTAINSABERTOOTH.NET
+T65	Indicator 14699 14720	GEOINFO.SERVEHTTP.COM
+T66	Indicator 14723 14745	ROSE.OFFICESKYLINE.COM
+T67	Indicator 14746 14770	WWW.CAREERCHALLENGES.NET
+T68	Indicator 14771 14788	OFFER.AMERICAMS.N
+T69	Indicator 15646 15665	firehappy.sytes.net
+T70	Host 15735 15739	free
+T71	Host 15741 15746	image
+T72	Host 15776 15784	tastfine
+T73	Host 15878 15883	house
+T74	Host 15906 15909	do:
+T75	Host 16015 16020	dream
+T76	Host 16022 16027	smart
+T77	Host 16045 16049	rose
+T78	Host 16098 16105	qinetiq
+T79	Host 16128 16132	qnao
+T80	Host 16185 16189	look
+T81	Host 16291 16294	www
+T82	Address 15748 15759	98.126.69.3
+T83	Indicator 15761 15775	dreamlifes.net
+T84	Indicator 15846 15857	seablow.net
+T85	Indicator 15859 15876	superdogdream.com
+T86	Indicator 15885 15905	allmydearfriends.com
+T87	Indicator 15926 15943	sportgameinfo.com
+T88	Indicator 15945 15962	enjoyholidays.net
+T89	Indicator 15979 15990	jobcall.org
+T90	Indicator 15992 16013	geoinfo.servehttp.com
+T91	Address 16029 16043	178.63.130.197
+T92	Address 16066 16078	46.4.209.130
+T93	Indicator 16080 16097	officeskyline.com
+T94	Indicator 16106 16127	captainsabertooth.net
+T95	Indicator 16133 16149	savagecounty.net
+T96	Indicator 16493 16519	bakerhughes.thruthere.net9
+T97	ExploitTargetObject 16776 16789	US Government
+T98	ExploitTargetObject 16797 16820	Defense Industrial Base
+T99	Attacker 16658 16663	1.php
+T100	Software 20094 20098	IE 6
+T101	Organization 20084 20093	Microsoft
+R24	hasProduct Arg1:T101 Arg2:T100
+T102	AttackerGroup 17756 17764	Soysauce
+T103	AttackerGroup 17796 17808	Comment Crew
+T104	AttackerGroup 17832 17838	GIF89a
+T105	Exploit 18251 18264	steganography

@@ -1,0 +1,267 @@
+T1	Organization 1168 1176	Symantec
+T2	Time 1162 1166	2010
+T3	Malware 1232 1239	Stuxnet
+T4	Malware 1708 1715	Stuxnet
+T5	Organization 1782 1790	Symantec
+T6	Malware 1831 1838	Stuxnet
+T7	Malware 1892 1899	Stuxnet
+T8	Malware 2018 2029	Stuxnet 0.5
+T9	Malware 2050 2057	Stuxnet
+T10	Time 2106 2119	November 2007
+T11	Time 2151 2164	November 2005
+T12	Malware 2168 2179	Stuxnet 0.5
+T13	Malware 2205 2212	Stuxnet
+T14	Malware 2278 2289	Stuxnet 0.5
+T15	Location 2388 2400	Natanz, Iran
+T16	Malware 2561 2572	Stuxnet 0.5
+T17	Malware 2622 2629	Stuxnet
+T18	Malware 2821 2832	Stuxnet 0.5
+T19	Malware 2899 2906	Stuxnet
+T20	Malware 2992 2999	Stuxnet
+T21	Malware 3010 3021	Stuxnet 0.5
+T22	Time 3077 3090	November 2007
+T23	Time 3146 3159	November 2005
+T24	Time 3226 3238	July 4, 2009
+R1	hasAttackTime Arg1:T21 Arg2:T23
+R2	hasAttackTime Arg1:T21 Arg2:T24
+T25	Time 3350 3360	January 11
+R3	hasAttackTime Arg1:T21 Arg2:T25
+T26	Time 3491 3495	2001
+R4	hasAttackTime Arg1:T21 Arg2:T26
+T27	Time 3517 3533	November 3, 2005
+T28	Time 3560 3577	November 15, 2007
+T29	Time 3621 3633	July 4, 2009
+T30	Time 3656 3669	June 22, 2009
+T31	Time 3702 3715	March 1, 2010
+T32	Time 3748 3762	April 14, 2010
+T33	Time 3795 3808	June 24, 2012
+T34	Vulnerability 3916 3929	CVE-2010-3888
+T35	Vulnerability 3996 4009	CVE-2010-2729
+T36	Vulnerability 4039 4052	CVE-2008-4250
+T37	Vulnerability 4195 4208	CVE-2010-2743
+T38	Vulnerability 4210 4223	CVE-2012-3015
+T39	Vulnerability 4228 4241	CVE-2010-2772
+T40	Vulnerability 4242 4255	CVE-2010-2568
+T41	Vulnerability 4256 4264	MS09-025
+T42	Malware 4321 4328	Stuxnet
+R5	exploits Arg1:T42 Arg2:T41
+R6	exploits Arg1:T42 Arg2:T40
+R7	exploits Arg1:T42 Arg2:T39
+R8	exploits Arg1:T42 Arg2:T38
+R9	exploits Arg1:T42 Arg2:T37
+T43	Malware 3853 3860	Stuxnet
+R10	exploits Arg1:T43 Arg2:T34
+R11	exploits Arg1:T43 Arg2:T35
+R12	exploits Arg1:T43 Arg2:T36
+T44	MalwareFamily 4371 4378	Stuxnet
+T45	Malware 4421 4432	Stuxnet 0.5
+R13	hasMember Arg1:T44 Arg2:T45
+T46	Malware 5201 5212	Stuxnet 0.5
+T47	Malware 5236 5242	Flamer
+T48	Malware 5301 5307	Tilded
+T49	Malware 5385 5391	Tilded
+T50	Malware 5478 5484	Tilded
+T51	Malware 5522 5528	Flamer
+T52	Malware 5533 5539	Tilded
+T53	Malware 5628 5639	Stuxnet 0.5
+T54	Malware 5821 5832	Stuxnet 0.5
+T55	File 5899 5911	s7hkimdb.dll
+T56	File 5916 5928	XR000001.MDX
+R14	indicates Arg1:T55 Arg2:T54
+R15	indicates Arg1:T56 Arg2:T54
+T57	Vulnerability 6032 6044	CVE2012-3015
+T58	Dropper 6051 6063	S7hkimdb.dll
+R16	exploits Arg1:T54 Arg2:T57
+R17	usesDropper Arg1:T54 Arg2:T58
+T59	File 6123 6134	XR00001.MDX
+T60	Malware 6135 6142	Stuxnet
+R18	indicates Arg1:T59 Arg2:T60
+T61	Malware 6290 6297	Stuxnet
+T62	Indicator 6476 6488	outbreak.dll
+T63	Indicator 6513 6522	oem7a.pnf
+T64	File 6590 6606	installation.dll
+T65	File 6628 6637	oem7w.pnf
+T66	Indicator 6670 6680	MRXCLS.SYS
+T67	Indicator 7188 7198	PCIBUS.SYS
+T68	Indicator 7333 7345	USBACC11.SYS
+T69	Malware 6772 6779	Stuxnet
+R19	indicates Arg1:T63 Arg2:T61
+R20	indicates Arg1:T62 Arg2:T61
+R21	indicates Arg1:T64 Arg2:T61
+R22	indicates Arg1:T65 Arg2:T61
+R23	indicates Arg1:T66 Arg2:T69
+R24	indicates Arg1:T67 Arg2:T69
+R25	indicates Arg1:T68 Arg2:T69
+T70	Malware 7663 7674	Stuxnet 0.5
+T71	File 8886 8911	XUTILS/links/S7P00001.DBF
+T72	Payload 8933 8959	XUTILS/listen/S7000001.MDX
+T73	File 8993 9019	XUTILS/listen/XR000000.MDX
+T74	File 9057 9088	hOmSave7/subfolder/s7hkimdb.dll
+T75	File 9043 9055	outbreak.dll
+T76	File 8975 8991	installation.dll
+T77	File 9740 9751	inetpsp.dll
+T78	File 9814 9827	netsimp32.dll
+T79	Indicator 9863 9875	usbacc11.sys
+T80	Indicator 10086 10100	smartclick.org
+T81	Indicator 10101 10121	best-advertising.net
+T82	Indicator 10122 10147	internetadvertising4u.com
+T83	Indicator 10148 10164	ad-marketing.net
+T84	Time 10247 10263	January 11, 2009
+T85	Time 10347 10359	July 4, 2009
+T86	Time 10400 10404	2005
+T87	Country 10710 10723	United States
+T88	Country 10725 10731	Canada
+T89	Country 10733 10739	France
+T90	Country 10745 10753	Thailand
+T91	Time 10807 10811	2005
+T92	Campaign 10831 10838	Stuxnet
+T93	Malware 10892 10903	Stuxnet 0.5
+T94	Malware 10962 10973	Stuxnet 0.5
+T95	File 12336 12364	%WinDir%\msagent\agentsb.dll
+T96	File 12365 12398	%WinDir%\msagent\intl\agt0f2e.dll
+T97	File 12399 12428	%WinDir%\system32\complnd.dll
+T98	File 12429 12468	%WinDir%\system32\dllcache\datacprs.dll
+T99	File 12469 12503	%WinDir%\system32\wbem\perfnws.dll
+T100	File 12504 12572	%WinDir%\Installer\{6F716D8C-398F-11D3-85E1-005004838609}\places.dat
+T101	File 12808 12820	s7otbxdx.dll
+T102	File 13140 13152	s7aaapix.dll
+T103	File 13318 13330	s7otbxdx.dll
+T104	System 14971 14990	SIMATIC 400 Station
+T105	System 15005 15022	SIMATIC H-Station
+T106	Malware 14470 14481	Stuxnet 0.5
+T107	SystemConfigurationInformation 14620 14628	s7_event
+T108	SystemConfigurationInformation 14629 14654	s7ag_bub_cycl_read_create
+T109	SystemConfigurationInformation 14655 14672	s7ag_bub_read_var
+T110	SystemConfigurationInformation 14673 14694	s7ag_bub_read_var_seg
+T111	SystemConfigurationInformation 14695 14713	s7ag_bub_write_var
+T112	SystemConfigurationInformation 14714 14736	s7ag_bub_write_var_seg
+T113	SystemConfigurationInformation 14737 14749	s7ag_link_in
+T114	SystemConfigurationInformation 14751 14764	s7ag_read_szl
+T115	SystemConfigurationInformation 14766 14779	s7ag_read_szl
+T116	SystemConfigurationInformation 14781 14790	s7ag_test
+T117	SystemConfigurationInformation 14792 14801	s7ag_test
+T118	SystemConfigurationInformation 14803 14815	s7blk_delete
+T119	SystemConfigurationInformation 14817 14829	s7blk_delete
+T120	SystemConfigurationInformation 14831 14846	s7blk_findfirst
+T121	SystemConfigurationInformation 14848 14863	s7blk_findfirst
+T122	SystemConfigurationInformation 14865 14879	s7blk_findnext
+T123	SystemConfigurationInformation 14881 14895	s7blk_findnext
+T124	SystemConfigurationInformation 14919 14929	s7blk_read
+T125	SystemConfigurationInformation 14931 14941	s7blk_read
+T126	SystemConfigurationInformation 15097 15108	s7blk_write
+T127	SystemConfigurationInformation 15110 15121	s7blk_write
+T128	SystemConfigurationInformation 15122 15132	s7db_close
+T129	SystemConfigurationInformation 15134 15143	s7db_open
+T130	SystemConfigurationInformation 15152 15153	e
+T131	Malware 18827 18834	Stuxnet
+T132	SystemConfigurationInformation 23432 23453	peripheral I/O values
+T133	SystemInformation 24908 24924	pressure reading
+T134	ExploitTargetObject 27596 27622	uranium enrichment process
+T135	Campaign 27130 27141	Stuxnet 0.5
+R26	targets Arg1:T135 Arg2:T134
+T136	Country 27634 27638	Iran
+T137	Location 27626 27632	Natanz
+T138	Location 27878 27884	Natanz
+T139	Malware 27906 27913	Stuxnet
+T140	Malware 28117 28128	Stuxnet 0.5
+T141	MalwareFamily 28174 28181	Stuxnet
+R27	hasMember Arg1:T141 Arg2:T140
+T142	Indicator 28544 28607	HKEY _ LOCAL _ MACHINE\SYSTEM\CurrentControlSet\Services\MRxCls
+T143	Indicator 28610 28675	HKEY _ LOCAL _ MACHINE\SYSTEM\CurrentControlSet\Services\usbacc11
+T144	Indicator 28678 28767	HKEY _ USERS\<SID>\Software\Microsoft\Windows\CurrentVersion\Explorer\ ShellRecoveryState
+T145	File 28867 28891	%WinDir%\inf\mdmcpq3.PNF
+T146	File 28921 28946	%WinDir%\inf\mdmeric3.PNF
+T147	File 28972 28994	%WinDir%\inf\oem6C.PNF
+T148	File 29006 29028	%WinDir%\inf\oem7A.PNF
+T149	File 29069 29091	%WinDir%\inf\oem7F.pnf
+T150	File 29092 29114	%WinDir%\inf\oem7w.pnf
+T151	File 29144 29164	%WinDir%\inf\~67.tmp
+T152	File 29194 29221	%System%\drivers\mrxcls.sys
+T153	File 29242 29271	%System%\drivers\usbacc11.sys
+T154	File 29315 29342	%System%\drivers\PCIBUS.SYS
+T155	File 29378 29397	%System%\comuid.dat
+T156	File 29398 29420	%System%\netsimp32.dll
+T157	File 29441 29461	%System%\inetpsp.dll
+T158	File 29489 29510	%System%\perfg009.dat
+T159	File 12336 12364	%WinDir%\msagent\agentsb.dll
+T160	File 12365 12398	%WinDir%\msagent\intl\agt0f2e.dll
+T161	File 29574 29594	%System%\complnd.dll
+T162	File 29595 29625	%System%\dllcache\datacprs.dll
+T163	File 29626 29651	%System%\wbem\perfnws.dll
+T164	File 12504 12572	%WinDir%\Installer\{6F716D8C-398F-11D3-85E1-005004838609}\places.dat
+T165	File 29721 29741	%System%\dssbase.dat
+T166	File 29753 29820	%AllUsersProfile%\Application Data\Microsoft\HTML Help\hhorcslt.dat
+T167	File 29821 29838	%Temp%/DF419a.tmp
+T168	File 29839 29863	%WinDir%\help\winmic.fts
+T169	Software 30163 30185	Tiny Personal Firewall
+T170	Software 30163 30185	Tiny Personal Firewall
+T171	Software 30163 30185	Tiny Personal Firewall
+T172	Software 30257 30278	Tiny Activity Monitor
+T173	Software 30163 30185	Tiny Personal Firewall
+T174	Software 30163 30185	Tiny Personal Firewall
+T175	Software 30163 30185	Tiny Personal Firewall
+T176	Software 30380 30407	ZoneAlarm Personal Firewall
+T177	Software 30380 30407	ZoneAlarm Personal Firewall
+T178	Software 30380 30407	ZoneAlarm Personal Firewall
+T179	Software 30487 30512	TDS3 Trojan Defense Suite
+T180	Software 30518 30527	Kaspersky
+T181	Software 30518 30527	Kaspersky
+T182	Software 30518 30527	Kaspersky
+T183	Software 30518 30527	Kaspersky
+T184	Software 30518 30527	Kaspersky
+T185	Software 30603 30612	SafenSoft
+T186	Software 30603 30612	SafenSoft
+T187	Software 30641 30661	Sysinternals Filemon
+T188	Software 30641 30661	Sysinternals Filemon
+T189	Software 30709 30715	McAfee
+T190	Software 30709 30715	McAfee
+T191	Software 30709 30715	McAfee
+T192	Software 30709 30715	McAfee
+T193	Software 30778 30795	Blackice Firewall
+T194	Software 30778 30795	Blackice Firewall
+T195	Software 30778 30795	Blackice Firewall
+T196	Software 30858 30869	rcfgsvc.exe
+T197	Software 30163 30185	Tiny Personal Firewall
+T198	Software 30163 30185	Tiny Personal Firewall
+T199	Software 30963 30986	Kerio Personal Firewall
+T200	Software 30963 30986	Kerio Personal Firewall
+T201	Software 30963 30986	Kerio Personal Firewall
+T202	Software 31072 31088	Windows Defender
+T203	Software 31072 31088	Windows Defender
+T204	Software 31131 31139	F-Secure
+T205	Software 31131 31139	F-Secure
+T206	Software 31131 31139	F-Secure
+T207	Software 31131 31139	F-Secure
+T208	Software 31131 31139	F-Secure
+T209	Software 31131 31139	F-Secure
+T210	Software 31131 31139	F-Secure
+T211	Software 31131 31139	F-Secure
+T212	Software 31131 31139	F-Secure
+T213	Software 31131 31139	F-Secure
+R28	indicates Arg1:T142 Arg2:T139
+R29	indicates Arg1:T143 Arg2:T139
+R30	indicates Arg1:T144 Arg2:T139
+R31	indicates Arg1:T145 Arg2:T139
+R32	indicates Arg1:T146 Arg2:T139
+R33	indicates Arg1:T147 Arg2:T139
+R34	indicates Arg1:T148 Arg2:T139
+R35	indicates Arg1:T149 Arg2:T139
+R36	indicates Arg1:T150 Arg2:T139
+R37	indicates Arg1:T151 Arg2:T139
+R38	indicates Arg1:T152 Arg2:T139
+R39	indicates Arg1:T153 Arg2:T139
+R40	indicates Arg1:T154 Arg2:T139
+R41	indicates Arg1:T155 Arg2:T139
+R42	indicates Arg1:T156 Arg2:T139
+R43	indicates Arg1:T157 Arg2:T139
+R44	indicates Arg1:T158 Arg2:T139
+R45	indicates Arg1:T159 Arg2:T139
+R46	indicates Arg1:T160 Arg2:T139
+R47	indicates Arg1:T161 Arg2:T139
+R48	indicates Arg1:T162 Arg2:T139
+R49	indicates Arg1:T163 Arg2:T139
+R50	indicates Arg1:T164 Arg2:T139
+R51	indicates Arg1:T165 Arg2:T139
+R52	indicates Arg1:T166 Arg2:T139
+R53	indicates Arg1:T167 Arg2:T139
+R54	indicates Arg1:T168 Arg2:T139

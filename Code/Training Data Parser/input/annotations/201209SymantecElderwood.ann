@@ -1,0 +1,61 @@
+T1	Time 828 832	2009
+T2	Organization 834 840	Google
+T3	TrojanHorse 875 881	Hydraq
+T4	Campaign 883 889	Aurora
+R1	targets Arg1:T4 Arg2:T2
+R2	hasAttackTime Arg1:T3 Arg2:T1
+T5	Organization 905 913	Symantec
+T6	Exploit 1142 1150	zero-day
+R3	involvesMalware Arg1:T4 Arg2:T6
+T8	Exploit 1251 1274	“watering hole” attacks
+R5	involvesMalware Arg1:T4 Arg2:T8
+T10	ExploitTargetObject 1439 1473	defense supply chain manufacturers
+T11	ExploitTargetObject 1492 1521	nongovernmental organizations
+T12	ExploitTargetObject 1534 1554	IT service providers
+T13	Campaign 1650 1659	Elderwood
+T14	Exploit 1849 1870	spear phishing emails
+T15	Attacker 2025 2032	Sykipot
+T16	Attacker 2036 2041	Nitro
+T17	Attacker 2051 2058	Stuxnet
+T18	Software 2311 2329	Adobe Flash Player
+T19	Vulnerability 2330 2373	Object Type Confusion Remote Code Execution
+T20	Vulnerability 2389 2402	CVE-2012-0779
+T21	Software 2406 2433	Microsoft Internet Explorer
+T22	Vulnerability 2434 2472	Same ID Property Remote Code Execution
+T23	Vulnerability 2488 2501	CVE-2012-1875
+T24	Software 2505 2518	Microsoft XML
+T25	Vulnerability 2519 2554	Core Services Remote Code Execution
+T26	Vulnerability 2570 2583	CVE-2012-1889
+T27	Software 2587 2605	Adobe Flash Player
+T28	Vulnerability 2606 2627	Remote Code Execution
+T29	Vulnerability 2643 2656	CVE-2012-1535
+R6	hasVulnerability Arg1:T18 Arg2:T19
+R7	hasVulnerability Arg1:T18 Arg2:T20
+R8	hasVulnerability Arg1:T21 Arg2:T22
+R9	hasVulnerability Arg1:T21 Arg2:T23
+R10	hasVulnerability Arg1:T24 Arg2:T25
+R11	hasVulnerability Arg1:T24 Arg2:T26
+R12	hasVulnerability Arg1:T27 Arg2:T28
+R13	hasVulnerability Arg1:T27 Arg2:T29
+T30	Organization 4523 4529	Google
+T31	Time 4511 4521	early 2010
+T32	Time 4620 4633	December 2009
+T33	TrojanHorse 4715 4721	Hydraq
+R14	hasAttackTime Arg1:T33 Arg2:T32
+T34	TrojanHorse 4738 4744	Aurora
+T35	Exploit 4776 4802	Internet Explorer zero-day
+T36	Time 4996 5006	March 2011
+T37	Time 5121 5135	September 2011
+T38	ExploitTargetObject 5265 5301	Amnesty International Hong Kong site
+T39	Exploit 6592 6605	SQL injection
+T40	Campaign 6729 6738	Elderwood
+T41	Attacker 7831 7840	Elderwood
+T42	Country 11099 11105	Taiwan
+T43	Country 11107 11116	Hong Kong
+T44	Country 11121 11126	China
+T45	ExploitTargetObject 11469 11476	Finance
+T46	ExploitTargetObject 11478 11484	Energy
+T47	ExploitTargetObject 11496 11505	Education
+T48	ExploitTargetObject 11511 11521	Government
+T49	Exploit 12172 12178	iFrame
+T50	Exploit 16547 16562	Shockwave Flash

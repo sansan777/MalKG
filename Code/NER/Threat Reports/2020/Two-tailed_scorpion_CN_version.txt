@@ -1,0 +1,492 @@
+刺向巴勒斯坦的致命毒针——双尾蝎 APT组织的攻击活动分析与总结 -SecPulse.COM 
+
+secpulse.com/archives/125292.html 
+
+
+2020-03-12 2,662 
+
+刺向巴勒斯坦的致命毒针——双尾蝎 APT组织的攻击活动分析与总结
+封.-pic1 
+..前. 
+双尾蝎APT组织 (.名 : APT-C-23 ),该组织从 2016年 5 .开始就.直对巴勒斯坦教育机构、军事机构等重要领域展开了有组织、有计划、有针对性的.时间不间断攻击.其在2017年的时候其攻击活动被360企业安全进.了披露,并且其主要的攻击区域为中东,其中以 .列与巴勒斯坦更受该组织的.
+睐。
+攻击平台主要包括 Windows与 Android :
+其中针对 windows的平台,其.较常.的.法有投放带有" *.exe "或" *.scr ".件后缀的释放者 .件,在.标.户打开后释放对应的诱饵.档,并且释放下.步的侦查者(Recon).持久存在的.式也不唯.,.般通过写.注册表启动项以及释放指向持久化远控的快捷.式到.启动.件夹下.其侦查者会收集当前机器的相关信息包含(系统版本,计算名,杀毒软件信息,当前.件所在路径,恶意软件当前版本),以及其解析 C2的回显指令,并执...如:远程shell,截屏和.件下载。
+同时根据别的安全.商的报告,我们也得知该组织拥有于攻击 Android平台的组件,拥有定位、短信拦截、电话录.等，并且还会收集.档、图.、联系.、短信等情报信息；PC端后.程序功能包
+括收集.户信息上传到指定服务器的功能、远程下载.件能..
+近. check point安全.商披露了该组织 .导.演,给以.列.兵.上安装恶意软件的攻击活动.可以从中看出该团伙的攻击设计之巧妙,准备之充分。但最后结果还是被以.列给反制了.
+波............ 
+Gcow安全团队追影.组于 2019.12 .初开始监测到了双尾蝎APT组织通过投递带有诱饵.件的相关可执..件针对巴勒斯坦的部.进.了相应的攻击活动,这些诱饵.件涉及教育,科技,政治等..的内容,其攻击活动.直持续到了 2020.2 .底.追影.组对该组织进.了.定时间的追踪.遂写成此报告还请各位看官欣赏. 
+..样本信息介绍以及分析
+1.样本信息介绍
+在本次双尾蝎APT组织针对巴勒斯坦的活动中,Gcow安全团队追影.组.共捕获了 14样本 ,均为 windows样本 ,其中 12样本是释放诱饵.档的可执..件, 2样本是带有恶意宏的诱饵.档
+
+2019.12——2020.2双尾蝎APT组织针对巴勒斯坦所投放样本的样本类型占.图-pic2 
+在这 12 可执..件样本中,有 7 样本伪装成 pdf .档.件,有 1 样本伪装为 word .档. 
+件,有 2 样本伪装为 rar压缩.件.有 2 样本伪装成 mp3 , mp4.频 .件  
+
+
+2019.12——2020.2双尾蝎APT组织针对巴勒斯坦所投放可执..件样本的样本类型占.图-pic3
+在这 14 Windows恶意样本中,其诱饵.档的题材,政治类的样本数量有 9 ,教育类的样本数量有 1 ,科研类的样本数量有 1 ,未知类的样本数量有 3 (注意:未知指得是其诱饵.档出现错误.法打开或者其内容属于.关内容) 
+
+2019.12——2020.2双尾蝎APT组织针对巴勒斯坦所投放的样本题材占.图-pic4
+现在各位看官应该对这批双尾蝎组织针对巴勒斯坦的攻击活动有了. .概的认识 ,但是由于这批样本之中有.些话题是以.列和巴勒斯坦共有的,这. Gcow安全团队追影.组持该组织主要是攻击巴勒斯坦的观点,若各位看官有更多的证据,欢迎联系我们团队.注意:这.只是.家之.,还请各位
+看官须知。
+那下.追影.组将以.恶意样本进.详细分析,其他样本采取略写的形式向各位看官描述此次攻击活动。注意:因为其他样本的主要逻辑是相同的,所以没有必要枉费笔墨 
+2.样本分析
+(1).De.ne the Internet in government institutions 
+a.样本信息
+
+样本 De.ne the Internet in government institutions_pdf.exe.件信息(表格)-pic5 
+
+样本 De.ne the Internet in government institutions_pdf.exe.件信息(图.)-pic6 
+b.样本分析
+通过对样本的分析我们得知了该样本是兼具释放者(Dropper)与下载者(Downloader)的功能,其释放者(Dropper)主要是.以释放诱饵 
+.档加以伪装以及将.身拷.到%ProgramData%.录下,并且.成执.该 .件的快捷.式并且释放于.启动.件夹下,.下载者(Downloader)
+部分主要是通过进 .信息收集以及等待C2给予的回显,主要功能有:远程shell,.件下载,屏幕截屏
+i.释放者(Dropper)部分: 
+通过 FindResource函数查找名称为:MyData的资源
+
+FindResource函数查找MyData资源-pic7通过 LoadResource函数加载该资源
+
+LoadResource函数加载资源-pic8
+通过 LockResource函数锁定资源并且获取资源在内存的地址
+
+LockResource函数锁定资源-pic9
+通过 SizeOfResource函数通过获取资源的地址计算该资源的.度
+
+SizeOfResource函数获取资源.度-pic10
+通过 CreateFile函数在%temp%.录下释放诱饵PDF.档De.ne the Internet in government institutions.pdf 
+
+CreateFile函数创造诱饵PDF.档-pic11通过 WriteFile函数将PDF源数据写.创建的诱饵.档内
+
+诱饵PDF.档源数据 -pic12 
+
+WriteFile函数将PDF.档源数据写.诱饵PDF.档中-pic13通过 ShellExecute函数打开PDF诱饵.档,以免引起.标怀疑
+
+ShellExecute函数打开诱饵PDF.档-pic14
+其PDF诱饵.档内容如图,主要关于其使.互联.的政治类题材样本 ,推测应该是针对政府部.的活动
+
+诱饵PDF.档原.以及翻译-pic15
+同时利. CopyFileA函数将.身拷.到 %ProgramData% .录下并且重命名为 SyncDownOptzHostProc.exe 
+
+CopyFile函数拷..身.件并重命名为SyncDownOptzHostProc.exe-pic16
+利. CreateFilewW函数在.启动.件夹下创造指向 %ProgramData%SyncDownOptzHostProc.exe的快捷.式 SyncDownOptzHostProc.lnk 
+
+利.CreateFileW函数创造指向后..件的快捷.式-pic17 
+
+指向后..件的快捷.式于.启动.件夹下-pic18 
+ii.下载者(Downloader)部分: 
+通过 CreateFile函数创造 %ProgramData%GUID.bin .件,内部写.对应本机的 GUID .当软件再次运.的时候检查.身是否位于 %ProgramData% .件夹下,若不是则释放pdf.档。若是,则释放 lnk到.启动.件夹
+
+.成GUID码-pic19 
+
+创造GUID.bin.件并将.成的GUID码写. -pic20 
+①.信息收集
+1.收集当前.户名以及当前计算机名称,并且读取 GUID.bin .件中的GUID码
+
+收集username和computername并且读取GUID-pic21
+再以如下格式拼接信息
+当前计算机名称_当前.户名_GUID码
+
+编码前cname报.-pic22将这些拼接好的信息利.base64进.编码,组合成 cname报. 
+
+编码后cname报.-pic23 
+2.通过 GetVersion函数收集当前系统版本
+
+通过 GetVersion函数收集当前系统版本-pic24并且将其结果通过 Base64进.编码,组成 osversion报. 
+
+编码osversion报.-pic25 
+3.通过 WMI查询本地安装的安全软件被侦查的安全软件包括 360 , F-secure , Corporate , Bitdefender 
+
+通过 wmi查询本地安全的安全软件-pic26 
+
+被侦查的安全软件列表-pic27
+如果存在的话,获取结果组成 av报. 
+4.通过 GetModuleFile函数获取当前.件的运.路径
+
+通过 GetModuleFile函数获取当前.件运.路径-pic28
+将当前程序运.路径信息通过 base64编码组成 aname报. 
+
+编码aname报.-pic29 
+5.后.版本号 ver报.,本次活动的后.版本号为:5.HXD.zz.1201 
+
+编码前ver报.-pic30
+将版本号通过 base64编码组成 ver报. 
+
+编码后ver报.-pic31
+将这些信息按照如下.式拼接好后,通过 Send .式向URL地址 htp://nicoledotson.icu/debby/weatherford/yportysnr发送上线报. 
+cname=&av=&osversion=&aname=&ver= 
+
+通过 send发送报.-pic32 
+
+wireshark报.-pic33 
+②.获取指令
+通过 http://nicoledotson.icu/debby/weatherford/ekspertyza URL获取功能命令(功能为截屏,远程shell,以及下载.件) 
+
+获取功能指令-pic34 
+③.发送屏幕快照
+截取屏幕快照函数
+
+截屏主要代码-pic35向URL地址 http://nicoledotson.icu/debby/weatherford/Zavantazhyty发送截屏
+
+发送截屏-pic36 
+④.远程shell 
+远程shell主要代码
+
+远程shell主要代码-pic37向URL地址 http://nicoledotson.icu/debby/weatherford/pidnimit发送shell回显
+
+发送shell回显-pic38 
+⑤..件下载
+下载.件,推测应该先另存为base64编码的 txt.件再解密另存为为 exe.件,最后删除txt.件.由于环境问题我们并没有捕获后续的代码 
+https://www.secpulse.com/archives/125292.html 
+
+下载.件1-pic39 
+
+下载.件2-pic40 
+⑥.删除命令
+通过 URL http://nicoledotson.icu/debby/weatherford/vydalyty获取删除指令
+
+获取删除指令-pic41
+此外我们还关联到.与之相似的样本 ,诱饵.档与之相同故不再赘述
+
+样本 Internet in government_984747457_489376.exe信息(表格)-pic42 
+(2).Employee-entitlements-2020 
+a.样本信息
+
+样本 Employee-entitlements-2020.doc.件信息(表格)-pic43 
+
+样本 Employee-entitlements-2020.doc.件信息(图.)-pic44
+该样本属于包含恶意宏的.档,我们打开可以看到其内容关于财政部关于.职和军事雇员福利的声明,属于涉及政治类的题材
+
+样本 Employee-entitlements-2020.doc正.与翻译-pic45 
+b.样本分析
+通过使. olevba dump出其包含的恶意宏代码(如下图所示:)
+其主要逻辑为:下载该URL http://linda-callaghan.icu/Minkowski/brown上的内容到本台机器的 %ProgramData%IntegratedOffice.txt (此时并不是其后.,.且后..件的 base64编码后的结果)。通过读取 IntegratedOffice.txt的所有内容将其解码后,把数据流写 . %ProgramData%IntegratedOffice.exe中,并且延迟运 . %ProgramData%IntegratedOffice.exe删除 %ProgramData%IntegratedOffice.txt 
+
+样本 Employee-entitlements-2020.doc中的恶意宏.件主要代码(带注释)-pic46 
+
+样本 IntegratedOf.ce.exe.件信息(表格)-pic47 
+
+样本 IntegratedOf.ce.exe.件信息(图.)-pic48
+该样本属于上.样本中的下载者(Downloader)部分,其还是通过创建 GUID .bin标记感染机器
+
+创建guid.bin-pic49并且创建指向.身的快捷.式于.启动.件夹中
+
+在.启动.件夹创建指向.身的快捷.式-pic50剩下的收集信息并且等待回显数据的操作都与上 .中提到的相同故此不再赘述 
+
+(3).Brochure-Jerusalem_26082019_pdf 
+a.样本信息
+
+样本 Brochure-Jerusalem_26082019_pdf.exe.件信息(表格)-pic51 
+
+样本 Brochure-Jerusalem_26082019_pdf.exe.件信息(图.)-pic52
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. PDF .件
+
+FindResource函数查找资源MYDATA-pic53
+通过 CreateFile函数将.件源数据写. %Temp%Brochure-Jerusalem_26082019.pdf (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. Brochure-Jerusalem_26082019.pdf-pic54
+通过 ShellExecute函数将 %Temp%Brochure-Jerusalem_26082019.pdf打开
+
+打开Brochure-Jerusalem_26082019.pdf-pic55
+该样本关于耶路撒冷的话题,属于政治类诱饵.档
+
+诱饵.件Brochure-Jerusalem_26082019.pdf内容以及翻译-pic56
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨。 
+
+(4).Congratulations_Jan-7_78348966_pdf 
+a.样本信息
+
+样本 Congratulations_Jan-7_78348966_pdf.exe.件信息(表格)-pic57样本 Congratulations_Jan-7_78348966_pdf.exe.件信息(图.)-pic58 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. PDF .件
+
+FindResource函数查找资源MYDATA-pic59通过 CreateFile函数将.件源数据写. %Temp%Congratulations_Jan-7.pdf (诱饵.件)中通过 CreateFile函数将.件源数据写. Congratulations_Jan-7.pdf-pic60通过 ShellExecute函数将 %Temp%Congratulations_Jan-7.pdf打开
+
+
+打开Scholarships in Serbia 2019-2020.pdf-pic61
+该样本关于耶路撒冷归属的话题,属于政治类诱饵.档
+
+诱饵.件Congratulations_Jan-7.pdf内容以及翻译-pic62
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨。 
+
+(5).Directory of Government Services_pdf 
+a.样本信息
+
+样本 Directory of Government Services_pdf.exe.件信息(表格)-pic63 
+
+样本 Directory of Government Services_pdf.exe.件信息(图.)-pic64 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. PDF .件
+
+FindResource函数查找资源MYDATA-pic65
+通过 CreateFile函数将.件源数据写. %Temp%Directory of Government Services.pdf (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. Directory of Government Services.pdf-pic66通过 ShellExecute函数将 %Temp%Directory of Government Services.pdf打开
+
+打开Directory of Government Services.pdf-pic67
+该样本关于政府部.秘书处的话题,属于政治类诱饵.档
+
+诱饵.件Directory of Government Services.pdf内容以及翻译-pic68
+诱饵内容对应的官.图. 
+
+巴勒斯坦秘书部官.图.-pic69 
+
+(6).entelaqa_hamas_32_1412_847403867_rar a.样本信息
+
+样本 entelaqa_hamas_32_1412_847403867_rar.exe.件信息(表格)-pic70 
+
+样本 entelaqa_hamas_32_1412_847403867_rar.exe.件信息(图.)-pic71 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. RAR .件
+
+FindResource函数查找资源MYDATA-pic72
+通过 CreateFile函数将.件源数据写. %Temp%Entelaqa32.rar (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. Entelaqa32.rar-pic73
+通过 ShellExecute函数将 %Temp%Entelaqa32.rar打开
+
+打开Scholarships in Serbia 2019-2020.pdf-pic74
+该样本关于哈.斯的话题,属于政治类诱饵.档
+
+诱饵.件Entelaqa32.rar内容-pic75 
+(7)..nal_meeting_9659836_299283789235_rar a.样本信息
+
+样本 .nal_meeting_9659836_299283789235_rar.exe.件信息(表格)-pic76 
+
+样本 .nal_meeting_9659836_299283789235_rar.exe.件信息(图.)-pic77 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. rar .件
+
+FindResource函数查找资源MYDATA-资源是rar.件-pic78
+通过 CreateFile函数将 rar .件源数据写. %Temp%jalsa.rar (诱饵.件)中
+
+通过 CreateFile函数将rar源数据写. jalsa.rar-pic79
+通过 ShellExecute函数将 %Temp%jalsa.rar打开
+
+打开jalsa.rar-pic80
+其诱饵.件的内容与第..届亚洲会议有关,其主体是.条件.持巴勒斯坦,可.可能是利.亚洲会议针对巴勒斯坦*的活动,属于政治类题材的诱饵样本
+
+jalsa.rar诱饵.件信息(带翻译)-pic81
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨 
+
+(8).Meeting Agenda_pdf 
+a.样本信息
+
+样本 Meeting Agenda_pdf.exe.件信息(表格)-pic82 
+
+样本 Meeting Agenda_pdf.exe.件信息(图.)-pic83 
+b.样本分析
+通过 CreateFile函数将.件源数据写. %Temp%Meeting Agenda.pdf (诱饵.件)中
+
+通过 CreateFile函数将源数据写. Meeting Agenda.pdf-pic84
+通过 ShellExecute函数将 %Temp%Meeting Agenda.pdf打开
+
+打开Meeting Agenda.pdf-pic85
+但由于其塞.数据的错误导致该 Meeting Agenda.pdf .件.法正常打开故此将该样本归因到未知类题材,之后的.为就和之前的如出.辙了,在此就不必多费笔墨。 
+(9).Scholarships in Serbia 2019-2020_pdf 
+a.样本信息
+
+样本 Scholarships in Serbia 2019-2020_pdf.exe.件信息(表格)-pic86 
+
+样本 Scholarships in Serbia 2019-2020_pdf.exe.件信息(图.)-pic87 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. PDF .件
+
+FindResource函数查找资源MYDATA-pic88
+通过 CreateFile函数将.件源数据写. %Temp%Scholarships in Serbia 2019-2020.pdf (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. Scholarships in Serbia 2019-2020.pdf-pic89
+通过 ShellExecute函数将 %Temp%Scholarships in Serbia 2019-2020.pdf打开
+
+打开Scholarships in Serbia 2019-2020.pdf-pic90
+该样本关于巴勒斯坦在塞尔维亚共和国奖学.的话题,属于教育类诱饵.档
+
+诱饵.件Scholarships in Serbia 2019-2020.pdf内容以及翻译-pic91
+诱饵内容对应的官.图. 
+
+巴勒斯坦教育部图.-pic92
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨。
+. .
+.
+..
+(10).347678363764_ 
+a.样本信息
+
+)-pic93格表(息件信 .的.exe. .
+.
+..
+347678363764_样本
+
+)-pic94.图(息件信 .的.exe. .
+.
+..
+347678363764_样本
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. docx .件
+
+FindResource函数查找资源MYDATA-资源是docx.件-pic95
+通过 CreateFile函数将 docx .件源数据写. %Temp%daily_report.docx (诱饵.件)中
+
+通过 CreateFile函数将docx源数据写. daily_report.docx-pic96
+通过 ShellExecute函数将 %Temp%daily_report.docx打开
+
+打开daily_report.docx-pic97
+从诱饵样本中的内容我们可以看出其关于巴勒斯坦态势的问题 ,属于政治类诱饵样本
+
+诱饵.档daily_report.docx.件原.与翻译-pic98
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨 
+(11).asala-panet-il-music-live-892578923756-mp3 a.样本信息
+
+样本 asala-panet-il-music-live-892578923756-mp3.exe的.件信息(表格)-pic99 
+
+样本 asala-panet-il-music-live-892578923756-mp3.exe的.件信息(图.)-pic100 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. unknown .件
+
+FindResource函数查找资源MYDATA-pic101
+通过 CreateFile函数将.件源数据写. %Temp%asala.mp3 (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. asala.mp3-pic102
+通过 ShellExecute函数将 %Temp%asala.mp3打开
+
+打开asala.mp3.mp4-pic103
+歌曲挺好听的,但是我们也不知道啥意思,将其归属于未知类题材样本 
+
+(12).artisan-video-5625572889047205-9356297846-mp4 a.样本信息
+
+样本 artisan-video-5625572889047205-9356297846-mp4.exe的.件信息(表格)-pic104 
+
+样本 artisan-video-5625572889047205-9356297846-mp4.exe的.件信息(图.)-pic105 
+b.样本分析
+通过 FindResource函数查找资源 MYDATA ,通过下图我们可以看出该资源是. unknown .件
+
+FindResource函数查找资源MYDATA-pic106
+通过 CreateFile函数将.件源数据写. %Temp%artisan-errors.mp4 (诱饵.件)中
+
+通过 CreateFile函数将.件源数据写. artisan-errors.mp4-pic107
+通过 ShellExecute函数将 %Temp%artisan-errors.mp4打开
+
+打开artisan-errors.mp4-pic108
+该样本伪装成视频丢失的404信号,没有实际参考价值,故归.未知类题材样本
+
+诱饵.件artisan-errors.mp4内容-pic109
+之后的.为就和之前的如出.辙了,在此就不必多费笔墨。 
+a.样本信息
+.
+. .
+.
+.
+(13).1 
+
+.
+.
+1样本
+U 
+)-pic110格表(息件信 .的.doc.
+. .
+
+
+.
+.
+1样本
+U 
+)-pic111.图(息件信 .的.doc.
+. .
+
+b.样本分析
+其诱饵内容关于在东耶路撒冷(巴勒斯坦)的阿布迪斯.学秘书,属于.学科研类样本
+
+.
+.
+1样本
+U 
+-pic112译翻.原.doc.
+. .
+
+同时其包含的恶意宏代码如图所示,由于我们并没有能成功获得下.步的载荷,故没法进.下.步的分析。不过推测其.致功能应该与上 .相同
+
+恶意宏代码-pic113 
+
+
+
+三.组织关联与技术演进
+在本次活动中,我们可以清晰的看到双尾蝎APT组织的攻击.段,同时 Gcow安全团队追影.组也对其进.了.定的组织关联,并且对其技术的演进做了.定的研究。下.我们将分为组织关联与技术演进这两部分内容进.详细的叙述。
+注意:下.中的时间段仅仅为参考值,并.准确时间。由于在这.时间段内该类样本较多,故此分类。 
+1.组织关联 
+(1).样本执.流程基本相似
+我们根据对.了从 2017到 2020年所有疑似属于双尾蝎APT组织的样本 ,(注意:这..对的样本主要是windows平台的可执..件样本 ).在 2017年到 2019年的样本中我们可以看出其先在临时.件夹下释放诱饵.件,再打开迷惑受害者,再将.身拷.到 %ProgramData%下.创建指向%ProgramData%下的.拷.恶意 .件的快捷.式于.启动.件夹.本次活动与 2018年 2019年的活动所使.样本的流程极为相似.如下图所示.故判断为该活动属于双尾蝎 APT组织。
+
+本次活动的样本流程与2017——2019年双尾蝎APT组织活动所使.的流程相似-pic114 
+(2).C&C中存在名.姓名的痕迹
+根据 checkpoint的报告我们得知,该组织乐于使 ..些明星或者名.的名字在其 C&C服务器上.左图是 checkpoint安全.商揭露其针对以.列.兵的活动的报告原 .,我们可以看到其中含有 Jim Morrison , Eliza Dollittle , Gretchen Bleiler等名字..右图在带有恶意宏.档的样
+本中,我们发现了其带有 Minkowski这字符.通过搜索我们发现其来源于 Hermann Minkowski名字的.部分,勉强地符合了双尾蝎APT组织的特征之.. 
+
+双尾蝎组织的C&C域名上存在名.名字的痕迹-pic115 
+
+2.技术演进 
+(1).在编写语.上的演进
+根据 360的报告我们可以得知双尾蝎APT组织在 2016年到 2017年这段时间内该组织主要采.了 VC去编写载荷.再到 2017年到 2018年这段时间内该组织主要是以 Delphi来编写其侦查者 (Recon),根据 Gcow安全团队追影.组的跟踪 ,该组织在 2018年到 2019年这段时间内也使 .了 
+Delphi编写的恶意载荷。与 2017年到 2018年不同的是: 2017年到 2018年所采.的编译器信息是:Borland Delphi 2014XE6。.在 2018年到 2019年这时间段内采.的编辑器信息是:Borland Delphi 2014XE7-S.10。同时在本次活动中该组织使. Pascal语.来编写载荷。可.该组织 .直在不断寻求.些受众.现在越来越.的语.以逃脱杀软对其的监测。
+
+载荷编写语.的演进-pic116 
+(2).编译时间戳的演进
+根据 360的报告我们可以得知双尾蝎APT组织在 2016年到 2018年这时间段中,该组织所使.的恶意载荷的时间戳信息.部分时间集中位于京的下午以及第.天的凌晨,属于中东地区的时间。.在 2019年 7 .份捕获的双尾蝎APT组织样本中该组织的编译戳为 2019.7.14 11:08:48 .在本次活动所捕获的样本中我们发现该组织将编译时间戳统.改为: 1970.1.1 1:00 ,也就是置 
+0.通过伪造时间戳以阻断安全.员的关联以及对其的地域判断
+
+编译时间戳的演进-pic117 
+(3)..拷..式的演进
+双尾蝎APT组织在 2017年到 2019年的活动中,擅.使. copy命令将.身拷.
+到 %ProgramData%下..可能由于 copy指令的敏感或者已经被各.安全.商识别。在 2019年 7 .份的时候.该组织恢复了之前采. CopyFile windows API函数的.式将.身拷.
+到 %ProgramData%下
+
+.拷..法的演进-pic118 
+(4).持久化.式的演进
+根据 360的报告,我们可以得知双尾蝎APT组织在 2016年到 2017年的活动之中 ,主要采.的是修改注册表添加启动项的.式进.权限的持久化存在。.根据追影.组的捕获的样本 ,我们发现在 2017年到 2018年的这段时间内该组织使.拥有.名单 Shortcut.exe通过命令.的.式在.启动.件夹中添加指向.拷.后的恶意 .件的快捷.式。.在本次活动中,该组织则采.调. CreateFile Windows API函数的.式在.启动.件夹中创建指向.拷.后恶意 .件的快捷.式以完成持久化存在
+
+持久化.式的演进-pic119 
+(5).C&C报.的演进
+为了对.的.便,我们只对.双尾蝎APT组织 2018年到 2019年的上半年的活动与本次活动的 C&C报.的区别。如图所示下图的左上是本次活动的样本的 C&C报.,右下.的是 2018年到 2019年上半年活动的样本的 C&C报.。通过下.所给出的解密我们可以得知两样本所向 C&C
+收集并发送的信息基本相同。同时值得注意的是该组织逐渐减少明.的直接发送收集到的注意.开始采..较常.的通过 Base64的.式编码后在发送。同时在ver版本中我们发现: 2018年到 2019年上半年的样本的后.版本号为: 1.4.2.MUSv1107 (推测是2018.11.07更新的后.);.在本次活动中后.版本号为: 5.HXD.zz.1201 (推测是2019.12.01号更新的后.),由此可.该组织正在随着披露
+的增加.不断的进.后.的更迭。
+
+C&C报.的演进-pic120
+四.总结 1.概述 
+Gcow安全团队追影.组针对双尾蝎APT组织此次针对巴勒斯坦的活动进.了详细的分析并且通过绘制了.幅样本执.的流程图.便各位看官的理解
+
+双尾蝎本次活动样本流程图-pic121
+该组织拥有很强的攻击能.,其载荷涵盖较.(Windows和Android平台).并且在被以.列进.**物理打击后快速恢复其攻击能..对巴勒斯坦地区进.了.波较为猛烈的攻势,同时我们绘制了.幅本次活动之中样本与 C&C的关系图
+
+双尾蝎本次活动样本与C&C服务器关系图-pic122
+通过之前的分析我们发现了该组织拥有很强的技术对抗能.,并且其投放的样本 .直围绕着与巴勒斯坦和以.列的敏感话题进.投放,我们对其话题关键字做了统计,.便各位看官了解
+
+双尾蝎本次活动所投放样本的话题关键字柱状图统计-pic123 
+
+2.处置.案:
+删除.件 
+%TEMP%*.pdf(*.mp3,*.mp4,*.rar,*.doc) [诱饵.档] %ProgramData%SyncDownOptzHostProc.exe [侦查者主体 .件] %ProgramData%IntegratedOffice.exe[侦查者主体 .件] %ProgramData%MicrosoftWindowsStart MenuProgramsStartupSyncDownOptzHostProc.lnk 
+[指向侦查者主体 .件的快捷.式.于权限维持] %ProgramData%GUID.bin [标记感染] 
+3.结语
+通过本次分析报告,我们相信.定给各位看官提供了 .更加充分了解该组织的机会.我们在前.分
+析了该组织的技术特点以及对该组织实施攻击的攻击.法的演进进 .了详细的概述。同时在后.的部分我们也会贴出该组织最新活动所使.样本的 IOCs供给各位感兴趣的看官交流与学习.同时我们希望各位看官如果有其他的意.欢迎向我们提出。
+五.IOCs: 
+MD5: 
+
+样本 MD5与样本 .件名集合-pic124 
+URL: 
+http[:]//linda-callaghan[.]icu/Minkowski/brown http[:]//linda-callaghan[.]icu/Minkowski/microsoft/utilities http[:]//nicoledotson[.]icu/debby/weatherford/yortysnr http[:]//nicoledotson[.]icu/debby/weatherford/Zavantazhyty http[:]//nicoledotson[.]icu/debby/weatherford/Ekspertyza http[:]//nicoledotson[.]icu/debby/weatherford/Vydalyty http[:]//nicoledotson[.]icu/debby/weatherford/pidnimit 
+C2: 
+linda-callaghan[.]icu nicoledotson[.]icu
+释放.件: 
+%TEMP% *.pdf(*.mp3,*.mp4,*.rar,*.doc) %ProgramData%SyncDownOptzHostProc.exe %ProgramData%MicrosoftWindowsStart MenuProgramsStartupSyncDownOptzHostProc.lnk %ProgramData%GUID.bin %ProgramData%IntegratedOf.ce.exe
+
+
+
+六.相关链接: 
+https://www.freebuf.com/articles/system/129223.html 
+https://research.checkpoint.com/2020/hamas-android-malware-on-idf-soldiers-this-is-how-it-happened/ https://mp.weixin.qq.com/s/Rfcr-YPIoUUvc89WFrdrnw
+本.作者：SecPulse本.为安全脉搏专栏作者发布，转载请注明：https://www.secpulse.com/archives/125292.html 
+
+
+

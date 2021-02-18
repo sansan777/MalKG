@@ -1,0 +1,75 @@
+T1	AttackerGroup 423 438	Iron cybercrime
+T2	Malware 479 484	Xbash
+T3	Organization 243 261	Palo Alto Networks
+R1	belongsTo Arg1:T2 Arg2:T1
+T4	Action 330 341	coin mining
+T5	System 324 329	Linux
+T6	Organization 580 585	Talos
+T7	AttackerGroup 547 552	Rocke
+R2	belongsTo Arg1:T2 Arg2:T7
+T8	Attacker 887 898	Rocke group
+T9	ModificationAction 919 928	uninstall
+T10	ExploitTargetObject 944 969	cloud security protection
+T11	ExploitTargetObject 1134 1160	full administrative contro
+R3	targets Arg1:T8 Arg2:T10
+R4	targets Arg1:T8 Arg2:T11
+T12	Organization 1337 1350	Tencent Cloud
+T13	Organization 1355 1368	Alibaba Cloud
+T14	Location 1414 1419	China
+T15	Exploit 1752 1762	Coin Miner
+T16	AttackerGroup 1771 1782	Rocke Group
+T17	Organization 1828 1839	Cisco Talos
+T18	Attacker 1800 1805	Rocke
+T19	ExploitTargetObject 1903 1924	Monero cryptocurrency
+R5	targets Arg1:T18 Arg2:T19
+T20	Vulnerability 2160 2174	CVE-2017-10271
+T21	Software 2130 2145	Oracle WebLogic
+T22	File 2257 2265	0720.bin
+R6	hasVulnerability Arg1:T21 Arg2:T20
+T23	Host 2178 2183	Linux
+R7	runsSoftware Arg1:T23 Arg2:T21
+T24	AttackerGroup 2007 2018	Rocke group
+T25	Software 2047 2062	Apache Struts 2
+T26	Software 2071 2079	WebLogic
+T27	Software 2085 2101	Adobe ColdFusion
+T28	AttackerGroup 4432 4443	Rocke group
+T29	Action 4574 4608	uninstalls cloud security products
+T30	Organization 4612 4625	Alibaba Cloud
+T31	Organization 4630 4643	Tencent Cloud
+T32	ExploitTargetObject 4721 4742	Tencent Cloud Monitor
+T33	Attacker 4689 4694	Rocke
+R8	targets Arg1:T33 Arg2:T32
+T34	ExploitTargetObject 4798 4827	Tencent Cloud Monitor process
+R9	targets Arg1:T33 Arg2:T34
+T35	Organization 5113 5126	Alibaba Cloud
+T36	Organization 5095 5108	Tencent Cloud
+T37	ExploitTargetObject 5262 5294	Alibaba Threat Detection Service
+T38	Software 5522 5549	Tencent Cloud Host Security
+T39	Attacker 5582 5593	Rocke group
+T40	Organization 5643 5656	Alibaba Cloud
+T41	Organization 5661 5668	Tencent
+R10	targets Arg1:T39 Arg2:T37
+R11	hasProduct Arg1:T41 Arg2:T38
+R12	hasProduct Arg1:T36 Arg2:T38
+T42	Software 5862 5894	Alibaba Threat Detection Service
+T43	Software 5905 5931	Alibaba CloudMonitor agent
+T44	Software 5993 6022	Alibaba Cloud Assistant agent
+R13	hasProduct Arg1:T40 Arg2:T42
+R14	hasProduct Arg1:T40 Arg2:T43
+R15	hasProduct Arg1:T40 Arg2:T44
+T45	Software 6077 6104	Tencent Host Security agent
+T46	Software 6109 6136	Tencent Cloud Monitor agent
+R16	hasProduct Arg1:T41 Arg2:T45
+R17	hasProduct Arg1:T41 Arg2:T46
+T47	Attacker 6233 6244	Rocke group
+T48	ExploitTargetObject 6372 6399	public cloud infrastructure
+R18	targets Arg1:T47 Arg2:T48
+T49	Organization 6413 6431	Palo Alto Networks
+T50	Organization 6466 6479	Tencent Cloud
+T51	Organization 6484 6497	Alibaba Cloud
+T52	ExploitTargetObject 6658 6685	Public cloud infrastructure
+T53	Attacker 6992 7003	Rocke group
+T54	ExploitTargetObject 7138 7165	public cloud infrastructure
+R19	targets Arg1:T47 Arg2:T52
+R20	targets Arg1:T53 Arg2:T54
+R21	hasProduct Arg1:T50 Arg2:T46

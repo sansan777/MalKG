@@ -1,0 +1,90 @@
+T1	Campaign 2736 2745	HeartBeat
+T2	Time 2845 2849	2009
+R1	hasAttackTime Arg1:T1 Arg2:T2
+T3	Malware 3412 3438	remote administration tool
+T4	Campaign 3277 3286	HeartBeat
+R2	involvesMalware Arg1:T4 Arg2:T3
+T5	Campaign 3962 3970	Luckycat
+T6	Country 4071 4076	India
+T7	Country 4081 4086	Japan
+R3	hasAttackLocation Arg1:T5 Arg2:T6
+R4	hasAttackLocation Arg1:T5 Arg2:T7
+T8	ExploitTargetObject 4121 4149	Tibetan activists’ community
+R5	targets Arg1:T5 Arg2:T8
+T9	ExploitTargetObject 3993 4067	aerospace, energy, engineering, shipping, and military research industries
+R6	targets Arg1:T5 Arg2:T9
+T10	Campaign 4155 4161	IXESHE
+T11	ExploitTargetObject 4200 4222	East Asian governments
+T12	ExploitTargetObject 4224 4259	Taiwanese electronics manufacturers
+T13	ExploitTargetObject 4267 4293	telecommunications company
+R7	targets Arg1:T10 Arg2:T11
+R8	targets Arg1:T10 Arg2:T12
+R9	targets Arg1:T10 Arg2:T13
+T14	Campaign 4436 4443	Taidoor
+T15	Country 4522 4528	Taiwan
+R10	hasAttackLocation Arg1:T14 Arg2:T15
+T16	Country 4694 4705	South Korea
+T17	Campaign 4745 4754	HeartBeat
+R11	hasAttackLocation Arg1:T17 Arg2:T16
+T18	Campaign 5265 5274	HeartBeat
+T19	Time 5566 5575	June 2012
+R12	hasAttackTime Arg1:T18 Arg2:T19
+T20	Time 5835 5848	November 2009
+R13	hasAttackTime Arg1:T18 Arg2:T20
+T21	ExploitTargetObject 5923 5940	Political parties
+T22	ExploitTargetObject 5943 5956	Media outfits
+T23	ExploitTargetObject 5959 5995	A national policy research institute
+T24	ExploitTargetObject 5998 6044	A military branch of South Korean armed forces
+T25	Campaign 6070 6079	HeartBeat
+R14	targets Arg1:T25 Arg2:T21
+R15	targets Arg1:T25 Arg2:T22
+R16	targets Arg1:T25 Arg2:T23
+R17	targets Arg1:T25 Arg2:T24
+T27	Campaign 7176 7185	HeartBeat
+T26	Email 7524 7544	spearphishing emails
+T28	Software 9496 9520	Smart Protection Network
+T29	Organization 9483 9494	Trend Micro
+R18	hasProduct Arg1:T29 Arg2:T28
+T30	File 10736 10784	%Program Files%\Common Files\Services\6to4nt.dll
+T31	File 10787 10833	%Program Files%\Common Files\System\6to4nt.dll
+T32	File 10836 10885	%Program Files%\Windows NT\Accessories\6to4nt.dll
+T33	File 10888 10923	%Program Files%\Windows NT\htrn.dll
+T34	File 10926 10965	%Program Files%\Windows NT\htrn_jls.dll
+T35	File 10968 11004	%Program Files%\Windows NT\hyper.dll
+T36	File 11007 11034	%System%\Network Remote.dll
+T37	File 11037 11057	%System%\SvcHost.dll
+T38	Malware 10525 10528	RAT
+R19	indicates Arg1:T30 Arg2:T38
+R20	indicates Arg1:T31 Arg2:T38
+R21	indicates Arg1:T32 Arg2:T38
+R22	indicates Arg1:T33 Arg2:T38
+R23	indicates Arg1:T34 Arg2:T38
+R24	indicates Arg1:T35 Arg2:T38
+R25	indicates Arg1:T36 Arg2:T38
+R26	indicates Arg1:T37 Arg2:T38
+T39	File 11708 11725	%System%\msrt.exe
+T40	File 11728 11769	%Program Files%\Common Files\AcroRd32.exe
+T41	File 11772 11811	%Program Files%\Common Files\config.exe
+T42	Malware 11598 11601	RAT
+R27	indicates Arg1:T39 Arg2:T42
+R28	indicates Arg1:T40 Arg2:T42
+R29	indicates Arg1:T41 Arg2:T42
+T43	Indicator 12188 12385	HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\ Services\{service name} Type = “20” Start = “2” ErrorControl = “1” ImagePath = “%SystemRoot%\System32\svchost.exe -k netsvcs” ObjectName = “LocalSystem”
+T44	Indicator 12386 12516	HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\ Services\{service name}\Parameters ServiceDll = C:\Program Files\Windows NT\htrn. dll
+T45	Indicator 12517 12614	HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\ Services\{service name}\Security Security = {values}
+T46	Indicator 12615 12805	HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\ Services\{service name}\Enum 0 = “Root\LEGACY_{service name}\0000” Count = “1” NextInstance = “1” *{service name} may be “6to4”, “Ias” or “Irmon”
+T47	Indicator 13124 13130	qawsed
+T48	Indicator 15731 15740	army-1022
+T49	Malware 15341 15350	HeartBeat
+R30	indicates Arg1:T48 Arg2:T49
+T50	Country 15973 15980	Armenia
+T51	Country 15982 15985	USA
+T52	Country 15987 15992	Japan
+T53	Country 15994 15999	India
+T54	Country 16004 16009	Korea
+T55	Campaign 15840 15849	HeartBeat
+R31	hasAttackLocation Arg1:T55 Arg2:T50
+R32	hasAttackLocation Arg1:T55 Arg2:T51
+R33	hasAttackLocation Arg1:T55 Arg2:T54
+R34	hasAttackLocation Arg1:T55 Arg2:T52
+R35	hasAttackLocation Arg1:T55 Arg2:T53

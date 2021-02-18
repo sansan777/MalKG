@@ -1,0 +1,358 @@
+T1	Organization 311 318	FireEye
+T2	Organization 373 383	TrendMicro
+T3	Campaign 230 236	Siesta
+T4	Campaign 407 413	Siesta
+T5	Campaign 672 678	Siesta
+T6	Time 915 928	March 6, 2014
+T7	Organization 929 939	TrendMicro
+T8	Campaign 956 962	Siesta
+T9	Attacker 1168 1172	APT1
+T10	Attacker 1193 1205	Comment Crew
+T11	Time 1298 1311	Feb. 20, 2014
+T12	Dropper 1405 1447	ifuedit[.]net/Healthcare_Questionnaire.zip
+T13	MD5 1533 1565	61249bf64fa270931570b8a5eba06afa
+R1	indicates Arg1:T13 Arg2:T12
+T14	Time 1581 1600	2014-02-20 02:28:21
+R2	hasAttackTime Arg1:T12 Arg2:T14
+T15	MD5 1609 1641	39e9e4eac77a09b915626f315b963a4f
+T16	MD5 1651 1683	a126c8c7c50bf034f2d3ba4aa5bcab28
+T17	MD5 1692 1724	bb95154b5aeb13a4ff937afa2e7e4560
+T18	MD5 1733 1765	edf3a1e142fc212da11dc72698184ad5
+T19	MD5 1780 1812	20ff5087740eabff5bdbdf99d9fb6853
+R3	indicates Arg1:T15 Arg2:T12
+R4	indicates Arg1:T16 Arg2:T12
+R5	indicates Arg1:T17 Arg2:T12
+R6	indicates Arg1:T18 Arg2:T12
+R7	indicates Arg1:T19 Arg2:T12
+T20	Indicator 1850 1887	www[.]microsofthomes[.]com/index.html
+T21	MD5 2001 2033	68f73d81c814ab2f70eed02c0be3b67d
+T22	MD5 2084 2116	20b124baaaec1e8cbc3cd52e8e5ceebd
+T23	Time 2035 2054	2014-02-20 02:26:24
+T24	Indicator 2056 2082	www[.]microsofthomes[.]com
+T25	Time 2118 2137	2014-02-20 02:26:24
+T26	Indicator 2139 2165	www[.]microsofthomes[.]com
+T27	Attacker 2299 2303	APT1
+T28	Exploit 2406 2427	Spear-phishing emails
+R8	authored Arg1:T27 Arg2:T28
+T29	Organization 2560 2570	TrendMicro
+T30	Campaign 2585 2591	Siesta
+T31	MD5 2608 2640	0f3031412d255336a102bbc1dcd43812
+T32	MD5 2690 2722	0f3031412d255336a102bbc1dcd43812
+T33	Time 2738 2757	2014-02-19 09:29:04
+R9	hasAttackTime Arg1:T30 Arg2:T33
+T34	MD5 2766 2798	a2e11e9c8b07888345d6cdf7d995b832
+T35	MD5 2808 2840	0203cc3bb607e9cfa296fa857b243468
+T36	MD5 2849 2881	7d281bd27bc1279428bd1798671eb57b
+T37	MD5 2890 2922	caa869fa01ddfee26156166a10c42944
+T38	MD5 2937 2969	0fefba40443edd57f816502035077e3e
+T39	MD5 2990 3022	0fefba40443edd57f816502035077e3e
+T40	MD5 3089 3121	643654975b63a9bb6f597502e5cd8f49
+T41	Time 3177 3196	2014-01-14 04:38:30
+T42	Indicator 3202 3225	www[.]cloudcominc[.]com
+T43	MD5 3228 3260	643654975b63a9bb6f597502e5cd8f49
+T44	Time 3262 3281	2014-01-14 04:38:30
+T45	Indicator 3283 3306	www[.]cloudcominc[.]com
+T46	MD5 3308 3340	0f3031412d255336a102bbc1dcd43812
+T47	Time 3342 3361	2014-02-19 09:29:04
+T48	Indicator 3363 3385	www[.]skyslisten[.]com
+T49	Dropper 2538 2545	dropper
+R10	indicates Arg1:T31 Arg2:T49
+R11	involvesMalware Arg1:T30 Arg2:T49
+R12	indicates Arg1:T32 Arg2:T49
+R13	hasAttackTime Arg1:T49 Arg2:T33
+R14	indicates Arg1:T34 Arg2:T49
+R15	indicates Arg1:T35 Arg2:T49
+R16	indicates Arg1:T36 Arg2:T49
+R17	indicates Arg1:T37 Arg2:T49
+R18	indicates Arg1:T38 Arg2:T49
+T50	Malware 3035 3042	samples
+R19	indicates Arg1:T39 Arg2:T50
+R20	indicates Arg1:T40 Arg2:T50
+R21	hasAttackTime Arg1:T50 Arg2:T41
+R22	indicates Arg1:T42 Arg2:T50
+R23	indicates Arg1:T43 Arg2:T50
+R24	hasAttackTime Arg1:T50 Arg2:T44
+R25	indicates Arg1:T45 Arg2:T50
+R26	hasAttackTime Arg1:T50 Arg2:T47
+R27	indicates Arg1:T46 Arg2:T50
+R28	indicates Arg1:T48 Arg2:T50
+T52	Time 3494 3498	2011
+T51	Attacker 3459 3463	APT1
+R29	hasAttackTime Arg1:T51 Arg2:T52
+T53	Attacker 3532 3536	APT1
+T54	Malware 3627 3634	samples
+R30	authored Arg1:T53 Arg2:T54
+T55	MD5 3721 3753	719453b4da6d3814604c84a28d4d1f4c
+R31	indicates Arg1:T55 Arg2:T54
+T56	Time 3755 3774	2011-06-16 12:54:20
+T57	Indicator 3776 3799	www[.]stapharrest[.]com
+T58	MD5 3801 3833	93a6e9a26924a5cdab8ed47cadbe88d5
+T59	Time 3835 3854	2012-01-18 13:35:54
+T60	Indicator 3856 3878	www[.]offerdahls[.]com
+T61	MD5 3880 3912	c2aadd6a69a775602d984af64eaeda96
+T62	Time 3914 3933	2012-05-15 09:02:25
+T63	Indicator 3935 3956	www[.]bluecoate[.]com
+T64	MD5 3958 3990	1df0b937239473df0187063392dae028
+T65	Time 3992 4011	2012-06-20 09:25:31
+T66	Indicator 4013 4040	www[.]billyjoebobshow[.]com
+T67	MD5 4042 4074	55065f1b341e5b095b6d453923d5654d
+T68	Time 4076 4095	2012-07-12 09:21:17
+T69	Address 4097 4111	184.82.164.104
+T70	MD5 4113 4145	65502e91e3676cf30778a7078f1061de
+T71	Time 4147 4166	2012-07-19 09:31:42
+T72	Indicator 4168 4195	www[.]billyjoebobshow[.]com
+T73	MD5 4197 4229	287113e4423813efd242af8e6255f680
+T74	Time 4231 4250	2012-07-24 05:53:22
+T75	Indicator 4252 4273	thales[.]myftp[.]info
+T76	MD5 4275 4307	d613d40d5402f58d8952da2c24d1a769
+T77	Time 4309 4328	2012-09-27 12:46:20
+T78	MD5 4354 4386	57a4c6236b4ecf96d31258e5cc6f0ae4
+T79	Time 4388 4407	2013-01-07 07:43:14
+T80	Indicator 4409 4433	manslist[.]loopback[.]nu
+T81	MD5 4435 4467	e5a4ec0519c471b5be093aee5c33b1ee
+T82	Time 4469 4488	2013-01-08 07:34:59
+T83	Indicator 4490 4511	www[.]whackcard[.]com
+T84	MD5 4555 4587	f822a9e08b51c19a154dfb63ee9b8367
+T85	Time 4589 4608	2013-01-10 07:50:58
+T86	Indicator 4610 4636	technology[.]acmetoy[.]com
+T87	MD5 4651 4683	0f3031412d255336a102bbc1dcd43812
+T88	MD5 4728 4760	185e930a19ad1a99c226d59ef563e28c
+T89	MD5 5241 5273	736ebc9b8ece410aaf4e8b60615f065f
+T90	Malware 5171 5183	APT1 samples
+T91	Dropper 4811 4818	dropper
+R32	indicates Arg1:T88 Arg2:T91
+R33	indicates Arg1:T87 Arg2:T91
+T92	Time 5275 5294	2003-05-15 08:58:48
+T93	Indicator 5296 5316	www[.]comtoway[.]com
+T94	MD5 5318 5350	ac87816b9a371e72512d8fd82f61c737
+T95	Time 5352 5371	2006-09-14 02:28:46
+T96	Indicator 5373 5388	www[.]mwa[.]net
+T97	MD5 5390 5422	173cd315008897e56fa812f2b2843f83
+T98	Time 5424 5443	2006-09-14 02:28:46
+T99	Indicator 5445 5469	www[.]deebeedesigns[.]ca
+T100	MD5 5471 5503	513644c57688b70860d0b9aa1b6cd0d7
+T101	Time 5505 5524	2010-12-17 03:24:13
+T102	Address 5526 5538	69.90.65.240
+T103	MD5 5540 5572	fdf6bf1973af8ab130fbcaa0914b4b06
+T104	Time 5574 5593	2012-05-10 08:41:35
+T105	Indicator 5595 5617	www[.]woodagency[.]com
+T106	MD5 5619 5651	682bfed6332e210b4f3a91e5e8a1410b
+T107	Time 5653 5672	2012-05-15 03:17:04
+T108	Indicator 5674 5697	www[.]oewarehouse[.]com
+T109	MD5 5699 5731	fb7a74a88eead4d39a58cc7b6eede4ce
+T110	Time 5733 5752	2013-08-01 18:23:07
+T111	Indicator 5754 5769	www[.]mwa[.]net
+T112	MD5 5907 5939	719453b4da6d3814604c84a28d4d1f4c
+T113	Time 5941 5960	2011-06-16 12:54:20
+T114	Indicator 5962 5983	www[.]drgeorges[.]com
+T115	MD5 5985 6017	854cb8ba3b2d3058239a7ba6a427944a
+T116	Time 6019 6038	2011-08-17 00:31:27
+T117	Indicator 6040 6060	meeting[.]toh[.]info
+T118	MD5 6062 6094	a049b8ec51c0255dec734c7ba5641af3
+T119	Time 6096 6115	2011-08-17 00:31:27
+T120	Indicator 6117 6137	meeting[.]toh[.]info
+T121	MD5 6139 6171	0725a1819a58e988b939f06e53990254
+T122	Time 6173 6192	2011-08-17 00:31:27
+T123	Indicator 6194 6210	google.ninth.biz
+T124	MD5 6212 6244	0fdffd4f5730bdd37f2f082bf396064a
+T125	Time 6246 6265	2011-08-11 09:35:24
+T126	Indicator 6267 6293	homepage[.]longmusic[.]com
+T127	MD5 6295 6327	e476e4a24f8b4ff4c8a0b260aa35fc9f
+T128	Time 6329 6348	2012-06-09 13:19:49
+T129	Indicator 6350 6376	www[.]heliospartners[.]com
+T130	MD5 6378 6410	d613d40d5402f58d8952da2c24d1a769
+T131	Time 6412 6431	2012-09-27 12:46:20
+T132	Indicator 6433 6460	www[.]billyjoebobshow[.]com
+T133	MD5 6462 6494	f822a9e08b51c19a154dfb63ee9b8367
+T134	Time 6496 6515	2013-01-10 07:50:58
+T135	Indicator 6517 6543	technology[.]acmetoy[.]com
+T136	MD5 6550 6582	61249bf64fa270931570b8a5eba06afa
+T137	MD5 6587 6619	0f3031412d255336a102bbc1dcd43812
+T138	SHA-256 6693 6757	fb080cef60846528c409f60400f334100a16a5bd77b953c864b23a945fcf26fd
+T139	Malware 6917 6929	APT1 samples
+T140	MD5 7002 7034	1aab2040ed4f918e1823e2caf645a81d
+R34	indicates Arg1:T140 Arg2:T139
+T141	MD5 7036 7068	8ee2cf05746bb0a009981fdb90f1343e
+R35	indicates Arg1:T141 Arg2:T139
+T142	Time 7130 7149	2009-09-28 22:08:38
+T143	Indicator 7151 7173	www[.]olmusic100[.]com
+T144	Time 7175 7185	2010-03-15
+T145	Indicator 7187 7213	gogotrade[.]apple.org[.]ru
+T146	MD5 7216 7248	8ee2cf05746bb0a009981fdb90f1343e
+T147	Time 7250 7258	11:46:31
+T148	Indicator 7260 7287	tradeproject[.]rlogin[.]org
+T149	MD5 7289 7321	9c4617793984c4b08d75b00f1562cbda
+T150	Time 7323 7342	2010-08-31 03:27:55
+T151	Indicator 7370 7401	worldwide[.]chickenkiller[.]com
+T152	Indicator 7344 7369	freetrade[.]allowed[.]org
+T153	MD5 7403 7435	b584b48d401e98f404584c330489895c
+T154	Time 7437 7456	2010-08-31 07:52:17
+T155	Indicator 7458 7489	worldwide[.]chickenkiller[.]com
+T156	Indicator 7490 7515	freetrade[.]allowed[.]org
+T157	MD5 7517 7549	b92a53fc409d175c768581978f1d3331
+T158	Time 7551 7570	2010-09-16 09:57:09
+T159	Indicator 7572 7592	www[.]rbaparts[.]com
+T160	MD5 7594 7626	d6c19be4e9e1ae347ee269d15cb96a51
+T161	MD5 7628 7660	d0a7cd5cd7da9024fb8bd594d37d7594
+T162	MD5 7662 7694	b19ef1134f54b4021f99cc45ae1bc270
+T163	MD5 7696 7728	b0a95c47d170baad8a5594e0f755e0c1
+T164	MD5 7730 7762	894ef915af830f38499d498342fdd8db
+T165	MD5 7764 7796	c2aadd6a69a775602d984af64eaeda96
+T166	Time 7798 7817	2010-10-25 01:59:00
+T167	Time 7818 7837	2011-04-20 07:39:01
+T168	Time 7838 7857	2011-06-13 06:56:04
+T169	Time 7858 7877	2012-03-26 06:50:10
+T170	Time 7878 7897	2012-03-26 07:13:36
+T171	Time 7898 7917	2012-05-15 09:02:25
+T172	Indicator 7919 7938	www[.]kayauto[.]net
+T173	Indicator 7940 7959	www[.]kayauto[.]net
+T174	Indicator 7961 7980	www[.]kayauto[.]net
+T175	Indicator 7982 8004	www[.]coachmotor[.]com
+T176	Indicator 8006 8035	www[.]rightnowautoparts[.]com
+T177	Indicator 8037 8058	www[.]bluecoate[.]com
+T178	MD5 8468 8500	392f15c431c00f049bb1282847d8967f
+T179	Malware 8337 8347	Poison Ivy
+T180	Attacker 8290 8298	Menupass
+R36	authored Arg1:T180 Arg2:T179
+T181	Malware 8365 8381	Menupass samples
+R37	authored Arg1:T180 Arg2:T181
+T182	Time 8502 8521	2012-05-16 06:48:02
+T183	Indicator 8523 8536	army.xxuz.com
+T184	MD5 8538 8570	21567cce2c26e7543b977a205845ba77
+T185	Time 8572 8591	2012 06 26 05:17:52
+T186	Indicator 8593 8606	nasa.xxuz.com
+T187	MD5 8608 8640	d4b7f99669a3efc94006e5fe9d84eb65
+T188	Time 8642 8661	2012-07-03 09:33:46
+T189	Indicator 8663 8682	tw.2012yearleft.com
+T190	MD5 8684 8716	df5bd411f080b55c578aeb9001a4287d
+T191	Time 8718 8737	2012-07-04 04:07:36
+T192	Indicator 8739 8759	apple.cmdnetview.com
+T193	MD5 8761 8793	001b8f696b6576798517168cd0a0fb44
+T194	Time 8795 8814	2012 11 13 07:19:03
+T195	Indicator 8816 8838	google.macforlinux.net
+T196	MD5 8840 8872	6a3b8d24c125f3a3c7cff526e63297f3
+T197	Time 8874 8893	2013-02-25 05:31:41
+T198	Indicator 8895 8908	cvnx.zyns.com
+T199	MD5 8910 8942	a02610e760fa15c064931cfafb90a9e8
+T200	Time 8944 8963	2013-08-01 18:23:04
+T201	Indicator 8965 8978	cvnx.zyns.com
+T202	MD5 8980 9012	78a4fee0e7b471f733f00c6e7bca3d90
+T203	Time 9014 9033	2013-08-01 18:23:05
+T204	Indicator 9035 9049	fbi.sexxxy.biz
+T205	MD5 9051 9083	6f3d15cf788e28ca504a6370c4ff6a1e
+T206	Time 9085 9104	2013-09-10 06:40:28
+T207	Indicator 9106 9124	scrlk.exprenum.com
+T208	Attacker 9517 9521	APT1
+T209	Attacker 9526 9534	Menupass
+T210	Attacker 9711 9715	APT1
+T211	Attacker 9724 9732	Menupass
+T212	SHA-256 11221 11285	fb080cef60846528c409f60400f334100a16a5bd77b953c864b23a945fcf26fd
+R38	hasAttackTime Arg1:T90 Arg2:T92
+R39	indicates Arg1:T93 Arg2:T90
+R40	indicates Arg1:T94 Arg2:T90
+R41	hasAttackTime Arg1:T90 Arg2:T95
+R42	indicates Arg1:T96 Arg2:T90
+R43	indicates Arg1:T97 Arg2:T90
+R44	hasAttackTime Arg1:T90 Arg2:T98
+R45	indicates Arg1:T99 Arg2:T90
+R46	indicates Arg1:T100 Arg2:T90
+R47	hasAttackTime Arg1:T90 Arg2:T101
+R48	usesAddress Arg1:T90 Arg2:T102
+R49	indicates Arg1:T103 Arg2:T90
+R50	hasAttackTime Arg1:T90 Arg2:T104
+R51	indicates Arg1:T105 Arg2:T90
+R52	indicates Arg1:T106 Arg2:T90
+R53	hasAttackTime Arg1:T90 Arg2:T107
+R54	indicates Arg1:T108 Arg2:T90
+R55	indicates Arg1:T109 Arg2:T90
+R56	hasAttackTime Arg1:T90 Arg2:T110
+R57	indicates Arg1:T111 Arg2:T90
+R58	indicates Arg1:T112 Arg2:T90
+R59	hasAttackTime Arg1:T90 Arg2:T113
+R60	indicates Arg1:T114 Arg2:T90
+R61	indicates Arg1:T115 Arg2:T90
+R62	hasAttackTime Arg1:T90 Arg2:T116
+R63	indicates Arg1:T117 Arg2:T90
+R64	indicates Arg1:T118 Arg2:T90
+R65	hasAttackTime Arg1:T90 Arg2:T119
+R66	indicates Arg1:T120 Arg2:T90
+R67	indicates Arg1:T121 Arg2:T90
+R68	hasAttackTime Arg1:T90 Arg2:T122
+R69	indicates Arg1:T123 Arg2:T90
+R70	indicates Arg1:T124 Arg2:T90
+R71	hasAttackTime Arg1:T90 Arg2:T125
+R72	indicates Arg1:T126 Arg2:T90
+R73	indicates Arg1:T127 Arg2:T90
+R74	hasAttackTime Arg1:T90 Arg2:T128
+R75	indicates Arg1:T129 Arg2:T90
+R76	indicates Arg1:T130 Arg2:T90
+R77	hasAttackTime Arg1:T90 Arg2:T131
+R78	indicates Arg1:T132 Arg2:T90
+R79	indicates Arg1:T133 Arg2:T90
+R80	hasAttackTime Arg1:T90 Arg2:T134
+R81	indicates Arg1:T135 Arg2:T90
+R82	indicates Arg1:T136 Arg2:T90
+R83	indicates Arg1:T137 Arg2:T90
+R84	hasAttackTime Arg1:T139 Arg2:T142
+R85	indicates Arg1:T143 Arg2:T139
+R86	hasAttackTime Arg1:T139 Arg2:T144
+R87	indicates Arg1:T145 Arg2:T139
+R88	indicates Arg1:T146 Arg2:T139
+R89	hasAttackTime Arg1:T139 Arg2:T147
+R90	indicates Arg1:T148 Arg2:T139
+R91	indicates Arg1:T149 Arg2:T139
+R92	hasAttackTime Arg1:T139 Arg2:T150
+R93	indicates Arg1:T151 Arg2:T139
+R94	indicates Arg1:T152 Arg2:T139
+R95	indicates Arg1:T153 Arg2:T139
+R96	hasAttackTime Arg1:T139 Arg2:T154
+R97	indicates Arg1:T155 Arg2:T139
+R98	indicates Arg1:T156 Arg2:T139
+R99	indicates Arg1:T157 Arg2:T139
+R100	hasAttackTime Arg1:T139 Arg2:T158
+R101	indicates Arg1:T159 Arg2:T139
+R102	indicates Arg1:T160 Arg2:T139
+R103	indicates Arg1:T161 Arg2:T139
+R104	indicates Arg1:T162 Arg2:T139
+R105	indicates Arg1:T163 Arg2:T139
+R106	indicates Arg1:T164 Arg2:T139
+R107	indicates Arg1:T165 Arg2:T139
+R108	hasAttackTime Arg1:T139 Arg2:T166
+R109	hasAttackTime Arg1:T139 Arg2:T167
+R110	hasAttackTime Arg1:T139 Arg2:T168
+R111	hasAttackTime Arg1:T139 Arg2:T169
+R112	hasAttackTime Arg1:T139 Arg2:T170
+R113	hasAttackTime Arg1:T139 Arg2:T171
+R114	indicates Arg1:T172 Arg2:T139
+R115	indicates Arg1:T173 Arg2:T139
+R116	indicates Arg1:T174 Arg2:T139
+R117	indicates Arg1:T175 Arg2:T139
+R118	indicates Arg1:T176 Arg2:T139
+R119	indicates Arg1:T177 Arg2:T139
+R120	indicates Arg1:T178 Arg2:T139
+R121	hasAttackTime Arg1:T181 Arg2:T182
+R122	indicates Arg1:T183 Arg2:T181
+R123	indicates Arg1:T184 Arg2:T181
+R124	hasAttackTime Arg1:T181 Arg2:T185
+R125	indicates Arg1:T186 Arg2:T181
+R126	indicates Arg1:T187 Arg2:T181
+R127	hasAttackTime Arg1:T181 Arg2:T188
+R128	indicates Arg1:T189 Arg2:T181
+R129	indicates Arg1:T190 Arg2:T181
+R130	hasAttackTime Arg1:T181 Arg2:T191
+R131	indicates Arg1:T192 Arg2:T181
+R132	indicates Arg1:T193 Arg2:T181
+R133	hasAttackTime Arg1:T181 Arg2:T194
+R134	indicates Arg1:T195 Arg2:T181
+R135	indicates Arg1:T196 Arg2:T181
+R136	hasAttackTime Arg1:T181 Arg2:T197
+R137	indicates Arg1:T198 Arg2:T181
+R138	indicates Arg1:T199 Arg2:T181
+R139	hasAttackTime Arg1:T181 Arg2:T200
+R140	indicates Arg1:T201 Arg2:T181
+R141	indicates Arg1:T202 Arg2:T181
+R142	hasAttackTime Arg1:T181 Arg2:T203
+R143	indicates Arg1:T204 Arg2:T181
+R144	indicates Arg1:T205 Arg2:T181
+R145	hasAttackTime Arg1:T181 Arg2:T206
+R146	indicates Arg1:T207 Arg2:T181

